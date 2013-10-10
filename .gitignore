@@ -1,0 +1,11 @@
+# Ignore OS generated files
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Ignore IDE files
+.idea
+
+# Ignore Jekyll files
+_site
