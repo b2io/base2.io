@@ -1,5 +1,28 @@
 (function ($) {
 
+  // Set defaults for jQuery Validator to work with Bootstrap 3.
+  $.validator.setDefaults({
+    highlight: function (element) {
+      $(element).closest('.form-group').addClass('has-error');
+    },
+
+    unhighlight: function (element) {
+      $(element).closest('.form-group').removeClass('has-error');
+    },
+
+    errorElement: 'span',
+
+    errorClass: 'help-block',
+
+    errorPlacement: function (error, element) {
+      if (element.parent('.input-group').length) {
+        error.insertAfter(element.parent());
+      } else {
+        error.insertAfter(element);
+      }
+    }
+  });
+
   $(document).ready(function () {
 
     // Setup scroll-spy behavior on the navigation.
@@ -14,24 +37,42 @@
         .find('a[href="#' + firstId + '"]').parent().addClass('active');
     });
 
-    // Override the default form submission behavior.
-    $('#lead-form').on('submit', function (event) {
-      // Prevent the submission.
-      event.preventDefault();
+    // Setup validation for the lead generation form.
+    $('form').validate({
+      rules: {
+        'lead[name]': {
+          required: true
+        },
 
-      // Pull the values out of the UI.
-      var name = $('#lead-name').val(),
-        email = $('#lead-email').val(),
-        phoneNumber = $('#lead-phone').val(),
-        budget = $('#lead-budget').val(),
-        description = $('#lead-description').val(),
-        mailtoUrl;
+        'lead[email]': {
+          required: true,
+          email: true
+        },
 
-      // TODO: Validate the form fields.
+        'lead[description]': {
+          required: true
+        }
+      },
 
-      // Convert the fields to a `mailto` link and open it:
-      mailtoUrl = 'mailto:info@base2.io?subject=Let\'s%20Work%20Together!&body=' + encodeURIComponent('Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Phone: ' + phoneNumber + '\n' + 'Budget: ' + budget + '\n' + 'Description: ' + description);
-      window.open(mailtoUrl, '_blank');
+      messages: {
+        'lead[name]': 'Please enter your name.',
+        'lead[email]': 'Please enter a valid email address.',
+        'lead[description]': 'Please enter a description.'
+      },
+
+      submitHandler: function () {
+        // Pull the values out of the UI.
+        var name = $('[name="lead[name]"]').val(),
+          email = $('[name="lead[email]"]').val(),
+          phoneNumber = $('[name="lead[phone]"]').val(),
+          budget = $('[name="lead[budget]"]').val(),
+          description = $('[name="lead[description]"]').val(),
+          mailtoUrl;
+
+        // Convert the fields to a `mailto` link and open it:
+        mailtoUrl = 'mailto:info@base2.io?subject=Let\'s%20Work%20Together!&body=' + encodeURIComponent('Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Phone: ' + phoneNumber + '\n' + 'Budget: ' + budget + '\n' + 'Description: ' + description);
+        window.open(mailtoUrl, '_blank');
+      }
     });
 
   });

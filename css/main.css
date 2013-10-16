@@ -10,3 +10,7 @@ h1[id] {
 address:last-child {
   margin-bottom: 0;
 }
+
+#lead-form textarea {
+  resize: vertical;
+}
