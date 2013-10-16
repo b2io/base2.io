@@ -1,0 +1,17 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+h1[id] {
+  padding-top: 80px;
+}
+
+ul.nav.nav li {
+  margin-bottom: -4px;
+  border-bottom: 4px solid transparent;
+}
+
+ul.nav.navbar-nav li.active {
+  border-bottom: 4px solid #0c6251;
+}
