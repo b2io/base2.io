@@ -14,3 +14,8 @@ address:last-child {
 #lead-form textarea {
   resize: vertical;
 }
+
+.navbar-header .navbar-brand {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
