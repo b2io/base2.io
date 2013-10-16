@@ -5,9 +5,13 @@
     // Setup scroll-spy behavior on the navigation.
     $('body').scrollspy({ target: '#navigation' });
 
-    // When someone triggers a back-to-top link, deactivate the navigation elements.
+    // When someone triggers a back-to-top link:
     $('a[href="#"]').click(function () {
-      $('#navigation li.active').removeClass('active');
+      // Turn on the first item in the navigation bar:
+      var firstId = $('h1[id]:first').attr('id');
+
+      $('#navigation li').removeClass('active')
+        .find('a[href="#' + firstId + '"]').parent().addClass('active');
     });
 
     // Override the default form submission behavior.
@@ -20,7 +24,8 @@
         email = $('#lead-email').val(),
         phoneNumber = $('#lead-phone').val(),
         budget = $('#lead-budget').val(),
-        description = $('#lead-description').val(),mailtoUrl;
+        description = $('#lead-description').val(),
+        mailtoUrl;
 
       // TODO: Validate the form fields.
 
