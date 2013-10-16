@@ -19,3 +19,42 @@ address:last-child {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+.jumbotron {
+  width: 100%;
+  position: fixed;
+  z-index: 0;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.jumbotron .container > h1:first-child {
+  margin-top: 0;
+}
+
+.content {
+  position: relative;
+  top: 280px;
+  background-color: #fff;
+  padding-bottom: 60px;
+}
+
+h2 > span.icon {
+  color: #aaa;
+  margin-right: 6px;
+}
+
+a {
+  color: #3498DB;
+}
+
+a:focus,
+a:hover {
+  color: #2383C4;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: rgba(26, 36, 47, 0.33);
+}

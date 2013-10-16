@@ -28,15 +28,6 @@
     // Setup scroll-spy behavior on the navigation.
     $('body').scrollspy({ target: '#navigation' });
 
-    // When someone triggers a back-to-top link:
-    $('a[href="#"]').click(function () {
-      // Turn on the first item in the navigation bar:
-      var firstId = $('h1[id]:first').attr('id');
-
-      $('#navigation li').removeClass('active')
-        .find('a[href="#' + firstId + '"]').parent().addClass('active');
-    });
-
     // Setup validation for the lead generation form.
     $('form').validate({
       rules: {
