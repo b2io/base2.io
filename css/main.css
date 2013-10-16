@@ -20,6 +20,12 @@ address:last-child {
   padding-bottom: 15px;
 }
 
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: rgba(26, 36, 47, 0.33);
+}
+
 .jumbotron {
   width: 100%;
   position: fixed;
@@ -51,10 +57,4 @@ a {
 a:focus,
 a:hover {
   color: #2383C4;
-}
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #fff;
-  background-color: rgba(26, 36, 47, 0.33);
 }
