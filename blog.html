@@ -1,13 +1,20 @@
 ---
-layout: default
-title: Base Two
+layout: blog
+title: blog.base2.io
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+{% for post in site.posts %}
+<div class="post post-summary">
+  {% assign author = site.authors[post.author] %}
+  <h2>
+    <small>{{ post.date | date: "%B %-d, %Y" }}</small>
+    <a href="{{ post.url }}" title="{{ post.title }}" rel="bookmark" class="title">{{ post.title }}</a>
+  </h2>
+  <div class="content">
+    {{ post.content || replace:'<!-- #REST#BEGIN -->','<!--' | replace:'<!-- #REST#END -->','-->' }}
+    <div class="read-more">
+      <a href="{{ post.url }}" class="btn">Read more &rarr;</a>
+    </div>
+  </div>
 </div>
+{% endfor %}

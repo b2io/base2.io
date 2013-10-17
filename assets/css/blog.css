@@ -1,0 +1,251 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic|Lobster);
+
+body {
+  padding:60px;
+  font:14px/1.5 'Ubuntu', Verdana, sans-serif;
+  color:#777;
+  font-weight:300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color:#222;
+  margin:0 0 20px;
+  font-family: 'Lobster', Verdana, cursive;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+#disqus_thread  h3{
+  font-family:'Ubuntu', Verdana, sans-serif;
+  font-size:18px;
+  font-weight:bold;
+}
+
+h1 > a, h2 > a, h3 > a {
+  color: inherit;
+}
+
+p, ul, ol, table, pre, dl {
+  margin:0 0 20px;
+}
+
+ul li:not(:first-child){
+  margin-top: 6px;
+}
+
+h1, h2, h3 {
+  line-height:1.1;
+}
+
+h1 {
+  font-size:64px;
+}
+
+h2 {
+  font-size:48px;
+  color:#393939;
+}
+
+h2 small {
+  display:block;
+  font-family:'Ubuntu', Verdana, sans-serif;
+}
+
+h3 {
+  font-size:36px;
+}
+
+h4 {
+  font-size:28px;
+}
+
+h5 {
+  font-size:24px;
+}
+
+h6 {
+  font-size:18px;
+}
+
+h3, h4, h5, h6 {
+  color:#494949;
+}
+
+blockquote {
+  border-left:1px solid #e5e5e5;
+  margin:0;
+  padding:0 0 0 20px;
+  font-style:italic;
+}
+
+code, pre {
+  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  color:#333;
+  font-size:12px;
+}
+
+pre {
+  padding:8px 15px;
+  background: #f8f8f8;
+  border-radius:5px;
+  border:1px solid #e5e5e5;
+  overflow-x: auto;
+}
+
+table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+th, td {
+  text-align:left;
+  padding:5px 10px;
+  border-bottom:1px solid #e5e5e5;
+}
+
+dt {
+  color:#444;
+  font-weight:700;
+}
+
+th {
+  color:#444;
+}
+
+img {
+  max-width:100%;
+}
+
+strong {
+  color:#222;
+  font-weight:700;
+}
+
+.wrapper {
+  width:960px;
+  margin:0 auto;
+}
+
+header {
+  width:260px;
+  float:left;
+  position:fixed;
+}
+
+header h3 {
+  font-family:'Ubuntu', sans-serif;
+}
+
+section {
+  width:650px;
+  float:right;
+  padding-bottom:60px;
+}
+
+footer {
+  width:270px;
+  float:left;
+  position:fixed;
+  bottom:60px;
+}
+
+small {
+  font-size:11px;
+}
+
+hr {
+  border:0;
+  background:#e5e5e5;
+  height:1px;
+  margin:0 0 20px;
+}
+
+@media print, screen and (max-width: 1080px) {
+
+  div.wrapper {
+    width:auto;
+    margin:0;
+  }
+
+  header, section, footer {
+    float:none;
+    position:static;
+    width:auto;
+  }
+
+  section {
+    border:1px solid #ccc;
+    border-width:1px 0;
+    padding:20px 0;
+    margin:0 0 20px;
+  }
+
+  header a small {
+    display:inline;
+  }
+}
+
+@media print, screen and (max-width: 720px) {
+  body {
+    word-wrap:break-word;
+  }
+
+  header {
+    padding:0;
+  }
+
+  header p.view {
+    position:static;
+  }
+
+  pre, code {
+    word-wrap:normal;
+  }
+}
+
+@media print, screen and (max-width: 480px) {
+  body {
+    padding:15px;
+  }
+}
+
+@media print {
+  body {
+    padding:0.4in;
+    font-size:12pt;
+    color:#444;
+  }
+}
+
+.post:not(:first-child) {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px dotted #ddd;
+}
+
+.gist-highlight {
+  border-left: 3ex solid #eee;
+  position: relative;
+}
+
+.gist-highlight pre {
+  counter-reset: linenumbers;
+}
+
+.gist-highlight pre div:before {
+  color: #aaa;
+  content: counter(linenumbers);
+  counter-increment: linenumbers;
+  left: -3ex;
+  position: absolute;
+  text-align: right;
+  width: 2.5ex;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

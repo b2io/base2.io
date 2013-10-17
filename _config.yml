@@ -1,3 +1,17 @@
 name: Base Two
-markdown: redcarpet
-pygments: false
+permalink: /:year/:month/:day/:title/
+markdown: rdiscount
+pygments: true
+paginate: 3
+
+authors:
+  dmiller:
+    name: Drew Miller
+    email: dmiller@base2.io
+    github: mewdriller
+    gravatar: 9d45330e413884122510aa266ef6b7b7
+  zbrown:
+    name: Zack Brown
+    email: zbrown@base2.io
+    github: ztbrown015
+    gravatar: 735b5104825b9a855e60cdc90792549e
