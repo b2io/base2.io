@@ -27,22 +27,12 @@ address:last-child {
 }
 
 .jumbotron {
-  width: 100%;
-  position: fixed;
-  z-index: 0;
   padding-top: 64px;
   padding-bottom: 64px;
 }
 
 .jumbotron .container > h1:first-child {
   margin-top: 0;
-}
-
-.content {
-  position: relative;
-  top: 280px;
-  background-color: #fff;
-  padding-bottom: 60px;
 }
 
 h2 > span.icon {
