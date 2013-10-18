@@ -2,6 +2,9 @@
 
   // Set defaults for jQuery Validator to work with Bootstrap 3.
   $.validator.setDefaults({
+    errorElement: 'span',
+    errorClass: 'help-block',
+
     highlight: function (element) {
       $(element).closest('.form-group').addClass('has-error');
     },
@@ -9,10 +12,6 @@
     unhighlight: function (element) {
       $(element).closest('.form-group').removeClass('has-error');
     },
-
-    errorElement: 'span',
-
-    errorClass: 'help-block',
 
     errorPlacement: function (error, element) {
       if (element.parent('.input-group').length) {
