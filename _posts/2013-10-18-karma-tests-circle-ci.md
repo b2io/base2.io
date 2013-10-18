@@ -7,6 +7,7 @@ comments: true
 ---
 
 [Circle CI](http://circleci.com) is an awesome, affordable continuous integration solution. I am currently using it in an Angular + Rails project, scaffolded with Yeoman, following a workflow similar to [this](http://jeff.konowit.ch/posts/yeoman-rails-angular/).
+
 Here's the problem I ran into: Circle was automatically recognizing and running my rspec tests, but not my angular app's (located at rails_root/angular) karma tests.
 
 <!-- #REST#BEGIN -->
