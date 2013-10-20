@@ -52,7 +52,7 @@
 
       invalidHandler: function () {
         // Track the attempted submission.
-        _gaq.push('_trackEvent', 'Lead', 'Send', 'Invalid');
+        _gaq.push(['_trackEvent', 'Lead', 'Send', 'Invalid']);
       },
 
       submitHandler: function () {
@@ -65,7 +65,7 @@
           mailtoUrl;
 
         // Track the successful submission.
-        _gaq.push('_trackEvent', 'Lead', 'Send', 'Valid');
+        _gaq.push(['_trackEvent', 'Lead', 'Send', 'Valid']);
 
         // Convert the fields to a `mailto` link and open it:
         mailtoUrl = 'mailto:info@base2.io?subject=Let\'s%20Work%20Together!&body=' + encodeURIComponent('Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Phone: ' + phoneNumber + '\n' + 'Budget: ' + budget + '\n' + 'Description: ' + description);
