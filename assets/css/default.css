@@ -48,3 +48,11 @@ a:focus,
 a:hover {
   color: #2383C4;
 }
+
+h3.strong {
+    font-size: 30px;
+}
+
+.strong {
+    font-weight: bold;
+}
