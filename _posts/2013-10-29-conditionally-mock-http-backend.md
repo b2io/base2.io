@@ -2,7 +2,7 @@
 layout: post
 title: Conditionally Mock $httpBackend
 tags: [angular, yeoman, karma, javascript, tdd]
-author: ztbrown
+author: zbrown
 comments: true
 ---
 I recently followed [this awesome blog post](http://blogs.burnsidedigital.com/2013/09/and-httpbackend-mock-for-all-unit-e2e-testings/) to mock $httpBackend for my end-to-end tests. The problem I immediately ran into is that, while mock data is fine for my e2e tests, I want to connect to a local backend when developing and get real data.

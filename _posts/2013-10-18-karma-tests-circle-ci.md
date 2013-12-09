@@ -2,7 +2,7 @@
 layout: post
 title: Karma + Circle CI
 tags: [CircleCI, angular, yeoman, rspec, karma, javascript, tdd]
-author: ztbrown
+author: zbrown
 comments: true
 ---
 **Update:**

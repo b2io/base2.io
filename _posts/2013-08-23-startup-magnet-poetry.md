@@ -2,7 +2,7 @@
 layout: post
 title: Startup Magnet Poetry
 tags: [twenty percent time]
-author: ztbrown
+author: zbrown
 comments: true
 ---
 

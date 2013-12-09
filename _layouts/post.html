@@ -2,10 +2,9 @@
 layout: blog
 ---
 
-{% assign author = site.authors[page.author] %}
 <div class="post post-full">
   <h2>
-    <small>{{ page.date | date: "%B %-d, %Y" }}</small>
+    <small>{{ page.date | date: "%B %-d, %Y" }} &ndash; {{ site.authors[page.author].name }}</small>
     <a href="{{ page.url }}" title="{{ page.title }}" rel="bookmark" class="title">{{ page.title }}</a>
   </h2>
 
