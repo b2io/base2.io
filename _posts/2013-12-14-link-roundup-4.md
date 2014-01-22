@@ -37,4 +37,6 @@ comments: true
 * [indieisaconcept/grunt-styleguide](https://github.com/indieisaconcept/grunt-styleguide)
 * [Rails Assets](https://rails-assets.org)
 
+We'll be back after the holiday break!
+
 <!-- #REST#END -->
