@@ -35,7 +35,7 @@ address:last-child {
   margin-top: 0;
 }
 
-h2 > span.icon {
+h2 > span.icon, h3 > span.icon {
   color: #aaa;
   margin-right: 6px;
 }
@@ -47,4 +47,12 @@ a {
 a:focus,
 a:hover {
   color: #2383C4;
+}
+
+h3.strong {
+    font-size: 30px;
+}
+
+.strong {
+    font-weight: bold;
 }
