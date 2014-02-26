@@ -10,6 +10,8 @@ A lot of our projects have some form of autocomplete functionality baked into th
 
 In talking over examples of how the new autocomplete should match, the product owner sent us in the direction of a possible solution he'd had some experience with in the past: the Soundex algorithm.
 
+<!-- #REST#BEGIN -->
+
 ###This one is too cold
 
 To give a little more context, this particular application is hosted on Heroku and uses a PostgreSQL database for persistent storage. Given that, we started by seeing what PostgreSQL can do for us. As it turns out, it's got support for Soundex [right out of the box](http://www.postgresql.org/docs/8.3/static/fuzzystrmatch.html).
@@ -69,9 +71,5 @@ In the end, we decided to roll our own. Following one of the [wonderful model re
 <script src="https://gist.github.com/9223335.js?file=similar_brands_query.rb"></script>
 
 <script src="https://gist.github.com/9223335.js?file=brands_controller.rb"></script>
-
-<!-- #REST#BEGIN -->
-
-
 
 <!-- #REST#END -->
