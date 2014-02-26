@@ -60,7 +60,7 @@ Perhaps incorrectly, our first instinct was to try and avoid reinventing the whe
 
 If you couldn't tell from the section header, some things went wrong here, but before we get into that let me say that both of these gems are awesome. They've got test coverage, quality metrics, semantic versioning, multiple contributors, etc. In short, they've got all the indicators of healthy, vibrant repositories.
 
-That said, let's talk about what went wrong. Of the two gems, textacular is much more straightforward and (though not as feature rich) and has all the functionality we want. The `fuzzy_search` finder it adds is perfect, we should just be able to call from our `Brand` model like `Brand.fuzzy_search(name: 'hazienda').limit(10)` and we should get our Trigram similarity matches.
+That said, let's talk about what went wrong. Of the two gems, textacular is much more straightforward (though not as feature rich) and has all the functionality we want. The `fuzzy_search` finder it adds is perfect, we should just be able to call from our `Brand` model like `Brand.fuzzy_search(name: 'hazienda').limit(10)` and we should get our Trigram similarity matches.
 
 The catch is, textacular adds in a `WHERE` clause that was incompatible with our use case. The clause they put in makes sure the fuzzy search term is a substring in the column before running the similarity match. This is probably a performance optimization for large tables and complex combination queries, but for our purposes the raw query was fast enough and the substring match killed our ability to catch spelling mistakes.
 
