@@ -22,10 +22,10 @@ There are a lot of good wireframing tools available online. The one we use is [B
 * Presentation - How can the final wireframes be demonstrated? Export to pdf, png, or live presentation mode?
 
 ###Know Your Resolution
-Are you creating a website, desktop app, or mobile app? Your wireframes should be sized based on the lowest resolution the application will support. If you are targeting multiple platforms then it may be necessary to create different sets of wireframes. For instance, you may need to have a set that is based on a mobile device, and another set at 1024x768 for a web browser.
+Are you creating a website, desktop app, or mobile app? Your wireframes should be sized based on the lowest resolution the application will support. If you are targeting multiple platforms then it will be necessary to create different sets of wireframes. For instance, you may need to have a set that is based on a mobile device, and another set at 1024x768 for a web browser.
 
 ###Data Matters
-In most cases lorem ipsum is not going to cut it. Developers may never read your annotations (and they won’t), but they will expect the data on the screen to be consistent. Your example data and wireframes should tell a story. If you show John Doe selected in a list then John Doe should be selected in the detail view as well. Also, you shouldn’t simply copy and paste a bunch on “John Doe” items to populate the list. Doing this could lead the developer to think that each person should be listed multiple times.
+In most cases lorem ipsum is not going to cut it. Developers may not read your annotations (and they probably won’t), but they will expect the data on the screen to be consistent. Your example data and wireframes should tell a story. If you show John Doe selected in a list then John Doe should be selected in the detail view as well. Also, you shouldn’t simply copy and paste a bunch on “John Doe” items to populate the list. Doing this could lead the developer to think that each person should be listed multiple times.
 
 To make example data easier and more fun to create go out to [imdb](http://www.imdb.com/) and use the cast of one of your favorite shows. It’s especially helpful if you use a tv show or movie that works with your type of application. For instance, if the application is for a business then *Mad Men* may work. A To-do app could be *Breaking Bad*. However, be aware that your show selection may say more about yourself then you care to share, and not all shows are client-safe.
 
