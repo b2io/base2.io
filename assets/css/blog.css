@@ -35,6 +35,11 @@ ul li:not(:first-child){
   margin-top: 6px;
 }
 
+ul {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 h1, h2, h3 {
   line-height:1.1;
 }
