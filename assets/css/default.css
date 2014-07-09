@@ -1,5 +1,4 @@
 body {
-  padding-top: 60px;
   padding-bottom: 60px;
 }
 
@@ -26,16 +25,7 @@ address:last-child {
   background-color: rgba(26, 36, 47, 0.33);
 }
 
-.jumbotron {
-  padding-top: 64px;
-  padding-bottom: 64px;
-}
-
-.jumbotron .container > h1:first-child {
-  margin-top: 0;
-}
-
-h2 > span.icon {
+h2 > i.fa {
   color: #aaa;
   margin-right: 6px;
 }
@@ -47,4 +37,60 @@ a {
 a:focus,
 a:hover {
   color: #2383C4;
+}
+
+#banner {
+  background-color: #4F5052;
+  background-image: url(/assets/img/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #222;
+  position: relative;
+}
+
+#banner h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.banner-inner {
+  padding-top: 60px;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+
+  max-width: 71.25em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-inner:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.banner-content {
+  position: relative;
+  margin-top: -15%;
+  top: 50%;
+}
+
+#banner .scroll {
+  bottom: 2.8125em;
+  color: #000;
+  font-size: 0.75em;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+#banner .scroll i {
+  display: block;
+  font-size: 1.75em;
+  margin-top: 0.3125em;
+  margin-bottom: 0.3125em;
 }

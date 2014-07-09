@@ -12,14 +12,14 @@ title: Base Two
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="#" title="Base Two"><img src="assets/img/logo.png" width="66" height="30"></a>
+      <a class="navbar-brand" data-scroll href="#navigation" title="Base Two"><img src="assets/img/logo.png" width="66" height="30"></a>
     </div>
 
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#what-we-do">What We Do</a></li>
-        <li><a href="#our-process">Our Process</a></li>
-        <li><a href="#contact-us">Contact Us</a></li>
+        <li><a data-scroll href="#what-we-do">What We Do</a></li>
+        <li><a data-scroll href="#our-process">Our Process</a></li>
+        <li><a data-scroll href="#contact-us">Contact Us</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -29,11 +29,18 @@ title: Base Two
   </div>
 </div>
 
-<div class="jumbotron">
-  <div class="container">
-    <h1>Hello, We&rsquo;re Base Two</h1>
+<div id="banner">
+  <div class="banner-inner">
+    <div class="banner-content">
+      <h1>Base Two</h1>
 
-    <p>We design and develop projects for web, mobile, and desktop environments. We work with businesses, big and small, to turn their ideas into beautiful, functional technology.</p>
+      <p class="lead">We work with businesses, big and small, to turn their ideas into beautiful, functional technology.</p>
+    </div>
+
+    <a class="scroll" data-scroll href="#what-we-do">
+      Scroll Down
+      <i class="fa fa-chevron-circle-down"></i>
+    </a>
   </div>
 </div>
 
@@ -45,19 +52,19 @@ title: Base Two
 
     <div class="row">
       <div class="col-xs-12 col-md-4">
-        <h2><span class="icon icon-code"></span> Web</h2>
+        <h2><i class="fa fa-code"></i> Web</h2>
 
         <p>We create rich user experiences and the back-end services to support them. Our expertise in full-stack web development means we can realize your vision from start to finish. Our work includes enterprise software, e-commerce solutions, websites, and web applications. Whether you are looking to start a new project or trying to finish an existing one, we have the chops to get it done.</p>
       </div>
 
       <div class="col-xs-12 col-md-4">
-        <h2><span class="icon icon-mobile-phone"></span> Mobile</h2>
+        <h2><i class="fa fa-mobile-phone"></i> Mobile</h2>
 
         <p>The smartphone and tablet market is growing exponentially. Android and iOS dominate the market, but other players are still relevant. So, which mobile operating system are you going to target? We use Phonegap to eliminate that dilemma for you. We write code once and deploy to every major mobile OS. If your end-user has a mobile device, you've got an app for it.</p>
       </div>
 
       <div class="col-xs-12 col-md-4">
-        <h2><span class="icon icon-pencil"></span> Design</h2>
+        <h2><i class="fa fa-pencil"></i> Design</h2>
 
         <p>We do user-centric, interaction-driven design. We assess your targeted user base and determine the most effective way to structure your content. We iterate using wireframes and click-through prototypes until it works just right, and then we make it look like a million bucks. Need to update your brand? We do that, too.</p>
       </div>
@@ -69,13 +76,13 @@ title: Base Two
 
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-lg-3">
-        <h2><span class="icon icon-lightbulb"></span> Requirements Gathering</h2>
+        <h2><i class="fa fa-lightbulb-o"></i> Requirements Gathering</h2>
 
         <p>The first step to solving a problem is understanding it. We put a huge emphasis on understanding our clients&rsquo; work. For us, requirements gathering isn&rsquo;t just a phase at the beginning of the project, it is an ongoing process. We are always working to better understand our clients&rsquo; business needs, and we convert those needs into user stories and project milestones.</p>
       </div>
 
       <div class="col-xs-12 col-sm-6 col-lg-3">
-        <h2><span class="icon icon-sitemap"></span> UX/UI</h2>
+        <h2><i class="fa fa-sitemap"></i> UX/UI</h2>
 
         <p>Great code is useless without great user interface design. Base Two delivers both.</p>
 
@@ -85,7 +92,7 @@ title: Base Two
       </div>
 
       <div class="col-xs-12 col-sm-6 col-lg-3">
-        <h2><span class="icon icon-repeat"></span> Agile Development</h2>
+        <h2><i class="fa fa-repeat"></i> Agile Development</h2>
 
         <p>At Base Two, we manage projects differently. We follow a software development discipline known as the Agile Method, a philosophy acknowledges that requirements and solutions evolve throughout the project lifecycle. With Agile, we divide the project scope into many small milestones with clear, concise goals. The result? Our customers begin receiving deliverables in the first weeks of development, get an earlier return on investment, and are never out of the loop.</p>
       </div>
@@ -93,7 +100,7 @@ title: Base Two
       <div class="col-xs-12 col-sm-6 col-lg-3"></div>
 
       <div class="col-xs-12 col-sm-6 col-lg-3">
-        <h2><span class="icon icon-beaker"></span> Test Driven Development</h2>
+        <h2><i class="fa fa-flask"></i> Test Driven Development</h2>
 
         <p><abbr class="initialism" title="Test Driven Development">TDD</abbr> is a software development methodology we use to ensure that our software meets user requirements, and that it continues to meet the requirements as new features are introduced. For each new feature, we write an initially failing test, develop the feature until the test passes, and then refactor the code for optimization and maintenance. With TDD every feature has associated tests explaining exactly how the code should function. Therefore the verification that TDD provides also serves as documentation for the application.</p>
       </div>

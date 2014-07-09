@@ -1,4 +1,6 @@
-(function ($) {
+(function ($, SmoothScroll) {
+
+  SmoothScroll.init();
 
   // Set defaults for jQuery Validator to work with Bootstrap 3.
   $.validator.setDefaults({
@@ -22,10 +24,9 @@
     }
   });
 
-  $(document).ready(function () {
-
-    // Setup scroll-spy behavior on the navigation.
-    $('body').scrollspy({ target: '#navigation' });
+  $(function () {
+    // Set the banner height to be the window height.
+    $('#banner').height($(window).height());
 
     // Setup validation for the lead generation form.
     $('form').validate({
@@ -75,4 +76,4 @@
 
   });
 
-})(jQuery);
+})(jQuery, smoothScroll);
