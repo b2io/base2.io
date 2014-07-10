@@ -163,12 +163,15 @@ ul.team-member-list {
   padding: 0;
   list-style: none;
   line-height: 0;
+  text-align: center;
 }
 
 .team-member-list > .team-member {
   display: inline-block;
   overflow: hidden;
   width: 20%;
+  min-width: 144px;
+  max-width: 228px;
   padding: 4px;
   vertical-align: top;
 }
@@ -180,14 +183,31 @@ ul.team-member-list {
 
 .team-member-info h4 {
   margin: 8px 0;
-  text-align: center;
 }
 
 .team-member-info h4 > small {
   display: block;
 }
 
-/* iPhone 5: 320px < width < 568px, Ratio: 2 */
+/* Responsive: Small */
+
+@media (min-width: 768px) {
+  
+}
+
+/* Responsive: Medium */
+
+@media (min-width: 992px) {
+  
+}
+
+/* Responsive: Large */
+
+@media (min-width: 1200px) {
+  
+}
+
+/* Responsive: iPhone 5 */
 
 @media only screen and (min-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .section-header > h1 {
@@ -208,9 +228,5 @@ ul.team-member-list {
 
   #banner h1 {
     font-size: 3em
-  }
-
-  #banner .scroll {
-    
   }
 }
