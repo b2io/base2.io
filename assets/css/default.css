@@ -1,8 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic);
+
 body {
   padding-bottom: 60px;
+  font-family: 'Roboto', sans-serif;
 }
 
-h1[id] {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+section[id] {
   padding-top: 80px;
 }
 
@@ -23,6 +31,24 @@ address:last-child {
 .navbar-default .navbar-nav > li > a:focus {
   color: #fff;
   background-color: rgba(26, 36, 47, 0.33);
+}
+
+.page-header {
+  text-align: center;
+  border: none;
+}
+
+.page-header > h1 {
+  background-image: url(http://www.tilde.io/images/common/grey-line-1e0e9dea.gif);
+  background-position: center;
+  background-repeat: repeat-x;
+  text-transform: uppercase;
+}
+
+.page-header > h1 > span {
+  border-width: 0px 34px;
+  background-color: #FFF;
+  padding: 0 20px;
 }
 
 h2 > i.fa {
@@ -49,7 +75,7 @@ a:hover {
 }
 
 #banner h1 {
-  font-size: 3em;
+  font-size: 6em;
   text-transform: uppercase;
 }
 
