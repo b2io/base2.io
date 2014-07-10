@@ -3,6 +3,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 80px;
 }
 
 .container[id] {
@@ -162,12 +163,15 @@ ul.team-member-list {
   padding: 0;
   list-style: none;
   line-height: 0;
+  text-align: center;
 }
 
 .team-member-list > .team-member {
   display: inline-block;
   overflow: hidden;
   width: 20%;
+  min-width: 144px;
+  max-width: 228px;
   padding: 4px;
   vertical-align: top;
 }
@@ -179,26 +183,31 @@ ul.team-member-list {
 
 .team-member-info h4 {
   margin: 8px 0;
-  text-align: center;
 }
 
 .team-member-info h4 > small {
   display: block;
 }
 
-/* Footer */
+/* Responsive: Small */
 
-footer {
-  background-color: #EFEFEF;
-  padding-bottom: 60px;
-  margin-top: 60px;
+@media (min-width: 768px) {
+  
 }
 
-footer .section-header > h1 > span {
-  background-color: #EFEFEF;
+/* Responsive: Medium */
+
+@media (min-width: 992px) {
+  
 }
 
-/* iPhone 5: 320px < width < 568px, Ratio: 2 */
+/* Responsive: Large */
+
+@media (min-width: 1200px) {
+  
+}
+
+/* Responsive: iPhone 5 */
 
 @media only screen and (min-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
   .section-header > h1 {
@@ -219,9 +228,5 @@ footer .section-header > h1 > span {
 
   #banner h1 {
     font-size: 3em
-  }
-
-  #banner .scroll {
-    
   }
 }
