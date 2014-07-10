@@ -1,24 +1,24 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic|Lobster);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic);
 
 body {
-  padding:60px;
-  font:14px/1.5 'Ubuntu', Verdana, sans-serif;
-  color:#777;
-  font-weight:300;
+  padding: 60px;
+  font: 14px/1.5 'Roboto', sans-serif;
+  color: #777;
+  font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
   margin:0 0 20px;
-  font-family: 'Lobster', Verdana, cursive;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-variant: normal;
-  font-weight: normal;
+  font-weight: 700;
   vertical-align: baseline;
 }
 
 #disqus_thread  h3{
-  font-family:'Ubuntu', Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size:18px;
   font-weight:bold;
 }
@@ -45,33 +45,33 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size:64px;
+  font-size: 48px;
 }
 
 h2 {
-  font-size:48px;
+  font-size:36px;
   color:#393939;
 }
 
 h2 small {
   display:block;
-  font-family:'Ubuntu', Verdana, sans-serif;
+  font-family:'Roboto', sans-serif;
 }
 
 h3 {
-  font-size:36px;
-}
-
-h4 {
   font-size:28px;
 }
 
-h5 {
+h4 {
   font-size:24px;
 }
 
-h6 {
+h5 {
   font-size:18px;
+}
+
+h6 {
+  font-size:16px;
 }
 
 h3, h4, h5, h6 {
@@ -140,7 +140,7 @@ header {
 }
 
 header h3 {
-  font-family:'Ubuntu', sans-serif;
+  font-family:'Roboto', sans-serif;
 }
 
 section {
