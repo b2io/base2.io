@@ -3,6 +3,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
+  padding-bottom: 80px;
 }
 
 .container[id] {
@@ -184,18 +185,6 @@ ul.team-member-list {
 
 .team-member-info h4 > small {
   display: block;
-}
-
-/* Footer */
-
-footer {
-  background-color: #EFEFEF;
-  padding-bottom: 60px;
-  margin-top: 60px;
-}
-
-footer .section-header > h1 > span {
-  background-color: #EFEFEF;
 }
 
 /* iPhone 5: 320px < width < 568px, Ratio: 2 */
