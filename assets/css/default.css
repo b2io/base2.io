@@ -33,6 +33,11 @@ address:last-child {
   background-color: rgba(26, 36, 47, 0.33);
 }
 
+.navbar-nav > li > a {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 .page-header {
   text-align: center;
   border: none;
