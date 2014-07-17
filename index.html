@@ -77,32 +77,37 @@ title: Base Two
     </div>
     
     <ul class="team-member-list">
-      <li class="team-member">
-        <span style="display: none;"></span>
-        <img src="/assets/img/zbrown.jpg" alt="Zack 'Danger' Brown">
+      <li id="zbrown" class="team-member">
+        <img src="/assets/img/zbrown.jpg" alt="Zack 'Danger' Brown" class="invisible">
+        <div class="flippable" ontouchstart="this.classList.toggle('hover');">
+          <div class="flip-card-x">    
+            <div class="flip-card-front">
+              <img src="/assets/img/zbrown.jpg" alt="Zack 'Danger' Brown">
+            </div>
+            <div class="flip-card-back">
+              <img src="/assets/img/zbrown-alternate.jpg" alt="Zack 'Danger' Brown">
+            </div>
+          </div>
+        </div>
         <div class="team-member-info">
           <h4>Zack <q>Danger</q> Brown<small>Co-Founder // Developer</small></h4>
         </div>
-      </li><li class="team-member">
-        <span style="display: none;"></span>
+      </li><li id="dmiller" class="team-member">
         <img src="/assets/img/dmiller.jpg" alt="Drew Miller">
         <div class="team-member-info">
           <h4>Drew Miller<small>Co-Founder // Developer</small></h4>
         </div>
-      </li><li class="team-member">
-        <span style="display: none;"></span>
+      </li><li id="tborres" class="team-member">
         <img src="/assets/img/tborres.jpg" alt="Tony Borres">
         <div class="team-member-info">
           <h4>Tony Borres<small>Developer</small></h4>
         </div>
-      </li><li class="team-member">
-        <span style="display: none;"></span>
+      </li><li id="jpaull" class="team-member">
         <img src="/assets/img/jpaull.jpg" alt="John Paull">
         <div class="team-member-info">
           <h4>John Paull<small>Business Development</small></h4>
         </div>
-      </li><li class="team-member">
-        <span style="display: none;"></span>
+      </li><li id="jridenbaugh" class="team-member">
         <img src="/assets/img/jridenbaugh.jpg" alt="Jeff Ridenbaugh">
         <div class="team-member-info">
           <h4>Jeff Ridenbaugh<small>Developer</small></h4>
