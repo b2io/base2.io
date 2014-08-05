@@ -9,7 +9,6 @@ comments: true
 Web development can be like trying to complete a puzzle that has had its pieces dumped into a box with multiple other puzzles. There are so many puzzle pieces that it can be difficult to even know what picture you should end up with at the end. While every project is it's own puzzle, there are a lot of common pieces out there. Here's a walk-through of how we got some of our favorite pieces (**Angular**, **Rails**, **Vagrant**, and more) to fit together.
 
 <!-- #REST#BEGIN -->
-
 ### What Pieces Do We Have?
 Below is the list of technologies we use in this example. For your reference I'm on a 64 bit version of Windows 7. Be aware that if you're using something else results may vary.
 
@@ -39,54 +38,11 @@ Now let's make a few changes to what was auto-generated for us. `cd my_app` and 
 
 Open your `Gemfile` and update it to include the gems that you'll need. Here's what we used, but you'll want to upgrade to the latest packages for your application.
 
-``` ruby
-source 'https://rubygems.org'
-
-gem 'rails-api', '~> 0.2.1'
-
-gem 'pg', '~> 0.17.1'
-
-gem 'devise', '~> 3.2.4'
-
-group :development do
-  gem 'letter_opener', '~> 1.2.0'
-  gem 'letter_opener_web', '~> 1.1.3'
-  gem 'bullet', '~> 4.8.0'
-  gem 'thin', '~> 1.6.2'
-  gem 'rubocop', require: false
-end
-
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0.beta2'
-  gem 'factory_girl_rails', '~> 4.4.1'
-end
-
-group :test do
-  gem 'shoulda-matchers', '~> 2.5.0'
-end
-```
+<script src="https://gist.github.com/tborres/67ed702ad8cfafaeec05.js?file=Gemfile"></script>
 
 We also need to change our `database.yml` file because we'll be using PostgreSQL rather than SQLite.
 
-``` yaml
-default: &default
-  template: template0
-  adapter: postgresql
-  database: my_app_development
-  pool: 5
-  timeout: 5000
-
-development:
-  <<: *default
-
-test:
-  <<: *default
-  database: my_app_test
-
-production:
-  <<: *default
-  database: my_app_production
-```
+<script src="https://gist.github.com/tborres/67ed702ad8cfafaeec05.js?file=database.yml"></script>
 
 ### Vagrant and Puppet
 Now that our bare-bones Rails-api app is created we’ll setup Vagrant. Vagrant will allow us to provision and run a virtual machine in a consistent way. This will remove the “it worked on my machine” problem that often plagues developers.
@@ -114,13 +70,8 @@ Example: `$ar_databases = ['my_app_dev', 'my_app_test']`
     * Add a call to the module at the bottom of the `default.pp` file with `include yeoman`
 7. Add the angular generator for yeoman by adding the following to the bottom of your `default.pp` file:
 
-   ``` json
-   package { 'generator-angular':
-     ensure => present,
-     provider => 'npm',
-     require => Class["yeoman"],
-   }
-   ```
+<code data-gist-id="67ed702ad8cfafaeec05" data-gist-file="default.pp" data-gist-line="109-113"></code>
+
 8. Navigate to the root of your Rails directory in your console and start vagrant with the `vagrant up` command.
 9. Now access your VM via ssh
 
@@ -160,40 +111,11 @@ If you ran into any errors during the generation you may need to run the bower i
 
 Now adjust your `Gruntfile.js` within the `/angular/` directory so that dist places the build files in the rails `/public/` directory.
 
-``` json
-var appConfig = {
-  app: require('./bower.json').appPath || 'app',
-  dist: '../public'
-};
-```
+<code data-gist-id="67ed702ad8cfafaeec05" data-gist-file="Gruntfile.js" data-gist-line="21-24"></code>
 
 Also add the following to the connect section (replacing the livereload section) so that your files are proxied during development.
 
-``` json
-proxies: [
-  {
-    context: '/api',
-    host: '127.0.0.1',
-    port: 3000
-  }
-],
-livereload: {
-  options: {
-    open: true,
-    middleware: function (connect, options) {
-      return [
-        require('grunt-connect-proxy/lib/utils').proxyRequest,
-        connect.static('.tmp'),
-        connect().use(
-          '/bower_components',
-          connect.static('./bower_components')
-        ),
-        connect.static(appConfig.app)
-      ];
-    }
-  }
-},
-```
+<code data-gist-id="67ed702ad8cfafaeec05" data-gist-file="Gruntfile.js" data-gist-line="76-98"></code>
 
 Build the angular assets with Grunt (from within the `/angular/` directory)!
 
