@@ -6,11 +6,13 @@ author: tborres
 comments: true
 ---
 
-Web development can be like trying to complete a puzzle that has had its pieces dumped into a box with multiple other puzzles. There are so many puzzle pieces that it can be difficult to even know what picture you should end up with at the end. While every project is it's own puzzle, there are a lot of common pieces out there. Here's a walk-through of how we got some of our favorite pieces (**Angular**, **Rails**, **Vagrant**, and more) to fit together.
+Web development can be like trying to complete a puzzle that has had its pieces dumped into a box with multiple other puzzles. There are so many puzzle pieces that it can be difficult to even know what picture you should end up with at the end.
+
+While every project is it's own puzzle, there are a lot of common pieces out there. Here's a walk-through of how we got some of our favorite pieces (**Angular**, **Rails**, **Vagrant**, and more) to fit together.
 
 <!-- #REST#BEGIN -->
 ### What Pieces Do We Have?
-Below is the list of technologies we use in this example. For your reference I'm on a 64 bit version of Windows 7. Be aware that if you're using something else results may vary.
+Below is the list of technologies we use in this example. For your reference I'm on a 64 bit version of Windows 7. Be aware that if you're using something else your results may vary.
 
 * **[RubyGems](http://sourceforge.net/projects/console/files/)** (2.3.0): Ruby's package system.
 * **[Rails-api](https://github.com/rails-api/rails-api)** (0.2.1): A lightweight version of Rails to provide API capabilities without the extra pieces that Rails brings to the table.
@@ -125,7 +127,7 @@ Build the angular assets with Grunt (from within the `/angular/` directory)!
 
 If you see an error dealing with lodash it is likely the result of long file paths. The latest stable version of npm does not support a fix for this. You’ll need to run npm and grunt from your local development machine rather than Vagrant.
 
-### Use Git to frame that puzzle
+### Done! - Frame that puzzle (with Git)
 You've successfully created your bare structure for web development. It may feel like you just put all the pieces of the puzzle together to find that the picture is blank, but at least now you have a canvas to paint a your cat pictures on. Let keep that canvas safe by storing it on Git.
 
 Initialize the git repository from the root Rails directory (this can be done within the console of your local development machine).
