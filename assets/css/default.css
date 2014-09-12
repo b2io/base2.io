@@ -10,6 +10,12 @@ body {
   padding-top: 40px;
 }
 
+/* Typography */
+
+p.lead {
+  margin-bottom: 40px;
+}
+
 /* Forms */
 
 form button[type="submit"] {
