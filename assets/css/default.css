@@ -10,6 +10,17 @@ body {
   padding-top: 40px;
 }
 
+/* Typography */
+
+p.lead {
+  margin-bottom: 40px;
+}
+
+.text-focus {
+  font-size: 18px;
+  line-height: 25px;
+}
+
 /* Forms */
 
 form button[type="submit"] {
@@ -82,7 +93,7 @@ a:hover {
 .section-header {
   text-align: center;
   border: none;
-  margin: 40px 0 20px;
+  margin: 40px 0 40px;
 }
 
 .section-header > h1 {
@@ -156,7 +167,32 @@ a:hover {
   margin-bottom: 0.3125em;
 }
 
-/* Our Team */
+/* Breakout */
+
+.breakout {
+  background: #F7F7F9;
+  padding: 40px 0;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.breakout h2 {
+  color: #606060;
+  margin-top: 0;
+}
+
+/* Logo List */
+
+.logo-list {
+  margin: 0;
+}
+
+.logo-list > .logo-item {
+  opacity: 0.66;
+  padding: 10px 20px;
+}
+
+/* Team Member List */
 
 ul.team-member-list {
   margin: 40px 0 0;
@@ -180,23 +216,7 @@ ul.team-member-list {
 .team-member img {
   height: auto;
   width: 100%;
-}
-
-.team-member > .flippable {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  padding: 4px;
-}
-
-.team-member .flip-card-front,
-.team-member .flip-card-back {
-  width: 100%;
-  height: 100%;
+  padding: 0 20px;
 }
 
 .team-member-info h4 {
@@ -207,81 +227,77 @@ ul.team-member-list {
   display: block;
 }
 
-/* Flippable */
+/* Bullets */
 
-.flippable {
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
+.bullet-icon {
+  float: left;
+  background: #477DCA;
+  color: #FFFFFF;
+  padding: .85em .5em;
+  border-radius: 50%;
+  width: 3.5em;
+  height: 3.5em;
+  text-align: center;
 }
 
-.flippable:hover .flip-card-x,
-.flippable.hover .flip-card-x {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg);
+.bullet-icon .fa {
+  font-size: 2em;
 }
 
-.flippable,
-.flip-card-front,
-.flip-card-back {
-  width: 180px;
-  height: 180px;
+.bullet-icon-web {
+  background: #1D8281;
 }
 
-.flip-card-x {
-  -webkit-transition: 0.6s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transition: 0.6s;
-  -moz-transform-style: preserve-3d;
-  -o-transition: 0.6s;
-  -o-transform-style: preserve-3d;
-  transition: 0.6s;
-  transition-delay: 2s;
-  transform-style: preserve-3d;
-  position: relative;
+.bullet-icon-mobile {
+  background: #44BF87;
 }
 
-.flip-card-front,
-.flip-card-back {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
+.bullet-icon-design {
+  background: #FBD258;
 }
 
-.flip-card-front {
-  z-index: 2;
+.bullet-icon-define {
+  background: #F29A3F;
 }
 
-.flip-card-back {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
-  transform: rotateY(180deg);
+.bullet-icon-build {
+  background: #1D8281;
+}
+
+.bullet-icon-iterate {
+  background: #44BF87;
+}
+
+.bullet-content {
+  margin-left: 4.9em;
+  margin-bottom: 2em;
+  font-size: 16px;
+}
+
+.bullet h2 {
+  font-size: 1.4em;
+  padding-top: .5em;
+  margin-top: 0;
+  margin-bottom: .583em;
+  display: inline-block;
 }
 
 /* Responsive: Small */
 
 @media (min-width: 768px) {
-  
+
 }
 
 /* Responsive: Medium */
 
 @media (min-width: 992px) {
-  
+
 }
 
 /* Responsive: Large */
 
 @media (min-width: 1200px) {
-  
+
 }
 
 /* Responsive: iPhone 5 */
@@ -290,7 +306,7 @@ ul.team-member-list {
   .section-header > h1 {
     background-image: none;
   }
-  
+
   .banner-inner {
     height: auto;
     padding-top: 5.5em;

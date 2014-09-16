@@ -1,7 +1,7 @@
 name: Base Two
 permalink: /:year/:month/:day/:title/
 markdown: rdiscount
-pygments: true
+highlighter: 'pygments'
 paginate: 3
 
 authors:
