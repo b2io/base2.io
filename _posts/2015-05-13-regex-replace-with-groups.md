@@ -25,16 +25,16 @@ templateUrl: 'Project/DynamicComponentName/DynamicComponentName.html'
 
 In this example the DynamicComponentName is different in every instance.
 
-Rather than manually identify every template line and make the necessary changes I wanted to do a single search and replace and be done with it. Regex felt like the right answer, but how?
+Rather than manually identifing every template line and make the necessary changes I wanted to do a single search and replace and be done with it. Regex felt like the right answer, but how?
 
 ### Regex Groups
 
-Regex, or regular expressions, is a very powerful (read as: "complicated to understand") pattern matching grammar. It provides for much more advanced searching capabilities than a standard text-base search. Luckily Visual Studio provides for searching via Regex (screenshot is of Visual Studio 2013).
+Regex, or regular expressions, is a very powerful (read as: "complicated to use and understand") pattern matching grammar. It provides for more advanced searching capabilities than a standard text-base search. Luckily Visual Studio provides for searching via Regex (screenshot is of Visual Studio 2013).
 
 ![Visual Studio regex search option](http://i.imgur.com/MAzCFjd.jpg)
 
 
-With **Use Regular Expressions** selected in Visual Studio we can take advantage of regex's group capturing via parentheses.
+With **Use Regular Expressions** selected in Visual Studio we can take advantage of regex, including its group capturing via parentheses.
 
 In the **Find what** we can place the following regex query
 
