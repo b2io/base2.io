@@ -48,7 +48,21 @@ Right Key combination    | Result
 `ctrl + end` | move cursor to the end of the document (super-duper right)
 `shift` + key combo | select text between cursor start and end point
 
-#### 6/3: to be announced...
+#### 6/3: Google Docs - Shortcut for everything
+
+Have you ever been working in a Google Doc and wanted to add a numeric list (`ctrl + shift + 7)`, a bulleted list (`ctrl + shift + 8)`, or perhaps center the text (`ctrl + shift + E`)? You likely reached for your mouse and visually scanned the format bar for these features because it's too difficult to remember the individual shortcuts (or there isn't a shortcut at all as in the case of changing the font). Well, you're in luck. There's a single magical shortcut that does it all.
+
+Right Key combination    | Result
+------------------ |-----------
+`alt + /` | search the menu within Google Docs
+
+This simple key combination allows you to search the menu options. So, if you want to change the font to "Courier New" you can hit `alt + /`, type "cour", and hit enter. 
+
+![Google Docs search menu](http://i.imgur.com/myyRI6w.png)
+
+Generally the individual shortcut for each feature is still faster, but a shortcut that you can remember is better than one you cannot. Plus, when you use the `alt + /` key combination it will show you the shortcut combination to the right of the option before you apply it - so you have a way to learn the more granular ones over time. If you'd like to learn all of the shortcut keys available in Google Docs there's a shortcut for that too: `ctrl + /`.
+
+#### 6/4: to be announced...
 
 
 <!-- #REST#END -->
