@@ -52,7 +52,7 @@ Right Key combination    | Result
 
 Have you ever been working in a Google Doc and wanted to add a numeric list (`ctrl + shift + 7)`, a bulleted list (`ctrl + shift + 8)`, or perhaps center the text (`ctrl + shift + E`)? You likely reached for your mouse and visually scanned the format bar for these features because it's too difficult to remember the individual shortcuts (or there isn't a shortcut at all as in the case of changing the font). Well, you're in luck. There's a single magical shortcut that does it all.
 
-Right Key combination    | Result
+Key combination    | Result
 ------------------ |-----------
 `alt + /` | search the menu within Google Docs
 
@@ -62,7 +62,25 @@ This simple key combination allows you to search the menu options. So, if you wa
 
 Generally the individual shortcut for each feature is still faster, but a shortcut that you can remember is better than one you cannot. Plus, when you use the `alt + /` key combination it will show you the shortcut combination to the right of the option before you apply it - so you have a way to learn the more granular ones over time. If you'd like to learn all of the shortcut keys available in Google Docs there's a shortcut for that too: `ctrl + /`.
 
-#### 6/4: to be announced...
+#### 6/4: Super pasting powers
+
+Often times adding `shift` to a keyboard shortcut changes or enhances the shortcut. Most people know that `ctrl+v` will paste whatever was copied to the clipboard, but many applications offer an enhanced paste with `ctrl+shift+v`.
+
+Key combination    | Result
+------------------ |-----------
+`ctrl + shift + v` | Paste without formatting (Google Docs / Microsoft Word), Select from clipboard (Web Storm, Visual Studio)
+
+In Google Docs and Microsoft Word using `ctrl+shift+v` acts as "paste special". This allows you to paste the clipboard contents in the document's format rather than the originally copied format. For example, if you copy bold Comic Sans text from a web page, and then paste into your Arial Google Doc with `ctrl+v`, it will paste in bold Comic Sans (which you clearly don't want because you're not a monster); however, if you were to paste with `ctrl+shift+v` it will paste the text content from the website in the matching Arial font style and size.
+
+In IDEs, such as Web Storm and Visual Studio, `ctrl+shift+v` allows you to paste previously copied text. In Web Storm `ctrl+shift+v` will provide a window to select which of the previously copied texts to paste. 
+
+![WebStorm paste special](http://i.imgur.com/9a65jrl.png)
+
+Visual Studio will progressively paste the next most recently copied item with each `ctrl+shift+v` click (while holding `ctrl+shift`). In both applications `ctrl+v` will paste the most recently copied text.
+
+Copy this post (`ctrl+c`) and give it a try!
+
+#### 6/5: to be announced...
 
 
 <!-- #REST#END -->
