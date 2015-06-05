@@ -80,7 +80,20 @@ Visual Studio will progressively paste the next most recently copied item with e
 
 Copy this post (`ctrl+c`) and give it a try!
 
-#### 6/5: to be announced...
+#### 6/5: Lock it down
+
+Before heading out of the office for lunch (or just going to the bathroom) you should probably lock your computer. Rather than reaching for your mouse and meandering over to the start button, learn this simple shortcut.
+
+Key combination    | Result
+------------------ |-----------
+`win + l` | Lock screen (in Windows)
+
+`win + l` (l for lock) will immediately lock your Windows screen. 
+
+Now you can go to the bathroom with the peace of mind that nobody will replace you <a href="http://www.wikihow.com/Pull-a-Computer-Prank-on-Your-Friends" target="_blank">desktop background</a>.
+
+
+#### 6/6: to be announced...
 
 
 <!-- #REST#END -->
