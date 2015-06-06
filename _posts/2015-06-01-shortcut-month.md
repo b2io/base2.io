@@ -93,7 +93,17 @@ Key combination    | Result
 Now you can go to the bathroom with the peace of mind that nobody will replace you <a href="http://www.wikihow.com/Pull-a-Computer-Prank-on-Your-Friends" target="_blank">desktop background</a>.
 
 
-#### 6/6: to be announced...
+#### 6/6: Show me the Desktop
+
+It's the weekend and you want to see that pretty desktop image of yours rather than all of the work-related applications and windows. Windows 7 has the nifty little feature that allows you to minimize everything and go straight to your desktop by clicking on the very bottom right of the screen, but that approach is for mouse-lovers, who we are not.
+
+Key combination    | Result
+------------------ |-----------
+`win + d` | Show desktop (and minimize all windows) in Windows
+
+`win + d` (d for desktop) will take you straight to your desktop without ever glancing at your mouse. If you want to bring all of your applications back up simply hit `win + d` again.
+
+#### 6/7: to be announced...
 
 
 <!-- #REST#END -->
