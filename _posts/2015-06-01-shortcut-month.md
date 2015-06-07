@@ -103,7 +103,24 @@ Key combination    | Result
 
 `win + d` (d for desktop) will take you straight to your desktop without ever glancing at your mouse. If you want to bring all of your applications back up simply hit `win + d` again.
 
-#### <a name="7"></a> 6/7: to be announced...
+#### <a name="7"></a> 6/7: One-handed Browser Tab Management
+
+At times you may find yourself browsing the web and you think of something different that you want to search for. Many people may click the "add tab" button toward the top of the browser, but that would require touching the mouse and moving it several millimeters up. With just your left hand you can quickly open a new tab and start typing your search.
+
+Key combination    | Result
+------------------ |-----------
+`ctrl + t` | Create new tab 
+`ctrl + w` | Close tab or application (Browsers, Windows Explorer, and many other applications)
+`ctrl + tab` | Switch to next tab to the right 
+`ctrl + shift + tab` | Switch to next tab to the left
+
+`ctrl + t` will open a new tab in most browsers, and will place the focus in the address bar so that you can immediately begin typing your search (at least in Chrome, which is the browser you should be using). When you're done with the tab you can close it with `ctrl + w` (w for close?). 
+
+`ctrl + tab` will allow you to quickly switch to the tab to the right, and adding shift to the key combination will move you to the left thereby reversing it (oh the magic of the shift key).
+
+Now you're able to create, switch, and remove browser tabs all with just your left hand, which frees your right hand to throw your mouse across the room.
+
+#### 6/8: to be announced...
 
 
 <!-- #REST#END -->
