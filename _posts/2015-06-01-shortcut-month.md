@@ -92,7 +92,6 @@ Key combination    | Result
 
 Now you can go to the bathroom with the peace of mind that nobody will replace you <a href="http://www.wikihow.com/Pull-a-Computer-Prank-on-Your-Friends" target="_blank">desktop background</a>.
 
-
 #### <a name="6"></a> 6/6: Show me the Desktop
 
 It's the weekend and you want to see that pretty desktop image of yours rather than all of the work-related applications and windows. Windows 7 has the nifty little feature that allows you to minimize everything and go straight to your desktop by clicking on the very bottom right of the screen, but that approach is for mouse-lovers, who we are not.
@@ -111,16 +110,32 @@ Key combination    | Result
 ------------------ |-----------
 `ctrl + t` | Create new tab 
 `ctrl + w` | Close tab or application (Browsers, Windows Explorer, and many other applications)
+`ctrl + shift + t` | Re-open closed tab
 `ctrl + tab` | Switch to next tab to the right 
 `ctrl + shift + tab` | Switch to next tab to the left
 
 `ctrl + t` will open a new tab in most browsers, and will place the focus in the address bar so that you can immediately begin typing your search (at least in Chrome, which is the browser you should be using). When you're done with the tab you can close it with `ctrl + w` (w for close?). 
 
-`ctrl + tab` will allow you to quickly switch to the tab to the right, and adding shift to the key combination will move you to the left thereby reversing it (oh the magic of the shift key).
+`ctrl + tab` will allow you to quickly switch to the tab to the right. Adding shift to the close or move right shortcuts will reverse their behavior thereby re-opening the closed tab or moving to the tab on the left (oh the magic of the shift key).
 
 Now you're able to create, switch, and remove browser tabs all with just your left hand, which frees your right hand to throw your mouse across the room.
 
-#### 6/8: to be announced...
+#### <a name="8"></a> 6/8: Spreadsheet Column/Row Selection
+
+It's Monday and you're back to work. If you find yourself modifying spreadsheets for even a portion of the day then it's worthwhile learning some common shortcuts. Today we'll go over how to select columns and rows without using the mouse.
+
+![Select column](http://i.imgur.com/x3gocRv.png)
+
+Key combination    | Result
+------------------ |-----------
+`ctrl + space` | Select column (Google Spreadsheet, Microsoft Excel)
+`shift + space` | Select row (Google Spreadsheet, Microsoft Excel)
+
+In both Google Spreadsheets and Microsoft Excel you can use `ctrl + space` to select the column of the active cell (**c**trl for **c**olumn). This is helpful when you want to clear the contents of the column (by clicking `delete`), draw your attention to the column, or act on the column in some other way (we'll go over column insertion and removal in a future post). You can then use `shift` and arrow keys to select more columns.
+
+If rows are more your thing then you can use `shift + space` to select a row (**s**hift for "**s**ooo not a column").
+
+#### <a name="9"></a> 6/9: to be announced...
 
 
 <!-- #REST#END -->
