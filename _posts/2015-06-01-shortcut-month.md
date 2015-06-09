@@ -135,7 +135,31 @@ In both Google Spreadsheets and Microsoft Excel you can use `ctrl + space` to se
 
 If rows are more your thing then you can use `shift + space` to select a row (**s**hift for "**s**ooo not a column").
 
-#### <a name="9"></a> 6/9: to be announced...
+#### <a name="9"></a> 6/9: Spreadsheet Column/Row Insert and Delete
+
+With yesterday's shortcut you now know how to select a column or row in a spreadsheet. Now it's time to learn how to do two of the most popular spreadsheet actions: insertion and deletion.
+
+Sadly this is an area where Microsoft Excel and Google Spreadsheet shortcuts differ. We'll go over Excel shortcuts first.
+
+Excel Key combination    | Result
+------------------ |-----------
+`ctrl + +` | Add column(s) or row(s) above or to the left of the selected column(s) or row(s)
+`ctrl + -` | Remove selected column(s) or row(s)
+
+In Excel you first must select the column(s) or row(s) that you wish to act on. Then you can use `ctrl + +` to add columns or rows or `ctrl + -` to remove columns or rows. When adding columns or rows it inserts the same number of columns or rows that you have selected either left of the selected columns or above the selected rows.
+
+Google Spreadsheet Key combination    | Result
+------------------ |-----------
+`alt + i + c` | Add column(s) to the left of the selected column(s)
+`alt + i + r` | Add row(s) above the selected row(s)
+`alt + e + d` | Remove selected column(s) or row(s)
+
+Since the column and row shortcuts found in Excel are already browser shortcuts used to zoom in and out (note: if you accidentally zoomed in or out you can use `ctrl+0` to return to 100%), Google had to come up with different, less obvious, shortcuts. It is not necessary to select the column or row before using the insertion shortcuts, but by selecting more than one column or row the insertion action will insert the number that is selected. 
+
+The insertion shortcuts are `alt + i + c` for "**i**nsert **c**olumn" and `alt + i + r` for "**i**nsert **r**ow". Column and row deletion is `alt + e + d` for "**e**dit **d**elete".
+
+#### <a name="10"></a> 6/10: Jump to the Address Bar
+Coming soon...
 
 
 <!-- #REST#END -->
