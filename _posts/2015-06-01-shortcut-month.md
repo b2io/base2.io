@@ -173,7 +173,17 @@ When in a browser or Windows folder (Windows Explorer) pressing <kbd>alt</kbd> +
 **Pro tip:** Add a <kbd>?</kbd> at the beginning of you address bar to force a Google search rather than it potentially being treated as a url as is the case when you search for "asp.net".
 
 #### <a name="11"></a> 6/11: Switch Active Windows
-Coming soon...
 
+This one is an oldie and a goodie. Many people already know and use this shortcut without even thinking about it, but for anybody who doesn't already know how to switch between applications this shortcut is a life changer.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>alt</kbd> + <kbd>tab</kbd> | Switch between open applications and windows
+
+If you have multiple applications open you can switch between them with <kbd>alt</kbd> + <kbd>tab</kbd> rather than clicking on the taskbar icons with your mouse. Using this keyboard combination will switch you to the most recently used application. If you press the combination again it will switch you back. If you press <kbd>alt</kbd> + <kbd>tab</kbd> but keep holding down the <kbd>alt</kbd> key you will see a list of the applications to switch between, and while holding <kbd>alt</kbd> it will switch the selected application for each press of the <kbd>tab</kbd> key.
+
+#### <a name="12"></a> 6/12: Back and Forward Navigation
+
+Coming soon...
 
 <!-- #REST#END -->
