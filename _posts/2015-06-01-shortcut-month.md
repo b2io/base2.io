@@ -159,6 +159,20 @@ Since the column and row shortcuts found in Excel are already browser shortcuts 
 The insertion shortcuts are <kbd>alt</kbd> + <kbd>i</kbd> + <kbd>c</kbd> for "**I**nsert **C**olumn" and <kbd>alt</kbd> + <kbd>i</kbd> + <kbd>r</kbd> for "**I**nsert **R**ow". Column and row deletion is <kbd>alt</kbd> + <kbd>e</kbd> + <kbd>d</kbd> for "**E**dit **D**elete".
 
 #### <a name="10"></a> 6/10: Jump to the Address Bar
+
+All too often users shift their mouse to the top of the screen simply to place their cursor in the browser address bar. Cut that bad habit with this simple shortcut.
+
+![Browser address bar](http://i.imgur.com/wC5hjP9.png)
+
+Key combination    | Result
+------------------ |-----------
+<kbd>alt</kbd> + <kbd>d</kbd> | Place cursor in address bar (all browsers and Windows Explorer)
+
+When in a browser or Windows folder (Windows Explorer) pressing <kbd>alt</kbd> + <kbd>d</kbd> will place focus in the address bar, and highlight the contents of the address bar so that you can immediately begin typing. This is also helpful when you want to copy the address of the page you are on via <kbd>ctrl</kbd> + <kbd>c</kbd>. 
+
+**Pro tip:** Add a <kbd>?</kbd> at the beginning of you address bar to force a Google search rather than it potentially being treated as a url as is the case when you search for "asp.net".
+
+#### <a name="11"></a> 6/11: Switch Active Windows
 Coming soon...
 
 
