@@ -184,6 +184,19 @@ If you have multiple applications open you can switch between them with <kbd>alt
 
 #### <a name="12"></a> 6/12: Back and Forward Navigation
 
+When browsing the web you will inevitably need to navigate backward - whether it's to get back to your search results or to return to an embarrassingly <a href="http://api.ning.com/files/OQbVc*b-KB9N8WhlPa*p43ZhR5D2*6BzUXEABZ-BvbE*si9pe31-k6QHTC6RP0wiV1YKvbHXTJCadfhxHgVI9CDC4JZ*vNiK/cutedog1920x1200.jpg" target="_blank">cute picture</a> that you stumbled upon. You're in luck - there's a shortcut for that.
+
+![Browser navigation](http://i.imgur.com/VMZT1KD.png)
+
+Key combination    | Result
+------------------ |-----------
+<kbd>alt</kbd> + <kbd>left-arrow</kbd> | Navigate back in browsers and Windows Explorer
+<kbd>alt</kbd> + <kbd>right-arrow</kbd> | Navigate forward in browsers and Windows Explorer
+
+Using <kbd>alt</kbd> and you're left and right arrow keys you can navigate your browser history like a pro. This also works with Windows Explorer so you can quickly open folders and navigate back all day. Note that <kbd>backspace</kbd> and <kbd>shift</kbd> + <kbd>backspace</kbd> will also navigate backward / forward assuming you're focus isn't in an input field, but the <kbd>alt</kbd> key approach is convenient because it always works.
+
+#### <a name="13"></a> 6/13: Facebook Stream Navigation
+
 Coming soon...
 
 <!-- #REST#END -->
