@@ -197,6 +197,17 @@ Using <kbd>alt</kbd> and you're left and right arrow keys you can navigate your 
 
 #### <a name="13"></a> 6/13: Facebook Stream Navigation
 
+I'm sure you don't use Facebook at work, but now that it's the weekend it's fair game. There's a better way to scroll through your stream than using the mouse or arrow keys.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>j</kbd> | Scroll to next post (Facebook, Google+, various other sites)
+<kbd>k</kbd> | Scroll to previous post (Facebook, Google+, various other sites)
+
+Using the <kbd>j</kbd> key you can scroll down your social stream while sipping on your weekend <a href="https://eytanuliel.files.wordpress.com/2013/05/giant-margarita.jpg" target="_blank">margarita</a>. If you skipped past something interesting click <kbd>k</kbd>. Be careful that you don't have focus in an input field otherwise you're going to have a pretty funny status update (jjjjjkjkjjk).
+
+#### <a name="14"></a> 6/14: Browser Refresh
+
 Coming soon...
 
 <!-- #REST#END -->
