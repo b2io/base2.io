@@ -208,6 +208,19 @@ Using the <kbd>j</kbd> key you can scroll down your social stream while sipping 
 
 #### <a name="14"></a> 6/14: Browser Refresh
 
+Web developers refresh their browser approximately 1337 times a day, but even the average user occasionally needs to refresh. 
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>r</kbd> | Refresh the browser
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>r</kbd> | Refresh the browser ignoring cache (Chrome, Firefox)
+
+<kbd>ctrl</kbd> + <kbd>r</kbd> will refresh the browser as if you clicked the browser refresh button. Chrome and Firefox also provide <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>r</kbd>, which will reload the page and all of the assets rather than relying on cached data. This comes in handy when you're a web developer troubleshooting a problem. 
+
+Note that <kbd>F5</kbd> and <kbd>shift</kbd> + <kbd>F5</kbd> perform the same refresh and refresh ignoring cache actions, but they're a bit more of a finger stretch.
+
+#### <a name="15"></a> 6/15: Quickly Open "My Computer"
+
 Coming soon...
 
 <!-- #REST#END -->
