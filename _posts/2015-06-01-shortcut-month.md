@@ -219,7 +219,24 @@ Key combination    | Result
 
 Note that <kbd>F5</kbd> and <kbd>shift</kbd> + <kbd>F5</kbd> perform the same refresh and refresh ignoring cache actions, but they're a bit more of a finger stretch.
 
-#### <a name="15"></a> 6/15: Quickly Open "My Computer"
+#### <a name="15"></a> 6/15: Folder and File Browsing
+
+The most common (and slowest) way to browse folders and files is to double click on My Computer, and then begin clicking and scrolling folders. Using a few keyboard shortcuts will get you where you want to be in a snap.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>win</kbd> + <kbd>e</kbd> | Opens Windows Explorer (the equivalent of double clicking "My Computer")
+<kbd>win</kbd> + <kbd>r</kbd> | Opens the Run window
+
+If you like starting at "My Computer" (labeled as just "Computer" in Windows 7) then <kbd>win</kbd> + <kbd>e</kbd> is your new best friend. It opens the Computer directory up immediately so that you can begin to navigate the folders. 
+
+![My computer](http://i.imgur.com/johmmCX.png)
+
+Folders can be navigated quickly by arrowing down/up to the folder you wish to open and then clicking <kbd>enter</kbd>. If you're staring at a long list of folders then you can jump quickly to the folder you want by beginning to type the name of the folder. If you've opened a folder by accident you can use the <a href="#12">navigate back shortcut</a> that we learned previously (<kbd>alt</kbd> + <kbd>left-arrow</kbd>). When you're done navigating you can close the folder with <kbd>ctrl</kbd> + <kbd>w</kbd> as we learned in <a href="#7">One-handed Browser Tab Management</a>.
+
+If you prefer to start at a different folder than Computer you can use the run command <kbd>win</kbd> + <kbd>r</kbd> and then type the folder you want to jump to (such as c:/windows), and the click <kbd>enter</kbd>.
+
+#### <a name="16"></a> 6/16: Rename Folder or File
 
 Coming soon...
 
