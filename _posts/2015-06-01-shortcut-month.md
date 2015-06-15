@@ -238,6 +238,16 @@ If you prefer to start at a different folder than Computer you can use the run c
 
 #### <a name="16"></a> 6/16: Rename Folder or File
 
+Yesterday you learned how to navigate folders and files without a mouse, but if you wanted to rename one of those folders or files you would still need to right click with your mouse. No more! Today we learn the simple shortcut that allows for renaming.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>F2</kbd> | Rename file in Windows Explorer, edit cell in Microsoft Excel
+
+Yes, the function keys in the great north of your keyboard do have a purpose. When browsing files and folders clicking <kbd>F2</kbd> will put the selected folder or file in rename mode with the full name already selected. Therefore if you want to fully rename the folder or file you can just start typing. If, instead, you only wanted to modify the name then after hitting <kbd>F2</kbd> hit <kbd>arrow-right</kbd> to remove the highlight.
+
+#### <a name="17"></a> 6/17: New Browser Window
+
 Coming soon...
 
 <!-- #REST#END -->
