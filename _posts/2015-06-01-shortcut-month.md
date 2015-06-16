@@ -263,6 +263,20 @@ If you're feeling a little sneakier you open a new Icognito window in Chrome via
 
 #### <a name="18"></a> 6/18: Find What You're Looking For
 
+When you're looking for a specific term on a web page or document the application's search functionality can be a savior, but ironically the search functionality can be difficult to find. Stop searching for the search so that you can begin searching with these shortcuts.
+
+![My computer](http://i.imgur.com/gTzjt7w.png)
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>f</kbd> | Opens find in most applications and Windows Explorer
+<kbd>F3</kbd> | Find next in most applications
+<kbd>shift</kbd> + <kbd>F3</kbd> | Find previous in most applications
+
+Next time there is a term you want to search for simply press <kbd>ctrl</kbd> + <kbd>f</kbd> to be placed in the application's search form. You can then generally begin typing your search (you may need to hit enter to submit it). If there are multiple results you can go to the next result with <kbd>F3</kbd>, and if you accidentally pass what you were looking for you can search backward with <kbd>shift</kbd> + <kbd>F3</kbd>.
+
+#### <a name="19"></a> 6/19: Start with the Win Key
+
 Coming soon...
 
 <!-- #REST#END -->
