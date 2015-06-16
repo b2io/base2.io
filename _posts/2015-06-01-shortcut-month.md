@@ -248,6 +248,21 @@ Yes, the function keys in the great north of your keyboard do have a purpose. Wh
 
 #### <a name="17"></a> 6/17: New Browser Window
 
+Occassionally you want a new browser window rather than a new tab - especially if you plan to split screen or you are using multiple monitors. Before you drag that new tab out of the window learn this shortcut.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>n</kbd> | Open new window (Browsers, Windows Explorer, varios applications)
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>n</kbd> | Open new icognito window (Chrome)
+
+Use <kbd>ctrl</kbd> + <kbd>n</kbd> to open a new window (**n** for **N**ew window). This shortcut works similarly in various other applications. For instance, <kbd>ctrl</kbd> + <kbd>n</kbd> will create a new document in Word and a new tab in <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a>.
+
+![Chrome incognito](http://i.imgur.com/AI7u4Ek.png)
+
+If you're feeling a little sneakier you open a new Icognito window in Chrome via <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>n</kbd>. Icognito mode allows your to browse without storing history, cookies, etc. This is helpful if you're doing web development or if you're buying your significant other a surprise gift.
+
+#### <a name="18"></a> 6/18: Find What You're Looking For
+
 Coming soon...
 
 <!-- #REST#END -->
