@@ -248,7 +248,7 @@ Yes, the function keys in the great north of your keyboard do have a purpose. Wh
 
 #### <a name="17"></a> 6/17: New Browser Window
 
-Occassionally you want a new browser window rather than a new tab - especially if you plan to split screen or you are using multiple monitors. Before you drag that new tab out of the window learn this shortcut.
+Occasionally you want a new browser window rather than a new tab - especially if you plan to split screen or you are using multiple monitors. Before you drag that new tab out of the window learn this shortcut.
 
 Key combination    | Result
 ------------------ |-----------
