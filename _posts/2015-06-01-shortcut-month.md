@@ -22,7 +22,7 @@ Key combination    | Result
 <kbd>win</kbd> + <kbd>left-arrow</kbd> | Split left
 <kbd>win</kbd> + <kbd>right-arrow</kbd>| Split right
 <kbd>win</kbd> + <kbd>up-arrow</kbd>   | Maximize
-<kbd>win</kbd> + <kbd>up-down</kbd>    | Minimize
+<kbd>win</kbd> + <kbd>down-arrow</kbd> | Minimize
 
 Also, if you have multiple monitors, you can move the window from monitor to monitor by continuing to click the left or right arrow key while holding down the Windows key.
 
@@ -276,6 +276,24 @@ Key combination    | Result
 Next time there is a term you want to search for simply press <kbd>ctrl</kbd> + <kbd>f</kbd> to be placed in the application's search form. You can then generally begin typing your search (you may need to hit enter to submit it). If there are multiple results you can go to the next result with <kbd>F3</kbd>, and if you accidentally pass what you were looking for you can search backward with <kbd>shift</kbd> + <kbd>F3</kbd>.
 
 #### <a name="19"></a> 6/19: Start with the Win Key
+
+The Windows 7 Start menu is fairly useful, but most people don't know the shortcuts to take full advantage of it.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>win</kbd> | Opens the start menu
+<kbd>win</kbd> and then <kbd>up-arrow</kbd> | Move selection up to "All Programs"
+<kbd>win</kbd> and then <kbd>down-arrow</kbd> | Move selection to the top item
+<kbd>win</kbd> and then <kbd>tab</kbd> | Move selection to next section (right column, shutdown, left column)
+<kbd>win</kbd> and then type | Search applications and files
+
+Pressing the <kbd>win</kbd> key will open the Start menu. From there you can immediately start typing to search for and open applications. For instance, if you want to open Google Chrome you can generally hit <kbd>win</kbd>, type "ch", and hit <kbd>enter</kbd> (you may need to type more than just "ch" depending on your installed applications and how recently you've opened Chrome in this manner).
+
+Once the Start menu is open you can also use the arrow keys, <kbd>tab</kbd>, and <kbd>enter</kbd> to navigate. The arrow keys will move up and down the current column, <kbd>tab</kbd> will move you between the sections (right column, shutdown, left column), and <kbd>enter</kbd> will open the currently selected item.
+
+So hit <kbd>win</kbd> and give it a try!
+
+#### <a name="20"></a> 6/20: Create New Folder
 
 Coming soon...
 
