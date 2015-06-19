@@ -316,6 +316,22 @@ Key combination    | Result
 
 #### <a name="21"></a> 6/21: Undo / Redo
 
+Today is Father's Day so we'll keep this one short and sweet. We're all prone to make mistakes (especially fathers suffering from sleep deprivation). That's why it's worth mastering the art of undo and redo.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>z</kbd> | Undo
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>z</kbd> | Redo
+<kbd>ctrl</kbd> + <kbd>y</kbd> | Redo (additional shortcut option)
+
+If you make a mistake in a word document, browser field, Windows Explorer, or almost any other application <kbd>ctrl</kbd> + <kbd>z</kbd> will reverse the mistake. Think **Z** for <a href="http://s.emuparadise.org/fup/up/95763-Zorro_(1995)_(1995)(Capstone_Software)-1.jpg" target="_blank">**Z**orro</a> cutting through your mistake. Most applications keep a list of changes so that you can undo multiple times. 
+
+If after an undo you realize that the change was valid and you want to undo the undo (aka redo) use the power of the <kbd>shift</kbd> key to reverse the shortcut (<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>z</kbd>). 
+
+You can also access the redo functionality with <kbd>ctrl</kbd> + <kbd>y</kbd> as in wh**Y** does this shortcut exist?
+
+#### <a name="22"></a> 6/22: Print Screen and Window Capture
+
 Coming soon...
 
 <!-- #REST#END -->
