@@ -293,7 +293,28 @@ Once the Start menu is open you can also use the arrow keys, <kbd>tab</kbd>, and
 
 So hit <kbd>win</kbd> and give it a try!
 
-#### <a name="20"></a> 6/20: Create New Folder
+#### <a name="20"></a> 6/20: Create New Folder and More
+
+If you organizing a lot of files, such as vacation images, you may find the need to create one or more folders. Use this simple shortcut that you've already seen before instead of using the mouse's right-click context menu.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>n</kbd> | Create new folder (Windows Explorer)
+
+Like many shortcuts, <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>n</kbd> acts differently depending on where it is used. We learned in the <a href="#17">New Browser Window</a> post that it opens a new Incognito window in Google Chrome. When used in Windows Explorer, <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>n</kbd> creates a new folder with the name highlighted so that you can immediately begin typing to rename the folder. With this shortcut you can quickly create multiple folders without ever lifting your hands off of the keyboard.
+
+Also remember that many other shortcuts that you likely are familiar with work within Windows Explorer.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>a</kbd> | Select all file(s) and folder(s)
+<kbd>ctrl</kbd> + <kbd>c</kbd> | Copy selected file(s) and folder(s)
+<kbd>ctrl</kbd> + <kbd>x</kbd> | Cut selected file(s) and folder(s)
+<kbd>ctrl</kbd> + <kbd>v</kbd> | Paste copied or cut file(s) and folder(s)
+<kbd>ctrl</kbd> + <kbd>z</kbd> | Undo (delete, paste, rename, etc.)
+<kbd>delete</kbd> | Delete selected file(s) or folder(s)
+
+#### <a name="21"></a> 6/21: Undo / Redo
 
 Coming soon...
 
