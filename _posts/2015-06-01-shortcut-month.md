@@ -336,10 +336,10 @@ Occasionally you want to take a screenshot so that you can share what you're loo
 
 Key combination    | Result
 ------------------ |-----------
-<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>print screen</kbd> | Capture full screen onto clipboard
-<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>alt</kbd> + <kbd>print screen</kbd> | Capture selected window onto clipboard
+<kbd>print screen</kbd> | Capture full screen onto clipboard
+<kbd>alt</kbd> + <kbd>print screen</kbd> | Capture selected window onto clipboard
 
-Pressing <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>print screen</kbd> will seem like it didn't do anything, but it tells Windows to take a screenshot of the full screen and add it to your clipboard. Once added to your clipboard you can use <kbd>ctrl</kbd> + <kbd>v</kbd> to paste it into an email, word document, or any other application that supports images. Just want to capture the current window rather than the full screen? Add <kbd>alt</kbd> to the mix.
+Pressing <kbd>print screen</kbd> will seem like it didn't do anything, but it tells Windows to take a screenshot of the full screen and add it to your clipboard. Once added to your clipboard you can use <kbd>ctrl</kbd> + <kbd>v</kbd> to paste it into an email, word document, or any other application that supports images. Just want to capture the current window rather than the full screen? Add <kbd>alt</kbd> to the mix.
 
 **Tip:** If you'd like to capture something smaller than the active window you can use Windows 7's "Snipping Tool". Open it using the Start Menu shortcuts you learned in [Start with the Win Key](#19).
 
