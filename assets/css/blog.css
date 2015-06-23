@@ -31,6 +31,10 @@ p, ul, ol, table, pre, dl {
   margin:0 0 20px;
 }
 
+ol {
+  margin-left: 50px;
+}
+
 ul li:not(:first-child){
   margin-top: 6px;
 }

@@ -345,6 +345,31 @@ Pressing <kbd>print screen</kbd> will seem like it didn't do anything, but it te
 
 #### <a name="23"></a> 6/23: Gmail Shortcuts
 
+Gmail has a wealth of shortcuts, but you have to opt-in to use them. We'll review some of the most useful shortcuts to coax you into opting-in.
+
+With Gmail shortcuts turned on the following shortcuts (and <a href="http://static.googleusercontent.com/media/www.google.com/en/us/support/enterprise/static/gapps/learningcenter/Gmail-Keyboard-shortcuts.pdf" target="_blank">many more</a>) are now available to you:
+
+Key combination    | Result
+------------------ |-----------
+<kbd>up-arrow</kbd> / <kbd>down-arrow</kbd> | Move the focus up / down the inbox list
+<kbd>c</kbd>                                | Compose new email
+<kbd>x</kbd>                                | Check / uncheck the focused inbox item
+<kbd>enter</kbd>                            | Open the focused inbox item
+<kbd>l</kbd>                                | Label the opened or checked email(s)
+<kbd>e</kbd>                                | Archive the opened or checked email(s)
+<kbd>#</kbd>                                | Delete the opened or checked email(s)
+<kbd>ctrl</kbd> + <kbd>k</kbd>              | Insert link
+<kbd>?</kbd>                                | Show all shortcuts
+
+To opt-in to Gmail shortcuts:
+
+1. Open the desktop version of Gmail (on your computer not a mobile device).
+2. Click the gear icon in the upper right corner, and select **Settings**.
+3. Within the **Keyboard shortcuts** section select **Keyboard shortcuts on**.
+4. Click **Save Changes** at the bottom of the screen.
+
+#### <a name="24"></a> 6/24: Submit Post When Enter Doesn't Work
+
 Coming soon...
 
 <!-- #REST#END -->
