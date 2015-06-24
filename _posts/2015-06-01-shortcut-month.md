@@ -370,6 +370,21 @@ To opt-in to Gmail shortcuts:
 
 #### <a name="24"></a> 6/24: Submit Post When Enter Doesn't Work
 
+On many webpages, such as Facebook, pressing <kbd>enter</kbd> will add a newline rather than submit your post. This is helpful when you're typing up your status, but how can you submit that status for the world to see without condescending to use the mouse to click the Post button?
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>enter</kbd> | Submit / send post (Facebook, Gmail)
+<kbd>alt</kbd> + <kbd>enter</kbd> | Newline (Excel, Google Spreadsheet)
+
+Clicking <kbd>ctrl</kbd> + <kbd>enter</kbd> when typing a Facebook post submits that post. It's like telling Facebook "<a href="https://www.youtube.com/watch?v=mI5ijh15OYg&feature=youtu.be&t=17s" target="_blank">This is my final answer</a>". This shortcut also works in Gmail to send an email that you are composing.
+
+![Facebook post](http://i.imgur.com/YG4uNGU.png)
+
+On the flipside, if you're in a field that uses the <kbd>enter</kbd> key to submit the entry (such as Excel cells), you can generally use <kbd>alt</kbd> + <kbd>enter</kbd> to create a newline.
+
+#### <a name="25"></a> 6/25: Jump to Webpage Search Box
+
 Coming soon...
 
 <!-- #REST#END -->
