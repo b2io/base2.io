@@ -415,6 +415,20 @@ Learning these shortcuts will help you create bulleted lists both in Gmail and G
 
 #### <a name="27"></a> 6/27: Browser Bookmarks
 
+Want to add the current website as a bookmark? There's a shortcut to make that bookmark star turn yellow.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>d</kbd> | Add current page to bookmarks (Chrome, Firefox, IE)
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>b</kbd> | Toggle bookmark bar open/close (Chrome, Firefox, IE)
+
+To bookmark the current page press <kbd>ctrl</kbd> + <kbd>d</kbd> (try it now!). Think **D** as in "**D**oubt I'll remember this website if I don't bookmark it".
+
+If you'd like to see your bookmark bar (or hide it) <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>b</kbd> is the way to do it.
+
+#### <a name="28"></a> 6/28: Slack Channel Selector
+
 Coming soon...
+
 
 <!-- #REST#END -->
