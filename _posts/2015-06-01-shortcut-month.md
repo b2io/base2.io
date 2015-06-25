@@ -370,7 +370,7 @@ To opt-in to Gmail shortcuts:
 
 #### <a name="24"></a> 6/24: Submit Post When Enter Doesn't Work
 
-On many webpages, such as Facebook, pressing <kbd>enter</kbd> will add a newline rather than submit your post. This is helpful when you're typing up your status, but how can you submit that status for the world to see without condescending to use the mouse to click the Post button?
+On many websites, such as Facebook, pressing <kbd>enter</kbd> will add a newline rather than submit your post. This is helpful when you're typing up your status, but how can you submit that status for the world to see without condescending to use the mouse to click the Post button?
 
 Key combination    | Result
 ------------------ |-----------
@@ -383,9 +383,9 @@ Clicking <kbd>ctrl</kbd> + <kbd>enter</kbd> when typing a Facebook post submits 
 
 On the flipside, if you're in a field that uses the <kbd>enter</kbd> key to submit the entry (such as Excel cells), you can generally use <kbd>alt</kbd> + <kbd>enter</kbd> to create a newline.
 
-#### <a name="25"></a> 6/25: Jump to Webpage Search Box
+#### <a name="25"></a> 6/25: Jump to Website Search Box
 
-Have you ever wondered if there is a shortcut that immediately places your cursor in a webpage's search box? Probably not, but after learning this shortcut you'll never risk wondering.
+Have you ever wondered if there is a shortcut that immediately places your cursor in a website's search box? Probably not, but after learning this shortcut you'll never risk wondering.
 
 ![Twitter search](http://i.imgur.com/xUhbXtO.png)
 
