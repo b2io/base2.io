@@ -385,6 +385,18 @@ On the flipside, if you're in a field that uses the <kbd>enter</kbd> key to subm
 
 #### <a name="25"></a> 6/25: Jump to Webpage Search Box
 
+Have you ever wondered if there is a shortcut that immediately places your cursor in a webpage's search box? Probably not, but after learning this shortcut you'll never risk wondering.
+
+![Twitter search](http://i.imgur.com/xUhbXtO.png)
+
+Key combination    | Result
+------------------ |-----------
+<kbd>/</kbd> | Place cursor in search box (Gmail, Facebook, Twitter, Google+, etc.)
+
+When you are within Gmail, Facebook, Twitter, Google+, and many other websites pressing the <kbd>/</kbd> (front slash) key will place your cursor in the search box so that you can search mouse-free. Since the front slash shares the key with the <kbd>?</kbd> you can remember this shortcut by thinking, "How can I find what I'm looking for **?**".
+
+#### <a name="26"></a> 6/26: Gmail / Google Docs Bullets
+
 Coming soon...
 
 <!-- #REST#END -->
