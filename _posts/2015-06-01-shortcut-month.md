@@ -395,7 +395,25 @@ Key combination    | Result
 
 When you are within Gmail, Facebook, Twitter, Google+, and many other websites pressing the <kbd>/</kbd> (front slash) key will place your cursor in the search box so that you can search mouse-free. Since the front slash shares the key with the <kbd>?</kbd> you can remember this shortcut by thinking, "How can I find what I'm looking for **?**".
 
-#### <a name="26"></a> 6/26: Gmail / Google Docs Bullets
+#### <a name="26"></a> 6/26: Gmail Bullets and Indention
+
+Numeric and bulleted lists are a clean and concise way to communicate a list of items, but Gmail hides the options within the formatting bar. Learn these shortcuts to be a top lister.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>7</kbd> | Add numeric list
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>8</kbd> | Add bulleted list
+<kbd>ctrl</kbd> + <kbd>]</kbd> | Indent line or selection
+<kbd>ctrl</kbd> + <kbd>[</kbd> | Unindent line or selection
+<kbd>shift</kbd> + <kbd>enter</kbd> | Add new line without bullet
+
+![Gmail bulleting](http://i.imgur.com/c4KgJfU.png)
+
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>7</kbd> will get you started with a numeric list. If bullets are more your thing than swap the <kbd>7</kbd> for an <kbd>8</kbd>. <kbd>ctrl</kbd> + <kbd>]</kbd> can be used to indent a line, and <kbd>ctrl</kbd> + <kbd>[</kbd> will unident it. Think of the braces as really flat arrows pointing in the direction you want the list to be indented. If you've ever wondered how to add a new line between bullets without adding a new bullet you simply need to add <kbd>shift</kbd> to the <kbd>enter</kbd> for <a href="https://www.youtube.com/watch?v=TkyLnWm1iCs&feature=youtu.be&t=1m38s" target="_blank">more power</a>.
+
+Learning these shortcuts will help you create bulleted lists both in Gmail and Google Docs.
+
+#### <a name="27"></a> 6/27: Browser Bookmarks
 
 Coming soon...
 
