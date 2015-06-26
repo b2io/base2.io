@@ -395,7 +395,7 @@ Key combination    | Result
 
 When you are within Gmail, Facebook, Twitter, Google+, and many other websites pressing the <kbd>/</kbd> (front slash) key will place your cursor in the search box so that you can search mouse-free. Since the front slash shares the key with the <kbd>?</kbd> you can remember this shortcut by thinking, "How can I find what I'm looking for **?**".
 
-#### <a name="26"></a> 6/26: Gmail Bullets and Indention
+#### <a name="26"></a> 6/26: Gmail Bullets and Indentation
 
 Numeric and bulleted lists are a clean and concise way to communicate a list of items, but Gmail hides the options within the formatting bar. Learn these shortcuts to be a top lister.
 
