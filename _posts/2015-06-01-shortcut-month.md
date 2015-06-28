@@ -428,7 +428,18 @@ If you'd like to see your bookmark bar (or hide it) <kbd>ctrl</kbd> + <kbd>shift
 
 #### <a name="28"></a> 6/28: Slack Channel Selector
 
-Coming soon...
+We use <a href="https://slack.com/" target="_blank">Slack</a> for our company's internal communications. It's what you would get if AIM and IRC had a much cuter baby. It provides multiple channels (like chat rooms) to have conversations, but having to click on the channel you want to view is silly when there is a shortcut for that.
 
+![Slack logo](http://i.imgur.com/7PpM4MT.jpg =300x)
+
+Key combination    | Result
+------------------ |-----------
+<kbd>ctrl</kbd> + <kbd>k</kbd> | Opens channel selection window in Slack
+
+With <kbd>ctrl</kbd> + <kbd>k</kbd> you can jump between Slack conversations without lifting your fingers off of the keyboard.
+
+#### <a name="29"></a> 6/29: Chrome Dev Tools
+
+Coming soon...
 
 <!-- #REST#END -->
