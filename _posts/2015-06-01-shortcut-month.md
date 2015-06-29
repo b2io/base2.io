@@ -440,6 +440,25 @@ With <kbd>ctrl</kbd> + <kbd>k</kbd> you can jump between Slack conversations wit
 
 #### <a name="29"></a> 6/29: Chrome Dev Tools
 
+The Chrome Dev Tools is an indispensable tool for web developers, but even non-developers can use it to get a better understanding of what may be going wrong with a web page that they are viewing. Here is a list of shortcuts that I use on a daily basis.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>F12</kbd>  | Open Chrome Dev Tools (to last used tab)
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>j</kbd> | Open Chrome Dev Tools (to Console tab)
+<kbd>esc</kbd> | Toggle Console open / closed
+<kbd>ctrl</kbd> + <kbd>o</kbd> | Navigate to source file
+<kbd>ctrl</kbd> + <kbd>g</kbd> | Go to line number
+<kbd>ctrl</kbd> + <kbd>b</kbd> | Add breakpoint (when in source file)
+<kbd>F8</kbd>  | Resume from breakpoint while debugging
+<kbd>F10</kbd>  | Step over next function while debugging
+<kbd>F11</kbd>  | Step into next function while debugging
+<kbd>ctrl</kbd> + <kbd>l</kbd> | Clear console
+
+The average user may only care to know how to open the Chrome Dev Tools (<kbd>F12</kbd>), which is great, but if you're a web developer you should commit to memorizing all of these shortcuts to make your working life a little bit easier.
+
+#### <a name="30"></a> 6/30: A Shortcut for Shortcuts
+
 Coming soon...
 
 <!-- #REST#END -->
