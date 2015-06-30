@@ -459,6 +459,129 @@ The average user may only care to know how to open the Chrome Dev Tools (<kbd>F1
 
 #### <a name="30"></a> 6/30: A Shortcut for Shortcuts
 
-Coming soon...
+We've covered a lot of shortcuts this month, but there are plenty of others out there. Perhaps one of the best shortcuts to learn is one that tells you what other shortcuts are available.
+
+Key combination    | Result
+------------------ |-----------
+<kbd>?</kbd> | Lists the available shortcuts for many website applications (Gmail, Facebook, Twitter, Google+, etc.)
+
+Many of the websites that you use every day provide a list of supported shortcuts when you press the <kbd>?</kbd> key (outside of an input box). This single shortcut can make you a shortcut expert in Gmail, Facebook, Twitter, Google+, and many other websites. 
+
+#### Conclusion
+
+Over these past 30 days we've discussed many keyboard shortcuts. You may had already known some, but hopefully you found many new and helpful. If so, then please bookmark this blog (<kbd>ctrl</kbd> + <kbd>d</kbd>), and share it with others!
+
+##### Share These Shortcuts by Using These Shortcuts
+
+1. <kbd>alt</kbd> + <kbd>d</kbd> to jump to the address bar
+2. <kbd>ctrl</kbd> + <kbd>c</kbd> to copy the address
+3. <kbd>ctrl</kbd> + <kbd>t</kbd> to create a new tab
+4. type: facebook.com <kbd>enter</kbd> to navigate to Facebook
+5. <kbd>p</kbd> to post a new status
+6. Type a flattering description of how helpful this was
+7. <kbd>ctrl</kbd> + <kbd>v</kbd> to paste the address
+8. <kbd>enter</kbd> to share your new-found shortcut knowledge
+
+##### Bonus Shortcut (now with more mouse)
+
+When browsing the web you can open a link in a new tab by holding <kbd>ctrl</kbd> while clicking the link with your mouse (yes, even I use the mouse occasionally).
+
+##### Solidified Shortcut Sheet
+
+Key combination    | Result
+------------------ |-----------
+<kbd>win</kbd> + <kbd>left-arrow</kbd> | Split left
+<kbd>win</kbd> + <kbd>right-arrow</kbd>| Split right
+<kbd>win</kbd> + <kbd>up-arrow</kbd>   | Maximize
+<kbd>win</kbd> + <kbd>down-arrow</kbd> | Minimize
+<kbd>left-arrow</kbd> | move cursor left
+<kbd>ctrl</kbd> + <kbd>left-arrow</kbd> | move cursor left to the beginning of the word
+<kbd>home</kbd> | move cursor left to the beginning of the line
+<kbd>ctrl</kbd> + <kbd>home</kbd> | move cursor to the beginning of the document (super-duper left)
+<kbd>shift</kbd> + key combo | select text between cursor start and end point
+<kbd>right-arrow</kbd> | move cursor right
+<kbd>ctrl</kbd> + <kbd>right-arrow</kbd> | move cursor right to the end of the word
+<kbd>end</kbd> | move cursor right to the end of the line
+<kbd>ctrl</kbd> + <kbd>end</kbd> | move cursor to the end of the document (super-duper right)
+<kbd>shift</kbd> + key combo | select text between cursor start and end point
+<kbd>alt</kbd> + <kbd>/</kbd> | search the menu within Google Docs
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> | Paste without formatting (Google Docs / Microsoft Word), Select from clipboard (Web Storm, Visual Studio)
+<kbd>win</kbd> + <kbd>l</kbd> | Lock screen (in Windows)
+<kbd>win</kbd> + <kbd>d</kbd> | Show desktop (and minimize all windows) in Windows
+<kbd>ctrl</kbd> + <kbd>t</kbd> | Create new tab 
+<kbd>ctrl</kbd> + <kbd>w</kbd> | Close tab or application (Browsers, Windows Explorer, and many other applications)
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>t</kbd> | Re-open closed tab
+<kbd>ctrl</kbd> + <kbd>tab</kbd> | Switch to next tab to the right 
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>tab</kbd> | Switch to next tab to the left
+<kbd>ctrl</kbd> + <kbd>space</kbd> | Select column (Google Spreadsheet, Microsoft Excel)
+<kbd>shift</kbd> + <kbd>space</kbd> | Select row (Google Spreadsheet, Microsoft Excel)
+<kbd>ctrl</kbd> + <kbd>+</kbd> | Add column(s) or row(s) above or to the left of the selected column(s) or row(s)
+<kbd>ctrl</kbd> + <kbd>-</kbd> | Remove selected column(s) or row(s)
+<kbd>alt</kbd> + <kbd>i</kbd> + <kbd>c</kbd> | Add column(s) to the left of the selected column(s)
+<kbd>alt</kbd> + <kbd>i</kbd> + <kbd>r</kbd> | Add row(s) above the selected row(s)
+<kbd>alt</kbd> + <kbd>e</kbd> + <kbd>d</kbd> | Remove selected column(s) or row(s)
+<kbd>alt</kbd> + <kbd>d</kbd> | Place cursor in address bar (all browsers and Windows Explorer)
+<kbd>alt</kbd> + <kbd>tab</kbd> | Switch between open applications and windows
+<kbd>alt</kbd> + <kbd>left-arrow</kbd> | Navigate back in browsers and Windows Explorer
+<kbd>alt</kbd> + <kbd>right-arrow</kbd> | Navigate forward in browsers and Windows Explorer
+<kbd>j</kbd> | Scroll to next post (Facebook, Google+, various other sites)
+<kbd>k</kbd> | Scroll to previous post (Facebook, Google+, various other sites)
+<kbd>ctrl</kbd> + <kbd>r</kbd> | Refresh the browser
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>r</kbd> | Refresh the browser ignoring cache (Chrome, Firefox)
+<kbd>win</kbd> + <kbd>e</kbd> | Opens Windows Explorer (the equivalent of double clicking "My Computer")
+<kbd>win</kbd> + <kbd>r</kbd> | Opens the Run window
+<kbd>F2</kbd> | Rename file in Windows Explorer, edit cell in Microsoft Excel
+<kbd>ctrl</kbd> + <kbd>n</kbd> | Open new window (Browsers, Windows Explorer, varios applications)
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>n</kbd> | Open new icognito window (Chrome)
+<kbd>ctrl</kbd> + <kbd>f</kbd> | Opens find in most applications and Windows Explorer
+<kbd>F3</kbd> | Find next in most applications
+<kbd>shift</kbd> + <kbd>F3</kbd> | Find previous in most applications
+<kbd>win</kbd> | Opens the start menu
+<kbd>win</kbd> and then <kbd>up-arrow</kbd> | Move selection up to "All Programs"
+<kbd>win</kbd> and then <kbd>down-arrow</kbd> | Move selection to the top item
+<kbd>win</kbd> and then <kbd>tab</kbd> | Move selection to next section (right column, shutdown, left column)
+<kbd>win</kbd> and then type | Search applications and files
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>n</kbd> | Create new folder (Windows Explorer)
+<kbd>ctrl</kbd> + <kbd>a</kbd> | Select all file(s) and folder(s)
+<kbd>ctrl</kbd> + <kbd>c</kbd> | Copy selected file(s) and folder(s)
+<kbd>ctrl</kbd> + <kbd>x</kbd> | Cut selected file(s) and folder(s)
+<kbd>ctrl</kbd> + <kbd>v</kbd> | Paste copied or cut file(s) and folder(s)
+<kbd>ctrl</kbd> + <kbd>z</kbd> | Undo (delete, paste, rename, etc.)
+<kbd>delete</kbd> | Delete selected file(s) or folder(s)
+<kbd>ctrl</kbd> + <kbd>z</kbd> | Undo
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>z</kbd> | Redo
+<kbd>ctrl</kbd> + <kbd>y</kbd> | Redo (additional shortcut option)
+<kbd>print screen</kbd> | Capture full screen onto clipboard
+<kbd>alt</kbd> + <kbd>print screen</kbd> | Capture selected window onto clipboard
+<kbd>up-arrow</kbd> / <kbd>down-arrow</kbd> | Move the focus up / down the inbox list
+<kbd>c</kbd>                                | Compose new email
+<kbd>x</kbd>                                | Check / uncheck the focused inbox item
+<kbd>enter</kbd>                            | Open the focused inbox item
+<kbd>l</kbd>                                | Label the opened or checked email(s)
+<kbd>e</kbd>                                | Archive the opened or checked email(s)
+<kbd>#</kbd>                                | Delete the opened or checked email(s)
+<kbd>ctrl</kbd> + <kbd>k</kbd>              | Insert link
+<kbd>ctrl</kbd> + <kbd>enter</kbd> | Submit / send post (Facebook, Gmail)
+<kbd>alt</kbd> + <kbd>enter</kbd> | Newline (Excel, Google Spreadsheet)
+<kbd>/</kbd> | Place cursor in search box (Gmail, Facebook, Twitter, Google+, etc.)
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>7</kbd> | Add numeric list
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>8</kbd> | Add bulleted list
+<kbd>ctrl</kbd> + <kbd>]</kbd> | Indent line or selection
+<kbd>ctrl</kbd> + <kbd>[</kbd> | Unindent line or selection
+<kbd>shift</kbd> + <kbd>enter</kbd> | Add new line without bullet
+<kbd>ctrl</kbd> + <kbd>d</kbd> | Add current page to bookmarks (Chrome, Firefox, IE)
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>b</kbd> | Toggle bookmark bar open/close (Chrome, Firefox, IE)
+<kbd>ctrl</kbd> + <kbd>k</kbd> | Opens channel selection window in Slack
+<kbd>F12</kbd>  | Open Chrome Dev Tools (to last used tab)
+<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>j</kbd> | Open Chrome Dev Tools (to Console tab)
+<kbd>esc</kbd> | Toggle Console open / closed
+<kbd>ctrl</kbd> + <kbd>o</kbd> | Navigate to source file
+<kbd>ctrl</kbd> + <kbd>g</kbd> | Go to line number
+<kbd>ctrl</kbd> + <kbd>b</kbd> | Add breakpoint (when in source file)
+<kbd>F8</kbd>  | Resume from breakpoint while debugging
+<kbd>F10</kbd>  | Step over next function while debugging
+<kbd>F11</kbd>  | Step into next function while debugging
+<kbd>ctrl</kbd> + <kbd>l</kbd> | Clear console
+<kbd>?</kbd> | Lists the available shortcuts for many website applications (Gmail, Facebook, Twitter, Google+, etc.)
 
 <!-- #REST#END -->
