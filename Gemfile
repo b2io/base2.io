@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'github-pages', '~> 25'
+gem 'github-pages', '~> 40'
 
 require 'rbconfig'
-gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
+gem 'wdm', '>= 0.1.1' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
