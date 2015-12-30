@@ -25,7 +25,7 @@ templateUrl: 'Project/DynamicComponentName/DynamicComponentName.html'
 
 In this example the DynamicComponentName is different in every instance.
 
-Rather than manually identifing every template line and make the necessary changes I wanted to do a single search and replace and be done with it. Regex felt like the right answer, but how?
+Rather than manually identifying every template line and make the necessary changes I wanted to do a single search and replace and be done with it. Regex felt like the right answer, but how?
 
 ### Regex Groups
 
