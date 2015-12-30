@@ -1,12 +1,12 @@
 ---
 layout: post
 title: Getting Started with JSCS and WebStorm
-tags: [code style, javascript, WebStorm]
+tags: [code style, javascript, WebStorm, JetBrains]
 author: jstevens
 comments: true
 ---
 
-[JSCS](http://jscs.info/) is my new favorite javascript tool. It helps keep all the javascript files looking the way I want it (and my team wants it). You can read more details about it at their site, but for the purposes of this blog post I'm going to show you how to get it setup with [WebStorm](https://www.jetbrains.com/webstorm/) or other [Jet Brains](https://www.jetbrains.com/) IDEs.
+[JSCS](http://jscs.info/) is my new favorite javascript tool. It helps keep all the javascript files looking the way I want it (and my team wants it). You can read more details about it at their site, but for the purposes of this blog post I'm going to show you how to get it setup with [WebStorm](https://www.jetbrains.com/webstorm/) or other [JetBrains](https://www.jetbrains.com/) IDEs.
 
 <!-- #REST#BEGIN -->
 ###Installing/Setup JSCS
@@ -43,7 +43,7 @@ Running `gulp lint` will run jscs and show you if there are any issues.
 
 ###WebStorm Settings
 
-Here's the main part of the post, getting WebStorm setup to format and lint our code based on our jscs settings. Most of these steps can be done in Jet Brain's other IDEs. For example, my screenshots are from IntelliJ, but I'll refer to it as WebStorm for the purposes of this post.
+Now here's the main part of the post... Get WebStorm setup to format and lint your code based on the jscs config settings. Most of these steps can be done in JetBrain's other IDEs. For example, my screenshots are from IntelliJ, but I'll refer to it as WebStorm for the purposes of this post.
 
 First let's setup WebStorm's javascript JSCS settings so it'll show us the errors in the editor. Open Settings and go to **Languages & Frameworks > Javascript > Code Quality Tools > JSCS**. Then you'll want to enable the checkbox and set the node interpreter and jscs package location. By default JSCS will look for the default config file in the root of your project. You can leave this selected but optionally if you need to select a config file in another location you can do so by selecting the second option. The Code style preset can be set from this window, but we've basically already done that by creating our .jscsrc file and setting the preset as airbnb there.
 
@@ -71,7 +71,7 @@ You can select to update the scheme you had selected, or create a new scheme. We
 
 ![Import from JSCS config](http://i.imgur.com/gFJWKTW.png)
 
-Now you can close the **Code Style Schemes** dialog. Your javascript code style settings will be as close as possible to your settings in the .jscs config file. Now for the really cool part, the IDE will try to format your javascript based on these setting as you code. You can also take a whole file or section and run **Reformat Code** (my shortcut is Opt+Cmd+L) and it will try to clean up that code based on these settings. This is great and will help format your code, but there are some JSCS things this will not fix. 
+Now you can close the **Code Style Schemes** dialog. Your javascript code style settings will be as close as possible to your settings in the .jscs config file. Now for the really cool part, the IDE will try to format your javascript based on these setting as you code. You can also take a whole file or section and run **Reformat Code** (my shortcut is <kbd>opt</kbd> + <kbd>cmd</kbd> + <kbd>L</kbd>) and it will try to clean up that code based on these settings. This is great and will help format your code, but there are some JSCS things this will not fix. 
 
 JSCS has the ability to fix a lot of those issues though and you can run the command line 
 
@@ -88,7 +88,7 @@ This is a little tricky to get this to popup, but if you click on the red squigg
 
 ###Add JSCS Shortcut
 
-Open Settings and select Keymap. Search for JSCS. Then select the Fix JSCS Problems and push the edit (green pencil) button. I set mine to Opt+Cmd+S which was unused, but feel free to set it to something else that makes sense to you and/or your team.
+Open Settings and select Keymap. Search for JSCS. Then select the Fix JSCS Problems and push the edit (green pencil) button. I set mine to <kbd>opt</kbd> + <kbd>cmd</kbd> + <kbd>S</kbd> which was unused, but feel free to set it to something else that makes sense to you and/or your team.
 
 ![Keymap JSCS Fix shortcut](http://i.imgur.com/DvfLmsi.png)
 
