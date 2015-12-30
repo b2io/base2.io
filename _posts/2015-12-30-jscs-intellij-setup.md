@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Getting Started with JSCS and Web Storm
-tags: [code style, javascript, Web Storm]
+title: Getting Started with JSCS and WebStorm
+tags: [code style, javascript, WebStorm]
 author: jstevens
 comments: true
 ---
 
-[JSCS](http://jscs.info/) is my new favorite javascript tool, it helps keep all the javascripts looking the way I want it (or my team wants it). You can read more detail about it at their site but for the purposes of this blog post I'm going to show you how to get it setup with [Web Storm](https://www.jetbrains.com/webstorm/) or other [jetbrains](https://www.jetbrains.com/) IDEs.
+[JSCS](http://jscs.info/) is my new favorite javascript tool. It helps keep all the javascript files looking the way I want it (and my team wants it). You can read more details about it at their site, but for the purposes of this blog post I'm going to show you how to get it setup with [WebStorm](https://www.jetbrains.com/webstorm/) or other [Jet Brains](https://www.jetbrains.com/) IDEs.
 
 <!-- #REST#BEGIN -->
 ###Installing/Setup JSCS
@@ -41,15 +41,15 @@ gulp.task('lint', function() {
 Running `gulp lint` will run jscs and show you if there are any issues.
 
 
-###Web Storm Settings
+###WebStorm Settings
 
-Here's the main part of the post, getting Web Storm setup to format and lint our code based on our jscs settings. Most of these steps can be done in jetbrains other IDEs, my screen shots for example are from intelliJ, but I'll refer to it as Web Storm for the purposes of this post.
+Here's the main part of the post, getting WebStorm setup to format and lint our code based on our jscs settings. Most of these steps can be done in Jet Brain's other IDEs. For example, my screenshots are from IntelliJ, but I'll refer to it as WebStorm for the purposes of this post.
 
-First let's setup Web Storms javascript JSCS settings so it'll show us the errors in the editor. Open Settings and go to **Languages & Frameworks > Javascript > Code Quality Tools > JSCS**. Then you'll want to enable the checkbox and set the node interpreter and jscs package location. By default JSCS will look for the default config file in the root of your project. You can leave this selected but optionally if you need to select a config file in another location you can do so by selecting the second option. The Code style preset can be set from this window, but we've basically already done that by creating our .jscsrc file and setting the preset as airbnb there.
+First let's setup WebStorm's javascript JSCS settings so it'll show us the errors in the editor. Open Settings and go to **Languages & Frameworks > Javascript > Code Quality Tools > JSCS**. Then you'll want to enable the checkbox and set the node interpreter and jscs package location. By default JSCS will look for the default config file in the root of your project. You can leave this selected but optionally if you need to select a config file in another location you can do so by selecting the second option. The Code style preset can be set from this window, but we've basically already done that by creating our .jscsrc file and setting the preset as airbnb there.
 
 ![JSCS Settings](http://i.imgur.com/k4t5I9M.png)
 
-This should start working once you hit ok and you'll see any format/style issues with your projects javascript files. You can manually clean them up, but I prefer to make my IDE do that work for me, so I found a neat way to import your jscs config to Web Storm's code style settings. Lets set that up now. 
+This should start working once you hit ok and you'll see any format/style issues with your projects javascript files. You can manually clean them up, but I prefer to make my IDE do the work for me. I found a neat way to import your jscs config into WebStorm's code style settings. Lets set that up now. 
 
 Open **Settings** and go to **Editor > Code Style > Javascript**. Then select the **Manage...** button.
 
@@ -63,7 +63,7 @@ This opens yet another window, select **JSCS config file** and click **OK**
 
 ![Scheme Import From](http://i.imgur.com/GVM7N2m.png)
 
-This will open a **Select Path** dialog window, just find your projects root directory and select the .jscsrc file located in the root. Then click **Ok**.
+This will open a **Select Path** dialog window. Just find your project's root directory and select the .jscsrc file located in the root. Then click **OK**.
 
 ![Select Path](http://i.imgur.com/LmacVz7.png)
 
@@ -80,7 +80,7 @@ jscs /my/project/root --fix
 jscs myfilename.js --fix
 ```
 
-Or Web Storm has an option to fix JSCS issues in line via context menu on the problem area. Here's a visual example of what that looks like:
+Or WebStorm has an option to fix JSCS issues in line via context menu on the problem area. Here's a visual example of what that looks like:
 
 ![Fix JSCS context menu](http://i.imgur.com/cOABQHg.png)
 
@@ -92,6 +92,6 @@ Open Settings and select Keymap. Search for JSCS. Then select the Fix JSCS Probl
 
 ![Keymap JSCS Fix shortcut](http://i.imgur.com/DvfLmsi.png)
 
-Now whenever you see JSCS errors, just use the quick key and it'll clean those babies right up!
+Now whenever you see JSCS errors just use the shortcut key and it'll clean those babies right up!
 
 <!-- #REST#END -->
