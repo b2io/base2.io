@@ -21,7 +21,7 @@ Then we add a jscs config file (.jscsrc) to your project root directory. This is
 
 ```
 {
-  "presets": "airbnb"
+  "preset": "airbnb"
 }
 ```
 
