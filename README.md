@@ -1,9 +1,24 @@
-b2io.github.io
+base2.io
 ====================
 
-The Base Two website.
+## Development
 
-Run locally using Jekyll:
-`bundle exec jekyll serve -w` (the -w is for watch so that file changes result in a refresh of the site)
+Assuming you have Ruby installed, run the following commands:
 
-[http://localhost:4000](http://localhost:4000)
+```
+$ bundle install
+$ bundle exec jekyll serve -w
+```
+
+That should make the site available on http://localhost:4000.
+
+## Deployment
+
+Assuming you have [surge setup](https://surge.sh/), run the following commands:
+
+```
+$ jekyll build
+$ surge _site/
+```
+
+Voilà!

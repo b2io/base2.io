@@ -1,5 +1,6 @@
 # Ignore IDE files
 .idea
+.DS_Store
 
 # Ignore Jekyll files
 _site
