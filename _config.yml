@@ -1,8 +1,9 @@
 name: Base Two
 permalink: /:year/:month/:day/:title/
-markdown: rdiscount
-highlighter: 'pygments'
+markdown: kramdown
+highlighter: rouge
 paginate: 3
+gems: [jekyll-paginate]
 
 authors:
   dmiller:
