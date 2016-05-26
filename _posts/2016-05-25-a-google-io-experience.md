@@ -51,6 +51,7 @@ Image credit: [Andrew Cunningham, Ars Technica](http://arstechnica.com/gadgets/2
 
 
 ### The Lines
+
 Yes, [there were long lines](http://thenextweb.com/google/2016/05/19/google-io-2016-look-not-run-large-event/ "Google I/O 2016: A look at how not to run a large event"), and yes, I did miss most of the sessions I’d hoped to see on Wednesday.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The lines for sessions are insane, but I finally made it into one. Excited to hear <a href="https://twitter.com/kaihaley">@kaihaley</a> talk sprints! <a href="https://twitter.com/hashtag/io16?src=hash">#io16</a> <a href="https://t.co/LP5fBftJdd">pic.twitter.com/LP5fBftJdd</a></p>&mdash; Caitlin Steinert (@csteinert) <a href="https://twitter.com/csteinert/status/733054056294277121">May 18, 2016</a></blockquote>
@@ -59,6 +60,7 @@ Yes, [there were long lines](http://thenextweb.com/google/2016/05/19/google-io-2
 I was impressed, however, by the conference’s agility in fixing the issues by the second day. I was able to get into every presentation I wanted to attend for the rest of the conference, and many of Wednesday’s over-popular presentations were repeated on Friday.
 
 ### The Installations
+
 <img src="http://i.imgur.com/G3a1TAD.gif" style="float: right; margin: 0 0 2em 2em;" title="Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016" alt="Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016" />
 In the meantime, there was no shortage of interactive and cool stuff to keep attendees preoccupied. A portion of the Amphitheatre, which appeared to be a restaurant usually, was repurposed to house the [Google Code Labs](https://codelabs.developers.google.com/io2016 "Google Code Labs"), where developers were invited to sit down at workstations, some complete with Nests and other devices, to hack through hands-on exercises. Googlers roamed the area, answering questions. I, for one, am very proud of the web interface I cobbled together using Polymer and the Nest API.
 
@@ -80,6 +82,7 @@ Android Auto on display in a Maserati. No big deal.
 There was even more stuff, but I need to wrap up this blog post eventually, and I haven’t even covered the sessions yet!
 
 ## The Sessions
+
 So what about those sessions that people waited full hours to get into? As expected for a conference of this nature, they were all slick and well-prepared. My focus was mainly on the Web, with things like Polymer and Chrome DevTools. Here are my top favorites.
 
 #### Building for Billions on the Web

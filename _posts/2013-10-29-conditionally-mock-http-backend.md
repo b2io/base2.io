@@ -9,7 +9,7 @@ I recently followed [this awesome blog post](http://blogs.burnsidedigital.com/20
 
 <!-- #REST#BEGIN -->
 
-###Conditionally inject e2e-mocks
+### Conditionally inject e2e-mocks
 
 The Burnside Digital blog post suggests including the following script in your application's index.html.
 
@@ -19,6 +19,6 @@ Karma's end-to-end tests open your application in an iFrame. To conditionally in
 
 <script src="https://gist.github.com/ztbrown/7215241.js"></script>
 
-Now, when developing, you can work with your development server and when testing you can use mocked data. 
+Now, when developing, you can work with your development server and when testing you can use mocked data.
 
 <!-- #REST#END -->

@@ -6,24 +6,24 @@ author: dmiller
 comments: true
 ---
 
-If you're doing database seeding in a rails app through `seeds.rb` you might be interested in this snippet, especially if you're 
+If you're doing database seeding in a rails app through `seeds.rb` you might be interested in this snippet, especially if you're
 using CSV files to help you do it.
 
 <!-- #REST#BEGIN -->
 
-###Mo Rows, Mo Problems
+### Mo Rows, Mo Problems
 
 A couple of our recent projects have had rather large CSV files that need to be seeded. Running a `rake db:seed` command
-takes an agonizing couple of minutes (several of the files have tens of thousands of rows). To help soothe our neurotic impulses 
-to kill the process midway through we decided to have a bit of fun sprucing up the console feedback while the seeding 
+takes an agonizing couple of minutes (several of the files have tens of thousands of rows). To help soothe our neurotic impulses
+to kill the process midway through we decided to have a bit of fun sprucing up the console feedback while the seeding
 is underway.
 
-We started out with a simple `puts "Seeding Models..."`, but that really doesn't tell you anything about how many more models 
+We started out with a simple `puts "Seeding Models..."`, but that really doesn't tell you anything about how many more models
 need to be seeded. We decided to take a page out of the UNIX playbook and give the user a bit more information.
 
-###The UNIX way
+### The UNIX way
 
-There's a nifty utility named `wget` in UNIX that will let you download things given a URL. It gives you a nice visual 
+There's a nifty utility named `wget` in UNIX that will let you download things given a URL. It gives you a nice visual
 representation of the progress in the console using a text-based progress bar that looks like this:
 
     vagrant@lucid64:~$ wget https://www.google.com/images/srpr/logo3w.png
@@ -38,7 +38,7 @@ representation of the progress in the console using a text-based progress bar th
 
     2012-12-01 04:59:29 (958 KB/s) - `logo3w.png' saved [7007/7007]
 
-With a bit of digging, we found the `\r` special character for the `print` method, which allows you to do some UNIX-style magic in 
+With a bit of digging, we found the `\r` special character for the `print` method, which allows you to do some UNIX-style magic in
 updating what you've already printed to the console. The `\r` character will clear the current line of the display in the console.
 
 <script src="https://gist.github.com/4179185.js?file=genre.rb"></script>

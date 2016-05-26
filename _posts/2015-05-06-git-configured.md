@@ -9,6 +9,7 @@ comments: true
 Git configurations are like snowflakes - no two are exactly the same. At least that's what we found to be true at [Base Two](http://base2.io). Each developer had his own ignores, aliases, and other tricks, which worked fine in isolation, but became troublesome when we tried to describe to one another how to interact with Git in the console. To restore sanity we have begun to standardize our Git configurations.
 
 <!-- #REST#BEGIN -->
+
 The standardization of our Git configuration files is part of our larger effort to document our overall [development standards](https://github.com/b2io/development-standards). In addition to configuration files we're outlining our overall Git workflow and commit messaging standards, but I [digress](http://gph.to/1EPa17p).
 
 The two primary divergents in our configurations were aliases and ignore files.

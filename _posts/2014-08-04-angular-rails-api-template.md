@@ -11,7 +11,9 @@ Web development can be like trying to complete a puzzle that has had its pieces 
 While every project is it's own puzzle, there are a lot of common pieces out there. Here's a walk-through of how we got some of our favorite pieces (**Angular**, **Rails**, **Vagrant**, and more) to fit together.
 
 <!-- #REST#BEGIN -->
+
 ### What Pieces Do We Have?
+
 Below is the list of technologies we use in this example. For your reference I'm on a 64 bit version of Windows 7. Be aware that if you're using something else your results may vary.
 
 * **[RubyGems](http://sourceforge.net/projects/console/files/)** (2.3.0): Ruby's package system.
@@ -26,6 +28,7 @@ Below is the list of technologies we use in this example. For your reference I'm
 * **[Bower](http://bower.io/)** (1.3.8): The package manager that comes with Yeoman.
 
 ### Generate the Rails App
+
 There are many ways that we can begin to put this puzzle together. We're going to start by generating the Rails app. For this example we'll use `my_app` as our application's name.
 
 In your terminal (I use [Console2](http://sourceforge.net/projects/console/files/)) navigate to the location you'd like your application's root folder to be placed in. If you don't already have rails-api installed then do that now.
@@ -47,6 +50,7 @@ We also need to change our `database.yml` file because we'll be using PostgreSQL
 <script src="https://gist.github.com/tborres/67ed702ad8cfafaeec05.js?file=database.yml"></script>
 
 ### Vagrant and Puppet
+
 Now that our bare-bones Rails-api app is created we’ll setup Vagrant. Vagrant will allow us to provision and run a virtual machine in a consistent way. This will remove the “it worked on my machine” problem that often plagues developers.
 
 We’ll use the rails-dev-box as our base since it has many of the features we’ll need. You can clone the repository from here: [https://github.com/rails/rails-dev-box](https://github.com/rails/rails-dev-box)
@@ -90,6 +94,7 @@ Update the bundle, and rake the database
 ```
 
 ### Angular!
+
 Now we'll add a basic angular structure to our application.
 
 Create an `/angular/` directory within your rails directory (as a peer to the `/app/` directory).
@@ -128,6 +133,7 @@ Build the angular assets with Grunt (from within the `/angular/` directory)!
 If you see an error dealing with lodash it is likely the result of long file paths. The latest stable version of npm does not support a fix for this. You’ll need to run npm and grunt from your local development machine rather than Vagrant.
 
 ### Done! - Frame that puzzle (with Git)
+
 You've successfully created your bare structure for web development. It may feel like you just put all the pieces of the puzzle together to find that the picture is blank, but at least now you have a canvas to paint a your cat pictures on. Let keep that canvas safe by storing it on Git.
 
 Initialize the git repository from the root Rails directory (this can be done within the console of your local development machine).
@@ -141,6 +147,5 @@ Add the following to the `.gitignore` file:
 ```
 /.vagrant 	#this contains your local vm box info which is not needed by the team
 ```
-
 
 <!-- #REST#END -->

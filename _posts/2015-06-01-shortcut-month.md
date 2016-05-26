@@ -9,6 +9,7 @@ comments: true
 Keyboard shortcuts are a great way to improve your overall efficiency with your computer, but they can be difficult to commit to memory all at once. This month we will suggest a new shortcut each day that we find helpful in our day-to-day lives as front-end web developers. By learning a new shortcut each day you will be well on your way to living a mouse-free life.
 
 <!-- #REST#BEGIN -->
+
 ### Preface
 
 I do much of my day-to-day work on a Windows 7 machine using WebStorm, Visual Studio 2013, and Google Docs. As such, this list of keyboard shortcuts may not be as helpful to users of different platforms and software, though there are generally similar shortcuts available on those systems.
@@ -56,7 +57,7 @@ Key combination    | Result
 ------------------ |-----------
 <kbd>alt</kbd> + <kbd>/</kbd> | search the menu within Google Docs
 
-This simple key combination allows you to search the menu options. So, if you want to change the font to "Courier New" you can hit <kbd>alt</kbd> + <kbd>/</kbd>, type "cour", and hit enter. 
+This simple key combination allows you to search the menu options. So, if you want to change the font to "Courier New" you can hit <kbd>alt</kbd> + <kbd>/</kbd>, type "cour", and hit enter.
 
 ![Google Docs search menu](http://i.imgur.com/myyRI6w.png)
 
@@ -72,7 +73,7 @@ Key combination    | Result
 
 In Google Docs and Microsoft Word using <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> acts as "paste special". This allows you to paste the clipboard contents in the document's format rather than the originally copied format. For example, if you copy bold Comic Sans text from a web page, and then paste into your Arial Google Doc with <kbd>ctrl</kbd> + <kbd>v</kbd>, it will paste in bold Comic Sans (which you clearly don't want because you're not a monster); however, if you were to paste with <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> it will paste the text content from the website in the matching Arial font style and size.
 
-In IDEs, such as Web Storm and Visual Studio, <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> allows you to paste previously copied text. In Web Storm <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> will provide a window to select which of the previously copied texts to paste. 
+In IDEs, such as Web Storm and Visual Studio, <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> allows you to paste previously copied text. In Web Storm <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> will provide a window to select which of the previously copied texts to paste.
 
 ![WebStorm paste special](http://i.imgur.com/9a65jrl.png)
 
@@ -88,7 +89,7 @@ Key combination    | Result
 ------------------ |-----------
 <kbd>win</kbd> + <kbd>l</kbd> | Lock screen (in Windows)
 
-<kbd>win</kbd> + <kbd>l</kbd> (l for lock) will immediately lock your Windows screen. 
+<kbd>win</kbd> + <kbd>l</kbd> (l for lock) will immediately lock your Windows screen.
 
 Now you can go to the bathroom with the peace of mind that nobody will replace you <a href="http://www.wikihow.com/Pull-a-Computer-Prank-on-Your-Friends" target="_blank">desktop background</a>.
 
@@ -108,13 +109,13 @@ At times you may find yourself browsing the web and you think of something diffe
 
 Key combination    | Result
 ------------------ |-----------
-<kbd>ctrl</kbd> + <kbd>t</kbd> | Create new tab 
+<kbd>ctrl</kbd> + <kbd>t</kbd> | Create new tab
 <kbd>ctrl</kbd> + <kbd>w</kbd> | Close tab or application (Browsers, Windows Explorer, and many other applications)
 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>t</kbd> | Re-open closed tab
-<kbd>ctrl</kbd> + <kbd>tab</kbd> | Switch to next tab to the right 
+<kbd>ctrl</kbd> + <kbd>tab</kbd> | Switch to next tab to the right
 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>tab</kbd> | Switch to next tab to the left
 
-<kbd>ctrl</kbd> + <kbd>t</kbd> will open a new tab in most browsers, and will place the focus in the address bar so that you can immediately begin typing your search (at least in Chrome, which is the browser you should be using). When you're done with the tab you can close it with <kbd>ctrl</kbd> + <kbd>w</kbd> (w for close?). 
+<kbd>ctrl</kbd> + <kbd>t</kbd> will open a new tab in most browsers, and will place the focus in the address bar so that you can immediately begin typing your search (at least in Chrome, which is the browser you should be using). When you're done with the tab you can close it with <kbd>ctrl</kbd> + <kbd>w</kbd> (w for close?).
 
 <kbd>ctrl</kbd> + <kbd>tab</kbd> will allow you to quickly switch to the tab to the right. Adding shift to the close or move right shortcuts will reverse their behavior thereby re-opening the closed tab or moving to the tab on the left (oh the magic of the shift key).
 
@@ -154,7 +155,7 @@ Google Spreadsheet Key combination    | Result
 <kbd>alt</kbd> + <kbd>i</kbd> + <kbd>r</kbd> | Add row(s) above the selected row(s)
 <kbd>alt</kbd> + <kbd>e</kbd> + <kbd>d</kbd> | Remove selected column(s) or row(s)
 
-Since the column and row shortcuts found in Excel are already browser shortcuts used to zoom in and out (note: if you accidentally zoomed in or out you can use <kbd>ctrl</kbd> + <kbd>0</kbd> to return to 100%), Google had to come up with different, less obvious, shortcuts. It is not necessary to select the column or row before using the insertion shortcuts, but by selecting more than one column or row the insertion action will insert the number that is selected. 
+Since the column and row shortcuts found in Excel are already browser shortcuts used to zoom in and out (note: if you accidentally zoomed in or out you can use <kbd>ctrl</kbd> + <kbd>0</kbd> to return to 100%), Google had to come up with different, less obvious, shortcuts. It is not necessary to select the column or row before using the insertion shortcuts, but by selecting more than one column or row the insertion action will insert the number that is selected.
 
 The insertion shortcuts are <kbd>alt</kbd> + <kbd>i</kbd> + <kbd>c</kbd> for "**I**nsert **C**olumn" and <kbd>alt</kbd> + <kbd>i</kbd> + <kbd>r</kbd> for "**I**nsert **R**ow". Column and row deletion is <kbd>alt</kbd> + <kbd>e</kbd> + <kbd>d</kbd> for "**E**dit **D**elete".
 
@@ -168,7 +169,7 @@ Key combination    | Result
 ------------------ |-----------
 <kbd>alt</kbd> + <kbd>d</kbd> | Place cursor in address bar (all browsers and Windows Explorer)
 
-When in a browser or Windows folder (Windows Explorer) pressing <kbd>alt</kbd> + <kbd>d</kbd> will place focus in the address bar, and highlight the contents of the address bar so that you can immediately begin typing. This is also helpful when you want to copy the address of the page you are on via <kbd>ctrl</kbd> + <kbd>c</kbd>. 
+When in a browser or Windows folder (Windows Explorer) pressing <kbd>alt</kbd> + <kbd>d</kbd> will place focus in the address bar, and highlight the contents of the address bar so that you can immediately begin typing. This is also helpful when you want to copy the address of the page you are on via <kbd>ctrl</kbd> + <kbd>c</kbd>.
 
 **Pro tip:** Add a <kbd>?</kbd> at the beginning of you address bar to force a Google search rather than it potentially being treated as a url as is the case when you search for "asp.net".
 
@@ -208,14 +209,14 @@ Using the <kbd>j</kbd> key you can scroll down your social stream while sipping 
 
 #### <a name="14"></a> 6/14: Browser Refresh
 
-Web developers refresh their browser approximately 1337 times a day, but even the average user occasionally needs to refresh. 
+Web developers refresh their browser approximately 1337 times a day, but even the average user occasionally needs to refresh.
 
 Key combination    | Result
 ------------------ |-----------
 <kbd>ctrl</kbd> + <kbd>r</kbd> | Refresh the browser
 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>r</kbd> | Refresh the browser ignoring cache (Chrome, Firefox)
 
-<kbd>ctrl</kbd> + <kbd>r</kbd> will refresh the browser as if you clicked the browser refresh button. Chrome and Firefox also provide <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>r</kbd>, which will reload the page and all of the assets rather than relying on cached data. This comes in handy when you're a web developer troubleshooting a problem. 
+<kbd>ctrl</kbd> + <kbd>r</kbd> will refresh the browser as if you clicked the browser refresh button. Chrome and Firefox also provide <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>r</kbd>, which will reload the page and all of the assets rather than relying on cached data. This comes in handy when you're a web developer troubleshooting a problem.
 
 Note that <kbd>F5</kbd> and <kbd>shift</kbd> + <kbd>F5</kbd> perform the same refresh and refresh ignoring cache actions, but they're a bit more of a finger stretch.
 
@@ -228,7 +229,7 @@ Key combination    | Result
 <kbd>win</kbd> + <kbd>e</kbd> | Opens Windows Explorer (the equivalent of double clicking "My Computer")
 <kbd>win</kbd> + <kbd>r</kbd> | Opens the Run window
 
-If you like starting at "My Computer" (labeled as just "Computer" in Windows 7) then <kbd>win</kbd> + <kbd>e</kbd> is your new best friend. It opens the Computer directory up immediately so that you can begin to navigate the folders. 
+If you like starting at "My Computer" (labeled as just "Computer" in Windows 7) then <kbd>win</kbd> + <kbd>e</kbd> is your new best friend. It opens the Computer directory up immediately so that you can begin to navigate the folders.
 
 ![My computer](http://i.imgur.com/johmmCX.png)
 
@@ -324,9 +325,9 @@ Key combination    | Result
 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>z</kbd> | Redo
 <kbd>ctrl</kbd> + <kbd>y</kbd> | Redo (additional shortcut option)
 
-If you make a mistake in a word document, browser field, Windows Explorer, or almost any other application <kbd>ctrl</kbd> + <kbd>z</kbd> will reverse the mistake. Think **Z** for <a href="http://s.emuparadise.org/fup/up/95763-Zorro_(1995)_(1995)(Capstone_Software)-1.jpg" target="_blank">**Z**orro</a> cutting through your mistake. Most applications keep a list of changes so that you can undo multiple times. 
+If you make a mistake in a word document, browser field, Windows Explorer, or almost any other application <kbd>ctrl</kbd> + <kbd>z</kbd> will reverse the mistake. Think **Z** for <a href="http://s.emuparadise.org/fup/up/95763-Zorro_(1995)_(1995)(Capstone_Software)-1.jpg" target="_blank">**Z**orro</a> cutting through your mistake. Most applications keep a list of changes so that you can undo multiple times.
 
-If after an undo you realize that the change was valid and you want to undo the undo (aka redo) use the power of the <kbd>shift</kbd> key to reverse the shortcut (<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>z</kbd>). 
+If after an undo you realize that the change was valid and you want to undo the undo (aka redo) use the power of the <kbd>shift</kbd> key to reverse the shortcut (<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>z</kbd>).
 
 You can also access the redo functionality with <kbd>ctrl</kbd> + <kbd>y</kbd> as in wh**Y** does this shortcut exist?
 
@@ -465,7 +466,7 @@ Key combination    | Result
 ------------------ |-----------
 <kbd>?</kbd> | Lists the available shortcuts for many website applications (Gmail, Facebook, Twitter, Google+, etc.)
 
-Many of the websites that you use every day provide a list of supported shortcuts when you press the <kbd>?</kbd> key (outside of an input box). This single shortcut can make you a shortcut expert in Gmail, Facebook, Twitter, Google+, and many other websites. 
+Many of the websites that you use every day provide a list of supported shortcuts when you press the <kbd>?</kbd> key (outside of an input box). This single shortcut can make you a shortcut expert in Gmail, Facebook, Twitter, Google+, and many other websites.
 
 #### Conclusion
 
@@ -508,10 +509,10 @@ Key combination    | Result
 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> | Paste without formatting (Google Docs / Microsoft Word), Select from clipboard (Web Storm, Visual Studio)
 <kbd>win</kbd> + <kbd>l</kbd> | Lock screen (in Windows)
 <kbd>win</kbd> + <kbd>d</kbd> | Show desktop (and minimize all windows) in Windows
-<kbd>ctrl</kbd> + <kbd>t</kbd> | Create new tab 
+<kbd>ctrl</kbd> + <kbd>t</kbd> | Create new tab
 <kbd>ctrl</kbd> + <kbd>w</kbd> | Close tab or application (Browsers, Windows Explorer, and many other applications)
 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>t</kbd> | Re-open closed tab
-<kbd>ctrl</kbd> + <kbd>tab</kbd> | Switch to next tab to the right 
+<kbd>ctrl</kbd> + <kbd>tab</kbd> | Switch to next tab to the right
 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>tab</kbd> | Switch to next tab to the left
 <kbd>ctrl</kbd> + <kbd>space</kbd> | Select column (Google Spreadsheet, Microsoft Excel)
 <kbd>shift</kbd> + <kbd>space</kbd> | Select row (Google Spreadsheet, Microsoft Excel)

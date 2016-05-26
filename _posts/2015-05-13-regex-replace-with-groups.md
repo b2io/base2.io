@@ -9,6 +9,7 @@ comments: true
 I was recently confronted with a situation that required me to search and replace my code in a way that the left and right of my search needed to be replaced, but the middle needed to remain the same. Could this be done with a single search and replace?
 
 <!-- #REST#BEGIN -->
+
 ### The Problem
 
 For reasons that I do not care to detail here, I found myself needing to replace every instance of my Visual Studio solution where a `template` line matching
@@ -54,7 +55,7 @@ templateUrl: 'Project$1'
 
 The contents of the capture group will be placed in the `$1` slot. If you had more than one capture group then you would simply increment the `$` (`$1`, `$2`, etc) based on the order that the capture groups appeared in the search term.
 
-Now hit **Replace** for each instance and you're good to go. 
+Now hit **Replace** for each instance and you're good to go.
 
 In my situation I really wanted to use **Replace All**, but Visual Studio 2013 seems to have an issue with Replace All using regex. Using Replace All results in Visual Studio stating that it cannot find any matches. [Silly Visual Studio](https://www.youtube.com/watch?v=VDrW7sc52Ck&feature=youtu.be&t=48).
 
