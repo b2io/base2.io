@@ -15,7 +15,8 @@ We've let our blog languish for a long time now -- while talking about the reaso
 
 So far, the experience has been great. We're actually _excited_ about writing new posts now. And hey, we've posted again so that's good... right?
 
-###Further Reading
+### Further Reading
+
 * [Github Pages](http://pages.github.com/) -- First steps to getting a site setup using Jekyll on Github Pages.
 * [Jekyll Usage](https://github.com/mojombo/jekyll/wiki/Usage) -- A good primer on the concepts involved.
 * [YAML Front Matter](https://github.com/mojombo/jekyll/wiki/yaml-front-matter) -- How you associate metatdata with your posts and pages.

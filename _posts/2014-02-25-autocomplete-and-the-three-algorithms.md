@@ -12,7 +12,7 @@ In talking over examples of how the new autocomplete should match, the product o
 
 <!-- #REST#BEGIN -->
 
-###This one is too cold
+### This one is too cold
 
 To give a little more context, this particular application is hosted on Heroku and uses a PostgreSQL database for persistent storage. Given that, we started by seeing what PostgreSQL can do for us. As it turns out, it's got support for Soundex [right out of the box](http://www.postgresql.org/docs/8.3/static/fuzzystrmatch.html).
 
@@ -26,13 +26,13 @@ First things first, you'll need to have the `fuzzystrmatch` module installed on 
 
 Looking those over for our data-set, we aren't getting at all the results we'd want. Time to start looking at other options…
 
-###This one is too hot
+### This one is too hot
 
-A little farther down [that page of PostgreSQL documentation](http://www.postgresql.org/docs/8.3/static/fuzzystrmatch.html) is the Levenshtein distance algorithm. 
+A little farther down [that page of PostgreSQL documentation](http://www.postgresql.org/docs/8.3/static/fuzzystrmatch.html) is the Levenshtein distance algorithm.
 
 > This function calculates the Levenshtein distance between two strings.
 
-That sounds promising, let's give that a try. The Levenshtein function comes packaged in the `fuzzystrmatch` module with Soundex, so no need to go back into the PSQL console, instead we'll start with a query: 
+That sounds promising, let's give that a try. The Levenshtein function comes packaged in the `fuzzystrmatch` module with Soundex, so no need to go back into the PSQL console, instead we'll start with a query:
 
 <script src="https://gist.github.com/9223335.js?file=levenshtein.sql"></script>
 
@@ -40,13 +40,13 @@ It wasn't immediately clear how Levenstein was sorting the results. But further 
 
 Once again, the results from this aren't really what we're looking for, so it's back to the drawing board…
 
-###This one is just right
+### This one is just right
 
 After a broader search, we came upon the `pg_trgm` module that adds [Trigram similarity](http://www.postgresql.org/docs/8.3/static/pgtrgm.html) to PostgreSQL.
 
 > A trigram is a group of three consecutive characters taken from a string. We can measure the similarity of two strings by counting the number of trigrams they share. This simple idea turns out to be very effective for measuring the similarity of words in many natural languages.
 
-That sounds **much** more promising, let's get to the query and see what results we get. Similar to the other two algorithms, we'll have to add the module to PostgreSQL first by running `CREATE EXTENSION pg_trgm;` in the PSQL console. From there, we can hop back to the query interface: 
+That sounds **much** more promising, let's get to the query and see what results we get. Similar to the other two algorithms, we'll have to add the module to PostgreSQL first by running `CREATE EXTENSION pg_trgm;` in the PSQL console. From there, we can hop back to the query interface:
 
 <script src="https://gist.github.com/9223335.js?file=trigram.sql"></script>
 
@@ -54,7 +54,7 @@ We've got results that match up to our use case. A search for "hazienda" matches
 
 Now we just need to step back into our Rails API server and get this query running. That should be easy, right?
 
-###The bears came home, and they were upset
+### The bears came home, and they were upset
 
 Perhaps incorrectly, our first instinct was to try and avoid reinventing the wheel. So we did some searching for reputable gems that wrap the `pg_trgm` module's Trigram search functionality and came across [textacular](https://github.com/textacular/textacular) and [pg_search](https://github.com/Casecommons/pg_search).
 
@@ -64,7 +64,7 @@ That said, let's talk about what went wrong. Of the two gems, textacular is much
 
 The catch is, textacular adds in a `WHERE` clause that was incompatible with our use case. The clause they put in makes sure the fuzzy search term is a substring in the column before running the similarity match. This is probably a performance optimization for large tables and complex combination queries, but for our purposes the raw query was fast enough and the substring match killed our ability to catch spelling mistakes.
 
-###Goldilocks made her own porridge
+### Goldilocks made her own porridge
 
 In the end, we decided to roll our own. Following one of the [wonderful model refactoring patterns from Code Climate](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/) (#4), we extracted it as a query object:
 

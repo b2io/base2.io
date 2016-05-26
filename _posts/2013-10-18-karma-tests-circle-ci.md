@@ -15,12 +15,10 @@ Here's the problem I ran into: Circle was automatically recognizing and running 
 
 <!-- #REST#BEGIN -->
 
-###Circle.yml
+### Circle.yml
 
 Boom. The npm/bower package management is a little time-consuming, but this runs both my rspec and karma tests.
 
 <script src="https://gist.github.com/ztbrown/7043015.js"></script>
 
 <!-- #REST#END -->
-
-

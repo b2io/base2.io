@@ -12,14 +12,14 @@ meets Nike+ meets Yelp, etc.
 
 <!-- #REST#BEGIN -->
 
-###Magnets, How Do They Work?
+### Magnets, How Do They Work?
 
 I spent a couple hours this afternoon and got a working proof of concept! It was such a rewarding thing to go from concept to
 finished product so quickly!
 
 ![magnetic startup poetry](http://i.imgur.com/rLPiq0K.jpg)
 
-###Desperately Seeking Contributions
+### Desperately Seeking Contributions
 
 I think this could be a fun, valuable thing. If you feel the same way, [please fork and contribute!](https://github.com/ztbrown/startup-magnet-art)
 
