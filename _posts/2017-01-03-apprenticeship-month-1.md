@@ -32,15 +32,13 @@ Tony was dedicated to a different project, and hadn't done a lot of work in Reac
 
 We had a particularly good pairing session working on the sliders you can see in the photo. Screen sharing, I showed him how I was using Redux to handle the data, and to track which sliders should be enabled or disabled. After we got that working, he took over and styled the sliders accordingly. It was super productive and fun.
 
-Because neither Chris nor Tony had worked much with Redux, and I needed someone to review my implementation of Redux, and to call out where I could do things better.
+Because neither Chris nor Tony had worked much with Redux, I needed someone to review how I was using Redux, and to call out where I could do things better.
 
-Drew came through big league for me in reviewing my PRs. He read through the majority of my code and gave me valuable feedback on better ways to structure the app, and better ways to write ES6.
-
-He called attention to some performance tradeoffs, and he gave me great advice on designing and shaping the Redux store.
+Drew came through big league for me in reviewing my PRs. He read through the majority of my code, and gave me valuable feedback on better ways to structure the app. He called attention to some performance tradeoffs, and gave me advice on designing and shaping the Redux store.
 
 ### Review
 
-Perhaps the most interesting aspect of Month One is that Tony and Chris, my two main points of contact this month, could only give me so much guidance. This meant that I spent some time doing things incorrectly until Drew was able to step in. There are also things that Drew might have had me do differently had we been working together from the start, but which went unsaid or unnoticed because he was only available part of the time.
+Perhaps the most interesting aspect of Month One is that Tony and Chris, my two main points of contact this month, could only give me so much guidance. This meant that I spent some time doing things incorrectly until Drew was able to step in. There are also things that Drew might have had me do differently, had we been working together from the start, but which went unsaid or unnoticed because he was only available part of the time.
 
 The perfectionist in me wishes that I had worked more closely with Drew during the first month, but I think his giving me space was for the best. I bumbled through things at times, but it gave him a body of code to review and work with me on, rather than just answering each of my questions as they arose.
 
