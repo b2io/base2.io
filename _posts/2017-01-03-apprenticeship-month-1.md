@@ -48,5 +48,5 @@ Things went better this month than I could have imagined. I had a lot of fun cod
 
 ----
 
-Do you see things you disagree with, things I could add or change to make this more helpful? Do you have suggestions from your own apprenticeship program? Do you have questions and want to chat about any of this? Ping me in the comments @rdunkle.
+Do you see things you disagree with, or things I could add or change to make this more helpful? Do you have suggestions from your own apprenticeship program? Do you have questions and want to chat about any of this? Ping me in the comments @rdunkle.
 <!-- #REST#END -->
