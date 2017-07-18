@@ -6,7 +6,7 @@ author: csteinert
 comments: true
 ---
 
-Back in August the entire Base Two team attended the <a href="http://abstractions.io" target="blank">Abstractions conference</a> in Pittsburgh. Between the seven of us, we attended a ton of different sessions. One particular standout was [Rachel Krantz](https://twitter.com/rustbeltrachel/)’s [presentation on apprenticeships](https://t.co/qRxOizjqoG). We had discussed starting an apprenticeship program at Base Two in the past, and Rachel’s talk finally got the ball rolling.
+Back in August the entire Base Two team attended the <a href="http://abstractions.io" target="blank">Abstractions conference</a> in Pittsburgh. Between the seven of us, we attended a ton of different sessions. One particular standout was [Rachel Krantz](http://rachelkrantz.com/)’s [presentation on apprenticeships](https://t.co/qRxOizjqoG). We had discussed starting an apprenticeship program at Base Two in the past, and Rachel’s talk finally got the ball rolling.
 
 ![Base Two, excited to be at the Abstractions conference in August 2016.](https://pbs.twimg.com/media/CqLBrxXWAAAMeJ9.jpg)
 *Base Two, excited to be at the Abstractions conference back in August 2016.*
