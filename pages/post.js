@@ -1,6 +1,6 @@
 import Helmet from 'react-helmet';
 import React, { Component } from 'react';
-import Markdown from '../components/Markdown';
+import markdown from '../util/markdown';
 
 class Post extends Component {
   static getInitialProps({ query }) {
@@ -16,7 +16,7 @@ class Post extends Component {
           <title>{data.title}</title>
         </Helmet>
         <h1>{data.title}</h1>
-        <Markdown>{content}</Markdown>
+        {markdown([content])}
       </main>
     );
   }

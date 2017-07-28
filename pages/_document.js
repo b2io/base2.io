@@ -20,9 +20,9 @@ class Document extends BaseDocument {
         <Head>
           <Helmet title="Base Two" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          {helmet.title.toComponent()}
-          {helmet.meta.toComponent()}
           {helmet.link.toComponent()}
+          {helmet.meta.toComponent()}
+          {helmet.title.toComponent()}
           {styleEls}
         </Head>
         <body {...helmet.bodyAttributes.toComponent()}>
