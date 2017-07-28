@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Getting Started with JSCS and WebStorm</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.9/gist-embed.min.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26131818-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h3><a href="/blog">blog.base2.io</a></h3>
+
+        <p>We are <a href="/">Base Two</a>, a technology company in Columbus, OH.</p>
+      </header>
+
+      <section>
+        <div class="post post-full">
+  <h2>
+    <small>December 30, 2015 &ndash; Jonathan Stevens</small>
+    <a href="/2015/12/30/jscs-intellij-setup/" title="Getting Started with JSCS and WebStorm" rel="bookmark" class="title">Getting Started with JSCS and WebStorm</a>
+  </h2>
+
+  <div class="content">
+    <p><a href="http://jscs.info/">JSCS</a> is my new favorite javascript tool. It helps keep all the javascript files looking the way I want it (and my team wants it). You can read more details about it at their site, but for the purposes of this blog post I’m going to show you how to get it setup with <a href="https://www.jetbrains.com/webstorm/">WebStorm</a> or other <a href="https://www.jetbrains.com/">JetBrains</a> IDEs.</p>
+
+<!-- #REST#BEGIN -->
+
+<h3 id="installingsetup-jscs">Installing/Setup JSCS</h3>
+
+<p>First we need to install JSCS using <a href="https://nodejs.org/en/">nodejs</a>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install -g jscs
+</code></pre>
+</div>
+
+<p>Then we add a jscs config file (.jscsrc) to your project root directory. This is just a .json file. There are many settings you can set in this config file, but there are some convenient <a href="http://jscs.info/overview#presets">presets</a> for you to use. To keep things simple we’re just going to use the <a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json">AirBnB preset</a>. Add this to your .jscsrc file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"preset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"airbnb"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>From here you can setup your build to run your code against these settings. We use <a href="http://gulpjs.com/">gulp</a> so I’ll just show a quick example on how to set that up.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var gulp = require('gulp');
+var jscs = require('gulp-jscs');
+
+gulp.task('lint', function() {
+ return gulp.src('src/**/*.js')
+   .pipe(jscs())
+   .pipe(jscs.reporter());
+});
+</code></pre>
+</div>
+
+<p>Running <code class="highlighter-rouge">gulp lint</code> will run jscs and show you if there are any issues.</p>
+
+<h3 id="webstorm-settings">WebStorm Settings</h3>
+
+<p>Now here’s the main part of the post… Get WebStorm setup to format and lint your code based on the jscs config settings. Most of these steps can be done in JetBrain’s other IDEs. For example, my screenshots are from IntelliJ, but I’ll refer to it as WebStorm for the purposes of this post.</p>
+
+<p>First let’s setup WebStorm’s javascript JSCS settings so it’ll show us the errors in the editor. Open Settings and go to <strong>Languages &amp; Frameworks &gt; Javascript &gt; Code Quality Tools &gt; JSCS</strong>. Then you’ll want to enable the checkbox and set the node interpreter and jscs package location. By default JSCS will look for the default config file in the root of your project. You can leave this selected but optionally if you need to select a config file in another location you can do so by selecting the second option. The Code style preset can be set from this window, but we’ve basically already done that by creating our .jscsrc file and setting the preset as airbnb there.</p>
+
+<p><img src="http://i.imgur.com/k4t5I9M.png" alt="JSCS Settings" /></p>
+
+<p>This should start working once you hit ok and you’ll see any format/style issues with your projects javascript files. You can manually clean them up, but I prefer to make my IDE do the work for me. I found a neat way to import your jscs config into WebStorm’s code style settings. Lets set that up now.</p>
+
+<p>Open <strong>Settings</strong> and go to <strong>Editor &gt; Code Style &gt; Javascript</strong>. Then select the <strong>Manage…</strong> button.</p>
+
+<p><img src="http://i.imgur.com/paw2sxV.png" alt="Javascript Code Style Settings" /></p>
+
+<p>This will open another window, select <strong>Import</strong>.</p>
+
+<p><img src="http://i.imgur.com/ttmSNi7.png" alt="Code Style Schemes" /></p>
+
+<p>This opens yet another window, select <strong>JSCS config file</strong> and click <strong>OK</strong></p>
+
+<p><img src="http://i.imgur.com/GVM7N2m.png" alt="Scheme Import From" /></p>
+
+<p>This will open a <strong>Select Path</strong> dialog window. Just find your project’s root directory and select the .jscsrc file located in the root. Then click <strong>OK</strong>.</p>
+
+<p><img src="http://i.imgur.com/LmacVz7.png" alt="Select Path" /></p>
+
+<p>You can select to update the scheme you had selected, or create a new scheme. We’ll create a new scheme called JSCS. Optionally you could also select a Code Style Preset from this window as well. Last click <strong>OK</strong>.</p>
+
+<p><img src="http://i.imgur.com/gFJWKTW.png" alt="Import from JSCS config" /></p>
+
+<p>Now you can close the <strong>Code Style Schemes</strong> dialog. Your javascript code style settings will be as close as possible to your settings in the .jscs config file. Now for the really cool part, the IDE will try to format your javascript based on these setting as you code. You can also take a whole file or section and run <strong>Reformat Code</strong> (my shortcut is <kbd>opt</kbd> + <kbd>cmd</kbd> + <kbd>L</kbd>) and it will try to clean up that code based on these settings. This is great and will help format your code, but there are some JSCS things this will not fix.</p>
+
+<p>JSCS has the ability to fix a lot of those issues though and you can run the command line</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>jscs /my/project/root --fix
+jscs myfilename.js --fix
+</code></pre>
+</div>
+
+<p>Or WebStorm has an option to fix JSCS issues in line via context menu on the problem area. Here’s a visual example of what that looks like:</p>
+
+<p><img src="http://i.imgur.com/cOABQHg.png" alt="Fix JSCS context menu" /></p>
+
+<p>This is a little tricky to get this to popup, but if you click on the red squiggly and look for the red light bulb, you have an option to “Fix the current file with JSCS”. This basically does the command line example above, but its a nice in editor feature. After doing this to a few files I was was cleaning up it felt tricky and cumbersome to keep doing it this way and I thought to myself “There must be a shortcut to make this happen?” And so I found one, but you have to manually set it.</p>
+
+<h3 id="add-jscs-shortcut">Add JSCS Shortcut</h3>
+
+<p>Open Settings and select Keymap. Search for JSCS. Then select the Fix JSCS Problems and push the edit (green pencil) button. I set mine to <kbd>opt</kbd> + <kbd>cmd</kbd> + <kbd>S</kbd> which was unused, but feel free to set it to something else that makes sense to you and/or your team.</p>
+
+<p><img src="http://i.imgur.com/DvfLmsi.png" alt="Keymap JSCS Fix shortcut" /></p>
+
+<p>Now whenever you see JSCS errors just use the shortcut key and it’ll clean those babies right up!</p>
+
+<!-- #REST#END -->
+
+  </div>
+
+  
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'b2io';
+    var disqus_identifier = '/2015/12/30/jscs-intellij-setup/';
+    var disqus_url = 'http://blog.base2.io/2015/12/30/jscs-intellij-setup/';
+    var disqus_title = 'Getting Started with JSCS and WebStorm';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+      </section>
+
+      <footer>
+        <p>Powered by <a href="http://pages.github.com/">Github Pages</a>, <a href="https://github.com/orderedlist/minimal">Minimal</a>, <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>, and the questionable writing skills of our otherwise lovely staff.</p>
+
+        <p><a href="http://feeds.feedburner.com/b2io" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>&nbsp;<a href="http://feeds.feedburner.com/b2io" rel="alternate" type="application/rss+xml"></a></p>
+      </footer>
+    </div>
+
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

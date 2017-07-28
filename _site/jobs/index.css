@@ -1,0 +1,477 @@
+a,
+a:visited {
+  color: rgba(159 ,4,27,.6);
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: underline;
+  transition: all .3s ease-in-out;
+}
+a:hover {
+  color: rgba(253,123,123,1);
+}
+h1,
+h2 {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+}
+section + section {
+  margin-top: 3em;
+}
+section img {
+  width: 100%;
+}
+p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 2em 0 2.5em;
+}
+p + p {
+  margin: -1.5em 0 2.5em;
+}
+.jobs {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25em;
+  font-weight: 300;
+}
+.jobs__navbar {
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jobs__navbar {
+    background-color: transparent;
+    position: absolute;
+  }
+}
+.jobs__navbar-logo {
+  fill: #000;
+  margin-top: -.25em;
+}
+@media (min-width: 768px) {
+  .jobs__navbar-logo {
+    fill: #fff;
+  }
+}
+.jobs .navbar-nav > li > a,
+.jobs .navbar-nav > li > a:visited {
+  background: transparent;
+  color: #000;
+  font-weight: 100;
+  text-decoration: none;
+}
+@media (min-width: 768px) {
+  .jobs .navbar-nav > li > a,
+  .jobs .navbar-nav > li > a:visited {
+    color: #fff;
+  }
+}
+.jobs .navbar-nav > li > a:hover,
+.jobs .navbar-nav > li > a:focus {
+  background-color: transparent;
+  text-decoration: underline;
+}
+@media (min-width: 768px) {
+  .jobs .navbar-nav.navbar-right {
+    margin-right: 1em;
+  }
+}
+.jobs .navbar-toggle .icon-bar {
+  background-color: #000;
+}
+.jobs__sections {
+  margin: 0 auto;
+  max-width: 620px;
+  padding: 3em 1em;
+}
+.jobs h2 {
+  font-size: 1.5em;
+}
+.jobs__b2-link {
+  color: #fff;
+  display: none;
+  font-size: .75em;
+  font-weight: bold;
+  left: 1em;
+  position: absolute;
+  text-decoration: none;
+  top: 1em;
+}
+.jobs__b2-link:visited {
+  color: #fff;
+}
+.jobs__b2-link:hover {
+  text-decoration: underline;
+}
+.jobs__intro {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url("images/intro-bg.png") bottom right no-repeat;
+  background-size: cover;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+  padding-top: 60px;
+  position: relative;
+  right: 0;
+  top: 0;
+}
+.jobs__intro-items {
+  text-align: center;
+}
+.jobs__intro-items h1 {
+  font-size: 2.25em;
+  font-weight: normal;
+}
+.jobs__intro-items p {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: .5em;
+}
+@media (min-height: 400px) {
+  .jobs__intro-items p {
+    margin: 2em .5em;
+  }
+}
+.jobs__intro-items a {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+          background: transparent;
+  border: 1px solid rgba(253,123,123,.45);
+  color: #fff;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: 100;
+  margin: .5em;
+  padding: .5em 1.25em;
+  text-decoration: none;
+}
+@media (min-width: 400px) {
+  .jobs__intro-items a {
+    display: inline-block;
+  }
+}
+.jobs__intro-items a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+.jobs__benefits ul {
+  list-style: none;
+  margin-top: 2em;
+  padding: 0;
+}
+.jobs__benefits li {
+  margin: .75em 0;
+  padding: 0;
+}
+.jobs__benefits li i {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: table-cell;
+  height: 1.125em;
+  width: 1.25em;
+}
+.jobs__benefits li p {
+  display: table-cell;
+  line-height: 1;
+  padding-left: .5em;
+}
+.jobs__positions button, .jobs__apprenticeship button, .jobs__application input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  padding: .25em .5em;
+  transition: all .3s ease-in-out;
+}
+.jobs__positions button:hover, .jobs__apprenticeship button:hover, .jobs__application input[type="submit"]:hover {
+  border-color: #000;
+  color: #000;
+  cursor: pointer;
+}
+.jobs__applications section {
+  border: 1px solid #000;
+  margin: 0 .5em 2em;
+  max-width: 660px;
+  padding: 2em;
+}
+@media (min-width: 660px) {
+  .jobs__applications section {
+    margin: 0 auto 2em;
+  }
+}
+a.jobs__application-opener {
+  background: transparent;
+  border: 1px solid #2c3e50;
+  color: #2c3e50;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  font-weight: 100;
+  padding: .5em 1.25em;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s ease-in-out;
+  width: 100%;
+}
+a:hover.jobs__application-opener {
+  background-color: #dce4ec;
+  text-decoration: none;
+}
+@media(min-width: 767px) {
+  a.jobs__application-opener {
+    text-align: left;
+    width: auto;
+  }
+}
+.jobs__footer {
+  background-color: #fff;
+  bottom: 0;
+  height: 4em;
+  left: 0;
+  position: relative;
+  right: 0;
+  text-align: center;
+}
+.jobs__footer i {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: -.25em;
+  margin-left: -1.5em;
+  margin-right: .25em;
+  height: 1.5em;
+  width: 1.5em;
+}
+.jobs form {
+  background-color: #f5f5f0;
+  border-bottom: 1px solid #2c3e50;
+  border-top: 1px solid #2c3e50;
+  margin: 0;
+  padding: 2em;
+  position: relative;
+}
+@media (min-width: 767px) {
+  .jobs form {
+    padding: 2em;
+  }
+}
+.jobs__application h2 {
+  padding-right: 1em;
+}
+.jobs form .jobs__application-closer {
+  font-size: 12px;
+  height: 30px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+@media (min-width: 767px) {
+  .jobs form .jobs__application-closer {
+    right: 30px;
+    top: 30px;
+  }
+}
+.jobs form h1 {
+  margin-bottom: .5em;
+}
+.jobs form .jobs__application-closer i {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  height: 1.5em;
+  position: relative;
+  width: 1.5em;
+}
+.jobs .has-error .help-block {
+  font-size: 14px;
+}
+.jobs .form-group label {
+  font-size: 14px;
+}
+.jobs .form-control {
+  border-radius: 0;
+}
+.jobs__file-input {
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 0.1px;
+  z-index: -1;
+}
+.jobs__file-input + label {
+  font-size: 14px;
+  font-weight: 300;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.jobs__file-input + label svg {
+  fill: currentColor;
+  height: 1.5em;
+  margin-right: 0.25em;
+  margin-top: -0.25em;
+  vertical-align: middle;
+  width: 1.5em;
+}
+.jobs__file-input + label {
+  color: #2c3e50;
+}
+.jobs__file-input + label {
+  background-color: #fff;
+  border: 2px solid #dce4ec;
+  padding: 0;
+}
+.jobs__file-input:focus + label,
+.jobs__file-input.has-focus + label {
+  border: 2px solid #2c3e50;
+}
+.jobs__file-input + label span,
+.jobs__file-input + label strong {
+  font-size: 12px;
+  padding: 12px;
+}
+.jobs__file-input + label span {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.jobs__file-input + label strong {
+  background-color: #dce4ec;
+  color: #2c3e50;
+  float: right;
+  max-width: 160px;
+  width: 100%;
+}
+.jobs__file-input:focus + label strong,
+.jobs__file-input.has-focus + label strong,
+.jobs__file-input + label:hover strong {
+  background-color: #dce4ec;
+}
+@media screen and (max-width: 767px) {
+  .jobs__file-input + label strong {
+    display: block;
+    min-width: 100%;
+  }
+}
+#apprentice-application,
+#developer-application {
+  display: none;
+}
+.jobs__application input[type="submit"] {
+  background-color: #fff;
+  border-color: #2c3e50;
+  color: #2c3e50;
+  margin: 1em 0;
+  padding: .5em 1.25em;
+  width: 100%;
+}
+@media (min-width: 767px) {
+  .jobs__application input[type="submit"] {
+    clear: both;
+    position: relative;
+    width: auto;
+  }
+}
+.jobs__application input[type="submit"]:hover {
+  background-color: #dce4ec;
+}
+.jobs__application [data-toggle] .btn-secondary {
+  background-color: #dce4ec;
+  border: 2px solid #dce4ec;
+  border-radius: 0;
+  color: #2c3e50;
+  font-size: 14px;
+  padding: .75em 1.75em;
+}
+.jobs__application [data-toggle] .btn-secondary:hover {
+  font-weight: bold;
+}
+.jobs .btn:active,
+.jobs .btn.active {
+  box-shadow: none;
+}
+.btn-group > .btn.btn-secondary.active {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  padding: .75em 1.25em .75em 2.75em;
+}
+@media (min-width: 767px) {
+  .btn-group > .btn.btn-secondary.active {
+    padding: .75em 1.25em .75em 2.75em;
+  }
+}
+.btn-group > .btn.btn-secondary.active > span:before {
+  background-image: url("images/emoji-round_pushpin.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: '';
+  display: inline-block;
+  height: 1.25em;
+  left: 1em;
+  position: absolute;
+  top: .75em;
+  width: 1.25em;
+}
+.emoji-pill {
+  background-image: url("images/emoji-pill.png")
+}
+.emoji-moneybag {
+  background-image: url("images/emoji-moneybag.png")
+}
+.emoji-palm_tree {
+  background-image: url("images/emoji-palm_tree.png")
+}
+.emoji-confetti_ball {
+background-image: url("images/emoji-confetti_ball.png")
+}
+.emoji-mask {
+  background-image: url("images/emoji-mask.png")
+}
+.emoji-earth_americas {
+  background-image: url("images/emoji-earth_americas.png")
+}
+.emoji-computer {
+  background-image: url("images/emoji-computer.png")
+}
+.emoji-jeans {
+  background-image: url("images/emoji-jeans.png")
+}
+.emoji-fork_and_knife {
+  background-image: url("images/emoji-fork_and_knife.png")
+}
+.emoji-coffee {
+  background-image: url("images/emoji-coffee.png")
+}
+.emoji-arrow_up_small {
+  background-image: url("images/emoji-arrow_up_small.png")
+}
+.emoji-x {
+  background-image: url("images/emoji-x.png")
+}

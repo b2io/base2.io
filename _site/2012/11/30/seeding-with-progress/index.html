@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Seeding with progress</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.9/gist-embed.min.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26131818-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h3><a href="/blog">blog.base2.io</a></h3>
+
+        <p>We are <a href="/">Base Two</a>, a technology company in Columbus, OH.</p>
+      </header>
+
+      <section>
+        <div class="post post-full">
+  <h2>
+    <small>November 30, 2012 &ndash; Drew Miller</small>
+    <a href="/2012/11/30/seeding-with-progress/" title="Seeding with progress" rel="bookmark" class="title">Seeding with progress</a>
+  </h2>
+
+  <div class="content">
+    <p>If you’re doing database seeding in a rails app through <code class="highlighter-rouge">seeds.rb</code> you might be interested in this snippet, especially if you’re
+using CSV files to help you do it.</p>
+
+<!-- #REST#BEGIN -->
+
+<h3 id="mo-rows-mo-problems">Mo Rows, Mo Problems</h3>
+
+<p>A couple of our recent projects have had rather large CSV files that need to be seeded. Running a <code class="highlighter-rouge">rake db:seed</code> command
+takes an agonizing couple of minutes (several of the files have tens of thousands of rows). To help soothe our neurotic impulses
+to kill the process midway through we decided to have a bit of fun sprucing up the console feedback while the seeding
+is underway.</p>
+
+<p>We started out with a simple <code class="highlighter-rouge">puts "Seeding Models..."</code>, but that really doesn’t tell you anything about how many more models
+need to be seeded. We decided to take a page out of the UNIX playbook and give the user a bit more information.</p>
+
+<h3 id="the-unix-way">The UNIX way</h3>
+
+<p>There’s a nifty utility named <code class="highlighter-rouge">wget</code> in UNIX that will let you download things given a URL. It gives you a nice visual
+representation of the progress in the console using a text-based progress bar that looks like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vagrant@lucid64:~$ wget https://www.google.com/images/srpr/logo3w.png
+--2012-12-01 04:59:29--  https://www.google.com/images/srpr/logo3w.png
+Resolving www.google.com... 173.194.75.99, 173.194.75.147, 173.194.75.106, ...
+Connecting to www.google.com|173.194.75.99|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7007 (6.8K) [image/png]
+Saving to: `logo3w.png'
+
+100%[=========================================================================&gt;] 7,007       --.-K/s   in 0.007s
+
+2012-12-01 04:59:29 (958 KB/s) - `logo3w.png' saved [7007/7007]
+</code></pre>
+</div>
+
+<p>With a bit of digging, we found the <code class="highlighter-rouge">\r</code> special character for the <code class="highlighter-rouge">print</code> method, which allows you to do some UNIX-style magic in
+updating what you’ve already printed to the console. The <code class="highlighter-rouge">\r</code> character will clear the current line of the display in the console.</p>
+
+<script src="https://gist.github.com/4179185.js?file=genre.rb"></script>
+
+<script src="https://gist.github.com/4179185.js?file=genres.csv"></script>
+
+<script src="https://gist.github.com/4179185.js?file=seeds.rb"></script>
+
+<p>Running a <code class="highlighter-rouge">rake db:seed</code> will now give you live progress updates:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vagrant@lucid64:/vagrant$ rake db:seed
+Seeding Genre:
+100.00% [=====================================================================&gt;]
+</code></pre>
+</div>
+
+<p>Ah, much better!</p>
+
+<!-- #REST#END -->
+
+  </div>
+
+  
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'b2io';
+    var disqus_identifier = '/2012/11/30/seeding-with-progress/';
+    var disqus_url = 'http://blog.base2.io/2012/11/30/seeding-with-progress/';
+    var disqus_title = 'Seeding with progress';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+      </section>
+
+      <footer>
+        <p>Powered by <a href="http://pages.github.com/">Github Pages</a>, <a href="https://github.com/orderedlist/minimal">Minimal</a>, <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>, and the questionable writing skills of our otherwise lovely staff.</p>
+
+        <p><a href="http://feeds.feedburner.com/b2io" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>&nbsp;<a href="http://feeds.feedburner.com/b2io" rel="alternate" type="application/rss+xml"></a></p>
+      </footer>
+    </div>
+
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

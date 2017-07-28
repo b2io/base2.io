@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Vagrants and Chefs and Librarians... oh my!</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.9/gist-embed.min.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26131818-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h3><a href="/blog">blog.base2.io</a></h3>
+
+        <p>We are <a href="/">Base Two</a>, a technology company in Columbus, OH.</p>
+      </header>
+
+      <section>
+        <div class="post post-full">
+  <h2>
+    <small>May 1, 2012 &ndash; Drew Miller</small>
+    <a href="/2012/05/01/vagrants-and-chefs-and-librarians-oh-my/" title="Vagrants and Chefs and Librarians... oh my!" rel="bookmark" class="title">Vagrants and Chefs and Librarians... oh my!</a>
+  </h2>
+
+  <div class="content">
+    <p><strong>Update:</strong>
+Thanks to <a href="/2012/05/01/vagrants-and-chefs-and-librarians-oh-my/#comment-677428811">SDude</a>, <a href="/2012/05/01/vagrants-and-chefs-and-librarians-oh-my/#comment-584010225">zibuki</a>, <a href="/2012/05/01/vagrants-and-chefs-and-librarians-oh-my/#comment-537553234">bilke</a>, and <a href="/2012/05/01/vagrants-and-chefs-and-librarians-oh-my/#comment-521570237">Anthony Goddard</a> for helping to keep this post up-to-date and working.</p>
+
+<p>For those of you out there doing development, you’ve probably run into some or all of the following problems:</p>
+
+<ul>
+  <li>Your development environment doesn’t mirror your production environment.</li>
+  <li>It’s difficult or impossible to keep everyone’s development environment consistent in multi-developer projects.</li>
+  <li>You can never remember how to get all the configuration nuances right for whatever dependencies your project requires.</li>
+  <li>It takes real, significant amounts of time to get yourself ready to go when starting or switching projects.</li>
+  <li>The dependencies of one project might conflict with another project.</li>
+</ul>
+
+<p>These issues kill your productivity with time-consuming and difficult-to-isolate issues that have <em>nothing</em> to do with the problem you actually want to solve. To get around these issues and give ourselves some other advantages (more on that later) we’re using a gem called <a href="http://vagrantup.com">Vagrant</a> to create a portable development environment.</p>
+
+<!-- #REST#BEGIN -->
+
+<h3 id="a-vagrants-life">A Vagrant’s life</h3>
+
+<p>Vagrant is essentially a command-line wrapper on top of <a href="http://www.virtualbox.org/">Oracle’s VirtualBox</a>. This lets you initialize, suspend, resume, and destroy virtual machines right from your terminal easily. Getting started is as easy as:</p>
+
+<script src="https://gist.github.com/2564740.js?file=vagrant"></script>
+
+<p>For a more detailed setup guide, check the <a href="http://vagrantup.com/v1/docs/getting-started/index.html">Getting Started</a> documentation for Vagrant.</p>
+
+<p>So with a nice, fresh virtual machine to play with, we can go ahead and setup all the things we need in our development environment. We can even do our best to mirror our production environment so we can avoid all those “it worked on my machine” issues.</p>
+
+<p>But we’re still left with a problem, this virtual machine isn’t <em>portable</em>. If someone else joins the project, they’ll have to go through whatever manual setup steps we did to get the dependencies installed on their own Vagrant box.</p>
+
+<p>Not to worry though, Vagrant has the perfect solution for you: <a href="http://vagrantup.com/v1/docs/getting-started/provisioning.html">Provisioning</a>. Provisioning allows you to automate the setup of your development environment using either <a href="http://puppetlabs.com/puppet/what-is-puppet/">Puppet</a> or <a href="http://wiki.opscode.com/display/chef/Home">Chef</a>. Based on our research, Chef seemed like the right way to go.</p>
+
+<h3 id="the-chef-and-the-librarian">The Chef and the Librarian</h3>
+
+<p>Chef is a provisioning tool, and as you might expect it makes it possible to automatically configure a machine (virtual or otherwise) into a specific state. In keeping with the culinary metaphor Chef has <em>recipes</em> which represent a specific configuration (e.g.: setting up an Apache server). Recipes are organized into <em>cookbooks</em>, which are really just containers for all those configuration options.</p>
+
+<p>There’s a mountain of technical detail involved in Chef, it can be used to mainain an entire cloud infrastructure. To keep things simple, and within our abilities, we’re going to be focusing on a use of Chef called <a href="http://wiki.opscode.com/display/chef/Chef+Solo">Chef Solo</a>.</p>
+
+<p>When you looked at the Vagrant <a href="http://vagrantup.com/v1/docs/getting-started/provisioning.html">Getting Started documentation for Provisioning</a> you might have noticed the following use of Chef Solo to provision their sample box:</p>
+
+<script src="https://gist.github.com/2564740.js?file=Vagrantfile-Getting-Started"></script>
+
+<p>This kind of usage is great for a “Hello World” example, but not so great for showing you how to use Chef  Solo to provision in a more realistic context. We ran into some stumbling blocks with Chef Solo: How do we manage the cookbooks and recipes properly? Should we install them in the user directory? The project directory? How do we ensure everyone is using the same version?</p>
+
+<p>At some point in our search for sanity in that process we ran across a great gem called <a href="https://github.com/applicationsonline/librarian">Librarian</a> that aims to solve this exact problem. To setup Librarian for our project we need to run the following commands:</p>
+
+<script src="https://gist.github.com/2564740.js?file=librarian"></script>
+
+<p>What you’re doing there is ignoring a few folders in git and initializing the project for Librarian. Part of that initialization is to create a <code class="highlighter-rouge">Cheffile</code> which serves as your way to define what cookbooks/recipes you need in a clean and portable way.</p>
+
+<p>To set the stage a bit, let’s say we’re starting a Ruby on Rails project and we know we’re going to need the following things:</p>
+
+<ul>
+  <li>An up-to-date system (through <code class="highlighter-rouge">aptitude</code>)</li>
+  <li>Ruby (through <code class="highlighter-rouge">rvm</code>)</li>
+  <li>Git (through <code class="highlighter-rouge">git-core</code>)</li>
+</ul>
+
+<p>Not the most complicated set of requirements, but sufficient for getting this project off the ground. Let’s take a look at a <code class="highlighter-rouge">Cheffile</code> that gets us the recipes we need:</p>
+
+<script src="https://gist.github.com/2564740.js?file=Cheffile"></script>
+
+<p>After we’ve set that, we simply run <code class="highlighter-rouge">librarian-chef install</code> to have Librarian pull down all those cookbooks and install them into our project. Now we just need to setup Vagrant to provision our environment:</p>
+
+<script src="https://gist.github.com/2564740.js?file=Vagrantfile"></script>
+
+<p>Pretty straight-forward stuff there, we’re just telling Vagrant to provision using Chef Solo, telling it where to find our cookbooks, and which recipes to use. After we’ve got those changes in place, we run <code class="highlighter-rouge">vagrant up</code> to have Vagrant initialize and provision our virtual machine.</p>
+
+<p>At this point, you should be able to <code class="highlighter-rouge">vagrant ssh</code> into your box and run <code class="highlighter-rouge">ruby -v</code> to confirm that everything went as planned. Vagrant will also yell at you during the provisioning phase if something about the process didn’t go according to plan.</p>
+
+<h3 id="the-finale">The finale</h3>
+
+<p>So what have we really accomplished here? Well, we’ve created a simple, automated, and portable way for you to setup all the dependencies for your project <em>without</em> cluttering your system. No more “works on my system”, no more cross-contamination from projects. And if you’re on Windows now, no more “only supported on *nix” frustrations. Let’s take a look at what a new developer coming onto the project would need to do to get setup:</p>
+
+<script src="https://gist.github.com/2564740.js?file=finale"></script>
+
+<p>Take a moment to look at that…</p>
+
+<h3 id="four-commands">Four. Commands.</h3>
+
+<p>Four commands and you’ve checkout out the project from version control and setup a clean, fully provisioned, and isolated virtual machine to do your development in.</p>
+
+<p>As you can see, Vagrant, Chef, and Librarian make a seriously powerful addition to your development arsenal. As such, there’s a lot more things you can do with them; here’s some links to get you started:</p>
+
+<ul>
+  <li><a href="http://vagrantup.com/v1/docs/index.html">Vagrant Documentation</a> – more detail on how you can use Vagrant to setup virtual development environments.</li>
+  <li><a href="http://wiki.opscode.com/display/chef/Chef+Solo">Chef Solo Wiki</a> – more detail on how you can use Chef Solo to provision your Vagrant box.</li>
+  <li><a href="https://github.com/applicationsonline/librarian/blob/master/README.md">Librarian README</a> – more detail on how you can use Librarian to manage your chef cookbooks and recipes.</li>
+  <li><a href="https://github.com/opscode/cookbooks">Opscode’s cookbooks</a> – the company behind Chef maintains this repository of cookbooks.</li>
+</ul>
+
+<!-- #REST#END -->
+
+  </div>
+
+  
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'b2io';
+    var disqus_identifier = '/2012/05/01/vagrants-and-chefs-and-librarians-oh-my/';
+    var disqus_url = 'http://blog.base2.io/2012/05/01/vagrants-and-chefs-and-librarians-oh-my/';
+    var disqus_title = 'Vagrants and Chefs and Librarians... oh my!';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+      </section>
+
+      <footer>
+        <p>Powered by <a href="http://pages.github.com/">Github Pages</a>, <a href="https://github.com/orderedlist/minimal">Minimal</a>, <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>, and the questionable writing skills of our otherwise lovely staff.</p>
+
+        <p><a href="http://feeds.feedburner.com/b2io" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>&nbsp;<a href="http://feeds.feedburner.com/b2io" rel="alternate" type="application/rss+xml"></a></p>
+      </footer>
+    </div>
+
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

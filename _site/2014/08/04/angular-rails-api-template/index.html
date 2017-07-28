@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Web Development Project Puzzle Pieces</title>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/blog.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.9/gist-embed.min.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26131818-3']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h3><a href="/blog">blog.base2.io</a></h3>
+
+        <p>We are <a href="/">Base Two</a>, a technology company in Columbus, OH.</p>
+      </header>
+
+      <section>
+        <div class="post post-full">
+  <h2>
+    <small>August 4, 2014 &ndash; Tony Borres</small>
+    <a href="/2014/08/04/angular-rails-api-template/" title="Web Development Project Puzzle Pieces" rel="bookmark" class="title">Web Development Project Puzzle Pieces</a>
+  </h2>
+
+  <div class="content">
+    <p>Web development can be like trying to complete a puzzle that has had its pieces dumped into a box with multiple other puzzles. There are so many puzzle pieces that it can be difficult to even know what picture you should end up with at the end.</p>
+
+<p>While every project is it’s own puzzle, there are a lot of common pieces out there. Here’s a walk-through of how we got some of our favorite pieces (<strong>Angular</strong>, <strong>Rails</strong>, <strong>Vagrant</strong>, and more) to fit together.</p>
+
+<!-- #REST#BEGIN -->
+
+<h3 id="what-pieces-do-we-have">What Pieces Do We Have?</h3>
+
+<p>Below is the list of technologies we use in this example. For your reference I’m on a 64 bit version of Windows 7. Be aware that if you’re using something else your results may vary.</p>
+
+<ul>
+  <li><strong><a href="http://sourceforge.net/projects/console/files/">RubyGems</a></strong> (2.3.0): Ruby’s package system.</li>
+  <li><strong><a href="https://github.com/rails-api/rails-api">Rails-api</a></strong> (0.2.1): A lightweight version of Rails to provide API capabilities without the extra pieces that Rails brings to the table.</li>
+  <li><strong><a href="http://www.vagrantup.com/">Vagrant</a></strong> (1.4.3) with <strong><a href="https://www.virtualbox.org/">VirtualBox</a></strong> (4.3.14): Allows for the configuration of reproducible and portable virtual machines.</li>
+  <li><strong><a href="http://puppetlabs.com/puppet/puppet-open-source">Puppet</a></strong>: Provisioner for Vagrant.</li>
+  <li><strong><a href="https://angularjs.org/">Angular</a></strong> (1.2.16): Front-end JavaScript framework.</li>
+  <li><strong><a href="http://git-scm.com/">Git</a></strong> (1.9.0): Distributed source control.</li>
+  <li><strong><a href="http://nodejs.org/">npm</a></strong> (1.4.14): We use this for the installation of some of the other tools.</li>
+  <li><strong><a href="http://yeoman.io/">Yeoman</a></strong> (1.2.0): Web scaffolding tool that we use to scaffold angular via the <a href="https://github.com/yeoman/generator-angular">angular generator</a>.</li>
+  <li><strong><a href="http://gruntjs.com/">Grunt</a></strong> (0.1.13): The build system that comes with Yeoman.</li>
+  <li><strong><a href="http://bower.io/">Bower</a></strong> (1.3.8): The package manager that comes with Yeoman.</li>
+</ul>
+
+<h3 id="generate-the-rails-app">Generate the Rails App</h3>
+
+<p>There are many ways that we can begin to put this puzzle together. We’re going to start by generating the Rails app. For this example we’ll use <code class="highlighter-rouge">my_app</code> as our application’s name.</p>
+
+<p>In your terminal (I use <a href="http://sourceforge.net/projects/console/files/">Console2</a>) navigate to the location you’d like your application’s root folder to be placed in. If you don’t already have rails-api installed then do that now.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install rails-api
+</code></pre>
+</div>
+
+<p>Generate your Rails app with the following</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rails-api new my_app
+</code></pre>
+</div>
+
+<p>Now let’s make a few changes to what was auto-generated for us. <code class="highlighter-rouge">cd my_app</code> and remove the <code class="highlighter-rouge">/test/</code> directory because we’ll be using rspec for testing instead.</p>
+
+<p>Open your <code class="highlighter-rouge">Gemfile</code> and update it to include the gems that you’ll need. Here’s what we used, but you’ll want to upgrade to the latest packages for your application.</p>
+
+<script src="https://gist.github.com/tborres/67ed702ad8cfafaeec05.js?file=Gemfile"></script>
+
+<p>We also need to change our <code class="highlighter-rouge">database.yml</code> file because we’ll be using PostgreSQL rather than SQLite.</p>
+
+<script src="https://gist.github.com/tborres/67ed702ad8cfafaeec05.js?file=database.yml"></script>
+
+<h3 id="vagrant-and-puppet">Vagrant and Puppet</h3>
+
+<p>Now that our bare-bones Rails-api app is created we’ll setup Vagrant. Vagrant will allow us to provision and run a virtual machine in a consistent way. This will remove the “it worked on my machine” problem that often plagues developers.</p>
+
+<p>We’ll use the rails-dev-box as our base since it has many of the features we’ll need. You can clone the repository from here: <a href="https://github.com/rails/rails-dev-box">https://github.com/rails/rails-dev-box</a></p>
+
+<p>Now copy the <code class="highlighter-rouge">Vagrantfile</code> and the <code class="highlighter-rouge">/puppet/</code> directory from the rails-dev-box into the root of your application (as a peer to your Rails <code class="highlighter-rouge">/app/</code> directory). Open the <code class="highlighter-rouge">Vagrantfile</code> in your favorite text editor (I use <a href="http://www.sublimetext.com/">Sublime Text 2</a>), and change the <code class="highlighter-rouge">config.vm.hostname</code> from <code class="highlighter-rouge">‘rails-dev-box’</code> to the name of your app. This will make it a little less confusing when you’re in your VM.</p>
+
+<p>Now open the <code class="highlighter-rouge">/puppet/manifests/default.pp</code> puppet manifest file. This file contains a lot of optional configurations that we will not be using. Make the following changes to the file:</p>
+
+<ol>
+  <li>Change <code class="highlighter-rouge">$ar_databases</code> values to your application name rather than <code class="highlighter-rouge">activerecord_unittest</code>.
+Example: <code class="highlighter-rouge">$ar_databases = ['my_app_dev', 'my_app_test']</code></li>
+  <li>Remove the SQLite and MySQL sections because we’ll be using PostgreSQL</li>
+  <li>Add the following Puppet modules (<em>which can be installed on Windows by first downloading the tar.gz file, extracting it, copying the resulting folder into the app’s <code class="highlighter-rouge">/puppet/modules/</code> directory, and then renaming the folder to it’s module name</em> :
+    <ul>
+      <li>nodejs: <a href="https://forge.puppetlabs.com/puppetlabs/nodejs">https://forge.puppetlabs.com/puppetlabs/nodejs</a></li>
+      <li>stdlib: <a href="https://forge.puppetlabs.com/puppetlabs/stdlib">https://forge.puppetlabs.com/puppetlabs/stdlib</a></li>
+      <li>apt: <a href="https://forge.puppetlabs.com/puppetlabs/apt">https://forge.puppetlabs.com/puppetlabs/apt</a></li>
+    </ul>
+  </li>
+  <li>This version of Ubuntu’s npm is out of date so we need to make an adjustment to the <code class="highlighter-rouge">/puppet/modules/nodejs/manifests/init.pp</code> file. You’ll need to set <code class="highlighter-rouge">$manage_repo = true</code>.</li>
+  <li>Within the <code class="highlighter-rouge">default.pp</code> file replace the nodejs section with <code class="highlighter-rouge">include nodejs</code></li>
+  <li>Add the puppet-yeoman module from <a href="https://github.com/nickhartjes/puppet-yeoman">https://github.com/nickhartjes/puppet-yeoman</a> by
+    <ul>
+      <li>Cloning the repository</li>
+      <li>Copy the <code class="highlighter-rouge">init.pp</code> file into the <code class="highlighter-rouge">/puppet/modules/yeoman/manifests/init.pp</code> directory.</li>
+      <li>Remove <code class="highlighter-rouge">“curl”</code> from the yeomanPackages because it already exists in our <code class="highlighter-rouge">default.pp</code>.</li>
+      <li>Change <code class="highlighter-rouge">require =&gt; Exec['apt-get update']</code> to <code class="highlighter-rouge">require =&gt; Class['apt_get_update']</code></li>
+      <li>Add a call to the module at the bottom of the <code class="highlighter-rouge">default.pp</code> file with <code class="highlighter-rouge">include yeoman</code></li>
+    </ul>
+  </li>
+  <li>Add the angular generator for yeoman by adding the following to the bottom of your <code class="highlighter-rouge">default.pp</code> file:</li>
+</ol>
+
+<p><code data-gist-id="67ed702ad8cfafaeec05" data-gist-file="default.pp" data-gist-line="109-113"></code></p>
+
+<ol>
+  <li>Navigate to the root of your Rails directory in your console and start vagrant with the <code class="highlighter-rouge">vagrant up</code> command.</li>
+  <li>Now access your VM via ssh</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vagrant ssh
+&gt; cd /vagrant/
+</code></pre>
+</div>
+
+<p>Update the bundle, and rake the database</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    &gt; bundle update
+    &gt; rake db:create
+</code></pre>
+</div>
+
+<h3 id="angular">Angular!</h3>
+
+<p>Now we’ll add a basic angular structure to our application.</p>
+
+<p>Create an <code class="highlighter-rouge">/angular/</code> directory within your rails directory (as a peer to the <code class="highlighter-rouge">/app/</code> directory).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	&gt; mkdir angular &amp;&amp; cd angular
+</code></pre>
+</div>
+
+<p>Run the angular generator (within your Vagrant VM) and answer the questions to match your needs (I answered yes to all).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	&gt; yo angular my_app
+</code></pre>
+</div>
+
+<p>If you ran into any errors during the generation you may need to run the bower install and npm install manually.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	&gt; bower install
+	&gt; sudo npm install
+</code></pre>
+</div>
+
+<p>Now adjust your <code class="highlighter-rouge">Gruntfile.js</code> within the <code class="highlighter-rouge">/angular/</code> directory so that dist places the build files in the rails <code class="highlighter-rouge">/public/</code> directory.</p>
+
+<p><code data-gist-id="67ed702ad8cfafaeec05" data-gist-file="Gruntfile.js" data-gist-line="21-24"></code></p>
+
+<p>Also add the following to the connect section (replacing the livereload section) so that your files are proxied during development.</p>
+
+<p><code data-gist-id="67ed702ad8cfafaeec05" data-gist-file="Gruntfile.js" data-gist-line="76-98"></code></p>
+
+<p>Build the angular assets with Grunt (from within the <code class="highlighter-rouge">/angular/</code> directory)!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	&gt; grunt build
+</code></pre>
+</div>
+
+<p>If you see an error dealing with lodash it is likely the result of long file paths. The latest stable version of npm does not support a fix for this. You’ll need to run npm and grunt from your local development machine rather than Vagrant.</p>
+
+<h3 id="done---frame-that-puzzle-with-git">Done! - Frame that puzzle (with Git)</h3>
+
+<p>You’ve successfully created your bare structure for web development. It may feel like you just put all the pieces of the puzzle together to find that the picture is blank, but at least now you have a canvas to paint a your cat pictures on. Let keep that canvas safe by storing it on Git.</p>
+
+<p>Initialize the git repository from the root Rails directory (this can be done within the console of your local development machine).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt; git init
+</code></pre>
+</div>
+
+<p>Add the following to the <code class="highlighter-rouge">.gitignore</code> file:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/.vagrant 	#this contains your local vm box info which is not needed by the team
+</code></pre>
+</div>
+
+<!-- #REST#END -->
+
+  </div>
+
+  
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'b2io';
+    var disqus_identifier = '/2014/08/04/angular-rails-api-template/';
+    var disqus_url = 'http://blog.base2.io/2014/08/04/angular-rails-api-template/';
+    var disqus_title = 'Web Development Project Puzzle Pieces';
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+      </section>
+
+      <footer>
+        <p>Powered by <a href="http://pages.github.com/">Github Pages</a>, <a href="https://github.com/orderedlist/minimal">Minimal</a>, <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>, and the questionable writing skills of our otherwise lovely staff.</p>
+
+        <p><a href="http://feeds.feedburner.com/b2io" rel="alternate" type="application/rss+xml"><img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/></a>&nbsp;<a href="http://feeds.feedburner.com/b2io" rel="alternate" type="application/rss+xml"></a></p>
+      </footer>
+    </div>
+
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

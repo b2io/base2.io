@@ -20,6 +20,7 @@ class Document extends BaseDocument {
         <Head>
           <Helmet title="Base Two" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900" rel="stylesheet" />
           {helmet.title.toComponent()}
           {helmet.meta.toComponent()}
           {helmet.link.toComponent()}
