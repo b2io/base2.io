@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "next build && next export -o build",
-    "dev": "next",
+    "dev": "node server.js",
     "prestart": "npm run build",
     "start": "serve build"
   }
