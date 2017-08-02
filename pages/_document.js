@@ -21,6 +21,7 @@ class Document extends BaseDocument {
           <Helmet title="Base Two" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900" rel="stylesheet" />
+          <style>{`body { margin: 0; padding: 0; }`}</style>
           {helmet.title.toComponent()}
           {helmet.meta.toComponent()}
           {helmet.link.toComponent()}
