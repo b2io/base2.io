@@ -1,4 +1,5 @@
+_posts
+_site
 .next
 build
 node_modules
-_site
