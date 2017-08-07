@@ -1,0 +1,6 @@
+{
+  "*.{js,jsx}": [
+    "prettier --single-quote --trailing-comma all --write",
+    "git add"
+  ]
+}

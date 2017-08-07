@@ -1,5 +1,6 @@
-import Helmet from 'react-helmet';
 import BaseDocument, { Head, Main, NextScript } from 'next/document';
+import React from 'react';
+import Helmet from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
 
 class Document extends BaseDocument {
