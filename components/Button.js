@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import FullScreenSection from './FullScreenSection';
 import Paragraph from './Paragraph';
@@ -18,13 +17,13 @@ const Button = styled.button`
   text-decoration: none;
   transition: 0.2s ease-in-out;
 
-    &:hover {
-      box-shadow: 0px 0px 0px 1px var(--color-fg, black);
-    }
+  &:hover {
+    box-shadow: 0px 0px 0px 1px var(--color-fg, black);
+  }
 
-    &:active {
-      box-shadow: none;
-    }
+  &:active {
+    box-shadow: none;
+  }
 
   ${FullScreenSection} & {
     border: 1px solid rgba(255, 255, 255, .5);
@@ -37,7 +36,7 @@ const Button = styled.button`
       box-shadow: 0px 0px 0px 1px var(--color-fg, white);
     }
 
-     &:active {
+    &:active {
       box-shadow: none;
     }
   }
@@ -47,6 +46,5 @@ const Button = styled.button`
     line-height: 1em;
   }
 `;
-
 
 export default Button;

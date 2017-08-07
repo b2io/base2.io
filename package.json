@@ -7,6 +7,7 @@
     "gray-matter": "^3.0.2",
     "markdown-it": "^8.3.1",
     "next": "beta",
+    "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-emojione": "^3.1.10",
@@ -22,6 +23,8 @@
     "start": "serve build"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.1.7"
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-styled-components": "^1.1.7",
+    "prettier-eslint": "^6.4.2"
   }
 }
