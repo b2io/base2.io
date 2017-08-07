@@ -10,7 +10,7 @@ module.exports = {
             query: { content, data, id },
           },
         }),
-      {}
+      {},
     );
 
     return Object.assign({}, blogPostExports, {

@@ -1,5 +1,6 @@
-import Helmet from 'react-helmet';
 import BaseDocument, { Head, Main, NextScript } from 'next/document';
+import React from 'react';
+import Helmet from 'react-helmet';
 import { ServerStyleSheet } from 'styled-components';
 
 class Document extends BaseDocument {
@@ -20,12 +21,15 @@ class Document extends BaseDocument {
         <Head>
           <Helmet title="Base Two" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900" rel="stylesheet" />
-          <style>{`body { margin: 0; padding: 0; }`}</style>
-          {helmet.title.toComponent()}
-          {helmet.meta.toComponent()}
           {helmet.link.toComponent()}
+          {helmet.meta.toComponent()}
+          {helmet.title.toComponent()}
           {styleEls}
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:100,400,900"
+            rel="stylesheet"
+          />
+          <style>{`body { margin: 0; padding: 0; }`}</style>
         </Head>
         <body {...helmet.bodyAttributes.toComponent()}>
           {mainEl}

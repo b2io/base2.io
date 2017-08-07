@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal';
-import dynamic from 'next/dynamic';
 import Button from '../components/Button';
 import EmojiButton from '../components/EmojiButton';
-import Emoji from '../components/Emoji';
 import GridContainer from '../components/GridContainer';
 import GridItem from '../components/GridItem';
 import FullScreenSection from '../components/FullScreenSection';
@@ -35,9 +33,9 @@ const Color = {
 
 export default class extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      showModal: false
+      showModal: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -60,20 +58,22 @@ export default class extends React.Component {
         </FullScreenSection>
 
         <FullScreenSection image="/static/full-screen.png">
-          <Button transparentText onClick={this.handleOpenModal}>Open a modal</Button>
+          <Button transparentText onClick={this.handleOpenModal}>
+            Open a modal
+          </Button>
           <Modal contentLabel="Example Modal" isOpen={this.state.showModal}>
             <Title>I am a modal (Title)</Title>
             <Text>
-              And this is paragraph text, but that shouldn't stop
-              you from adding <Button>A Button</Button> or nontext things.
-              A lot of text or not that much I don't know what...
-              Some amount of text, various amounts of texts,
-              in various contexts. Filling space with text,
-              and wrapping lines, making rows. :smile: Oh,
-              and you can use all sorts of logical shortcuts for emojiOne
-              emojis like :robot:
+              And this is paragraph text, but that shouldn't stop you from
+              adding <Button>A Button</Button> or nontext things. A lot of text
+              or not that much I don't know what... Some amount of text, various
+              amounts of texts, in various contexts. Filling space with text,
+              and wrapping lines, making rows. :smile: Oh, and you can use all
+              sorts of logical shortcuts for emojiOne emojis like :robot:
             </Text>
-            <EmojiButton onClick={this.handleCloseModal}>Close the modal :x:</EmojiButton>
+            <EmojiButton onClick={this.handleCloseModal}>
+              Close the modal :x:
+            </EmojiButton>
           </Modal>
         </FullScreenSection>
 
@@ -82,7 +82,10 @@ export default class extends React.Component {
           <Button>Practice</Button>
         </FullScreenSection>
 
-        <FullScreenSection gradient="firewatch" image="/static/b2-team-work.png">
+        <FullScreenSection
+          gradient="firewatch"
+          image="/static/b2-team-work.png"
+        >
           <Title>I'm a gradient and image section</Title>
         </FullScreenSection>
         <GridContainer>
@@ -101,6 +104,6 @@ export default class extends React.Component {
           <EmojiButton>Some things are hard to read :strawberry:</EmojiButton>
         </FullScreenSection>
       </Index>
-    )
+    );
   }
 }
