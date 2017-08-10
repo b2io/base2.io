@@ -5,6 +5,7 @@
   "dependencies": {
     "express": "^4.15.3",
     "gray-matter": "^3.0.2",
+    "lodash": "^4.17.4",
     "markdown-to-jsx": "^5.4.1",
     "next": "beta",
     "prop-types": "^15.5.10",
