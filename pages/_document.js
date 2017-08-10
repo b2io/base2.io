@@ -25,6 +25,11 @@ class Document extends BaseDocument {
           {helmet.meta.toComponent()}
           {helmet.title.toComponent()}
           {styleEls}
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto:100,400,900"
+            rel="stylesheet"
+          />
+          <style>{`body { margin: 0; padding: 0; }`}</style>
         </Head>
         <body {...helmet.bodyAttributes.toComponent()}>
           {mainEl}
