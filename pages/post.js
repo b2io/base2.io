@@ -8,7 +8,7 @@ class Post extends Component {
   }
 
   render() {
-    const { content, data, id } = this.props;
+    const { content, data, id } = this.props; // eslint-disable-line
 
     return (
       <main>
