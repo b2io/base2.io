@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { Button, Emoji } from './';
 
 const EmojiButton = props =>
-  <Button {...props}>
+  (<Button {...props}>
     <Emoji styles={props.styles}>
       {props.children}
     </Emoji>
-  </Button>;
+  </Button>);
 
 EmojiButton.defaultProps = {
   styles: {

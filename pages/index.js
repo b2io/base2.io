@@ -11,7 +11,7 @@ const Index = styled.div`
 `;
 
 export default () =>
-  <Index>
+  (<Index>
     <FullScreenSection color={color.black} height="80">
       <Logo />
     </FullScreenSection>
@@ -29,4 +29,4 @@ export default () =>
     <FullScreenSection color={color.yellow} height="50" />
     <FullScreenSection height="180" image="/static/bg-5.png" />
     <FullScreenSection color={color.black} />
-  </Index>;
+  </Index>);
