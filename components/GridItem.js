@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Colorfill from './Colorfill';
+import { colorFill } from '../util/colors';
 
 const GridItem = styled.div`
   background-image: url('${props => props.image}');
@@ -23,7 +23,7 @@ const GridItem = styled.div`
     }
   }
 
-  ${Colorfill};
+  ${colorFill};
 `;
 
 export default GridItem;

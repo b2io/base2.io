@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import FullScreenSection from './FullScreenSection';
+import { FullScreenSection } from './';
 
 const SVGContainer = styled.svg`
   display: block;
@@ -16,7 +16,11 @@ const SVGContainer = styled.svg`
 
 function Logo() {
   return (
-    <SVGContainer viewBox="0 0 562 81" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <SVGContainer
+      viewBox="0 0 562 81"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g transform="translate(-1227.000000, -1698.000000)">
         <g transform="translate(1227.000000, 1691.000000)">
           <g transform="translate(0.000000, 7.000000)">

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Emoji from './Emoji';
-import Paragraph from './Paragraph';
+import { Emoji, Paragraph } from './';
 
 const Text = props =>
   <Paragraph>

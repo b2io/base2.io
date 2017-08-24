@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Colorfill from './Colorfill';
+import { colorFill } from '../util/colors';
 
 const FullScreenSection = styled.section`
   align-items: center;
@@ -9,20 +9,20 @@ const FullScreenSection = styled.section`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
+  height: ${props => props.height || 100}vmin;
   justifty-content: center;
   margin: 0;
   overflow: hidden;
   position: relative;
+  transition: all .3s ease-out;
   width: 100vw;
   z-index: 0;
 
-  * {
-    max-width: 50%;
-    margin: auto;
+  @media (min-width: 1500px) {
+    height: ${props => `calc(${props.height}vh * 1.25)` || '150vh'};
   }
 
-  ${Colorfill};
+  ${colorFill};
 `;
 
 export default FullScreenSection;
