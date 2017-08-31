@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Emoji } from './';
+import Button from './Button';
+import Emoji from './Emoji';
 
 const EmojiButton = props =>
   (<Button {...props}>

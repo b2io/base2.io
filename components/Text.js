@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Emoji, Paragraph } from './';
+import Emoji from './Emoji';
+import Paragraph from './Paragraph';
 
 const Text = props =>
-  <Paragraph>
+  (<Paragraph>
     <Emoji>
       {props.children}
     </Emoji>
-  </Paragraph>;
+  </Paragraph>);
 
 Text.propTypes = {
   children: PropTypes.node.isRequired,

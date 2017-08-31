@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { colorFill } from '../util/colors';
+import PropTypes from 'prop-types';
+import { colorOverlay } from '../helpers/colors';
 
 const GridItem = styled.div`
   background-image: url('${props => props.image}');
@@ -23,7 +24,12 @@ const GridItem = styled.div`
     }
   }
 
-  ${colorFill};
+  ${colorOverlay};
 `;
+
+GridItem.propTypes = {
+  color: PropTypes.string,
+  image: PropTypes.string,
+};
 
 export default GridItem;

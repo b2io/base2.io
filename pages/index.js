@@ -1,9 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FullScreenSection, HighlightText, Logo, Title } from '../components';
-
-import { color } from '../util/colors';
-import { fullWidth, home } from '../util/templates';
+import {
+  B2Logo,
+  EdgeShape,
+  FullScreenSection,
+  HighlightText,
+  Title,
+} from '../components';
+import { Clients } from '../modules';
+import { color, gradient } from '../helpers/colors';
+import { fullWidth, home } from '../helpers/templates';
+import { polygon } from '../helpers/shapes';
 
 const Index = styled.div`
   ${fullWidth};
@@ -12,21 +19,51 @@ const Index = styled.div`
 
 export default () =>
   (<Index>
-    <FullScreenSection color={color.black} height="80">
-      <Logo />
+    <FullScreenSection color={color.blue} height="80">
+      <B2Logo />
     </FullScreenSection>
-    <FullScreenSection image="/static/bg-1.png" height="110">
+
+    <FullScreenSection image="/static/brick-wall.jpg">
+      <EdgeShape color={color.blue} shape={polygon.shape1} side="top" />
       <HighlightText color={color.black}>
         <Title>We turn ideas into beautiful software.</Title>
       </HighlightText>
+      <EdgeShape color={color.red} shape={polygon.shape2} side="bottom" />
     </FullScreenSection>
-    <FullScreenSection color={color.blue} height="50" />
-    <FullScreenSection height="180" image="/static/bg-2.png" />
+
+    <FullScreenSection color={color.red}>
+      <Clients />
+    </FullScreenSection>
+
+    <FullScreenSection height="160" image="/static/screen-side-brick-wall.jpg">
+      <EdgeShape color={color.red} shape={polygon.shape3} side="top" />
+      <EdgeShape color={color.purple} shape={polygon.shape4} side="bottom" />
+    </FullScreenSection>
+
     <FullScreenSection color={color.purple} height="50" />
-    <FullScreenSection height="200" image="/static/bg-3.png" />
+
+    <FullScreenSection height="180" image="/static/hands-working-at-desk.jpg">
+      <EdgeShape color={color.purple} shape={polygon.shape5} side="top" />
+      <EdgeShape color={color.red} shape={polygon.shape6} side="bottom" />
+    </FullScreenSection>
+
     <FullScreenSection color={color.red} height="50" />
-    <FullScreenSection height="180" image="/static/bg-4.png" />
+
+    <FullScreenSection height="160" image="/static/dual-screen-brick-wall.jpg">
+      <EdgeShape color={color.red} shape={polygon.shape7} side="top" />
+      <EdgeShape color={color.yellow} shape={polygon.shape8} side="bottom" />
+    </FullScreenSection>
+
     <FullScreenSection color={color.yellow} height="50" />
-    <FullScreenSection height="180" image="/static/bg-5.png" />
+
+    <FullScreenSection
+      gradient={gradient.dusk}
+      height="120"
+      image="/static/strategy-meeting.jpg"
+    >
+      <EdgeShape color={color.yellow} shape={polygon.shape9} side="top" />
+      <EdgeShape color={color.black} shape={polygon.shape10} side="bottom" />
+    </FullScreenSection>
+
     <FullScreenSection color={color.black} />
   </Index>);

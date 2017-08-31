@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FullScreenSection } from './';
+import FullScreenSection from './FullScreenSection';
 
 const SVGContainer = styled.svg`
   display: block;
@@ -14,7 +14,7 @@ const SVGContainer = styled.svg`
   }
 `;
 
-function Logo() {
+function B2Logo() {
   return (
     <SVGContainer
       viewBox="0 0 562 81"
@@ -52,4 +52,4 @@ function Logo() {
   );
 }
 
-export default Logo;
+export default B2Logo;

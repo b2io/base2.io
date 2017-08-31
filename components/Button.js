@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { FullScreenSection, Paragraph } from './';
+import FullScreenSection from './FullScreenSection';
+import Paragraph from './Paragraph';
 
 const Button = styled.button`
   background-color: transparent;

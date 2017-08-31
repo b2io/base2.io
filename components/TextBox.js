@@ -1,14 +1,19 @@
 import styled from 'styled-components';
-import { FullScreenSection } from './';
+import PropTypes from 'prop-types';
+import { colorBackground } from '../helpers/colors';
 
 const TextBox = styled.div`
-  background-color: var(--color-bg, black);
-  color: var(--color-fg, white);
-  padding: 30px 0;
-
-  ${FullScreenSection} & {
-    max-width: 30%;
-  }
+  color: ${props => props.textColor || 'var(--color-fg, white)'};
+  left: 10vw;
+  padding: 3vw;
+  position: absolute;
+  top: -10vw;
+  ${colorBackground};
 `;
+
+TextBox.propTypes = {
+  color: PropTypes.string,
+  textColor: PropTypes.string,
+};
 
 export default TextBox;
