@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Emoji from './Emoji';
 import Button from './Button';
+import Emoji from './Emoji';
 
 const EmojiButton = props =>
-  <Button {...props}>
+  (<Button {...props}>
     <Emoji styles={props.styles}>
       {props.children}
     </Emoji>
-  </Button>;
+  </Button>);
 
 EmojiButton.defaultProps = {
   styles: {

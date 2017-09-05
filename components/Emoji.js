@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Emojify from 'react-emojione';
 
 const Emoji = props =>
-  <Emojify style={props.styles}>
+  (<Emojify style={props.styles}>
     {props.children}
-  </Emojify>;
+  </Emojify>);
 
 Emoji.defaultProps = {
   styles: {

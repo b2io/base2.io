@@ -1,109 +1,74 @@
 import React from 'react';
 import styled from 'styled-components';
-import Modal from 'react-modal';
-import Button from '../components/Button';
-import EmojiButton from '../components/EmojiButton';
-import GridContainer from '../components/GridContainer';
-import GridItem from '../components/GridItem';
-import FullScreenSection from '../components/FullScreenSection';
-import Logo from '../components/Logo';
-import Text from '../components/Text';
-import Title from '../components/Title';
+import {
+  B2Logo,
+  EdgeShape,
+  FullScreenSection,
+  HighlightText,
+  TextBox,
+  Title,
+} from '../components';
+import { Clients } from '../modules';
+import { color, gradient } from '../helpers/colors';
+import { fullWidth, home } from '../helpers/templates';
+import { polygon } from '../helpers/shapes';
 
 const Index = styled.div`
-  --color-blue: #00aeef;
-  --color-fg: white;
-  --color-bg: black;
-  --font: 'Roboto';
-  max-width: 100%;
-  overflow: hidden;
+  ${fullWidth};
+  ${home};
 `;
 
-const Color = {
-  blue: 'var(--color-blue)',
-  white: '#fff',
-  tan: '#eacda3',
-  purple: '#a044ff',
-  yelloworange: '#F0CB35',
-  limecicle: '#c2e59c',
-  hotpink: '#fc00ff',
-  aqua: '#267871',
-  leaf: '#00bf8f',
-};
+export default () =>
+  (<Index>
+    <FullScreenSection color={color.blue} height="80">
+      <B2Logo />
+    </FullScreenSection>
 
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showModal: false,
-    };
+    <FullScreenSection image="/static/brick-wall.jpg">
+      <EdgeShape color={color.blue} shape={polygon.shape1} side="top" />
+      <TextBox>
+        <Title small>Web. Design. Mobile.</Title>
+        This box is great for text. Anywhere is great for emojis. :sunglasses:
+      </TextBox>
+      <HighlightText color={color.black}>
+        <Title>We turn ideas into beautiful software.</Title>
+      </HighlightText>
+      <EdgeShape color={color.red} shape={polygon.shape2} side="bottom" />
+    </FullScreenSection>
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
-  }
+    <FullScreenSection color={color.red} height="70">
+      <Clients />
+    </FullScreenSection>
 
-  handleOpenModal() {
-    this.setState({ showModal: true });
-  }
+    <FullScreenSection height="160" image="/static/screen-side-brick-wall.jpg">
+      <EdgeShape color={color.red} shape={polygon.shape3} side="top" />
+      <EdgeShape color={color.purple} shape={polygon.shape4} side="bottom" />
+    </FullScreenSection>
 
-  handleCloseModal() {
-    this.setState({ showModal: false });
-  }
+    <FullScreenSection color={color.purple} height="50" />
 
-  render() {
-    return (
-      <Index>
-        <FullScreenSection color={Color.blue}>
-          <Logo />
-        </FullScreenSection>
+    <FullScreenSection height="180" image="/static/hands-working-at-desk.jpg">
+      <EdgeShape color={color.purple} shape={polygon.shape5} side="top" />
+      <EdgeShape color={color.red} shape={polygon.shape6} side="bottom" />
+    </FullScreenSection>
 
-        <FullScreenSection image="/static/full-screen.png">
-          <Button transparentText onClick={this.handleOpenModal}>
-            Open a modal
-          </Button>
-          <Modal contentLabel="Example Modal" isOpen={this.state.showModal}>
-            <Title>I am a modal (Title)</Title>
-            <Text>
-              And this is paragraph text, but that shouldn't stop you from
-              adding <Button>A Button</Button> or nontext things. A lot of text
-              or not that much I don't know what... Some amount of text, various
-              amounts of texts, in various contexts. Filling space with text,
-              and wrapping lines, making rows. :smile: Oh, and you can use all
-              sorts of logical shortcuts for emojiOne emojis like :robot:
-            </Text>
-            <EmojiButton onClick={this.handleCloseModal}>
-              Close the modal :x:
-            </EmojiButton>
-          </Modal>
-        </FullScreenSection>
+    <FullScreenSection color={color.red} height="50" />
 
-        <FullScreenSection gradient="dusk">
-          <Title>We turn ideas into beautiful software.</Title>
-          <Button>Practice</Button>
-        </FullScreenSection>
+    <FullScreenSection height="160" image="/static/dual-screen-brick-wall.jpg">
+      <EdgeShape color={color.red} shape={polygon.shape7} side="top" />
+      <EdgeShape color={color.yellow} shape={polygon.shape8} side="bottom" />
+    </FullScreenSection>
 
-        <FullScreenSection
-          gradient="firewatch"
-          image="/static/b2-team-work.png"
-        >
-          <Title>I'm a gradient and image section</Title>
-        </FullScreenSection>
-        <GridContainer>
-          <GridItem gradient="dusk" image="/static/dmiller.jpg" />
-          <GridItem color={Color.yelloworange} image="/static/tborres.jpg" />
-          <GridItem color={Color.tan} image="/static/jridenbaugh.jpg" />
-          <GridItem color={Color.leaf} image="/static/chawkins.jpg" />
-          <GridItem color={Color.hotpink} image="/static/csteinert.jpg" />
-          <GridItem color={Color.limecicle} image="/static/sludemann.jpg" />
-          <GridItem color={Color.purple} image="/static/khamper.jpg" />
-          <GridItem color={Color.aqua} image="/static/rdunkle.jpg" />
-          <GridItem color={Color.blue} image="/static/mkendall.jpg" />
-        </GridContainer>
+    <FullScreenSection color={color.yellow} height="50" />
 
-        <FullScreenSection gradient="sulphur">
-          <EmojiButton>Some things are hard to read :strawberry:</EmojiButton>
-        </FullScreenSection>
-      </Index>
-    );
-  }
-}
+    <FullScreenSection
+      gradient={gradient.dusk}
+      height="120"
+      image="/static/strategy-meeting.jpg"
+    >
+      <EdgeShape color={color.yellow} shape={polygon.shape9} side="top" />
+      <EdgeShape color={color.black} shape={polygon.shape10} side="bottom" />
+    </FullScreenSection>
+
+    <FullScreenSection color={color.black} />
+  </Index>);
