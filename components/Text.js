@@ -1,16 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Emoji from './Emoji';
-import Paragraph from './Paragraph';
+
+const TextWrapper = styled.span`
+  color: ${props => props.color};
+  font-family: var(--font, 'Roboto');
+  font-size: 24px;
+  font-weight: 100;
+`;
 
 const Text = props =>
-  (<Paragraph>
+  (<TextWrapper color={props.color}>
     <Emoji>
       {props.children}
     </Emoji>
-  </Paragraph>);
+  </TextWrapper>);
+
+Text.defaultProps = {
+  color: 'var(--color-fg, black)',
+};
 
 Text.propTypes = {
+  color: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 

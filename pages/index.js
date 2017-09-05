@@ -5,6 +5,7 @@ import {
   EdgeShape,
   FullScreenSection,
   HighlightText,
+  TextBox,
   Title,
 } from '../components';
 import { Clients } from '../modules';
@@ -25,13 +26,17 @@ export default () =>
 
     <FullScreenSection image="/static/brick-wall.jpg">
       <EdgeShape color={color.blue} shape={polygon.shape1} side="top" />
+      <TextBox>
+        <Title small>Web. Design. Mobile.</Title>
+        This box is great for text. Anywhere is great for emojis. :sunglasses:
+      </TextBox>
       <HighlightText color={color.black}>
         <Title>We turn ideas into beautiful software.</Title>
       </HighlightText>
       <EdgeShape color={color.red} shape={polygon.shape2} side="bottom" />
     </FullScreenSection>
 
-    <FullScreenSection color={color.red}>
+    <FullScreenSection color={color.red} height="70">
       <Clients />
     </FullScreenSection>
 

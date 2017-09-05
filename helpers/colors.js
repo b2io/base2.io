@@ -24,7 +24,7 @@ const colorBackground = css`
 `;
 
 const gradientBackground = css`
-${props => (props.gradient ? props.gradient : null)};
+${props => props.gradient || null};
 ${props =>
   props.gradient
     ? 'background-image: linear-gradient(to right, var(--color-gradient1, white), var(--color-gradient2, black))'

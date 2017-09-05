@@ -6,12 +6,11 @@ import { clientLogos } from '../helpers/logos';
 const Wrapper = styled.div`
   align-self: flex-start;
   margin: 0 auto auto;
-  width: ;
 `;
 
 const Clients = () =>
   (<Wrapper>
-    <Title>Logos</Title>
+    <Title>Clients</Title>
     <LogoGrid logos={clientLogos} />
   </Wrapper>);
 

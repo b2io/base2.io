@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import FullScreenSection from './FullScreenSection';
 import { gradientBackground } from '../helpers/colors';
 
 const HighlightText = styled.span`
@@ -8,6 +7,8 @@ const HighlightText = styled.span`
   display: inline;
   font-size: ${props => props.size || 'calc(5vw + 3vmin)'};
   line-height: 130%;
+  margin: auto;
+  max-width: 60%;
 
   h1,
   h2,
@@ -18,12 +19,6 @@ const HighlightText = styled.span`
     font-size: 100%;
     font-weight: 900;
     ${gradientBackground};
-  }
-
-  ${FullScreenSection} & {
-    margin-left: auto;
-    margin-right: 16px;
-    max-width: 60%;
   }
 `;
 

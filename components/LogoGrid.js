@@ -21,9 +21,7 @@ const Logo = props => <Image src={props.image} />;
 
 function LogoGrid(props) {
   const logos = props.logos;
-  const gridItems = logos.map(logo =>
-    <Logo key={logo.toString()} image={logo} />,
-  );
+  const gridItems = logos.map(logo => <Logo key={logo} image={logo} />);
   return (
     <Grid>
       {gridItems}

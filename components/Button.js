@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import FullScreenSection from './FullScreenSection';
-import Paragraph from './Paragraph';
+import Text from './Text';
 
 const Button = styled.button`
   background-color: transparent;
@@ -41,7 +41,7 @@ const Button = styled.button`
     }
   }
 
-  ${Paragraph} & {
+  ${Text} & {
     font-size: 1em;
     line-height: 1em;
   }
