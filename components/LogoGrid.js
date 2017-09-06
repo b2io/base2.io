@@ -4,11 +4,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const fogo = styled.div`
-  align-self: flex-start;
-  margin: 0 auto auto;
-`;
-
 const Grid = styled.div`
   display: grid;
   grid-gap: calc(3vw + 16px);
@@ -27,11 +22,9 @@ function LogoGrid(props) {
   const logos = props.logos;
   const gridItems = logos.map(logo => <Logo key={logo} image={logo} />);
   return (
-    <fogo>
-      <Grid>
-        {gridItems}
-      </Grid>
-    </fogo>
+    <Grid>
+      {gridItems}
+    </Grid>
   );
 }
 
