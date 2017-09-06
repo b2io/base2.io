@@ -10,7 +10,7 @@ const FullScreenSection = styled.section`
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
-  height: ${props => props.height || 100}vh;
+  height: ${props => `${props.height}vh` || 'auto'};
   justifty-content: center;
   margin: 0;
   min-height: 30vw;

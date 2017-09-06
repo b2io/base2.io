@@ -11,7 +11,13 @@ const home = css`
 --color-bg: black;
 `;
 
+const logoWrapper = css`
+  align-self: flex-start;
+  margin: 0 auto auto;
+`;
+
 module.exports = {
   fullWidth,
   home,
+  logoWrapper,
 };
