@@ -53,6 +53,4 @@ const polygon = {
   },
 };
 
-module.exports = {
-  polygon,
-};
+export default polygon;

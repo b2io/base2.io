@@ -11,7 +11,7 @@ import {
 import { Clients, Technologies } from '../modules';
 import { color, gradient } from '../helpers/colors';
 import { fullWidth, home } from '../helpers/templates';
-import { polygon } from '../helpers/shapes';
+import polygon from '../helpers/shapes';
 
 const Index = styled.div`
   ${fullWidth};
@@ -49,10 +49,10 @@ export default () =>
       image="/static/fullscreen/screen-side-brick-wall.jpg"
     >
       <EdgeShape color={color.blue} shape={polygon.shape3} side="top" />
-      <EdgeShape color={color.purple} shape={polygon.shape4} side="bottom" />
+      <EdgeShape color={color.white} shape={polygon.shape4} side="bottom" />
     </FullScreenSection>
 
-    <FullScreenSection color={color.purple}>
+    <FullScreenSection color={color.white}>
       <Technologies />
     </FullScreenSection>
 
@@ -60,7 +60,7 @@ export default () =>
       height="180"
       image="/static/fullscreen/hands-working-at-desk.jpg"
     >
-      <EdgeShape color={color.purple} shape={polygon.shape5} side="top" />
+      <EdgeShape color={color.white} shape={polygon.shape5} side="top" />
       <EdgeShape color={color.red} shape={polygon.shape6} side="bottom" />
     </FullScreenSection>
 

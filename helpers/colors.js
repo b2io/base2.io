@@ -46,10 +46,4 @@ const colorOverlay = css`
   }
 `;
 
-module.exports = {
-  color,
-  colorBackground,
-  colorOverlay,
-  gradient,
-  gradientBackground,
-};
+export { color, colorBackground, colorOverlay, gradient, gradientBackground };

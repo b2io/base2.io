@@ -5,11 +5,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Grid = styled.div`
+  align-content: center;
   display: grid;
   grid-gap: calc(3vw + 16px);
   grid-template-columns: repeat(5, 10vw);
-  width: 100%;
+  margin: 0 auto auto;
 `;
+
 const Image = styled.img`
   align-self: center;
   display: flex;
@@ -18,7 +20,7 @@ const Image = styled.img`
 
 const Logo = props => <Image src={props.image} />;
 
-function LogoGrid(props) {
+const LogoGrid = props => {
   const logos = props.logos;
   const gridItems = logos.map(logo => <Logo key={logo} image={logo} />);
   return (
@@ -26,7 +28,7 @@ function LogoGrid(props) {
       {gridItems}
     </Grid>
   );
-}
+};
 
 Logo.propTypes = {
   image: PropTypes.string.isRequired,

@@ -11,7 +11,7 @@ import Text from './Text';
 import TextBox from './TextBox';
 import Title from './Title';
 
-module.exports = {
+export {
   B2Logo,
   Button,
   ContentBlock,

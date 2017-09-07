@@ -31,4 +31,4 @@ const technologyLogos = [
   '/static/logos/sass.png',
 ];
 
-module.exports = { clientLogos, technologyLogos };
+export { clientLogos, technologyLogos };
