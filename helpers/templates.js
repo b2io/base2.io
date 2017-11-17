@@ -7,11 +7,8 @@ const fullWidth = css`
 `;
 
 const home = css`
---color-fg: white;
---color-bg: black;
+  --color-fg: white;
+  --color-bg: black;
 `;
 
-module.exports = {
-  fullWidth,
-  home,
-};
+export { fullWidth, home };
