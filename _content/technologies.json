@@ -1,0 +1,22 @@
+[
+  {
+    "id": "rails",
+    "image": "img/rails.png",
+    "name": "Rails"
+  },
+  {
+    "id": "asp-net",
+    "image": "img/asp-net.png",
+    "name": ".NET"
+  },
+  {
+    "id": "angularjs",
+    "image": "img/angularjs.png",
+    "name": "Angular.JS"
+  },
+  {
+    "id": "phonegap",
+    "image": "img/phonegap.png",
+    "name": "PhoneGap"
+  }
+]

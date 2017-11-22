@@ -1,24 +1,38 @@
-base2.io
-====================
+# base2.io
 
-## Development
+> The Base Two website.
 
-Assuming you have Ruby installed, run the following commands:
+## Setup
 
-```
-$ bundle install
-$ bundle exec jekyll serve -w
-```
-
-That should make the site available on http://localhost:4000.
-
-## Deployment
-
-Assuming you have [surge setup](https://surge.sh/), run the following commands:
+Installation:
 
 ```
-$ jekyll build
-$ surge _site/
+$ npm i
+$ npm run build
 ```
 
-Voilà!
+Local development server on port 8000:
+
+```
+$ npm run develop
+```
+
+Local production server on port 9000:
+
+```
+$ npm start
+```
+
+## Deployment:
+
+> [TODO: Update deployment steps in README](https://github.com/b2io/base2.io/issues/123)
+
+## Known Issues
+
+If you're getting unexpected errors with GraphQL data or plugins, try:
+
+```
+$ rm .cache
+$ rm public
+$ npm run build
+```

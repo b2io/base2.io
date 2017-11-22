@@ -1,0 +1,22 @@
+[
+  {
+    "id": "aep",
+    "image": "img/aep.png",
+    "name": "AEP"
+  },
+  {
+    "id": "wendys",
+    "image": "img/wendys.png",
+    "name": "Wendy's"
+  },
+  {
+    "id": "natures-one",
+    "image": "img/natures-one.png",
+    "name": "Nature's One"
+  },
+  {
+    "id": "rev1-ventures",
+    "image": "img/rev1-ventures.png",
+    "name": "Rev1"
+  }
+]

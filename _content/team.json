@@ -1,0 +1,56 @@
+[
+  {
+    "id": "dmiller",
+    "image": "img/dmiller.jpg",
+    "name": "Drew Miller",
+    "title": "Founder // Developer"
+  },
+  {
+    "id": "tborres",
+    "image": "img/tborres.jpg",
+    "name": "Tony Borres",
+    "title": "Developer"
+  },
+  {
+    "id": "jridenbaugh",
+    "image": "img/jridenbaugh.jpg",
+    "name": "Jeff Ridenbaugh",
+    "title": "Developer"
+  },
+  {
+    "id": "chawkins",
+    "image": "img/chawkins.jpg",
+    "name": "Chris Hawkins",
+    "title": "UX Developer"
+  },
+  {
+    "id": "csteinert",
+    "image": "img/csteinert.jpg",
+    "name": "Caitlin Steinert",
+    "title": "UX Developer"
+  },
+  {
+    "id": "sludemann",
+    "image": "img/sludemann.jpg",
+    "name": "Sean Ludemann",
+    "title": "Developer"
+  },
+  {
+    "id": "khamper",
+    "image": "img/khamper.jpg",
+    "name": "Kim Hamper",
+    "title": "Developer"
+  },
+  {
+    "id": "rdunkle",
+    "image": "img/rdunkle.jpg",
+    "name": "Reed Dunkle",
+    "title": "Developer"
+  },
+  {
+    "id": "mkendall",
+    "image": "img/mkendall.jpg",
+    "name": "Mandy Kendall",
+    "title": "Developer"
+  }
+]
