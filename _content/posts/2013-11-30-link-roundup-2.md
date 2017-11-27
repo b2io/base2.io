@@ -1,11 +1,8 @@
 ---
-layout: post
 title: 'Link Roundup #2'
 author: dmiller
-comments: true
+date: "2013-11-30T04:00:00.000Z"
 ---
-
-<!-- #REST#BEGIN -->
 
 #### Libaries
 
@@ -25,5 +22,3 @@ comments: true
 #### Tools
 
 * [RAW](http://app.raw.densitydesign.org/#/)
-
-<!-- #REST#END -->

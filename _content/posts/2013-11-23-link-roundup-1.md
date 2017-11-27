@@ -1,13 +1,11 @@
 ---
-layout: post
 title: 'Link Roundup #1'
 author: dmiller
-comments: true
+date: "2013-11-23T04:00:00.000Z"
 ---
 
-The first in a (hopefully weekly) recurring post where we collect interesting links from the week.
-
-<!-- #REST#BEGIN -->
+The first in a (hopefully weekly) recurring post where we collect interesting
+links from the week.
 
 #### Libaries
 
@@ -27,5 +25,3 @@ The first in a (hopefully weekly) recurring post where we collect interesting li
 * [Leanpub: Publish Early, Publish Often](https://leanpub.com/)
 * [omniref](http://www.omniref.com/)
 * [watson, an inline issue manager](http://goosecode.com/watson/)
-
-<!-- #REST#END -->

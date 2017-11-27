@@ -1,11 +1,8 @@
 ---
-layout: post
 title: 'Link Roundup #4'
 author: dmiller
-comments: true
+date: "2013-12-14T04:00:00.000Z"
 ---
-
-<!-- #REST#BEGIN -->
 
 #### Libaries
 
@@ -36,5 +33,3 @@ comments: true
 * [Vagrant 1.4](http://www.vagrantup.com/blog/vagrant-1-4.html)
 * [indieisaconcept/grunt-styleguide](https://github.com/indieisaconcept/grunt-styleguide)
 * [Rails Assets](https://rails-assets.org)
-
-<!-- #REST#END -->

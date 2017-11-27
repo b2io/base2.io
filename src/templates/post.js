@@ -1,7 +1,10 @@
+import { DateTime } from 'luxon';
 import React from 'react';
 import remark from 'remark';
 import remarkReact from 'remark-react';
-import { H1, P } from '../components';
+import styled from 'styled-components';
+import { Header, H1, Main, P, Section } from '../components';
+import { hugeDate } from '../util/datetime';
 
 const HoistChildren = props =>
   React.Children.map(props.children, child => child.props.children);
@@ -22,11 +25,17 @@ class PostTemplate extends React.Component {
   render() {
     const { content, data, id } = this.props.pathContext;
 
+    // TODO: Resolve the author details from a query.
     return (
-      <main>
-        <H1>{data.title}</H1>
-        {markdown(content)}
-      </main>
+      <Main>
+        <Header>
+          <H1>{data.title}</H1>
+          <P lead>
+            {hugeDate(data.date)} — {data.author}
+          </P>
+        </Header>
+        <Section>{markdown(content)}</Section>
+      </Main>
     );
   }
 }

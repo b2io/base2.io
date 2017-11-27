@@ -1,11 +1,8 @@
 ---
-layout: post
 title: 'Link Roundup #3'
 author: dmiller
-comments: true
+date: "2013-12-07T04:00:00.000Z"
 ---
-
-<!-- #REST#BEGIN -->
 
 #### Libaries
 
@@ -27,5 +24,3 @@ comments: true
 #### Tools
 
 * [Unleash Ruby](https://bitbucket.org/jonforums/uru)
-
-<!-- #REST#END -->
