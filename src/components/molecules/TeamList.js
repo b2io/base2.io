@@ -22,7 +22,9 @@ const TeamImg = styled(Img)`
   width: 260px;
 `;
 
-const Name = H4.extend`${themed('typography.headline')};`;
+const Name = H4.extend`
+  ${themed('typography.headline')};
+`;
 
 const Title = styled.small`
   display: block;

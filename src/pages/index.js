@@ -16,7 +16,9 @@ import {
 } from '../components';
 import { toNodesWithImage } from '../util/graphql';
 
-const LogoImg = styled(Img)`opacity: 0.66;`;
+const LogoImg = styled(Img)`
+  opacity: 0.66;
+`;
 
 class IndexPage extends React.Component {
   render() {
@@ -146,9 +148,7 @@ class IndexPage extends React.Component {
         <Section>
           <H2>Team</H2>
           <TeamList>
-            {team.map(member => (
-              <TeamList.Item {...member} key={member.id} />
-            ))}
+            {team.map(member => <TeamList.Item {...member} key={member.id} />)}
           </TeamList>
         </Section>
         <Section>
@@ -174,8 +174,8 @@ export const pageQuery = graphql`
           id
           image {
             childImageSharp {
-              resolutions(quality: 80) {
-                ...GatsbyImageSharpResolutions_withWebp_noBase64
+              sizes {
+                ...GatsbyImageSharpSizes_withWebp_noBase64
               }
             }
           }
@@ -189,7 +189,7 @@ export const pageQuery = graphql`
           id
           image {
             childImageSharp {
-              resolutions(width: 260, quality: 80) {
+              resolutions(width: 260) {
                 ...GatsbyImageSharpResolutions_withWebp_noBase64
               }
             }
@@ -205,8 +205,8 @@ export const pageQuery = graphql`
           id
           image {
             childImageSharp {
-              resolutions(quality: 80) {
-                ...GatsbyImageSharpResolutions_withWebp_noBase64
+              sizes {
+                ...GatsbyImageSharpSizes_withWebp_noBase64
               }
             }
           }
