@@ -4,6 +4,16 @@
 
 ## Setup
 
+Install [Node.js v8.x](https://nodejs.org).
+
+**Windows**
+
+Ensure you have the tools needed by `node-gyp` on your path; if you don't, try:
+
+```
+npm i -g --production windows-build-tools
+```
+
 Installation:
 
 ```

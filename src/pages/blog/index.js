@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Header, H1, H2, List, Main, P, Section } from '../../components';
-import { hugeDate } from '../../util/datetime';
+import { Header, H1, H2, List, Main, P, Section, Time } from '../../components';
 
 function PostListItem({ author, date, excerpt, title }) {
   return (
     <List.Item>
       <H2>{title}</H2>
-      <P>{date} — {author}</P>
+      <P>
+        <Time iso={date} />— {author}
+      </P>
       <P>{excerpt}</P>
     </List.Item>
   );
@@ -15,7 +16,11 @@ function PostListItem({ author, date, excerpt, title }) {
 
 class BlogIndex extends React.Component {
   render() {
-    const posts = this.props.data.posts.edges.map(e => e.node);
+    const { data } = this.props;
+    const posts = data.posts.edges.map(e => e.node);
+    const authorIdToName = data.authors.edges
+      .map(e => e.node)
+      .reduce((hashMap, { id, name }) => ({ ...hashMap, [id]: name }), {});
 
     // TODO: Resolve the author details from a query.
     return (
@@ -27,8 +32,8 @@ class BlogIndex extends React.Component {
           <List unstyled>
             {posts.map(post => (
               <PostListItem
-                author={post.frontmatter.author}
-                date={hugeDate(post.frontmatter.date)}
+                author={authorIdToName[post.frontmatter.author]}
+                date={post.frontmatter.date}
                 excerpt={post.excerpt}
                 key={post.internal.contentDigest}
                 title={post.frontmatter.title}
@@ -45,6 +50,14 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
+    authors: allTeamJson {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
     posts: allMarkdownRemark(
       sort: { fields: [fileAbsolutePath], order: DESC }
     ) {
@@ -54,6 +67,7 @@ export const pageQuery = graphql`
             contentDigest
           }
           excerpt
+          fileAbsolutePath
           frontmatter {
             author
             date

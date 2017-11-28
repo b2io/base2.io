@@ -3,54 +3,77 @@
     "id": "dmiller",
     "image": "img/dmiller.jpg",
     "name": "Drew Miller",
-    "title": "Founder // Developer"
+    "title": "Founder // Developer",
+    "active": true
   },
   {
     "id": "tborres",
     "image": "img/tborres.jpg",
     "name": "Tony Borres",
-    "title": "Developer"
+    "title": "Developer",
+    "active": true
   },
   {
     "id": "jridenbaugh",
     "image": "img/jridenbaugh.jpg",
     "name": "Jeff Ridenbaugh",
-    "title": "Developer"
+    "title": "Developer",
+    "active": true
   },
   {
     "id": "chawkins",
     "image": "img/chawkins.jpg",
     "name": "Chris Hawkins",
-    "title": "UX Developer"
+    "title": "UX Developer",
+    "active": true
   },
   {
     "id": "csteinert",
     "image": "img/csteinert.jpg",
     "name": "Caitlin Steinert",
-    "title": "UX Developer"
+    "title": "UX Developer",
+    "active": true
   },
   {
     "id": "sludemann",
     "image": "img/sludemann.jpg",
     "name": "Sean Ludemann",
-    "title": "Developer"
+    "title": "Developer",
+    "active": true
   },
   {
     "id": "khamper",
     "image": "img/khamper.jpg",
     "name": "Kim Hamper",
-    "title": "Developer"
+    "title": "Developer",
+    "active": true
   },
   {
     "id": "rdunkle",
     "image": "img/rdunkle.jpg",
     "name": "Reed Dunkle",
-    "title": "Developer"
+    "title": "Developer",
+    "active": true
   },
   {
     "id": "mkendall",
     "image": "img/mkendall.jpg",
     "name": "Mandy Kendall",
-    "title": "Developer"
+    "title": "Developer",
+    "active": true
+  },
+  {
+    "id": "zbrown",
+    "image": "img/zbrown.jpg",
+    "name": "Zack Brown",
+    "title": "Founder // Developer",
+    "active": false
+  },
+  {
+    "id": "jstevens",
+    "image": "img/jstevens.jpg",
+    "name": "Jon Stevens",
+    "title": "Developer",
+    "active": false
   }
 ]

@@ -183,7 +183,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    team: allTeamJson {
+    team: allTeamJson(filter: { active: { eq: true } }) {
       edges {
         node {
           id

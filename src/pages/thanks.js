@@ -34,7 +34,7 @@ export default ThanksPage;
 
 export const pageQuery = graphql`
   query ThanksPageQuery {
-    team: allTeamJson {
+    team: allTeamJson(filter: { active: { eq: true } }) {
       edges {
         node {
           id
