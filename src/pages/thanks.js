@@ -38,13 +38,13 @@ class ThanksPage extends React.Component {
   }
 }
 
-function mapDataToProps({ data }) {
+function mapPropsToProps({ data }) {
   return {
     team: toNodesWithImage(data.team),
   };
 }
 
-export default mapProps(mapDataToProps)(ThanksPage);
+export default mapProps(mapPropsToProps)(ThanksPage);
 
 export const pageQuery = graphql`
   query ThanksPageQuery {

@@ -164,7 +164,7 @@ class IndexPage extends React.Component {
   }
 }
 
-function mapDataToProps({ data }) {
+function mapPropsToProps({ data }) {
   return {
     clients: toNodesWithImage(data.clients),
     team: toNodesWithImage(data.team),
@@ -172,7 +172,7 @@ function mapDataToProps({ data }) {
   };
 }
 
-export default mapProps(mapDataToProps)(IndexPage);
+export default mapProps(mapPropsToProps)(IndexPage);
 
 export const pageQuery = graphql`
   query IndexPageQuery {

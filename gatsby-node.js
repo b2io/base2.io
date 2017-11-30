@@ -1,32 +1,37 @@
-const fs = require('fs');
-const grayMatter = require('gray-matter');
 const path = require('path');
-const authors = require('./_content/team.json');
-
-const postTemplate = path.resolve('src/templates/post.js');
-
-// TODO: Switch to using GraphQL for this.
-const readPostsSync = () =>
-  fs.readdirSync('_content/posts').map(fileName => {
-    const fullPath = `_content/posts/${fileName}`;
-    const { content, data } = grayMatter.read(fullPath);
-    data.author = authors.find(a => a.id === data.author).name;
-    const id = path.parse(fullPath).name;
-
-    return { content, data, id };
-  });
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  readPostsSync()
-    .forEach(post => {
-      createPage({
-        component: postTemplate,
-        context: Object.assign({}, post),
-        path: post.data.path,
-      });
-    });
+  return new Promise((resolve, reject) => {
+    resolve(
+      graphql(`
+        query GatsbyNodeQuery {
+          posts: allMarkdownRemark {
+            edges {
+              node {
+                id
+                frontmatter {
+                  path
+                }
+              }
+            }
+          }
+        }
+      `).then(result => {
+        if (result.errors) return reject(result.errors);
 
-  return Promise.resolve(true);
+        const postTemplate = path.resolve('src/templates/post.js');
+        const postNodes = result.data.posts.edges.map(e => e.node);
+
+        postNodes.forEach(node => {
+          createPage({
+            component: postTemplate,
+            context: { id: node.id },
+            path: node.frontmatter.path,
+          });
+        });
+      }),
+    );
+  });
 };

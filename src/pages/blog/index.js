@@ -17,7 +17,9 @@ import {
 function PostExcerpt({ author, date, excerpt, path, title }) {
   return (
     <List.Item>
-      <H2><Link to={path}>{title}</Link></H2>
+      <H2>
+        <Link to={path}>{title}</Link>
+      </H2>
       <P>
         <Time iso={date} />— {author}
       </P>
@@ -47,6 +49,7 @@ class BlogIndex extends React.Component {
 }
 
 function mapPropsToProps({ data }) {
+  // TODO: Find a way to resolve the author name more easily.
   const authorIdToName = data.authors.edges
     .map(e => e.node)
     .reduce((hashMap, { id, name }) => ({ ...hashMap, [id]: name }), {});

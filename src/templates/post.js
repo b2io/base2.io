@@ -1,3 +1,4 @@
+import grayMatter from 'gray-matter';
 import React from 'react';
 import { mapProps } from 'recompose';
 import remark from 'remark';
@@ -34,7 +35,10 @@ const markdownToElement = md =>
     })
     .processSync(md).contents;
 
-const markdown = raw => <HoistChildren>{markdownToElement(raw)}</HoistChildren>;
+// TODO: Add `content` prop to GraphQL remark nodes via plugin.
+const markdown = raw => (
+  <HoistChildren>{markdownToElement(grayMatter(raw).content)}</HoistChildren>
+);
 
 class PostTemplate extends React.Component {
   render() {
@@ -55,13 +59,41 @@ class PostTemplate extends React.Component {
   }
 }
 
-function mapPathContextToProps({ pathContext }) {
+function mapPropsToProps({ data }) {
+  // TODO: Find a way to resolve the author name more easily.
+  const authorIdToName = data.authors.edges
+    .map(e => e.node)
+    .reduce((hashMap, { id, name }) => ({ ...hashMap, [id]: name }), {});
+
   return {
-    author: pathContext.data.author,
-    children: markdown(pathContext.content),
-    date: pathContext.data.date,
-    title: pathContext.data.title,
+    author: data.post.frontmatter.author,
+    children: markdown(data.post.internal.content),
+    date: data.post.frontmatter.date,
+    title: data.post.frontmatter.title,
   };
 }
 
-export default mapProps(mapPathContextToProps)(PostTemplate);
+export default mapProps(mapPropsToProps)(PostTemplate);
+
+export const pageQuery = graphql`
+  query PostTemplateQuery($id: String!) {
+    authors: allTeamJson {
+      edges {
+        node {
+          id
+          name
+        }
+      }
+    }
+    post: markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        author
+        date
+        title
+      }
+      internal {
+        content
+      }
+    }
+  }
+`;
