@@ -1,4 +1,5 @@
 import React from 'react';
+import { mapProps } from 'recompose';
 import styled from 'styled-components';
 import {
   BreakoutSection,
@@ -22,10 +23,7 @@ const LogoImg = styled(Img)`
 
 class IndexPage extends React.Component {
   render() {
-    const { data } = this.props;
-    const clients = toNodesWithImage(data.clients);
-    const team = toNodesWithImage(data.team);
-    const technologies = toNodesWithImage(data.technologies);
+    const { clients, team, technologies } = this.props;
 
     return (
       <Main>
@@ -164,7 +162,15 @@ class IndexPage extends React.Component {
   }
 }
 
-export default IndexPage;
+function mapDataToProps({ data }) {
+  return {
+    clients: toNodesWithImage(data.clients),
+    team: toNodesWithImage(data.team),
+    technologies: toNodesWithImage(data.technologies),
+  };
+}
+
+export default mapProps(mapDataToProps)(IndexPage);
 
 export const pageQuery = graphql`
   query IndexPageQuery {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { mapProps } from 'recompose';
 import remark from 'remark';
 import remarkReact from 'remark-react';
 import styled from 'styled-components';
@@ -36,21 +37,29 @@ const markdown = raw => <HoistChildren>{markdownToElement(raw)}</HoistChildren>;
 
 class PostTemplate extends React.Component {
   render() {
-    const { content, data, id } = this.props.pathContext;
+    const { author, children, date, title } = this.props;
 
-    // TODO: Resolve the author details from a query.
     return (
       <Main>
         <Header>
-          <H1>{data.title}</H1>
+          <H1>{title}</H1>
           <P lead>
-            <Time iso={data.date} /> — {data.author}
+            <Time iso={date} /> — {author}
           </P>
         </Header>
-        <Section>{markdown(content)}</Section>
+        <Section>{children}</Section>
       </Main>
     );
   }
 }
 
-export default PostTemplate;
+function mapPathContextToProps({ pathContext }) {
+  return {
+    author: pathContext.data.author,
+    children: markdown(pathContext.content),
+    date: pathContext.data.date,
+    title: pathContext.data.title,
+  };
+}
+
+export default mapProps(mapPathContextToProps)(PostTemplate);

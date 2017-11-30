@@ -1,8 +1,9 @@
 import React from 'react';
+import { mapProps } from 'recompose';
 import styled from 'styled-components';
 import { Header, H1, H2, List, Main, P, Section, Time } from '../../components';
 
-function PostListItem({ author, date, excerpt, title }) {
+function PostExcerpt({ author, date, excerpt, title }) {
   return (
     <List.Item>
       <H2>{title}</H2>
@@ -16,13 +17,8 @@ function PostListItem({ author, date, excerpt, title }) {
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props;
-    const posts = data.posts.edges.map(e => e.node);
-    const authorIdToName = data.authors.edges
-      .map(e => e.node)
-      .reduce((hashMap, { id, name }) => ({ ...hashMap, [id]: name }), {});
+    const { posts } = this.props;
 
-    // TODO: Resolve the author details from a query.
     return (
       <Main>
         <Header>
@@ -30,15 +26,7 @@ class BlogIndex extends React.Component {
         </Header>
         <Section>
           <List unstyled>
-            {posts.map(post => (
-              <PostListItem
-                author={authorIdToName[post.frontmatter.author]}
-                date={post.frontmatter.date}
-                excerpt={post.excerpt}
-                key={post.internal.contentDigest}
-                title={post.frontmatter.title}
-              />
-            ))}
+            {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
           </List>
         </Section>
       </Main>
@@ -46,7 +34,22 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex;
+function mapDataToProps({ data }) {
+  const authorIdToName = data.authors.edges
+    .map(e => e.node)
+    .reduce((hashMap, { id, name }) => ({ ...hashMap, [id]: name }), {});
+  const posts = data.posts.edges.map(e => e.node).map(node => ({
+    author: authorIdToName[node.frontmatter.author],
+    date: node.frontmatter.date,
+    excerpt: node.excerpt,
+    id: node.internal.contentDigest,
+    title: node.frontmatter.title,
+  }));
+
+  return { posts };
+}
+
+export default mapProps(mapDataToProps)(BlogIndex);
 
 export const pageQuery = graphql`
   query BlogIndexQuery {

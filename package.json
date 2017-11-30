@@ -22,8 +22,11 @@
     "luxon": "^0.2.3",
     "nanoid": "^1.0.1",
     "polished": "^1.9.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
+    "recompose": "^0.26.0",
     "remark": "^8.0.0",
     "remark-react": "^4.0.1",
     "styled-components": "^2.2.3"

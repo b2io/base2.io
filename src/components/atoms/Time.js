@@ -8,9 +8,9 @@ class Time extends React.Component {
 
   render() {
     const { format, iso } = this.props;
-    const datetime = DateTime.fromISO(iso).toLocaleString(format);
+    const formattedDateTime = DateTime.fromISO(iso).toLocaleString(format);
 
-    return <time datetime={iso}>{datetime}</time>;
+    return <time dateTime={iso}>{formattedDateTime}</time>;
   }
 }
 

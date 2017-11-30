@@ -1,11 +1,11 @@
 import React from 'react';
+import { mapProps } from 'recompose';
 import { H2, P, Section, TeamList } from '../components';
 import { toNodesWithImage } from '../util/graphql';
 
 class ThanksPage extends React.Component {
   render() {
-    const { data } = this.props;
-    const team = toNodesWithImage(data.team);
+    const { team } = this.props;
 
     return (
       <main>
@@ -30,7 +30,13 @@ class ThanksPage extends React.Component {
   }
 }
 
-export default ThanksPage;
+function mapDataToProps({ data }) {
+  return {
+    team: toNodesWithImage(data.team),
+  };
+}
+
+export default mapProps(mapDataToProps)(ThanksPage);
 
 export const pageQuery = graphql`
   query ThanksPageQuery {
