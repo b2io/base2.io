@@ -1,7 +1,17 @@
 import React from 'react';
 import { mapProps } from 'recompose';
 import styled from 'styled-components';
-import { Header, H1, H2, List, Main, P, Section, Time } from '../../components';
+import {
+  GlobalNavigation,
+  Header,
+  H1,
+  H2,
+  List,
+  Main,
+  P,
+  Section,
+  Time,
+} from '../../components';
 
 function PostExcerpt({ author, date, excerpt, title }) {
   return (
@@ -21,6 +31,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Main>
+        <GlobalNavigation />
         <Header>
           <H1>Blog</H1>
         </Header>

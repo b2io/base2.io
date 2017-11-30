@@ -15,6 +15,7 @@ import {
   Section,
   TeamList,
 } from '../components';
+import GlobalNavigation from '../components/molecules/GlobalNavigation';
 import { toNodesWithImage } from '../util/graphql';
 
 const LogoImg = styled(Img)`
@@ -27,11 +28,12 @@ class IndexPage extends React.Component {
 
     return (
       <Main>
+        <GlobalNavigation />
         <Header>
           <H1>Base Two</H1>
           <P lead>We turn ideas into beautiful, functional software.</P>
         </Header>
-        <Section>
+        <Section id="services">
           <H2>Services</H2>
           <P lead>
             Whether you are looking to start a new project or finish an existing
@@ -66,7 +68,7 @@ class IndexPage extends React.Component {
             </DescriptiveList.Item>
           </DescriptiveList>
         </Section>
-        <BreakoutSection>
+        <BreakoutSection id="technologies">
           <H2>Technologies</H2>
           <InlineList centered>
             {technologies.map(technology => (
@@ -76,8 +78,8 @@ class IndexPage extends React.Component {
             ))}
           </InlineList>
         </BreakoutSection>
-        <Section>
-          <H2>Services</H2>
+        <Section id="process">
+          <H2>Process</H2>
           <P lead>
             Our process is designed to provide direction and flexibility to your
             project through open communication and trust. We guide you through
@@ -133,7 +135,7 @@ class IndexPage extends React.Component {
             </DescriptiveList.Item>
           </DescriptiveList>
         </Section>
-        <BreakoutSection>
+        <BreakoutSection id="clients">
           <H2>Clients</H2>
           <InlineList centered>
             {clients.map(client => (
@@ -143,13 +145,13 @@ class IndexPage extends React.Component {
             ))}
           </InlineList>
         </BreakoutSection>
-        <Section>
+        <Section id="team">
           <H2>Team</H2>
           <TeamList>
             {team.map(member => <TeamList.Item {...member} key={member.id} />)}
           </TeamList>
         </Section>
-        <Section>
+        <Section id="contact-us">
           <H2>Contact Us</H2>
           <P lead>
             Let’s work together! Fill out the form below with some info about

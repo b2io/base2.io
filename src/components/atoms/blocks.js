@@ -25,11 +25,11 @@ const Wrapper = styled.div`
 
 class BreakoutSection extends React.Component {
   render() {
-    const { children } = this.props;
+    const { children, ...rest } = this.props;
 
     return (
       <Wrapper>
-        <Section>{children}</Section>
+        <Section {...rest}>{children}</Section>
       </Wrapper>
     );
   }

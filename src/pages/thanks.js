@@ -1,6 +1,13 @@
 import React from 'react';
 import { mapProps } from 'recompose';
-import { H2, P, Section, TeamList } from '../components';
+import {
+  GlobalNavigation,
+  H2,
+  Main,
+  P,
+  Section,
+  TeamList,
+} from '../components';
 import { toNodesWithImage } from '../util/graphql';
 
 class ThanksPage extends React.Component {
@@ -8,7 +15,8 @@ class ThanksPage extends React.Component {
     const { team } = this.props;
 
     return (
-      <main>
+      <Main>
+        <GlobalNavigation />
         <Section>
           <H2>Thanks!</H2>
           <P lead>We're excited you're interested in working together.</P>
@@ -25,7 +33,7 @@ class ThanksPage extends React.Component {
             {team.map(member => <TeamList.Item {...member} key={member.id} />)}
           </TeamList>
         </Section>
-      </main>
+      </Main>
     );
   }
 }
