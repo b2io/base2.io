@@ -2,6 +2,7 @@
 title: Conditionally Mock $httpBackend
 author: zbrown
 date: "2013-10-29T04:00:00.000Z"
+path: "/2013/10/29/conditionally-mock-http-backend"
 ---
 
 I recently followed

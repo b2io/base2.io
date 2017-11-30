@@ -2,6 +2,7 @@
 title: Git Configured
 author: tborres
 date: "2015-05-06T04:00:00.000Z"
+path: "/2015/05/06/git-configured"
 ---
 
 Git configurations are like snowflakes - no two are exactly the same. At least

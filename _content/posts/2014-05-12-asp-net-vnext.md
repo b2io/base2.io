@@ -2,6 +2,7 @@
 title: ASP.NET vNext TL;DR
 author: tborres
 date: "2014-05-12T04:00:00.000Z"
+path: "/2014/05/12/asp-net-vnext"
 ---
 
 Scott Hanselman just wrote a blog entry about what's next for ASP.NET (vNext).

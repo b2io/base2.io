@@ -2,6 +2,7 @@
 title: Now, with more Jekyll
 author: dmiller
 date: "2012-04-30T04:00:00.000Z"
+path: "/2012/04/30/now-with-more-jekyll"
 ---
 
 We've let our blog languish for a long time now -- while talking about the

@@ -2,6 +2,7 @@
 title: Karma + Circle CI
 author: zbrown
 date: "2013-10-18T04:00:00.000Z"
+path: "/2013/10/18/karma-tests-circle-ci"
 ---
 
 **Update:** I recently discovered a much smarter way to be doing this. Here it

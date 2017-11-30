@@ -2,6 +2,7 @@
 title: Web Development Project Puzzle Pieces
 author: tborres
 date: "2014-08-04T04:00:00.000Z"
+path: "/2014/08/04/angular-rails-api-template"
 ---
 
 Web development can be like trying to complete a puzzle that has had its pieces

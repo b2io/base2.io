@@ -5,14 +5,6 @@ const authors = require('./_content/team.json');
 
 const postTemplate = path.resolve('src/templates/post.js');
 
-const postIdToPath = id => {
-  const parts = id.split('-');
-  const datePart = parts.slice(0, 3).join('/');
-  const slugPart = parts.slice(3).join('-');
-
-  return `${datePart}/${slugPart}`;
-};
-
 // TODO: Switch to using GraphQL for this.
 const readPostsSync = () =>
   fs.readdirSync('_content/posts').map(fileName => {
@@ -28,13 +20,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
   readPostsSync()
-    .forEach(post =>
+    .forEach(post => {
       createPage({
         component: postTemplate,
         context: Object.assign({}, post),
-        path: postIdToPath(post.id),
-      }),
-    );
+        path: post.data.path,
+      });
+    });
 
   return Promise.resolve(true);
 };

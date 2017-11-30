@@ -4,6 +4,7 @@ import remark from 'remark';
 import remarkReact from 'remark-react';
 import styled from 'styled-components';
 import {
+  GlobalNavigation,
   Header,
   H1,
   H2,
@@ -41,6 +42,7 @@ class PostTemplate extends React.Component {
 
     return (
       <Main>
+        <GlobalNavigation />
         <Header>
           <H1>{title}</H1>
           <P lead>

@@ -2,6 +2,7 @@
 title: Wireframes for Developers
 author: tborres
 date: "2014-03-09T04:00:00.000Z"
+path: "/2014/03/09/wireframes-for-developers"
 ---
 
 Wireframes are a great way to visually communicate the expected user behavior of

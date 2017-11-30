@@ -2,6 +2,7 @@
 title: Seeding with progress
 author: dmiller
 date: "2012-11-30T04:00:00.000Z"
+path: "/2012/11/30/seeding-with-progress"
 ---
 
 If you're doing database seeding in a rails app through `seeds.rb` you might be

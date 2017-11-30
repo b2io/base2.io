@@ -2,6 +2,7 @@
 title: Open For Business!
 author: zbrown
 date: "2011-08-26T04:00:00.000Z"
+path: "/2011/08/26/open-for-business"
 ---
 
 We are proud to announce that Base Two Interactive, a creative digital agency

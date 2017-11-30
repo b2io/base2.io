@@ -6,6 +6,7 @@ import {
   Header,
   H1,
   H2,
+  Link,
   List,
   Main,
   P,
@@ -13,10 +14,10 @@ import {
   Time,
 } from '../../components';
 
-function PostExcerpt({ author, date, excerpt, title }) {
+function PostExcerpt({ author, date, excerpt, path, title }) {
   return (
     <List.Item>
-      <H2>{title}</H2>
+      <H2><Link to={path}>{title}</Link></H2>
       <P>
         <Time iso={date} />— {author}
       </P>
@@ -45,22 +46,27 @@ class BlogIndex extends React.Component {
   }
 }
 
-function mapDataToProps({ data }) {
+function mapPropsToProps({ data }) {
   const authorIdToName = data.authors.edges
     .map(e => e.node)
     .reduce((hashMap, { id, name }) => ({ ...hashMap, [id]: name }), {});
-  const posts = data.posts.edges.map(e => e.node).map(node => ({
-    author: authorIdToName[node.frontmatter.author],
-    date: node.frontmatter.date,
-    excerpt: node.excerpt,
-    id: node.internal.contentDigest,
-    title: node.frontmatter.title,
-  }));
+  const posts = data.posts.edges.map(e => e.node).map(node => {
+    const { excerpt, fileAbsolutePath, frontmatter } = node;
+
+    return {
+      excerpt,
+      author: authorIdToName[frontmatter.author],
+      date: frontmatter.date,
+      id: frontmatter.path,
+      path: frontmatter.path,
+      title: node.frontmatter.title,
+    };
+  });
 
   return { posts };
 }
 
-export default mapProps(mapDataToProps)(BlogIndex);
+export default mapProps(mapPropsToProps)(BlogIndex);
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
@@ -77,14 +83,12 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          internal {
-            contentDigest
-          }
           excerpt
           fileAbsolutePath
           frontmatter {
             author
             date
+            path
             title
           }
         }

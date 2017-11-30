@@ -2,6 +2,7 @@
 title: A Google I/O Experience
 author: csteinert
 date: "2016-05-25T04:00:00.000Z"
+path: "/2016/05/25/a-google-io-experience"
 ---
 
 I have gone to my fair share of tech conferences so far in my career, but now I

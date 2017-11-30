@@ -2,6 +2,7 @@
 title: Regex - Replace with Groups
 author: tborres
 date: "2015-05-13T04:00:00.000Z"
+path: "/2015/05/13/regex-replace-with-groups"
 ---
 
 I was recently confronted with a situation that required me to search and

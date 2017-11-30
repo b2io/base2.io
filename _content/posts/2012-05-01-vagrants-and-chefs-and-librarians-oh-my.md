@@ -2,6 +2,7 @@
 title: Vagrants and Chefs and Librarians... oh my!
 author: dmiller
 date: "2012-05-01T04:00:00.000Z"
+path: "/2012/05/01/vagrants-and-chefs-and-librarians-oh-my"
 ---
 
 **Update:** Thanks to [SDude]({{page.url}}#comment-677428811),

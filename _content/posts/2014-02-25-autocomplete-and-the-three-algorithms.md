@@ -2,6 +2,7 @@
 title: Autocomplete and the Three Algorithms
 author: dmiller
 date: "2014-02-25T04:00:00.000Z"
+path: "/2014/02/25/autocomplete-and-the-three-algorithms"
 ---
 
 A lot of our projects have some form of autocomplete functionality baked into

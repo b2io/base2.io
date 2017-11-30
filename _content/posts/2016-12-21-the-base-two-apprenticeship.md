@@ -2,6 +2,7 @@
 title: The Base Two Apprenticeship
 author: csteinert
 date: "2016-12-21T04:00:00.000Z"
+path: "/2016/12/21/the-base-two-apprenticeship"
 ---
 
 Back in August the entire Base Two team attended the
