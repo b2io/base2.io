@@ -66,7 +66,7 @@ function mapPropsToProps({ data }) {
     .reduce((hashMap, { id, name }) => ({ ...hashMap, [id]: name }), {});
 
   return {
-    author: data.post.frontmatter.author,
+    author: authorIdToName[data.post.frontmatter.author],
     children: markdown(data.post.internal.content),
     date: data.post.frontmatter.date,
     title: data.post.frontmatter.title,
