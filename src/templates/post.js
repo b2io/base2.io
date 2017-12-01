@@ -17,6 +17,7 @@ import {
   Section,
   Time,
 } from '../components';
+import { toNodes } from '../util/graphql';
 
 const HoistChildren = props =>
   React.Children.map(props.children, child => child.props.children);
@@ -61,9 +62,10 @@ class PostTemplate extends React.Component {
 
 function mapPropsToProps({ data }) {
   // TODO: Find a way to resolve the author name more easily.
-  const authorIdToName = data.authors.edges
-    .map(e => e.node)
-    .reduce((hashMap, { id, name }) => ({ ...hashMap, [id]: name }), {});
+  const authorIdToName = toNodes(data.authors).reduce(
+    (hashMap, { id, name }) => ({ ...hashMap, [id]: name }),
+    {},
+  );
 
   return {
     author: authorIdToName[data.post.frontmatter.author],

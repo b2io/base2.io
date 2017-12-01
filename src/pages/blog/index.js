@@ -13,6 +13,7 @@ import {
   Section,
   Time,
 } from '../../components';
+import { toNodes } from '../../util/graphql';
 
 function PostExcerpt({ author, date, excerpt, path, title }) {
   return (
@@ -50,10 +51,11 @@ class BlogIndex extends React.Component {
 
 function mapPropsToProps({ data }) {
   // TODO: Find a way to resolve the author name more easily.
-  const authorIdToName = data.authors.edges
-    .map(e => e.node)
-    .reduce((hashMap, { id, name }) => ({ ...hashMap, [id]: name }), {});
-  const posts = data.posts.edges.map(e => e.node).map(node => {
+  const authorIdToName = toNodes(data.authors).reduce(
+    (hashMap, { id, name }) => ({ ...hashMap, [id]: name }),
+    {},
+  );
+  const posts = toNodes(data.posts).map(node => {
     const { excerpt, fileAbsolutePath, frontmatter } = node;
 
     return {
