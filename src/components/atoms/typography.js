@@ -43,6 +43,16 @@ const H4 = styled.h4`
   }
 `;
 
+const H5 = styled.h5`
+  ${themed('typography.headline')};
+  color: ${themed('color.primary')};
+  margin: 0.5em 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+`;
+
 const P = styled.p`
   ${themed('typography.body1')};
   color: ${themed('color.primary')};
@@ -57,4 +67,4 @@ const P = styled.p`
   `};
 `;
 
-export { H1, H2, H3, H4, P };
+export { H1, H2, H3, H4, H5, P };

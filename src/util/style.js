@@ -13,8 +13,6 @@ const cssEvery = (...keys) => (...args) => props =>
 const cssSome = (...keys) => (...args) => props =>
   keys.some(key => !!props[key]) ? css(...args) : undefined;
 
-const cplToPx = characters => `${characters * BASE_FONT_SIZE}px`;
-
 const lighten = curry(_lighten);
 
 const mq = (target, ...conditions) => (...args) => css`
@@ -33,4 +31,4 @@ const mediaQuery = {
 
 const themed = curry((path, props) => get(props.theme, path));
 
-export { cplToPx, cssCond, cssEvery, cssSome, lighten, mediaQuery, themed };
+export { cssCond, cssEvery, cssSome, lighten, mediaQuery, themed };

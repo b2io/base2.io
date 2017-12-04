@@ -1,9 +1,11 @@
 import React from 'react';
+import { mapProps } from 'recompose';
 import styled from 'styled-components';
 import {
   BreakoutSection,
   ContactForm,
   DescriptiveList,
+  GlobalNavigation,
   Header,
   H1,
   H2,
@@ -22,18 +24,16 @@ const LogoImg = styled(Img)`
 
 class IndexPage extends React.Component {
   render() {
-    const { data } = this.props;
-    const clients = toNodesWithImage(data.clients);
-    const team = toNodesWithImage(data.team);
-    const technologies = toNodesWithImage(data.technologies);
+    const { clients, team, technologies } = this.props;
 
     return (
       <Main>
+        <GlobalNavigation />
         <Header>
           <H1>Base Two</H1>
           <P lead>We turn ideas into beautiful, functional software.</P>
         </Header>
-        <Section>
+        <Section id="services">
           <H2>Services</H2>
           <P lead>
             Whether you are looking to start a new project or finish an existing
@@ -68,7 +68,7 @@ class IndexPage extends React.Component {
             </DescriptiveList.Item>
           </DescriptiveList>
         </Section>
-        <BreakoutSection>
+        <BreakoutSection id="technologies">
           <H2>Technologies</H2>
           <InlineList centered>
             {technologies.map(technology => (
@@ -78,8 +78,8 @@ class IndexPage extends React.Component {
             ))}
           </InlineList>
         </BreakoutSection>
-        <Section>
-          <H2>Services</H2>
+        <Section id="process">
+          <H2>Process</H2>
           <P lead>
             Our process is designed to provide direction and flexibility to your
             project through open communication and trust. We guide you through
@@ -135,7 +135,7 @@ class IndexPage extends React.Component {
             </DescriptiveList.Item>
           </DescriptiveList>
         </Section>
-        <BreakoutSection>
+        <BreakoutSection id="clients">
           <H2>Clients</H2>
           <InlineList centered>
             {clients.map(client => (
@@ -145,13 +145,13 @@ class IndexPage extends React.Component {
             ))}
           </InlineList>
         </BreakoutSection>
-        <Section>
+        <Section id="team">
           <H2>Team</H2>
           <TeamList>
             {team.map(member => <TeamList.Item {...member} key={member.id} />)}
           </TeamList>
         </Section>
-        <Section>
+        <Section id="contact-us">
           <H2>Contact Us</H2>
           <P lead>
             Let’s work together! Fill out the form below with some info about
@@ -164,7 +164,15 @@ class IndexPage extends React.Component {
   }
 }
 
-export default IndexPage;
+function mapPropsToProps({ data }) {
+  return {
+    clients: toNodesWithImage(data.clients),
+    team: toNodesWithImage(data.team),
+    technologies: toNodesWithImage(data.technologies),
+  };
+}
+
+export default mapProps(mapPropsToProps)(IndexPage);
 
 export const pageQuery = graphql`
   query IndexPageQuery {
@@ -183,7 +191,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    team: allTeamJson {
+    team: allTeamJson(filter: { active: { eq: true } }) {
       edges {
         node {
           id

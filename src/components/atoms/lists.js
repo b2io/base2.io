@@ -19,4 +19,23 @@ const InlineListItem = styled.li`
 
 InlineList.Item = InlineListItem;
 
-export { InlineList };
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+
+  ${cssSome('centered')`
+    text-align: center;
+  `};
+
+  ${cssSome('unstyled')`
+    list-style: none;
+  `};
+
+  > li + li {
+    margin-top: 1em;
+  }
+`;
+
+List.Item = styled.li``;
+
+export { InlineList, List };
