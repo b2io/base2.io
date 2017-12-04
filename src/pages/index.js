@@ -5,6 +5,7 @@ import {
   BreakoutSection,
   ContactForm,
   DescriptiveList,
+  GlobalNavigation,
   Header,
   H1,
   H2,
@@ -15,7 +16,6 @@ import {
   Section,
   TeamList,
 } from '../components';
-import GlobalNavigation from '../components/molecules/GlobalNavigation';
 import { toNodesWithImage } from '../util/graphql';
 
 const LogoImg = styled(Img)`
