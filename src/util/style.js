@@ -1,7 +1,6 @@
 import curry from 'lodash/curry';
 import get from 'lodash/get';
-import has from 'lodash/has';
-import { lighten as _lighten, modularScale } from 'polished';
+import { lighten as _lighten } from 'polished';
 import { css } from 'styled-components';
 
 const cssCond = predicate => (...args) => props =>

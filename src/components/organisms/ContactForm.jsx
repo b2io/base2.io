@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { A, Button, H4, TextField } from '../atoms';
+import { A, Button, H4, TextAreaField, TextInputField } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
 const Wrapper = styled.div`
@@ -15,6 +15,10 @@ const Wrapper = styled.div`
 `;
 
 class ContactForm extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {};
+
   render() {
     return (
       <Wrapper>
@@ -22,13 +26,12 @@ class ContactForm extends React.Component {
           <input name="_gotcha" style={{ display: 'none' }} type="text" />
           <input name="_subject" type="hidden" value="Let's work together!" />
           <input name="_next" type="hidden" value="/thanks" />
-          <TextField label="Name" name="name" />
-          <TextField label="Email" name="email" />
-          <TextField label="Phone Number" name="phoneNumber" />
-          <TextField label="Budget" name="budget" />
-          <TextField
+          <TextInputField label="Name" name="name" />
+          <TextInputField label="Email" name="email" />
+          <TextInputField label="Phone Number" name="phoneNumber" />
+          <TextInputField label="Budget" name="budget" />
+          <TextAreaField
             label="Description"
-            multiline
             name="leadDescription"
             rows="5"
           />

@@ -1,5 +1,6 @@
 import noop from 'lodash/noop';
 import nanoid from 'nanoid';
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { cssSome, themed } from '../../util/style';
@@ -75,11 +76,23 @@ const Label = styled.label`
 
 class TextField extends React.Component {
   static defaultProps = {
+    id: undefined,
     multiline: false,
     onBlur: noop,
     onChange: noop,
     onFocus: noop,
-    type: 'text',
+    value: '',
+  };
+
+  static propTypes = {
+    label: PropTypes.node.isRequired,
+
+    id: PropTypes.string,
+    multiline: PropTypes.bool,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
+    value: PropTypes.string,
   };
 
   state = {
@@ -124,4 +137,12 @@ class TextField extends React.Component {
   }
 }
 
-export { TextField };
+function TextAreaField(props) {
+  return <TextField {...props} input={TextArea} />;
+}
+
+function TextInputField(props) {
+  return <TextField {...props} input={Input} type="text" />;
+}
+
+export { TextAreaField, TextInputField };

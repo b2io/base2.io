@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import {
@@ -11,6 +12,16 @@ import {
 import { toNodesWithImage } from '../util/graphql';
 
 class ThanksPage extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {
+    team: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+      }),
+    ).isRequired,
+  };
+
   render() {
     const { team } = this.props;
 
@@ -19,9 +30,12 @@ class ThanksPage extends React.Component {
         <GlobalNavigation />
         <Section>
           <H2>Thanks!</H2>
-          <P lead>We're excited you're interested in working together.</P>
           <P lead>
-            We'll review the information you sent and get back to you shortly.
+            We&rsquo;re excited you&rsquo;re interested in working together.
+          </P>
+          <P lead>
+            We&rsquo;ll review the information you sent and get back to you
+            shortly.
           </P>
           <P lead>
             Thanks again,<br />

@@ -2,7 +2,15 @@
   "env": {
     "browser": true
   },
+  "extends": ["airbnb", "prettier"],
   "globals": {
     "graphql": false
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "jsx-a11y/anchor-is-valid": ["error", {
+      "components": ["Link"],
+      "specialLink": ["to"]
+    }]
   }
 }

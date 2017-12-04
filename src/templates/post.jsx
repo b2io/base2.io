@@ -1,9 +1,9 @@
 import grayMatter from 'gray-matter';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import remark from 'remark';
 import remarkReact from 'remark-react';
-import styled from 'styled-components';
 import {
   GlobalNavigation,
   Header,
@@ -42,6 +42,15 @@ const markdown = raw => (
 );
 
 class PostTemplate extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {
+    author: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  };
+
   render() {
     const { author, children, date, title } = this.props;
 
