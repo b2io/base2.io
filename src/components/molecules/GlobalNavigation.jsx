@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from '../atoms';
 
 class GlobalNavigation extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {};
+
   render() {
     return (
       <nav>

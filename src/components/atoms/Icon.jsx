@@ -1,4 +1,5 @@
 import get from 'lodash/get';
+import PropTypes from 'prop-types';
 import React from 'react';
 import AssignmentIcon from 'react-icons/lib/md/assignment';
 import CodeIcon from 'react-icons/lib/md/code';
@@ -17,9 +18,14 @@ const iconsByName = {
 };
 
 class Icon extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+  };
+
   render() {
     const { name, ...rest } = this.props;
-
     return React.createElement(get(iconsByName, name, null), rest);
   }
 }

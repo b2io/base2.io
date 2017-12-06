@@ -1,35 +1,28 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
-import styled from 'styled-components';
 import {
   GlobalNavigation,
   Header,
   H1,
-  H2,
-  Link,
   List,
   Main,
-  P,
+  PostExcerpt,
   Section,
-  Time,
 } from '../../components';
 import { toNodes } from '../../util/graphql';
 
-function PostExcerpt({ author, date, excerpt, path, title }) {
-  return (
-    <List.Item>
-      <H2>
-        <Link to={path}>{title}</Link>
-      </H2>
-      <P>
-        <Time iso={date} />— {author}
-      </P>
-      <P>{excerpt}</P>
-    </List.Item>
-  );
-}
-
 class BlogIndex extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {
+    posts: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+      }),
+    ).isRequired,
+  };
+
   render() {
     const { posts } = this.props;
 
@@ -56,7 +49,7 @@ function mapPropsToProps({ data }) {
     {},
   );
   const posts = toNodes(data.posts).map(node => {
-    const { excerpt, fileAbsolutePath, frontmatter } = node;
+    const { excerpt, frontmatter } = node;
 
     return {
       excerpt,

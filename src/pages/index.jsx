@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import styled from 'styled-components';
@@ -23,6 +24,30 @@ const LogoImg = styled(Img)`
 `;
 
 class IndexPage extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {
+    clients: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+        image: PropTypes.shape({}).isRequired,
+        name: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
+    team: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+      }),
+    ).isRequired,
+    technologies: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+        image: PropTypes.shape({}).isRequired,
+        name: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
+  };
+
   render() {
     const { clients, team, technologies } = this.props;
 

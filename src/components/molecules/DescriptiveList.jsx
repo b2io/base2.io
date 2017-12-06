@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { H3, Icon, P } from '../atoms';
+import styled from 'styled-components';
+import { H3, Icon } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
 const Header = styled.header`
@@ -15,6 +16,14 @@ const ItemH3 = H3.extend`
 `;
 
 class DescriptiveListItem extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+    iconName: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  };
+
   render() {
     const { children, iconName, title } = this.props;
 

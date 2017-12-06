@@ -1,7 +1,9 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 import theme from '../theme';
 
+// eslint-disable-next-line no-unused-expressions
 injectGlobal`
   * {
     box-sizing: border-box;
@@ -17,6 +19,12 @@ injectGlobal`
 `;
 
 class Template extends React.Component {
+  static defaultPropes = {};
+
+  static propTypes = {
+    children: PropTypes.func.isRequired,
+  };
+
   render() {
     return <ThemeProvider theme={theme}>{this.props.children()}</ThemeProvider>;
   }

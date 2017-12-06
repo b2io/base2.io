@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { themed } from '../../util/style';
@@ -24,6 +25,12 @@ const Wrapper = styled.div`
 `;
 
 class BreakoutSection extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {
+    children: PropTypes.node.isRequired,
+  };
+
   render() {
     const { children, ...rest } = this.props;
 

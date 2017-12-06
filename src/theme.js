@@ -28,7 +28,6 @@ const motion = {
 
 // TYPOGRAPHY:
 
-const BASE_FONT_SIZE = 14;
 const FONT_FAMILY = '"Roboto", "Helvetica", "Arial", sans-serif';
 
 const typography = {

@@ -1,19 +1,40 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import { ServerStyleSheet } from 'styled-components';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 let stylesStr;
 if (isProduction) {
   try {
+    // eslint-disable-next-line global-require, import/no-webpack-loader-syntax, import/no-unresolved
     stylesStr = require('!raw-loader!../public/styles.css');
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error(e);
   }
 }
 
 class Html extends React.Component {
+  static defaultProps = {
+    body: null,
+    bodyAttributes: {},
+    headComponents: null,
+    htmlAttributes: {},
+    postBodyComponents: null,
+    preBodyComponents: null,
+  };
+
+  static propTypes = {
+    body: PropTypes.node,
+    bodyAttributes: PropTypes.shape({}),
+    headComponents: PropTypes.node,
+    htmlAttributes: PropTypes.shape({}),
+    postBodyComponents: PropTypes.node,
+    preBodyComponents: PropTypes.node,
+  };
+
   render() {
+    /* eslint-disable react/no-danger */
     const {
       body,
       bodyAttributes,
@@ -79,6 +100,7 @@ class Html extends React.Component {
         </body>
       </html>
     );
+    /* eslint-enable react/no-danger */
   }
 }
 
