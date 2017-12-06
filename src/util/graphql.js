@@ -11,4 +11,4 @@ const toNodes = (data, mapNode = identity) =>
 
 const toNodesWithImage = data => toNodes(data, hoistChildImageSharp);
 
-export { toNodesWithImage };
+export { toNodes, toNodesWithImage };
