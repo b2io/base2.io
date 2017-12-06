@@ -1,4 +1,4 @@
-import { has, invoke, memoize, startsWith } from 'lodash';
+import { has, invoke, isUndefined, memoize, startsWith } from 'lodash';
 
 const hasAll = (obj, paths = []) => paths.every(path => has(obj, path));
 
@@ -10,7 +10,7 @@ const renameKeys = (obj, pairs = []) =>
   }, obj);
 
 const supportsWebp = memoize(() => {
-  if (typeof window === 'undefined') return false;
+  if (isUndefined(window)) return false;
 
   const el = invoke(window, 'document.createElement', 'canvas');
   const dataUrl = invoke(el, 'toDataURL', 'image/webp');

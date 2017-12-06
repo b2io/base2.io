@@ -12,6 +12,7 @@ import {
   H3,
   H4,
   H5,
+  Img,
   Main,
   P,
   Section,
@@ -31,6 +32,7 @@ const markdownToElement = md =>
         h3: H3,
         h4: H4,
         h5: H5,
+        img: Img,
         p: P,
       },
     })
