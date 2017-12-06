@@ -31,7 +31,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             path: node.frontmatter.path,
           });
         });
-      }),
+      })
     );
   });
 };
