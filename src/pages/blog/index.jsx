@@ -16,9 +16,11 @@ class BlogIndex extends React.Component {
   static defaultProps = {};
 
   static propTypes = {
-    posts: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.node.isRequired,
-    })).isRequired,
+    posts: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+      }),
+    ).isRequired,
   };
 
   render() {

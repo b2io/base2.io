@@ -29,9 +29,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             component: postTemplate,
             context: { id: node.id },
             path: node.frontmatter.path,
-          }),
+          })
         );
-      }),
+      })
     );
   });
 };

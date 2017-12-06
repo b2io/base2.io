@@ -30,11 +30,7 @@ class ContactForm extends React.Component {
           <TextInputField label="Email" name="email" />
           <TextInputField label="Phone Number" name="phoneNumber" />
           <TextInputField label="Budget" name="budget" />
-          <TextAreaField
-            label="Description"
-            name="leadDescription"
-            rows="5"
-          />
+          <TextAreaField label="Description" name="leadDescription" rows="5" />
           <Button block>Submit</Button>
         </form>
         <aside>
