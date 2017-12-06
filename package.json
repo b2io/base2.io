@@ -32,12 +32,6 @@
     "remark-react": "^4.0.1",
     "styled-components": "^2.2.3"
   },
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "gatsby serve",
-    "lint": "eslint --ext .js,.jsx src"
-  },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
     "eslint": "^4.9.0",
@@ -45,6 +39,19 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0"
+    "eslint-plugin-react": "^7.4.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.1"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "lint": "eslint --ext .js,.jsx src",
+    "precommit": "lint-staged",
+    "start": "gatsby serve"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
   }
 }
