@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "gatsby-node.js",
+      "options": {
+        "trailingComma": "es5"
+      }
+    }
+  ]
+}
