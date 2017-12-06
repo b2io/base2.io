@@ -4,6 +4,9 @@
   "description": "The Base Two website",
   "version": "2.0.0-beta",
   "dependencies": {
+    "@types/node": "^8.0.54",
+    "@types/react": "^16.0.26",
+    "@types/react-dom": "^16.0.3",
     "gatsby": "^1.9.119",
     "gatsby-image": "^1.0.24",
     "gatsby-link": "^1.6.30",
@@ -13,6 +16,7 @@
     "gatsby-plugin-react-next": "^1.0.4",
     "gatsby-plugin-sharp": "^1.6.21",
     "gatsby-plugin-styled-components": "^2.0.2",
+    "gatsby-plugin-typescript": "^1.4.11",
     "gatsby-source-filesystem": "^1.5.8",
     "gatsby-transformer-json": "^1.0.12",
     "gatsby-transformer-remark": "^1.7.21",
@@ -30,7 +34,8 @@
     "recompose": "^0.26.0",
     "remark": "^8.0.0",
     "remark-react": "^4.0.1",
-    "styled-components": "^2.2.3"
+    "styled-components": "^2.2.3",
+    "typescript": "^2.6.2"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
