@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { H4, Img } from '../atoms';
@@ -32,12 +33,20 @@ const Title = styled.small`
 `;
 
 class TeamListItem extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {
+    image: PropTypes.shape({}).isRequired,
+    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  };
+
   render() {
     const { image, name, title } = this.props;
 
     return (
       <Wrapper>
-        <TeamImg alt={name} resolutions={image.resolutions} />
+        <TeamImg {...image} alt={name} />
         <Name>
           {name}
           <Title>{title}</Title>

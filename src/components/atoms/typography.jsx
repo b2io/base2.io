@@ -1,5 +1,3 @@
-import { modularScale } from 'polished';
-import React from 'react';
 import styled from 'styled-components';
 import { cssSome, themed } from '../../util/style';
 

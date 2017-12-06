@@ -21,16 +21,16 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       `).then(result => {
         if (result.errors) return reject(result.errors);
 
-        const postTemplate = path.resolve('src/templates/post.js');
+        const postTemplate = path.resolve('src/templates/post.jsx');
         const postNodes = result.data.posts.edges.map(e => e.node);
 
-        postNodes.forEach(node => {
+        return postNodes.map(node =>
           createPage({
             component: postTemplate,
             context: { id: node.id },
             path: node.frontmatter.path,
-          });
-        });
+          })
+        );
       })
     );
   });

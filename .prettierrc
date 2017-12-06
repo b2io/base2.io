@@ -1,7 +1,7 @@
 {
   "overrides": [
     {
-      "files": "gatsby-node.js",
+      "files": ["gatsby-node.js", "gatsby-config.js"],
       "options": {
         "trailingComma": "es5"
       }
