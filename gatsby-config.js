@@ -5,6 +5,13 @@ module.exports = {
     title: 'Base Two',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-26131818-3',
+        anonymize: true,
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-react-next',
     'gatsby-plugin-styled-components',
