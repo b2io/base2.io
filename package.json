@@ -10,6 +10,7 @@
     "gatsby": "^1.9.119",
     "gatsby-image": "^1.0.24",
     "gatsby-link": "^1.6.30",
+    "gatsby-plugin-google-analytics": "^1.0.14",
     "gatsby-plugin-manifest": "^1.0.8",
     "gatsby-plugin-offline": "^1.0.10",
     "gatsby-plugin-react-helmet": "^2.0.1",
