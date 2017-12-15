@@ -5,10 +5,10 @@ import {
   GlobalNavigation,
   Header,
   H1,
-  List,
   Main,
   PostExcerpt,
   Section,
+  UL,
 } from '../../components';
 import { toNodes } from '../../util/graphql';
 
@@ -33,9 +33,7 @@ class BlogIndex extends React.Component {
           <H1>Blog</H1>
         </Header>
         <Section>
-          <List unstyled>
-            {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
-          </List>
+          <UL>{posts.map(post => <PostExcerpt {...post} key={post.id} />)}</UL>
         </Section>
       </Main>
     );

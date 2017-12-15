@@ -11,8 +11,8 @@ injectGlobal`
 
   body,
   html {
-    ${theme.typography.body1};
-    color: ${theme.color.primary};
+    ${theme.font.sansSerif};
+    color: ${theme.color.base};
     margin: 0;
     padding: 0;
   }

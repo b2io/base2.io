@@ -1,18 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { A, Button, H4, TextAreaField, TextInputField } from '../atoms';
-import { mediaQuery } from '../../util/style';
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-column-gap: 2em;
-  grid-row-gap: 2em;
-  grid-template-columns: 1fr auto;
-
-  ${mediaQuery.xsmall`
-    grid-template-columns: 1fr;
-  `};
-`;
+const Wrapper = styled.div``;
 
 class ContactForm extends React.Component {
   static defaultProps = {};
