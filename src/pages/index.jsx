@@ -2,9 +2,7 @@ import React from 'react';
 import {
   ContactForm,
   ContactInformation,
-  GlobalNavigation,
-  Header,
-  H1,
+  Hero,
   H2,
   Main,
   P,
@@ -17,11 +15,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Main>
-        <GlobalNavigation />
-        <Header>
-          <H1>Base Two</H1>
-          <P lead>We turn ideas into beautiful, functional software.</P>
-        </Header>
+        <Hero />
         <Section id="contact-us">
           <H2>Contact Us</H2>
           <P lead>
