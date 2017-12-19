@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { H2, Link, List, P, Time } from '../atoms';
+import { H2, Link, LI, P, Time } from '../atoms';
 
 class PostExcerpt extends React.Component {
   static defaultProps = {};
@@ -17,7 +17,7 @@ class PostExcerpt extends React.Component {
     const { author, date, excerpt, path, title } = this.props;
 
     return (
-      <List.Item>
+      <LI>
         <H2>
           <Link to={path}>{title}</Link>
         </H2>
@@ -25,7 +25,7 @@ class PostExcerpt extends React.Component {
           <Time iso={date} />— {author}
         </P>
         <P>{excerpt}</P>
-      </List.Item>
+      </LI>
     );
   }
 }

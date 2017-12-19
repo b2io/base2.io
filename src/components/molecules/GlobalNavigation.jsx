@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '../atoms';
+import { Link, UL, LI } from '../atoms';
 
 class GlobalNavigation extends React.Component {
   static defaultProps = {};
@@ -9,29 +9,29 @@ class GlobalNavigation extends React.Component {
   render() {
     return (
       <nav>
-        <ul>
-          <li>
+        <UL>
+          <LI>
             <Link to="/">Base Two</Link>
-          </li>
-          <li>
+          </LI>
+          <LI>
             <Link to="/#services">Services</Link>
-          </li>
-          <li>
+          </LI>
+          <LI>
             <Link to="/#technologies">Technologies</Link>
-          </li>
-          <li>
+          </LI>
+          <LI>
             <Link to="/#clients">Clients</Link>
-          </li>
-          <li>
+          </LI>
+          <LI>
             <Link to="/#team">Team</Link>
-          </li>
-          <li>
+          </LI>
+          <LI>
             <Link to="/#contact-us">Contact Us</Link>
-          </li>
-          <li>
+          </LI>
+          <LI>
             <Link to="/blog">Blog</Link>
-          </li>
-        </ul>
+          </LI>
+        </UL>
       </nav>
     );
   }
