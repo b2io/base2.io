@@ -1,9 +1,13 @@
 import { css } from 'styled-components';
+import { lighten } from 'polished';
 
 // COLOR:
 
 const color = {
   base: '#333',
+  link: 'rgb(124, 177, 255)',
+  linkHover: lighten(0.15, 'rgb(124, 177, 255)'),
+  text: 'rgb(255, 255, 255)',
 };
 
 // MOTION:
@@ -24,6 +28,7 @@ const motion = {
 const font = {
   sansSerif: css`
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 100;
   `,
 };
 
