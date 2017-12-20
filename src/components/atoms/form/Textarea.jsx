@@ -1,5 +1,7 @@
-import styled from 'styled-components';
+import Input from './Input';
 
-const Textarea = styled.textarea``;
+const TextArea = Input.withComponent('textarea').extend`
+resize: vertical;
+`;
 
-export default Textarea;
+export default TextArea;
