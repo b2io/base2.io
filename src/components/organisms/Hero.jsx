@@ -1,34 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H1, Img, P } from '../atoms';
+import { H1, B2LogoText, Img, P } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
 const HeroHeader = styled.header`
   grid-column-start: 2;
   grid-row-start: 1;
-  margin: 4.5em 0 0 0;
+  margin: 3.75em 0 0 0;
   position: relative;
   text-align: center;
 
   ${mediaQuery.small`
-  margin-top: 9rem;
-`};
+    margin-top: 4rem;
+  `};
 
   ${mediaQuery.medium`
-    margin-top: 12rem;
+    margin-top: 8rem;
   `};
 
   ${mediaQuery.large`
-    margin-top: 17rem;
+    margin-top: 12rem;
   `};
 
   ${mediaQuery.xlarge`
-  margin-top: 18rem;
-`};
+    margin-top: 18rem;
+  `};
 `;
 
 const HeroBackground = styled.div`
-  background-image: url('img/backgrounds/hero/B2HeroBackground_480.png');
+  background-image: url('img/backgrounds/hero/b2-hero-background-480.png');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -39,33 +39,43 @@ const HeroBackground = styled.div`
   grid-row-end: 2;
 
   ${mediaQuery.small`
-    background-image: url('img/backgrounds/hero/B2HeroBackground_960.png');
+    background-image: url('img/backgrounds/hero/b2-hero-background-960.png');
     background-size: 120%;
   `};
 
   ${mediaQuery.medium`
-    background-image: url('img/backgrounds/hero/B2HeroBackground.png');
+    background-image: url('img/backgrounds/hero/b2-hero-background-960.png');
     background-size: 120%;
   `};
 
   ${mediaQuery.large`
+    background-image: url('img/backgrounds/hero/b2-hero-background.png');
     background-size: cover;
   `};
 `;
 
-const Logo = styled(Img)`
-  width: 80%;
-  max-width: 750px;
-
-  ${mediaQuery.small`
-  width: 65%;
-`};
+const Logo = styled(B2LogoText)`
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const HeroHeading = styled(H1)`
-  //This is to prevent the extra div around the image in Logo from addng content space at the top
   font-size: 16px;
-  margin: 0;
+  height: 0;
+  padding-bottom: 2.5rem;
+  position: relative;
+  width: 80%;
+  max-width: 750px;
+  margin: 0 auto;
+
+  ${mediaQuery.small`
+    padding: 4rem;
+  `};
+
+  ${mediaQuery.large`
+    padding-bottom: 4.5rem;
+  `};
 `;
 
 const HeroTagline = styled(P)`
@@ -73,40 +83,50 @@ const HeroTagline = styled(P)`
   font-size: 1.15em;
   font-style: italic;
   font-weight: 100;
-  margin-top: 0.75em;
+  margin-top: 0.5em;
   margin-bottom: 0.5em;
   text-shadow: 1px 1px 4px #000000;
 
   ${mediaQuery.small`
-    font-size: 1.75rem;
+    font-size: 1.65rem;
   `};
 
   ${mediaQuery.medium`
-    font-size: 2.25rem;
+    font-size: 2.0rem;
   `};
 
   ${mediaQuery.large`
-    font-size: 3rem;
+    font-size: 2.25rem;
+    margin-top: 0.5em;
   `};
 `;
 
 const ScrollIndicator = styled(Img)`
+  margin-top: 0.5em;
   width: 3em;
 
   ${mediaQuery.xsmall`
-  position: absolute;
-  left: calc(50% - 21px);
-  bottom: 15px;
-  width: 42px;
-
-`};
+    position: absolute;
+    left: calc(50% - 21px);
+    bottom: 15px;
+    width: 42px;
+  `};
 
   ${mediaQuery.small`
-  position: relative;
-  margin-top: 1em;
-  width: 4em;
-`};
+    position: relative;
+    width: 4em;
+  `};
+
+  ${mediaQuery.medium`
+    margin-top: 0.75em;
+  `};
+
+  ${mediaQuery.medium`
+    margin-top: 0.5em;
+  `};
 `;
+
+const HeroContent = ({ children }) => children;
 
 class Hero extends React.Component {
   static defaultProps = {};
@@ -114,16 +134,18 @@ class Hero extends React.Component {
   static propTypes = {};
 
   render() {
-    return [
-      <HeroBackground key={0}>,</HeroBackground>,
-      <HeroHeader key={1}>
-        <HeroHeading>
-          <Logo src="img/b2Logo.svg" alt="Base Two" />
-        </HeroHeading>
-        <HeroTagline> We turn ideas into beautiful software </HeroTagline>
-        <ScrollIndicator src="img/scroll-indicator.svg" alt="" />
-      </HeroHeader>,
-    ];
+    return (
+      <HeroContent>
+        <HeroBackground />
+        <HeroHeader>
+          <HeroHeading>
+            <Logo />
+          </HeroHeading>
+          <HeroTagline> We turn ideas into beautiful software </HeroTagline>
+          <ScrollIndicator src="img/scroll-indicator.svg" alt="" />
+        </HeroHeader>
+      </HeroContent>
+    );
   }
 }
 

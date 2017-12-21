@@ -4,10 +4,10 @@
   "description": "The Base Two website",
   "version": "2.0.0-beta",
   "dependencies": {
+    "@jacobmischka/gatsby-plugin-react-svg": "^1.0.0",
     "@types/node": "^8.0.54",
     "@types/react": "^16.0.26",
     "@types/react-dom": "^16.0.3",
-    "editorconfig": "^0.15.0",
     "gatsby": "^1.9.119",
     "gatsby-image": "^1.0.24",
     "gatsby-link": "^1.6.30",
@@ -53,7 +53,9 @@
     "eslint-plugin-react": "^7.4.0",
     "husky": "^0.14.3",
     "lint-staged": "^6.0.0",
-    "prettier": "^1.9.1"
+    "prettier": "^1.9.1",
+    "react-svg-loader": "^2.1.0",
+    "svg-react-loader": "^0.4.5"
   },
   "scripts": {
     "build": "gatsby build",
