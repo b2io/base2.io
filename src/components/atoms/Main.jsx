@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mediaQuery } from '../../util/style';
 
 const Main = styled.main`
   display: grid;
@@ -11,9 +12,12 @@ const Main = styled.main`
   `};
 
   ${mediaQuery.medium`
-  grid-template-columns: 100px 1fr 100px;
-  // This is just to get some height to test
-  grid-template-rows: 500px;
+    grid-template-columns: 100px 1fr 100px;
+  `};
+
+  ${mediaQuery.medium`
+    grid-template-rows: 2650px;
+  `};
 `;
 
 export default Main;

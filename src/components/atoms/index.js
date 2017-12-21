@@ -1,5 +1,6 @@
 export * from './form';
 export * from './headers';
+export * from './logos';
 export A from './A';
 export Address from './Address';
 export Button from './Button';
