@@ -86,7 +86,7 @@ class Html extends React.Component {
             rel="mask-icon"
           />
           <link
-            href="https://fonts.googleapis.com/css?family=Roboto:400,500"
+            href="https://fonts.googleapis.com/css?family=Roboto:100,100i,400,500"
             rel="stylesheet"
           />
           <title>Base Two</title>

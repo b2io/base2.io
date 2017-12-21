@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   ContactForm,
+  ContactInformation,
   GlobalNavigation,
   Header,
   H1,
@@ -28,6 +29,7 @@ class IndexPage extends React.Component {
             your project.
           </P>
           <ContactForm />
+          <ContactInformation />
         </Section>
       </Main>
     );
