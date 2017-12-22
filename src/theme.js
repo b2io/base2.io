@@ -5,9 +5,16 @@ import { lighten } from 'polished';
 
 const color = {
   base: '#333',
+  background: 'rgba(0, 0, 0, 1.0)',
+  deepBlue: 'rgba(3, 8, 40, 1.0)',
+  disabled: 'rgba(0, 0, 0, 0.38)',
   link: 'rgb(124, 177, 255)',
   linkHover: lighten(0.15, 'rgb(124, 177, 255)'),
+  primary: 'rgba(255, 255, 255, 1.0)',
+  spaceGreen: 'rgba(128,203,196, 1.0)',
+  spaceBlue: 'rgba(124,177,255,1.0)',
   text: 'rgb(255, 255, 255)',
+  transparent: 'rgba(0, 0, 0, 0.0)',
 };
 
 // MOTION:
@@ -32,10 +39,26 @@ const font = {
   `,
 };
 
+const typography = {
+  subheading: css`
+    font-family: ${font};
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  `,
+  caption: css`
+    font-family: ${font};
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+  `,
+};
+
 const theme = {
   color,
   motion,
   font,
+  typography,
 };
 
 export default theme;

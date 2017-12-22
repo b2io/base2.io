@@ -7,6 +7,8 @@ import Input from './Input';
 import Label from './Label';
 import Textarea from './Textarea';
 
+const stateUpdateFromValue = ({ value }) => ({ value, isDirty: !!value });
+
 class TextField extends React.Component {
   static defaultProps = {
     id: undefined,
@@ -19,7 +21,6 @@ class TextField extends React.Component {
 
   static propTypes = {
     label: PropTypes.node.isRequired,
-
     id: PropTypes.string,
     multiline: PropTypes.bool,
     onBlur: PropTypes.func,
@@ -29,9 +30,13 @@ class TextField extends React.Component {
   };
 
   state = {
-    isDirty: !!this.props.value,
+    ...stateUpdateFromValue(this.props),
     isFocused: false,
   };
+
+  componentWillReceiveProps(nextProps) {
+    this.setState(stateUpdateFromValue(nextProps));
+  }
 
   handleBlur = event => {
     this.props.onBlur(event);
@@ -39,8 +44,11 @@ class TextField extends React.Component {
   };
 
   handleChange = event => {
-    this.props.onChange(event);
-    this.setState({ isDirty: !!event.target.value });
+    this.setState(stateUpdateFromValue(event.target), this.notifyAfterChange);
+  };
+
+  notifyAfterChange = () => {
+    this.props.onChange(this.state.value);
   };
 
   handleFocus = event => {
