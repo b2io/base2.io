@@ -3,6 +3,7 @@ export * from './headers';
 export * from './logos';
 export A from './A';
 export Address from './Address';
+export BaseTwoLogo from './BaseTwoLogo';
 export Button from './Button';
 export Icon from './Icon';
 export Img from './Img';
