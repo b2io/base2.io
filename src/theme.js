@@ -4,7 +4,7 @@ import { lighten } from 'polished';
 // COLOR:
 
 const color = {
-  base: '#333',
+  base: 'rgb(0, 0, 0)',
   background: 'rgba(0, 0, 0, 1.0)',
   deepBlue: 'rgba(3, 8, 40, 1.0)',
   disabled: 'rgba(0, 0, 0, 0.38)',

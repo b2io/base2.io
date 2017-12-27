@@ -4,15 +4,24 @@ import React from 'react';
 import styled from 'styled-components';
 import planetEarthSrc from '../../assets/planet-earth.jpg';
 import { mediaQuery } from '../../util/style';
+import { B2LogoText } from '../atoms/logos';
 
-// TODO: Replace with the B2Logo from Mandy's branch.
-const B2Logo = () => null;
-
-// TODO: Make it pretty.
 const Wrapper = styled.div`
-  display: grid;
+  text-align: center;
+  margin-bottom: 2em;
 
-  ${mediaQuery.large``};
+  img {
+    max-width: 100%;
+  }
+
+  ${mediaQuery.small`
+    display: flex;
+    align-items: start;
+
+    img {
+      max-width: 50%;
+    }
+  `};
 `;
 
 class ContactHeader extends React.Component {
@@ -29,7 +38,7 @@ class ContactHeader extends React.Component {
 
     return (
       <Wrapper>
-        <B2Logo />
+        <B2LogoText />
         <p>
           is located in <em>Columbus, OH</em> and <em>Pittsburgh, PA</em>.
         </p>
