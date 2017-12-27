@@ -1,7 +1,7 @@
 import Input from './Input';
 
 const TextArea = Input.withComponent('textarea').extend`
-resize: vertical;
+  resize: vertical;
 `;
 
 export default TextArea;

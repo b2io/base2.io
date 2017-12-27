@@ -57,7 +57,7 @@ const HeroTagline = styled(P)`
   font-weight: 100;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  text-shadow: 1px 1px 4px #000000;
+  text-shadow: 1px 1px 4px #000;
 
   ${mediaQuery.small`
     font-size: 1.65rem;

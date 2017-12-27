@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -55,12 +56,18 @@
     "lint-staged": "^6.0.0",
     "prettier": "^1.9.1",
     "react-svg-loader": "^2.1.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-no-unsupported-browser-features": "^1.0.1",
+    "stylelint-processor-styled-components": "^1.2.1",
     "svg-react-loader": "^0.4.5"
   },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "lint": "eslint --ext .js,.jsx src",
+    "lint:css": "stylelint .js,.jsx src",
     "precommit": "lint-staged",
     "start": "gatsby serve"
   },
