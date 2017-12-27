@@ -1,12 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   ContactHeader,
   ContactForm,
   ContactInformation,
   Hero,
   Main,
-  Section,
 } from '../components';
+
+const Contact = styled.section`
+  grid-column: 2;
+`;
 
 class IndexPage extends React.Component {
   static defaultProps = {};
@@ -15,11 +19,11 @@ class IndexPage extends React.Component {
     return (
       <Main>
         <Hero />
-        <Section id="contact-us">
+        <Contact id="contact-us">
           <ContactHeader />
           <ContactForm />
           <ContactInformation />
-        </Section>
+        </Contact>
       </Main>
     );
   }

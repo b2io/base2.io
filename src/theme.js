@@ -4,7 +4,7 @@ import { lighten } from 'polished';
 // COLOR:
 
 const color = {
-  base: '#333',
+  base: 'rgb(0, 0, 0)',
   link: 'rgb(124, 177, 255)',
   linkHover: lighten(0.15, 'rgb(124, 177, 255)'),
   text: 'rgb(255, 255, 255)',
