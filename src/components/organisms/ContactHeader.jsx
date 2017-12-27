@@ -7,21 +7,45 @@ import { mediaQuery } from '../../util/style';
 import { B2LogoText } from '../atoms/logos';
 
 const Wrapper = styled.div`
+  justify-items: center;
   text-align: center;
-  margin-bottom: 2em;
+  /* margin: 0 2em 2em; */
+
+  ${mediaQuery.small`
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-row: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "left right";
+    justify-content: space-evenly;
+
+    > *:not(img) {
+      grid-area: left;
+    }
+  `};
 
   img {
     max-width: 100%;
-  }
 
-  ${mediaQuery.small`
-    display: flex;
-    align-items: start;
-
+    ${mediaQuery.small`
     img {
-      max-width: 50%;
+      grid-area: right;
     }
   `};
+  }
+
+  svg {
+    max-width: 100%;
+    min-width: 10em;
+
+    ${mediaQuery.small`
+      max-width: 37.5em;
+      width: 100%;
+    `};
+  }
 `;
 
 class ContactHeader extends React.Component {
