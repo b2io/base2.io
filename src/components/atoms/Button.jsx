@@ -6,7 +6,7 @@ import { cssSome, lighten, themed } from '../../util/style';
 const Button = styled.button`
   ${themed('motion.color')};
   ${themed('typography.button')};
-  background-color: ${themed('color.primary')};
+  background-color: ${themed('color.background')};
   border: 2px solid #80cbc4;
   border-radius: 2px;
   color: ${flow(themed('color.primary'), readableColor)};

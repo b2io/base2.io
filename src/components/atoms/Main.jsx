@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { mediaQuery } from '../../util/style';
 
 const Main = styled.main`
-  display: grid;
+  /* display: grid;
   grid-template-columns: 0 1fr 0;
   grid-template-rows: 100vh;
 
@@ -17,7 +17,7 @@ const Main = styled.main`
 
   ${mediaQuery.medium`
     grid-template-rows: 2650px;
-  `};
+  `}; */
 `;
 
 export default Main;

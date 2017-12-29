@@ -8,9 +8,7 @@ import {
   Main,
 } from '../components';
 
-const Contact = styled.section`
-  grid-column: 2;
-`;
+const Contact = styled.section``;
 
 class IndexPage extends React.Component {
   static defaultProps = {};

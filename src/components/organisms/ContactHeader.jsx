@@ -3,49 +3,87 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import planetEarthSrc from '../../assets/planet-earth.jpg';
-import { mediaQuery } from '../../util/style';
+import { mediaQuery, themed } from '../../util/style';
 import { B2LogoText } from '../atoms/logos';
+import { Section, Button } from '../atoms';
 
-const Wrapper = styled.div`
-  justify-items: center;
+const Wrapper = styled(Section)`
+  background-image: url(${planetEarthSrc});
+  background-repeat: no-repeat;
+  background-size: 110vw;
+  background-position: center 40%;
+  height: 100vh;
+  padding-top: 2em;
   text-align: center;
-  /* margin: 0 2em 2em; */
 
   ${mediaQuery.small`
-    display: grid;
-    align-items: center;
-    grid-auto-flow: column;
-    grid-gap: 1em;
-    grid-template-columns: 1fr 1fr;
-    grid-template-row: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      "left right";
-    justify-content: space-evenly;
-
-    > *:not(img) {
-      grid-area: left;
-    }
+    background-position: center 35%;
+    background-size: 63vh;
   `};
 
-  img {
-    max-width: 100%;
-
-    ${mediaQuery.small`
-    img {
-      grid-area: right;
-    }
+  ${mediaQuery.medium`
+    background-position: 150% 50%;
+    background-size: 59vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 33vw;
   `};
+
+  ${mediaQuery.large`
+    background-position: 180% 30%;
+    background-size: 70vw;
+    height: 110vh;
+    padding-right: 45vw;
+  `};
+
+  Button {
+    margin: 0 auto;
   }
 
   svg {
-    max-width: 100%;
+    margin: 0 auto;
+    max-width: 90%;
     min-width: 10em;
 
     ${mediaQuery.small`
-      max-width: 37.5em;
-      width: 100%;
-    `};
+    max-width: 600px;
+  `};
+
+    ${mediaQuery.medium`
+    max-width: 615px;
+    width: 100%;
+  `};
   }
+`;
+
+const LocationText = styled.span`
+  display: inline-block;
+  margin: 0.5em 0 60vh;
+
+  ${mediaQuery.small`
+    font-size: 1.9em;
+    margin-bottom: 60vh;
+  `};
+
+  ${mediaQuery.medium`
+    margin-bottom: 1em;
+  `};
+
+  strong {
+    color: ${themed('color.link')};
+    font-weight: inherit;
+    font-style: italic;
+  }
+`;
+
+const LocationTagline = styled.p`
+  font-style: italic;
+  margin-top: 0;
+
+  ${mediaQuery.small`
+    font-size: 2.25em;
+  `};
 `;
 
 class ContactHeader extends React.Component {
@@ -63,15 +101,17 @@ class ContactHeader extends React.Component {
     return (
       <Wrapper>
         <B2LogoText />
-        <p>
-          is located in <em>Columbus, OH</em> and <em>Pittsburgh, PA</em>.
-        </p>
-        <img alt="Planet Earth" src={planetEarthSrc} />
-        <p>
-          Thanks to satellites and the internet, we can work with you wherever
-          you are.
-        </p>
-        <button onClick={onContact}>Make Contact</button>
+        <LocationText>
+          is located in <strong>Columbus, OH</strong> and{' '}
+          <strong>Pittsburgh, PA</strong>.
+        </LocationText>
+        <LocationTagline>
+          Thanks to satellites and the internet, <br />
+          we can work with you wherever you are.
+        </LocationTagline>
+        <Button submit onClick={onContact}>
+          Make Contact
+        </Button>
       </Wrapper>
     );
   }
