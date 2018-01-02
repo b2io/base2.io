@@ -4,7 +4,7 @@ import {
   ContactHeader,
   ContactForm,
   ContactInformation,
-  // Hero,
+  Hero,
   Main,
 } from '../components';
 
@@ -16,7 +16,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Main>
-        {/* <Hero /> */}
+        <Hero />
         <Contact id="contact-us">
           <ContactHeader />
           <ContactForm />
