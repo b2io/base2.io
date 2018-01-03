@@ -14,6 +14,10 @@ const Button = styled.button`
   overflow: hidden;
   padding: 0.25em 0.5em;
 
+  ${mediaQuery.small`
+    font-size: 1.875em;
+  `};
+
   ${mediaQuery.medium`
     font-size: 2.625em;
   `};
