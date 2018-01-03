@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import flow from 'lodash/fp/flow';
-import { cssSome, lighten, themed } from '../../util/style';
+import { cssSome, lighten, mediaQuery, themed } from '../../util/style';
 
 const Button = styled.button`
   ${themed('font.sansSerif')};
@@ -8,11 +8,15 @@ const Button = styled.button`
   border: 1px solid ${themed('color.link')};
   color: ${themed('color.link')};
   cursor: pointer;
-  font-size: 2.625em;
+  font-size: 1.5em;
   line-height: 1;
   outline: none;
   overflow: hidden;
   padding: 0.25em 0.5em;
+
+  ${mediaQuery.medium`
+    font-size: 2.625em;
+  `};
 
   ${cssSome('block')`
     display: block;

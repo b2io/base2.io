@@ -1,1 +1,2 @@
-export B2LogoText from './B2LogoText';
+export BaseTwoLogoText from './BaseTwoLogoText';
+export BaseTwoLogo from './BaseTwoLogo';

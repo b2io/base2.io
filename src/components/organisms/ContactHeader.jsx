@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { mediaQuery, themed } from '../../util/style';
-import { B2LogoText } from '../atoms/logos';
+import { BaseTwoLogoText } from '../atoms/logos';
 import { Section, Button } from '../atoms';
 
 const Wrapper = styled(Section)`
@@ -112,7 +112,7 @@ class ContactHeader extends React.Component {
 
     return (
       <Wrapper>
-        <B2LogoText />
+        <BaseTwoLogoText />
         <LocationText>
           is located in <strong>Columbus, OH</strong> and{' '}
           <strong>Pittsburgh, PA</strong>.

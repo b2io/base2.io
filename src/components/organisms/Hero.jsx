@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H1, B2LogoText, Img, P } from '../atoms';
+import { H1, BaseTwoLogoText, Img, P } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
 const BGAspectRatio = '1.83';
@@ -110,7 +110,7 @@ class Hero extends React.Component {
       <HeroContent>
         <HeroHeader>
           <HeroHeading>
-            <B2LogoText />
+            <BaseTwoLogoText />
           </HeroHeading>
           <HeroTagline> We turn ideas into beautiful software </HeroTagline>
           <ScrollIndicator src="img/scroll-indicator.svg" alt="" />

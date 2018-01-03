@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const circleMixin = css`
-  background: black;
+  background: #000;
   border-radius: 50%;
   height: 2em;
   margin-left: 0.25em;
