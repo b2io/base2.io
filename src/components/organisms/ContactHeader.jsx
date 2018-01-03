@@ -2,6 +2,7 @@ import noop from 'lodash/noop';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
+import { em } from 'polished';
 import { mediaQuery, themed } from '../../util/style';
 import { BaseTwoLogoText } from '../atoms/logos';
 import { Section, Button } from '../atoms';
@@ -35,27 +36,23 @@ const Wrapper = styled(Section)`
   svg {
     margin: 0 auto;
     max-width: 90%;
-    min-width: 10em;
 
     ${mediaQuery.small`
-    max-width: 600px;
-  `};
+      max-width: ${em('600px')};
+    `};
 
     ${mediaQuery.medium`
-    max-width: 615px;
-    width: 100%;
-  `};
+      max-width: ${em('615px')};
+    `};
   }
 `;
 
 const Earth = styled.img`
-  max-width: 80vw;
   width: 73%;
 
   ${mediaQuery.medium`
     position: absolute;
     right: -30%;
-    top: -4em;
     z-index: 0;
   `};
 `;
@@ -96,6 +93,15 @@ const LocationTagline = styled.p`
 const Scroll = styled.img`
   display: block;
   margin: 1em auto 0;
+  max-width: ${em('21px')};
+
+  ${mediaQuery.small`
+    max-width: ${em('27px')};
+  `};
+
+  ${mediaQuery.large`
+    max-width: ${em('43px')};
+  `};
 `;
 
 class ContactHeader extends React.Component {
