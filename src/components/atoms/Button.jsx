@@ -1,24 +1,46 @@
 import styled from 'styled-components';
 import flow from 'lodash/fp/flow';
-import { readableColor } from 'polished';
-import { cssSome, lighten, themed } from '../../util/style';
+import { cssSome, lighten, mediaQuery, themed } from '../../util/style';
 
 const Button = styled.button`
-  ${themed('motion.color')};
-  ${themed('typography.button')};
-  background-color: ${themed('color.primary')};
-  border: 2px solid #80cbc4;
-  border-radius: 2px;
-  color: ${flow(themed('color.primary'), readableColor)};
+  ${themed('font.sansSerif')};
+  background-color: ${themed('color.transparent')};
+  border: 1px solid ${themed('color.link')};
+  color: ${themed('color.link')};
   cursor: pointer;
+  font-size: 1.5em;
+  line-height: 1;
   outline: none;
   overflow: hidden;
-  padding: 0 16px;
-  position: relative;
+  padding: 0.25em 0.5em;
+
+  ${mediaQuery.small`
+    font-size: 1.875em;
+  `};
+
+  ${mediaQuery.medium`
+    font-size: 2.625em;
+  `};
 
   ${cssSome('block')`
     display: block;
     width: 100%;
+  `};
+
+  ${cssSome('gradient')`
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: ${themed('color.primary')} transparent ${themed(
+    'color.link',
+  )};
+    background-image:
+      linear-gradient(${themed('color.primary')}, ${themed('color.link')}),
+      linear-gradient(${themed('color.primary')}, ${themed('color.link')})
+    ;
+    background-size: 1px 100%;
+    background-position:0 0, 100% 0;
+    background-repeat: no-repeat;
   `};
 
   ${cssSome('submit')`
@@ -34,16 +56,16 @@ const Button = styled.button`
     width: 330px;
     height: 50px;
     text-transform: uppercase;
+
+    ${mediaQuery.small`
+      font-size: 1.875em;
+    `};
   `};
 
   &:focus,
   &:hover {
-    background-color: ${flow(themed('color.primary'), lighten(0.1))};
-
-    ${cssSome('submit')`
-      background-color: ${themed('color.deepBlue')};
-      color: ${themed('color.primary')};
-    `};
+    background-color: ${themed('color.deepBlue')};
+    color: ${themed('color.primary')};
   }
 
   &:active {

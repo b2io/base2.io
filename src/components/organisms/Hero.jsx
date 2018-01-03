@@ -1,81 +1,53 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H1, B2LogoText, Img, P } from '../atoms';
+import { H1, BaseTwoLogoText, Img, P } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
+const BGAspectRatio = '1.83';
+
 const HeroHeader = styled.header`
-  grid-column-start: 2;
-  grid-row-start: 1;
-  margin: 3.75em 0 0 0;
-  position: relative;
-  text-align: center;
-
-  ${mediaQuery.small`
-    margin-top: 4rem;
-  `};
-
-  ${mediaQuery.medium`
-    margin-top: 8rem;
-  `};
-
-  ${mediaQuery.large`
-    margin-top: 12rem;
-  `};
-
-  ${mediaQuery.xlarge`
-    margin-top: 18rem;
-  `};
-`;
-
-const HeroBackground = styled.div`
   background-image: url('img/backgrounds/hero/b2-hero-background-480.png');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: black;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  height: 100vh;
+  padding: 3.75em 0 0 0;
+  position: relative;
+  text-align: center;
 
   ${mediaQuery.small`
     background-image: url('img/backgrounds/hero/b2-hero-background-960.png');
     background-size: 120%;
+    min-height: calc((100vw * ${BGAspectRatio}) * 1.2);
+    padding-top: 4rem;
   `};
 
   ${mediaQuery.medium`
     background-image: url('img/backgrounds/hero/b2-hero-background-960.png');
     background-size: 120%;
+    padding-top: 8rem;
   `};
 
   ${mediaQuery.large`
     background-image: url('img/backgrounds/hero/b2-hero-background.png');
     background-size: cover;
+    min-height: calc(100vw * ${BGAspectRatio});
+    padding-top: 12rem;
+  `};
+
+  ${mediaQuery.xlarge`
+    padding-top: 18rem;
   `};
 `;
 
-const Logo = styled(B2LogoText)`
-  position: absolute;
-  top: 0;
-  left: 0;
-`;
-
 const HeroHeading = styled(H1)`
-  font-size: 16px;
-  height: 0;
-  padding-bottom: 2.5rem;
+  padding: 0;
   position: relative;
   width: 80%;
   max-width: 750px;
   margin: 0 auto;
-
-  ${mediaQuery.small`
-    padding: 4rem;
-  `};
-
-  ${mediaQuery.large`
-    padding-bottom: 4.5rem;
-  `};
+  overflow: hidden;
 `;
 
 const HeroTagline = styled(P)`
@@ -136,10 +108,9 @@ class Hero extends React.Component {
   render() {
     return (
       <HeroContent>
-        <HeroBackground />
         <HeroHeader>
           <HeroHeading>
-            <Logo />
+            <BaseTwoLogoText />
           </HeroHeading>
           <HeroTagline> We turn ideas into beautiful software </HeroTagline>
           <ScrollIndicator src="img/scroll-indicator.svg" alt="" />
