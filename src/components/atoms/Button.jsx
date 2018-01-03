@@ -56,16 +56,16 @@ const Button = styled.button`
     width: 330px;
     height: 50px;
     text-transform: uppercase;
+
+    ${mediaQuery.small`
+      font-size: 1.875em;
+    `};
   `};
 
   &:focus,
   &:hover {
-    background-color: ${themed('color.linkHover')};
-
-    ${cssSome('submit')`
-      background-color: ${themed('color.deepBlue')};
-      color: ${themed('color.primary')};
-    `};
+    background-color: ${themed('color.deepBlue')};
+    color: ${themed('color.primary')};
   }
 
   &:active {
