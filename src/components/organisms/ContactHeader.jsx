@@ -131,7 +131,10 @@ class ContactHeader extends React.Component {
         <Button gradient onClick={onContact}>
           Make Contact
         </Button>
-        <Scroll src="img/scroll-arrows.svg" alt="" />
+        <Scroll
+          src="img/scroll-arrows.svg"
+          alt="Scroll down for contact information."
+        />
       </Wrapper>
     );
   }
