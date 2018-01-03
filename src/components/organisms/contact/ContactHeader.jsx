@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
-import { mediaQuery, themed } from '../../util/style';
-import { BaseTwoLogoText } from '../atoms/logos';
-import { Section, Button } from '../atoms';
+import { mediaQuery, themed } from '../../../util/style';
+import { BaseTwoLogoText } from '../../atoms/logos';
+import { Button } from '../../atoms';
 
-const Wrapper = styled(Section)`
+const Wrapper = styled.div`
   min-height: 100vh;
   padding-top: 2em;
   text-align: center;

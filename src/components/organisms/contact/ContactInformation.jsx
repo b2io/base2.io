@@ -1,5 +1,5 @@
 import React from 'react';
-import { A, Address } from '../atoms';
+import { A, Address } from '../../atoms';
 
 class ContactInformation extends React.Component {
   static defaultProps = {};

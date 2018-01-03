@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, TextAreaField, TextInputField } from '../atoms';
-import { mediaQuery } from '../../util/style';
+import { Button, TextAreaField, TextInputField } from '../../atoms';
+import { mediaQuery } from '../../../util/style';
 
 const Wrapper = styled.div`
   display: grid;
