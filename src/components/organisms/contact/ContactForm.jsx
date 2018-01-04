@@ -26,13 +26,10 @@ const DescriptionField = styled(TextAreaField)`
 const ContactSubmitButton = styled(Button)`
   display: block;
   margin: 0 auto;
+  width: 100%;
 
-  ${mediaQuery.xsmall`
-    padding: 0 1em;
-  `};
-
-  ${mediaQuery.large`
-    margin: 0;
+  ${mediaQuery.small`
+    width: auto;
   `};
 `;
 

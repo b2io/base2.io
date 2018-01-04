@@ -24,6 +24,7 @@ const ContactContent = styled.div`
     align-items: center;
     display: flex;
     justify-content: space-around;
+    min-height: 100vh;
   `};
 `;
 

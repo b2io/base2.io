@@ -1,11 +1,10 @@
 import noop from 'lodash/noop';
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
 import { mediaQuery, themed } from '../../../util/style';
 import { BaseTwoLogoText } from '../../atoms/logos';
-import { Button } from '../../atoms';
+import { CallToAction } from '../../atoms';
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -28,10 +27,6 @@ const Wrapper = styled.div`
     min-height: 110vh;
     padding-right: 45vw;
   `};
-
-  Button {
-    margin: 0 auto;
-  }
 
   svg {
     margin: 0 auto;
@@ -109,13 +104,7 @@ class ContactHeader extends React.Component {
     onContact: noop,
   };
 
-  static propTypes = {
-    onContact: PropTypes.func,
-  };
-
   render() {
-    const { onContact } = this.props;
-
     return (
       <Wrapper>
         <BaseTwoLogoText />
@@ -128,9 +117,7 @@ class ContactHeader extends React.Component {
           Thanks to satellites and the internet, we can work with you wherever
           you are.
         </LocationTagline>
-        <Button gradient onClick={onContact}>
-          Make Contact
-        </Button>
+        <CallToAction href="#contact-us">Make Contact</CallToAction>
         <Scroll
           src="img/scroll-arrows.svg"
           alt="Scroll down for contact information."
