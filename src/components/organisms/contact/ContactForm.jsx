@@ -1,16 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import { em } from 'polished';
 import { Button, TextAreaField, TextInputField } from '../../atoms';
 import { mediaQuery } from '../../../util/style';
 
 const Wrapper = styled.div`
-  display: grid;
   margin-bottom: 5em;
-  max-width: 700px;
+  max-width: ${em('700px')};
   padding: 0 1em;
+  width: 100%;
 
   ${mediaQuery.small`
     padding: 0 0;
+  `};
+
+  ${mediaQuery.medium`
+    max-width: ${em('610px')};
   `};
 `;
 

@@ -10,6 +10,7 @@ const Wrapper = styled(Section)`
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
+  padding-bottom: 34vw;
 
   ${mediaQuery.large`
     padding-bottom: 28em;
@@ -22,11 +23,7 @@ const ContactContent = styled.div`
   ${mediaQuery.medium`
     align-items: center;
     display: flex;
-    justify-content: space-between;
-
-    > * {
-      width: 48%;
-    }
+    justify-content: space-around;
   `};
 `;
 
@@ -37,9 +34,9 @@ class ContactUs extends React.Component {
 
   render() {
     return (
-      <Wrapper id="contact-us">
+      <Wrapper>
         <ContactHeader />
-        <ContactContent>
+        <ContactContent id="contact-us">
           <ContactForm />
           <ContactInformation />
         </ContactContent>

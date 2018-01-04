@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  ContactUs,
-  // Hero,
-  Main,
-} from '../components';
+import { ContactUs, Hero, Main } from '../components';
 
 class IndexPage extends React.Component {
   static defaultProps = {};
@@ -11,7 +7,7 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Main>
-        {/* <Hero /> */}
+        <Hero />
         <ContactUs />
       </Main>
     );
