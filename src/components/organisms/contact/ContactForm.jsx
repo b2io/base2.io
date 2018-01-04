@@ -5,16 +5,17 @@ import { Button, TextAreaField, TextInputField } from '../../atoms';
 import { mediaQuery } from '../../../util/style';
 
 const Wrapper = styled.div`
-  margin-bottom: 5em;
-  max-width: ${em('700px')};
+  margin: 0 auto 5em;
   padding: 0 1em;
   width: 100%;
 
   ${mediaQuery.small`
+    max-width: ${em('700px')};
     padding: 0 0;
   `};
 
   ${mediaQuery.medium`
+    margin: 0;
     max-width: ${em('610px')};
   `};
 `;
