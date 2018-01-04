@@ -56,7 +56,7 @@ class ContactForm extends React.Component {
             multiline
             rows="5"
           />
-          <ContactSubmitButton submit>Submit</ContactSubmitButton>
+          <ContactSubmitButton>Submit</ContactSubmitButton>
         </form>
       </Wrapper>
     );

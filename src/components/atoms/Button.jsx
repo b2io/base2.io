@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { cssSome, mediaQuery, themed } from '../../util/style';
+import { cssSome, themed } from '../../util/style';
 
 const Button = styled.button`
   ${themed('font.sansSerif')};
@@ -8,14 +8,6 @@ const Button = styled.button`
   ${cssSome('block')`
     display: block;
     width: 100%;
-  `};
-
-  ${cssSome('submit')`
-    font-size: 1.25em;
-
-    ${mediaQuery.small`
-      font-size: 1.875em;
-    `};
   `};
 `;
 

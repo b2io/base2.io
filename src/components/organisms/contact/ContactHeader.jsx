@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-right: 33vw;
+    padding-right: 30vw;
     position: relative;
 
     > * {
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 
   ${mediaQuery.large`
     min-height: 110vh;
-    padding-right: 45vw;
+    padding-right: 37vw;
   `};
 
   svg {
@@ -47,7 +47,7 @@ const Earth = styled.img`
 
   ${mediaQuery.medium`
     position: absolute;
-    right: -30%;
+    right: -34%;
     z-index: 0;
   `};
 `;
@@ -85,6 +85,10 @@ const LocationTagline = styled.p`
   `};
 `;
 
+const ScrollButton = styled(CallToAction)`
+  margin: 0 auto;
+`;
+
 const Scroll = styled.img`
   display: block;
   margin: 1em auto 0;
@@ -117,7 +121,7 @@ class ContactHeader extends React.Component {
           Thanks to satellites and the internet, we can work with you wherever
           you are.
         </LocationTagline>
-        <CallToAction href="#contact-us">Make Contact</CallToAction>
+        <ScrollButton href="#contact-us">Make Contact</ScrollButton>
         <Scroll
           src="img/scroll-arrows.svg"
           alt="Scroll down for contact information."

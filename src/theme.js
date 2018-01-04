@@ -1,6 +1,5 @@
 import { css } from 'styled-components';
 import { lighten, rem } from 'polished';
-import { mediaQuery } from './util/style';
 
 // COLOR:
 
@@ -59,7 +58,7 @@ const typography = {
 
 const button = {
   default: css`
-    background-color: ${color.transparent};
+    background-color: ${color.base};
     background-image: linear-gradient(${color.primary}, ${color.spaceBlue}),
       linear-gradient(${color.primary}, ${color.spaceBlue});
     background-size: 1px 100%;
@@ -68,6 +67,7 @@ const button = {
     border-style: solid;
     border-width: 1px 0;
     border-color: ${color.primary} transparent ${color.spaceBlue};
+    box-shadow: 0 0 10px ${color.spaceBlue};
     color: ${color.spaceBlue};
     cursor: pointer;
     font-size: 1.5em;
@@ -86,14 +86,6 @@ const button = {
     &:active {
       background-color: ${lighten(0.1, color.deepBlue)};
     }
-
-    ${mediaQuery.small`
-      font-size: 1.875em;
-    `};
-
-    ${mediaQuery.medium`
-      font-size: 2.625em;
-    `};
   `,
 };
 
