@@ -8,13 +8,12 @@ const Input = styled.input`
   color: ${themed('color.primary')};
   display: block;
   margin: 0;
-  outline: none;
   padding: 4px 0;
   text-align: left;
   width: 100%;
 
   ${cssSome('isDirty', 'isFocused')`
-    box-shadow: 0 1px 0 0 ${themed('color.spaceGreen')};;
+    box-shadow: 0 1px 0 0 ${themed('color.spaceGreen')};
   `};
 `;
 

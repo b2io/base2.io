@@ -22,11 +22,9 @@ const color = {
 const motion = {
   color: css`
     transition-duration: 85ms;
-    transition-timing-fuction: linear;
   `,
   size: css`
     transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   `,
 };
 
@@ -72,7 +70,6 @@ const button = {
     cursor: pointer;
     font-size: 1.5em;
     line-height: 1;
-    outline: none;
     overflow: hidden;
     padding: ${rem('15px')} ${rem('120px')};
     text-transform: uppercase;

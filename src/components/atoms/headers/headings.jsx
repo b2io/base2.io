@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+/* stylelint-disable */
+// TODO: add styles, remove stylelint-disable
 const H1 = styled.h1``;
 
 const H2 = styled.h2``;
