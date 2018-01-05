@@ -1,16 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, TextAreaField, TextInputField } from '../atoms';
-import { mediaQuery } from '../../util/style';
+import { em } from 'polished';
+import { Button, TextAreaField, TextInputField } from '../../atoms';
+import { mediaQuery } from '../../../util/style';
 
 const Wrapper = styled.div`
-  display: grid;
-  margin-bottom: 5em;
-  max-width: 700px;
+  margin: 0 auto 5em;
   padding: 0 1em;
+  width: 100%;
 
   ${mediaQuery.small`
+    max-width: ${em('700px')};
     padding: 0 0;
+  `};
+
+  ${mediaQuery.medium`
+    margin: 0;
+    max-width: ${em('610px')};
   `};
 `;
 
@@ -21,13 +27,10 @@ const DescriptionField = styled(TextAreaField)`
 const ContactSubmitButton = styled(Button)`
   display: block;
   margin: 0 auto;
+  width: 100%;
 
-  ${mediaQuery.xsmall`
-    padding: 0 1em;
-  `};
-
-  ${mediaQuery.large`
-    margin: 0;
+  ${mediaQuery.small`
+    width: auto;
   `};
 `;
 
@@ -53,7 +56,7 @@ class ContactForm extends React.Component {
             multiline
             rows="5"
           />
-          <ContactSubmitButton submit>Submit</ContactSubmitButton>
+          <ContactSubmitButton>Submit</ContactSubmitButton>
         </form>
       </Wrapper>
     );

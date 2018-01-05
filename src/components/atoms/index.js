@@ -4,6 +4,7 @@ export * from './logos';
 export A from './A';
 export Address from './Address';
 export Button from './Button';
+export CallToAction from './CallToAction';
 export Icon from './Icon';
 export Img from './Img';
 export LI from './LI';

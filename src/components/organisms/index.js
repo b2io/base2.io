@@ -1,4 +1,3 @@
-export ContactForm from './ContactForm';
-export ContactHeader from './ContactHeader';
-export ContactInformation from './ContactInformation';
+export * from './contact';
+export ContactUs from './ContactUs';
 export Hero from './Hero';
