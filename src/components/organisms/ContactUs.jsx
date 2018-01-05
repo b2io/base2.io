@@ -5,10 +5,8 @@ import { Section } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
 const Wrapper = styled(Section)`
-  background-image: url('img/backgrounds/moon-surface.jpg');
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: contain;
+  background: url(img/backgrounds/moon-surface.jpg) center bottom / contain
+    no-repeat;
   display: block;
   padding-bottom: 34vw;
 

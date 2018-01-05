@@ -3,8 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
 import { mediaQuery, themed } from '../../../util/style';
-import { BaseTwoLogoText } from '../../atoms/logos';
-import { CallToAction } from '../../atoms';
+import { BaseTwoLogoText, CallToAction } from '../../atoms';
 
 const Wrapper = styled.div`
   min-height: 100vh;
