@@ -74,6 +74,7 @@ const LocationTagline = styled.p`
   font-style: italic;
   margin: 0 auto 2em;
   max-width: 17em;
+  width: 100%;
 
   ${mediaQuery.small`
     font-size: 2em;
@@ -86,6 +87,8 @@ const LocationTagline = styled.p`
 
 const ScrollButton = styled(CallToAction)`
   margin: 0 auto;
+  max-width: 400px;
+  width: 100%;
 `;
 
 const Scroll = styled.img`
