@@ -73,8 +73,8 @@ const LocationText = styled.span`
 const LocationTagline = styled.p`
   font-style: italic;
   margin: 0 auto 2em;
-  width: 100%;
   max-width: 17em;
+  width: 100%;
 
   ${mediaQuery.small`
     font-size: 2em;
