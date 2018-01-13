@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { lighten, rem } from 'polished';
+import { lighten, rem, transparentize } from 'polished';
 
 // COLOR:
 
@@ -10,6 +10,7 @@ const color = {
   disabled: 'rgba(0, 0, 0, 0.38)',
   link: 'rgb(124, 177, 255)',
   linkHover: lighten(0.15, 'rgb(124, 177, 255)'),
+  overlay: transparentize(0.3, 'rgb(0, 0, 0)'),
   primary: 'rgba(255, 255, 255, 1.0)',
   spaceGreen: 'rgba(128, 203, 196, 1.0)',
   spaceBlue: 'rgba(124, 177, 255,1.0)',
