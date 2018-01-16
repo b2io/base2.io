@@ -5,6 +5,7 @@ import AssignmentIcon from 'react-icons/lib/md/assignment';
 import CodeIcon from 'react-icons/lib/md/code';
 import ComputerIcon from 'react-icons/lib/md/computer';
 import IPhoneIcon from 'react-icons/lib/md/phone-iphone';
+import MenuToggleIcon from 'react-icons/lib/fa/bars';
 import RefreshIcon from 'react-icons/lib/md/refresh';
 import WallpaperIcon from 'react-icons/lib/md/wallpaper';
 
@@ -13,6 +14,7 @@ const iconsByName = {
   code: CodeIcon,
   computer: ComputerIcon,
   iphone: IPhoneIcon,
+  menutoggle: MenuToggleIcon,
   refresh: RefreshIcon,
   wallpaper: WallpaperIcon,
 };
