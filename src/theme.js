@@ -11,7 +11,7 @@ const color = {
   link: 'rgb(124, 177, 255)',
   linkHover: lighten(0.15, 'rgb(124, 177, 255)'),
   menu: 'rgb(153,153,153)',
-  overlay: transparentize(0.3, 'rgb(0, 0, 0)'),
+  overlay: transparentize(0.7, 'rgb(0, 0, 0)'),
   primary: 'rgba(255, 255, 255, 1.0)',
   purple: 'rgba(106, 72, 153, 1.0)',
   spaceGreen: 'rgba(128, 203, 196, 1.0)',
