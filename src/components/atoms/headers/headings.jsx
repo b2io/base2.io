@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
+const H1 = styled.h1`
+  font-size: 4em;
+  font-weight: 100;
+  text-transform: capitalize;
+`;
+
 /* stylelint-disable */
 // TODO: add styles, remove stylelint-disable
-const H1 = styled.h1``;
-
 const H2 = styled.h2``;
 
 const H3 = styled.h3``;
