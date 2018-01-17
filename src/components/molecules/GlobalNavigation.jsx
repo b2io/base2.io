@@ -24,6 +24,7 @@ const NavBar = styled.nav`
 
   &.menu-open {
     height: 100vh;
+    transition: height 300ms linear;
   }
 
   ${mediaQuery.small`
@@ -34,20 +35,20 @@ const NavBar = styled.nav`
 `;
 
 const NavList = styled(UL)`
-  border-top: 1px solid ${themed('color.purple')};
   display: none;
+  height: 0;
   list-style-type: none;
   margin: 0;
   padding: 0 0 20px 0;
   width: 100%;
 
   .menu-open & {
+    border-top: 1px solid ${themed('color.purple')};
     display: block;
   }
 
   ${mediaQuery.small`
     align-items: center;
-    border: none;
     display: flex;
     height: auto;
     padding: 0;
@@ -92,24 +93,8 @@ const LogoToggleContainer = styled.div`
   justify-content: space-between;
 `;
 
-const ContactCallToActionContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-`;
-
-const ContactCallToAction = styled(CallToAction)`
-  display: none;
-  height: 48px;
-  font-size: 18px;
-  margin: 10px 10px;
-  text-align: center;
-  width: 160px;
-
-  .menu-open & {
-    display: inline;
-    bottom: 10px;
-  }
+const MenuLogo = styled(BaseTwoLogo)`
+  font-size: 12px;
 `;
 
 const MenuToggle = styled(Button)`
@@ -134,6 +119,30 @@ const MenuToggle = styled(Button)`
   `};
 `;
 
+const ContactCallToActionContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+`;
+
+const ContactCallToAction = styled(CallToAction)`
+  height: 0;
+  font-size: 18px;
+  line-height: 48px;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  text-align: center;
+  width: 160px;
+
+  .menu-open & {
+    height: 48px;
+    margin: 10px 10px;
+    opacity: 1;
+    transition: opacity 1000ms ease-in, height 800ms ease-in;
+  }
+`;
+
 class GlobalNavigation extends React.Component {
   static defaultProps = {
     onClick: noop,
@@ -152,7 +161,7 @@ class GlobalNavigation extends React.Component {
       <NavBar className={this.state.isOpen ? 'menu-open' : ''}>
         <MainNavigationContainer>
           <LogoToggleContainer>
-            <BaseTwoLogo />
+            <MenuLogo />
             <MenuToggle onClick={this.handleClick}>
               <Icon name="menutoggle" />
             </MenuToggle>

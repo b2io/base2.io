@@ -12,7 +12,7 @@ const HeroHeader = styled.header`
   background-size: 100%;
   background-color: black;
   height: 100vh;
-  padding: 3.75em 0 0 0;
+  padding: 4em 0 0 0;
   position: relative;
   text-align: center;
 
