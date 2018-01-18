@@ -13,7 +13,7 @@ import {
 import { mediaQuery, themed } from '../../util/style';
 
 const NavBar = styled.nav`
-  background-color: ${themed('color.background')};
+  background-color: ${themed('color.overlay')};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,8 +23,15 @@ const NavBar = styled.nav`
   z-index: 1;
 
   &.menu-open {
+    background-color: ${themed('color.background')};
     height: 100vh;
-    transition: height 300ms linear;
+    transition: height 300ms ease-in;
+  }
+
+  &.menu-closed {
+    background-color: ${themed('color.overlay')};
+    height: 48px;
+    transition: height 300ms linear 100ms;
   }
 
   ${mediaQuery.small`
@@ -35,24 +42,37 @@ const NavBar = styled.nav`
 `;
 
 const NavList = styled(UL)`
-  display: none;
   height: 0;
   list-style-type: none;
   margin: 0;
-  padding: 0 0 20px 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
   width: 100%;
 
   .menu-open & {
     border-top: 1px solid ${themed('color.purple')};
-    display: block;
+    height: auto;
+    opacity: 1;
+    transition: opacity 300ms ease-in 200ms;
+  }
+
+  .menu-closed & {
+    border-top: 1px solid ${themed('color.purple')};
+    height: 0;
+    opacity: 0;
+    transition: opacity 150ms ease-out;
   }
 
   ${mediaQuery.small`
+    .menu-closed & {
     align-items: center;
     display: flex;
     height: auto;
+    opacity: 1;
     padding: 0;
     width: auto;
+    }
   `};
 `;
 
@@ -91,10 +111,7 @@ const LogoToggleContainer = styled.div`
   flex: 1;
   height: 48px;
   justify-content: space-between;
-`;
-
-const MenuLogo = styled(BaseTwoLogo)`
-  font-size: 12px;
+  padding: 0 10px;
 `;
 
 const MenuToggle = styled(Button)`
@@ -141,6 +158,13 @@ const ContactCallToAction = styled(CallToAction)`
     opacity: 1;
     transition: opacity 1000ms ease-in, height 800ms ease-in;
   }
+
+  .menu-closed & {
+    height: 0;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 500ms ease-out, height 300ms ease-out;
+  }
 `;
 
 class GlobalNavigation extends React.Component {
@@ -158,10 +182,10 @@ class GlobalNavigation extends React.Component {
 
   render() {
     return (
-      <NavBar className={this.state.isOpen ? 'menu-open' : ''}>
+      <NavBar className={this.state.isOpen ? 'menu-open' : 'menu-closed'}>
         <MainNavigationContainer>
           <LogoToggleContainer>
-            <MenuLogo />
+            <BaseTwoLogo />
             <MenuToggle onClick={this.handleClick}>
               <Icon name="menutoggle" />
             </MenuToggle>

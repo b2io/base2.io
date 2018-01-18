@@ -4,9 +4,9 @@ import styled, { css } from 'styled-components';
 const circleMixin = css`
   background: #fff;
   border-radius: 50%;
-  height: 2em;
+  height: 1.5em;
   margin-left: 0.25em;
-  width: 2em;
+  width: 1.5em;
 `;
 
 const SolidCircle = styled.div`
@@ -18,9 +18,9 @@ const StripedCircle = styled.div`
   background: repeating-linear-gradient(
     -45deg,
     #000,
-    #000 2px,
-    #fff 2px,
-    #fff 4px
+    #000 1px,
+    #fff 1px,
+    #fff 2px
   );
 `;
 
