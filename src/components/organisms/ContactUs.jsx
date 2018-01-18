@@ -7,7 +7,7 @@ import { mediaQuery } from '../../util/style';
 const Wrapper = styled(Section)`
   background: url(img/backgrounds/moon.jpg) center bottom / contain no-repeat;
   display: block;
-  padding-bottom: 34vw;
+  padding-bottom: 45vw;
   position: relative;
 
   ${mediaQuery.large`

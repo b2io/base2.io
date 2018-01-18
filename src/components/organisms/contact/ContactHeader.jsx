@@ -42,7 +42,11 @@ const Wrapper = styled.div`
 `;
 
 const Earth = styled.img`
-  width: 73%;
+  width: 100%;
+
+  ${mediaQuery.small`
+    width: 73%;
+  `};
 
   ${mediaQuery.medium`
     position: absolute;
@@ -72,6 +76,7 @@ const LocationText = styled.span`
 `;
 
 const LocationTagline = styled.p`
+  font-size: 1.25em;
   font-style: italic;
   margin: 0 auto 2em;
   max-width: 17em;
@@ -89,7 +94,6 @@ const LocationTagline = styled.p`
 const ScrollButton = styled(CallToAction)`
   margin: 0 auto;
   max-width: 400px;
-  width: 100%;
 `;
 
 const Scroll = styled.img`
