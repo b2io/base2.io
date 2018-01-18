@@ -47,6 +47,7 @@ const Earth = styled.img`
   ${mediaQuery.medium`
     position: absolute;
     right: -34%;
+    top: 0;
     z-index: 0;
   `};
 `;
