@@ -112,6 +112,11 @@ const LogoToggleContainer = styled.div`
   height: 48px;
   justify-content: space-between;
   padding: 0 10px;
+
+  ${mediaQuery.small`
+    font-size: 1.25rem;
+    padding: 0;
+  `};
 `;
 
 const MenuToggle = styled(Button)`
