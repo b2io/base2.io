@@ -8,11 +8,25 @@ import {
   P,
   Section,
 } from '../components';
+import { mediaQuery } from '../util/style';
 
 const Wrapper = styled(Main)`
   background-image: url('img/backgrounds/hero/b2-hero-background-1920.png');
   background-position: 50% 0;
+  background-size: 270%;
   height: 100vh;
+
+  ${mediaQuery.small`
+    background-size: 140%;
+  `};
+
+  ${mediaQuery.medium`
+    background-size: 100%;
+  `};
+
+  ${mediaQuery.large`
+    background-position: 50% 5%;
+  `};
 `;
 
 const ThanksContent = styled(Section)`
@@ -22,6 +36,8 @@ const ThanksContent = styled(Section)`
   flex-direction: column;
   height: 100%;
   justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1024px;
   padding-bottom: 2em;
   text-align: center;
 `;
@@ -30,19 +46,32 @@ const ThanksMessage = styled(Section)`
   h1 {
     margin-bottom: 0.25em;
   }
+`;
 
-  svg {
+const BaseTwoLogo = styled.div`
+  margin: 0 auto;
+  width: 14em;
+
+  ${mediaQuery.small`
     width: 20em;
+  `};
+`;
+
+const ThanksText = styled(P)`
+  font-size: 1.5em;
+  margin-top: 0;
+
+  &:last-of-type {
+    margin-bottom: 0.2em;
   }
 
-  p {
+  ${mediaQuery.small`
     font-size: 2em;
-    margin-top: 0;
+  `};
 
-    &:last-of-type {
-      margin-bottom: 0.2em;
-    }
-  }
+  ${mediaQuery.medium`
+    font-size: 2.25em;
+  `};
 `;
 
 const GoHome = styled(CallToAction)`
@@ -58,13 +87,15 @@ class ThanksPage extends React.Component {
         <ThanksContent>
           <ThanksMessage>
             <H1>Thank you!</H1>
-            <P>
+            <ThanksText>
               We&rsquo;re excited to hear that you&rsquo;re interested in
               working together. We&rsquo;ll review the information you sent and
               get back to you shortly.
-            </P>
-            <P>Sincerely,</P>
-            <BaseTwoLogoText />
+            </ThanksText>
+            <ThanksText>Sincerely,</ThanksText>
+            <BaseTwoLogo>
+              <BaseTwoLogoText />
+            </BaseTwoLogo>
           </ThanksMessage>
           <GoHome href="../">Return Home</GoHome>
         </ThanksContent>
