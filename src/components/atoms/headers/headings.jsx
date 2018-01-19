@@ -1,9 +1,18 @@
 import styled from 'styled-components';
+import { mediaQuery } from '../../../util/style';
+
+const H1 = styled.h1`
+  font-size: 3.25em;
+  font-weight: 100;
+  text-transform: capitalize;
+
+  ${mediaQuery.medium`
+    font-size: 4em;
+  `};
+`;
 
 /* stylelint-disable */
 // TODO: add styles, remove stylelint-disable
-const H1 = styled.h1``;
-
 const H2 = styled.h2``;
 
 const H3 = styled.h3``;
