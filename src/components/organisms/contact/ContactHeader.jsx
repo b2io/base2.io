@@ -42,11 +42,16 @@ const Wrapper = styled.div`
 `;
 
 const Earth = styled.img`
-  width: 73%;
+  width: 100%;
+
+  ${mediaQuery.small`
+    width: 73%;
+  `};
 
   ${mediaQuery.medium`
     position: absolute;
     right: -34%;
+    top: 0;
     z-index: 0;
   `};
 `;
@@ -71,6 +76,7 @@ const LocationText = styled.span`
 `;
 
 const LocationTagline = styled.p`
+  font-size: 1.25em;
   font-style: italic;
   margin: 0 auto 2em;
   max-width: 17em;
@@ -87,8 +93,12 @@ const LocationTagline = styled.p`
 
 const ScrollButton = styled(CallToAction)`
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 200px;
   width: 100%;
+
+  ${mediaQuery.small`
+    max-width: 400px;
+  `};
 `;
 
 const Scroll = styled.img`
