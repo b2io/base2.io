@@ -94,6 +94,7 @@ const LocationTagline = styled.p`
 const ScrollButton = styled(CallToAction)`
   margin: 0 auto;
   max-width: 400px;
+  width: 100%;
 `;
 
 const Scroll = styled.img`
