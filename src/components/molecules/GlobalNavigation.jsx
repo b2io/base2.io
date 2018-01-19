@@ -30,8 +30,9 @@ const NavBar = styled.nav`
   }
 
   &.menu-closed {
+    background-color: ${themed('color.overlay')};
     height: 48px;
-    transition: height 300ms linear 500ms;
+    transition: all 300ms linear 500ms;
   }
 
   ${mediaQuery.small`
@@ -41,10 +42,8 @@ const NavBar = styled.nav`
 `;
 
 const NavList = styled(UL)`
-  height: 0;
   list-style-type: none;
   margin: 0;
-  opacity: 0;
   overflow: hidden;
   padding: 0;
   width: 100%;
@@ -53,22 +52,22 @@ const NavList = styled(UL)`
     border-top: 1px solid ${themed('color.purple')};
     height: auto;
     opacity: 1;
-    transition: opacity 300ms ease-in 200ms;
+    transition: all 300ms ease-in 200ms;
   }
 
   .menu-closed & {
     border-top: 1px solid ${themed('color.purple')};
     height: 0;
     opacity: 0;
-    transition: opacity 150ms ease-out;
+    transition: all 150ms ease-in 200ms;
 
     ${mediaQuery.small`
-    align-items: center;
-    display: flex;
-    height: auto;
-    opacity: 1;
-    padding: 0;
-    width: auto;
+      align-items: center;
+      display: flex;
+      height: auto;
+      opacity: 1;
+      padding: 0;
+      width: auto;
   `};
   }
 `;
