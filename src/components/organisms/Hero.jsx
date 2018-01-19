@@ -12,7 +12,7 @@ const HeroHeader = styled.header`
   background-size: 100%;
   background-color: black;
   height: 100vh;
-  padding: 3.75em 0 0 0;
+  padding: 4em 0 0 0;
   position: relative;
   text-align: center;
 
@@ -20,7 +20,7 @@ const HeroHeader = styled.header`
     background-image: url('img/backgrounds/hero/b2-hero-background-960.png');
     background-size: 120%;
     min-height: calc((100vw * ${BGAspectRatio}) * 1.2);
-    padding-top: 4rem;
+    padding-top: 6rem;
   `};
 
   ${mediaQuery.medium`
@@ -33,7 +33,7 @@ const HeroHeader = styled.header`
     background-image: url('img/backgrounds/hero/b2-hero-background.png');
     background-size: cover;
     min-height: calc(100vw * ${BGAspectRatio});
-    padding-top: 12rem;
+    padding-top: 16rem;
   `};
 
   ${mediaQuery.xlarge`

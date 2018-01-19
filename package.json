@@ -36,6 +36,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-intersection-observer": "^2.1.1",
+    "react-window-size": "^1.0.1",
     "recompose": "^0.26.0",
     "remark": "^8.0.0",
     "remark-react": "^4.0.1",
