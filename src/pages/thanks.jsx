@@ -13,6 +13,7 @@ import { mediaQuery } from '../util/style';
 const Wrapper = styled(Main)`
   background-image: url('img/backgrounds/hero/b2-hero-background-1920.png');
   background-position: 50% 0;
+  background-repeat: no-repeat;
   background-size: 270%;
   height: 100vh;
 
@@ -40,6 +41,10 @@ const ThanksContent = styled(Section)`
   max-width: 1024px;
   padding-bottom: 2em;
   text-align: center;
+
+  ${mediaQuery.large`
+    justify-content: unset;
+  `};
 `;
 
 const ThanksMessage = styled(Section)`
@@ -76,6 +81,10 @@ const ThanksText = styled(P)`
 
 const GoHome = styled(CallToAction)`
   flex-basis: auto;
+
+  ${mediaQuery.large`
+    margin-top: 4em;
+  `};
 `;
 
 class ThanksPage extends React.Component {
