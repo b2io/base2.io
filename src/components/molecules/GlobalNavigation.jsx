@@ -134,10 +134,19 @@ const LogoToggleContainer = styled.div`
   height: 48px;
   justify-content: space-between;
   padding: 0 10px;
+  position: relative;
+
+  > svg {
+    height: 50%;
+  }
 
   ${mediaQuery.small`
     font-size: 1.25rem;
     padding: 0;
+
+    > svg {
+      height: 70%
+    }
   `};
 `;
 
@@ -211,8 +220,6 @@ class GlobalNavigation extends React.Component {
 
   handleClick = () => {
     this.setState({ isOpen: !this.state.isOpen });
-    // TODO Something needs to go here to add class to the body.
-    // isOpen ? 'noscroll' : ''
   };
 
   render() {
