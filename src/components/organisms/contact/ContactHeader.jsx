@@ -93,7 +93,7 @@ const LocationTagline = styled.p`
 
 const ScrollButton = styled(CallToAction)`
   margin: 0 auto;
-  max-width: 150px;
+  max-width: 200px;
   width: 100%;
 
   ${mediaQuery.small`
