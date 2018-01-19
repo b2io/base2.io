@@ -17,6 +17,10 @@ injectGlobal`
     margin: 0;
     padding: 0;
   }
+
+  .noScroll {
+    overflow: hidden;
+  }
 `;
 
 class Template extends React.Component {

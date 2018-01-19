@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import noop from 'lodash/noop';
+import PropTypes from 'prop-types';
+import windowSize from 'react-window-size';
 import {
   BaseTwoLogo,
   Button,
@@ -91,6 +92,31 @@ const NavLink = styled(Link)`
 
   ${mediaQuery.small`
     color: ${themed('color.menu')};
+    position: relative;
+    width: auto;
+
+    &:hover {
+      color: ${themed('color.spaceBlue')};
+      transition: color 0.3s ease-in-out 0s;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: ${themed('color.purple')};;
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    &:hover:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
   `};
 `;
 
@@ -169,21 +195,35 @@ const ContactCallToAction = styled(CallToAction)`
 `;
 
 class GlobalNavigation extends React.Component {
-  static defaultProps = {
-    onClick: noop,
+  static defaultProps = {};
+
+  static propTypes = {
+    windowWidth: PropTypes.number.isRequired,
   };
 
   state = {
     isOpen: false,
   };
 
+  componentDidUpdate() {
+    document.body.classList.toggle('noScroll', this.state.isOpen);
+  }
+
   handleClick = () => {
     this.setState({ isOpen: !this.state.isOpen });
+    // TODO Something needs to go here to add class to the body.
+    // isOpen ? 'noscroll' : ''
   };
 
   render() {
     return (
-      <NavBar className={this.state.isOpen ? 'menu-open' : 'menu-closed'}>
+      <NavBar
+        className={
+          this.props.windowWidth <= 480 && this.state.isOpen
+            ? 'menu-open'
+            : 'menu-closed'
+        }
+      >
         <MainNavigationContainer>
           <LogoToggleContainer>
             <BaseTwoLogo />
@@ -219,4 +259,4 @@ class GlobalNavigation extends React.Component {
   }
 }
 
-export default GlobalNavigation;
+export default windowSize(GlobalNavigation);
