@@ -41,6 +41,12 @@ const ThanksContent = styled(Section)`
   max-width: 1024px;
   padding-bottom: 2em;
   text-align: center;
+  width: 100%;
+
+  > * {
+    height: auto;
+    max-width: 1024px;
+  }
 
   ${mediaQuery.large`
     justify-content: unset;
@@ -65,6 +71,8 @@ const BaseTwoLogo = styled.div`
 const ThanksText = styled(P)`
   font-size: 1.5em;
   margin-top: 0;
+  max-width: inherit;
+  width: inherit;
 
   &:last-of-type {
     margin-bottom: 0.2em;
