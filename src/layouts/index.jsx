@@ -12,8 +12,6 @@ injectGlobal`
   body,
   html {
     ${theme.font.sansSerif};
-    background: ${theme.color.background};
-    color: ${theme.color.text};
     margin: 0;
     padding: 0;
   }

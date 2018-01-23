@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
+import styled from 'styled-components';
 import {
   GlobalNavigation,
   Header,
@@ -11,6 +12,21 @@ import {
   UL,
 } from '../../components';
 import { toNodes } from '../../util/graphql';
+
+const BlogMain = styled(Main)`
+  background: white;
+  color: black;
+`;
+
+const BlogGlobalNavigation = styled(GlobalNavigation)`
+  background: black;
+`;
+
+const PostList = styled(UL)`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`;
 
 class BlogIndex extends React.Component {
   static defaultProps = {};
@@ -27,15 +43,17 @@ class BlogIndex extends React.Component {
     const { posts } = this.props;
 
     return (
-      <Main>
-        <GlobalNavigation />
+      <BlogMain>
+        <BlogGlobalNavigation />
         <Header>
           <H1>Blog</H1>
         </Header>
         <Section>
-          <UL>{posts.map(post => <PostExcerpt {...post} key={post.id} />)}</UL>
+          <PostList>
+            {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
+          </PostList>
         </Section>
-      </Main>
+      </BlogMain>
     );
   }
 }
