@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import remark from 'remark';
+import styled from 'styled-components';
 import remarkReact from 'remark-react';
 import {
   GlobalNavigation,
@@ -19,6 +20,25 @@ import {
   Time,
 } from '../components';
 import { toNodes } from '../util/graphql';
+
+const BlogMain = styled(Main)`
+  background: white;
+  color: black;
+`;
+
+const PostTitle = styled(H1)`
+  font-weight: 400;
+  margin-top: 0;
+`;
+
+const PostMeta = styled(P)`
+  font-size: 0.85em;
+  font-style: italic;
+`;
+
+const PostContent = styled(Section)`
+  font-weight: 400;
+`;
 
 const HoistChildren = props =>
   React.Children.map(props.children, child => child.props.children);
@@ -57,16 +77,16 @@ class PostTemplate extends React.Component {
     const { author, children, date, title } = this.props;
 
     return (
-      <Main>
+      <BlogMain>
         <GlobalNavigation />
         <Header>
-          <H1>{title}</H1>
-          <P lead>
+          <PostTitle>{title}</PostTitle>
+          <PostMeta>
             <Time iso={date} /> — {author}
-          </P>
+          </PostMeta>
         </Header>
-        <Section>{children}</Section>
-      </Main>
+        <PostContent>{children}</PostContent>
+      </BlogMain>
     );
   }
 }
