@@ -97,7 +97,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 280)
           fileAbsolutePath
           frontmatter {
             author
