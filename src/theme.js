@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { lighten, rem } from 'polished';
+import { lighten, rem, transparentize } from 'polished';
 
 // COLOR:
 
@@ -110,7 +110,7 @@ const darkColors = {
   text: palette.white,
   accent: palette.spaceBlue,
   link: palette.spaceBlue,
-  linkHover: palette.spaceBlue,
+  linkHover: transparentize(0.15, palette.spaceBlue),
   navBackground: palette.overlay,
 };
 
