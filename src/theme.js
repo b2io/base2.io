@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { lighten, rem, transparentize } from 'polished';
+import { lighten, rem } from 'polished';
 
 // COLOR:
 
@@ -8,12 +8,19 @@ const palette = {
   blackTransparent: 'rgba(0, 0, 0, 0.7)',
   deepBlue: 'rgba(3, 8, 40, 1.0)',
   grey: 'rgba(153, 153, 153, 1.0)',
-  overlay: transparentize(0.7, 'rgb(0, 0, 0)'),
+  overlay: 'rgba(0, 0, 0, 0.7)',
   purple: 'rgba(106, 72, 153, 1.0)',
   spaceGreen: 'rgba(128, 203, 196, 1.0)',
   spaceBlue: 'rgba(124, 177, 255, 1.0)',
   transparent: 'rgba(0, 0, 0, 0.0)',
   white: 'rgba(255, 255, 255, 1.0)',
+};
+
+const navPalette = {
+  navAccent: palette.purple,
+  navBackgroundOpen: palette.black,
+  navText: palette.grey,
+  navTextSmall: palette.spaceBlue,
 };
 
 function makeTheme(color) {
@@ -97,32 +104,26 @@ function makeTheme(color) {
 
 const darkColors = {
   ...palette,
+  ...navPalette,
   background: palette.black,
   border: palette.white,
   text: palette.white,
   accent: palette.spaceBlue,
   link: palette.spaceBlue,
   linkHover: palette.spaceBlue,
-  navAccent: palette.purple,
   navBackground: palette.overlay,
-  navBackgroundOpen: palette.black,
-  navText: palette.grey,
-  navTextSmall: palette.spaceBlue,
 };
 
 const lightColors = {
   ...palette,
+  ...navPalette,
   background: palette.white,
   border: palette.grey,
   text: palette.black,
   accent: palette.spaceBlue,
   link: palette.purple,
   linkHover: palette.spaceBlue,
-  navAccent: palette.purple,
   navBackground: palette.black,
-  navBackgroundOpen: palette.black,
-  navText: palette.grey,
-  navTextSmall: palette.spaceBlue,
 };
 
 const darkTheme = makeTheme(darkColors);
