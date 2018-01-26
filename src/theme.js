@@ -117,7 +117,7 @@ const lightColors = {
   text: palette.black,
   accent: palette.spaceBlue,
   link: palette.purple,
-  linkHover: palette.SpaceBlue,
+  linkHover: palette.spaceBlue,
   navAccent: palette.purple,
   navBackground: palette.black,
   navBackgroundOpen: palette.black,

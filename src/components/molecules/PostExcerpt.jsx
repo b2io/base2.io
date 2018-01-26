@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { H2, Link, LI, P, Time } from '../atoms';
+import { themed } from '../../util/style';
 
 const PostListItem = styled(LI)`
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${themed('color.border')};
 `;
 
 const PostTitle = styled(H2)`
