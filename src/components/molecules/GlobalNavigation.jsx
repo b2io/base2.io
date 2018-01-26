@@ -153,7 +153,7 @@ const MenuToggle = styled(Button)`
   background-image: none;
   border: none;
   box-shadow: none;
-  color: ${themed('color.menu')};
+  color: ${themed('color.navText')};
   margin: 0 10px;
   padding: 0;
 
@@ -163,7 +163,7 @@ const MenuToggle = styled(Button)`
 
   &:focus,
   &:hover {
-    color: ${themed('color.menu')};
+    color: ${themed('color.navText')};
   }
 
   ${mediaQuery.small`
