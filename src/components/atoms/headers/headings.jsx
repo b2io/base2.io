@@ -11,10 +11,18 @@ const H1 = styled.h1`
   `};
 `;
 
+const H2 = styled.h2`
+  font-size: 2em;
+  font-weight: 100;
+  text-transform: capitalize;
+
+  ${mediaQuery.medium`
+    font-size: 3em;
+  `};
+`;
+
 /* stylelint-disable */
 // TODO: add styles, remove stylelint-disable
-const H2 = styled.h2``;
-
 const H3 = styled.h3``;
 
 const H4 = styled.h4``;

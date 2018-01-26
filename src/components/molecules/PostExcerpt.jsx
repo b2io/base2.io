@@ -10,7 +10,7 @@ const PostListItem = styled(LI)`
 
 const PostTitle = styled(H2)`
   font-weight: 400;
-  margin-top: 0;
+  margin: 0.5em 0 0;
 `;
 
 const PostMeta = styled(P)`
@@ -38,12 +38,12 @@ class PostExcerpt extends React.Component {
 
     return (
       <PostListItem>
-        <PostMeta>
-          <Time iso={date} />— {author}
-        </PostMeta>
         <PostTitle>
           <Link to={path}>{title}</Link>
         </PostTitle>
+        <PostMeta>
+          <Time iso={date} />— {author}
+        </PostMeta>
         <Excerpt>{excerpt}</Excerpt>
       </PostListItem>
     );

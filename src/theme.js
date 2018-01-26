@@ -5,10 +5,9 @@ import { lighten, rem, transparentize } from 'polished';
 
 const palette = {
   black: 'rgba(0, 0, 0, 1.0)',
-  blackTransparent: 'rgba(0, 0, 0, 0.7)',
+  blackTransparent: 'rgba(0, 0, 0, 0.3)',
   deepBlue: 'rgba(3, 8, 40, 1.0)',
   grey: 'rgba(153, 153, 153, 1.0)',
-  overlay: 'rgba(0, 0, 0, 0.7)',
   purple: 'rgba(106, 72, 153, 1.0)',
   spaceGreen: 'rgba(128, 203, 196, 1.0)',
   spaceBlue: 'rgba(124, 177, 255, 1.0)',
@@ -111,7 +110,7 @@ const darkColors = {
   accent: palette.spaceBlue,
   link: palette.spaceBlue,
   linkHover: transparentize(0.15, palette.spaceBlue),
-  navBackground: palette.overlay,
+  navBackground: palette.blackTransparent,
 };
 
 const lightColors = {

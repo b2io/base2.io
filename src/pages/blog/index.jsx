@@ -13,10 +13,6 @@ import {
 } from '../../components';
 import { toNodes } from '../../util/graphql';
 
-const BlogGlobalNavigation = styled(GlobalNavigation)`
-  background: black;
-`;
-
 const BlogHeader = styled(Header)`
   margin-top: 4em;
 `;
@@ -43,7 +39,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Main>
-        <BlogGlobalNavigation />
+        <GlobalNavigation />
         <BlogHeader>
           <H1>Blog</H1>
         </BlogHeader>
