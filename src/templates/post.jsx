@@ -5,6 +5,7 @@ import { mapProps } from 'recompose';
 import remark from 'remark';
 import styled from 'styled-components';
 import remarkReact from 'remark-react';
+import { themed } from '../util/style';
 import {
   GlobalNavigation,
   Header,
@@ -21,12 +22,11 @@ import {
 } from '../components';
 import { toNodes } from '../util/graphql';
 
-const BlogMain = styled(Main)`
-  background: white;
-  color: black;
+const PostHeader = styled(Header)`
+  margin-top: 4em;
 `;
 
-const PostTitle = styled(H1)`
+const PostTitle = styled(H2)`
   font-weight: 400;
   margin-top: 0;
 `;
@@ -38,6 +38,21 @@ const PostMeta = styled(P)`
 
 const PostContent = styled(Section)`
   font-weight: 400;
+
+  img {
+    max-width: 100%;
+  }
+
+  pre {
+    background: ${themed('color.overlay')};
+    border: 1px solid ${themed('color.border')};
+    overflow-x: scroll;
+    padding: 10px;
+  }
+
+  hr {
+    color: ${themed('color.border')};
+  }
 `;
 
 const HoistChildren = props =>
@@ -77,16 +92,16 @@ class PostTemplate extends React.Component {
     const { author, children, date, title } = this.props;
 
     return (
-      <BlogMain>
+      <Main>
         <GlobalNavigation />
-        <Header>
+        <PostHeader>
           <PostTitle>{title}</PostTitle>
           <PostMeta>
             <Time iso={date} /> — {author}
           </PostMeta>
-        </Header>
+        </PostHeader>
         <PostContent>{children}</PostContent>
-      </BlogMain>
+      </Main>
     );
   }
 }

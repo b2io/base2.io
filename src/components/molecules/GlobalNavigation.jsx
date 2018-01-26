@@ -14,7 +14,7 @@ import {
 import { mediaQuery, themed } from '../../util/style';
 
 const NavBar = styled.nav`
-  background-color: ${themed('color.overlay')};
+  background-color: ${themed('color.navBackground')};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,13 +24,13 @@ const NavBar = styled.nav`
   z-index: 1;
 
   &.menu-open {
-    background-color: ${themed('color.background')};
+    background-color: ${themed('color.navBackgroundOpen')};
     height: 100vh;
     transition: height 300ms ease-in;
   }
 
   &.menu-closed {
-    background-color: ${themed('color.overlay')};
+    background-color: ${themed('color.navBackground')};
     height: 48px;
     transition: all 300ms linear 500ms;
   }
@@ -49,14 +49,14 @@ const NavList = styled(UL)`
   width: 100%;
 
   .menu-open & {
-    border-top: 1px solid ${themed('color.purple')};
+    border-top: 1px solid ${themed('color.navAccent')};
     height: auto;
     opacity: 1;
     transition: all 300ms ease-in 200ms;
   }
 
   .menu-closed & {
-    border-top: 1px solid ${themed('color.purple')};
+    border-top: 1px solid ${themed('color.navAccent')};
     height: 0;
     opacity: 0;
     transition: all 150ms ease-in 200ms;
@@ -73,7 +73,7 @@ const NavList = styled(UL)`
 `;
 
 const NavItem = styled(LI)`
-  border-bottom: 1px solid ${themed('color.purple')};
+  border-bottom: 1px solid ${themed('color.navAccent')};
   font-size: 1.5em;
 
   ${mediaQuery.small`
@@ -82,7 +82,7 @@ const NavItem = styled(LI)`
 `;
 
 const NavLink = styled(Link)`
-  color: ${themed('color.spaceBlue')};
+  color: ${themed('color.navTextSmall')};
   display: inline-block;
   font-weight: 400;
   text-decoration: none;
@@ -90,12 +90,12 @@ const NavLink = styled(Link)`
   width: 100%;
 
   ${mediaQuery.small`
-    color: ${themed('color.menu')};
+    color: ${themed('color.navText')};
     position: relative;
     width: auto;
 
     &:hover {
-      color: ${themed('color.spaceBlue')};
+      color: ${themed('color.accent')};
       transition: color 0.3s ease-in-out 0s;
     }
 
@@ -106,7 +106,7 @@ const NavLink = styled(Link)`
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: ${themed('color.purple')};;
+      background-color: ${themed('color.navAccent')};
       visibility: hidden;
       transform: scaleX(0);
       transition: all 0.3s ease-in-out 0s;

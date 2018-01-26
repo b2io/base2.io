@@ -13,13 +13,12 @@ import {
 } from '../../components';
 import { toNodes } from '../../util/graphql';
 
-const BlogMain = styled(Main)`
-  background: white;
-  color: black;
-`;
-
 const BlogGlobalNavigation = styled(GlobalNavigation)`
   background: black;
+`;
+
+const BlogHeader = styled(Header)`
+  margin-top: 4em;
 `;
 
 const PostList = styled(UL)`
@@ -43,17 +42,17 @@ class BlogIndex extends React.Component {
     const { posts } = this.props;
 
     return (
-      <BlogMain>
+      <Main>
         <BlogGlobalNavigation />
-        <Header>
+        <BlogHeader>
           <H1>Blog</H1>
-        </Header>
+        </BlogHeader>
         <Section>
           <PostList>
             {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
           </PostList>
         </Section>
-      </BlogMain>
+      </Main>
     );
   }
 }
@@ -97,7 +96,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 280)
+          excerpt(pruneLength: 200)
           fileAbsolutePath
           frontmatter {
             author
