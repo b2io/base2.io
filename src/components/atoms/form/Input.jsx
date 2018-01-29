@@ -4,7 +4,7 @@ import { cssSome, themed } from '../../../util/style';
 const Input = styled.input`
   background: 0 0;
   border: none;
-  border-bottom: 1px solid ${themed('color.accent')};
+  border-bottom: 1px solid ${themed('color.spaceGreen')};
   color: ${themed('color.text')};
   display: block;
   margin: 0;

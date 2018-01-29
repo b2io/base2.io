@@ -82,7 +82,7 @@ const NavItem = styled(LI)`
 `;
 
 const NavLink = styled(Link)`
-  color: ${themed('color.navTextSmall')};
+  color: ${themed('color.collapseNavText')};
   display: inline-block;
   font-weight: 400;
   text-decoration: none;

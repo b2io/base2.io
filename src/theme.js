@@ -19,7 +19,7 @@ const navPalette = {
   navAccent: palette.purple,
   navBackgroundOpen: palette.black,
   navText: palette.grey,
-  navTextSmall: palette.spaceBlue,
+  collapseNavText: palette.spaceBlue,
 };
 
 function makeTheme(color) {
