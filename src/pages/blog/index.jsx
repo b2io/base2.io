@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
+import styled from 'styled-components';
 import {
   GlobalNavigation,
   Header,
@@ -11,6 +12,16 @@ import {
   UL,
 } from '../../components';
 import { toNodes } from '../../util/graphql';
+
+const BlogHeader = styled(Header)`
+  margin-top: 4em;
+`;
+
+const PostList = styled(UL)`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`;
 
 class BlogIndex extends React.Component {
   static defaultProps = {};
@@ -29,11 +40,13 @@ class BlogIndex extends React.Component {
     return (
       <Main>
         <GlobalNavigation />
-        <Header>
+        <BlogHeader>
           <H1>Blog</H1>
-        </Header>
+        </BlogHeader>
         <Section>
-          <UL>{posts.map(post => <PostExcerpt {...post} key={post.id} />)}</UL>
+          <PostList>
+            {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
+          </PostList>
         </Section>
       </Main>
     );
@@ -79,7 +92,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 200)
           fileAbsolutePath
           frontmatter {
             author

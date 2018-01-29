@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { injectGlobal, ThemeProvider } from 'styled-components';
-import theme from '../theme';
+import theme, { darkTheme, lightTheme } from '../theme';
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
@@ -12,8 +12,6 @@ injectGlobal`
   body,
   html {
     ${theme.font.sansSerif};
-    background: ${theme.color.background};
-    color: ${theme.color.text};
     margin: 0;
     padding: 0;
   }
@@ -23,15 +21,27 @@ injectGlobal`
   }
 `;
 
+const POST_REGEX = /\d{4}\/\d{2}\/\d{2}/;
+
+const isBlogPage = location =>
+  location.pathname === '/blog' || location.pathname.match(POST_REGEX);
+
 class Template extends React.Component {
   static defaultPropes = {};
 
   static propTypes = {
     children: PropTypes.func.isRequired,
+    location: PropTypes.shape({
+      pathname: PropTypes.string.isRequired,
+    }).isRequired,
   };
 
   render() {
-    return <ThemeProvider theme={theme}>{this.props.children()}</ThemeProvider>;
+    const pageTheme = isBlogPage(this.props.location) ? lightTheme : darkTheme;
+
+    return (
+      <ThemeProvider theme={pageTheme}>{this.props.children()}</ThemeProvider>
+    );
   }
 }
 

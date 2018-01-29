@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import remark from 'remark';
+import styled from 'styled-components';
 import remarkReact from 'remark-react';
+import { themed } from '../util/style';
 import {
   GlobalNavigation,
   Header,
@@ -19,6 +21,39 @@ import {
   Time,
 } from '../components';
 import { toNodes } from '../util/graphql';
+
+const PostHeader = styled(Header)`
+  margin-top: 4em;
+`;
+
+const PostTitle = styled(H2)`
+  font-weight: 400;
+  margin-top: 0;
+`;
+
+const PostMeta = styled(P)`
+  font-size: 0.85em;
+  font-style: italic;
+`;
+
+const PostContent = styled(Section)`
+  font-weight: 400;
+
+  img {
+    max-width: 100%;
+  }
+
+  pre {
+    background: ${themed('color.overlay')};
+    border: 1px solid ${themed('color.border')};
+    overflow-x: scroll;
+    padding: 10px;
+  }
+
+  hr {
+    color: ${themed('color.border')};
+  }
+`;
 
 const HoistChildren = props =>
   React.Children.map(props.children, child => child.props.children);
@@ -59,13 +94,13 @@ class PostTemplate extends React.Component {
     return (
       <Main>
         <GlobalNavigation />
-        <Header>
-          <H1>{title}</H1>
-          <P lead>
+        <PostHeader>
+          <PostTitle>{title}</PostTitle>
+          <PostMeta>
             <Time iso={date} /> — {author}
-          </P>
-        </Header>
-        <Section>{children}</Section>
+          </PostMeta>
+        </PostHeader>
+        <PostContent>{children}</PostContent>
       </Main>
     );
   }

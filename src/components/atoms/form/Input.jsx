@@ -4,8 +4,8 @@ import { cssSome, themed } from '../../../util/style';
 const Input = styled.input`
   background: 0 0;
   border: none;
-  border-bottom: 1px solid ${themed('color.spaceBlue')};
-  color: ${themed('color.primary')};
+  border-bottom: 1px solid ${themed('color.spaceGreen')};
+  color: ${themed('color.text')};
   display: block;
   margin: 0;
   padding: 4px 0;
@@ -13,7 +13,7 @@ const Input = styled.input`
   width: 100%;
 
   ${cssSome('isDirty', 'isFocused')`
-    box-shadow: 0 1px 0 0 ${themed('color.spaceGreen')};
+    box-shadow: 0 1px 0 0 ${themed('color.accent')};
   `};
 `;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { H1, BaseTwoLogoText, Img, P } from '../atoms';
-import { mediaQuery } from '../../util/style';
+import { mediaQuery, themed } from '../../util/style';
 
 const BGAspectRatio = '1.83';
 
@@ -10,7 +10,7 @@ const HeroHeader = styled.header`
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: black;
+  background-color: ${themed('color.background')};
   height: 100vh;
   padding: 4em 0 0 0;
   position: relative;
@@ -51,13 +51,13 @@ const HeroHeading = styled(H1)`
 `;
 
 const HeroTagline = styled(P)`
-  color: #f2f2f2;
+  color: ${themed('color.text')};
   font-size: 1.15em;
   font-style: italic;
   font-weight: 100;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  text-shadow: 1px 1px 4px #000;
+  text-shadow: 1px 1px 4px ${themed('color.background')};
 
   ${mediaQuery.small`
     font-size: 1.65rem;

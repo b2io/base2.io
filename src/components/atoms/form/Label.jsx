@@ -5,7 +5,7 @@ const Label = styled.label`
   ${themed('motion.size')};
   ${themed('typography.subheading')};
   bottom: 0;
-  color: ${themed('color.primary')};
+  color: ${themed('color.text')};
   display: block;
   left: 0;
   line-height: 1;
@@ -20,13 +20,13 @@ const Label = styled.label`
 
   ${cssSome('isDirty', 'isFocused')`
   ${themed('typography.caption')};
-    color: ${themed('color.primary')};
+    color: ${themed('color.text')};
     top: 4px;
   `};
 
   &::after {
     ${themed('motion.size')};
-    background-color: ${themed('color.spaceGreen')};
+    background-color: ${themed('color.accent')};
     bottom: 20px;
     content: '';
     height: 1px;

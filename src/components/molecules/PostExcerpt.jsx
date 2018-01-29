@@ -1,6 +1,26 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'styled-components';
 import { H2, Link, LI, P, Time } from '../atoms';
+import { themed } from '../../util/style';
+
+const PostListItem = styled(LI)`
+  border-bottom: 1px solid ${themed('color.border')};
+`;
+
+const PostTitle = styled(H2)`
+  font-weight: 400;
+  margin: 0.5em 0 0;
+`;
+
+const PostMeta = styled(P)`
+  font-size: 0.85em;
+  font-style: italic;
+`;
+
+const Excerpt = styled(P)`
+  font-weight: 400;
+`;
 
 class PostExcerpt extends React.Component {
   static defaultProps = {};
@@ -17,15 +37,15 @@ class PostExcerpt extends React.Component {
     const { author, date, excerpt, path, title } = this.props;
 
     return (
-      <LI>
-        <H2>
+      <PostListItem>
+        <PostTitle>
           <Link to={path}>{title}</Link>
-        </H2>
-        <P>
+        </PostTitle>
+        <PostMeta>
           <Time iso={date} />— {author}
-        </P>
-        <P>{excerpt}</P>
-      </LI>
+        </PostMeta>
+        <Excerpt>{excerpt}</Excerpt>
+      </PostListItem>
     );
   }
 }
