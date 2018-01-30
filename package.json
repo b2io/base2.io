@@ -64,6 +64,15 @@
     "stylelint-processor-styled-components": "^1.2.1",
     "svg-react-loader": "^0.4.5"
   },
+  "browserslist": [
+    "ie >= 11",
+    "edge >= 16",
+    "last 2 Chrome versions",
+    "safari >= 10.1",
+    "firefox >= 52",
+    "ChromeAndroid >= 62",
+    "iOS >= 10"
+  ],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
