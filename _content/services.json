@@ -1,0 +1,29 @@
+[
+  {
+    "id": "implement",
+    "image": "img/services/monitor-constellation.png",
+    "imgAlt": "Computer monitor with code",
+    "heading": "We implement",
+    "subheading": "engaging websites and applications",
+    "description":
+      "Every project we undertake is unique. Using our wide range of development expertise, we work with our clients to choose the right technologies and implement functional, usable solutions that suit their needs."
+  },
+  {
+    "id": "create",
+    "image": "img/services/monitor-constellation.png",
+    "imgAlt": "Hand holding a stylus",
+    "heading": "We create",
+    "subheading": "user-centric, interaction-driven designs",
+    "description":
+      "Elegant user interface design is an integral part of our work. Using a variety of methods including (but not limited to) user interviews, wireframes, and prototypes, we ensure that the end user’s experience is efficient and enjoyable."
+  },
+  {
+    "id": "share",
+    "image": "img/services/monitor-constellation.png",
+    "imgAlt": "Lightbulb",
+    "heading": "We believe",
+    "subheading": "in sharing knowledge",
+    "description":
+      "Learning is part of our job as developers, and we enjoy sharing our hard-won knowledge with others. Whether through training, collaboration with client teams, or community events, we take pride in our ability to help others learn and grow their own talents."
+  }
+]
