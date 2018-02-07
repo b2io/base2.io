@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { mapProps } from 'recompose';
 import {
   ContactUs,
   GlobalNavigation,
@@ -7,6 +8,7 @@ import {
   Main,
   ServiceList,
 } from '../components';
+import { toNodesWithImage } from '../util/graphql';
 
 class IndexPage extends React.Component {
   static defaultProps = {};
@@ -42,7 +44,13 @@ class IndexPage extends React.Component {
   }
 }
 
-export default IndexPage;
+function mapPropsToProps({ data }) {
+  return {
+    services: toNodesWithImage(data.services),
+  };
+}
+
+export default mapProps(mapPropsToProps)(IndexPage);
 
 export const pageQuery = graphql`
   query IndexPageQuery {
