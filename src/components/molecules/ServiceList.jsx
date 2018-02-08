@@ -3,13 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
 import { H2, H3, Img, P, LI } from '../atoms';
-import { mediaQuery, themed } from '../../util/style';
+import { containerSizing, mediaQuery, themed } from '../../util/style';
 
 const Wrapper = styled(LI)`
   margin: 1em;
   margin-bottom: ${em('275px')};
 
-  ${mediaQuery.small`
+  ${mediaQuery.medium`
     display: flex;
 
     > * {
@@ -23,9 +23,9 @@ const Wrapper = styled(LI)`
 `;
 
 const ServiceList = styled.ul`
+  ${containerSizing};
   list-style: none;
   margin: 3em 0;
-  padding: 0;
   text-align: center;
 `;
 

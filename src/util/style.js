@@ -28,6 +28,26 @@ const mediaQuery = {
   xlarge: mq('screen', 'min-width: 1921px'),
 };
 
+const containerSizing = css`
+  padding: 0 5%;
+
+  ${mediaQuery.medium`
+    padding: 0 2em;
+  `};
+
+  ${mediaQuery.large`
+    padding: 0 100px;
+  `};
+`;
+
 const themed = curry((path, props) => get(props.theme, path));
 
-export { cssCond, cssEvery, cssSome, lighten, mediaQuery, themed };
+export {
+  containerSizing,
+  cssCond,
+  cssEvery,
+  cssSome,
+  lighten,
+  mediaQuery,
+  themed,
+};
