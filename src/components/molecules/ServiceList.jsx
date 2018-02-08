@@ -7,14 +7,11 @@ import { containerSizing, mediaQuery, themed } from '../../util/style';
 
 const Wrapper = styled(LI)`
   margin: 1em;
-  margin-bottom: ${em('275px')};
+  margin-bottom: ${em('135px')};
 
-  ${mediaQuery.medium`
+  ${mediaQuery.small`
     display: flex;
-
-    > * {
-      flex: 1;
-    }
+    margin-bottom: ${em('275px')};
 
     &:nth-of-type(even) {
       flex-direction: row-reverse;
@@ -30,7 +27,13 @@ const ServiceList = styled.ul`
 `;
 
 const ServiceText = styled.div`
-  text-align: left;
+  text-align: center;
+
+  ${mediaQuery.small`
+    flex: 2 0 0;
+    text-align: left;
+    max-width: ${em('625px')};
+  `};
 `;
 
 const ServiceImg = styled(Img)`
@@ -39,12 +42,18 @@ const ServiceImg = styled(Img)`
   width: 80vw;
 
   ${mediaQuery.small`
+    flex: 1;
+    margin: 0 ${em('20px')};
     max-width: 30vw;
   `};
 `;
 
 const ServiceHeader = styled.header`
-  margin-bottom: ${em('45px')};
+  margin-bottom: ${em('15px')};
+
+  ${mediaQuery.small`
+    margin-bottom: ${em('45px')};
+  `};
 `;
 
 const ServiceHeading = styled(H2)`
@@ -57,11 +66,11 @@ const ServiceHeading = styled(H2)`
     color: ${themed('color.text')};
   }
 
-  ${mediaQuery.medium`
+  ${mediaQuery.small`
     font-size: ${em('48px')};
   `};
 
-  ${mediaQuery.large`
+  ${mediaQuery.medium`
     font-size: ${em('72px')};
   `};
 `;
@@ -71,18 +80,26 @@ const ServiceSubheading = styled(H3)`
   font-weight: 100;
   margin: 0;
 
-  ${mediaQuery.medium`
+  ${mediaQuery.small`
     font-size: ${em('24px')};
   `};
 
-  ${mediaQuery.large`
+  ${mediaQuery.medium`
     font-size: ${em('36px')};
   `};
 `;
 
 const ServiceDescription = styled(P)`
-  font-size: ${em('32px')};
+  font-size: ${em('18px')};
   margin: 0;
+
+  ${mediaQuery.small`
+    font-size: ${em('20px')};
+  `};
+
+  ${mediaQuery.medium`
+    font-size: ${em('32px')};
+  `};
 `;
 
 class ServiceListItem extends React.Component {

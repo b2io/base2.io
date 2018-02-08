@@ -10,7 +10,7 @@
   },
   {
     "id": "create",
-    "image": "img/services/monitor-constellation.png",
+    "image": "img/services/drawing-hand-constellation.png",
     "imgAlt": "Hand holding a stylus",
     "heading": "Create",
     "subheading": "user-centric, interaction-driven designs",
@@ -19,7 +19,7 @@
   },
   {
     "id": "share",
-    "image": "img/services/monitor-constellation.png",
+    "image": "img/services/lightbulb-constellation.png",
     "imgAlt": "Lightbulb",
     "heading": "Believe",
     "subheading": "in sharing knowledge",
