@@ -10,7 +10,9 @@ const Wrapper = styled(LI)`
   margin-bottom: ${em('135px')};
 
   ${mediaQuery.small`
+    align-items: center;
     display: flex;
+    justify-content: space-between;
     margin-bottom: ${em('275px')};
 
     &:nth-of-type(even) {
@@ -21,6 +23,7 @@ const Wrapper = styled(LI)`
 
 const ServiceList = styled.ul`
   ${containerSizing};
+  background: url('img/backgrounds/StarFieldTransparent.png') repeat;
   list-style: none;
   margin: 3em 0;
   text-align: center;
@@ -30,7 +33,7 @@ const ServiceText = styled.div`
   text-align: center;
 
   ${mediaQuery.small`
-    flex: 2 0 0;
+    flex: 1 0 0;
     text-align: left;
     max-width: ${em('625px')};
   `};
