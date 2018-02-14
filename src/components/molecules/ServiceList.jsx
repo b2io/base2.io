@@ -22,33 +22,6 @@ const Wrapper = styled(LI)`
     padding-bottom: ${fadeOut.value};
   }
 
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 3em;
-  }
-
-  &::before {
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    left: 0;
-  }
-
-  &::after {
-    background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
-    right: 0;
-  }
-
   ${mediaQuery.small`
     align-items: center;
     display: flex;
@@ -57,6 +30,36 @@ const Wrapper = styled(LI)`
 
     &:nth-of-type(even) {
       flex-direction: row-reverse;
+    }
+  `};
+
+  ${mediaQuery.large`
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      width: 3em;
+      z-index: 0;
+    }
+
+    &::before {
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      left: 0;
+    }
+
+    &::after {
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 100%
+      );
+      right: 0;
     }
   `};
 `;
