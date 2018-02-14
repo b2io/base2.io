@@ -18,7 +18,7 @@ class IndexPage extends React.Component {
       PropTypes.shape({
         id: PropTypes.node.isRequired,
         image: PropTypes.shape({}).isRequired,
-        imageAlt: PropTypes.string.isRequired,
+        imgAlt: PropTypes.string.isRequired,
         heading: PropTypes.string.isRequired,
         subheading: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,

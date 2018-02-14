@@ -5,9 +5,49 @@ import { em } from 'polished';
 import { H2, H3, Img, P, LI } from '../atoms';
 import { containerSizing, mediaQuery, themed } from '../../util/style';
 
+const fadeOut = {
+  value: `${em('150px')}`,
+};
+
 const Wrapper = styled(LI)`
-  margin: 1em;
+  ${containerSizing};
+  background: url('img/backgrounds/space-fog-purple.png') repeat-x;
+  background-size: cover;
   margin-bottom: ${em('135px')};
+  max-width: ${em('1550px')};
+  position: relative;
+  z-index: 1;
+
+  &:last-of-type {
+    padding-bottom: ${fadeOut.value};
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 3em;
+  }
+
+  &::before {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    left: 0;
+  }
+
+  &::after {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    right: 0;
+  }
 
   ${mediaQuery.small`
     align-items: center;
@@ -22,11 +62,29 @@ const Wrapper = styled(LI)`
 `;
 
 const ServiceList = styled.ul`
-  ${containerSizing};
-  background: url('img/backgrounds/StarFieldTransparent.png') repeat;
+  align-items: center;
+  background: url('img/backgrounds/star-field.png');
+  display: flex;
+  flex-direction: column;
   list-style: none;
-  margin: 3em 0;
+  padding: 3em 0 0 0;
   text-align: center;
+
+  &::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    bottom: 0;
+    content: '';
+    display: block;
+    height: ${fadeOut.value};
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
 `;
 
 const ServiceText = styled.div`
@@ -101,7 +159,7 @@ const ServiceDescription = styled(P)`
   `};
 
   ${mediaQuery.medium`
-    font-size: ${em('32px')};
+    font-size: ${em('28px')};
   `};
 `;
 
