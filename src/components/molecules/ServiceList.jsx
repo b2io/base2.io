@@ -9,40 +9,14 @@ const fadeOut = {
   value: `${em('150px')}`,
 };
 
-const Wrapper = styled(LI)`
-  ${containerSizing};
-  background: url('img/backgrounds/space-fog-purple.png') right bottom / contain
-    no-repeat;
-  margin-bottom: ${em('135px')};
-  max-width: ${em('1550px')};
-  position: relative;
-  z-index: 1;
-
-  &:last-of-type {
-    background-position: right 80%;
-    padding-bottom: ${fadeOut.value};
-  }
-
-  ${mediaQuery.small`
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: ${em('275px')};
-
-    &:nth-of-type(even) {
-      background-position: left bottom;
-      flex-direction: row-reverse;
-    }
-  `};
-`;
-
 const ServiceList = styled.ul`
   align-items: center;
   background: url('img/backgrounds/star-field.png');
   display: flex;
   flex-direction: column;
   list-style: none;
-  padding: 3em 0 0 0;
+  padding: 3em 0 ${fadeOut.value} 0;
+  position: relative;
   text-align: center;
 
   &::after {
@@ -60,6 +34,28 @@ const ServiceList = styled.ul`
     width: 100%;
     z-index: 0;
   }
+`;
+
+const Wrapper = styled(LI)`
+  ${containerSizing};
+  background: url('img/backgrounds/space-fog-purple.png') right bottom / contain
+    no-repeat;
+  margin-bottom: ${em('135px')};
+  max-width: ${em('1550px')};
+  position: relative;
+  z-index: 1;
+
+  ${mediaQuery.small`
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: ${em('275px')};
+
+    &:nth-of-type(even) {
+      background-position: left bottom;
+      flex-direction: row-reverse;
+    }
+  `};
 `;
 
 const ServiceText = styled.div`
