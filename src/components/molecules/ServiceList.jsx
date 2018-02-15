@@ -11,8 +11,8 @@ const fadeOut = {
 
 const Wrapper = styled(LI)`
   ${containerSizing};
-  background: url('img/backgrounds/space-fog-purple.png') repeat-x;
-  background-size: cover;
+  background: url('img/backgrounds/space-fog-purple.png') 50% 50% / contain
+    no-repeat white;
   margin-bottom: ${em('135px')};
   max-width: ${em('1550px')};
   position: relative;
@@ -30,36 +30,6 @@ const Wrapper = styled(LI)`
 
     &:nth-of-type(even) {
       flex-direction: row-reverse;
-    }
-  `};
-
-  ${mediaQuery.large`
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      height: 100%;
-      position: absolute;
-      width: 3em;
-      z-index: 0;
-    }
-
-    &::before {
-      background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0) 100%
-      );
-      left: 0;
-    }
-
-    &::after {
-      background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 1) 100%
-      );
-      right: 0;
     }
   `};
 `;
