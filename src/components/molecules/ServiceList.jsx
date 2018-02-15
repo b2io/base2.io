@@ -11,14 +11,15 @@ const fadeOut = {
 
 const Wrapper = styled(LI)`
   ${containerSizing};
-  background: url('img/backgrounds/space-fog-purple.png') 50% 50% / contain
-    no-repeat white;
+  background: url('img/backgrounds/space-fog-purple.png') right bottom / contain
+    no-repeat;
   margin-bottom: ${em('135px')};
   max-width: ${em('1550px')};
   position: relative;
   z-index: 1;
 
   &:last-of-type {
+    background-position: right 80%;
     padding-bottom: ${fadeOut.value};
   }
 
@@ -29,6 +30,7 @@ const Wrapper = styled(LI)`
     margin-bottom: ${em('275px')};
 
     &:nth-of-type(even) {
+      background-position: left bottom;
       flex-direction: row-reverse;
     }
   `};
