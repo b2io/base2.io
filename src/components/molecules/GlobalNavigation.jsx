@@ -214,7 +214,10 @@ class GlobalNavigation extends React.Component {
   };
 
   componentDidUpdate() {
-    document.body.classList.toggle('noScroll', this.state.isOpen);
+    if (this.state.isOpen) {
+      document.body.classList.add('noScroll');
+    }
+    document.body.classList.remove('noScroll');
   }
 
   handleClick = () => {
