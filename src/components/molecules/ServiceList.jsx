@@ -38,21 +38,23 @@ const ServiceList = styled.ul`
 
 const Wrapper = styled(LI)`
   ${containerSizing};
-  background: url('img/backgrounds/space-fog-purple.png') right bottom / contain
-    no-repeat;
-  margin-bottom: ${em('135px')};
+  background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
+    100% no-repeat;
+  padding-bottom: ${em('135px')};
   max-width: ${em('1550px')};
   position: relative;
   z-index: 1;
 
   ${mediaQuery.small`
     align-items: center;
+    background-position: center center;
+    background-size: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: ${em('275px')};
+    margin-bottom: ${em('140px')};
+    padding-bottom: ${em('135px')};
 
     &:nth-of-type(even) {
-      background-position: left bottom;
       flex-direction: row-reverse;
     }
   `};
