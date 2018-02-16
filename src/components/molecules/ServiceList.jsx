@@ -151,7 +151,7 @@ class ServiceListItem extends React.Component {
     const { image, imgAlt, heading, subheading, description } = this.props;
 
     return (
-      <Wrapper>
+      <Wrapper id="services">
         <ServiceImg {...image} alt={imgAlt} />
         <ServiceText>
           <ServiceHeader>
