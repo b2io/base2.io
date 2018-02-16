@@ -137,6 +137,7 @@ const LogoToggleContainer = styled.div`
 
   > svg {
     height: 50%;
+    max-width: 75px;
   }
 
   ${mediaQuery.small`
