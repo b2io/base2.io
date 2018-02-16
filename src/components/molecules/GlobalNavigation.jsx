@@ -239,6 +239,9 @@ class GlobalNavigation extends React.Component {
           </LogoToggleContainer>
           <NavList>
             <NavItem>
+              <NavLink to="/#services">Services</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink to="/blog">Blog</NavLink>
             </NavItem>
             <NavItem>
