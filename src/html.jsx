@@ -89,6 +89,10 @@ class Html extends React.Component {
             href="https://fonts.googleapis.com/css?family=Roboto:100,100i,400,500"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Anonymous+Pro"
+            rel="stylesheet"
+          />
           <title>Base Two</title>
           {headComponents}
           {css}

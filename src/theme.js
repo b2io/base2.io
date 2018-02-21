@@ -42,6 +42,9 @@ function makeTheme(color) {
       font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
       font-weight: 100;
     `,
+    monospace: css`
+      font-family: 'Anonymous Pro', monospace;
+    `,
   };
 
   const typography = {
@@ -125,6 +128,7 @@ const lightColors = {
   link: palette.purple,
   linkHover: palette.spaceBlue,
   navBackground: palette.black,
+  overlay: transparentize(0.9, palette.black),
 };
 
 const darkTheme = makeTheme(darkColors);
