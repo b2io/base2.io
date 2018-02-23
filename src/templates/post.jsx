@@ -5,8 +5,12 @@ import { mapProps } from 'recompose';
 import remark from 'remark';
 import styled from 'styled-components';
 import remarkReact from 'remark-react';
-import { themed } from '../util/style';
 import {
+  A,
+  Blockquote,
+  Code,
+  Del,
+  EM,
   GlobalNavigation,
   Header,
   H1,
@@ -14,11 +18,17 @@ import {
   H3,
   H4,
   H5,
+  HR,
   Img,
+  LI,
   Main,
   P,
+  Pre,
+  OL,
   Section,
+  Strong,
   Time,
+  UL,
 } from '../components';
 import { toNodes } from '../util/graphql';
 
@@ -42,17 +52,6 @@ const PostContent = styled(Section)`
   img {
     max-width: 100%;
   }
-
-  pre {
-    background: ${themed('color.overlay')};
-    border: 1px solid ${themed('color.border')};
-    overflow-x: scroll;
-    padding: 10px;
-  }
-
-  hr {
-    color: ${themed('color.border')};
-  }
 `;
 
 const HoistChildren = props =>
@@ -62,13 +61,24 @@ const markdownToElement = md =>
   remark()
     .use(remarkReact, {
       remarkReactComponents: {
+        a: A,
+        blockquote: Blockquote,
+        code: Code,
+        del: Del,
+        em: EM,
         h1: H1,
         h2: H2,
         h3: H3,
         h4: H4,
         h5: H5,
+        hr: HR,
         img: Img,
+        li: LI,
+        ol: OL,
         p: P,
+        pre: Pre,
+        strong: Strong,
+        ul: UL,
       },
     })
     .processSync(md).contents;
