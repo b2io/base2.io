@@ -7,7 +7,10 @@ import styled from 'styled-components';
 import remarkReact from 'remark-react';
 import {
   A,
+  Blockquote,
   Code,
+  Del,
+  EM,
   GlobalNavigation,
   Header,
   H1,
@@ -23,6 +26,7 @@ import {
   Pre,
   OL,
   Section,
+  Strong,
   Time,
   UL,
 } from '../components';
@@ -58,7 +62,10 @@ const markdownToElement = md =>
     .use(remarkReact, {
       remarkReactComponents: {
         a: A,
+        blockquote: Blockquote,
         code: Code,
+        del: Del,
+        em: EM,
         h1: H1,
         h2: H2,
         h3: H3,
@@ -66,11 +73,12 @@ const markdownToElement = md =>
         h5: H5,
         hr: HR,
         img: Img,
+        li: LI,
+        ol: OL,
         p: P,
         pre: Pre,
-        ol: OL,
+        strong: Strong,
         ul: UL,
-        li: LI,
       },
     })
     .processSync(md).contents;
