@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-  UL,
-  LI,
-  Img,
-} from '../atoms';
+import { UL, LI, Img } from '../atoms';
 
 const ClientList = styled(UL)`
   margin: 0;

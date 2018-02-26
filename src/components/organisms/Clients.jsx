@@ -1,10 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-  ClientList,
-  Section,
-  H2,
-} from '../atoms';
+import { Section, H2 } from '../atoms';
+import { ClientList } from '../molecules';
 
 const Wrapper = styled(Section)`
   padding-bottom: 45vw;
@@ -18,9 +16,18 @@ const Heading = styled(H2)`
 class Clients extends React.Component {
   static defaultProps = {};
 
-  static propTypes = {};
+  static propTypes = {
+    clients: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+        image: PropTypes.shape({}).isRequired,
+        name: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
+  };
 
   render() {
+    const { clients } = this.props;
 
     return (
       <Wrapper>

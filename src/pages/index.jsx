@@ -37,8 +37,6 @@ class IndexPage extends React.Component {
   render() {
     const { clients, services } = this.props;
 
-    console.log(clients);
-
     return (
       <Main>
         <GlobalNavigation />
@@ -48,7 +46,7 @@ class IndexPage extends React.Component {
             <ServiceList.Item {...service} key={service.id} />
           ))}
         </ServiceList>
-        <Clients />
+        <Clients clients={clients} />
         <ContactUs />
       </Main>
     );
@@ -80,7 +78,7 @@ export const pageQuery = graphql`
           name
         }
       }
-    },
+    }
     services: allServicesJson {
       edges {
         node {
