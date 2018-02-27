@@ -246,6 +246,9 @@ class GlobalNavigation extends React.Component {
               <NavLink to="/#services">Services</NavLink>
             </NavItem>
             <NavItem>
+              <NavLink to="/#clients">Clients</NavLink>
+            </NavItem>
+            <NavItem>
               <NavLink to="/blog">Blog</NavLink>
             </NavItem>
             <NavItem>

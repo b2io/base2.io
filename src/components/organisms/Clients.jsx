@@ -33,7 +33,7 @@ class Clients extends React.Component {
     const { clients } = this.props;
 
     return (
-      <Wrapper>
+      <Wrapper id="clients">
         <ClientsHeading>
           We <span>Collaborate</span>
         </ClientsHeading>
