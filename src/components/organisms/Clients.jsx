@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Section, H2 } from '../atoms';
+import { rem } from 'polished';
+import { Section, TwoToneHeading } from '../atoms';
 import { ClientList } from '../molecules';
 
 const Wrapper = styled(Section)`
@@ -10,7 +11,8 @@ const Wrapper = styled(Section)`
   position: relative;
 `;
 
-const Heading = styled(H2)`
+const ClientsHeading = styled(TwoToneHeading)`
+  margin-bottom: ${rem('90px')};
   text-align: center;
 `;
 
@@ -32,7 +34,9 @@ class Clients extends React.Component {
 
     return (
       <Wrapper>
-        <Heading>We Collaborate</Heading>
+        <ClientsHeading>
+          We <span>Collaborate</span>
+        </ClientsHeading>
         <ClientList>
           {clients.map(client => (
             <ClientList.Item {...client} key={client.id} />

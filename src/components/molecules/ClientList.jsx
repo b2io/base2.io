@@ -38,6 +38,7 @@ const ClientLogo = styled(Img)`
   ${mediaQuery.large`
     max-height: ${em('155px')};
     max-width: ${em('200px')};
+    width: auto;
   `};
 `;
 

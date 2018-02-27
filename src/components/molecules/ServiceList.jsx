@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
-import { H2, H3, Img, P, LI } from '../atoms';
-import { containerSizing, mediaQuery, themed } from '../../util/style';
+import { H3, Img, P, LI, TwoToneHeading } from '../atoms';
+import { containerSizing, mediaQuery } from '../../util/style';
 
 const fadeOut = {
   value: `${em('150px')}`,
@@ -90,25 +90,6 @@ const ServiceHeader = styled.header`
   `};
 `;
 
-const ServiceHeading = styled(H2)`
-  color: ${themed('color.textAccent')};
-  font-size: ${em('42px')};
-  font-style: italic;
-  margin: 0;
-
-  span {
-    color: ${themed('color.text')};
-  }
-
-  ${mediaQuery.small`
-    font-size: ${em('48px')};
-  `};
-
-  ${mediaQuery.medium`
-    font-size: ${em('72px')};
-  `};
-`;
-
 const ServiceSubheading = styled(H3)`
   font-size: ${em('20px')};
   font-weight: 100;
@@ -155,9 +136,9 @@ class ServiceListItem extends React.Component {
         <ServiceImg {...image} alt={imgAlt} />
         <ServiceText>
           <ServiceHeader>
-            <ServiceHeading>
+            <TwoToneHeading>
               <span>We</span> {heading}
-            </ServiceHeading>
+            </TwoToneHeading>
             <ServiceSubheading>{subheading}</ServiceSubheading>
           </ServiceHeader>
           <ServiceDescription>{description}</ServiceDescription>
