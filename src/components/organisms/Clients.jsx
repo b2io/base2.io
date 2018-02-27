@@ -5,6 +5,7 @@ import { Section, H2 } from '../atoms';
 import { ClientList } from '../molecules';
 
 const Wrapper = styled(Section)`
+  background: url('img/backgrounds/star-field.png');
   padding-bottom: 45vw;
   position: relative;
 `;

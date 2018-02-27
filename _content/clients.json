@@ -1,37 +1,37 @@
 [
   {
     "id": "aep",
-    "image": "img/clients/angularjs.png",
+    "image": "img/clients/aep-logo-white.png",
     "name": "AEP"
   },
   {
     "id": "netjets",
-    "image": "img/clients/angularjs.png",
+    "image": "img/clients/netjets-logo-white.png",
     "name": "NetJets"
   },
   {
     "id": "ac-lens",
-    "image": "img/clients/angularjs.png",
+    "image": "img/clients/ac-lens-logo-white.png",
     "name": "AC Lens"
   },
   {
     "id": "sherwin-williams",
-    "image": "img/clients/angularjs.png",
+    "image": "img/clients/sherwin-williams-logo-white.png",
     "name": "Sherwin Williams"
   },
   {
     "id": "dnv-gl",
-    "image": "img/clients/angularjs.png",
+    "image": "img/clients/dnv-gl-logo-white.png",
     "name": "DNV GL"
   },
   {
     "id": "quest",
-    "image": "img/clients/angularjs.png",
+    "image": "img/clients/quest-logo-white.png",
     "name": "Quest to Clean Up"
   },
   {
     "id": "columbus-marathon",
-    "image": "img/clients/angularjs.png",
+    "image": "img/clients/nch-columbus-marathon-logo-white.png",
     "name": "Nationwide Children’s Hospital Columbus Marathon"
   }
 ]
