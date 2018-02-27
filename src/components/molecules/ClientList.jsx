@@ -4,15 +4,18 @@ import styled from 'styled-components';
 import { UL, LI, Img } from '../atoms';
 
 const ClientList = styled(UL)`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  list-style-type: none;
+  width: 100%;
 `;
 
 const Client = styled(LI)`
-  padding: 0;
-  margin: 0;
-  display: inline-block;
+  margin: 0 0 15px;
+  width: 25%;
 `;
 
 const ClientLogo = styled(Img)`
