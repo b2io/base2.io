@@ -28,17 +28,21 @@ const Client = styled(LI)`
   ${mediaQuery.small`
     width: 25%;
   `};
+
+  > div {
+    text-align: center;
+    width: 100%;
+  }
 `;
 
 const ClientLogo = styled(Img)`
   max-height: ${em('80px')};
   max-width: 100%;
-  width: 100%;
+  width: auto;
 
   ${mediaQuery.large`
     max-height: ${em('155px')};
     max-width: ${em('200px')};
-    width: auto;
   `};
 `;
 
