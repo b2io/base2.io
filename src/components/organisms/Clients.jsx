@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { rem } from 'polished';
 import { Section, TwoToneHeading } from '../atoms';
 import { ClientList } from '../molecules';
 
@@ -12,7 +11,7 @@ const Wrapper = styled(Section)`
 `;
 
 const ClientsHeading = styled(TwoToneHeading)`
-  margin-bottom: ${rem('90px')};
+  margin-bottom: 1em;
   text-align: center;
 `;
 
