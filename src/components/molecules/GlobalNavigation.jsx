@@ -261,7 +261,7 @@ class GlobalNavigation extends React.Component {
             614.398.1158
           </ContactCallToAction>
           <ContactCallToAction
-            href="tel:16143981158"
+            href="mailto:info@base2.io"
             className="contact-call--right"
           >
             Email Us
