@@ -5,35 +5,14 @@ import { em } from 'polished';
 import { H3, Img, P, LI, TwoToneHeading } from '../atoms';
 import { containerSizing, mediaQuery } from '../../util/style';
 
-const fadeOut = {
-  value: `${em('150px')}`,
-};
-
 const ServiceList = styled.ul`
   align-items: center;
   background: url('img/backgrounds/star-field.png');
   display: flex;
   flex-direction: column;
   list-style: none;
-  padding: 3em 0 ${fadeOut.value} 0;
   position: relative;
   text-align: center;
-
-  &::after {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
-    bottom: 0;
-    content: '';
-    display: block;
-    height: ${fadeOut.value};
-    left: 0;
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-  }
 `;
 
 const Wrapper = styled(LI)`
