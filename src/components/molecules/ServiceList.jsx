@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { em } from 'polished';
+import { em, rem } from 'polished';
 import { H3, Img, P, LI, TwoToneHeading } from '../atoms';
-import { containerSizing, mediaQuery } from '../../util/style';
+import { containerSizing, mediaQuery, themed } from '../../util/style';
+
+const fadeOut = {
+  value: `${em('150px')}`,
+};
 
 const ServiceList = styled.ul`
   align-items: center;
@@ -20,8 +24,9 @@ const Wrapper = styled(LI)`
   background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
     100% no-repeat;
   padding-bottom: ${em('135px')};
-  max-width: ${em('1550px')};
+  max-width: ${rem('1300px')};
   position: relative;
+  width: 100%;
   z-index: 1;
 
   ${mediaQuery.small`
