@@ -3,6 +3,7 @@ import React from 'react';
 import { mapProps } from 'recompose';
 import {
   ContactUs,
+  Clients,
   GlobalNavigation,
   Hero,
   Main,
@@ -14,6 +15,13 @@ class IndexPage extends React.Component {
   static defaultProps = {};
 
   static propTypes = {
+    clients: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+        image: PropTypes.shape({}).isRequired,
+        name: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
     services: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.node.isRequired,
@@ -27,7 +35,7 @@ class IndexPage extends React.Component {
   };
 
   render() {
-    const { services } = this.props;
+    const { clients, services } = this.props;
 
     return (
       <Main>
@@ -38,6 +46,7 @@ class IndexPage extends React.Component {
             <ServiceList.Item {...service} key={service.id} />
           ))}
         </ServiceList>
+        <Clients clients={clients} />
         <ContactUs />
       </Main>
     );
@@ -46,6 +55,7 @@ class IndexPage extends React.Component {
 
 function mapPropsToProps({ data }) {
   return {
+    clients: toNodesWithImage(data.clients),
     services: toNodesWithImage(data.services),
   };
 }
@@ -54,6 +64,21 @@ export default mapProps(mapPropsToProps)(IndexPage);
 
 export const pageQuery = graphql`
   query IndexPageQuery {
+    clients: allClientsJson {
+      edges {
+        node {
+          id
+          image {
+            childImageSharp {
+              sizes {
+                ...GatsbyImageSharpSizes_withWebp_noBase64
+              }
+            }
+          }
+          name
+        }
+      }
+    }
     services: allServicesJson {
       edges {
         node {

@@ -2,12 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
-import { H2, H3, Img, P, LI } from '../atoms';
-import { containerSizing, mediaQuery, themed } from '../../util/style';
-
-const fadeOut = {
-  value: `${em('150px')}`,
-};
+import { H3, Img, P, LI, TwoToneHeading } from '../atoms';
+import { containerSizing, mediaQuery } from '../../util/style';
 
 const ServiceList = styled.ul`
   align-items: center;
@@ -15,25 +11,8 @@ const ServiceList = styled.ul`
   display: flex;
   flex-direction: column;
   list-style: none;
-  padding: 3em 0 ${fadeOut.value} 0;
   position: relative;
   text-align: center;
-
-  &::after {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 1) 100%
-    );
-    bottom: 0;
-    content: '';
-    display: block;
-    height: ${fadeOut.value};
-    left: 0;
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-  }
 `;
 
 const Wrapper = styled(LI)`
@@ -90,25 +69,6 @@ const ServiceHeader = styled.header`
   `};
 `;
 
-const ServiceHeading = styled(H2)`
-  color: ${themed('color.textAccent')};
-  font-size: ${em('42px')};
-  font-style: italic;
-  margin: 0;
-
-  span {
-    color: ${themed('color.text')};
-  }
-
-  ${mediaQuery.small`
-    font-size: ${em('48px')};
-  `};
-
-  ${mediaQuery.medium`
-    font-size: ${em('72px')};
-  `};
-`;
-
 const ServiceSubheading = styled(H3)`
   font-size: ${em('20px')};
   font-weight: 100;
@@ -155,9 +115,9 @@ class ServiceListItem extends React.Component {
         <ServiceImg {...image} alt={imgAlt} />
         <ServiceText>
           <ServiceHeader>
-            <ServiceHeading>
+            <TwoToneHeading>
               <span>We</span> {heading}
-            </ServiceHeading>
+            </TwoToneHeading>
             <ServiceSubheading>{subheading}</ServiceSubheading>
           </ServiceHeader>
           <ServiceDescription>{description}</ServiceDescription>
