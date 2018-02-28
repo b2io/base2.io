@@ -15,10 +15,8 @@ California.
 
 The Keynote began with an amazing live
 [Earth Harp](http://williamandtheearthharp.com "Earth Harp") performance of a
-song from the motion picture _Amélie_ followed by a slick video and then dove
-right into the announcements.
-
-<iframe width="560" height="315" style="display: block; margin: 0 auto 2em;" src="https://www.youtube.com/embed/mp6UsuRteNw" frameborder="0" allowfullscreen></iframe>
+song from the motion picture _Amélie_ followed by a slick video and then [dove
+right into the announcements](https://www.youtube.com/watch?v=862r3XS2YB0 "Google I/O 2016 - Keynote - YouTube").
 
 The following were the highlights for me:
 
@@ -146,9 +144,9 @@ expected for a conference of this nature, they were all slick and well-prepared.
 My focus was mainly on the Web, with things like Polymer and Chrome DevTools.
 Here are my top favorites.
 
-#### Building for Billions on the Web
+### [Building for Billions on the Web](https://www.youtube.com/watch?v=E6hGubMkNfM "Building for Billions on the Web - YouTube")
 
-##### Tal Oppenheimer
+#### Tal Oppenheimer
 
 With the internet at our fingertips, it can be hard to remember -- if not a
 complete revelation -- that the vast majority of internet users are accessing
@@ -156,11 +154,9 @@ the web on sub-optimal data connections and small devices. Tal Oppenheimer’s
 research and insight into this subject is eye-opening, and her recommendations
 are ones I look forward to playing around with.
 
-<iframe width="560" height="315" style="display: block; margin: 0 auto 2em;" src="https://www.youtube.com/embed/E6hGubMkNfM" frameborder="0" allowfullscreen></iframe>
+### [DevTools in 2016: Accelerate your workflow](https://www.youtube.com/watch?v=x8u0n4dT-WI "DevTools in 2016: Accelerate your workflow - YouTube")
 
-#### DevTools in 2016
-
-##### Chrome DevTools Team
+#### Chrome DevTools Team
 
 Where do I even start? Breakpoint visualizations, color palettes, theme-building
 tools… And, my goodness, the animation tools and inspector? I saw a lot of agape
@@ -172,26 +168,21 @@ minutes, there are more delicious nuggets in this presentation, like Javascript
 -- and Node.js! -- debugging. I highly recommend watching the whole thing if
 this stuff is your jam.
 
-<iframe width="560" height="315" style="display: block; margin: 0 auto 2em;" src="https://www.youtube.com/embed/x8u0n4dT-WI" frameborder="0" allowfullscreen></iframe>
+### [Practical lessons from a year of building web components](https://www.youtube.com/watch?v=zfQoleQEa4w "Practical lessons from a year of building web components - YouTube")
 
-#### Practical lessons from a year of building web components
-
-##### Monica Dinculescu
+#### Monica Dinculescu
 
 With a secondary title like “The Meownica School for Kids Who Want to Web Good
 and Do Other Things Good Too,” you know this is going to be a wild ride. And it
 is. Monica delves into the tips and tricks she has learned on the Polymer team,
-with a healthy smattering of emoji and anti-input-element sass. My tweet summary
-does it a fair amount of justice:
+with a healthy smattering of emoji and anti-input-element sass.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Test your shit, document your shit, inputs are shit. Do less, be lazy. Don&#39;t slow down the web. Make amazing components. <a href="https://twitter.com/hashtag/io16?src=hash">#io16</a> <a href="https://twitter.com/notwaldorf">@notwaldorf</a></p>&mdash; Caitlin Steinert (@csteinert) <a href="https://twitter.com/csteinert/status/733698941087145988">May 20, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-Just go watch the whole thing. You are unlikely to regret it.
-<iframe width="560" height="315" style="display: block; margin: 0 auto 2em;" src="https://www.youtube.com/embed/zfQoleQEa4w" frameborder="0" allowfullscreen></iframe>
 
-#### Mobile Web State of the Union
+### [The Mobile Web: State of the Union](https://www.youtube.com/watch?v=0SSI8liELJU "The Mobile Web: State of the Union - YouTube")
 
-##### Chromium Dev Team
+#### Chromium Dev Team
 
 This presentation covers Google’s new AMP and PWA initiatives. Making our mobile
 experiences faster and better for our users is something we as developers should
@@ -200,11 +191,9 @@ the biggest jaw-drop moment in this presentation is the unveiling of the Web
 Payments API. That is going to be amazing, and I hope that wide acceptance will
 push other browsers to follow suit.
 
-<iframe width="560" height="315" style="display: block; margin: 0 auto 2em;" src="https://www.youtube.com/embed/0SSI8liELJU" frameborder="0" allowfullscreen></iframe>
+### [Web Performance Tooling](https://www.youtube.com/watch?v=iMqi55rcR00 "Web Performance Tooling - YouTube")
 
-#### Web Performance Tooling
-
-##### Paul Irish, Sam Saccone
+#### Paul Irish, Sam Saccone
 
 In a conversational, podcast-like presentation format, Paul and Sam take on some
 real-world performance issues with the Chrome DevTools. They are self-professed
@@ -212,16 +201,12 @@ performance geeks, and taking even a little bit of knowledge away from this
 protip-rich talk is likely to improve your performance game. I am both excited
 and terrified to run these DevTool recordings on my own site.
 
-<iframe width="560" height="315" style="display: block; margin: 0 auto 2em;" src="https://www.youtube.com/embed/iMqi55rcR00" frameborder="0" allowfullscreen></iframe>
+### [Understand your Place in this world](https://www.youtube.com/watch?v=QR3PIg0RDnk "Understand your Place in this world - YouTube")
 
-#### Understand your Place in this world
-
-##### Florian Bertele, Ravi Palanki
+#### Florian Bertele, Ravi Palanki
 
 I use Google Maps and Places on a near-daily basis, so this was an interesting
 dive into the Places API and how it works.
-
-<iframe width="560" height="315" style="display: block; margin: 0 auto 2em;" src="https://www.youtube.com/embed/QR3PIg0RDnk" frameborder="0" allowfullscreen></iframe>
 
 ## Community Shoutouts
 
