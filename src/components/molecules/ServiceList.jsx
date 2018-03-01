@@ -3,11 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { em, rem } from 'polished';
 import { H3, Img, P, LI, TwoToneHeading } from '../atoms';
-import { containerSizing, mediaQuery, themed } from '../../util/style';
-
-const fadeOut = {
-  value: `${em('150px')}`,
-};
+import { containerSizing, mediaQuery } from '../../util/style';
 
 const ServiceList = styled.ul`
   align-items: center;
@@ -15,6 +11,7 @@ const ServiceList = styled.ul`
   display: flex;
   flex-direction: column;
   list-style: none;
+  padding-left: 0;
   position: relative;
   text-align: center;
 `;
