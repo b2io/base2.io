@@ -29,6 +29,11 @@ const ContactSubmitButton = styled(Button)`
   margin: 0 auto;
   width: 100%;
 
+  ${mediaQuery.xsmall`
+    padding-left: 0;
+    padding-right: 0;
+  `};
+
   ${mediaQuery.small`
     width: auto;
   `};
