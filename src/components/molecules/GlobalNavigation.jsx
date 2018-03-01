@@ -225,6 +225,10 @@ class GlobalNavigation extends React.Component {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
+  handleLinkClick = () => {
+    this.setState({ isOpen: false });
+  };
+
   render() {
     return (
       <NavBar
@@ -243,16 +247,22 @@ class GlobalNavigation extends React.Component {
           </LogoToggleContainer>
           <NavList>
             <NavItem>
-              <NavLink to="/#services">Services</NavLink>
+              <NavLink to="/#services" onClick={this.handleLinkClick}>
+                Services
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#clients">Clients</NavLink>
+              <NavLink to="/#clients" onClick={this.handleLinkClick}>
+                Clients
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="/blog">Blog</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#contact-us">Contact</NavLink>
+              <NavLink to="/#contact-us" onClick={this.handleLinkClick}>
+                Contact
+              </NavLink>
             </NavItem>
           </NavList>
         </MainNavigationContainer>
