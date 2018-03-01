@@ -12,7 +12,7 @@ const HeroHeader = styled.header`
   background-size: 100%;
   background-color: ${themed('color.background')};
   height: 100vh;
-  padding: 4em 0 0 0;
+  padding: 3em 0 0 0;
   position: relative;
   text-align: center;
 
@@ -55,12 +55,13 @@ const HeroTagline = styled(P)`
   font-size: 1.15em;
   font-style: italic;
   font-weight: 100;
-  margin-top: 0.5em;
+  margin-top: 0;
   margin-bottom: 0.5em;
   text-shadow: 1px 1px 4px ${themed('color.background')};
 
   ${mediaQuery.small`
     font-size: 1.65rem;
+    margin-top: 0.5em;
   `};
 
   ${mediaQuery.medium`
@@ -69,7 +70,6 @@ const HeroTagline = styled(P)`
 
   ${mediaQuery.large`
     font-size: 2.25rem;
-    margin-top: 0.5em;
   `};
 `;
 
