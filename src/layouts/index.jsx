@@ -16,7 +16,8 @@ injectGlobal`
     padding: 0;
   }
 
-  .noScroll {
+  .noScroll > div {
+    height: 100vh;
     overflow: hidden;
   }
 `;
