@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { em } from 'polished';
 import windowSize from 'react-window-size';
 import {
   BaseTwoLogo,
@@ -12,6 +13,10 @@ import {
   LI,
 } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
+
+const mobileBottomMenu = {
+  value: `${em('75px')}`,
+};
 
 const NavBar = styled.nav`
   background-color: ${themed('color.navBackground')};
@@ -190,7 +195,7 @@ const ContactCallToAction = styled(CallToAction)`
 
   .menu-open & {
     height: 48px;
-    margin: 10px 10px;
+    margin: 10px 10px ${mobileBottomMenu.value} 10px;
     opacity: 1;
     transition: opacity 1000ms ease-in, height 800ms ease-in;
   }
