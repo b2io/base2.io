@@ -201,6 +201,7 @@ const ContactCallToAction = styled(CallToAction)`
   }
 
   .menu-closed & {
+    border-width: 0;
     height: 0;
     margin: 0;
     opacity: 0;
