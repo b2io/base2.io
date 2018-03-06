@@ -181,11 +181,6 @@ const ContactCallToActionContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
-
-  .menu-closed & {
-    height: 0;
-    overflow: hidden;
-  }
 `;
 
 const ContactCallToAction = styled(CallToAction)`
@@ -206,6 +201,7 @@ const ContactCallToAction = styled(CallToAction)`
   }
 
   .menu-closed & {
+    border-width: 0;
     height: 0;
     margin: 0;
     opacity: 0;
