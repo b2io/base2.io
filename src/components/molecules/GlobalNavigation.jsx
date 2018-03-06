@@ -197,14 +197,16 @@ const ContactCallToAction = styled(CallToAction)`
     height: 48px;
     margin: 10px 10px ${mobileBottomMenu.value} 10px;
     opacity: 1;
-    transition: opacity 1000ms ease-in, height 800ms ease-in;
+    transition: translate(0) 1000ms ease-out, opacity 1000ms ease-in,
+      height 800ms ease-in;
   }
 
   .menu-closed & {
     height: 0;
     margin: 0;
     opacity: 0;
-    transition: opacity 500ms ease-out, height 300ms ease-out;
+    transition: translate(9999px) 800ms ease-out, opacity 500ms ease-out,
+      height 300ms ease-out;
   }
 `;
 
