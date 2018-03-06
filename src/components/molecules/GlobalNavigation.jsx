@@ -181,6 +181,11 @@ const ContactCallToActionContainer = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+
+  .menu-closed & {
+    height: 0;
+    overflow: hidden;
+  }
 `;
 
 const ContactCallToAction = styled(CallToAction)`
@@ -197,16 +202,14 @@ const ContactCallToAction = styled(CallToAction)`
     height: 48px;
     margin: 10px 10px ${mobileBottomMenu.value} 10px;
     opacity: 1;
-    transition: translate(0) 1000ms ease-out, opacity 1000ms ease-in,
-      height 800ms ease-in;
+    transition: opacity 1000ms ease-in, height 800ms ease-in;
   }
 
   .menu-closed & {
     height: 0;
     margin: 0;
     opacity: 0;
-    transition: translate(9999px) 800ms ease-out, opacity 500ms ease-out,
-      height 300ms ease-out;
+    transition: opacity 500ms ease-out, height 300ms ease-out;
   }
 `;
 
