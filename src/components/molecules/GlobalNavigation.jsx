@@ -209,6 +209,14 @@ const ContactCallToAction = styled(CallToAction)`
   }
 `;
 
+const toggleNoScroll = isOpen => {
+  if (!isOpen) {
+    document.body.classList.add('noScroll');
+  } else {
+    document.body.classList.remove('noScroll');
+  }
+};
+
 class GlobalNavigation extends React.Component {
   static defaultProps = {};
 
@@ -220,19 +228,13 @@ class GlobalNavigation extends React.Component {
     isOpen: false,
   };
 
-  componentDidUpdate() {
-    if (this.state.isOpen) {
-      document.body.classList.add('noScroll');
-    } else {
-      document.body.classList.remove('noScroll');
-    }
-  }
-
   handleClick = () => {
+    toggleNoScroll(this.state.isOpen);
     this.setState({ isOpen: !this.state.isOpen });
   };
 
   handleLinkClick = () => {
+    toggleNoScroll(this.state.isOpen);
     this.setState({ isOpen: false });
   };
 
