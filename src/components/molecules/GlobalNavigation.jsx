@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { em } from 'polished';
 import windowSize from 'react-window-size';
 import {
+  A,
   BaseTwoLogo,
   Button,
   CallToAction,
@@ -140,19 +141,26 @@ const LogoToggleContainer = styled.div`
   padding: 0 10px;
   position: relative;
 
-  > svg {
-    height: 50%;
-    max-width: 75px;
-  }
-
   ${mediaQuery.small`
     font-size: 1.25rem;
     padding: 0;
-
-    > svg {
-      height: 70%
-    }
   `};
+`;
+
+const HomeLink = styled(A)`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  max-width: 75px;
+  width: 100%;
+
+  > svg {
+    height: 50%;
+
+    ${mediaQuery.small`
+      height: 70%;
+  `};
+  }
 `;
 
 const MenuToggle = styled(Button)`
@@ -249,7 +257,9 @@ class GlobalNavigation extends React.Component {
       >
         <MainNavigationContainer>
           <LogoToggleContainer>
-            <BaseTwoLogo />
+            <HomeLink href="/" title="Base Two - Home">
+              <BaseTwoLogo />
+            </HomeLink>
             <MenuToggle onClick={this.handleClick}>
               <Icon name="menutoggle" />
             </MenuToggle>
