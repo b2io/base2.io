@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H1, BaseTwoLogoText, Img, P } from '../atoms';
+import {
+  A,
+  BaseTwoLogoText,
+  H1,
+  P
+} from '../atoms';
+import { ScrollLink } from '../molecules';
 import { mediaQuery, themed } from '../../util/style';
 
 const BGAspectRatio = '1.83';
@@ -73,30 +79,10 @@ const HeroTagline = styled(P)`
   `};
 `;
 
-const ScrollIndicator = styled(Img)`
-  margin-top: 0.5em;
-  width: 3em;
-
-  ${mediaQuery.xsmall`
-    position: absolute;
-    left: calc(50% - 21px);
-    bottom: 15px;
-    width: 42px;
-  `};
-
-  ${mediaQuery.small`
-    position: relative;
-    width: 4em;
-  `};
-
-  ${mediaQuery.medium`
-    margin-top: 0.75em;
-  `};
-
-  ${mediaQuery.medium`
-    margin-top: 0.5em;
-  `};
-`;
+const scroll = {
+  target: 'next',
+  title: 'Scroll down for more',
+};
 
 const HeroContent = ({ children }) => children;
 
@@ -113,8 +99,9 @@ class Hero extends React.Component {
             <BaseTwoLogoText />
           </HeroHeading>
           <HeroTagline> We turn ideas into beautiful software </HeroTagline>
-          <ScrollIndicator src="img/scroll-indicator.svg" alt="" />
+          <ScrollLink target={scroll.target} title={scroll.title} />
         </HeroHeader>
+        <A id={scroll.target} />
       </HeroContent>
     );
   }
