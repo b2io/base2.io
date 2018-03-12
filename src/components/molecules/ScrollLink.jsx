@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import {
-  A,
-  Img
- } from '../atoms';
+import { em } from 'polished';
+import { A } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
 const ScrollTarget = styled(A)`
   display: block;
 `;
 
-const ScrollIndicator = styled(Img)`
+const SatelliteIndicator = styled.img`
   margin-top: 0.5em;
   width: 3em;
 
@@ -36,6 +34,21 @@ const ScrollIndicator = styled(Img)`
   `};
 `;
 
+const ArrowIndicator = styled.img`
+  display: block;
+  margin: 1em auto 0;
+  max-width: ${em('21px')};
+
+  ${mediaQuery.small`
+    max-width: ${em('27px')};
+  `};
+
+  ${mediaQuery.large`
+    max-width: ${em('43px')};
+  `};
+`;
+
+// eslint-disable-next-line prefer-stateless-function
 class ScrollLink extends React.Component {
   static defaultProps = {};
 
@@ -49,7 +62,8 @@ class ScrollLink extends React.Component {
 
     return (
       <ScrollTarget href={`/#${target}`} title={title}>
-        <ScrollIndicator src="img/scroll-indicator.svg" alt={title} />
+        <SatelliteIndicator src="img/scroll-indicator.svg" alt={title} />
+        <ArrowIndicator src="img/scroll-arrows.svg" alt={title} />
       </ScrollTarget>
     );
   }
