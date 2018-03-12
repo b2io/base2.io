@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 import theme, { darkTheme, lightTheme } from '../theme';
+import { mediaQuery } from '../util/style';
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
@@ -19,6 +20,11 @@ injectGlobal`
   .noScroll > div {
     height: 100vh;
     overflow: hidden;
+
+    ${mediaQuery.small`
+      height: auto;
+      overflow: scroll;
+    `};
   }
 `;
 
