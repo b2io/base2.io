@@ -79,6 +79,31 @@ const HeroTagline = styled(P)`
   `};
 `;
 
+const SatelliteIndicator = styled.img`
+  margin-top: 0.5em;
+  width: 3em;
+
+  ${mediaQuery.xsmall`
+    position: absolute;
+    left: calc(50% - 21px);
+    bottom: 15px;
+    width: 42px;
+  `};
+
+  ${mediaQuery.small`
+    position: relative;
+    width: 4em;
+  `};
+
+  ${mediaQuery.medium`
+    margin-top: 0.75em;
+  `};
+
+  ${mediaQuery.medium`
+    margin-top: 0.5em;
+  `};
+`;
+
 const scroll = {
   target: 'next',
   title: 'Scroll down for more',
@@ -86,6 +111,7 @@ const scroll = {
 
 const HeroContent = ({ children }) => children;
 
+// eslint-disable-line react/prefer-stateless-function
 class Hero extends React.Component {
   static defaultProps = {};
 
@@ -99,7 +125,9 @@ class Hero extends React.Component {
             <BaseTwoLogoText />
           </HeroHeading>
           <HeroTagline> We turn ideas into beautiful software </HeroTagline>
-          <ScrollLink target={scroll.target} title={scroll.title} />
+          <ScrollLink target={scroll.target} title={scroll.title}>
+            <SatelliteIndicator src="img/scroll-indicator.svg" />
+          </ScrollLink>
         </HeroHeader>
         <A id={scroll.target} />
       </HeroContent>

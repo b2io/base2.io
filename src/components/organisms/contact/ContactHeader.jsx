@@ -102,12 +102,26 @@ const ScrollButton = styled(CallToAction)`
   `};
 `;
 
+const ArrowIndicator = styled.img`
+  display: block;
+  margin: 1em auto 0;
+  max-width: ${em('21px')};
+
+  ${mediaQuery.small`
+    max-width: ${em('27px')};
+  `};
+
+  ${mediaQuery.large`
+    max-width: ${em('43px')};
+  `};
+`;
+
 const scroll = {
-  target: 'next',
+  target: 'contact-us',
   title: 'Scroll down for more',
 };
 
-// eslint-disable-next-line prefer-stateless-function
+// eslint-disable-line react/prefer-stateless-function
 class ContactHeader extends React.Component {
 
 static defaultProps = {
@@ -128,7 +142,9 @@ static defaultProps = {
           you are.
         </LocationTagline>
         <ScrollButton href="#contact-us">Make Contact</ScrollButton>
-        <ScrollLink target={scroll.target} title={scroll.title} />
+        <ScrollLink target={scroll.target} title={scroll.title}>
+          <ArrowIndicator src="../img/scroll-arrows.svg" />
+        </ScrollLink>
       </Wrapper>
     );
   }
