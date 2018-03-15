@@ -23,7 +23,7 @@ injectGlobal`
 
     ${mediaQuery.small`
       height: auto;
-      overflow: scroll;
+      overflow: auto;
     `};
   }
 `;

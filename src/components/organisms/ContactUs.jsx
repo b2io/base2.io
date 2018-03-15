@@ -9,6 +9,7 @@ const Wrapper = styled(Section)`
   display: block;
   padding-bottom: 45vw;
   position: relative;
+  overflow-x: hidden;
 
   ${mediaQuery.large`
     padding-bottom: 28em;
