@@ -81,7 +81,7 @@ class Html extends React.Component {
             type="image/png"
           />
           <link
-            color="#5bbad5"
+            color="black"
             href="/img/safari-pinned-tab.svg"
             rel="mask-icon"
           />
