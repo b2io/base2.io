@@ -1,6 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import { H1, BaseTwoLogoText, Img, P } from '../atoms';
+import {
+  A,
+  BaseTwoLogoText,
+  H1,
+  P
+} from '../atoms';
+import { ScrollLink } from '../molecules';
 import { mediaQuery, themed } from '../../util/style';
 
 const BGAspectRatio = '1.83';
@@ -73,7 +79,7 @@ const HeroTagline = styled(P)`
   `};
 `;
 
-const ScrollIndicator = styled(Img)`
+const SatelliteIndicator = styled.img`
   margin-top: 0.5em;
   width: 3em;
 
@@ -98,8 +104,14 @@ const ScrollIndicator = styled(Img)`
   `};
 `;
 
+const scroll = {
+  target: 'next',
+  title: 'Scroll down for more',
+};
+
 const HeroContent = ({ children }) => children;
 
+// eslint-disable-line react/prefer-stateless-function
 class Hero extends React.Component {
   static defaultProps = {};
 
@@ -113,8 +125,11 @@ class Hero extends React.Component {
             <BaseTwoLogoText />
           </HeroHeading>
           <HeroTagline> We turn ideas into beautiful software </HeroTagline>
-          <ScrollIndicator src="img/scroll-indicator.svg" alt="" />
+          <ScrollLink target={scroll.target} title={scroll.title}>
+            <SatelliteIndicator src="img/scroll-indicator.svg" />
+          </ScrollLink>
         </HeroHeader>
+        <A id={scroll.target} />
       </HeroContent>
     );
   }

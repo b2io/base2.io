@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { em } from 'polished';
 import { mediaQuery, themed } from '../../../util/style';
 import { BaseTwoLogoText, CallToAction } from '../../atoms';
+import { ScrollLink } from '../../molecules';
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -101,7 +102,7 @@ const ScrollButton = styled(CallToAction)`
   `};
 `;
 
-const Scroll = styled.img`
+const ArrowIndicator = styled.img`
   display: block;
   margin: 1em auto 0;
   max-width: ${em('21px')};
@@ -115,8 +116,15 @@ const Scroll = styled.img`
   `};
 `;
 
+const scroll = {
+  target: 'contact-us',
+  title: 'Scroll down for more',
+};
+
+// eslint-disable-line react/prefer-stateless-function
 class ContactHeader extends React.Component {
-  static defaultProps = {
+
+static defaultProps = {
     onContact: noop,
   };
 
@@ -134,10 +142,9 @@ class ContactHeader extends React.Component {
           you are.
         </LocationTagline>
         <ScrollButton href="#contact-us">Make Contact</ScrollButton>
-        <Scroll
-          src="img/scroll-arrows.svg"
-          alt="Scroll down for contact information."
-        />
+        <ScrollLink target={scroll.target} title={scroll.title}>
+          <ArrowIndicator src="../img/scroll-arrows.svg" />
+        </ScrollLink>
       </Wrapper>
     );
   }
