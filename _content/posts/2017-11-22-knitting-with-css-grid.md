@@ -73,9 +73,10 @@ see the order in which the rectangles were added.
 ### The Markup
 
 I used [Codepen](http://codepen.io), my favorite front-end sandbox and online
-developer community, for this particular project. I love how quickly I can spin
-up an environment in Codepen, especially when it comes to CSS preprocessors. In
-the case of this example, I set my preprocessor to SCSS.
+developer community, for this particular project. [You can see (and fork!) the
+code here](https://codepen.io/csteinert/pen/aVBXjB/). I love how quickly I can
+spin up an environment in Codepen, especially when it comes to CSS preprocessors.
+In the case of this example, I set my preprocessor to SCSS.
 
 <p data-height="600" data-theme-id="dark" data-slug-hash="aVBXjB" data-default-tab="html,result" data-user="csteinert" data-embed-version="2" data-pen-title="Log Cabin Blanket Grid Layout" class="codepen">See the Pen <a href="https://codepen.io/csteinert/pen/aVBXjB/">Log Cabin Blanket Grid Layout</a> by Caitlin Steinert (<a href="https://codepen.io/csteinert">@csteinert</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
