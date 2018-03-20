@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { em } from 'polished';
 import { Section, TwoToneHeading } from '../atoms';
 import { ClientList } from '../molecules';
+import { themed } from '../../util/style';
 
 const fadeOut = {
   value: `${em('150px')}`,
@@ -12,6 +13,7 @@ const fadeOut = {
 const Wrapper = styled(Section)`
   background: url('img/backgrounds/star-field.png');
   padding-bottom: ${fadeOut.value};
+  padding-top: ${themed('navHeight.value')};
   position: relative;
 
   &::after {
@@ -27,7 +29,7 @@ const Wrapper = styled(Section)`
     left: 0;
     position: absolute;
     width: 100%;
-    z-index: 0;
+    z-index: ${themed('zindex.base')};
   }
 `;
 
