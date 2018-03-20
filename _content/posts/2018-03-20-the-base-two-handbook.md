@@ -1,8 +1,8 @@
 ---
 title: The Base Two Handbook
 author: csteinert
-date: "2018-03-13T04:00:00.000Z"
-path: "/2018/03/13/the-base-two-handbook"
+date: "2018-03-20T04:00:00.000Z"
+path: "/2018/03/20/the-base-two-handbook"
 ---
 
 We began writing the Base Two Handbook on August 26th, 2016. It took about a year
