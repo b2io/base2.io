@@ -276,7 +276,9 @@ class GlobalNavigation extends React.Component {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/blog">Blog</NavLink>
+              <NavLink to="/blog" onClick={this.handleLinkClick}>
+                Blog
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="/#contact-us" onClick={this.handleLinkClick}>
