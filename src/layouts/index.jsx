@@ -31,9 +31,7 @@ injectGlobal`
 const POST_REGEX = /\d{4}\/\d{2}\/\d{2}/;
 
 const isBlogPage = location =>
-  location.pathname === '/blog' ||
-  '/blog/' ||
-  location.pathname.match(POST_REGEX);
+  location.pathname.indexOf('blog') > -1 || location.pathname.match(POST_REGEX);
 
 class Template extends React.Component {
   static defaultPropes = {};
