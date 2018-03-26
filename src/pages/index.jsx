@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
       <Main>
         <GlobalNavigation />
         <Hero />
-        <ServiceList>
+        <ServiceList id="services">
           {services.map(service => (
             <ServiceList.Item {...service} key={service.id} />
           ))}

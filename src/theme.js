@@ -18,7 +18,7 @@ const palette = {
 
 const navPalette = {
   navAccent: palette.purple,
-  navBackgroundOpen: palette.black,
+  navBackground: palette.black,
   navText: palette.grey,
   collapseNavText: palette.spaceBlue,
 };
@@ -45,6 +45,16 @@ function makeTheme(color) {
     monospace: css`
       font-family: 'Anonymous Pro', monospace;
     `,
+  };
+
+  const navHeight = {
+    value: '50px',
+  };
+
+  const zindex = {
+    overlay: '2',
+    content: '1',
+    base: '0',
   };
 
   const typography = {
@@ -99,6 +109,8 @@ function makeTheme(color) {
   return {
     color,
     motion,
+    navHeight,
+    zindex,
     font,
     typography,
     button,
@@ -115,7 +127,7 @@ const darkColors = {
   accent: palette.spaceBlue,
   link: palette.spaceBlue,
   linkHover: transparentize(0.15, palette.spaceBlue),
-  navBackground: palette.blackTransparent,
+  navBackground: navPalette.navBackground,
 };
 
 const lightColors = {
@@ -127,7 +139,7 @@ const lightColors = {
   accent: palette.spaceBlue,
   link: palette.purple,
   linkHover: palette.spaceBlue,
-  navBackground: palette.black,
+  navBackground: navPalette.navBackground,
   overlay: transparentize(0.9, palette.black),
 };
 

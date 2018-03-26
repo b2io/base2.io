@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ContactForm, ContactHeader, ContactInformation } from '../organisms';
 import { Section } from '../atoms';
-import { mediaQuery } from '../../util/style';
+import { mediaQuery, themed } from '../../util/style';
 
 const Wrapper = styled(Section)`
   background: url(img/backgrounds/moon.jpg) center bottom / contain no-repeat;
@@ -17,6 +17,7 @@ const Wrapper = styled(Section)`
 `;
 
 const ContactContent = styled.div`
+  padding-top: ${themed('navHeight.value')};
   position: relative;
 
   ${mediaQuery.medium`
