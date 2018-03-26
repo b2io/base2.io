@@ -24,25 +24,21 @@ const NavBar = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 48px;
-  position: absolute;
+  height: ${themed('navHeight.value')};
+  position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: ${themed('zindex.overlay')};
 
   &.menu-open {
-    background-color: ${themed('color.navBackgroundOpen')};
     height: 100vh;
     transition: height 300ms ease-in;
   }
 
   &.menu-closed {
-    background-color: ${themed('color.navBackground')};
-    height: 48px;
     transition: all 300ms linear 500ms;
   }
 
   ${mediaQuery.small`
-    height: 50px;
     padding: 0 20px;
   `};
 `;

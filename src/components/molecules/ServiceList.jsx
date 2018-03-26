@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { em, rem } from 'polished';
 import { H3, Img, P, LI, TwoToneHeading } from '../atoms';
-import { containerSizing, mediaQuery } from '../../util/style';
+import { containerSizing, mediaQuery, themed } from '../../util/style';
 
 const ServiceList = styled.ul`
   align-items: center;
@@ -12,6 +12,7 @@ const ServiceList = styled.ul`
   flex-direction: column;
   list-style: none;
   padding-left: 0;
+  padding-top: ${themed('navHeight.value')};
   position: relative;
   text-align: center;
 `;
@@ -24,7 +25,7 @@ const Wrapper = styled(LI)`
   max-width: ${rem('1300px')};
   position: relative;
   width: 100%;
-  z-index: 1;
+  z-index: ${themed('zindex.content')};
 
   ${mediaQuery.small`
     align-items: center;
@@ -113,7 +114,7 @@ class ServiceListItem extends React.Component {
     const { image, imgAlt, heading, subheading, description } = this.props;
 
     return (
-      <Wrapper id="services">
+      <Wrapper>
         <ServiceImg {...image} alt={imgAlt} />
         <ServiceText>
           <ServiceHeader>
