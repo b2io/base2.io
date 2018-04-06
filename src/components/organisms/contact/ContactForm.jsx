@@ -51,8 +51,8 @@ class ContactForm extends React.Component {
           <input name="_gotcha" style={{ display: 'none' }} type="text" />
           <input name="_subject" type="hidden" value="Let's work together!" />
           <input name="_next" type="hidden" value="/thanks" />
-          <TextInputField label="Name" name="name" />
-          <TextInputField label="Email" name="email" />
+          <TextInputField label="Name" name="name" required />
+          <TextInputField label="Email" name="email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required />
           <TextInputField label="Phone Number" name="phoneNumber" />
           <TextInputField label="Budget" name="budget" />
           <DescriptionField
@@ -60,6 +60,7 @@ class ContactForm extends React.Component {
             name="leadDescription"
             multiline
             rows="5"
+            required
           />
           <ContactSubmitButton>Submit</ContactSubmitButton>
         </form>

@@ -7,6 +7,7 @@ const palette = {
   black: 'rgba(0, 0, 0, 1.0)',
   blackTransparent: 'rgba(0, 0, 0, 0.3)',
   deepBlue: 'rgba(3, 8, 40, 1.0)',
+  deepPink: 'rgba(139, 42, 109, 1.0)',
   grey: 'rgba(153, 153, 153, 1.0)',
   purple: 'rgba(106, 72, 153, 1.0)',
   spacePurple: 'rgba(205, 124, 255, 1.0)',
@@ -128,6 +129,7 @@ const darkColors = {
   link: palette.spaceBlue,
   linkHover: transparentize(0.15, palette.spaceBlue),
   navBackground: navPalette.navBackground,
+  error: palette.spaceGreen,
 };
 
 const lightColors = {
@@ -141,6 +143,7 @@ const lightColors = {
   linkHover: palette.spaceBlue,
   navBackground: navPalette.navBackground,
   overlay: transparentize(0.9, palette.black),
+  error: palette.deepPink,
 };
 
 const darkTheme = makeTheme(darkColors);

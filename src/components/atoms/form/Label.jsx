@@ -36,12 +36,27 @@ const Label = styled.label`
     width: 10px;
   }
 
-  ${cssSome('isFocused')`
-  &::after {
-  left: 0;
-  visibility: visible;
-  width: 100%;
+  // *:required:not(:empty):invalid + &::before {
+  //   color: magenta !important;
+  //   content: 'Incorrect format, please try again.';
+  // }
+
+  *:required:invalid:empty + &::before {
+    color: ${themed('color.error')};
+    content: '*Required';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    font-size: .75em;
   }
+
+  ${cssSome('isFocused')`
+    &::after {
+      left: 0;
+      visibility: visible;
+      width: 100%;
+    }
   `};
 `;
 
