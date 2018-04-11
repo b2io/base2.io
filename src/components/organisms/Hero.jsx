@@ -17,9 +17,8 @@ const HeroHeader = styled.header`
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: ${themed('color.background')};
-  height: 100vh;
+  height: 110vh;
   padding: 3em 0 0 0;
-  position: relative;
   text-align: center;
 
   ${mediaQuery.small`
@@ -80,17 +79,17 @@ const HeroTagline = styled(P)`
 `;
 
 const SatelliteIndicator = styled.img`
-  margin-top: 0.5em;
   width: 3em;
 
   ${mediaQuery.xsmall`
-    position: absolute;
     left: calc(50% - 21px);
-    bottom: 15px;
+    position: absolute;
+    top: calc(100vh - 100px);
     width: 42px;
   `};
 
   ${mediaQuery.small`
+    margin-top: 0.5em;
     position: relative;
     width: 4em;
   `};
