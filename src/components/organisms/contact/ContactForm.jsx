@@ -53,7 +53,7 @@ class ContactForm extends React.Component {
           <input name="_next" type="hidden" value="/thanks" />
           <TextInputField label="Name" name="name" required />
           <TextInputField label="Email" name="email" type="email" title="your@email.com" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required />
-          <TextInputField label="Phone Number" name="phoneNumber" type="tel" title="10-digit phone number, formatting will be ignored" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" />
+          <TextInputField label="Phone Number" name="phoneNumber" type="tel" title="Please include country code (if applicable) and area code. Formatting will be ignored" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" />
           <TextInputField label="Budget" name="budget" />
           <DescriptionField
             label="Description"
