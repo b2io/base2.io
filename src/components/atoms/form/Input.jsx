@@ -5,6 +5,7 @@ const Input = styled.input`
   background: 0 0;
   border: none;
   border-bottom: 1px solid ${themed('color.spaceBlue')};
+  box-shadow: none;
   color: ${themed('color.text')};
   display: block;
   font-size: 1em;
