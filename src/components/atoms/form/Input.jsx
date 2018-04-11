@@ -10,6 +10,7 @@ const Input = styled.input`
   display: block;
   font-size: 1em;
   margin: 0;
+  outline-color: ${themed('color.spaceBlue')};
   padding: 4px 0;
   text-align: left;
   width: 100%;
