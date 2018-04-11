@@ -25,7 +25,7 @@ const Label = styled.label`
 
   ${cssSome('isDirty')`
     *:invalid + &::after {
-      background: ${themed('color.accent')};
+      background: ${themed('color.error')};
       bottom: 0;
       box-sizing: border-box;
       color: ${themed('color.background')};
@@ -43,6 +43,10 @@ const Label = styled.label`
       content: 'Please enter a valid email address.';
     }
 
+    *:invalid + & {
+      color: ${themed('color.error')};
+    }
+
     *:valid + & {
       color: ${themed('color.spaceGreen')};
     }
@@ -55,7 +59,7 @@ const Label = styled.label`
     top: 0;
     right: 0;
     display: block;
-    font-size: .75em;
+    font-size: 0.75em;
   }
 `;
 

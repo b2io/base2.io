@@ -20,6 +20,12 @@ const Input = styled.input`
       border-bottom: 1px solid ${themed('color.spaceGreen')};
     }
   `};
+
+  ${cssSome('isDirty')`
+    &:invalid {
+      border-bottom: 1px solid  ${themed('color.error')};
+    }
+  `};
 `;
 
 export default Input;

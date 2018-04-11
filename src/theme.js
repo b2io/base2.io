@@ -13,6 +13,7 @@ const palette = {
   spacePurple: 'rgba(205, 124, 255, 1.0)',
   spaceGreen: 'rgba(128, 203, 196, 1.0)',
   spaceBlue: 'rgba(124, 177, 255, 1.0)',
+  spacePink: 'rgba(215, 121, 185, 1.0)',
   transparent: 'rgba(0, 0, 0, 0.0)',
   white: 'rgba(255, 255, 255, 1.0)',
   whiteTransparent: 'rgba(255, 255, 255, 0.3)',
@@ -130,7 +131,7 @@ const darkColors = {
   link: palette.spaceBlue,
   linkHover: transparentize(0.15, palette.spaceBlue),
   navBackground: navPalette.navBackground,
-  error: palette.deepPink,
+  error: palette.spacePink,
 };
 
 const lightColors = {
