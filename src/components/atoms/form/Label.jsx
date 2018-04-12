@@ -46,10 +46,6 @@ const Label = styled.label`
     *:invalid + & {
       color: ${themed('color.error')};
     }
-
-    *:valid + & {
-      color: ${themed('color.spaceGreen')};
-    }
   `};
 
   *:required + &::before {

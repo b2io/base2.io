@@ -15,12 +15,6 @@ const Input = styled.input`
   text-align: left;
   width: 100%;
 
-  ${cssSome('isDirty', 'isFocused')`
-    &:valid {
-      border-bottom: 1px solid ${themed('color.spaceGreen')};
-    }
-  `};
-
   ${cssSome('isDirty')`
     &:invalid {
       border-bottom: 1px solid  ${themed('color.error')};
