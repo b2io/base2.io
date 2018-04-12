@@ -8,6 +8,7 @@ const Input = styled.input`
   box-shadow: none;
   color: ${themed('color.text')};
   display: block;
+  font-family: inherit;
   font-size: 1em;
   margin: 0;
   outline-color: ${themed('color.spaceBlue')};
