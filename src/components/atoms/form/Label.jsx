@@ -5,7 +5,7 @@ const Label = styled.label`
   ${themed('motion.size')};
   ${themed('typography.subheading')};
   bottom: 0;
-  color: ${themed('color.text')};
+  color: ${themed('color.accent')};
   display: block;
   left: 0;
   line-height: 1;
@@ -20,29 +20,43 @@ const Label = styled.label`
 
   ${cssSome('isDirty', 'isFocused')`
   ${themed('typography.caption')};
-    color: ${themed('color.text')};
     top: 4px;
   `};
 
-  &::after {
-    ${themed('motion.size')};
-    background-color: ${themed('color.accent')};
-    bottom: 20px;
-    content: '';
-    height: 1px;
-    left: 45%;
-    position: absolute;
-    visibility: hidden;
-    width: 10px;
-  }
+  ${cssSome('isDirty')`
+    *:invalid + &::after {
+      background: ${themed('color.error')};
+      bottom: 0;
+      box-sizing: border-box;
+      color: ${themed('color.background')};
+      height: 20px;
+      padding: .25em .5em;
+      position: absolute;
+      right: 0;
+    }
 
-  ${cssSome('isFocused')`
-  &::after {
-  left: 0;
-  visibility: visible;
-  width: 100%;
-  }
+    [type="tel"]:invalid + &::after {
+      content: 'Please enter a valid phone number.';
+    }
+
+    [type="email"]:invalid + &::after {
+      content: 'Please enter a valid email address.';
+    }
+
+    *:invalid + & {
+      color: ${themed('color.error')};
+    }
   `};
+
+  *:required + &::before {
+    color: inherit;
+    content: '*Required';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    font-size: 0.75em;
+  }
 `;
 
 export default Label;
