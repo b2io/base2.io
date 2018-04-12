@@ -83,7 +83,7 @@ function TextAreaField(props) {
 }
 
 function TextInputField(props) {
-  return <TextField {...props} input={Input} type="text" />;
+  return <TextField {...props} input={Input} />;
 }
 
 export { TextAreaField, TextInputField };
