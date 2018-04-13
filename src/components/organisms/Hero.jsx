@@ -17,7 +17,7 @@ const HeroHeader = styled.header`
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: ${themed('color.background')};
-  height: 110vh;
+  height: 120vh;
   padding: 3em 0 0 0;
   text-align: center;
 
