@@ -1,22 +1,82 @@
 [
   {
+    "id": "react",
+    "image": "img/rails.png",
+    "name": "React"
+  },
+  {
+    "id": "sass",
+    "image": "img/rails.png",
+    "name": "Sass"
+  },
+  {
+    "id": "redux",
+    "image": "img/rails.png",
+    "name": "Redux"
+  },
+  {
+    "id": "asp-net",
+    "image": "img/asp-net.png",
+    "name": ".NET Framework"
+  },
+  {
+    "id": "karma",
+    "image": "img/rails.png",
+    "name": "Karma"
+  },
+  {
+    "id": "graphql",
+    "image": "img/rails.png",
+    "name": "GraphQL"
+  },
+  {
+    "id": "node",
+    "image": "img/rails.png",
+    "name": "NodeJS"
+  },
+  {
+    "id": "ionic",
+    "image": "img/rails.png",
+    "name": "Ionic"
+  },
+  {
+    "id": "webpack",
+    "image": "img/rails.png",
+    "name": "Webpack"
+  },
+  {
+    "id": "styled-components",
+    "image": "img/rails.png",
+    "name": "Styled Components"
+  },
+  {
+    "id": "rails",
+    "image": "img/rails.png",
+    "name": "Angular.JS"
+  },
+  {
+    "id": "cssnext",
+    "image": "img/rails.png",
+    "name": "CSS Next"
+  },
+  {
     "id": "rails",
     "image": "img/rails.png",
     "name": "Rails"
   },
   {
-    "id": "asp-net",
-    "image": "img/asp-net.png",
-    "name": ".NET"
+    "id": "jest",
+    "image": "img/rails.png",
+    "name": "Jest"
   },
   {
-    "id": "angularjs",
-    "image": "img/angularjs.png",
-    "name": "Angular.JS"
+    "id": "postcss",
+    "image": "img/rails.png",
+    "name": "PostCSS"
   },
   {
-    "id": "phonegap",
-    "image": "img/phonegap.png",
-    "name": "PhoneGap"
+    "id": "jasmine",
+    "image": "img/rails.png",
+    "name": "Jasmine"
   }
 ]
