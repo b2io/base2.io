@@ -1,82 +1,82 @@
 [
   {
     "id": "react",
-    "image": "img/rails.png",
+    "image": "img/technologies/react.png",
     "name": "React"
   },
   {
     "id": "sass",
-    "image": "img/rails.png",
+    "image": "img/technologies/sass.png",
     "name": "Sass"
   },
   {
     "id": "redux",
-    "image": "img/rails.png",
+    "image": "img/technologies/redux.png",
     "name": "Redux"
   },
   {
-    "id": "asp-net",
-    "image": "img/asp-net.png",
+    "id": "netframework",
+    "image": "img/technologies/netframework.png",
     "name": ".NET Framework"
   },
   {
     "id": "karma",
-    "image": "img/rails.png",
+    "image": "img/technologies/karma.png",
     "name": "Karma"
   },
   {
     "id": "graphql",
-    "image": "img/rails.png",
+    "image": "img/technologies/graphql.png",
     "name": "GraphQL"
   },
   {
-    "id": "node",
-    "image": "img/rails.png",
+    "id": "nodejs",
+    "image": "img/technologies/nodejs.png",
     "name": "NodeJS"
   },
   {
     "id": "ionic",
-    "image": "img/rails.png",
+    "image": "img/technologies/ionic.png",
     "name": "Ionic"
   },
   {
     "id": "webpack",
-    "image": "img/rails.png",
+    "image": "img/technologies/webpack.png",
     "name": "Webpack"
   },
   {
     "id": "styled-components",
-    "image": "img/rails.png",
+    "image": "img/technologies/styledcomponents.png",
     "name": "Styled Components"
   },
   {
-    "id": "rails",
-    "image": "img/rails.png",
+    "id": "angular",
+    "image": "img/technologies/angular.png",
     "name": "Angular.JS"
   },
   {
     "id": "cssnext",
-    "image": "img/rails.png",
+    "image": "img/technologies/cssnext.png",
     "name": "CSS Next"
   },
   {
     "id": "rails",
-    "image": "img/rails.png",
+    "image": "img/technologies/rails.png",
     "name": "Rails"
   },
   {
     "id": "jest",
-    "image": "img/rails.png",
+    "image": "img/technologies/jest.png",
     "name": "Jest"
   },
   {
     "id": "postcss",
-    "image": "img/rails.png",
+    "image": "img/technologies/postcss.png",
     "name": "PostCSS"
   },
   {
     "id": "jasmine",
-    "image": "img/rails.png",
+    "image": "img/technologies/jasmine.png",
     "name": "Jasmine"
   }
 ]
