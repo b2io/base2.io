@@ -1,79 +1,56 @@
 [
   {
     "id": "dmiller",
-    "image": "img/dmiller.jpg",
+    "image": "img/team/dmiller.jpg",
     "name": "Drew Miller",
-    "title": "Founder // Developer",
-    "active": true
+    "title": "Founder // Developer"
   },
   {
     "id": "tborres",
-    "image": "img/tborres.jpg",
+    "image": "img/team/tborres.jpg",
     "name": "Tony Borres",
-    "title": "Developer",
-    "active": true
+    "title": "Developer"
   },
   {
     "id": "jridenbaugh",
-    "image": "img/jridenbaugh.jpg",
+    "image": "img/team/jridenbaugh.jpg",
     "name": "Jeff Ridenbaugh",
-    "title": "Developer",
-    "active": true
+    "title": "Developer"
   },
   {
     "id": "chawkins",
-    "image": "img/chawkins.jpg",
+    "image": "img/team/chawkins.jpg",
     "name": "Chris Hawkins",
-    "title": "UX Developer",
-    "active": true
+    "title": "UX Developer"
   },
   {
     "id": "csteinert",
-    "image": "img/csteinert.jpg",
+    "image": "img/team/csteinert.jpg",
     "name": "Caitlin Steinert",
-    "title": "UX Developer",
-    "active": true
+    "title": "UX Developer"
   },
   {
     "id": "sludemann",
-    "image": "img/sludemann.jpg",
+    "image": "img/team/sludemann.jpg",
     "name": "Sean Ludemann",
-    "title": "Developer",
-    "active": true
+    "title": "Developer"
   },
   {
     "id": "khamper",
-    "image": "img/khamper.jpg",
+    "image": "img/team/khamper.jpg",
     "name": "Kim Hamper",
-    "title": "Developer",
-    "active": true
+    "title": "Developer"
   },
   {
     "id": "rdunkle",
-    "image": "img/rdunkle.jpg",
+    "image": "img/team/rdunkle.jpg",
     "name": "Reed Dunkle",
-    "title": "Developer",
-    "active": true
+    "title": "Developer"
   },
   {
     "id": "mkendall",
-    "image": "img/mkendall.jpg",
+    "image": "img/team/mkendall.jpg",
     "name": "Mandy Kendall",
-    "title": "Developer",
-    "active": true
-  },
-  {
-    "id": "zbrown",
-    "image": "img/zbrown.jpg",
-    "name": "Zack Brown",
-    "title": "Founder // Developer",
-    "active": false
-  },
-  {
-    "id": "jstevens",
-    "image": "img/jstevens.jpg",
-    "name": "Jon Stevens",
-    "title": "Developer",
-    "active": false
+    "title": "Developer"
   }
 ]
