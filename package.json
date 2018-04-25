@@ -67,7 +67,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -H 0.0.0.0",
+    "develop": "gatsby develop",
     "lint": "eslint --ext .js,.jsx src",
     "lint:css": "stylelint .js,.jsx src",
     "precommit": "lint-staged",

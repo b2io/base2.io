@@ -24,43 +24,41 @@ const Wrapper = styled(Section)`
 `;
 
 const Description = styled(Blurb)`
+  margin-bottom: 2em;
   max-width: ${rem('750px')};
+  width: 100%;
 `;
 
-class Technologies extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    technologies: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.node.isRequired,
-        image: PropTypes.shape({}).isRequired,
-        name: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
-  };
-
-  render() {
-    const { technologies } = this.props;
-
-    return (
-      <Wrapper id="technologies">
-        <TwoToneHeading>
-          <span>Technological</span> Expertise
-        </TwoToneHeading>
-        <Description>
-          We have a wide range of technical skills, and we’re constantly adding
-          new languages, libraries, and best-practices. Here’s what we’ve been
-          working with lately.
-        </Description>
-        <TechnologiesList>
-          {technologies.map(technology => (
-            <TechnologiesList.Item {...technology} key={technology.id} />
-          ))}
-        </TechnologiesList>
-      </Wrapper>
-    );
-  }
+function Technologies({ technologies }) {
+  return (
+    <Wrapper id="technologies">
+      <TwoToneHeading>
+        <span>Technological</span> Expertise
+      </TwoToneHeading>
+      <Description>
+        We have a wide range of technical skills, and we’re constantly adding
+        new languages, libraries, and best-practices. Here’s what we’ve been
+        working with lately.
+      </Description>
+      <TechnologiesList>
+        {technologies.map(technology => (
+          <TechnologiesList.Item {...technology} key={technology.id} />
+        ))}
+      </TechnologiesList>
+    </Wrapper>
+  );
 }
+
+Technologies.defaultProps = {};
+
+Technologies.propTypes = {
+  technologies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+      image: PropTypes.shape({}).isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default Technologies;

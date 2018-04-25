@@ -26,7 +26,6 @@ const TechnologiesList = styled(UL)`
 `;
 
 const Technology = styled(LI)`
-  display: inline-block;
   margin: ${em('10px')} 0;
   width: 25%;
 

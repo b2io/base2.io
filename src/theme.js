@@ -53,9 +53,9 @@ function makeTheme(color) {
   const rhythm = {
     typography: css`
       font-size: calc(1em + 1vw);
-      line-height: calc(1.2em + 1vw);
+      line-height: calc(1em + 1vw);
     `,
-    space: 'calc(1.4 * 1em)',
+    space: '1em',
   };
 
   const navHeight = {
