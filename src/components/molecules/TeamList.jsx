@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { H4, Img } from '../atoms';
 import { themed } from '../../util/style';
@@ -32,29 +32,25 @@ const Title = styled.small`
   font-weight: normal;
 `;
 
-class TeamListItem extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    image: PropTypes.shape({}).isRequired,
-    name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  };
-
-  render() {
-    const { image, name, title } = this.props;
-
-    return (
-      <Wrapper>
-        <TeamImg {...image} alt={name} />
-        <Name>
-          {name}
-          <Title>{title}</Title>
-        </Name>
-      </Wrapper>
-    );
-  }
+function TeamListItem({ image, name, title }) {
+  return (
+    <Wrapper>
+      <TeamImg {...image} alt={name} />
+      <Name>
+        {name}
+        <Title>{title}</Title>
+      </Name>
+    </Wrapper>
+  );
 }
+
+TeamListItem.defaultProps = {};
+
+TeamListItem.propTypes = {
+  image: PropTypes.shape({}).isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 TeamList.Item = TeamListItem;
 
