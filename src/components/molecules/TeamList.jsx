@@ -20,7 +20,7 @@ const Wrapper = styled(LI)`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 1em 2em;
+  margin: 0 2em 3em;
   text-align: center;
   vertical-align: top;
   width: calc(${imageSize} * 2);
@@ -33,6 +33,7 @@ const Wrapper = styled(LI)`
     &::after {
       content: '';
       display: block;
+      pointer-events: none;
       position: absolute;
       overflow: visible;
     }
@@ -74,7 +75,7 @@ const Title = styled.span`
 function TeamListItem({ image, name, title }) {
   return (
     <Wrapper>
-      <TeamImg {...image} alt={name} />
+      <TeamImg {...image} alt={name} title={name} />
       <P>
         {name}
         <Title>{title}</Title>

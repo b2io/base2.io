@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Section, TwoToneHeading } from '../atoms';
 import { TeamList } from '../molecules';
+import { themed } from '../../util/style';
 
 const Wrapper = styled(Section)`
   background: url('img/backgrounds/star-field.png');
@@ -10,13 +11,14 @@ const Wrapper = styled(Section)`
 
 const TeamHeading = styled(TwoToneHeading)`
   margin-bottom: 1em;
+  padding-top: ${themed('navHeight.value')};
   text-align: center;
 `;
 
 function Team({ team }) {
   return (
-    <Wrapper id="team">
-      <TeamHeading>
+    <Wrapper>
+      <TeamHeading id="team">
         <span>Our</span> People
       </TeamHeading>
       <TeamList>
