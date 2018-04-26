@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { sortBy } from 'lodash';
 import { mapProps } from 'recompose';
 import {
   ContactUs,
@@ -62,7 +63,7 @@ class IndexPage extends React.Component {
         </ServiceList>
         <Technologies technologies={technologies} />
         <Clients clients={clients} />
-        <Team team={team} />
+        <Team team={sortBy(team, ['name'])} />
         <ContactUs />
       </Main>
     );

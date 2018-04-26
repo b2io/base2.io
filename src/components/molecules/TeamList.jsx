@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { H4, Img } from '../atoms';
-import { themed } from '../../util/style';
+import { P, Img } from '../atoms';
 
 const TeamList = styled.ul`
   list-style: none;
@@ -15,6 +14,7 @@ const Wrapper = styled.li`
   display: inline-block;
   margin: 1em;
   vertical-align: top;
+  width: 30%;
 `;
 
 const TeamImg = styled(Img)`
@@ -23,23 +23,18 @@ const TeamImg = styled(Img)`
   width: 260px;
 `;
 
-const Name = H4.extend`
-  ${themed('typography.headline')};
-`;
-
-const Title = styled.small`
+const Title = styled.span`
   display: block;
-  font-weight: normal;
 `;
 
 function TeamListItem({ image, name, title }) {
   return (
     <Wrapper>
       <TeamImg {...image} alt={name} />
-      <Name>
+      <P>
         {name}
         <Title>{title}</Title>
-      </Name>
+      </P>
     </Wrapper>
   );
 }
