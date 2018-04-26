@@ -63,7 +63,8 @@ function makeTheme(color) {
   };
 
   const zindex = {
-    overlay: '2',
+    overlay: '3',
+    dropdown: '2',
     content: '1',
     base: '0',
   };
@@ -140,6 +141,7 @@ const darkColors = {
   link: palette.spaceBlue,
   linkHover: transparentize(0.15, palette.spaceBlue),
   navBackground: navPalette.navBackground,
+  overlay: palette.whiteTransparent,
   error: palette.spacePink,
 };
 

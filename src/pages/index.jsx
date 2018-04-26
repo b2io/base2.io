@@ -44,7 +44,8 @@ class IndexPage extends React.Component {
     ).isRequired,
     team: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.node.isRequired,
+        image: PropTypes.shape({}).isRequired,
+        lastName: PropTypes.string.isRequired,
       }),
     ).isRequired,
   };
@@ -63,7 +64,7 @@ class IndexPage extends React.Component {
         </ServiceList>
         <Technologies technologies={technologies} />
         <Clients clients={clients} />
-        <Team team={sortBy(team, ['name'])} />
+        <Team team={sortBy(team, ['lastName'])} />
         <ContactUs />
       </Main>
     );
@@ -143,6 +144,7 @@ export const pageQuery = graphql`
             }
           }
           name
+          lastName
           title
         }
       }
