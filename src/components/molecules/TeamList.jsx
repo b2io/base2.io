@@ -57,6 +57,7 @@ const Wrapper = styled(LI)`
     border-radius: 50%;
     content: '';
     height: calc(${imageSize.default} / 3);
+    left: 0;
     position: absolute;
     top: calc(${imageSize.default} / 2.75);
     width: calc(${imageSize.default} + 19%);
