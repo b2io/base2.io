@@ -31,8 +31,17 @@ const Wrapper = styled(LI)`
   position: relative;
   vertical-align: top;
 
+  &:nth-of-type(even) {
+    flex-direction: row-reverse;
+
+    p {
+      margin-right: 5%;
+      text-align: right;
+    }
+  }
+
   ${mediaQuery.small`
-    flex-direction: column;
+    flex-direction: column !important;
     margin: 0 4% 3em;
     text-align: center;
     width: 24%;
@@ -135,9 +144,10 @@ const TeamMemberInfo = styled(P)`
 
   ${mediaQuery.small`
     margin-left: 0;
+    margin-right: 0 !important;
     margin-top: .5em;
     max-width: 100%;
-    text-align: center;
+    text-align: center !important;
     width: 100%;
   `};
 `;
