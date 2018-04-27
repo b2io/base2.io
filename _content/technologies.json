@@ -1,22 +1,82 @@
 [
   {
-    "id": "rails",
-    "image": "img/rails.png",
-    "name": "Rails"
+    "id": "react",
+    "image": "img/technologies/react.png",
+    "name": "React"
   },
   {
-    "id": "asp-net",
-    "image": "img/asp-net.png",
-    "name": ".NET"
+    "id": "sass",
+    "image": "img/technologies/sass.png",
+    "name": "Sass"
   },
   {
-    "id": "angularjs",
-    "image": "img/angularjs.png",
+    "id": "redux",
+    "image": "img/technologies/redux.png",
+    "name": "Redux"
+  },
+  {
+    "id": "netframework",
+    "image": "img/technologies/netframework.png",
+    "name": ".NET Framework"
+  },
+  {
+    "id": "karma",
+    "image": "img/technologies/karma.png",
+    "name": "Karma"
+  },
+  {
+    "id": "graphql",
+    "image": "img/technologies/graphql.png",
+    "name": "GraphQL"
+  },
+  {
+    "id": "nodejs",
+    "image": "img/technologies/nodejs.png",
+    "name": "NodeJS"
+  },
+  {
+    "id": "ionic",
+    "image": "img/technologies/ionic.png",
+    "name": "Ionic"
+  },
+  {
+    "id": "webpack",
+    "image": "img/technologies/webpack.png",
+    "name": "Webpack"
+  },
+  {
+    "id": "styled-components",
+    "image": "img/technologies/styledcomponents.png",
+    "name": "Styled Components"
+  },
+  {
+    "id": "angular",
+    "image": "img/technologies/angular.png",
     "name": "Angular.JS"
   },
   {
-    "id": "phonegap",
-    "image": "img/phonegap.png",
-    "name": "PhoneGap"
+    "id": "cssnext",
+    "image": "img/technologies/cssnext.png",
+    "name": "CSS Next"
+  },
+  {
+    "id": "rails",
+    "image": "img/technologies/rails.png",
+    "name": "Rails"
+  },
+  {
+    "id": "jest",
+    "image": "img/technologies/jest.png",
+    "name": "Jest"
+  },
+  {
+    "id": "postcss",
+    "image": "img/technologies/postcss.png",
+    "name": "PostCSS"
+  },
+  {
+    "id": "jasmine",
+    "image": "img/technologies/jasmine.png",
+    "name": "Jasmine"
   }
 ]

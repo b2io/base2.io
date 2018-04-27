@@ -4,6 +4,7 @@ export * from './logos';
 export A from './A';
 export Address from './Address';
 export Blockquote from './Blockquote';
+export Blurb from './Blurb';
 export Button from './Button';
 export CallToAction from './CallToAction';
 export Code from './Code';
