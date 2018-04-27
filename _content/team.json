@@ -1,63 +1,63 @@
 [
   {
     "id": "dmiller",
-    "image": "img/team/dmiller.png",
+    "image": "img/team/dmiller.jpg",
     "name": "Drew Miller",
     "lastName": "Miller",
     "title": "Founder // Developer"
   },
   {
     "id": "tborres",
-    "image": "img/team/tborres.png",
+    "image": "img/team/tborres.jpg",
     "name": "Tony Borres",
     "lastName": "Borres",
     "title": "Developer"
   },
   {
     "id": "jridenbaugh",
-    "image": "img/team/jridenbaugh.png",
+    "image": "img/team/jridenbaugh.jpg",
     "name": "Jeff Ridenbaugh",
     "lastName": "Ridenbaugh",
     "title": "Developer"
   },
   {
     "id": "chawkins",
-    "image": "img/team/chawkins.png",
+    "image": "img/team/chawkins.jpg",
     "name": "Chris Hawkins",
     "lastName": "Hawkins",
     "title": "UX Developer"
   },
   {
     "id": "csteinert",
-    "image": "img/team/csteinert.png",
+    "image": "img/team/csteinert.jpg",
     "name": "Caitlin Steinert",
     "lastName": "Steinert",
     "title": "UX Developer"
   },
   {
     "id": "sludemann",
-    "image": "img/team/sludemann.png",
+    "image": "img/team/sludemann.jpg",
     "name": "Sean Ludemann",
     "lastName": "Ludemann",
     "title": "Developer"
   },
   {
     "id": "khamper",
-    "image": "img/team/khamper.png",
+    "image": "img/team/khamper.jpg",
     "name": "Kim Hamper",
     "lastName": "Hamper",
     "title": "Developer"
   },
   {
     "id": "rdunkle",
-    "image": "img/team/rdunkle.png",
+    "image": "img/team/rdunkle.jpg",
     "name": "Reed Dunkle",
     "lastName": "Dunkle",
     "title": "Developer"
   },
   {
     "id": "mkendall",
-    "image": "img/team/mkendall.png",
+    "image": "img/team/mkendall.jpg",
     "name": "Mandy Kendall",
     "lastName": "Kendall",
     "title": "Developer"
