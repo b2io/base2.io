@@ -50,6 +50,14 @@ function makeTheme(color) {
     `,
   };
 
+  const rhythm = {
+    typography: css`
+      font-size: calc(1em + 1vw);
+      line-height: calc(1em + 1vw);
+    `,
+    space: '1em',
+  };
+
   const navHeight = {
     value: '50px',
   };
@@ -115,6 +123,7 @@ function makeTheme(color) {
     navHeight,
     zindex,
     font,
+    rhythm,
     typography,
     button,
   };

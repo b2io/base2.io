@@ -28,22 +28,20 @@ const ContactContent = styled.div`
   `};
 `;
 
-class ContactUs extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {};
-
-  render() {
-    return (
-      <Wrapper>
-        <ContactHeader />
-        <ContactContent id="contact-us">
-          <ContactForm />
-          <ContactInformation />
-        </ContactContent>
-      </Wrapper>
-    );
-  }
+function ContactUs() {
+  return (
+    <Wrapper>
+      <ContactHeader />
+      <ContactContent id="contact-us">
+        <ContactForm />
+        <ContactInformation />
+      </ContactContent>
+    </Wrapper>
+  );
 }
+
+ContactUs.defaultProps = {};
+
+ContactUs.propTypes = {};
 
 export default ContactUs;
