@@ -8,6 +8,7 @@ import {
   Hero,
   Main,
   ServiceList,
+  Technologies,
 } from '../components';
 import { toNodesWithImage } from '../util/graphql';
 
@@ -32,10 +33,17 @@ class IndexPage extends React.Component {
         description: PropTypes.string.isRequired,
       }),
     ).isRequired,
+    technologies: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+        image: PropTypes.shape({}).isRequired,
+        name: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
   };
 
   render() {
-    const { clients, services } = this.props;
+    const { clients, services, technologies } = this.props;
 
     return (
       <Main>
@@ -46,6 +54,7 @@ class IndexPage extends React.Component {
             <ServiceList.Item {...service} key={service.id} />
           ))}
         </ServiceList>
+        <Technologies technologies={technologies} />
         <Clients clients={clients} />
         <ContactUs />
       </Main>
@@ -57,6 +66,7 @@ function mapPropsToProps({ data }) {
   return {
     clients: toNodesWithImage(data.clients),
     services: toNodesWithImage(data.services),
+    technologies: toNodesWithImage(data.technologies),
   };
 }
 
@@ -94,6 +104,21 @@ export const pageQuery = graphql`
           heading
           subheading
           description
+        }
+      }
+    }
+    technologies: allTechnologiesJson {
+      edges {
+        node {
+          id
+          image {
+            childImageSharp {
+              sizes {
+                ...GatsbyImageSharpSizes_withWebp_noBase64
+              }
+            }
+          }
+          name
         }
       }
     }
