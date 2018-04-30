@@ -38,6 +38,11 @@ const Wrapper = styled(LI)`
       margin-right: 5%;
       text-align: right;
     }
+
+    &::after {
+      left: auto;
+      right: 0;
+    }
   }
 
   ${mediaQuery.small`

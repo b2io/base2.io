@@ -44,6 +44,7 @@ class IndexPage extends React.Component {
     ).isRequired,
     team: PropTypes.arrayOf(
       PropTypes.shape({
+        id: PropTypes.node.isRequired,
         image: PropTypes.shape({}).isRequired,
         lastName: PropTypes.string.isRequired,
       }),
