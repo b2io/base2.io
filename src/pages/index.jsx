@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { sortBy } from 'lodash';
 import { mapProps } from 'recompose';
 import {
   ContactUs,
@@ -8,6 +9,7 @@ import {
   Hero,
   Main,
   ServiceList,
+  Team,
   Technologies,
 } from '../components';
 import { toNodesWithImage } from '../util/graphql';
@@ -40,10 +42,17 @@ class IndexPage extends React.Component {
         name: PropTypes.string.isRequired,
       }),
     ).isRequired,
+    team: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.node.isRequired,
+        image: PropTypes.shape({}).isRequired,
+        lastName: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
   };
 
   render() {
-    const { clients, services, technologies } = this.props;
+    const { clients, services, technologies, team } = this.props;
 
     return (
       <Main>
@@ -56,6 +65,7 @@ class IndexPage extends React.Component {
         </ServiceList>
         <Technologies technologies={technologies} />
         <Clients clients={clients} />
+        <Team team={sortBy(team, ['lastName'])} />
         <ContactUs />
       </Main>
     );
@@ -67,6 +77,7 @@ function mapPropsToProps({ data }) {
     clients: toNodesWithImage(data.clients),
     services: toNodesWithImage(data.services),
     technologies: toNodesWithImage(data.technologies),
+    team: toNodesWithImage(data.team),
   };
 }
 
@@ -119,6 +130,23 @@ export const pageQuery = graphql`
             }
           }
           name
+        }
+      }
+    }
+    team: allTeamJson {
+      edges {
+        node {
+          id
+          image {
+            childImageSharp {
+              sizes {
+                ...GatsbyImageSharpSizes_withWebp_noBase64
+              }
+            }
+          }
+          name
+          lastName
+          title
         }
       }
     }
