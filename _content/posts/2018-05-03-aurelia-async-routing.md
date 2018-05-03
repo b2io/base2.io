@@ -83,7 +83,7 @@ const redirectToLatestRevision = async instruction => {
 };
 ```
 
-On a final note, I'll tell you that before I tried `async`/`await` in the `navigationStrategy`, I tried removing the `/files/:id` route from the routing map, and instead leaving the route to be handled it in our [config.mapUnknownRoutes](http://aurelia.io/docs/routing/configuration#handling-unknown-routes) function.
+On a final note, I'll tell you that before I tried `async`/`await` in the `navigationStrategy`, I tried removing the `/files/:id` route from the routing map, and instead leaving the route to be handled in our [config.mapUnknownRoutes](http://aurelia.io/docs/routing/configuration#handling-unknown-routes) function.
 
 It worked for the async call, because that function is allowed to return a `Promise` which in turn resolves a `RouteConfig` object. It's a worse solution, though, because I had to parse incoming unknown routes and look to see if they were a `/files/:id` route.
 
@@ -114,6 +114,6 @@ const handleUnknownRoutes = instruction => {
 config.mapUnknownRoutes(handleUnknownRoutes);
 ```
 
-I'm fine with the `async`/`await` solution, but given that `mapUnknownRoutes` is allowed to receive a `Promise`, it'd be nice if the `navigationStrategy` could do the same.
+I'm fine with the `async`/`await` solution, but given that `mapUnknownRoutes` is allowed to receive a `Promise`, it'd be nice if the `navigationStrategy` could do the same. I tried that in one of my earlier attempts, though, and it doesn't handle it.
 
 That's all for now. Hope this helps!
