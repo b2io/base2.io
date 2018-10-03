@@ -1,9 +1,10 @@
+import { graphql } from 'gatsby';
 import grayMatter from 'gray-matter';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import remark from 'remark';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import remarkReact from 'remark-react';
 import {
   A,
@@ -31,6 +32,7 @@ import {
   UL,
 } from '../components';
 import { toNodes } from '../util/graphql';
+import { lightTheme } from '../theme';
 
 const PostHeader = styled(Header)`
   margin-top: 4em;
@@ -88,20 +90,9 @@ const markdown = raw => (
   <HoistChildren>{markdownToElement(grayMatter(raw).content)}</HoistChildren>
 );
 
-class PostTemplate extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    author: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-    date: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  };
-
-  render() {
-    const { author, children, date, title } = this.props;
-
-    return (
+function PostTemplate({ author, children, date, title }) {
+  return (
+    <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
         <PostHeader>
@@ -112,9 +103,16 @@ class PostTemplate extends React.Component {
         </PostHeader>
         <PostContent>{children}</PostContent>
       </Main>
-    );
-  }
+    </ThemeProvider>
+  );
 }
+
+PostTemplate.propTypes = {
+  author: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  date: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 function mapPropsToProps({ data }) {
   // TODO: Find a way to resolve the author name more easily.

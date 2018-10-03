@@ -1,10 +1,48 @@
 {
-  "presets": ["react", "es2015", "stage-1",
-    ["env", {
-      "targets": {
-        "browsers": ["ie >= 11", "edge >= 16", "last 2 Chrome versions", "safari >= 10.1", "firefox >= 52", "ChromeAndroid >= 62", "iOS >= 10"]
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
       }
-    }]
+    ],
+    "@babel/plugin-syntax-dynamic-import",
+    "babel-plugin-macros",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": true,
+        "regenerator": true
+      }
+    ]
   ],
-  "plugins": ["add-module-exports"]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "loose": true,
+        "modules": false,
+        "useBuiltIns": "usage",
+        "shippedProposals": true,
+        "targets": {
+          "browsers": [
+            "ie >= 11",
+            "edge >= 16",
+            "last 2 Chrome versions",
+            "safari >= 10.1",
+            "firefox >= 52",
+            "ChromeAndroid >= 62",
+            "iOS >= 10"
+          ]
+        }
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "useBuiltIns": true,
+        "pragma": "React.createElement"
+      }
+    ]
+  ]
 }

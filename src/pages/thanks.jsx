@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import {
   BaseTwoLogoText,
   CallToAction,
@@ -8,6 +8,7 @@ import {
   P,
   Section,
 } from '../components';
+import { darkTheme } from '../theme';
 import { mediaQuery } from '../util/style';
 
 const Wrapper = styled(Main)`
@@ -95,11 +96,9 @@ const GoHome = styled(CallToAction)`
   `};
 `;
 
-class ThanksPage extends React.Component {
-  static defaultProps = {};
-
-  render() {
-    return (
+function ThanksPage() {
+  return (
+    <ThemeProvider theme={darkTheme}>
       <Wrapper>
         <ThanksContent>
           <ThanksMessage>
@@ -117,8 +116,8 @@ class ThanksPage extends React.Component {
           <GoHome href="../">Return Home</GoHome>
         </ThanksContent>
       </Wrapper>
-    );
-  }
+    </ThemeProvider>
+  );
 }
 
 export default ThanksPage;
