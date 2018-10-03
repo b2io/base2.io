@@ -10,12 +10,14 @@ const imageSize = {
 };
 
 const StyledHeader = styled(Header)`
-  margin-top: 4em;
+  display: flex;
+  margin: 4em 0;
 `;
 
 const AstronautImg = styled(Img)`
   border-radius: 50%;
   height: auto;
+  margin-right: 2em;
   position: relative;
   vertical-align: middle;
   width: ${imageSize.default};
@@ -28,6 +30,15 @@ const AstronautImg = styled(Img)`
   ${mediaQuery.large`
     width: ${imageSize.large};
   `};
+`;
+
+const HeaderContent = styled.div`
+  text-align: center;
+`;
+
+const HeaderActions = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const SubText = styled(P)`
@@ -57,10 +68,14 @@ function JobsHeader() {
   return (
     <StyledHeader>
       <AstronautImg src="img/jobs/astronaut.png" />
-      <BaseTwoJobsLogo />
-      <SubText>Help us turn ideas into beautiful software</SubText>
-      <Button>Positions</Button>
-      <Button>Apprenticeships</Button>
+      <HeaderContent>
+        <BaseTwoJobsLogo />
+        <SubText>Help us turn ideas into beautiful software</SubText>
+        <HeaderActions>
+          <Button>Positions</Button>
+          <Button>Apprenticeships</Button>
+        </HeaderActions>
+      </HeaderContent>
     </StyledHeader>
   );
 }
