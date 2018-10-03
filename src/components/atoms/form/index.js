@@ -1,7 +1,7 @@
-import FormField from './FormField';
-import Input from './Input';
-import Label from './Label';
-import Textarea from './Textarea';
+export { default as FormField } from './FormField';
+export { default as Input } from './Input';
+export { default as Label } from './Label';
+export { default as RadioButton } from './RadioButton';
+export { default as Textarea } from './Textarea';
 
 export * from './TextField';
-export { FormField, Input, Label, Textarea };
