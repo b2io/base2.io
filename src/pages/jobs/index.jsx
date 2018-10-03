@@ -1,11 +1,16 @@
 import React from 'react';
-import { GlobalNavigation, Main } from '../../components';
+import { ThemeProvider } from 'styled-components';
+import { darkTheme } from '../../theme';
+import { GlobalNavigation, JobsHeader, Main } from '../../components';
 
 function JobsPage() {
   return (
-    <Main>
-      <GlobalNavigation />
-    </Main>
+    <ThemeProvider theme={darkTheme}>
+      <Main>
+        <GlobalNavigation />
+        <JobsHeader />
+      </Main>
+    </ThemeProvider>
   );
 }
 

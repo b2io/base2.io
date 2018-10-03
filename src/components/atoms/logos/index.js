@@ -1,4 +1,5 @@
+import BaseTwoJobsLogo from './BaseTwoJobsLogo';
 import BaseTwoLogo from './BaseTwoLogo';
 import BaseTwoLogoText from './BaseTwoLogoText';
 
-export { BaseTwoLogo, BaseTwoLogoText };
+export { BaseTwoJobsLogo, BaseTwoLogo, BaseTwoLogoText };
