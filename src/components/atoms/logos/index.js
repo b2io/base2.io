@@ -1,2 +1,4 @@
-export BaseTwoLogoText from './BaseTwoLogoText';
-export BaseTwoLogo from './BaseTwoLogo';
+import BaseTwoLogo from './BaseTwoLogo';
+import BaseTwoLogoText from './BaseTwoLogoText';
+
+export { BaseTwoLogo, BaseTwoLogoText };

@@ -1,5 +1,7 @@
-export FormField from './FormField';
-export Input from './Input';
-export Label from './Label';
-export Textarea from './Textarea';
+import FormField from './FormField';
+import Input from './Input';
+import Label from './Label';
+import Textarea from './Textarea';
+
 export * from './TextField';
+export { FormField, Input, Label, Textarea };

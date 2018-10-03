@@ -1,25 +1,50 @@
+import A from './A';
+import Address from './Address';
+import Blockquote from './Blockquote';
+import Blurb from './Blurb';
+import Button from './Button';
+import CallToAction from './CallToAction';
+import Code from './Code';
+import Del from './Del';
+import EM from './EM';
+import HR from './HR';
+import Icon from './Icon';
+import Img from './Img';
+import LI from './LI';
+import Link from './Link';
+import Main from './Main';
+import OL from './OL';
+import P from './P';
+import Pre from './Pre';
+import Section from './Section';
+import Strong from './Strong';
+import Time from './Time';
+import UL from './UL';
+
 export * from './form';
 export * from './headers';
 export * from './logos';
-export A from './A';
-export Address from './Address';
-export Blockquote from './Blockquote';
-export Blurb from './Blurb';
-export Button from './Button';
-export CallToAction from './CallToAction';
-export Code from './Code';
-export Del from './Del';
-export EM from './EM';
-export HR from './HR';
-export Icon from './Icon';
-export Img from './Img';
-export LI from './LI';
-export Link from './Link';
-export Main from './Main';
-export OL from './OL';
-export P from './P';
-export Pre from './Pre';
-export Section from './Section';
-export Strong from './Strong';
-export Time from './Time';
-export UL from './UL';
+export {
+  A,
+  Address,
+  Blockquote,
+  Blurb,
+  Button,
+  CallToAction,
+  Code,
+  Del,
+  EM,
+  HR,
+  Icon,
+  Img,
+  LI,
+  Link,
+  Main,
+  OL,
+  P,
+  Pre,
+  Section,
+  Strong,
+  Time,
+  UL,
+};

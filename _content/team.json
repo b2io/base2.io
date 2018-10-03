@@ -1,5 +1,6 @@
 [
   {
+    "active": true,
     "id": "dmiller",
     "image": "img/team/dmiller.jpg",
     "name": "Drew Miller",
@@ -7,6 +8,7 @@
     "title": "Founder // Developer"
   },
   {
+    "active": true,
     "id": "tborres",
     "image": "img/team/tborres.jpg",
     "name": "Tony Borres",
@@ -14,6 +16,7 @@
     "title": "Developer"
   },
   {
+    "active": true,
     "id": "jridenbaugh",
     "image": "img/team/jridenbaugh.jpg",
     "name": "Jeff Ridenbaugh",
@@ -21,6 +24,7 @@
     "title": "Developer"
   },
   {
+    "active": true,
     "id": "chawkins",
     "image": "img/team/chawkins.jpg",
     "name": "Chris Hawkins",
@@ -28,6 +32,7 @@
     "title": "UX Developer"
   },
   {
+    "active": true,
     "id": "csteinert",
     "image": "img/team/csteinert.jpg",
     "name": "Caitlin Steinert",
@@ -35,6 +40,7 @@
     "title": "UX Developer"
   },
   {
+    "active": true,
     "id": "sludemann",
     "image": "img/team/sludemann.jpg",
     "name": "Sean Ludemann",
@@ -42,6 +48,7 @@
     "title": "Developer"
   },
   {
+    "active": true,
     "id": "khamper",
     "image": "img/team/khamper.jpg",
     "name": "Kim Hamper",
@@ -49,6 +56,7 @@
     "title": "Developer"
   },
   {
+    "active": true,
     "id": "rdunkle",
     "image": "img/team/rdunkle.jpg",
     "name": "Reed Dunkle",
@@ -56,10 +64,27 @@
     "title": "Developer"
   },
   {
+    "active": true,
     "id": "mkendall",
     "image": "img/team/mkendall.jpg",
     "name": "Mandy Kendall",
     "lastName": "Kendall",
     "title": "Developer"
+  },
+  {
+    "active": false,
+    "id": "jstevens",
+    "image": "img/team/jstevens.jpg",
+    "name": "Jon Stevens",
+    "lastName": "Stevens",
+    "title": "Developer"
+  },
+  {
+    "active": false,
+    "id": "zbrown",
+    "image": "img/team/zbrown.jpg",
+    "name": "Zack Brown",
+    "lastName": "Brown",
+    "title": "Founder // Developer"
   }
 ]
