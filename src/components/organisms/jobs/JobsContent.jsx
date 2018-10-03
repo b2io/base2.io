@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { map } from 'lodash';
 import { A, Button, UL } from '../../atoms';
 import { H2, LI, P, Wrapper } from './common';
 import JobExcerpt from '../../molecules/JobExcerpt';
 import teamImage from '../../../../public/img/base-two-team.jpg';
 import officeCollageImage from '../../../../public/img/base-two-office-collage.jpg';
 
-function JobsContent() {
+function JobsContent({ jobs }) {
   return (
     <Wrapper>
       <H2>We make software for people</H2>
@@ -62,12 +64,11 @@ function JobsContent() {
         Currently, we are looking for people to join us in the following
         positions:
       </P>
-      <JobExcerpt heading="Designer" url="#">
-        Elegant user interface design is an integral part of our work. Using a
-        variety of methods including (but not limited to) user interviews,
-        wireframes, and prototypes, we ensure that the end user’s experience is
-        efficient and enjoyable.
-      </JobExcerpt>
+      {map(jobs, job => (
+        <JobExcerpt heading={job.position} url={job.url}>
+          {job.description}
+        </JobExcerpt>
+      ))}
       <H2>Apprenticeship</H2>
       <P>
         We offer a three-month <A href="#">apprenticeship</A> program for
@@ -83,5 +84,20 @@ function JobsContent() {
     </Wrapper>
   );
 }
+
+JobsContent.propTypes = {
+  jobs: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+      description: PropTypes.string.isRequired,
+      position: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
+JobsContent.defaultProps = {
+  jobs: [],
+};
 
 export default JobsContent;
