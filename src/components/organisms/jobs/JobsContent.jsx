@@ -1,6 +1,8 @@
 import React from 'react';
-import { Button, UL } from '../../atoms';
+import { A, Button, UL } from '../../atoms';
 import { H2, LI, P, Wrapper } from './common';
+import teamImage from '../../../../public/img/base-two-team.jpg';
+import officeCollageImage from '../../../../public/img/base-two-office-collage.jpg';
 
 function JobsContent() {
   return (
@@ -13,7 +15,7 @@ function JobsContent() {
         &mdash; to improve processes around software development and deliver
         user-focused products and applications.
       </P>
-      <img src="jobs-b2-team.png" alt="Our Base Two team" />
+      <img src={teamImage} alt="Our Base Two team" />
       <H2>Our culture promotes team work</H2>
       <P>
         We strive to be a forward-thinking and constantly improving collection
@@ -28,6 +30,7 @@ function JobsContent() {
         business. We believe in hiring individuals who will bring unique and
         creative perspectives to our team.
       </P>
+      <img src={officeCollageImage} alt="Our Base Two team" />
       <H2>We believe in balance</H2>
       <P>
         We offer great benefits so that the
@@ -52,19 +55,24 @@ function JobsContent() {
         We are always looking for amazing people to work with us in Columbus, OH
         and Pittsburgh, PA. If you are a talented and creative individual with
         strong people skills and experience building web applications with the
-        latest front-end technologies, please apply.
+        latest front-end technologies, please <A href="#">apply</A>.
       </P>
-      <Button>Apply</Button>
+      <P>
+        Currently, we are looking for people to join us in the following
+        positions:
+      </P>
       <H2>Apprenticeship</H2>
       <P>
-        We offer a three-month apprenticeship program for individuals who are
-        getting started with web development. Apprentices have the opportunity
-        to dive into real work with support and mentorship from our team along
-        the way. Our goal is to ensure that apprentices are employable by the
-        end of their time with us. [Linked to Reed’s blog post] Read more about
-        our apprenticeship here.
+        We offer a three-month <A href="#">apprenticeship</A> program for
+        individuals who are getting started with web development. Apprentices
+        have the opportunity to dive into real work with support and mentorship
+        from our team along the way. Our goal is to ensure that apprentices are
+        employable by the end of their time with us.{' '}
+        <A href="https://www.base2.io/2017/01/03/apprenticeship-month-1">
+          Read more about our apprenticeship here
+        </A>.
       </P>
-      <Button>Apply</Button>
+      <Button>Apply to be an Apprentice</Button>
     </Wrapper>
   );
 }
