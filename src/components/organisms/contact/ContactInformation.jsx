@@ -57,7 +57,7 @@ const ContactInformation = () => (
       </A>
     </InfoGroup>
     <InfoGroup>
-      <Link to="/#jobs">Join Our Team</Link>
+      <Link to="/jobs">Join Our Team</Link>
     </InfoGroup>
   </BaseTwoAddress>
 );
