@@ -1,6 +1,8 @@
+import Clients from './Clients';
+import ContactUs from './ContactUs';
+import Hero from './Hero';
+import Team from './Team';
+import Technologies from './Technologies';
+
 export * from './contact';
-export Clients from './Clients';
-export ContactUs from './ContactUs';
-export Hero from './Hero';
-export Team from './Team';
-export Technologies from './Technologies';
+export { Clients, ContactUs, Hero, Team, Technologies };

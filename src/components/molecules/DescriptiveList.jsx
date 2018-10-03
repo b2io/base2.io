@@ -7,34 +7,28 @@ const Header = styled.header`
   margin: 0 0 1em;
 `;
 
-const ItemH3 = H3.extend`
+const ItemH3 = styled(H3)`
   display: inline-block;
   margin: 0 0 0 1rem;
 `;
 
-class DescriptiveListItem extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-    iconName: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  };
-
-  render() {
-    const { children, iconName, title } = this.props;
-
-    return (
-      <li>
-        <Header>
-          <Icon name={iconName} style={{ fontSize: '3em' }} />
-          <ItemH3>{title}</ItemH3>
-        </Header>
-        {children}
-      </li>
-    );
-  }
+function DescriptiveListItem({ children, iconName, title }) {
+  return (
+    <li>
+      <Header>
+        <Icon name={iconName} style={{ fontSize: '3em' }} />
+        <ItemH3>{title}</ItemH3>
+      </Header>
+      {children}
+    </li>
+  );
 }
+
+DescriptiveListItem.propTypes = {
+  children: PropTypes.node.isRequired,
+  iconName: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 const DescriptiveList = styled.ul`
   list-style: none;

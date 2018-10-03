@@ -307,4 +307,6 @@ class GlobalNavigation extends React.Component {
   }
 }
 
-export default windowSize(GlobalNavigation);
+export default (typeof window !== 'undefined'
+  ? windowSize(GlobalNavigation)
+  : GlobalNavigation);
