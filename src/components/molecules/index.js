@@ -1,21 +1,10 @@
-import ClientList from './ClientList';
-import DescriptiveList from './DescriptiveList';
-import GlobalNavigation from './GlobalNavigation';
-import JobsHeader from './JobsHeader';
-import PostExcerpt from './PostExcerpt';
-import ScrollLink from './ScrollLink';
-import ServiceList from './ServiceList';
-import TeamList from './TeamList';
-import TechnologiesList from './TechnologiesList';
-
-export {
-  ClientList,
-  DescriptiveList,
-  GlobalNavigation,
-  JobsHeader,
-  PostExcerpt,
-  ScrollLink,
-  ServiceList,
-  TeamList,
-  TechnologiesList,
-};
+export { default as ClientList } from './ClientList';
+export { default as DescriptiveList } from './DescriptiveList';
+export { default as GlobalNavigation } from './GlobalNavigation';
+export { default as JobsHeader } from './JobsHeader';
+export { default as JobsHeaderSmall } from './JobsHeaderSmall';
+export { default as PostExcerpt } from './PostExcerpt';
+export { default as ScrollLink } from './ScrollLink';
+export { default as ServiceList } from './ServiceList';
+export { default as TeamList } from './TeamList';
+export { default as TechnologiesList } from './TechnologiesList';
