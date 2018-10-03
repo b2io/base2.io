@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { em } from 'polished';
-import { Button, TextAreaField, TextInputField } from '../../atoms';
+import {
+  Button,
+  RadioButton,
+  TextAreaField,
+  TextInputField,
+} from '../../atoms';
 import { mediaQuery } from '../../../util/style';
 
 const Wrapper = styled.div`
@@ -39,10 +44,21 @@ const SubmitButton = styled(Button)`
 function JobForm({ isApprenticeship }) {
   return (
     <Wrapper>
-      <form action="https://formspree.io/info@base2.io" method="POST">
-        <input name="_gotcha" style={{ display: 'none' }} type="text" />
-        <input name="_subject" type="hidden" value="Let's work together!" />
-        <input name="_next" type="hidden" value="/thanks" />
+      <form
+        action="https://getsimpleform.com/messages?form_api_token=3e1c2d5870538837aed43b89c13caa41"
+        encType="multipart/form-data"
+        method="post"
+      >
+        <input
+          type="hidden"
+          name="redirect_to"
+          value="http://base2.io/thanks/"
+        />
+        <input
+          type="hidden"
+          name="job_type"
+          value={isApprenticeship ? 'Apprenticeship' : 'Regular Job'}
+        />
         <TextInputField label="Name" name="name" required />
         <TextInputField
           label="Email"
@@ -102,10 +118,17 @@ function JobForm({ isApprenticeship }) {
               multiline
               rows="5"
             />
-            <TextInputField label="Please upload your resume" name="website" />
+            <TextInputField
+              label="Please upload your resume"
+              type="file"
+              name="resume"
+              multiple
+            />
           </>
         )}
         Nearest BaseTwo Location:
+        <RadioButton label="Columbus" name="location" value="columbus" />
+        <RadioButton label="Pittsburgh" name="location" value="pittsburgh" />
         <TextAreaField
           label="Anything else you would like to mention?"
           name="anythingElse"
