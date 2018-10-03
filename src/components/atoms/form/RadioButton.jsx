@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
 import nanoid from 'nanoid';
 import PropTypes from 'prop-types';
+import React from 'react';
+import styled from 'styled-components';
 import { themed } from '../../../util/style';
 
 const Label = styled.label`
@@ -16,7 +16,7 @@ const RadioInput = styled.input.attrs({
   margin-right: 0.5em;
 `;
 
-function RadioButton({ id, label, ...rest }) {
+function RadioButton({ id = nanoid(), label, ...rest }) {
   return (
     <Label htmlFor={id}>
       <RadioInput {...rest} id={id} />
@@ -24,13 +24,14 @@ function RadioButton({ id, label, ...rest }) {
     </Label>
   );
 }
+
 RadioButton.defaultProps = {
-  id: nanoid(),
+  id: undefined,
 };
 
 RadioButton.propTypes = {
-  id: PropTypes.string,
   label: PropTypes.node.isRequired,
+  id: PropTypes.string,
 };
 
 export default RadioButton;
