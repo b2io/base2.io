@@ -4,7 +4,7 @@ import { themed } from '../../util/style';
 
 const Code = styled.code`
   ${themed('font.monospace')};
-  background: ${themed('color.overlay')};
+  background: ${themed('color.greyLight')};
   padding: 0 ${em('2px')};
 `;
 

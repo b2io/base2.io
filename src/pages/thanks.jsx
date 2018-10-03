@@ -110,7 +110,7 @@ function ThanksPage() {
             </ThanksText>
             <ThanksText>Sincerely,</ThanksText>
             <BaseTwoLogo>
-              <BaseTwoLogoText />
+              <BaseTwoLogoText id="thanks-logo" />
             </BaseTwoLogo>
           </ThanksMessage>
           <GoHome href="../">Return Home</GoHome>
