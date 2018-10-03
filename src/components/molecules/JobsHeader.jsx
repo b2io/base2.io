@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { BaseTwoJobsLogo, Button, Header, Img, P } from '../atoms';
+import { BaseTwoJobsLogo, Button, Header, P } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
+import BlueAstronautSVG from '../../../static/img/jobs/BlueAstronaut.svg';
 
-const imageSize = {
-  default: '260px',
-  medium: '360px',
-  large: '435px',
-};
+// const imageSize = {
+//   default: '260px',
+//   medium: '360px',
+//   large: '435px',
+// };
 
 const StyledHeader = styled(Header)`
   align-items: center;
@@ -20,23 +21,23 @@ const StyledHeader = styled(Header)`
   `};
 `;
 
-const AstronautImg = styled(Img)`
-  border-radius: 50%;
-  height: auto;
-  position: relative;
-  vertical-align: middle;
-  width: ${imageSize.default};
-  z-index: 1;
+// const AstronautImg = styled(Img)`
+//   border-radius: 50%;
+//   height: auto;
+//   position: relative;
+//   vertical-align: middle;
+//   width: ${imageSize.default};
+//   z-index: 1;
 
-  ${mediaQuery.medium`
-    margin-right: 2em;
-    width: ${imageSize.medium};
-  `};
+//   ${mediaQuery.medium`
+//     margin-right: 2em;
+//     width: ${imageSize.medium};
+//   `};
 
-  ${mediaQuery.large`
-    width: ${imageSize.large};
-  `};
-`;
+//   ${mediaQuery.large`
+//     width: ${imageSize.large};
+//   `};
+// `;
 
 const HeaderContent = styled.div`
   text-align: center;
@@ -89,7 +90,7 @@ const JobsButton = styled(Button)`
 function JobsHeader() {
   return (
     <StyledHeader>
-      <AstronautImg src="img/jobs/astronaut.png" />
+      <BlueAstronautSVG />
       <HeaderContent>
         <BaseTwoJobsLogo />
         <SubText>Help us turn ideas into beautiful software</SubText>
