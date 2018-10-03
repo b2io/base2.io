@@ -5,39 +5,39 @@ import { BaseTwoJobsLogo, Button, Header, P } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 import BlueAstronautSVG from '../../../static/img/jobs/BlueAstronaut.svg';
 
-// const imageSize = {
-//   default: '260px',
-//   medium: '360px',
-//   large: '435px',
-// };
+const imageSize = {
+  default: '260px',
+  medium: '360px',
+  large: '435px',
+};
 
 const StyledHeader = styled(Header)`
   align-items: center;
+  background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
+    100% no-repeat;
   margin: 4em 0;
+  padding-top: 4em;
   text-align: center;
 
   ${mediaQuery.small`
+  align-content: center;
   display: flex;
   `};
 `;
 
-// const AstronautImg = styled(Img)`
-//   border-radius: 50%;
-//   height: auto;
-//   position: relative;
-//   vertical-align: middle;
-//   width: ${imageSize.default};
-//   z-index: 1;
+const AstronautImg = styled(BlueAstronautSVG)`
+  height: auto;
+  width: ${imageSize.default};
 
-//   ${mediaQuery.medium`
-//     margin-right: 2em;
-//     width: ${imageSize.medium};
-//   `};
+  ${mediaQuery.medium`
+    margin-right: 2em;
+    width: ${imageSize.medium};
+  `};
 
-//   ${mediaQuery.large`
-//     width: ${imageSize.large};
-//   `};
-// `;
+  ${mediaQuery.large`
+    width: ${imageSize.large};
+  `};
+`;
 
 const HeaderContent = styled.div`
   text-align: center;
@@ -90,7 +90,7 @@ const JobsButton = styled(Button)`
 function JobsHeader() {
   return (
     <StyledHeader>
-      <BlueAstronautSVG />
+      <AstronautImg />
       <HeaderContent>
         <BaseTwoJobsLogo />
         <SubText>Help us turn ideas into beautiful software</SubText>
