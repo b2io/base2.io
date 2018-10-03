@@ -29,14 +29,17 @@ const StyledHeader = styled(Header)`
 const AstronautImg = styled(BlueAstronautSVG)`
   height: auto;
   margin-bottom: 2em;
+  min-height: 256px;
   width: ${imageSize.default};
 
   ${mediaQuery.medium`
     margin-right: 2em;
+    min-height: 354px;
     width: ${imageSize.medium};
   `};
 
   ${mediaQuery.large`
+    min-height: 427px;
     width: ${imageSize.large};
   `};
 `;
