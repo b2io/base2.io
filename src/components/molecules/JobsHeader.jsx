@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BaseTwoJobsLogo, Header, Img, P } from '../atoms';
+import { BaseTwoJobsLogo, Button, Header, Img, P } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 
 const imageSize = {
@@ -8,6 +8,10 @@ const imageSize = {
   medium: '110px',
   large: '150px',
 };
+
+const StyledHeader = styled(Header)`
+  margin-top: 4em;
+`;
 
 const AstronautImg = styled(Img)`
   border-radius: 50%;
@@ -51,11 +55,13 @@ const SubText = styled(P)`
 
 function JobsHeader() {
   return (
-    <Header>
+    <StyledHeader>
       <AstronautImg src="../../_content/team/chawkins.jpg" />
       <BaseTwoJobsLogo />
       <SubText>Help us turn ideas into beautiful software</SubText>
-    </Header>
+      <Button>Positions</Button>
+      <Button>Apprenticeships</Button>
+    </StyledHeader>
   );
 }
 
