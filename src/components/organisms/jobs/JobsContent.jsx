@@ -1,6 +1,7 @@
 import React from 'react';
 import { A, Button, UL } from '../../atoms';
 import { H2, LI, P, Wrapper } from './common';
+import JobExcerpt from '../../molecules/JobExcerpt';
 import teamImage from '../../../../public/img/base-two-team.jpg';
 import officeCollageImage from '../../../../public/img/base-two-office-collage.jpg';
 
@@ -61,6 +62,12 @@ function JobsContent() {
         Currently, we are looking for people to join us in the following
         positions:
       </P>
+      <JobExcerpt heading="Designer" url="#">
+        Elegant user interface design is an integral part of our work. Using a
+        variety of methods including (but not limited to) user interviews,
+        wireframes, and prototypes, we ensure that the end user’s experience is
+        efficient and enjoyable.
+      </JobExcerpt>
       <H2>Apprenticeship</H2>
       <P>
         We offer a three-month <A href="#">apprenticeship</A> program for

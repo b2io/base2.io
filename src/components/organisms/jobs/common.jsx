@@ -1,5 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { em } from 'polished';
 import styled, { css } from 'styled-components';
 import { H2 as Heading2 } from '../../atoms';
@@ -10,18 +8,21 @@ const text = css`
   line-height: 1.35;
 
   ${mediaQuery.small`
-    font-size: ${em('20px')};
+    font-size: ${em('28px')};
   `};
 
   ${mediaQuery.medium`
-    font-size: ${em('28px')};
+    font-size: ${em('36px')};
   `};
 `;
 
-const H2 = ({ children }) => <Heading2 dark>{children}</Heading2>;
-H2.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+const H2 = styled(Heading2).attrs({ dark: true })`
+  font-size: ${em('24px')};
+
+  ${mediaQuery.medium`
+    font-size: ${em('48px')};
+  `};
+`;
 
 const P = styled.p`
   ${text};
