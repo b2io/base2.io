@@ -1,3 +1,5 @@
-export Header from './Header';
+import Header from './Header';
+import TwoToneHeading from './TwoToneHeading';
+
 export * from './headings';
-export TwoToneHeading from './TwoToneHeading';
+export { Header, TwoToneHeading };

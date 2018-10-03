@@ -39,35 +39,29 @@ const ClientsHeading = styled(TwoToneHeading)`
   text-align: center;
 `;
 
-class Clients extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    clients: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.node.isRequired,
-        image: PropTypes.shape({}).isRequired,
-        name: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
-  };
-
-  render() {
-    const { clients } = this.props;
-
-    return (
-      <Wrapper id="clients">
-        <ClientsHeading>
-          <span>We</span> Collaborate
-        </ClientsHeading>
-        <ClientList>
-          {clients.map(client => (
-            <ClientList.Item {...client} key={client.id} />
-          ))}
-        </ClientList>
-      </Wrapper>
-    );
-  }
+function Clients({ clients }) {
+  return (
+    <Wrapper id="clients">
+      <ClientsHeading>
+        <span>We</span> Collaborate
+      </ClientsHeading>
+      <ClientList>
+        {clients.map(client => (
+          <ClientList.Item {...client} key={client.id} />
+        ))}
+      </ClientList>
+    </Wrapper>
+  );
 }
+
+Clients.propTypes = {
+  clients: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+      image: PropTypes.shape({}).isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default Clients;

@@ -128,7 +128,7 @@ const scroll = {
 function ContactHeader() {
   return (
     <Wrapper>
-      <BaseTwoLogoText />
+      <BaseTwoLogoText id="contact-header-logo" />
       <LocationText>
         is located in <strong>Columbus, OH</strong> and{' '}
         <strong>Pittsburgh, PA</strong>.
