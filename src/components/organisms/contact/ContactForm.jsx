@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
-import {
-  Button,
-  RadioButton,
-  TextAreaField,
-  TextInputField,
-} from '../../atoms';
+import { Button, TextAreaField, TextInputField } from '../../atoms';
 import { mediaQuery } from '../../../util/style';
 
 const Wrapper = styled.div`
@@ -44,49 +39,34 @@ const ContactSubmitButton = styled(Button)`
   `};
 `;
 
-function ContactForm() {
-  return (
-    <Wrapper>
-      <form action="https://formspree.io/info@base2.io" method="POST">
-        <input name="_gotcha" style={{ display: 'none' }} type="text" />
-        <input name="_subject" type="hidden" value="Let's work together!" />
-        <input name="_next" type="hidden" value="/thanks" />
-        <div>
-          <RadioButton name="city" label="Columbus" value="columbus" />
-          <RadioButton name="city" label="Pittsburgh" value="pittsburgh" />
-        </div>
-        <TextInputField label="Name" name="name" required />
-        <TextInputField
-          label="Email"
-          name="email"
-          type="email"
-          title="your@email.com"
-          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-          required
-        />
-        <TextInputField
-          label="Phone Number"
-          name="phoneNumber"
-          type="tel"
-          title="Please include country code (if applicable) and area code. Formatting will be ignored"
-          pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
-        />
-        <TextInputField label="Budget" name="budget" />
-        <DescriptionField
-          label="Description"
-          name="leadDescription"
-          multiline
-          rows="5"
-          required
-        />
-        <ContactSubmitButton>Submit</ContactSubmitButton>
-      </form>
-    </Wrapper>
-  );
+class ContactForm extends React.Component {
+  static defaultProps = {};
+
+  static propTypes = {};
+
+  render() {
+    return (
+      <Wrapper>
+        <form action="https://formspree.io/info@base2.io" method="POST">
+          <input name="_gotcha" style={{ display: 'none' }} type="text" />
+          <input name="_subject" type="hidden" value="Let's work together!" />
+          <input name="_next" type="hidden" value="/thanks" />
+          <TextInputField label="Name" name="name" required />
+          <TextInputField label="Email" name="email" type="email" title="your@email.com" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required />
+          <TextInputField label="Phone Number" name="phoneNumber" type="tel" title="Please include country code (if applicable) and area code. Formatting will be ignored" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" />
+          <TextInputField label="Budget" name="budget" />
+          <DescriptionField
+            label="Description"
+            name="leadDescription"
+            multiline
+            rows="5"
+            required
+          />
+          <ContactSubmitButton>Submit</ContactSubmitButton>
+        </form>
+      </Wrapper>
+    );
+  }
 }
-
-ContactForm.defaultProps = {};
-
-ContactForm.propTypes = {};
 
 export default ContactForm;
