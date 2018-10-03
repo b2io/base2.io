@@ -15,8 +15,8 @@ const StyledHeader = styled(Header)`
   align-items: center;
   background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
     100% no-repeat;
+  justify-content: center;
   margin: 4em 0;
-
   text-align: center;
 
   ${mediaQuery.medium`
@@ -46,6 +46,10 @@ const HeaderContent = styled.div`
   flex-grow: 1;
   margin: 0 auto;
   max-width: 40rem;
+
+  ${mediaQuery.medium`
+    margin: 0;
+  `};
 `;
 
 const HeaderActions = styled.div`
