@@ -1,0 +1,1 @@
+export JobsContent from './JobsContent';

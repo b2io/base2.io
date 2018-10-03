@@ -1,17 +1,17 @@
 import React from 'react';
-import { Button, H2, LI, P, Strong, UL } from '../../atoms';
-import { JobExcerpt } from '../../molecules';
+import { Button, UL } from '../../atoms';
+import { H2, LI, P, Wrapper } from './common';
 
 function JobsContent() {
   return (
-    <>
+    <Wrapper>
       <H2>We make software for people</H2>
       <P>
         We are Base Two, a multi-city company of experienced developers working
         together to turn ideas into beautiful software. We work as individuals
-        and teams with small and large companies - local and abroad - to improve
-        processes around software development and deliver user-focused products
-        and applications.
+        and teams with small and large companies &mdash; local and abroad
+        &mdash; to improve processes around software development and deliver
+        user-focused products and applications.
       </P>
       <img src="jobs-b2-team.png" alt="Our Base Two team" />
       <H2>Our culture promotes team work</H2>
@@ -30,8 +30,9 @@ function JobsContent() {
       </P>
       <H2>We believe in balance</H2>
       <P>
-        We offer great benefits so that the <Strong>life</Strong> portion of
-        work-life balance can be more enjoyable and less stressful.
+        We offer great benefits so that the
+        &lt;strong&gt;life&lt;&#47;strong&gt; portion of work-life balance can
+        be more enjoyable and less stressful.
       </P>
       <UL>
         <LI>
@@ -53,16 +54,7 @@ function JobsContent() {
         strong people skills and experience building web applications with the
         latest front-end technologies, please apply.
       </P>
-      <P>
-        Currently, we are looking for people to join us in the following
-        positions:
-      </P>
-      <JobExcerpt heading="Designer" url="#">
-        Elegant user interface design is an integral part of our work. Using a
-        variety of methods including (but not limited to) user interviews,
-        wireframes, and prototypes, we ensure that the end user’s experience is
-        efficient and enjoyable.
-      </JobExcerpt>
+      <Button>Apply</Button>
       <H2>Apprenticeship</H2>
       <P>
         We offer a three-month apprenticeship program for individuals who are
@@ -72,8 +64,8 @@ function JobsContent() {
         end of their time with us. [Linked to Reed’s blog post] Read more about
         our apprenticeship here.
       </P>
-      <Button>Apply to be an Apprentice</Button>
-    </>
+      <Button>Apply</Button>
+    </Wrapper>
   );
 }
 

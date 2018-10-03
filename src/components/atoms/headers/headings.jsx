@@ -12,6 +12,8 @@ const H1 = styled.h1`
 `;
 
 const H2 = styled.h2`
+  color: ${props =>
+    props.dark ? props.theme.color.spacePurple : props.theme.color.white};
   font-size: 2em;
   font-weight: 100;
   text-transform: capitalize;
