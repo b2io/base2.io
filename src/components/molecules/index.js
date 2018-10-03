@@ -1,6 +1,7 @@
 export ClientList from './ClientList';
 export DescriptiveList from './DescriptiveList';
 export GlobalNavigation from './GlobalNavigation';
+export JobsHeader from './JobsHeader';
 export PostExcerpt from './PostExcerpt';
 export ScrollLink from './ScrollLink';
 export ServiceList from './ServiceList';
