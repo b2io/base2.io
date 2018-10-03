@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
-import { Button, TextAreaField, TextInputField } from '../../atoms';
+import {
+  Button,
+  RadioButton,
+  TextAreaField,
+  TextInputField,
+} from '../../atoms';
 import { mediaQuery } from '../../../util/style';
 
 const Wrapper = styled.div`
@@ -51,9 +56,25 @@ class ContactForm extends React.Component {
           <input name="_gotcha" style={{ display: 'none' }} type="text" />
           <input name="_subject" type="hidden" value="Let's work together!" />
           <input name="_next" type="hidden" value="/thanks" />
+          <RadioButton />
+          <RadioButton />
+          <input type="radio" />
           <TextInputField label="Name" name="name" required />
-          <TextInputField label="Email" name="email" type="email" title="your@email.com" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" required />
-          <TextInputField label="Phone Number" name="phoneNumber" type="tel" title="Please include country code (if applicable) and area code. Formatting will be ignored" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" />
+          <TextInputField
+            label="Email"
+            name="email"
+            type="email"
+            title="your@email.com"
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+            required
+          />
+          <TextInputField
+            label="Phone Number"
+            name="phoneNumber"
+            type="tel"
+            title="Please include country code (if applicable) and area code. Formatting will be ignored"
+            pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+          />
           <TextInputField label="Budget" name="budget" />
           <DescriptionField
             label="Description"
