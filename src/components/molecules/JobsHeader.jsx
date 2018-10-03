@@ -16,17 +16,19 @@ const StyledHeader = styled(Header)`
   background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
     100% no-repeat;
   margin: 4em 0;
-  padding-top: 4em;
+
   text-align: center;
 
-  ${mediaQuery.small`
+  ${mediaQuery.medium`
   align-content: center;
   display: flex;
+  padding-top: 4em;
   `};
 `;
 
 const AstronautImg = styled(BlueAstronautSVG)`
   height: auto;
+  margin-bottom: 2em;
   width: ${imageSize.default};
 
   ${mediaQuery.medium`
@@ -42,6 +44,8 @@ const AstronautImg = styled(BlueAstronautSVG)`
 const HeaderContent = styled.div`
   text-align: center;
   flex-grow: 1;
+  margin: 0 auto;
+  max-width: 40rem;
 `;
 
 const HeaderActions = styled.div`
