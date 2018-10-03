@@ -56,7 +56,7 @@ const SubText = styled(P)`
 function JobsHeader() {
   return (
     <StyledHeader>
-      <AstronautImg src="../../_content/team/chawkins.jpg" />
+      <AstronautImg src="img/jobs/astronaut.png" />
       <BaseTwoJobsLogo />
       <SubText>Help us turn ideas into beautiful software</SubText>
       <Button>Positions</Button>
