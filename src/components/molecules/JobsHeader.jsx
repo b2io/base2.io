@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { rem } from 'polished';
+import { em, rem } from 'polished';
 import { BaseTwoJobsLogo, Button, Header, P } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 import BlueAstronautSVG from '../../../static/img/jobs/BlueAstronaut.svg';
@@ -68,8 +68,8 @@ const SubText = styled(P)`
   font-size: 1.15em;
   font-style: italic;
   font-weight: 100;
-  margin-top: 7px;
-  margin-bottom: 73px;
+  margin-top: ${em('7px')};
+  margin-bottom: ${em('73px')};
   text-shadow: 1px 1px 4px ${themed('color.background')};
 
   ${mediaQuery.small`
@@ -79,12 +79,12 @@ const SubText = styled(P)`
 
   ${mediaQuery.medium`
     font-size: 2.0rem;
-    margin-top: 14px;
+    margin-top: ${em('14px')};
   `};
 
   ${mediaQuery.large`
     font-size: 2.25rem;
-    margin-bottom: 62px;
+    margin-bottom: ${em('62px')};
   `};
 `;
 
@@ -92,7 +92,7 @@ const JobsButton = styled(Button)`
   font-size: ${rem('18px')};
   padding: ${rem('15px')} 0;
   margin-bottom: 2em;
-  width: 280px;
+  width: ${em('280px')};
 `;
 
 function JobsHeader() {
