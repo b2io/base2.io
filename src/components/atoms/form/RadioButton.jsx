@@ -1,6 +1,7 @@
+import nanoid from 'nanoid';
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import nanoid from 'nanoid';
 import { themed } from '../../../util/style';
 
 const Label = styled.label`
@@ -23,5 +24,14 @@ function RadioButton({ id = nanoid(), label, ...rest }) {
     </Label>
   );
 }
+
+RadioButton.defaultProps = {
+  id: undefined,
+};
+
+RadioButton.propTypes = {
+  label: PropTypes.node.isRequired,
+  id: PropTypes.string,
+};
 
 export default RadioButton;
