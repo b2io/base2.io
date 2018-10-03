@@ -1,16 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 import nanoid from 'nanoid';
 import FormField from './FormField';
-// import styled from 'styled-components';
-// import { cssSome, themed } from '../../../util/style';
+
+const Label = styled.label`
+  display: block;
+`;
+
+const RadioInput = styled.input.attrs({
+  type: 'radio',
+})`
+  margin-right: 0.5em;
+`;
 
 function RadioButton({ id = nanoid(), label, ...rest }) {
   return (
     <FormField>
-      <label htmlFor={id}>
-        <input {...rest} id={id} type="radio" />
+      <Label htmlFor={id}>
+        <RadioInput {...rest} id={id} />
         {label}
-      </label>
+      </Label>
     </FormField>
   );
 }
