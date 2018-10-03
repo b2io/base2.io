@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { darkTheme } from '../../theme';
 import { GlobalNavigation, JobsHeaderSmall, Main } from '../../components';
 
-function JobsPageForm() {
+function Apply() {
   return (
     <ThemeProvider theme={darkTheme}>
       <Main>
@@ -14,4 +14,4 @@ function JobsPageForm() {
   );
 }
 
-export default JobsPageForm;
+export default Apply;

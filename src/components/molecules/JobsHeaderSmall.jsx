@@ -13,8 +13,8 @@ const imageSize = {
 
 const StyledHeader = styled(Header)`
   align-items: center;
-  background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
-    100% no-repeat;
+  background: url('../img/backgrounds/space-fog-purple.png') bottom center /
+    auto 100% no-repeat;
   justify-content: center;
   margin: 4em 0;
   text-align: center;
@@ -61,7 +61,6 @@ const SubText = styled(P)`
   font-style: italic;
   font-weight: 100;
   margin-top: ${em('7px')};
-  margin-bottom: ${em('73px')};
   text-shadow: 1px 1px 4px ${themed('color.background')};
 
   ${mediaQuery.small`
@@ -76,7 +75,6 @@ const SubText = styled(P)`
 
   ${mediaQuery.large`
     font-size: 2.25rem;
-    margin-bottom: ${em('62px')};
   `};
 `;
 
