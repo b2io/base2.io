@@ -22,12 +22,9 @@ const H2 = styled.h2`
   `};
 `;
 
-/* stylelint-disable */
-// TODO: add styles, remove stylelint-disable
 const H3 = styled.h3`
-  color: ${props =>
-    props.dark ? props.theme.color.spacePurple : props.theme.color.white};
   font-size: ${em('20px')};
+  font-weight: 100;
   margin: 0;
 
   ${mediaQuery.small`
@@ -37,9 +34,10 @@ const H3 = styled.h3`
   ${mediaQuery.medium`
     font-size: ${em('36px')};
   `};
-  font-weight: 100;
 `;
 
+/* stylelint-disable */
+// TODO: add styles, remove stylelint-disable
 const H4 = styled.h4``;
 
 const H5 = styled.h5``;
