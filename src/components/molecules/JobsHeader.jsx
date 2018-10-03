@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BaseTwoJobsLogo, Header, Img } from '../atoms';
-import { mediaQuery } from '../../util/style';
+import { BaseTwoJobsLogo, Header, Img, P } from '../atoms';
+import { mediaQuery, themed } from '../../util/style';
 
 const imageSize = {
   default: '70px',
@@ -26,11 +26,35 @@ const AstronautImg = styled(Img)`
   `};
 `;
 
+const SubText = styled(P)`
+  color: ${themed('color.text')};
+  font-size: 1.15em;
+  font-style: italic;
+  font-weight: 100;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 4px ${themed('color.background')};
+
+  ${mediaQuery.small`
+    font-size: 1.65rem;
+    margin-top: 0.5em;
+  `};
+
+  ${mediaQuery.medium`
+    font-size: 2.0rem;
+  `};
+
+  ${mediaQuery.large`
+    font-size: 2.25rem;
+  `};
+`;
+
 function JobsHeader() {
   return (
     <Header>
       <AstronautImg src="../../_content/team/chawkins.jpg" />
       <BaseTwoJobsLogo />
+      <SubText>Help us turn ideas into beautiful software</SubText>
     </Header>
   );
 }
