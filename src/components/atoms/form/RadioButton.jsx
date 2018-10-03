@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import nanoid from 'nanoid';
+import { themed } from '../../../util/style';
 
 const Label = styled.label`
+  ${themed('typography.subheading')};
+  color: ${themed('color.accent')};
   display: inline-block;
 `;
 
