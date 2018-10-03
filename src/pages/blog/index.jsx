@@ -1,7 +1,8 @@
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import {
   GlobalNavigation,
   Header,
@@ -11,6 +12,7 @@ import {
   Section,
   UL,
 } from '../../components';
+import { lightTheme } from '../../theme';
 import { toNodes } from '../../util/graphql';
 
 const BlogHeader = styled(Header)`
@@ -23,21 +25,9 @@ const PostList = styled(UL)`
   padding: 0;
 `;
 
-class BlogIndex extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    posts: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.node.isRequired,
-      }),
-    ).isRequired,
-  };
-
-  render() {
-    const { posts } = this.props;
-
-    return (
+function BlogIndex({ posts }) {
+  return (
+    <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
         <BlogHeader>
@@ -45,12 +35,14 @@ class BlogIndex extends React.Component {
         </BlogHeader>
         <Section>
           <PostList>
-            {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
+            {posts.map(post => (
+              <PostExcerpt {...post} key={post.id} />
+            ))}
           </PostList>
         </Section>
       </Main>
-    );
-  }
+    </ThemeProvider>
+  );
 }
 
 function mapPropsToProps({ data }) {
@@ -74,6 +66,14 @@ function mapPropsToProps({ data }) {
 
   return { posts };
 }
+
+BlogIndex.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default mapProps(mapPropsToProps)(BlogIndex);
 
