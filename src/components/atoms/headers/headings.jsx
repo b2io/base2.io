@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { em } from 'polished';
 import { mediaQuery } from '../../../util/style';
 
 const H1 = styled.h1`
@@ -25,7 +26,21 @@ const H2 = styled.h2`
 
 /* stylelint-disable */
 // TODO: add styles, remove stylelint-disable
-const H3 = styled.h3``;
+const H3 = styled.h3`
+  color: ${props =>
+    props.dark ? props.theme.color.spacePurple : props.theme.color.white};
+  font-size: ${em('20px')};
+  margin: 0;
+
+  ${mediaQuery.small`
+    font-size: ${em('24px')};
+  `};
+
+  ${mediaQuery.medium`
+    font-size: ${em('36px')};
+  `};
+  font-weight: 100;
+`;
 
 const H4 = styled.h4``;
 

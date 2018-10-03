@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { map } from 'lodash';
+import { isEmpty, map } from 'lodash';
 import { A, Button, UL } from '../../atoms';
 import { H2, LI, P, Wrapper } from './common';
 import JobExcerpt from '../../molecules/JobExcerpt';
@@ -60,15 +60,21 @@ function JobsContent({ jobs }) {
         strong people skills and experience building web applications with the
         latest front-end technologies, please <A href="#">apply</A>.
       </P>
-      <P>
-        Currently, we are looking for people to join us in the following
-        positions:
-      </P>
-      {map(jobs, job => (
-        <JobExcerpt heading={job.position} url={job.url}>
-          {job.description}
-        </JobExcerpt>
-      ))}
+      {isEmpty(jobs) ? (
+        <P>Unfortunately, our rocket ship is currently at capacity.</P>
+      ) : (
+        <React.Fragment>
+          <P>
+            Currently, we are looking for people to join us in the following
+            positions:
+          </P>
+          {map(jobs, job => (
+            <JobExcerpt heading={job.position} url={job.url}>
+              {job.description}
+            </JobExcerpt>
+          ))}
+        </React.Fragment>
+      )}
       <H2>Apprenticeship</H2>
       <P>
         We offer a three-month <A href="#">apprenticeship</A> program for
