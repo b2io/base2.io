@@ -22,13 +22,17 @@ const Text = styled(P)`
   ${text};
 `;
 
+const Wrapper = styled.div`
+  margin-bottom: ${em(30)};
+`;
+
 function JobExcerpt({ children, heading, url }) {
   return (
-    <React.Fragment>
+    <Wrapper>
       <H3 dark>{heading}</H3>
       <Text>{children}</Text>
       <A href={url}>Learn More</A>
-    </React.Fragment>
+    </Wrapper>
   );
 }
 
