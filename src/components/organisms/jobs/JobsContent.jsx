@@ -16,7 +16,7 @@ function JobsContent() {
         &mdash; to improve processes around software development and deliver
         user-focused products and applications.
       </P>
-      <img src={teamImage} alt="Our Base Two team" />
+      <img src={teamImage} alt="Our Base Two team" width="1000" />
       <H2>Our culture promotes team work</H2>
       <P>
         We strive to be a forward-thinking and constantly improving collection
@@ -31,7 +31,7 @@ function JobsContent() {
         business. We believe in hiring individuals who will bring unique and
         creative perspectives to our team.
       </P>
-      <img src={officeCollageImage} alt="Our Base Two team" />
+      <img src={officeCollageImage} alt="Our Base Two team" width="1000" />
       <H2>We believe in balance</H2>
       <P>
         We offer great benefits so that the
