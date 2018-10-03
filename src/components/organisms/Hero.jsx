@@ -7,7 +7,7 @@ import { ScrollLink } from '../molecules';
 const BGAspectRatio = '1.83';
 
 const HeroHeader = styled.header`
-  background-image: url('img/backgrounds/hero/b2-hero-background-480.png');
+  background-image: url('/img/backgrounds/hero/b2-hero-background-480.png');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -17,20 +17,20 @@ const HeroHeader = styled.header`
   text-align: center;
 
   ${mediaQuery.small`
-    background-image: url('img/backgrounds/hero/b2-hero-background-960.png');
+    background-image: url('/img/backgrounds/hero/b2-hero-background-960.png');
     background-size: 120%;
     min-height: calc((100vw * ${BGAspectRatio}) * 1.2);
     padding-top: 6rem;
   `};
 
   ${mediaQuery.medium`
-    background-image: url('img/backgrounds/hero/b2-hero-background-960.png');
+    background-image: url('/img/backgrounds/hero/b2-hero-background-960.png');
     background-size: 120%;
     padding-top: 8rem;
   `};
 
   ${mediaQuery.large`
-    background-image: url('img/backgrounds/hero/b2-hero-background.png');
+    background-image: url('/img/backgrounds/hero/b2-hero-background.png');
     background-size: cover;
     min-height: calc(100vw * ${BGAspectRatio});
     padding-top: 16rem;
@@ -109,7 +109,7 @@ function Hero() {
         <ScrollLink target="next" title="Scroll down for more">
           <SatelliteIndicator
             alt="Arrows pointing downward"
-            src="img/scroll-indicator.svg"
+            src="/img/scroll-indicator.svg"
           />
         </ScrollLink>
       </HeroHeader>

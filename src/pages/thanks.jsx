@@ -12,7 +12,7 @@ import { darkTheme } from '../theme';
 import { mediaQuery } from '../util/style';
 
 const Wrapper = styled(Main)`
-  background-image: url('img/backgrounds/hero/b2-hero-background-1920.png');
+  background-image: url('/img/backgrounds/hero/b2-hero-background-1920.png');
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: 270%;

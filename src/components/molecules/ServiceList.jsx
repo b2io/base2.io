@@ -7,7 +7,7 @@ import { containerSizing, mediaQuery, themed } from '../../util/style';
 
 const ServiceList = styled.ul`
   align-items: center;
-  background: url('img/backgrounds/star-field.png');
+  background: url('/img/backgrounds/star-field.png');
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -19,7 +19,7 @@ const ServiceList = styled.ul`
 
 const Wrapper = styled(LI)`
   ${containerSizing};
-  background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
+  background: url('/img/backgrounds/space-fog-purple.png') bottom center / auto
     100% no-repeat;
   padding-bottom: ${em('135px')};
   max-width: ${rem('1300px')};
@@ -99,36 +99,30 @@ const ServiceDescription = styled(P)`
   `};
 `;
 
-class ServiceListItem extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    image: PropTypes.shape({}).isRequired,
-    imgAlt: PropTypes.string.isRequired,
-    heading: PropTypes.string.isRequired,
-    subheading: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-  };
-
-  render() {
-    const { image, imgAlt, heading, subheading, description } = this.props;
-
-    return (
-      <Wrapper>
-        <ServiceImg {...image} alt={imgAlt} />
-        <ServiceText>
-          <ServiceHeader>
-            <TwoToneHeading>
-              <span>We</span> {heading}
-            </TwoToneHeading>
-            <ServiceSubheading>{subheading}</ServiceSubheading>
-          </ServiceHeader>
-          <ServiceDescription>{description}</ServiceDescription>
-        </ServiceText>
-      </Wrapper>
-    );
-  }
+function ServiceListItem({ image, imgAlt, heading, subheading, description }) {
+  return (
+    <Wrapper>
+      <ServiceImg {...image} alt={imgAlt} />
+      <ServiceText>
+        <ServiceHeader>
+          <TwoToneHeading>
+            <span>We</span> {heading}
+          </TwoToneHeading>
+          <ServiceSubheading>{subheading}</ServiceSubheading>
+        </ServiceHeader>
+        <ServiceDescription>{description}</ServiceDescription>
+      </ServiceText>
+    </Wrapper>
+  );
 }
+
+ServiceListItem.propTypes = {
+  image: PropTypes.shape({}).isRequired,
+  imgAlt: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired,
+  subheading: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 ServiceList.Item = ServiceListItem;
 
