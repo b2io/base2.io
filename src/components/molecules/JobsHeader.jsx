@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Img } from '../atoms';
+import { Header, Img } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
 const imageSize = {
@@ -45,10 +45,10 @@ const JoinOurTeamImg = styled(Img)`
 
 function JobsHeader() {
   return (
-    <div>
-      <AstronautImg src="../../../_content/team/chawkins.jpg" />
-      <JoinOurTeamImg src="../../../_content/team/chawkins.jpg" />
-    </div>
+    <Header>
+      <AstronautImg src="../../_content/team/chawkins.jpg" />
+      <JoinOurTeamImg src="../../_content/team/chawkins.jpg" />
+    </Header>
   );
 }
 
