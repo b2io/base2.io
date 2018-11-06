@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { em } from 'polished';
 import { BaseTwoJobsLogo, Header, P } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
-import BlueAstronautSVG from '../../../static/img/jobs/BlueAstronaut.svg';
 
 const imageSize = {
   default: '260px',
@@ -26,7 +25,7 @@ const StyledHeader = styled(Header)`
   `};
 `;
 
-const AstronautImg = styled(BlueAstronautSVG)`
+const AstronautImg = styled.img`
   height: auto;
   margin-bottom: 2em;
   min-height: 256px;
@@ -81,7 +80,7 @@ const SubText = styled(P)`
 function JobsHeaderSmall() {
   return (
     <StyledHeader>
-      <AstronautImg />
+      <AstronautImg src="/img/jobs/BlueAstronaut.png" />
       <HeaderContent>
         <BaseTwoJobsLogo />
         <SubText>Help us turn ideas into beautiful software</SubText>

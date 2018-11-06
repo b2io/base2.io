@@ -1,4 +1,3 @@
-import noop from 'lodash/noop';
 import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
@@ -116,38 +115,28 @@ const ArrowIndicator = styled.img`
   `};
 `;
 
-const scroll = {
-  target: 'contact-us',
-  title: 'Scroll down for more',
-};
-
-// eslint-disable-line react/prefer-stateless-function
-class ContactHeader extends React.Component {
-
-static defaultProps = {
-    onContact: noop,
-  };
-
-  render() {
-    return (
-      <Wrapper>
-        <BaseTwoLogoText />
-        <LocationText>
-          is located in <strong>Columbus, OH</strong> and{' '}
-          <strong>Pittsburgh, PA</strong>.
-        </LocationText>
-        <Earth src="img/planet-earth.jpg" alt="Planet Earth" />
-        <LocationTagline>
-          Thanks to satellites and the internet, we can work with you wherever
-          you are.
-        </LocationTagline>
-        <ScrollButton href="#contact-us">Make Contact</ScrollButton>
-        <ScrollLink target={scroll.target} title={scroll.title}>
-          <ArrowIndicator src="../img/scroll-arrows.svg" />
-        </ScrollLink>
-      </Wrapper>
-    );
-  }
+function ContactHeader() {
+  return (
+    <Wrapper>
+      <BaseTwoLogoText id="contact-header-logo" />
+      <LocationText>
+        is located in <strong>Columbus, OH</strong> and{' '}
+        <strong>Pittsburgh, PA</strong>.
+      </LocationText>
+      <Earth src="/img/planet-earth.jpg" alt="Planet Earth" />
+      <LocationTagline>
+        Thanks to satellites and the internet, we can work with you wherever you
+        are.
+      </LocationTagline>
+      <ScrollButton href="#contact-us">Make Contact</ScrollButton>
+      <ScrollLink target="contact-us" title="Scroll down for more">
+        <ArrowIndicator
+          alt="Arrows pointing downward"
+          src="../img/scroll-arrows.svg"
+        />
+      </ScrollLink>
+    </Wrapper>
+  );
 }
 
 export default ContactHeader;

@@ -4,7 +4,7 @@ import { themed } from '../../util/style';
 
 const Pre = styled.pre`
   ${themed('font.monospace')};
-  background: ${themed('color.overlay')};
+  background: ${themed('color.greyLight')};
   border: 1px solid ${themed('color.border')};
   overflow-x: scroll;
   padding: ${em('10px')};
