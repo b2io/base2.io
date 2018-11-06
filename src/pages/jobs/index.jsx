@@ -1,15 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { mapProps } from 'recompose';
-import { GlobalNavigation, JobsContent, Main } from '../../components';
+import { ThemeProvider } from 'styled-components';
+import {
+  GlobalNavigation,
+  JobsContent,
+  JobsHeader,
+  Main,
+} from '../../components';
 import { toNodes } from '../../util/graphql';
+import { darkTheme } from '../../theme';
 
 function JobsPage({ jobs }) {
   return (
-    <Main>
-      <GlobalNavigation />
-      <JobsContent jobs={jobs} />
-    </Main>
+    <ThemeProvider theme={darkTheme}>
+      <Main>
+        <GlobalNavigation />
+        <JobsHeader />
+        <JobsContent jobs={jobs} />
+      </Main>
+    </ThemeProvider>
   );
 }
 

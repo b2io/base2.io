@@ -13,7 +13,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-next',
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-source-filesystem',
@@ -23,8 +22,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
-    'gatsby-plugin-typescript',
-    '@jacobmischka/gatsby-plugin-react-svg',
+    'gatsby-plugin-react-svg',
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     'gatsby-transformer-json',

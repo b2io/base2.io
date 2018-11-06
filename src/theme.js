@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
 import { lighten, rem, transparentize } from 'polished';
+import { css } from 'styled-components';
 
 // COLOR:
 
