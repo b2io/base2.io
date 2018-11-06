@@ -3,7 +3,7 @@ import { sortBy } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import {
   ContactUs,
   Clients,
@@ -16,11 +16,22 @@ import {
 } from '../components';
 import { darkTheme } from '../theme';
 import { toNodesWithImage } from '../util/graphql';
+import { mediaQuery } from '../util/style';
+
+const Wrapper = styled(Main)`
+  background: url(img/backgrounds/moon.jpg) center bottom / contain no-repeat,
+    black;
+  padding-bottom: 45vw;
+
+  ${mediaQuery.large`
+    padding-bottom: 28em;
+  `};
+`;
 
 function IndexPage({ clients, services, technologies, team }) {
   return (
     <ThemeProvider theme={darkTheme}>
-      <Main>
+      <Wrapper>
         <GlobalNavigation />
         <Hero />
         <ServiceList id="services">
@@ -32,7 +43,7 @@ function IndexPage({ clients, services, technologies, team }) {
         <Clients clients={clients} />
         <Team team={sortBy(team, ['lastName'])} />
         <ContactUs />
-      </Main>
+      </Wrapper>
     </ThemeProvider>
   );
 }

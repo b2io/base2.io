@@ -27,6 +27,8 @@ const DescriptionField = styled(TextAreaField)`
 const ContactSubmitButton = styled(Button)`
   display: block;
   margin: 0 auto;
+  padding-left: ${em('120px', '24px')};
+  padding-right: ${em('120px', '24px')};
   width: 100%;
 
   ${mediaQuery.xsmall`

@@ -2,19 +2,33 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty, map } from 'lodash';
 import styled from 'styled-components';
-import { em } from 'polished';
+import { em, rem } from 'polished';
 import { A, Button, Img, Section, UL } from '../../atoms';
 import { H2, LI, P } from './common';
 import JobExcerpt from '../../molecules/JobExcerpt';
 import teamImage from '../../../../public/img/base-two-team.jpg';
 import officeCollageImage from '../../../../public/img/base-two-office-collage.jpg';
+import { themed } from '../../../util/style';
 
 const JobsImage = styled(Img)`
+  margin-top: ${rem('48px')};
   width: 100%;
 `;
 
 const JobsSection = styled(Section)`
-  margin-bottom: ${em(30)};
+  &:not(:first-of-type) {
+    margin-top: ${rem('64px')};
+  }
+
+  &:last-of-type {
+    margin-bottom: ${rem('128px')};
+  }
+`;
+
+const ApprenticeshipButton = styled(Button)`
+  ${themed('button.content')};
+  margin-top: 1em;
+  width: ${em('288px', '24px')};
 `;
 
 function JobsContent({ jobs }) {
@@ -111,9 +125,10 @@ function JobsContent({ jobs }) {
           apprentices are employable by the end of their time with us.{' '}
           <A href="https://www.base2.io/2017/01/03/apprenticeship-month-1">
             Read more about our apprenticeship here
-          </A>.
+          </A>
+          .
         </P>
-        <Button>Apply to be an Apprentice</Button>
+        <ApprenticeshipButton>Apply</ApprenticeshipButton>
       </JobsSection>
     </React.Fragment>
   );

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { em } from 'polished';
+import { rem } from 'polished';
 import styled, { css } from 'styled-components';
 import { mediaQuery, themed } from '../../util/style';
 import { A as Anchor, H3 as Heading3, P } from '../atoms';
 
 const text = css`
-  font-size: ${em('18px')};
-  line-height: 1.35;
+  font-size: ${rem('18px')};
+  line-height: 1.5;
 `;
 
 const A = styled(Anchor)`
@@ -16,14 +16,14 @@ const A = styled(Anchor)`
 
 const H3 = styled(Heading3)`
   color: ${themed('color.textAccent')};
-  font-size: ${em('18px')};
+  font-size: ${rem('18px')};
 
   ${mediaQuery.small`
-    font-size: ${em('20px')};
+    font-size: ${rem('20px')};
   `};
 
   ${mediaQuery.medium`
-    font-size: ${em('24px')};
+    font-size: ${rem('24px')};
   `};
 `;
 
@@ -32,7 +32,7 @@ const Text = styled(P)`
 `;
 
 const Wrapper = styled.div`
-  margin-bottom: ${em(30)};
+  margin-bottom: ${rem(32)};
 `;
 
 function JobExcerpt({ children, heading, url }) {

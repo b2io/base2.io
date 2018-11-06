@@ -12,28 +12,27 @@ const imageSize = {
 };
 
 const StyledHeader = styled(Header)`
-  align-items: center;
   background: url('/img/backgrounds/space-fog-purple.png') bottom center / auto
     100% no-repeat;
-  justify-content: center;
-  margin: 4em 0;
+  margin-top: ${rem('128px')};
+  margin-bottom: ${rem('200px')};
   text-align: center;
 
   ${mediaQuery.medium`
-    align-content: center;
+    align-items: center;
     display: flex;
-    padding-top: 4em;
+    justify-content: space-between;
+    padding-top: ${rem('64px')};
   `};
 `;
 
 const AstronautImg = styled.img`
   height: auto;
-  margin-bottom: 2em;
+  margin-bottom: ${em('32px')};
   min-height: 256px;
   width: ${imageSize.default};
 
   ${mediaQuery.medium`
-    margin-right: 2em;
     min-height: 354px;
     width: ${imageSize.medium};
   `};
@@ -47,12 +46,8 @@ const AstronautImg = styled.img`
 const HeaderContent = styled.div`
   flex-grow: 1;
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: ${rem('640px')};
   text-align: center;
-
-  ${mediaQuery.medium`
-    margin: 0;
-  `};
 `;
 
 const HeaderActions = styled.div`
@@ -68,34 +63,30 @@ const HeaderActions = styled.div`
 
 const SubText = styled(P)`
   color: ${themed('color.text')};
-  font-size: 1.15em;
+  font-size: ${rem('18px')};
   font-style: italic;
   font-weight: 100;
-  margin-top: ${em('7px')};
-  margin-bottom: ${em('73px')};
+  line-height: 1.5;
+  margin-top: ${rem('16px')};
+  margin-bottom: ${rem('72px')};
   text-shadow: 1px 1px 4px ${themed('color.background')};
 
   ${mediaQuery.small`
-    font-size: 1.65rem;
-    margin-top: 0.5em;
+    font-size: ${rem('26px')};
   `};
 
   ${mediaQuery.medium`
-    font-size: 2.0rem;
-    margin-top: ${em('14px')};
+    font-size: ${rem('32px')};
   `};
 
   ${mediaQuery.large`
-    font-size: 2.25rem;
-    margin-bottom: ${em('62px')};
+    font-size: ${rem('36px')};
   `};
 `;
 
 const JobsButton = styled(Button)`
-  font-size: ${rem('18px')};
-  padding: ${rem('15px')} 0;
   margin-bottom: 2em;
-  width: ${em('280px')};
+  width: ${em('288px', '24px')};
 `;
 
 function JobsHeader({ small }) {
