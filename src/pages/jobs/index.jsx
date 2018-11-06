@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { darkTheme } from '../../theme';
 import { GlobalNavigation, JobsHeader, Main } from '../../components';
+import { darkTheme } from '../../theme';
 
 function JobsPage() {
   return (

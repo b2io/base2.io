@@ -7,7 +7,7 @@ import { TechnologiesList } from '../molecules';
 import { mediaQuery } from '../../util/style';
 
 const Wrapper = styled(Section)`
-  background: url('img/backgrounds/star-field.png');
+  background: url('/img/backgrounds/star-field.png');
   align-items: center;
   display: flex;
   flex-direction: column;

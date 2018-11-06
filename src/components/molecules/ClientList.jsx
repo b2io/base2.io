@@ -6,7 +6,7 @@ import { UL, LI, Img } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
 const ClientList = styled(UL)`
-  background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
+  background: url('/img/backgrounds/space-fog-purple.png') bottom center / auto
     100% no-repeat;
   display: flex;
   flex-wrap: wrap;
@@ -46,24 +46,20 @@ const ClientLogo = styled(Img)`
   `};
 `;
 
-class ClientListItem extends React.Component {
-  static defaultProps = {};
+function ClientListItem(props) {
+  const { image, name } = props;
 
-  static propTypes = {
-    image: PropTypes.shape({}).isRequired,
-    name: PropTypes.string.isRequired,
-  };
-
-  render() {
-    const { image, name } = this.props;
-
-    return (
-      <Client>
-        <ClientLogo {...image} alt={name} title={name} />
-      </Client>
-    );
-  }
+  return (
+    <Client>
+      <ClientLogo {...image} alt={name} title={name} />
+    </Client>
+  );
 }
+
+ClientListItem.propTypes = {
+  image: PropTypes.shape({}).isRequired,
+  name: PropTypes.string.isRequired,
+};
 
 ClientList.Item = ClientListItem;
 

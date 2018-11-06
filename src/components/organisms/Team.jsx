@@ -6,7 +6,7 @@ import { TeamList } from '../molecules';
 import { themed } from '../../util/style';
 
 const Wrapper = styled(Section)`
-  background: url('img/backgrounds/star-field.png');
+  background: url('/img/backgrounds/star-field.png');
 `;
 
 const TeamHeading = styled(TwoToneHeading)`

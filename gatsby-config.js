@@ -22,7 +22,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
-    'gatsby-plugin-react-svg',
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     'gatsby-transformer-json',

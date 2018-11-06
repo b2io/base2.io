@@ -1,9 +1,8 @@
+import { em, rem } from 'polished';
 import React from 'react';
 import styled from 'styled-components';
-import { em, rem } from 'polished';
-import { BaseTwoJobsLogo, Button, Header, P } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
-import BlueAstronautSVG from '../../../static/img/jobs/BlueAstronaut.svg';
+import { BaseTwoJobsLogo, Button, Header, P } from '../atoms';
 
 const imageSize = {
   default: '260px',
@@ -13,20 +12,20 @@ const imageSize = {
 
 const StyledHeader = styled(Header)`
   align-items: center;
-  background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
+  background: url('/img/backgrounds/space-fog-purple.png') bottom center / auto
     100% no-repeat;
   justify-content: center;
   margin: 4em 0;
   text-align: center;
 
   ${mediaQuery.medium`
-  align-content: center;
-  display: flex;
-  padding-top: 4em;
+    align-content: center;
+    display: flex;
+    padding-top: 4em;
   `};
 `;
 
-const AstronautImg = styled(BlueAstronautSVG)`
+const AstronautImg = styled.img`
   height: auto;
   margin-bottom: 2em;
   min-height: 256px;
@@ -45,10 +44,10 @@ const AstronautImg = styled(BlueAstronautSVG)`
 `;
 
 const HeaderContent = styled.div`
-  text-align: center;
   flex-grow: 1;
   margin: 0 auto;
   max-width: 40rem;
+  text-align: center;
 
   ${mediaQuery.medium`
     margin: 0;
@@ -101,7 +100,7 @@ const JobsButton = styled(Button)`
 function JobsHeader() {
   return (
     <StyledHeader>
-      <AstronautImg />
+      <AstronautImg src="/img/jobs/BlueAstronaut.png" />
       <HeaderContent>
         <BaseTwoJobsLogo />
         <SubText>Help us turn ideas into beautiful software</SubText>
