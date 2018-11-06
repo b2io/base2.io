@@ -46,8 +46,8 @@ const ClientLogo = styled(Img)`
   `};
 `;
 
-function ClientListItem() {
-  const { image, name } = this.props;
+function ClientListItem(props) {
+  const { image, name } = props;
 
   return (
     <Client>
