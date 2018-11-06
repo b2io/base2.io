@@ -89,7 +89,7 @@ function JobsContent({ jobs }) {
           <LI>Fancy office coffee</LI>
         </UL>
       </JobsSection>
-      <JobsSection>
+      <JobsSection id="positions">
         <H2>Open Positions</H2>
         <P largeText>
           We are always looking for amazing people to work with us in Columbus,
@@ -115,8 +115,8 @@ function JobsContent({ jobs }) {
           </React.Fragment>
         )}
       </JobsSection>
-      <JobsSection>
-        <H2>Apprenticeship</H2>
+      <JobsSection id="apprenticeships">
+        <H2>Apprenticeships</H2>
         <P largeText>
           We offer a three-month <A href="#">apprenticeship</A> program for
           individuals who are getting started with web development. Apprentices

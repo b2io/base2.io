@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { mediaQuery, themed } from '../../../util/style';
-import { BaseTwoJobsLogo, Button, Header, P } from '../../atoms';
+import { A, BaseTwoJobsLogo, Header, P } from '../../atoms';
 
 const imageSize = {
   default: '260px',
@@ -84,7 +84,8 @@ const SubText = styled(P)`
   `};
 `;
 
-const JobsButton = styled(Button)`
+const JobsButton = styled(A)`
+  ${themed('button.default')};
   margin-bottom: 2em;
   width: ${em('288px', '24px')};
 `;
@@ -98,8 +99,8 @@ function JobsHeader({ small }) {
         <SubText>Help us turn ideas into beautiful software</SubText>
         {!small && (
           <HeaderActions>
-            <JobsButton>Positions</JobsButton>
-            <JobsButton>Apprenticeships</JobsButton>
+            <JobsButton href="#positions">Positions</JobsButton>
+            <JobsButton href="#apprenticeships">Apprenticeships</JobsButton>
           </HeaderActions>
         )}
       </HeaderContent>

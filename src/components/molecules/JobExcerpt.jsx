@@ -32,7 +32,8 @@ const Text = styled(P)`
 `;
 
 const Wrapper = styled.div`
-  margin-bottom: ${rem(32)};
+  margin-bottom: ${rem(48)};
+  margin-top: ${rem(48)};
 `;
 
 function JobExcerpt({ children, heading, url }) {
