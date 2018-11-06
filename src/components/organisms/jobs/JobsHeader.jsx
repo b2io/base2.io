@@ -1,8 +1,9 @@
 import { em, rem } from 'polished';
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { mediaQuery, themed } from '../../util/style';
-import { BaseTwoJobsLogo, Button, Header, P } from '../atoms';
+import { mediaQuery, themed } from '../../../util/style';
+import { BaseTwoJobsLogo, Button, Header, P } from '../../atoms';
 
 const imageSize = {
   default: '260px',
@@ -97,20 +98,30 @@ const JobsButton = styled(Button)`
   width: ${em('280px')};
 `;
 
-function JobsHeader() {
+function JobsHeader({ small }) {
   return (
     <StyledHeader>
       <AstronautImg src="/img/jobs/BlueAstronaut.png" />
       <HeaderContent>
         <BaseTwoJobsLogo />
         <SubText>Help us turn ideas into beautiful software</SubText>
-        <HeaderActions>
-          <JobsButton>Positions</JobsButton>
-          <JobsButton>Apprenticeships</JobsButton>
-        </HeaderActions>
+        {!small && (
+          <HeaderActions>
+            <JobsButton>Positions</JobsButton>
+            <JobsButton>Apprenticeships</JobsButton>
+          </HeaderActions>
+        )}
       </HeaderContent>
     </StyledHeader>
   );
 }
+
+JobsHeader.propTypes = {
+  small: PropTypes.bool,
+};
+
+JobsHeader.defaultProps = {
+  small: false,
+};
 
 export default JobsHeader;

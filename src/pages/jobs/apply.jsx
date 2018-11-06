@@ -1,14 +1,14 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme } from '../../theme';
-import { GlobalNavigation, JobsHeaderSmall, Main } from '../../components';
+import { GlobalNavigation, JobsHeader, Main } from '../../components';
 
 function Apply() {
   return (
     <ThemeProvider theme={darkTheme}>
       <Main>
         <GlobalNavigation />
-        <JobsHeaderSmall />
+        <JobsHeader small />
       </Main>
     </ThemeProvider>
   );
