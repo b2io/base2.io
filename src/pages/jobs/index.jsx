@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isEmpty } from 'lodash';
 import { mapProps } from 'recompose';
 import { ThemeProvider } from 'styled-components';
 import {
@@ -40,7 +41,7 @@ JobsPage.defaultProps = {
 
 function mapPropsToProps({ data }) {
   return {
-    jobs: toNodes(data.jobs),
+    jobs: !isEmpty(data) ? toNodes(data.jobs) : [],
   };
 }
 

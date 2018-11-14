@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { isEmpty, map } from 'lodash';
 import styled from 'styled-components';
 import { em, rem } from 'polished';
-import { A, Button, Img, Section, UL } from '../../atoms';
+import { A, Img, Link, Section, UL } from '../../atoms';
 import { H2, LI, P } from './common';
 import JobExcerpt from '../../molecules/JobExcerpt';
 import teamImage from '../../../../public/img/base-two-team.jpg';
@@ -25,9 +25,11 @@ const JobsSection = styled(Section)`
   }
 `;
 
-const ApprenticeshipButton = styled(Button)`
-  ${themed('button.content')};
+const ApprenticeshipButton = styled(Link)`
+  ${themed('button.default')};
+  display: block;
   margin-top: 1em;
+  text-align: center;
   width: ${em('288px', '24px')};
 `;
 
@@ -71,9 +73,8 @@ function JobsContent({ jobs }) {
       <JobsSection>
         <H2>We believe in balance</H2>
         <P largeText>
-          We offer great benefits so that the
-          &lt;strong&gt;life&lt;&#47;strong&gt; portion of work-life balance can
-          be more enjoyable and less stressful.
+          We offer great benefits so that the <strong>life</strong> portion of
+          work-life balance can be more enjoyable and less stressful.
         </P>
         <UL>
           <LI>
@@ -91,18 +92,19 @@ function JobsContent({ jobs }) {
       </JobsSection>
       <JobsSection id="positions">
         <H2>Open Positions</H2>
-        <P largeText>
-          We are always looking for amazing people to work with us in Columbus,
-          OH and Pittsburgh, PA. If you are a talented and creative individual
-          with strong people skills and experience building web applications
-          with the latest front-end technologies, please <A href="#">apply</A>.
-        </P>
         {isEmpty(jobs) ? (
           <P largeText>
             Unfortunately, our rocket ship is currently at capacity.
           </P>
         ) : (
           <React.Fragment>
+            <P largeText>
+              We are always looking for amazing people to work with us in
+              Columbus, OH and Pittsburgh, PA. If you are a talented and
+              creative individual with strong people skills and experience
+              building web applications with the latest front-end technologies,
+              please <Link to="/jobs/apply">apply</Link>.
+            </P>
             <P>
               Currently, we are looking for people to join us in the following
               positions:
@@ -128,7 +130,7 @@ function JobsContent({ jobs }) {
           </A>
           .
         </P>
-        <ApprenticeshipButton>Apply</ApprenticeshipButton>
+        <ApprenticeshipButton to="/jobs/apply">Apply</ApprenticeshipButton>
       </JobsSection>
     </React.Fragment>
   );
