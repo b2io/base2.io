@@ -38,7 +38,7 @@ and understand") pattern matching grammar. It provides for more advanced
 searching capabilities than a standard text-base search. Luckily Visual Studio
 provides for searching via Regex (screenshot is of Visual Studio 2013).
 
-![Visual Studio regex search option](http://i.imgur.com/MAzCFjd.jpg)
+![Visual Studio regex search option](https://i.imgur.com/MAzCFjd.jpg)
 
 With **Use Regular Expressions** selected in Visual Studio we can take advantage
 of regex, including its group capturing via parentheses.
@@ -49,8 +49,7 @@ In the **Find what** we can place the following regex query
 template: require\('Project/(.*)'\)
 ```
 
-This tells Visual Studio to match everything that directly matches `template:
-require(Project/`&lt;any number of characters&gt;`)'`. Note that the require's
+This tells Visual Studio to match everything that directly matches `template: require(Project/`&lt;any number of characters&gt;`)'`. Note that the require's
 parentheses needed to be escaped with `\` because the parentheses are part of
 the regex syntax. You can use the
 [http://www.regexr.com/](http://www.regexr.com/) online tool to test the regex

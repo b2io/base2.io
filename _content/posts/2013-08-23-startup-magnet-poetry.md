@@ -15,7 +15,7 @@ StumbleUpon + LinkedIn. Google Glass meets Nike+ meets Yelp, etc.
 I spent a couple hours this afternoon and got a working proof of concept! It was
 such a rewarding thing to go from concept to finished product so quickly!
 
-![magnetic startup poetry](http://i.imgur.com/rLPiq0K.jpg)
+![magnetic startup poetry](https://i.imgur.com/rLPiq0K.jpg)
 
 ### Desperately Seeking Contributions
 

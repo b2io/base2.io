@@ -45,7 +45,7 @@ what I would need to do, which helped us create issues in the backlog.
 project from the start, and I treated him as project lead. I checked in with
 him, talked over requirements, and we paired on some tasks together.
 
-![Project 1](http://i.imgur.com/AxDbeSq.png "Project 1 screenshot")
+![Project 1](https://i.imgur.com/AxDbeSq.png "Project 1 screenshot")
 
 We had a particularly good pairing session working on the sliders you can see in
 the photo. Screen sharing, I showed him how I was using Redux to handle the
