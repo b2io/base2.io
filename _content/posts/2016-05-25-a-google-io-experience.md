@@ -11,7 +11,7 @@ can say that I’ve been to Nerd Woodstock. Last week was the 10th annual
 place at the Shoreline Amphitheatre, near Google’s main campus in Mountain View,
 California.
 
-![Google I/O 2016 sculpture](http://i.imgur.com/DWAVnDC.jpg "Google I/O 2016 sculpture")
+![Google I/O 2016 sculpture](https://i.imgur.com/DWAVnDC.jpg "Google I/O 2016 sculpture")
 
 The Keynote began with an amazing live
 [Earth Harp](http://williamandtheearthharp.com "Earth Harp") performance of a
@@ -69,8 +69,7 @@ threw the “1 billion mobile users” statistic around a lot. They also harped
 heavily on their concept of Progressive Web Apps, which are essentially adaptive
 websites with some Android flair thrown in (such as the ability to pin to the
 home screen, offline capabilities, and access to the notifications API) and
-their open source project called
-[AMP](https://www.ampproject.org/ "AMP open source project") (Accelerated Mobile
+their open source project called[AMP](https://www.ampproject.org/ "AMP open source project") (Accelerated Mobile
 Pages).
 
 ## The Conference
@@ -79,26 +78,25 @@ I was a little concerned, upon first receiving my ticket information, about the
 fact that the bulk of the conference appeared to be taking place in a series of
 parking lots.
 
-![The map I/O provided to attendees showing large parking lots full of buses and lacking shade.](http://i.imgur.com/vNDImS6.png "The map I/O provided to attendees showing large parking lots full of buses and lacking shade.")
+![The map I/O provided to attendees showing large parking lots full of buses and lacking shade.](https://i.imgur.com/vNDImS6.png "The map I/O provided to attendees showing large parking lots full of buses and lacking shade.")
 
 Once I arrived I was reassured to find that all the presentations (save the ones
 in the Amphitheatre) would be given in enormous tents with top-of-the-line AV
 equipment. They weren’t all domes, and some were much larger, which was good
 considering the amount of people wanting to get in.
 
-![large geodesic dome tent](http://cdn.arstechnica.net/wp-content/uploads/2016/05/IMG_6889.jpg "Large geodesic dome tent, image credit: Andrew Cunningham, Ars Technica")
+![large geodesic dome tent](https://cdn.arstechnica.net/wp-content/uploads/2016/05/IMG_6889.jpg "Large geodesic dome tent, image credit: Andrew Cunningham, Ars Technica")
 Image credit: [Andrew Cunningham, Ars
-Technica](http://arstechnica.com/gadgets/2016/05/google-io-2016-is-part-developer-conference-and-part-county-fair/
-“Image credit:Andrew Cunningham, Ars Technica”)
+Technica](https://arstechnica.com/gadgets/2016/05/google-io-2016-is-part-developer-conference-and-part-county-fair/)
 
-![Monica Dinculescu presents on Web Components at Google I/O 2016](http://i.imgur.com/Pm2E2e0.jpg "Monica Dinculescu presents on Web Components at Google I/O 2016")
+![Monica Dinculescu presents on Web Components at Google I/O 2016](https://i.imgur.com/Pm2E2e0.jpg "Monica Dinculescu presents on Web Components at Google I/O 2016")
 [Monica Dinculescu](http://meowni.ca/) gives her presentation on Web Components
 inside a dome tent.
 
 ### The Lines
 
 Yes,
-[there were long lines](http://thenextweb.com/google/2016/05/19/google-io-2016-look-not-run-large-event/ "Google I/O 2016: A look at how not to run a large event"),
+[there were long lines](https://thenextweb.com/google/2016/05/19/google-io-2016-look-not-run-large-event/ "Google I/O 2016: A look at how not to run a large event"),
 and yes, I did miss most of the sessions I’d hoped to see on Wednesday.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The lines for sessions are insane, but I finally made it into one. Excited to hear <a href="https://twitter.com/kaihaley">@kaihaley</a> talk sprints! <a href="https://twitter.com/hashtag/io16?src=hash">#io16</a> <a href="https://t.co/LP5fBftJdd">pic.twitter.com/LP5fBftJdd</a></p>&mdash; Caitlin Steinert (@csteinert) <a href="https://twitter.com/csteinert/status/733054056294277121">May 18, 2016</a></blockquote>
@@ -111,7 +109,7 @@ were repeated on Friday.
 
 ### The Installations
 
-<img src="http://i.imgur.com/G3a1TAD.gif" style="float: right; margin: 0 0 2em 2em;" title="Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016" alt="Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016" />
+<img src="https://i.imgur.com/G3a1TAD.gif" style="float: right; margin: 0 0 2em 2em;" title="Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016" alt="Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016" />
 In the meantime, there was no shortage of interactive and cool stuff to keep attendees preoccupied. A portion of the Amphitheatre, which appeared to be a restaurant usually, was repurposed to house the [Google Code Labs](https://codelabs.developers.google.com/io2016 "Google Code Labs"), where developers were invited to sit down at workstations, some complete with Nests and other devices, to hack through hands-on exercises. Googlers roamed the area, answering questions. I, for one, am very proud of the web interface I cobbled together using Polymer and the Nest API.
 
 Further afield -- in the parking lots -- tent-shaded areas showed off products
@@ -121,10 +119,10 @@ sight-singing phones, and a plotter that drew out single-line portraits of
 attendees. A [Project Loon](https://www.google.com/loon "Project Loon") balloon
 was also on display.
 
-![Android Auto on display in a Maserati at Google I/O 2016](http://i.imgur.com/lPxEwWd.jpg "Android Auto on display in a Maserati at Google I/O 2016")
+![Android Auto on display in a Maserati at Google I/O 2016](https://i.imgur.com/lPxEwWd.jpg "Android Auto on display in a Maserati at Google I/O 2016")
 Android Auto on display in a Maserati. No big deal.
 
-![Project Loon balloon at Google I/O 2016](http://i.imgur.com/3AtWWOH.jpg "Project Loon balloon at Google I/O 2016")
+![Project Loon balloon at Google I/O 2016](https://i.imgur.com/3AtWWOH.jpg "Project Loon balloon at Google I/O 2016")
 [Project Loon](https://www.google.com/loon "Project Loon") brings the internet
 to all by way of stratosphere balloons.
 
@@ -220,7 +218,7 @@ night before the conference began. Aside from the delicious food and beautiful
 setup, it was exciting to be in the company of a couple hundred amazing tech
 industry women from all over the world.
 
-![Women Techmakers Dinner at Google I/O 2016](http://i.imgur.com/iNwyoRJ.jpg "The view from my seat at the Women Techmakers Dinner at Google I/O 2016")
+![Women Techmakers Dinner at Google I/O 2016](https://i.imgur.com/iNwyoRJ.jpg "The view from my seat at the Women Techmakers Dinner at Google I/O 2016")
 
 ![Women Techmakers Dinner, photo credit: Google Official Blog](https://4.bp.blogspot.com/-a6xxyTQJAqs/V0SblNa6F_I/AAAAAAAASVg/g7nZZk-AssIUiUswNBRWtIo1E5-9TInywCLcB/s1600/womentechmakers.png "Women Techmakers Dinner, photo credit: Google Official Blog")
 Photo credit: [Google Official Blog](https://googleblog.blogspot.com/)
@@ -231,7 +229,7 @@ it was exciting to be able to attend a happy hour hosted by the San Francisco
 chapter near the conference venue! In true Mountain View fashion, we commuted to
 the happy hour on Google’s brightly-painted fixie bikes.
 
-![The Girl Develop It biker gang makes their way to the GDI San Francisco happy hour at Google I/O 2016](http://i.imgur.com/vuDq6Zg.jpg "The Girl Develop It biker gang makes their way to the GDI San Francisco happy hour at Google I/O 2016")
+![The Girl Develop It biker gang makes their way to the GDI San Francisco happy hour at Google I/O 2016](https://i.imgur.com/vuDq6Zg.jpg "The Girl Develop It biker gang makes their way to the GDI San Francisco happy hour at Google I/O 2016")
 
 I’d also like to thank the rest of the Base Two team for letting me jet off to
 California a little over a week after joining the team (Hello, world!) with only
