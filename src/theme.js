@@ -1,4 +1,4 @@
-import { lighten, rem, transparentize } from 'polished';
+import { lighten, em, transparentize } from 'polished';
 import { css } from 'styled-components';
 
 // COLOR:
@@ -98,13 +98,13 @@ function makeTheme(color) {
       border-style: solid;
       border-width: 1px 0;
       border-color: ${color.white} transparent ${color.spaceBlue};
-      box-shadow: 0 0 10px ${color.spaceBlue};
+      box-shadow: 0 0 ${em('10px', '24px')} ${color.spaceBlue};
       color: ${color.spaceBlue};
       cursor: pointer;
-      font-size: 1.5em;
+      font-size: ${em('24px', '16px')};
       line-height: 1;
       overflow: hidden;
-      padding: ${rem('15px')} ${rem('120px')};
+      padding: ${em('16px', '24px')};
       text-transform: uppercase;
 
       &:focus,

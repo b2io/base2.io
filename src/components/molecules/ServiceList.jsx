@@ -73,17 +73,7 @@ const ServiceHeader = styled.header`
 `;
 
 const ServiceSubheading = styled(H3)`
-  font-size: ${em('20px')};
-  font-weight: 100;
   margin: 0;
-
-  ${mediaQuery.small`
-    font-size: ${em('24px')};
-  `};
-
-  ${mediaQuery.medium`
-    font-size: ${em('36px')};
-  `};
 `;
 
 const ServiceDescription = styled(P)`

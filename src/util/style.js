@@ -1,6 +1,6 @@
 import curry from 'lodash/curry';
 import get from 'lodash/get';
-import { lighten as _lighten } from 'polished';
+import { lighten as _lighten, rem } from 'polished';
 import { css } from 'styled-components';
 
 const cssCond = predicate => (...args) => props =>
@@ -29,14 +29,16 @@ const mediaQuery = {
 };
 
 const containerSizing = css`
+  margin: 0 auto;
+  max-width: ${rem('1440px')};
   padding: 0 5%;
 
   ${mediaQuery.medium`
-    padding: 0 2em;
+    padding: 0 ${rem('64px')};
   `};
 
   ${mediaQuery.large`
-    padding: 0 100px;
+    padding: 0 ${rem('96px')};
   `};
 `;
 

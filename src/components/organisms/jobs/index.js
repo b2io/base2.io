@@ -1,2 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
+export { default as JobsHeader } from './JobsHeader';
+export { default as JobsContent } from './JobsContent';
 export { default as JobForm } from './JobForm';
