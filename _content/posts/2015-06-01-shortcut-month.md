@@ -89,7 +89,7 @@ This simple key combination allows you to search the menu options. So, if you
 want to change the font to "Courier New" you can hit <kbd>alt</kbd> +
 <kbd>/</kbd>, type "cour", and hit enter.
 
-![Google Docs search menu](http://i.imgur.com/myyRI6w.png)
+![Google Docs search menu](https://i.imgur.com/myyRI6w.png)
 
 Generally the individual shortcut for each feature is still faster, but a
 shortcut that you can remember is better than one you cannot. Plus, when you use
@@ -127,7 +127,7 @@ In IDEs, such as Web Storm and Visual Studio, <kbd>ctrl</kbd> +
 Web Storm <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> will provide a
 window to select which of the previously copied texts to paste.
 
-![WebStorm paste special](http://i.imgur.com/9a65jrl.png)
+![WebStorm paste special](https://i.imgur.com/9a65jrl.png)
 
 Visual Studio will progressively paste the next most recently copied item with
 each <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> click (while holding
@@ -215,7 +215,7 @@ for even a portion of the day then it's worthwhile learning some common
 shortcuts. Today we'll go over how to select columns and rows without using the
 mouse.
 
-![Select column](http://i.imgur.com/x3gocRv.png)
+![Select column](https://i.imgur.com/x3gocRv.png)
 
 | Key combination                     | Result                                              |
 | ----------------------------------- | --------------------------------------------------- |
@@ -281,7 +281,7 @@ All too often users shift their mouse to the top of the screen simply to place
 their cursor in the browser address bar. Cut that bad habit with this simple
 shortcut.
 
-![Browser address bar](http://i.imgur.com/wC5hjP9.png)
+![Browser address bar](https://i.imgur.com/wC5hjP9.png)
 
 | Key combination               | Result                                                          |
 | ----------------------------- | --------------------------------------------------------------- |
@@ -328,7 +328,7 @@ it's to get back to your search results or to return to an embarrassingly
 picture</a> that you stumbled upon. You're in luck - there's a shortcut for
 that.
 
-![Browser navigation](http://i.imgur.com/VMZT1KD.png)
+![Browser navigation](https://i.imgur.com/VMZT1KD.png)
 
 | Key combination                         | Result                                            |
 | --------------------------------------- | ------------------------------------------------- |
@@ -401,7 +401,7 @@ If you like starting at "My Computer" (labeled as just "Computer" in Windows 7)
 then <kbd>win</kbd> + <kbd>e</kbd> is your new best friend. It opens the
 Computer directory up immediately so that you can begin to navigate the folders.
 
-![My computer](http://i.imgur.com/johmmCX.png)
+![My computer](https://i.imgur.com/johmmCX.png)
 
 Folders can be navigated quickly by arrowing down/up to the folder you wish to
 open and then clicking <kbd>enter</kbd>. If you're staring at a long list of
@@ -455,7 +455,7 @@ instance, <kbd>ctrl</kbd> + <kbd>n</kbd> will create a new document in Word and
 a new tab in <a href="http://www.sublimetext.com/" target="_blank">Sublime
 Text</a>.
 
-![Chrome incognito](http://i.imgur.com/AI7u4Ek.png)
+![Chrome incognito](https://i.imgur.com/AI7u4Ek.png)
 
 If you're feeling a little sneakier you open a new Icognito window in Chrome via
 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>n</kbd>. Icognito mode allows your to
@@ -471,7 +471,7 @@ application's search functionality can be a savior, but ironically the search
 functionality can be difficult to find. Stop searching for the search so that
 you can begin searching with these shortcuts.
 
-![My computer](http://i.imgur.com/gTzjt7w.png)
+![My computer](https://i.imgur.com/gTzjt7w.png)
 
 | Key combination                  | Result                                               |
 | -------------------------------- | ---------------------------------------------------- |
@@ -649,7 +649,7 @@ that post. It's like telling Facebook
 is my final answer</a>". This shortcut also works in Gmail to send an email that
 you are composing.
 
-![Facebook post](http://i.imgur.com/YG4uNGU.png)
+![Facebook post](https://i.imgur.com/YG4uNGU.png)
 
 On the flipside, if you're in a field that uses the <kbd>enter</kbd> key to
 submit the entry (such as Excel cells), you can generally use <kbd>alt</kbd> +
@@ -663,7 +663,7 @@ Have you ever wondered if there is a shortcut that immediately places your
 cursor in a website's search box? Probably not, but after learning this shortcut
 you'll never risk wondering.
 
-![Twitter search](http://i.imgur.com/xUhbXtO.png)
+![Twitter search](https://i.imgur.com/xUhbXtO.png)
 
 | Key combination | Result                                                               |
 | --------------- | -------------------------------------------------------------------- |
@@ -691,7 +691,7 @@ shortcuts to be a top lister.
 | <kbd>ctrl</kbd> + <kbd>[</kbd>                    | Unindent line or selection  |
 | <kbd>shift</kbd> + <kbd>enter</kbd>               | Add new line without bullet |
 
-![Gmail bulleting](http://i.imgur.com/c4KgJfU.png)
+![Gmail bulleting](https://i.imgur.com/c4KgJfU.png)
 
 <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>7</kbd> will get you started with a
 numeric list. If bullets are more your thing than swap the <kbd>7</kbd> for an
@@ -734,7 +734,7 @@ baby. It provides multiple channels (like chat rooms) to have conversations, but
 having to click on the channel you want to view is silly when there is a
 shortcut for that.
 
-![Slack logo](http://i.imgur.com/7PpM4MT.jpg =300x)
+![Slack logo](https://i.imgur.com/7PpM4MT.jpg =300x)
 
 | Key combination                | Result                                  |
 | ------------------------------ | --------------------------------------- |
