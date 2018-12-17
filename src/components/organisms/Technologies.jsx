@@ -4,15 +4,16 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import { TwoToneHeading, Section, Blurb } from '../atoms';
 import { TechnologiesList } from '../molecules';
-import { mediaQuery } from '../../util/style';
+import { mediaQuery, webpBackground } from '../../util/style';
 
 const Wrapper = styled(Section)`
-  background: url('img/backgrounds/star-field.png');
   align-items: center;
   display: flex;
   flex-direction: column;
   padding-bottom: ${rem('80px')};
   text-align: center;
+
+  ${webpBackground('img/backgrounds/star-field.png', 'img/backgrounds/star-field.webp')};
 
   ${mediaQuery.small`
     padding-bottom: ${rem('180px')};

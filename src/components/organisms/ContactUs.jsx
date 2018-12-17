@@ -2,14 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { ContactForm, ContactHeader, ContactInformation } from '../organisms';
 import { Section } from '../atoms';
-import { mediaQuery, themed } from '../../util/style';
+import { mediaQuery, themed, webpBackground } from '../../util/style';
 
 const Wrapper = styled(Section)`
-  background: url(img/backgrounds/moon.jpg) center bottom / contain no-repeat;
+  background: center bottom / contain no-repeat;
   display: block;
   padding-bottom: 45vw;
   position: relative;
   overflow-x: hidden;
+
+  ${webpBackground('img/backgrounds/moon.jpg', 'img/backgrounds/moon.webp')};
 
   ${mediaQuery.large`
     padding-bottom: 28em;
