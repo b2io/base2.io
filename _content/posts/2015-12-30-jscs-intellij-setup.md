@@ -67,7 +67,7 @@ location you can do so by selecting the second option. The Code style preset can
 be set from this window, but we've basically already done that by creating our
 .jscsrc file and setting the preset as airbnb there.
 
-![JSCS Settings](http://i.imgur.com/k4t5I9M.png)
+![JSCS Settings](https://i.imgur.com/k4t5I9M.png)
 
 This should start working once you hit ok and you'll see any format/style issues
 with your projects javascript files. You can manually clean them up, but I
@@ -77,26 +77,26 @@ config into WebStorm's code style settings. Lets set that up now.
 Open **Settings** and go to **Editor > Code Style > Javascript**. Then select
 the **Manage...** button.
 
-![Javascript Code Style Settings](http://i.imgur.com/paw2sxV.png)
+![Javascript Code Style Settings](https://i.imgur.com/paw2sxV.png)
 
 This will open another window, select **Import**.
 
-![Code Style Schemes](http://i.imgur.com/ttmSNi7.png)
+![Code Style Schemes](https://i.imgur.com/ttmSNi7.png)
 
 This opens yet another window, select **JSCS config file** and click **OK**
 
-![Scheme Import From](http://i.imgur.com/GVM7N2m.png)
+![Scheme Import From](https://i.imgur.com/GVM7N2m.png)
 
 This will open a **Select Path** dialog window. Just find your project's root
 directory and select the .jscsrc file located in the root. Then click **OK**.
 
-![Select Path](http://i.imgur.com/LmacVz7.png)
+![Select Path](https://i.imgur.com/LmacVz7.png)
 
 You can select to update the scheme you had selected, or create a new scheme.
 We'll create a new scheme called JSCS. Optionally you could also select a Code
 Style Preset from this window as well. Last click **OK**.
 
-![Import from JSCS config](http://i.imgur.com/gFJWKTW.png)
+![Import from JSCS config](https://i.imgur.com/gFJWKTW.png)
 
 Now you can close the **Code Style Schemes** dialog. Your javascript code style
 settings will be as close as possible to your settings in the .jscs config file.
@@ -118,7 +118,7 @@ jscs myfilename.js --fix
 Or WebStorm has an option to fix JSCS issues in line via context menu on the
 problem area. Here's a visual example of what that looks like:
 
-![Fix JSCS context menu](http://i.imgur.com/cOABQHg.png)
+![Fix JSCS context menu](https://i.imgur.com/cOABQHg.png)
 
 This is a little tricky to get this to popup, but if you click on the red
 squiggly and look for the red light bulb, you have an option to "Fix the current
@@ -135,7 +135,7 @@ Problems and push the edit (green pencil) button. I set mine to <kbd>opt</kbd> +
 <kbd>cmd</kbd> + <kbd>S</kbd> which was unused, but feel free to set it to
 something else that makes sense to you and/or your team.
 
-![Keymap JSCS Fix shortcut](http://i.imgur.com/DvfLmsi.png)
+![Keymap JSCS Fix shortcut](https://i.imgur.com/DvfLmsi.png)
 
 Now whenever you see JSCS errors just use the shortcut key and it'll clean those
 babies right up!
