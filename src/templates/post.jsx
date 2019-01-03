@@ -36,7 +36,7 @@ import { toNodes } from '../util/graphql';
 const PostByline = styled.span`
   font-size: 1.125em;
 
-  ${mediaQuery.small`
+  ${mediaQuery.smedium`
     font-size: 1.5em;
   `};
 `;
@@ -44,20 +44,21 @@ const PostByline = styled.span`
 const PostHeader = styled(Header)`
   align-items: center;
   background-color: #000;
-  background-image: url('/img/backgrounds/star-field.png');
+  background-image: url('/img/backgrounds/space-fog-purple.png'),
+    url('/img/backgrounds/star-field.png');
   display: flex;
   font-size: 16px;
   height: auto;
   margin-top: 3em;
+  padding-bottom: 1.75em;
+  padding-top: 1.75em;
 
   ${mediaQuery.xsmall`
     align-items: flex-start;
-    padding-bottom: 28px;
-    padding-top: 28px;
   `};
 
   ${mediaQuery.medium`
-    height: 530px;
+    min-height: 530px;
   `};
 `;
 
@@ -71,7 +72,7 @@ const PostHeaderInfo = styled.div`
 `};
 `;
 
-const PostImage = styled.div`
+const PostHeaderImage = styled.div`
   display: none;
   flex: 1;
   margin: 0 auto;
@@ -82,7 +83,7 @@ const PostImage = styled.div`
     max-width: 80%;
   }
 
-  ${mediaQuery.small`
+  ${mediaQuery.smedium`
     display: block;
   `};
 
@@ -104,7 +105,7 @@ const PostTitle = styled(H2)`
   font-weight: 400;
   font-size: 2.25em;
   line-height: 1.1;
-  margin-bottom: 30px;
+  margin-bottom: 0.83em;
   margin-top: 0;
 
   ${mediaQuery.small`
@@ -114,7 +115,7 @@ const PostTitle = styled(H2)`
 
   ${mediaQuery.medium`
     font-size: 4.5em;
-    margin-bottom: 56px;
+    margin-bottom: 0.62em;
   `};
 `;
 
@@ -176,28 +177,29 @@ function PostTemplate({ author, children, date, title }) {
         <PostHeaderInfo>
           <PostTitle>{title}</PostTitle>
           <PostMeta>
-            <PostByline>Posted by {author}</PostByline>
+            {author && <PostByline>Posted by {author}</PostByline>}
             <PostTime>
               <Time iso={date} />
             </PostTime>
           </PostMeta>
         </PostHeaderInfo>
-        <PostImage>
+        <PostHeaderImage>
           <img src="/img/monitor-constellation.png" alt="" />
-        </PostImage>
+        </PostHeaderImage>
       </PostHeader>
       <PostContent>{children}</PostContent>
     </Main>
   );
 }
 
-PostTemplate.defaultProps = {};
+PostTemplate.defaultProps = { author: '' };
 
 PostTemplate.propTypes = {
-  author: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+
+  author: PropTypes.string,
 };
 
 function mapPropsToProps({ data }) {

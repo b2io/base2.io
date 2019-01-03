@@ -23,7 +23,7 @@ const mq = (target, ...conditions) => (...args) => css`
 const mediaQuery = {
   xsmall: mq('screen', 'max-width: 480px'),
   small: mq('screen', 'min-width: 481px'),
-  smedium: mq('screen', 'min-width: 765px'), // Needed an intermediate size for global navigation
+  smedium: mq('screen', 'min-width: 767px'), // Needed an intermediate size for global navigation
   medium: mq('screen', 'min-width: 961px'),
   large: mq('screen', 'min-width: 1281px'),
   xlarge: mq('screen', 'min-width: 1921px'),
