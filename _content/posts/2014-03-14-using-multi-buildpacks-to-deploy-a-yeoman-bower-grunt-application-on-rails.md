@@ -1,5 +1,5 @@
 ---
-title: Using Heroku Multi Build Packs to Deploy a Yeoman/Bower/Grunt Application on Rails
+title: Using Heroku Multi Build Packs to Deploy a Yeoman / Bower / Grunt Application on Rails
 author: zbrown
 date: "2014-03-14T04:00:00.000Z"
 path: "/2014/03/14/using-multi-buildpacks-to-deploy-a-yeoman-bower-grunt-application-on-rails"

@@ -53,19 +53,13 @@ const PostHeader = styled(Header)`
   padding-bottom: 1.75em;
   padding-top: 1.75em;
 
-  ${mediaQuery.xsmall`
-    align-items: flex-start;
-  `};
-
   ${mediaQuery.medium`
     min-height: 530px;
   `};
 `;
 
 const PostHeaderInfo = styled.div`
-  display: flex;
   flex: 1;
-  flex-direction: column;
 
   ${mediaQuery.large`
   flex: 3;
@@ -75,16 +69,14 @@ const PostHeaderInfo = styled.div`
 const PostHeaderImage = styled.div`
   display: none;
   flex: 1;
-  margin: 0 auto;
-  max-width: 80%;
-  text-align: right;
 
   img {
     max-width: 80%;
   }
 
   ${mediaQuery.smedium`
-    display: block;
+    display: flex;
+    justify-content: flex-end;
   `};
 
   ${mediaQuery.large`
@@ -102,7 +94,6 @@ const PostTime = styled.span`
 
 const PostTitle = styled(H2)`
   color: #fff;
-  font-weight: 400;
   font-size: 2.25em;
   line-height: 1.1;
   margin-bottom: 0.83em;
@@ -110,12 +101,11 @@ const PostTitle = styled(H2)`
 
   ${mediaQuery.small`
     font-size: 3.25em;
-    margin-bottom: 32px;
+    margin-bottom: 0.62em;
   `};
 
   ${mediaQuery.medium`
     font-size: 4.5em;
-    margin-bottom: 0.62em;
   `};
 `;
 
@@ -123,7 +113,6 @@ const PostMeta = styled.div`
   color: #fff;
   display: flex;
   flex-direction: column;
-  font-weight: 400;
   line-height: 1.5;
 `;
 
