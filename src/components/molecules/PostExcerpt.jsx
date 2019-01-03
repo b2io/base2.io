@@ -22,32 +22,29 @@ const Excerpt = styled(P)`
   font-weight: 400;
 `;
 
-class PostExcerpt extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    author: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    excerpt: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  };
-
-  render() {
-    const { author, date, excerpt, path, title } = this.props;
-
-    return (
-      <PostListItem>
-        <PostTitle>
-          <Link to={path}>{title}</Link>
-        </PostTitle>
-        <PostMeta>
-          <Time iso={date} />— {author}
-        </PostMeta>
-        <Excerpt>{excerpt}</Excerpt>
-      </PostListItem>
-    );
-  }
+function PostExcerpt({ author, date, excerpt, path, title }) {
+  return (
+    <PostListItem>
+      <PostTitle>
+        <Link to={path}>{title}</Link>
+      </PostTitle>
+      <PostMeta>
+        <Time iso={date} />— {author}
+      </PostMeta>
+      <Excerpt>{excerpt}</Excerpt>
+    </PostListItem>
+  );
 }
+
+PostExcerpt.defaultProps = { author: '' };
+
+PostExcerpt.propTypes = {
+  date: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+
+  author: PropTypes.string,
+};
 
 export default PostExcerpt;

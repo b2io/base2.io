@@ -34,70 +34,86 @@ import {
 import { toNodes } from '../util/graphql';
 
 const PostByline = styled.span`
-  font-size: 24px;
+  font-size: 1.125em;
 
-  ${mediaQuery.xsmall`
-  font-size: 18px;
-`};
+  ${mediaQuery.small`
+    font-size: 1.5em;
+  `};
 `;
 
 const PostHeader = styled(Header)`
+  align-items: center;
   background-color: #000;
   background-image: url('/img/backgrounds/star-field.png');
   display: flex;
-  align-items: center;
-  height: 530px;
+  font-size: 16px;
+  height: auto;
   margin-top: 3em;
 
   ${mediaQuery.xsmall`
     align-items: flex-start;
-    height: auto;
     padding-bottom: 28px;
     padding-top: 28px;
+  `};
+
+  ${mediaQuery.medium`
+    height: 530px;
   `};
 `;
 
 const PostHeaderInfo = styled.div`
   display: flex;
-  flex: 2;
+  flex: 1;
   flex-direction: column;
+
+  ${mediaQuery.large`
+  flex: 3;
+`};
 `;
 
-const PostImage = styled(Img)`
+const PostImage = styled.div`
   display: none;
   flex: 1;
   margin: 0 auto;
   max-width: 80%;
+  text-align: right;
+
+  img {
+    max-width: 80%;
+  }
 
   ${mediaQuery.small`
     display: block;
   `};
+
+  ${mediaQuery.large`
+    flex: 2;
+  `};
 `;
 
 const PostTime = styled.span`
-  font-size: 18px;
   text-transform: uppercase;
 
-  ${mediaQuery.xsmall`
-    font-size: 16px;
+  ${mediaQuery.medium`
+    font-size: 1.125em;
   `};
 `;
 
 const PostTitle = styled(H2)`
   color: #fff;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 2.25em;
   line-height: 1.1;
   margin-bottom: 30px;
   margin-top: 0;
 
   ${mediaQuery.small`
-    font-size: 52px;
+    font-size: 3.25em;
     margin-bottom: 32px;
   `};
 
   ${mediaQuery.medium`
-    font-size: 72px;
+    font-size: 4.5em;
     margin-bottom: 56px;
   `};
 `;
@@ -136,7 +152,7 @@ const markdownToElement = md =>
         h4: H4,
         h5: H5,
         hr: HR,
-        // img: Img,
+        img: Img,
         li: LI,
         ol: OL,
         p: P,
@@ -166,7 +182,9 @@ function PostTemplate({ author, children, date, title }) {
             </PostTime>
           </PostMeta>
         </PostHeaderInfo>
-        <PostImage src="/img/monitor-constellation.png" alt="" />
+        <PostImage>
+          <img src="/img/monitor-constellation.png" alt="" />
+        </PostImage>
       </PostHeader>
       <PostContent>{children}</PostContent>
     </Main>
