@@ -38,7 +38,7 @@ const NavBar = styled.nav`
     transition: all 300ms linear 500ms;
   }
 
-  ${mediaQuery.small`
+  ${mediaQuery.smedium`
     padding: 0 20px;
   `};
 `;
@@ -63,7 +63,7 @@ const NavList = styled(UL)`
     opacity: 0;
     transition: all 150ms ease-in 200ms;
 
-    ${mediaQuery.small`
+    ${mediaQuery.smedium`
       align-items: center;
       display: flex;
       height: auto;
@@ -78,7 +78,7 @@ const NavItem = styled(LI)`
   border-bottom: 1px solid ${themed('color.navAccent')};
   font-size: 1.5em;
 
-  ${mediaQuery.small`
+  ${mediaQuery.smedium`
     border: none;
   `};
 `;
@@ -91,7 +91,7 @@ const NavLink = styled(Link)`
   margin: 10px 0 10px 30px;
   width: 100%;
 
-  ${mediaQuery.small`
+  ${mediaQuery.smedium`
     color: ${themed('color.navText')};
     position: relative;
     width: auto;
@@ -137,7 +137,7 @@ const LogoToggleContainer = styled.div`
   padding: 0 10px;
   position: relative;
 
-  ${mediaQuery.small`
+  ${mediaQuery.smedium`
     font-size: 1.25rem;
     padding: 0;
   `};
@@ -153,7 +153,7 @@ const HomeLink = styled(A)`
   > svg {
     height: 50%;
 
-    ${mediaQuery.small`
+    ${mediaQuery.smedium`
       height: 70%;
   `};
   }
@@ -176,7 +176,7 @@ const MenuToggle = styled(Button)`
     color: ${themed('color.navText')};
   }
 
-  ${mediaQuery.small`
+  ${mediaQuery.smedium`
     display: none;
   `};
 `;
@@ -246,7 +246,7 @@ class GlobalNavigation extends React.Component {
     return (
       <NavBar
         className={
-          this.props.windowWidth <= 480 && this.state.isOpen
+          this.props.windowWidth <= 764 && this.state.isOpen
             ? 'menu-open'
             : 'menu-closed'
         }
