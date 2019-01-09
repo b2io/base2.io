@@ -73,13 +73,12 @@ const PostHeaderImage = styled.div`
   flex: 1;
 
   img {
-    align-self: center;
     max-width: 80%;
   }
 
   ${mediaQuery.smedium`
-    display: flex;
-    justify-content: flex-end;
+    display: block;
+    text-align:right;
   `};
 
   ${mediaQuery.large`
