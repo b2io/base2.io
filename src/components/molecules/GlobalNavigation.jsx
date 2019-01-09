@@ -19,6 +19,8 @@ const mobileBottomMenu = {
   value: `${em('75px')}`,
 };
 
+const MOBILE_NAVIGATION_BREAKPOINT = `767`;
+
 const NavBar = styled.nav`
   background-color: ${themed('color.navBackground')};
   display: flex;
@@ -246,7 +248,8 @@ class GlobalNavigation extends React.Component {
     return (
       <NavBar
         className={
-          this.props.windowWidth <= 764 && this.state.isOpen
+          this.props.windowWidth <= MOBILE_NAVIGATION_BREAKPOINT &&
+          this.state.isOpen
             ? 'menu-open'
             : 'menu-closed'
         }
