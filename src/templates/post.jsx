@@ -1,4 +1,5 @@
 import grayMatter from 'gray-matter';
+import { em } from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
@@ -34,25 +35,25 @@ import {
 import { toNodes } from '../util/graphql';
 
 const PostByline = styled.span`
-  font-size: 1.125em;
+  font-size: ${em('18px')};
 
   ${mediaQuery.smedium`
-    font-size: 1.5em;
+    font-size: ${em('24px')};
   `};
 `;
 
 const PostHeader = styled(Header)`
   align-items: center;
-  background-color: ${themed('color.backgroundReverse')};
+  background-color: ${themed('color.black')};
   background-image: url('/img/backgrounds/space-fog-purple.png'),
     url('/img/backgrounds/star-field.png');
   display: flex;
   font-size: 1rem;
   font-weight: 400;
   height: auto;
-  margin-top: 3em;
-  padding-bottom: 1.75em;
-  padding-top: 1.75em;
+  margin-top: ${em('48px')};
+  padding-bottom: ${em('28px')};
+  padding-top: ${em('28px')};
 
   ${mediaQuery.medium`
     min-height: 530px;
@@ -90,25 +91,26 @@ const PostTime = styled.span`
   text-transform: uppercase;
 
   ${mediaQuery.medium`
-    font-size: 1.125em;
+    font-size: ${em('18px')};
   `};
 `;
 
 const PostTitle = styled(H2)`
   color: ${themed('color.white')};
-  font-size: 2.25em;
+  font-size: ${em('36px')};
   font-weight: 600;
   line-height: 1.1;
-  margin-bottom: 0.83em;
+  margin-bottom: ${em('30px', '36px')};
   margin-top: 0;
 
   ${mediaQuery.small`
-    font-size: 3.25em;
-    margin-bottom: 0.62em;
+    font-size: ${em('52px')};
+    margin-bottom: ${em('32px', '52px')};
   `};
 
   ${mediaQuery.medium`
-    font-size: 4.5em;
+    font-size: ${em('72px')};
+    margin-bottom: ${em('32px', '72px')};
   `};
 `;
 
