@@ -19,7 +19,7 @@ const mobileBottomMenu = {
   value: `${em('75px')}`,
 };
 
-const MOBILE_NAVIGATION_BREAKPOINT = `767`;
+const MOBILE_NAVIGATION_BREAKPOINT = '767';
 
 const NavBar = styled.nav`
   background-color: ${themed('color.navBackground')};
