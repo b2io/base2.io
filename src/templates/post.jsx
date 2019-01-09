@@ -5,7 +5,7 @@ import { mapProps } from 'recompose';
 import remark from 'remark';
 import styled from 'styled-components';
 import remarkReact from 'remark-react';
-import { mediaQuery } from '../util/style';
+import { mediaQuery, themed } from '../util/style';
 import {
   A,
   Blockquote,
@@ -43,11 +43,12 @@ const PostByline = styled.span`
 
 const PostHeader = styled(Header)`
   align-items: center;
-  background-color: #000;
+  background-color: ${themed('color.backgroundReverse')};
   background-image: url('/img/backgrounds/space-fog-purple.png'),
     url('/img/backgrounds/star-field.png');
   display: flex;
-  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
   height: auto;
   margin-top: 3em;
   padding-bottom: 1.75em;
@@ -71,6 +72,7 @@ const PostHeaderImage = styled.div`
   flex: 1;
 
   img {
+    align-self: center;
     max-width: 80%;
   }
 
@@ -93,8 +95,9 @@ const PostTime = styled.span`
 `;
 
 const PostTitle = styled(H2)`
-  color: #fff;
+  color: ${themed('color.white')};
   font-size: 2.25em;
+  font-weight: 600;
   line-height: 1.1;
   margin-bottom: 0.83em;
   margin-top: 0;
@@ -110,7 +113,7 @@ const PostTitle = styled(H2)`
 `;
 
 const PostMeta = styled.div`
-  color: #fff;
+  color: ${themed('color.white')};
   display: flex;
   flex-direction: column;
   line-height: 1.5;
