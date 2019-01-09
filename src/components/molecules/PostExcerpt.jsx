@@ -29,7 +29,7 @@ function PostExcerpt({ author, date, excerpt, path, title }) {
         <Link to={path}>{title}</Link>
       </PostTitle>
       <PostMeta>
-        <Time iso={date} />— {author}
+        <Time iso={date} /> {author && ` - ${author}`}
       </PostMeta>
       <Excerpt>{excerpt}</Excerpt>
     </PostListItem>
