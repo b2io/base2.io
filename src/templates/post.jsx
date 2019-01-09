@@ -1,10 +1,12 @@
 import grayMatter from 'gray-matter';
+import { em } from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import remark from 'remark';
 import styled from 'styled-components';
 import remarkReact from 'remark-react';
+import { mediaQuery, themed } from '../util/style';
 import {
   A,
   Blockquote,
@@ -32,18 +34,90 @@ import {
 } from '../components';
 import { toNodes } from '../util/graphql';
 
+const PostByline = styled.span`
+  font-size: ${em('18px')};
+
+  ${mediaQuery.smedium`
+    font-size: ${em('24px')};
+  `};
+`;
+
 const PostHeader = styled(Header)`
-  margin-top: 4em;
+  align-items: center;
+  background-color: ${themed('color.black')};
+  background-image: url('/img/backgrounds/space-fog-purple.png'),
+    url('/img/backgrounds/star-field.png');
+  display: flex;
+  font-size: 1rem;
+  font-weight: 400;
+  height: auto;
+  margin-top: ${em('48px')};
+  padding-bottom: ${em('28px')};
+  padding-top: ${em('28px')};
+
+  ${mediaQuery.medium`
+    min-height: 530px;
+  `};
+`;
+
+const PostHeaderInfo = styled.div`
+  flex: 1;
+
+  ${mediaQuery.large`
+  flex: 3;
+`};
+`;
+
+const PostHeaderImage = styled.div`
+  display: none;
+  flex: 1;
+
+  img {
+    max-width: 80%;
+  }
+
+  ${mediaQuery.smedium`
+    display: block;
+    text-align:right;
+  `};
+
+  ${mediaQuery.large`
+    flex: 2;
+  `};
+`;
+
+const PostTime = styled.span`
+  text-transform: uppercase;
+
+  ${mediaQuery.medium`
+    font-size: ${em('18px')};
+  `};
 `;
 
 const PostTitle = styled(H2)`
-  font-weight: 400;
+  color: ${themed('color.white')};
+  font-size: ${em('36px')};
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: ${em('30px', '36px')};
   margin-top: 0;
+
+  ${mediaQuery.small`
+    font-size: ${em('52px')};
+    margin-bottom: ${em('32px', '52px')};
+  `};
+
+  ${mediaQuery.medium`
+    font-size: ${em('72px')};
+    margin-bottom: ${em('32px', '72px')};
+  `};
 `;
 
-const PostMeta = styled(P)`
-  font-size: 0.85em;
-  font-style: italic;
+const PostMeta = styled.div`
+  color: ${themed('color.white')};
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
 `;
 
 const PostContent = styled(Section)`
@@ -88,33 +162,38 @@ const markdown = raw => (
   <HoistChildren>{markdownToElement(grayMatter(raw).content)}</HoistChildren>
 );
 
-class PostTemplate extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    author: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired,
-    date: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  };
-
-  render() {
-    const { author, children, date, title } = this.props;
-
-    return (
-      <Main>
-        <GlobalNavigation />
-        <PostHeader>
+function PostTemplate({ author, children, date, title }) {
+  return (
+    <Main>
+      <GlobalNavigation />
+      <PostHeader>
+        <PostHeaderInfo>
           <PostTitle>{title}</PostTitle>
           <PostMeta>
-            <Time iso={date} /> — {author}
+            {author && <PostByline>Posted by {author}</PostByline>}
+            <PostTime>
+              <Time iso={date} />
+            </PostTime>
           </PostMeta>
-        </PostHeader>
-        <PostContent>{children}</PostContent>
-      </Main>
-    );
-  }
+        </PostHeaderInfo>
+        <PostHeaderImage>
+          <img src="/img/monitor-constellation.png" alt="" />
+        </PostHeaderImage>
+      </PostHeader>
+      <PostContent>{children}</PostContent>
+    </Main>
+  );
 }
+
+PostTemplate.defaultProps = { author: '' };
+
+PostTemplate.propTypes = {
+  children: PropTypes.node.isRequired,
+  date: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+
+  author: PropTypes.string,
+};
 
 function mapPropsToProps({ data }) {
   // TODO: Find a way to resolve the author name more easily.
