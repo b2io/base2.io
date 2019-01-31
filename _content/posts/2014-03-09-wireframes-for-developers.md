@@ -22,7 +22,7 @@ primary artifact for the developers to understand the requirements of the
 application. Therefore it is important that the edge cases that developers look
 for are accounted for in the wireframes.
 
-### Know Your Tool
+## Know Your Tool
 
 There are a lot of good wireframing tools available online. The one we use is
 [Balsamiq Mockups](http://balsamiq.com/products/mockups/). It is reasonably
@@ -38,7 +38,7 @@ that you take some time to learn your tool.
 * Presentation - How can the final wireframes be demonstrated? Export to pdf,
   png, or live presentation mode?
 
-### Know Your Resolution
+## Know Your Resolution
 
 Are you creating a website, desktop app, or mobile app? Your wireframes should
 be sized based on the lowest resolution the application will support. If you are
@@ -46,7 +46,7 @@ targeting multiple platforms then it will be necessary to create different sets
 of wireframes. For instance, you may need to have a set that is based on a
 mobile device, and another set at 1024x768 for a web browser.
 
-### Data Matters
+## Data Matters
 
 In most cases lorem ipsum is not going to cut it. Developers may not read your
 annotations (and they probably won’t), but they will expect the data on the
@@ -64,7 +64,7 @@ Men_ may work. A To-do app could be _Breaking Bad_. However, be aware that your
 show selection may say more about yourself then you care to share, and not all
 shows are client-safe.
 
-### Think Like a User
+## Think Like a User
 
 The most important player in this game is the user. So it’s important to think
 like one. Mentally navigate the application like a user. Log in, go to the home
@@ -72,7 +72,7 @@ screen, and think “What do I want to do now?”. You can get all of the client
 features in the application, but if the user doesn’t know how to intuitively
 navigate to those features it’s a loss cause.
 
-### Think Like a Developer
+## Think Like a Developer
 
 Developers think in edge cases. They don’t question if the glass is half full or
 half empty - they ask, “What if there is no glass? What if there is no table for
@@ -82,7 +82,7 @@ application should react when things go wrong. What happens if required data is
 not entered, the user forgets his or her password, or there are no results to
 show in a list?
 
-### Think Like an Application
+## Think Like an Application
 
 Unlike your wireframes, the application you’re designing is not static. The
 screen size may be different, and the result list may be large or small. Your

@@ -12,7 +12,7 @@ reflect on how things have gone so far.
 
 In this article, I'll briefly review Month One.
 
-### Setup
+## Setup
 
 Base Two provided me with a MacBook Pro (15-inch, Mid 2012) and a monitor.
 Previously I was on Ubuntu, so I had to put in some work getting up and running
@@ -24,7 +24,7 @@ regularly touch base through video chatting. We occasionally meet up in-person,
 and on my first day I went to his home office, where he helped me get started on
 my first project.
 
-### Project 1
+## Project 1
 
 The first project I worked on was a marketing page. It was a smaller project,
 with most of the components and styles in place by the time I joined. Components
@@ -45,7 +45,7 @@ what I would need to do, which helped us create issues in the backlog.
 project from the start, and I treated him as project lead. I checked in with
 him, talked over requirements, and we paired on some tasks together.
 
-![Project 1](https://i.imgur.com/AxDbeSq.png "Project 1 screenshot")
+![Project 1](https://i.imgur.com/AxDbeSq.png 'Project 1 screenshot')
 
 We had a particularly good pairing session working on the sliders you can see in
 the photo. Screen sharing, I showed him how I was using Redux to handle the
@@ -61,7 +61,7 @@ majority of my code, and gave me valuable feedback on better ways to structure
 the app. He called attention to some performance tradeoffs, and gave me advice
 on designing and shaping the Redux store.
 
-### Review
+## Review
 
 Perhaps the most interesting aspect of Month One is that Tony and Chris, my two
 main points of contact this month, could only give me so much guidance. This

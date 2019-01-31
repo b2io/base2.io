@@ -8,12 +8,12 @@ path: "/2013/11/23/link-roundup-1"
 The first in a (hopefully weekly) recurring post where we collect interesting
 links from the week.
 
-#### Libaries
+## Libaries
 
 * [kickstarter/rack-attack](https://github.com/kickstarter/rack-attack)
 * [samsymons/RedditKit.rb](https://github.com/samsymons/RedditKit.rb)
 
-#### Articles
+## Articles
 
 * [Infrastructure automation by example](https://practicingruby.com/articles/infrastructure-automation?u=c94a53804e)
 * [Building Vagrant Machines with Packer](http://blog.codeship.io/2013/11/07/building-vagrant-machines-with-packer.html)
@@ -21,7 +21,7 @@ links from the week.
 * [OAuth as Single Sign On](https://blog.heroku.com/archives/2013/11/14/oauth-sso)
 * [Honey, I shrunk the internet! - Content Compression via Rack::Deflater](http://robots.thoughtbot.com/content-compression-with-rack-deflater/)
 
-#### Tools
+## Tools
 
 * [Leanpub: Publish Early, Publish Often](https://leanpub.com/)
 * [omniref](http://www.omniref.com/)

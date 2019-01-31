@@ -63,7 +63,7 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-no-unsupported-browser-features": "^1.0.1",
     "stylelint-processor-styled-components": "^1.2.1",
-    "svg-react-loader": "^0.4.5"
+    "svg-react-loader": "^0.4.6"
   },
   "scripts": {
     "build": "gatsby build",
@@ -74,16 +74,7 @@
     "start": "gatsby serve"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "prettier --write",
-      "stylelint",
-      "git add"
-    ],
-    "*.{json,css,md}": [
-      "prettier --write",
-      "stylelint",
-      "git add"
-    ]
+    "*.{js,jsx}": ["eslint --fix", "prettier --write", "stylelint", "git add"],
+    "*.{json,css,md}": ["prettier --write", "stylelint", "git add"]
   }
 }
