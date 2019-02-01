@@ -131,7 +131,7 @@ const PostContent = styled(Section)`
   ${mediaQuery.small`
     font-size: ${rem('21px')};
     line-height: ${em('33px', '21px')};
-    padding: ${em('75px', '21px')}; 0 0;
+    padding: ${em('75px', '21px')} 0 0;
   `};
 `;
 
