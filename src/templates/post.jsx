@@ -90,7 +90,7 @@ const PostTime = styled.span`
   `};
 `;
 
-const PostTitle = styled(H1)`
+const PostTitle = styled.h1`
   color: ${themed('color.white')};
   font-size: ${em('36px')};
   font-weight: 600;
