@@ -6,15 +6,15 @@ import { mapProps } from 'recompose';
 import remark from 'remark';
 import styled from 'styled-components';
 import remarkReact from 'remark-react';
-import { mediaQuery, themed } from '../util/style';
+import { mediaQuery } from '../util/style';
 import {
   A,
   Blockquote,
+  BlogHeader,
   Code,
   Del,
   EM,
   GlobalNavigation,
-  Header,
   H1,
   H5,
   HR,
@@ -25,96 +25,9 @@ import {
   OL,
   Section,
   Strong,
-  Time,
   UL,
 } from '../components';
 import { toNodes } from '../util/graphql';
-
-const PostByline = styled.span`
-  font-size: ${em('18px')};
-
-  ${mediaQuery.smedium`
-    font-size: ${em('24px')};
-  `};
-`;
-
-const PostHeader = styled(Header)`
-  align-items: center;
-  background-color: ${themed('color.black')};
-  background-image: url('/img/backgrounds/space-fog-purple.png'),
-    url('/img/backgrounds/star-field.png');
-  display: flex;
-  font-size: 1rem;
-  font-weight: 400;
-  height: auto;
-  margin-top: ${em('48px')};
-  padding-bottom: ${em('28px')};
-  padding-top: ${em('28px')};
-
-  ${mediaQuery.medium`
-    min-height: 530px;
-  `};
-`;
-
-const PostHeaderInfo = styled.div`
-  flex: 1;
-
-  ${mediaQuery.large`
-  flex: 3;
-`};
-`;
-
-const PostHeaderImage = styled.div`
-  display: none;
-  flex: 1;
-
-  img {
-    max-width: 80%;
-  }
-
-  ${mediaQuery.smedium`
-    display: block;
-    text-align:right;
-  `};
-
-  ${mediaQuery.large`
-    flex: 2;
-  `};
-`;
-
-const PostTime = styled.span`
-  text-transform: uppercase;
-
-  ${mediaQuery.medium`
-    font-size: ${em('18px')};
-  `};
-`;
-
-const PostTitle = styled.h1`
-  color: ${themed('color.white')};
-  font-size: ${em('36px')};
-  font-weight: 600;
-  line-height: 1.1;
-  margin-bottom: ${em('30px', '36px')};
-  margin-top: 0;
-
-  ${mediaQuery.small`
-    font-size: ${em('52px')};
-    margin-bottom: ${em('32px', '52px')};
-  `};
-
-  ${mediaQuery.medium`
-    font-size: ${em('72px')};
-    margin-bottom: ${em('32px', '72px')};
-  `};
-`;
-
-const PostMeta = styled.div`
-  color: ${themed('color.white')};
-  display: flex;
-  flex-direction: column;
-  line-height: 1.5;
-`;
 
 const PostContent = styled(Section)`
   font-size: ${rem('18px')};
@@ -215,20 +128,13 @@ function PostTemplate({ author, children, date, title }) {
   return (
     <Main>
       <GlobalNavigation />
-      <PostHeader>
-        <PostHeaderInfo>
-          <PostTitle>{title}</PostTitle>
-          <PostMeta>
-            {author && <PostByline>Posted by {author}</PostByline>}
-            <PostTime>
-              <Time iso={date} />
-            </PostTime>
-          </PostMeta>
-        </PostHeaderInfo>
-        <PostHeaderImage>
-          <img src="/img/monitor-constellation.png" alt="" />
-        </PostHeaderImage>
-      </PostHeader>
+      <BlogHeader
+        author={author}
+        img="/img/monitor-constellation.png"
+        imgAlt=""
+        date={date}
+        title={title}
+      />
       <PostContent>{children}</PostContent>
     </Main>
   );

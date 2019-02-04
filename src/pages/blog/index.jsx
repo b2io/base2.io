@@ -3,19 +3,13 @@ import React from 'react';
 import { mapProps } from 'recompose';
 import styled from 'styled-components';
 import {
+  BlogHeader,
   GlobalNavigation,
-  Header,
-  H1,
   Main,
   PostExcerpt,
-  Section,
   UL,
 } from '../../components';
 import { toNodes } from '../../util/graphql';
-
-const BlogHeader = styled(Header)`
-  margin-top: 4em;
-`;
 
 const PostList = styled(UL)`
   list-style-type: none;
@@ -23,35 +17,33 @@ const PostList = styled(UL)`
   padding: 0;
 `;
 
-class BlogIndex extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    posts: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.node.isRequired,
-      }),
-    ).isRequired,
-  };
-
-  render() {
-    const { posts } = this.props;
-
-    return (
-      <Main>
-        <GlobalNavigation />
-        <BlogHeader>
-          <H1>Blog</H1>
-        </BlogHeader>
-        <Section>
-          <PostList>
-            {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
-          </PostList>
-        </Section>
-      </Main>
-    );
-  }
+function BlogIndex({ posts }) {
+  return (
+    <Main>
+      <GlobalNavigation />
+      <BlogHeader
+        blogList
+        img="/img/transmission-constellation.png"
+        imgAlt="Satellite transmitting messages"
+        title="Transmissions"
+        tagline="Lorem Ipsum Spacey Blog Stuff"
+      />
+      <PostList>
+        {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
+      </PostList>
+    </Main>
+  );
 }
+
+BlogIndex.defaultProps = {};
+
+BlogIndex.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+    }),
+  ).isRequired,
+};
 
 function mapPropsToProps({ data }) {
   // TODO: Find a way to resolve the author name more easily.
