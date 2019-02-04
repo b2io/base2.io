@@ -20,7 +20,7 @@ right into the announcements](https://www.youtube.com/watch?v=862r3XS2YB0 'Googl
 
 The following were the highlights for me:
 
-### Highight: Google Home
+### Highlight: Google Home
 
 Building on the Big Brother-esque amount of data Google has on the world, and on
 us as users, they are now able to use natural language processing to respond to
@@ -37,7 +37,7 @@ affixed to my hand, so that’s not much of a draw for me either. Still, it’ll
 interesting to see how well Google Home performs, especially in comparison to
 the Amazon Echo.
 
-### Highight: Allo/Duo
+### Highlight: Allo/Duo
 
 I’ve heard a lot of guff along the lines of “oh yes, a new chat app, that’s
 _exactly_ what we need.” On the surface, I can see where this sentiment comes
@@ -52,7 +52,7 @@ competitors (Writing on top of photos => Snapchat. Overuse of emoji => Slack.
 Stickers => Messenger. Minimal interface => Facetime.) and layering Assistant
 ecosystem and Knock Knock to give themselves a competitive advantage.
 
-### Highight: Android
+### Highlight: Android
 
 Admittedly, I am not an Android developer nor do I own any Android devices. I
 took this part of the Keynote as an opportunity to apply more sunscreen.
@@ -62,7 +62,7 @@ I intend to use the “woman working on a laptop” emoji daily, as soon as it i
 available. And although I’m not an Android user, I was pretty impressed by the
 Android Instant App initiative and I wonder if/when Apple will follow suit.
 
-### Highight: Web (Chrome)
+### Highlight: Web (Chrome)
 
 The big focus for all the Web talks at this year’s I/O was on mobile. Speakers
 threw the “1 billion mobile users” statistic around a lot. They also harped
