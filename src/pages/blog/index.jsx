@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
+import { em, rem } from 'polished';
 import styled from 'styled-components';
 import {
   BlogHeader,
@@ -10,11 +11,27 @@ import {
   UL,
 } from '../../components';
 import { toNodes } from '../../util/graphql';
+import { mediaQuery } from '../../util/style';
 
 const PostList = styled(UL)`
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  font-size: ${rem('18px')};
+  font-weight: 400;
+  line-height: ${em('27px', '18px')};
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-top: ${em('36px', '18px')};
+  width: 90%;
+
+  img {
+    max-width: 100%;
+  }
+
+  ${mediaQuery.small`
+    font-size: ${rem('21px')};
+    line-height: ${em('33px', '21px')};
+    padding: ${em('75px', '21px')} 0 0;
+  `};
 `;
 
 function BlogIndex({ posts }) {
@@ -84,7 +101,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 200)
+          excerpt(pruneLength: 300)
           fileAbsolutePath
           frontmatter {
             author
