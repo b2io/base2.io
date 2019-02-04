@@ -66,7 +66,7 @@ const BlogTitle = styled.h1`
   margin-top: 0;
 
   ${mediaQuery.xsmall`
-    &.large {
+    &.largeTitle {
       font-size: ${em('48px')};
       margin-bottom:${em('14px', '48px')};
     }
@@ -76,7 +76,7 @@ const BlogTitle = styled.h1`
     font-size: ${em('52px')};
     margin-bottom: ${em('32px', '52px')};
 
-    &.large {
+    &.largeTitle {
       margin-bottom:${em('18px', '52px')};
     }
   `};
@@ -125,7 +125,7 @@ function BlogHeader({ author, blogList, date, img, imgAlt, title, tagline }) {
   return (
     <BlogHeaderWrapper className={blogList ? 'center' : ''}>
       <BlogHeaderInfo>
-        <BlogTitle className={blogList ? 'large' : ''}>{title}</BlogTitle>
+        <BlogTitle className={blogList ? 'largeTitle' : ''}>{title}</BlogTitle>
         <PostMeta>
           {tagline && <BlogTagline>{tagline}</BlogTagline>}
           {author && <PostByline>Posted by {author}</PostByline>}
