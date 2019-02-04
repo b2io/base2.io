@@ -21,7 +21,7 @@ we've found so far:
 So far, the experience has been great. We're actually _excited_ about writing
 new posts now. And hey, we've posted again so that's good... right?
 
-### Further Reading
+## Further Reading
 
 * [Github Pages](http://pages.github.com/) -- First steps to getting a site
   setup using Jekyll on Github Pages.

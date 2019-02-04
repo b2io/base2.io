@@ -11,7 +11,7 @@ have recently been having a lot of fun building single page javascript and
 mobile applications with [Yeoman](http://yeoman.io/),
 [Grunt](http://gruntjs.com/) and [Bower](http://www.bower.io).
 
-### Thick Client === Happy Clients
+## Thick Client === Happy Clients
 
 First some background on us. We are a technology company that builds web,
 mobile, desktop and embedded solutions for clients big and small. We have worked
@@ -43,7 +43,7 @@ a really flexible way to do development and, while they aren't the answer to
 every problem, they rock, we have fun building them and in this particular case,
 they saved our client a lot of time and money.
 
-### Automating Front-end Workflow
+## Automating Front-end Workflow
 
 Last fall, I viewed a slide deck from
 [Addy Osmani](https://twitter.com/addyosmani) that completely blew my mind. The
@@ -64,7 +64,7 @@ simple as:
 At this point, if we wanted, we could begin test-driving the front-end with mock
 services while another developer begins writing Rails/PHP/.NET/Go/etc.
 
-### Build Artifacts in Version Control !== Best Practice
+## Build Artifacts in Version Control !== Best Practice
 
 So, here's where the dream died a little for me. We use Heroku for hosting our
 Rails applications and deploy to Heroku with Git. When Heroku receives the push,
@@ -89,7 +89,7 @@ do not belong in source control. If only Heroku could recognize our Rails
 application and also know to fetch our front-end dependencies and run our Grunt
 tasks.
 
-### Automating Multiple Builds on Heroku
+## Automating Multiple Builds on Heroku
 
 I'd like to say that I got fed up with the above build process and went
 searching for a better way, but that would be--at best--a half-truth. A few
@@ -127,7 +127,7 @@ Now, when you push to Heroku, the service will first look for a package.json and
 Gruntfile in the root (I point the Gruntfile to the Gruntfile in my subdirectory
 with grunt-hub) before bundling and spinning up a Rails server.
 
-### Wrapping up
+## Wrapping up
 
 ```sh
 $ git rm -rf /public

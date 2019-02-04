@@ -11,14 +11,14 @@ we will suggest a new shortcut each day that we find helpful in our day-to-day
 lives as front-end web developers. By learning a new shortcut each day you will
 be well on your way to living a mouse-free life.
 
-### Preface
+## Preface
 
 I do much of my day-to-day work on a Windows 7 machine using WebStorm, Visual
 Studio 2013, and Google Docs. As such, this list of keyboard shortcuts may not
 be as helpful to users of different platforms and software, though there are
 generally similar shortcuts available on those systems.
 
-#### <a name="1">
+### <a name="1">
 
 </a> 6/1 Move windows in Windows
 
@@ -38,7 +38,7 @@ Also, if you have multiple monitors, you can move the window from monitor to
 monitor by continuing to click the left or right arrow key while holding down
 the Windows key.
 
-#### <a name="2">
+### <a name="2">
 
 </a> 6/2: Move that cursor
 
@@ -68,7 +68,7 @@ character at a time. From there you simply need to remember that the
 | <kbd>ctrl</kbd> + <kbd>end</kbd>         | move cursor to the end of the document (super-duper right) |
 | <kbd>shift</kbd> + key combo             | select text between cursor start and end point             |
 
-#### <a name="3">
+### <a name="3">
 
 </a> 6/3: Google Docs - Shortcut for everything
 
@@ -99,7 +99,7 @@ to learn the more granular ones over time. If you'd like to learn all of the
 shortcut keys available in Google Docs there's a shortcut for that too:
 <kbd>ctrl</kbd> + <kbd>/</kbd>.
 
-#### <a name="4">
+### <a name="4">
 
 </a> 6/4: Super pasting powers
 
@@ -136,7 +136,7 @@ each <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>v</kbd> click (while holding
 
 Copy this post (<kbd>ctrl</kbd> + <kbd>c</kbd>) and give it a try!
 
-#### <a name="5">
+### <a name="5">
 
 </a> 6/5: Lock it down
 
@@ -156,7 +156,7 @@ you
 <a href="http://www.wikihow.com/Pull-a-Computer-Prank-on-Your-Friends" target="_blank">desktop
 background</a>.
 
-#### <a name="6">
+### <a name="6">
 
 </a> 6/6: Show me the Desktop
 
@@ -174,7 +174,7 @@ for mouse-lovers, who we are not.
 desktop without ever glancing at your mouse. If you want to bring all of your
 applications back up simply hit <kbd>win</kbd> + <kbd>d</kbd> again.
 
-#### <a name="7">
+### <a name="7">
 
 </a> 6/7: One-handed Browser Tab Management
 
@@ -206,7 +206,7 @@ the magic of the shift key).
 Now you're able to create, switch, and remove browser tabs all with just your
 left hand, which frees your right hand to throw your mouse across the room.
 
-#### <a name="8">
+### <a name="8">
 
 </a> 6/8: Spreadsheet Column/Row Selection
 
@@ -233,7 +233,7 @@ columns.
 If rows are more your thing then you can use <kbd>shift</kbd> + <kbd>space</kbd>
 to select a row (<kbd>shift</kbd> for "**S**ooo not a column").
 
-#### <a name="9">
+### <a name="9">
 
 </a> 6/9: Spreadsheet Column/Row Insert and Delete
 
@@ -273,7 +273,7 @@ The insertion shortcuts are <kbd>alt</kbd> + <kbd>i</kbd> + <kbd>c</kbd> for
 "**I**nsert **R**ow". Column and row deletion is <kbd>alt</kbd> + <kbd>e</kbd> +
 <kbd>d</kbd> for "**E**dit **D**elete".
 
-#### <a name="10">
+### <a name="10">
 
 </a> 6/10: Jump to the Address Bar
 
@@ -297,7 +297,7 @@ when you want to copy the address of the page you are on via <kbd>ctrl</kbd> +
 Google search rather than it potentially being treated as a url as is the case
 when you search for "asp.net".
 
-#### <a name="11">
+### <a name="11">
 
 </a> 6/11: Switch Active Windows
 
@@ -318,7 +318,7 @@ you press <kbd>alt</kbd> + <kbd>tab</kbd> but keep holding down the
 and while holding <kbd>alt</kbd> it will switch the selected application for
 each press of the <kbd>tab</kbd> key.
 
-#### <a name="12">
+### <a name="12">
 
 </a> 6/12: Back and Forward Navigation
 
@@ -342,7 +342,7 @@ and <kbd>shift</kbd> + <kbd>backspace</kbd> will also navigate backward /
 forward assuming you're focus isn't in an input field, but the <kbd>alt</kbd>
 key approach is convenient because it always works.
 
-#### <a name="13">
+### <a name="13">
 
 </a> 6/13: Facebook Stream Navigation
 
@@ -362,7 +362,7 @@ If you skipped past something interesting click <kbd>k</kbd>. Be careful that
 you don't have focus in an input field otherwise you're going to have a pretty
 funny status update (jjjjjkjkjjk).
 
-#### <a name="14">
+### <a name="14">
 
 </a> 6/14: Browser Refresh
 
@@ -384,7 +384,7 @@ Note that <kbd>F5</kbd> and <kbd>shift</kbd> + <kbd>F5</kbd> perform the same
 refresh and refresh ignoring cache actions, but they're a bit more of a finger
 stretch.
 
-#### <a name="15">
+### <a name="15">
 
 </a> 6/15: Folder and File Browsing
 
@@ -416,7 +416,7 @@ If you prefer to start at a different folder than Computer you can use the run
 command <kbd>win</kbd> + <kbd>r</kbd> and then type the folder you want to jump
 to (such as c:/windows), and the click <kbd>enter</kbd>.
 
-#### <a name="16">
+### <a name="16">
 
 </a> 6/16: Rename Folder or File
 
@@ -436,7 +436,7 @@ you want to fully rename the folder or file you can just start typing. If,
 instead, you only wanted to modify the name then after hitting <kbd>F2</kbd> hit
 <kbd>arrow-right</kbd> to remove the highlight.
 
-#### <a name="17">
+### <a name="17">
 
 </a> 6/17: New Browser Window
 
@@ -462,7 +462,7 @@ If you're feeling a little sneakier you open a new Icognito window in Chrome via
 browse without storing history, cookies, etc. This is helpful if you're doing
 web development or if you're buying your significant other a surprise gift.
 
-#### <a name="18">
+### <a name="18">
 
 </a> 6/18: Find What You're Looking For
 
@@ -486,7 +486,7 @@ there are multiple results you can go to the next result with <kbd>F3</kbd>, and
 if you accidentally pass what you were looking for you can search backward with
 <kbd>shift</kbd> + <kbd>F3</kbd>.
 
-#### <a name="19">
+### <a name="19">
 
 </a> 6/19: Start with the Win Key
 
@@ -516,7 +516,7 @@ item.
 
 So hit <kbd>win</kbd> and give it a try!
 
-#### <a name="20">
+### <a name="20">
 
 </a> 6/20: Create New Folder and More
 
@@ -548,7 +548,7 @@ within Windows Explorer.
 | <kbd>ctrl</kbd> + <kbd>z</kbd> | Undo (delete, paste, rename, etc.)        |
 | <kbd>delete</kbd>              | Delete selected file(s) or folder(s)      |
 
-#### <a name="21">
+### <a name="21">
 
 </a> 6/21: Undo / Redo
 
@@ -576,7 +576,7 @@ shortcut (<kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>z</kbd>).
 You can also access the redo functionality with <kbd>ctrl</kbd> + <kbd>y</kbd>
 as in wh**Y** does this shortcut exist?
 
-#### <a name="22">
+### <a name="22">
 
 </a> 6/22: Print Screen and Window Capture
 
@@ -599,7 +599,7 @@ full screen? Add <kbd>alt</kbd> to the mix.
 can use Windows 7's "Snipping Tool". Open it using the Start Menu shortcuts you
 learned in [Start with the Win Key](#19).
 
-#### <a name="23">
+### <a name="23">
 
 </a> 6/23: Gmail Shortcuts
 
@@ -624,12 +624,12 @@ more</a>) are now available to you:
 
 To opt-in to Gmail shortcuts:
 
-1. Open the desktop version of Gmail (on your computer not a mobile device).
-2. Click the gear icon in the upper right corner, and select **Settings**.
-3. Within the **Keyboard shortcuts** section select **Keyboard shortcuts on**.
-4. Click **Save Changes** at the bottom of the screen.
+1.  Open the desktop version of Gmail (on your computer not a mobile device).
+2.  Click the gear icon in the upper right corner, and select **Settings**.
+3.  Within the **Keyboard shortcuts** section select **Keyboard shortcuts on**.
+4.  Click **Save Changes** at the bottom of the screen.
 
-#### <a name="24">
+### <a name="24">
 
 </a> 6/24: Submit Post When Enter Doesn't Work
 
@@ -655,7 +655,7 @@ On the flipside, if you're in a field that uses the <kbd>enter</kbd> key to
 submit the entry (such as Excel cells), you can generally use <kbd>alt</kbd> +
 <kbd>enter</kbd> to create a newline.
 
-#### <a name="25">
+### <a name="25">
 
 </a> 6/25: Jump to Website Search Box
 
@@ -675,7 +675,7 @@ box so that you can search mouse-free. Since the front slash shares the key with
 the <kbd>?</kbd> you can remember this shortcut by thinking, "How can I find
 what I'm looking for **?**".
 
-#### <a name="26">
+### <a name="26">
 
 </a> 6/26: Gmail Bullets and Indentation
 
@@ -706,7 +706,7 @@ power</a>.
 Learning these shortcuts will help you create bulleted lists both in Gmail and
 Google Docs.
 
-#### <a name="27">
+### <a name="27">
 
 </a> 6/27: Browser Bookmarks
 
@@ -724,7 +724,7 @@ Think **D** as in "**D**oubt I'll remember this website if I don't bookmark it".
 If you'd like to see your bookmark bar (or hide it) <kbd>ctrl</kbd> +
 <kbd>shift</kbd> + <kbd>b</kbd> is the way to do it.
 
-#### <a name="28">
+### <a name="28">
 
 </a> 6/28: Slack Channel Selector
 
@@ -743,7 +743,7 @@ shortcut for that.
 With <kbd>ctrl</kbd> + <kbd>k</kbd> you can jump between Slack conversations
 without lifting your fingers off of the keyboard.
 
-#### <a name="29">
+### <a name="29">
 
 </a> 6/29: Chrome Dev Tools
 
@@ -770,7 +770,7 @@ The average user may only care to know how to open the Chrome Dev Tools
 commit to memorizing all of these shortcuts to make your working life a little
 bit easier.
 
-#### <a name="30">
+### <a name="30">
 
 </a> 6/30: A Shortcut for Shortcuts
 
@@ -787,31 +787,31 @@ shortcuts when you press the <kbd>?</kbd> key (outside of an input box). This
 single shortcut can make you a shortcut expert in Gmail, Facebook, Twitter,
 Google+, and many other websites.
 
-#### Conclusion
+### Conclusion
 
 Over these past 30 days we've discussed many keyboard shortcuts. You may had
 already known some, but hopefully you found many new and helpful. If so, then
 please bookmark this blog (<kbd>ctrl</kbd> + <kbd>d</kbd>), and share it with
 others!
 
-##### Share These Shortcuts by Using These Shortcuts
+#### Share These Shortcuts by Using These Shortcuts
 
-1. <kbd>alt</kbd> + <kbd>d</kbd> to jump to the address bar
-2. <kbd>ctrl</kbd> + <kbd>c</kbd> to copy the address
-3. <kbd>ctrl</kbd> + <kbd>t</kbd> to create a new tab
-4. type: facebook.com <kbd>enter</kbd> to navigate to Facebook
-5. <kbd>p</kbd> to post a new status
-6. Type a flattering description of how helpful this was
-7. <kbd>ctrl</kbd> + <kbd>v</kbd> to paste the address
-8. <kbd>enter</kbd> to share your new-found shortcut knowledge
+1.  <kbd>alt</kbd> + <kbd>d</kbd> to jump to the address bar
+2.  <kbd>ctrl</kbd> + <kbd>c</kbd> to copy the address
+3.  <kbd>ctrl</kbd> + <kbd>t</kbd> to create a new tab
+4.  type: facebook.com <kbd>enter</kbd> to navigate to Facebook
+5.  <kbd>p</kbd> to post a new status
+6.  Type a flattering description of how helpful this was
+7.  <kbd>ctrl</kbd> + <kbd>v</kbd> to paste the address
+8.  <kbd>enter</kbd> to share your new-found shortcut knowledge
 
-##### Bonus Shortcut (now with more mouse)
+#### Bonus Shortcut (now with more mouse)
 
 When browsing the web you can open a link in a new tab by holding
 <kbd>ctrl</kbd> while clicking the link with your mouse (yes, even I use the
 mouse occasionally).
 
-##### Solidified Shortcut Sheet
+#### Solidified Shortcut Sheet
 
 | Key combination                                     | Result                                                                                                    |
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
