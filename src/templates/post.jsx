@@ -32,7 +32,7 @@ import { toNodes } from '../util/graphql';
 const PostContent = styled(Section)`
   font-size: ${rem('18px')};
   font-weight: 400;
-  line-height: ${em('27px', '18px')};
+  line-height: 1.5;
   max-width: 720px;
   margin: 0 auto;
   padding-top: ${em('36px', '18px')};
@@ -43,7 +43,6 @@ const PostContent = styled(Section)`
 
   ${mediaQuery.small`
     font-size: ${rem('21px')};
-    line-height: ${em('33px', '21px')};
     padding: ${em('75px', '21px')} 0 0;
   `};
 `;
@@ -53,31 +52,31 @@ const PostText = styled(P)`
 `;
 
 const PostContentH2 = styled.h2`
-  font-size: ${em('30px', '18px')};
+  font-size: ${rem('30px')};
   margin: ${em('36px', '34px')} 0 ${em('18px', '30px')};
 
   ${mediaQuery.small`
-    font-size: ${em('34px', '21px')};
+    font-size: ${rem('34px')};
     margin: ${em('42px', '34px')} 0 ${em('21px', '34px')};
   `};
 `;
 
 const PostContentH3 = styled.h3`
-  font-size: ${em('20px', '18px')};
+  font-size: ${rem('20px')};
   margin: ${em('30px', '20px')} 0 ${em('14px', '20px')};
 
   ${mediaQuery.small`
-    font-size: ${em('24px', '21px')};
+    font-size: ${rem('24px')};
     margin: ${em('36px', '24px')} 0 ${em('16px', '24px')};
   `};
 `;
 
 const PostContentH4 = styled.h4`
-  font-size: ${em('34px', '18px')};
+  font-size: ${rem('34px')};
   margin: ${em('36px', '34px')} 0 0;
 
   ${mediaQuery.small`
-    font-size: ${em('21px', '21px')};
+    font-size: ${rem('21px')};
     margin: ${em('30px', '21px')} 0 ${em('16px', '21px')};
   `};
 `;

@@ -10,7 +10,7 @@ const PostListItem = styled(LI)`
   margin-bottom: ${rem('58px')};
 
   ${mediaQuery.small`
-  margin-bottom: ${rem('50px')};
+    margin-bottom: ${rem('50px')};
   `};
 `;
 

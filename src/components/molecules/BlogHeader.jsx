@@ -35,8 +35,8 @@ const BlogHeaderInfo = styled.div`
   flex: 1;
 
   ${mediaQuery.large`
-  flex: 3;
-`};
+    flex: 3;
+  `};
 `;
 
 const BlogHeaderImage = styled.div`
@@ -59,7 +59,7 @@ const BlogHeaderImage = styled.div`
 
 const BlogTitle = styled.h1`
   color: ${themed('color.white')};
-  font-size: ${em('36px')};
+  font-size: ${rem('36px')};
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: ${em('30px', '36px')};
@@ -67,13 +67,13 @@ const BlogTitle = styled.h1`
 
   ${mediaQuery.xsmall`
     &.largeTitle {
-      font-size: ${em('48px')};
+      font-size: ${rem('48px')};
       margin-bottom:${em('14px', '48px')};
     }
   `};
 
   ${mediaQuery.small`
-    font-size: ${em('52px')};
+    font-size: ${rem('52px')};
     margin-bottom: ${em('32px', '52px')};
 
     &.largeTitle {
@@ -82,7 +82,7 @@ const BlogTitle = styled.h1`
   `};
 
   ${mediaQuery.medium`
-    font-size: ${em('72px')};
+    font-size: ${rem('72px')};
     margin-bottom: ${em('32px', '72px')};
   `};
 `;
@@ -93,8 +93,7 @@ const BlogTagline = styled.span`
   font-weight: 100;
 
   ${mediaQuery.medium`
-    font-size: ${em('36px')};
-    margin-bottom: ${em('32px', '72px')};
+    font-size: ${rem('36px')};
   `};
 `;
 
@@ -106,10 +105,10 @@ const PostMeta = styled.div`
 `;
 
 const PostByline = styled.span`
-  font-size: ${em('18px')};
+  font-size: ${rem('18px')};
 
   ${mediaQuery.smedium`
-    font-size: ${em('24px')};
+    font-size: ${rem('24px')};
   `};
 `;
 
@@ -117,7 +116,7 @@ const PostTime = styled.span`
   text-transform: uppercase;
 
   ${mediaQuery.medium`
-    font-size: ${em('18px')};
+    font-size: ${rem('18px')};
   `};
 `;
 
