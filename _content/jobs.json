@@ -1,14 +1,53 @@
 [
   {
     "id": "1",
-    "position": "Designer",
-    "description": "Elegant user interface design is an integral part of our work. Using a variety of methods including (but not limited to) user interviews, wireframes, and prototypes, we ensure that the end user’s experience is efficient and enjoyable.",
-    "url": "#"
-  },
-  {
-    "id": "2",
-    "position": "Developer",
-    "description": "Elegant user interface design is an integral part of our work. Using a variety of methods including (but not limited to) user interviews, wireframes, and prototypes, we ensure that the end user’s experience is efficient and enjoyable.",
-    "url": "#"
+    "position": "Open Call",
+    "description": "We don't currently have any specific needs but if you're interested in us then we're interested in hearing from you.",
+    "sections": [
+      {
+        "id": 1,
+        "header": "Hallmarks of a Base Two Employee",
+        "bullets": [
+          "We value self-improvement and keeping up on trends and best-practices.",
+          "We strive to communicate clearly and respectfully with clients and teammates in both in-person and remote settings.",
+          "We appreciate a teamwork mentality, where all are willing to work together to come to the best solution for any given situation.",
+          "We strive to be confident in our abilities, curious about what we don't know, and willing to share our knowledge with others.",
+          "We are driven to create the best solutions, not just for our clients, but also for other developers and end users."
+        ]
+      },
+      {
+        "id": 2,
+        "header": "About Base Two",
+        "description": "Base Two is a multi-city company of experienced developers working together to turn ideas into beautiful software. We work as individuals and teams with small and large companies — local and abroad — to improve processes around software development and deliver user-focused products and applications.  We strive to be a forward-thinking and constantly improving collection of knowledgeable individuals. We work together to exceed what we could do alone. Openness, honesty, and empathy are the building blocks of our culture."
+      },
+      {
+        "id": 3,
+        "header": "Day in the Life",
+        "description": "The work and activities of Base Two team members may change day-to-day, but there are general expectations that remain the same."
+      },
+      {
+        "id": 4,
+        "header": "What We Expeect",
+        "isSubHeading": true,
+        "bullets": [
+          "Openness, honesty, and empathy",
+          "Clear team communication",
+          "Being understanding and constructive in conversations",
+          "Eagerness for self-improvement",
+          "Strengthens Base Two’s operations, sustainability, and growth"
+        ]
+      },
+      {
+        "id": 5,
+        "header": "What We DO NOT Expect",
+        "isSubHeading": true,
+        "bullets": [
+          "Individuals to know everything",
+          "Everyone is at their station at all times",
+          "Working as many hours as possible",
+          "Unquestioning agreement with the way things are"
+        ]
+      }
+    ]
   }
 ]

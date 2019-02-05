@@ -55,7 +55,6 @@ export const pageQuery = graphql`
           id
           description
           position
-          url
         }
       }
     }

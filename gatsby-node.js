@@ -1,5 +1,8 @@
 const path = require('path');
 
+const postTemplate = path.resolve('src/templates/post.jsx');
+const jobTemplate = path.resolve('src/templates/job.jsx');
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
@@ -17,20 +20,39 @@ exports.createPages = ({ actions, graphql }) => {
               }
             }
           }
+          jobs: allJobsJson {
+            edges {
+              node {
+                id
+                description
+                position
+              }
+            }
+          }
         }
       `).then(result => {
         if (result.errors) return reject(result.errors);
 
-        const postTemplate = path.resolve('src/templates/post.jsx');
-        const postNodes = result.data.posts.edges.map(e => e.node);
-
-        return postNodes.map(node =>
+        const createPostPage = post =>
           createPage({
             component: postTemplate,
-            context: { id: node.id },
-            path: node.frontmatter.path,
-          })
+            context: { id: post.id },
+            path: post.frontmatter.path,
+          });
+
+        const createJobPage = job =>
+          createPage({
+            component: jobTemplate,
+            context: { id: job.id },
+            path: `jobs/description/${job.id}`,
+          });
+
+        const postPages = result.data.posts.edges.map(e =>
+          createPostPage(e.node)
         );
+        const jobPages = result.data.jobs.edges.map(e => createJobPage(e.node));
+
+        return postPages.concat(jobPages);
       })
     );
   });
