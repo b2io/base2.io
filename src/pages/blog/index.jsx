@@ -43,7 +43,7 @@ function BlogIndex({ posts }) {
         img="/img/transmission-constellation.png"
         imgAlt="Satellite transmitting messages"
         title="Transmissions"
-        tagline="Lorem Ipsum Spacey Blog Stuff"
+        tagline="Sending our thoughts and ideas into the universe"
       />
       <PostList>
         {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
