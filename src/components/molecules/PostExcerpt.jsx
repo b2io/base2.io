@@ -59,6 +59,7 @@ const PostTitle = styled(H2)`
   ${mediaQuery.small`
     font-size: ${rem('34px')};
     display: block;
+    margin: 0;
   `};
 
   ${mediaQuery.medium`
