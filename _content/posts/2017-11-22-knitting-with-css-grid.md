@@ -2,7 +2,6 @@
 title: Knitting with CSS Grid
 author: csteinert
 date: "2017-11-22T04:00:00.000Z"
-featureImg: "https://www.flickr.com/photos/28849428@N03/albums/72157624639465736"
 path: "/2017/11/22/knitting-with-css-grid"
 ---
 
