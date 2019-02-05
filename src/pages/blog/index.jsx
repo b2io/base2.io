@@ -20,7 +20,7 @@ const PostList = styled(UL)`
   line-height: ${em('27px', '18px')};
   max-width: 1160px;
   margin: 0 auto;
-  padding-top: ${em('36px', '18px')};
+  padding: ${em('36px', '18px')} 0 0;
   width: 90%;
 
   img {
