@@ -47,6 +47,20 @@
           "Working as many hours as possible",
           "Unquestioning agreement with the way things are"
         ]
+      },
+      {
+        "id": 6,
+        "header": "What We Offer",
+        "bullets": [
+          "Free health, dental, and vision plan that is fully employer-paid",
+          "401k plan with a 3% guaranteed employer contribution",
+          "At least 15 paid vacation days per year",
+          "12 paid floating holidays per year",
+          "Unlimited sick days",
+          "Flexible work schedule/location",
+          "Employee’s choice of machine and peripherals",
+          "Ergonomic desks and chairs (for on-site and remote employees)"
+        ]
       }
     ]
   }
