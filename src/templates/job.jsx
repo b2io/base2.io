@@ -3,33 +3,15 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
-import grayMatter from 'gray-matter';
 import { rem } from 'polished';
-import remark from 'remark';
-import remarkReact from 'remark-react';
+import markdown from '../util/templates';
 import {
   GlobalNavigation,
   JobDescription,
   JobsHeader,
   Main,
-  A,
-  Blockquote,
-  Code,
-  Del,
-  EM,
-  H1,
   H2,
   H3,
-  H4,
-  H5,
-  HR,
-  Img,
-  LI,
-  P,
-  Pre,
-  OL,
-  Strong,
-  UL,
 } from '../components';
 import { mediaQuery, themed } from '../util/style';
 import { darkTheme } from '../theme';
@@ -54,38 +36,11 @@ const SubHeading = styled(H3)`
   font-size: ${rem(28)};
 `;
 
-const HoistChildren = props =>
-  React.Children.map(props.children, child => child.props.children);
-
-const markdownToElement = md =>
-  remark()
-    .use(remarkReact, {
-      remarkReactComponents: {
-        a: A,
-        blockquote: Blockquote,
-        code: Code,
-        del: Del,
-        em: EM,
-        h1: H1,
-        h2: Heading,
-        h3: SubHeading,
-        h4: H4,
-        h5: H5,
-        hr: HR,
-        img: Img,
-        li: LI,
-        ol: OL,
-        p: P,
-        pre: Pre,
-        strong: Strong,
-        ul: UL,
-      },
-    })
-    .processSync(md).contents;
-
-const markdown = raw => (
-  <HoistChildren>{markdownToElement(grayMatter(raw).content)}</HoistChildren>
-);
+const renderMarkdown = raw =>
+  markdown(raw, {
+    h2: Heading,
+    h3: SubHeading,
+  });
 
 function JobTemplate({ job }) {
   return (
@@ -112,7 +67,7 @@ function mapPropsToProps({ data }) {
   return {
     job: {
       ...data.job.frontmatter,
-      children: markdown(data.job.internal.content),
+      children: renderMarkdown(data.job.internal.content),
     },
   };
 }

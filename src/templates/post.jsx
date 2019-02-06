@@ -1,35 +1,17 @@
 import { graphql } from 'gatsby';
-import grayMatter from 'gray-matter';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
-import remark from 'remark';
 import styled, { ThemeProvider } from 'styled-components';
-import remarkReact from 'remark-react';
+import markdown from '../util/templates';
 import {
-  A,
-  Blockquote,
-  Code,
-  Del,
-  EM,
   GlobalNavigation,
   Header,
-  H1,
   H2,
-  H3,
-  H4,
-  H5,
-  HR,
-  Img,
-  LI,
   Main,
   P,
-  Pre,
-  OL,
   Section,
-  Strong,
   Time,
-  UL,
 } from '../components';
 import { toNodes } from '../util/graphql';
 import { lightTheme } from '../theme';
@@ -55,40 +37,6 @@ const PostContent = styled(Section)`
     max-width: 100%;
   }
 `;
-
-const HoistChildren = props =>
-  React.Children.map(props.children, child => child.props.children);
-
-const markdownToElement = md =>
-  remark()
-    .use(remarkReact, {
-      remarkReactComponents: {
-        a: A,
-        blockquote: Blockquote,
-        code: Code,
-        del: Del,
-        em: EM,
-        h1: H1,
-        h2: H2,
-        h3: H3,
-        h4: H4,
-        h5: H5,
-        hr: HR,
-        img: Img,
-        li: LI,
-        ol: OL,
-        p: P,
-        pre: Pre,
-        strong: Strong,
-        ul: UL,
-      },
-    })
-    .processSync(md).contents;
-
-// TODO: Add `content` prop to GraphQL remark nodes via plugin.
-const markdown = raw => (
-  <HoistChildren>{markdownToElement(grayMatter(raw).content)}</HoistChildren>
-);
 
 function PostTemplate({ author, children, date, title }) {
   return (
