@@ -10,22 +10,14 @@ exports.createPages = ({ actions, graphql }) => {
     resolve(
       graphql(`
         query GatsbyNodeQuery {
-          posts: allMarkdownRemark {
+          markdown: allMarkdownRemark {
             edges {
               node {
                 id
                 frontmatter {
+                  id
                   path
                 }
-              }
-            }
-          }
-          jobs: allJobsJson {
-            edges {
-              node {
-                id
-                description
-                position
               }
             }
           }
@@ -44,13 +36,15 @@ exports.createPages = ({ actions, graphql }) => {
           createPage({
             component: jobTemplate,
             context: { id: job.id },
-            path: `jobs/description/${job.id}`,
+            path: `jobs/description/${job.frontmatter.id}`,
           });
 
-        const postPages = result.data.posts.edges.map(e =>
-          createPostPage(e.node)
-        );
-        const jobPages = result.data.jobs.edges.map(e => createJobPage(e.node));
+        const postPages = result.data.markdown.edges
+          .filter(e => !!e.node.frontmatter.path)
+          .map(e => createPostPage(e.node));
+        const jobPages = result.data.markdown.edges
+          .filter(e => !!e.node.frontmatter.id)
+          .map(e => createJobPage(e.node));
 
         return postPages.concat(jobPages);
       })

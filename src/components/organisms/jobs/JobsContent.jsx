@@ -146,7 +146,6 @@ JobsContent.propTypes = {
       id: PropTypes.node.isRequired,
       description: PropTypes.string.isRequired,
       position: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
     }),
   ),
 };
