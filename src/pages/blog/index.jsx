@@ -17,19 +17,15 @@ const PostList = styled(UL)`
   list-style-type: none;
   font-size: ${rem('18px')};
   font-weight: 400;
-  line-height: ${em('27px', '18px')};
+  line-height: 1.5;
   max-width: 1160px;
   margin: 0 auto;
   padding: ${em('36px', '18px')} 0 0;
   width: 90%;
 
-  img {
-    max-width: 100%;
-  }
-
   ${mediaQuery.small`
     font-size: ${rem('21px')};
-    line-height: ${em('33px', '21px')};
+    line-height: 1.5;
     padding: ${em('75px', '21px')} 0 0;
   `};
 `;

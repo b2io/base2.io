@@ -14,21 +14,21 @@ const PostListItem = styled(LI)`
   `};
 `;
 
-const PostListImage = styled.div`
+const PostListImageWrapper = styled.div`
   background-color: ${themed('color.black')};
   display: none;
   margin-right: ${rem('32px')};
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
 
   ${mediaQuery.medium`
     display: block;
     width: 275px;
     height: 235px;
   `};
+`;
+
+const PostListImage = styled.img`
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 const PostListContent = styled.article`
@@ -42,7 +42,7 @@ const PostListHeader = styled.header`
   margin: 0 0 ${rem('21px')};
 
   ${mediaQuery.small`
-    flex-direction:column;
+    flex-direction: column;
   `};
 
   ${mediaQuery.medium`
@@ -101,7 +101,7 @@ const PostAuthor = styled.span`
 const Excerpt = styled(P)`
   font-size: ${rem('18px')};
   font-weight: 400;
-  line-height: 27px;
+  line-height: 1.5;
 `;
 
 function PostExcerpt({
@@ -115,12 +115,12 @@ function PostExcerpt({
 }) {
   return (
     <PostListItem>
-      <PostListImage>
-        <img
+      <PostListImageWrapper>
+        <PostListImage
           src={featureImg || '/img/transmission-constellation-reverse.png'}
           alt={imgAlt || ''}
         />
-      </PostListImage>
+      </PostListImageWrapper>
       <PostListContent>
         <PostListHeader>
           <PostMeta>

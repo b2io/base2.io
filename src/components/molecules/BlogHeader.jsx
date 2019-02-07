@@ -13,7 +13,6 @@ const BlogHeaderWrapper = styled(Header)`
   display: flex;
   font-size: 1rem;
   font-weight: 400;
-  height: auto;
   margin-top: ${em('48px')};
   padding-bottom: ${em('28px')};
   padding-top: ${em('28px')};
@@ -39,13 +38,9 @@ const BlogHeaderInfo = styled.div`
   `};
 `;
 
-const BlogHeaderImage = styled.div`
+const BlogHeaderImageWrapper = styled.div`
   display: none;
   flex: 1;
-
-  img {
-    max-width: 80%;
-  }
 
   ${mediaQuery.smedium`
     display: block;
@@ -55,6 +50,10 @@ const BlogHeaderImage = styled.div`
   ${mediaQuery.large`
     flex: 2;
   `};
+`;
+
+const BlogHeaderImage = styled.img`
+  max-width: 80%;
 `;
 
 const BlogTitle = styled.h1`
@@ -135,9 +134,9 @@ function BlogHeader({ author, blogList, date, img, imgAlt, title, tagline }) {
           )}
         </PostMeta>
       </BlogHeaderInfo>
-      <BlogHeaderImage>
-        <img src={img} alt={imgAlt} />
-      </BlogHeaderImage>
+      <BlogHeaderImageWrapper>
+        <BlogHeaderImage src={img} alt={imgAlt} />
+      </BlogHeaderImageWrapper>
     </BlogHeaderWrapper>
   );
 }
