@@ -89,9 +89,11 @@ export const pageQuery = graphql`
     }
     posts: allMarkdownRemark(
       sort: { fields: [fileAbsolutePath], order: DESC }
+      filter: { frontmatter: { path: { ne: null } } }
     ) {
       edges {
         node {
+          id
           excerpt(pruneLength: 200)
           fileAbsolutePath
           frontmatter {

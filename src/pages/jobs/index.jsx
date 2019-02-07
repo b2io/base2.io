@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 import { mapProps } from 'recompose';
 import { ThemeProvider } from 'styled-components';
+import { graphql } from 'gatsby';
 import {
   GlobalNavigation,
   JobsContent,
@@ -41,7 +42,9 @@ JobsPage.defaultProps = {
 
 function mapPropsToProps({ data }) {
   return {
-    jobs: !isEmpty(data) ? toNodes(data.jobs) : [],
+    jobs: !isEmpty(data)
+      ? toNodes(data.jobs, node => ({ ...node.frontmatter }))
+      : [],
   };
 }
 
@@ -49,13 +52,17 @@ export default mapProps(mapPropsToProps)(JobsPage);
 
 export const pageQuery = graphql`
   query JobsPageQuery {
-    jobs: allJobsJson {
+    jobs: allMarkdownRemark(
+      filter: { frontmatter: { position: { ne: null } } }
+    ) {
       edges {
         node {
           id
-          description
-          position
-          url
+          frontmatter {
+            id
+            description
+            position
+          }
         }
       }
     }
