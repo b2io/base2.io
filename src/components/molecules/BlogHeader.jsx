@@ -19,10 +19,6 @@ const BlogHeaderWrapper = styled(Header)`
 
   ${mediaQuery.medium`
     min-height: 530px;
-
-    &.center {
-      text-align: left;
-    }
   `};
 `;
 
