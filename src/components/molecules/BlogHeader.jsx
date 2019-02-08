@@ -2,7 +2,7 @@ import { em, rem } from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { mediaQuery, themed } from '../../util/style';
+import { cssEvery, mediaQuery, themed } from '../../util/style';
 import { Header, Time } from '../../components';
 
 const BlogHeaderWrapper = styled(Header)`
@@ -61,19 +61,19 @@ const BlogTitle = styled.h1`
   margin-top: 0;
 
   ${mediaQuery.xsmall`
-    &.largeTitle {
+    ${cssEvery('large')`
       font-size: ${rem('48px')};
       margin-bottom:${em('14px', '48px')};
-    }
+    `}
   `};
 
   ${mediaQuery.small`
     font-size: ${rem('52px')};
     margin-bottom: ${em('32px', '52px')};
 
-    &.largeTitle {
+    ${cssEvery('large')`
       margin-bottom:${em('18px', '52px')};
-    }
+    `}
   `};
 
   ${mediaQuery.medium`
@@ -118,9 +118,9 @@ const PostTime = styled.span`
 
 function BlogHeader({ author, large, date, img, imgAlt, title, tagline }) {
   return (
-    <BlogHeaderWrapper className={large ? 'center' : ''}>
+    <BlogHeaderWrapper>
       <BlogHeaderInfo>
-        <BlogTitle className={large ? 'largeTitle' : ''}>{title}</BlogTitle>
+        <BlogTitle large={large}>{title}</BlogTitle>
         <PostMeta>
           {tagline && <BlogTagline>{tagline}</BlogTagline>}
           {author && <PostByline>Posted by {author}</PostByline>}
