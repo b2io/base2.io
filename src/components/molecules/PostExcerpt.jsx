@@ -116,10 +116,7 @@ function PostExcerpt({
   return (
     <PostListItem>
       <PostListImageWrapper>
-        <PostListImage
-          src={featureImg || '/img/transmission-constellation-reverse.png'}
-          alt={imgAlt || ''}
-        />
+        <PostListImage src={featureImg} alt={imgAlt} />
       </PostListImageWrapper>
       <PostListContent>
         <PostListHeader>
@@ -139,7 +136,7 @@ function PostExcerpt({
 
 PostExcerpt.defaultProps = {
   author: '',
-  featureImg: '',
+  featureImg: '/img/transmission-constellation-reverse.png',
   imgAlt: '',
 };
 

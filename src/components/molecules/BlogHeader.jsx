@@ -17,10 +17,6 @@ const BlogHeaderWrapper = styled(Header)`
   padding-bottom: ${em('28px')};
   padding-top: ${em('28px')};
 
-  &.center {
-    text-align: center;
-  }
-
   ${mediaQuery.medium`
     min-height: 530px;
 
@@ -90,6 +86,7 @@ const BlogTagline = styled.span`
   font-size: ${rem('24px')};
   font-style: italic;
   font-weight: 100;
+  line-height: 1.25;
 
   ${mediaQuery.medium`
     font-size: ${rem('36px')};
@@ -119,11 +116,11 @@ const PostTime = styled.span`
   `};
 `;
 
-function BlogHeader({ author, blogList, date, img, imgAlt, title, tagline }) {
+function BlogHeader({ author, large, date, img, imgAlt, title, tagline }) {
   return (
-    <BlogHeaderWrapper className={blogList ? 'center' : ''}>
+    <BlogHeaderWrapper className={large ? 'center' : ''}>
       <BlogHeaderInfo>
-        <BlogTitle className={blogList ? 'largeTitle' : ''}>{title}</BlogTitle>
+        <BlogTitle className={large ? 'largeTitle' : ''}>{title}</BlogTitle>
         <PostMeta>
           {tagline && <BlogTagline>{tagline}</BlogTagline>}
           {author && <PostByline>Posted by {author}</PostByline>}
@@ -143,21 +140,22 @@ function BlogHeader({ author, blogList, date, img, imgAlt, title, tagline }) {
 
 BlogHeader.defaultProps = {
   author: '',
-  blogList: false,
+  large: false,
   date: '',
+  img: '/img/transmission-constellation.png',
   imgAlt: '',
   tagline: '',
 };
 
 BlogHeader.propTypes = {
   author: PropTypes.string,
-  blogList: PropTypes.bool,
+  large: PropTypes.bool,
   date: PropTypes.string,
+  img: PropTypes.string,
   imgAlt: PropTypes.string,
   tagline: PropTypes.string,
 
   title: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
 };
 
 export default BlogHeader;

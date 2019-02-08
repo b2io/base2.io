@@ -21,7 +21,6 @@ const PostList = styled(UL)`
   max-width: 1160px;
   margin: 0 auto;
   padding: ${em('36px', '18px')} 0 0;
-  width: 90%;
 
   ${mediaQuery.small`
     font-size: ${rem('21px')};
@@ -35,9 +34,8 @@ function BlogIndex({ posts }) {
     <Main>
       <GlobalNavigation />
       <BlogHeader
-        blogList
-        img="/img/transmission-constellation.png"
-        imgAlt="Satellite transmitting messages"
+        large
+        imgAlt="Satellite broadcasting into space"
         title="Transmissions"
         tagline="Sending our knowledge and ideas into the universe"
       />
