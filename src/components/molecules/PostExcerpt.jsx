@@ -20,8 +20,9 @@ const PostListImageWrapper = styled.div`
   margin-right: ${rem('32px')};
 
   ${mediaQuery.medium`
-    display: block;
-    width: 275px;
+    display: flex;
+    justify-content: center;
+    width: 352px;
     height: 235px;
   `};
 `;

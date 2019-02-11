@@ -6,20 +6,26 @@ import { cssEvery, mediaQuery, themed } from '../../util/style';
 import { Header, Time } from '../../components';
 
 const BlogHeaderWrapper = styled(Header)`
-  align-items: center;
+  display: flex;
   background-color: ${themed('color.black')};
   background-image: url('/img/backgrounds/space-fog-purple.png'),
     url('/img/backgrounds/star-field.png');
-  display: flex;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: ${em('48px')};
-  padding-bottom: ${em('28px')};
-  padding-top: ${em('28px')};
+  justify-content: center;
 
   ${mediaQuery.medium`
     min-height: 530px;
   `};
+`;
+
+const BlogHeaderInfoWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: ${em('48px')};
+  max-width: 1300px;
+  padding-bottom: ${em('28px')};
+  padding-top: ${em('28px')};
 `;
 
 const BlogHeaderInfo = styled.div`
@@ -115,21 +121,23 @@ const PostTime = styled.span`
 function BlogHeader({ author, large, date, img, imgAlt, title, tagline }) {
   return (
     <BlogHeaderWrapper>
-      <BlogHeaderInfo>
-        <BlogTitle large={large}>{title}</BlogTitle>
-        <PostMeta>
-          {tagline && <BlogTagline>{tagline}</BlogTagline>}
-          {author && <PostByline>Posted by {author}</PostByline>}
-          {date && (
-            <PostTime>
-              <Time iso={date} />
-            </PostTime>
-          )}
-        </PostMeta>
-      </BlogHeaderInfo>
-      <BlogHeaderImageWrapper>
-        <BlogHeaderImage src={img} alt={imgAlt} />
-      </BlogHeaderImageWrapper>
+      <BlogHeaderInfoWrapper>
+        <BlogHeaderInfo>
+          <BlogTitle large={large}>{title}</BlogTitle>
+          <PostMeta>
+            {tagline && <BlogTagline>{tagline}</BlogTagline>}
+            {author && <PostByline>Posted by {author}</PostByline>}
+            {date && (
+              <PostTime>
+                <Time iso={date} />
+              </PostTime>
+            )}
+          </PostMeta>
+        </BlogHeaderInfo>
+        <BlogHeaderImageWrapper>
+          <BlogHeaderImage src={img} alt={imgAlt} />
+        </BlogHeaderImageWrapper>
+      </BlogHeaderInfoWrapper>
     </BlogHeaderWrapper>
   );
 }

@@ -18,14 +18,14 @@ const PostList = styled(UL)`
   font-size: ${rem('18px')};
   font-weight: 400;
   line-height: 1.5;
-  max-width: 1160px;
+  max-width: 1300px;
   margin: 0 auto;
-  padding: ${em('36px', '18px')} 0 0;
+  padding: ${em('36px', '18px')} ${em('36px', '18px')} 0;
 
   ${mediaQuery.small`
     font-size: ${rem('21px')};
     line-height: 1.5;
-    padding: ${em('75px', '21px')} 0 0;
+    padding: ${em('75px', '21px')} ${em('42px', '21px')} 0;
   `};
 `;
 
