@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { em } from 'polished';
 import { UL, LI, Img } from '../atoms';
-import { mediaQuery } from '../../util/style';
+import { mediaQuery, webpBackground } from '../../util/style';
 
 const ClientList = styled(UL)`
-  background: url('img/backgrounds/space-fog-purple.png') bottom center / auto
-    100% no-repeat;
+  background: bottom center / auto 100% no-repeat;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -15,6 +14,12 @@ const ClientList = styled(UL)`
   margin: 0;
   padding: 0;
   width: 100%;
+
+  ${webpBackground(
+    'img/backgrounds/space-fog-purple.png',
+    'img/backgrounds/space-fog-purple.webp'
+    )
+  };
 `;
 
 const Client = styled(LI)`
