@@ -93,7 +93,7 @@ class Html extends React.Component {
           {headComponents}
           {css}
 
-          <script async src="https://cdn.polyfill.io/v2/polyfill.min.js" />
+          <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
         </head>
         <body {...bodyAttributes}>
           {preBodyComponents}
