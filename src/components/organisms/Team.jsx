@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Section, TwoToneHeading } from '../atoms';
 import { TeamList } from '../molecules';
-import { themed } from '../../util/style';
+import { themed, webpBackground } from '../../util/style';
 
 const Wrapper = styled(Section)`
-  background: url('img/backgrounds/star-field.png');
+  ${webpBackground('img/backgrounds/star-field.png', 'img/backgrounds/star-field.webp')}
 `;
 
 const TeamHeading = styled(TwoToneHeading)`

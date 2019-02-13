@@ -4,17 +4,18 @@ import styled from 'styled-components';
 import { em } from 'polished';
 import { Section, TwoToneHeading } from '../atoms';
 import { ClientList } from '../molecules';
-import { themed } from '../../util/style';
+import { themed, webpBackground } from '../../util/style';
 
 const fadeOut = {
   value: `${em('150px')}`,
 };
 
 const Wrapper = styled(Section)`
-  background: url('img/backgrounds/star-field.png');
   padding-bottom: ${fadeOut.value};
   padding-top: ${themed('navHeight.value')};
   position: relative;
+
+  ${webpBackground('img/backgrounds/star-field.png', 'img/backgrounds/star-field.webp')};
 
   &::after {
     background: linear-gradient(

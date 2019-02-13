@@ -41,6 +41,15 @@ const containerSizing = css`
   `};
 `;
 
+const webpBackground = (original, optimized) => css`
+  background-image: url(${original});
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @supports (-webkit-appearance:none) {
+      background-image: url(${optimized});
+    }
+  }
+`;
+
 const themed = curry((path, props) => get(props.theme, path));
 
 export {
@@ -51,4 +60,5 @@ export {
   lighten,
   mediaQuery,
   themed,
+  webpBackground,
 };
