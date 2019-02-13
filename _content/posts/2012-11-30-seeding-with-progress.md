@@ -9,7 +9,7 @@ If you're doing database seeding in a rails app through `seeds.rb` you might be
 interested in this snippet, especially if you're using CSV files to help you do
 it.
 
-### Mo Rows, Mo Problems
+## Mo Rows, Mo Problems
 
 A couple of our recent projects have had rather large CSV files that need to be
 seeded. Running a `rake db:seed` command takes an agonizing couple of minutes
@@ -21,7 +21,7 @@ We started out with a simple `puts "Seeding Models..."`, but that really doesn't
 tell you anything about how many more models need to be seeded. We decided to
 take a page out of the UNIX playbook and give the user a bit more information.
 
-### The UNIX way
+## The UNIX way
 
 There's a nifty utility named `wget` in UNIX that will let you download things
 given a URL. It gives you a nice visual representation of the progress in the
@@ -61,4 +61,3 @@ Running a `rake db:seed` will now give you live progress updates:
 ```
 
 Ah, much better!
-

@@ -11,7 +11,7 @@ to mock $httpBackend for my end-to-end tests. The problem I immediately ran into
 is that, while mock data is fine for my e2e tests, I want to connect to a local
 backend when developing and get real data.
 
-### Conditionally inject e2e-mocks
+## Conditionally inject e2e-mocks
 
 The Burnside Digital blog post suggests including the following script in your
 application's index.html.

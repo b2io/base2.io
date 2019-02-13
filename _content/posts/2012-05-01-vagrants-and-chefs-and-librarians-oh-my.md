@@ -29,7 +29,7 @@ get around these issues and give ourselves some other advantages (more on that
 later) we're using a gem called [Vagrant](http://vagrantup.com) to create a
 portable development environment.
 
-### A Vagrant's life
+## A Vagrant's life
 
 Vagrant is essentially a command-line wrapper on top of
 [Oracle's VirtualBox](http://www.virtualbox.org/). This lets you initialize,
@@ -58,7 +58,7 @@ using either [Puppet](http://puppetlabs.com/puppet/what-is-puppet/) or
 [Chef](http://wiki.opscode.com/display/chef/Home). Based on our research, Chef
 seemed like the right way to go.
 
-### The Chef and the Librarian
+## The Chef and the Librarian
 
 Chef is a provisioning tool, and as you might expect it makes it possible to
 automatically configure a machine (virtual or otherwise) into a specific state.
@@ -121,8 +121,7 @@ using Chef Solo, telling it where to find our cookbooks, and which recipes to
 use. After we've got those changes in place, we run `vagrant up` to have Vagrant
 initialize and provision our virtual machine.
 
-At this point, you should be able to `vagrant ssh` into your box and run `ruby
--v` to confirm that everything went as planned. Vagrant will also yell at you
+At this point, you should be able to `vagrant ssh` into your box and run `ruby -v` to confirm that everything went as planned. Vagrant will also yell at you
 during the provisioning phase if something about the process didn't go according
 to plan.
 

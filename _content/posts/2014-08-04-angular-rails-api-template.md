@@ -14,7 +14,7 @@ While every project is it's own puzzle, there are a lot of common pieces out
 there. Here's a walk-through of how we got some of our favorite pieces
 (**Angular**, **Rails**, **Vagrant**, and more) to fit together.
 
-### What Pieces Do We Have?
+## What Pieces Do We Have?
 
 Below is the list of technologies we use in this example. For your reference I'm
 on a 64 bit version of Windows 7. Be aware that if you're using something else
@@ -43,7 +43,7 @@ your results may vary.
 * **[Bower](http://bower.io/)** (1.3.8): The package manager that comes with
   Yeoman.
 
-### Generate the Rails App
+## Generate the Rails App
 
 There are many ways that we can begin to put this puzzle together. We're going
 to start by generating the Rails app. For this example we'll use `my_app` as our
@@ -74,7 +74,7 @@ rather than SQLite.
 
 <script src="https://gist.github.com/tborres/67ed702ad8cfafaeec05.js?file=database.yml"></script>
 
-### Vagrant and Puppet
+## Vagrant and Puppet
 
 Now that our bare-bones Rails-api app is created we’ll setup Vagrant. Vagrant
 will allow us to provision and run a virtual machine in a consistent way. This
@@ -95,44 +95,42 @@ Now open the `/puppet/manifests/default.pp` puppet manifest file. This file
 contains a lot of optional configurations that we will not be using. Make the
 following changes to the file:
 
-1. Change `$ar_databases` values to your application name rather than
-   `activerecord_unittest`. Example: `$ar_databases = ['my_app_dev',
-   'my_app_test']`
-2. Remove the SQLite and MySQL sections because we’ll be using PostgreSQL
-3. Add the following Puppet modules (_which can be installed on Windows by first
-   downloading the tar.gz file, extracting it, copying the resulting folder into
-   the app's `/puppet/modules/` directory, and then renaming the folder to it's
-   module name_ :
-   * nodejs:
-     [https://forge.puppetlabs.com/puppetlabs/nodejs](https://forge.puppetlabs.com/puppetlabs/nodejs)
-   * stdlib:
-     [https://forge.puppetlabs.com/puppetlabs/stdlib](https://forge.puppetlabs.com/puppetlabs/stdlib)
-   * apt:
-     [https://forge.puppetlabs.com/puppetlabs/apt](https://forge.puppetlabs.com/puppetlabs/apt)
-4. This version of Ubuntu’s npm is out of date so we need to make an adjustment
-   to the `/puppet/modules/nodejs/manifests/init.pp` file. You'll need to set
-   `$manage_repo = true`.
-5. Within the `default.pp` file replace the nodejs section with `include nodejs`
-6. Add the puppet-yeoman module from
-   [https://github.com/nickhartjes/puppet-yeoman](https://github.com/nickhartjes/puppet-yeoman)
-   by
-   * Cloning the repository
-   * Copy the `init.pp` file into the `/puppet/modules/yeoman/manifests/init.pp`
-     directory.
-   * Remove `“curl”` from the yeomanPackages because it already exists in our
-     `default.pp`.
-   * Change `require => Exec['apt-get update']` to `require =>
-     Class['apt_get_update']`
-   * Add a call to the module at the bottom of the `default.pp` file with
-     `include yeoman`
-7. Add the angular generator for yeoman by adding the following to the bottom of
-   your `default.pp` file:
+1.  Change `$ar_databases` values to your application name rather than
+    `activerecord_unittest`. Example: `$ar_databases = ['my_app_dev', 'my_app_test']`
+2.  Remove the SQLite and MySQL sections because we’ll be using PostgreSQL
+3.  Add the following Puppet modules (_which can be installed on Windows by first
+    downloading the tar.gz file, extracting it, copying the resulting folder into
+    the app's `/puppet/modules/` directory, and then renaming the folder to it's
+    module name_ :
+    * nodejs:
+      [https://forge.puppetlabs.com/puppetlabs/nodejs](https://forge.puppetlabs.com/puppetlabs/nodejs)
+    * stdlib:
+      [https://forge.puppetlabs.com/puppetlabs/stdlib](https://forge.puppetlabs.com/puppetlabs/stdlib)
+    * apt:
+      [https://forge.puppetlabs.com/puppetlabs/apt](https://forge.puppetlabs.com/puppetlabs/apt)
+4.  This version of Ubuntu’s npm is out of date so we need to make an adjustment
+    to the `/puppet/modules/nodejs/manifests/init.pp` file. You'll need to set
+    `$manage_repo = true`.
+5.  Within the `default.pp` file replace the nodejs section with `include nodejs`
+6.  Add the puppet-yeoman module from
+    [https://github.com/nickhartjes/puppet-yeoman](https://github.com/nickhartjes/puppet-yeoman)
+    by
+    * Cloning the repository
+    * Copy the `init.pp` file into the `/puppet/modules/yeoman/manifests/init.pp`
+      directory.
+    * Remove `“curl”` from the yeomanPackages because it already exists in our
+      `default.pp`.
+    * Change `require => Exec['apt-get update']` to `require => Class['apt_get_update']`
+    * Add a call to the module at the bottom of the `default.pp` file with
+      `include yeoman`
+7.  Add the angular generator for yeoman by adding the following to the bottom of
+    your `default.pp` file:
 
 <code data-gist-id="67ed702ad8cfafaeec05" data-gist-file="default.pp" data-gist-line="109-113"></code>
 
-8. Navigate to the root of your Rails directory in your console and start
-   vagrant with the `vagrant up` command.
-9. Now access your VM via ssh
+8.  Navigate to the root of your Rails directory in your console and start
+    vagrant with the `vagrant up` command.
+9.  Now access your VM via ssh
 
 ```
 vagrant ssh
@@ -146,7 +144,7 @@ Update the bundle, and rake the database
 > rake db:create
 ```
 
-### Angular!
+## Angular!
 
 Now we'll add a basic angular structure to our application.
 
@@ -193,7 +191,7 @@ paths. The latest stable version of npm does not support a fix for this. You’l
 need to run npm and grunt from your local development machine rather than
 Vagrant.
 
-### Done! - Frame that puzzle (with Git)
+## Done! - Frame that puzzle (with Git)
 
 You've successfully created your bare structure for web development. It may feel
 like you just put all the pieces of the puzzle together to find that the picture

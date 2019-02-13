@@ -5,7 +5,7 @@ date: "2013-12-14T04:00:00.000Z"
 path: "/2013/12/14/link-roundup-4"
 ---
 
-#### Libaries
+## Libaries
 
 * [kentcdodds/genie](https://github.com/kentcdodds/genie)
 * [linkedin/hopscotch](https://github.com/linkedin/hopscotch)
@@ -13,12 +13,12 @@ path: "/2013/12/14/link-roundup-4"
 * [loadfive/Knwl.js](https://github.com/loadfive/knwl.js)
 * [blackgate/bg-splitter](https://github.com/blackgate/bg-splitter)
 
-#### Talks
+## Talks
 
 * [How I architected my big Rails app for success!](http://www.youtube.com/watch?v=uDaBtqEYNBo)
 * [Ruby Conference 2013 Videos](http://www.confreaks.com/events/rubyconf2013)
 
-#### Articles
+## Articles
 
 * [Reddit’s empire is founded on a flawed algorithm](http://technotes.iangreenleaf.com/posts/2013-12-09-reddits-empire-is-built-on-a-flawed-algorithm.html)
 * [User Onboarding](http://www.useronboard.com/features-vs-benefits/)
@@ -29,7 +29,7 @@ path: "/2013/12/14/link-roundup-4"
 * [Maintainable and Scalable Systems with Rails Engines](http://gaslight.co/blog/maintainable-and-scalable-systems-with-rails-engines)
 * [How to get More Bang for your Heroku Buck While Making Your Rails Site Super Snappy [Redux]](http://www.stormconsultancy.co.uk/blog/development/how-to-get-more-bang-for-your-heroku-buck-while-making-your-rails-site-super-snappy-redux)
 
-#### Tools
+## Tools
 
 * [Vagrant 1.4](http://www.vagrantup.com/blog/vagrant-1-4.html)
 * [indieisaconcept/grunt-styleguide](https://github.com/indieisaconcept/grunt-styleguide)

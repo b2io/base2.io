@@ -19,7 +19,7 @@ Here's the problem I ran into: Circle was automatically recognizing and running
 my rspec tests, but not my angular app's (located at rails_root/angular) karma
 tests.
 
-### Circle.yml
+## Circle.yml
 
 Boom. The npm/bower package management is a little time-consuming, but this runs
 both my rspec and karma tests.
