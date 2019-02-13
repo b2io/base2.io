@@ -1,3 +1,4 @@
+export BlogHeader from './BlogHeader';
 export ClientList from './ClientList';
 export DescriptiveList from './DescriptiveList';
 export GlobalNavigation from './GlobalNavigation';
