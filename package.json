@@ -42,6 +42,7 @@
     "remark-react": "^4.0.1",
     "sharp": "^0.17.0",
     "styled-components": "^2.2.3",
+    "supports-webp": "^1.0.7",
     "typescript": "^2.6.2",
     "whatwg-fetch": "^2.0.3"
   },
