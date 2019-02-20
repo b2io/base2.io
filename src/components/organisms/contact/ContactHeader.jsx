@@ -45,6 +45,10 @@ const Wrapper = styled.div`
 const Earth = styled.picture`
   width: 100%;
 
+  img {
+    max-width: 100%;
+  }
+
   ${mediaQuery.small`
     width: 73%;
   `};
@@ -121,37 +125,33 @@ const scroll = {
   title: 'Scroll down for more',
 };
 
-// eslint-disable-line react/prefer-stateless-function
-class ContactHeader extends React.Component {
-
-static defaultProps = {
-    onContact: noop,
-  };
-
-  render() {
-    return (
-      <Wrapper>
-        <BaseTwoLogoText />
-        <LocationText>
-          is located in <strong>Columbus, OH</strong> and{' '}
-          <strong>Pittsburgh, PA</strong>.
-        </LocationText>
-        <Earth>
-          <source srcSet="img/planet-earth.webp" type="image/webp" />
-          <source srcSet="img/planet-earth.jpg" type="image/jpeg" />
-          <img src="img/planet-earth.jpg" alt="Planet Earth" />
-        </Earth>
-        <LocationTagline>
-          Thanks to satellites and the internet, we can work with you wherever
-          you are.
-        </LocationTagline>
-        <ScrollButton href="#contact-us">Make Contact</ScrollButton>
-        <ScrollLink target={scroll.target} title={scroll.title}>
-          <ArrowIndicator src="../img/scroll-arrows.svg" />
-        </ScrollLink>
-      </Wrapper>
-    );
-  }
+function ContactHeader() {
+  return (
+    <Wrapper>
+      <BaseTwoLogoText />
+      <LocationText>
+        is located in <strong>Columbus, OH</strong> and{' '}
+        <strong>Pittsburgh, PA</strong>.
+      </LocationText>
+      <Earth>
+        <source srcSet="img/planet-earth.webp" type="image/webp" />
+        <source srcSet="img/planet-earth.jpg" type="image/jpeg" />
+        <img src="img/planet-earth.jpg" alt="Planet Earth" />
+      </Earth>
+      <LocationTagline>
+        Thanks to satellites and the internet, we can work with you wherever you
+        are.
+      </LocationTagline>
+      <ScrollButton href="#contact-us">Make Contact</ScrollButton>
+      <ScrollLink target={scroll.target} title={scroll.title}>
+        <ArrowIndicator src="../img/scroll-arrows.svg" />
+      </ScrollLink>
+    </Wrapper>
+  );
 }
+
+ContactHeader.defaultProps = {
+  onContact: noop,
+};
 
 export default ContactHeader;
