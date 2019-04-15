@@ -1,32 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { injectGlobal } from 'styled-components';
-import theme from './theme';
-import { mediaQuery } from './util/style';
-
-// eslint-disable-next-line no-unused-expressions
-injectGlobal`
-  * {
-    box-sizing: border-box;
-  }
-
-  body,
-  html {
-    ${theme.font.sansSerif};
-    margin: 0;
-    padding: 0;
-  }
-
-  .noScroll > div {
-    height: 100vh;
-    overflow: hidden;
-
-    ${mediaQuery.small`
-      height: auto;
-      overflow: auto;
-    `};
-  }
-`;
 
 function Html({
   body,

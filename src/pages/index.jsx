@@ -3,7 +3,7 @@ import { sortBy } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
-import styled, { ThemeProvider } from 'styled-components';
+import styled, { injectGlobal, ThemeProvider } from 'styled-components';
 import {
   ContactUs,
   Clients,
@@ -14,9 +14,33 @@ import {
   Team,
   Technologies,
 } from '../components';
-import { darkTheme } from '../theme';
+import theme, { darkTheme } from '../theme';
 import { toNodesWithImage } from '../util/graphql';
 import { mediaQuery } from '../util/style';
+
+// eslint-disable-next-line no-unused-expressions
+injectGlobal`
+  * {
+    box-sizing: border-box;
+  }
+
+  body,
+  html {
+    ${theme.font.sansSerif};
+    margin: 0;
+    padding: 0;
+  }
+
+  .noScroll > div {
+    height: 100vh;
+    overflow: hidden;
+
+    ${mediaQuery.small`
+      height: auto;
+      overflow: auto;
+    `};
+  }
+`;
 
 const Wrapper = styled(Main)`
   background: url(img/backgrounds/moon.jpg) center bottom / contain no-repeat,
