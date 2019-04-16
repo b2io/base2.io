@@ -1,8 +1,8 @@
 ---
 title: Vagrants and Chefs and Librarians... oh my!
 author: dmiller
-date: "2012-05-01T04:00:00.000Z"
-path: "/2012/05/01/vagrants-and-chefs-and-librarians-oh-my"
+date: '2012-05-01T04:00:00.000Z'
+path: '/2012/05/01/vagrants-and-chefs-and-librarians-oh-my'
 ---
 
 **Update:** Thanks to [SDude]({{page.url}}#comment-677428811),
@@ -14,14 +14,14 @@ up-to-date and working.
 For those of you out there doing development, you've probably run into some or
 all of the following problems:
 
-* Your development environment doesn't mirror your production environment.
-* It's difficult or impossible to keep everyone's development environment
+- Your development environment doesn't mirror your production environment.
+- It's difficult or impossible to keep everyone's development environment
   consistent in multi-developer projects.
-* You can never remember how to get all the configuration nuances right for
+- You can never remember how to get all the configuration nuances right for
   whatever dependencies your project requires.
-* It takes real, significant amounts of time to get yourself ready to go when
+- It takes real, significant amounts of time to get yourself ready to go when
   starting or switching projects.
-* The dependencies of one project might conflict with another project.
+- The dependencies of one project might conflict with another project.
 
 These issues kill your productivity with time-consuming and difficult-to-isolate
 issues that have _nothing_ to do with the problem you actually want to solve. To
@@ -29,7 +29,7 @@ get around these issues and give ourselves some other advantages (more on that
 later) we're using a gem called [Vagrant](http://vagrantup.com) to create a
 portable development environment.
 
-### A Vagrant's life
+## A Vagrant's life
 
 Vagrant is essentially a command-line wrapper on top of
 [Oracle's VirtualBox](http://www.virtualbox.org/). This lets you initialize,
@@ -58,7 +58,7 @@ using either [Puppet](http://puppetlabs.com/puppet/what-is-puppet/) or
 [Chef](http://wiki.opscode.com/display/chef/Home). Based on our research, Chef
 seemed like the right way to go.
 
-### The Chef and the Librarian
+## The Chef and the Librarian
 
 Chef is a provisioning tool, and as you might expect it makes it possible to
 automatically configure a machine (virtual or otherwise) into a specific state.
@@ -100,9 +100,9 @@ and portable way.
 To set the stage a bit, let's say we're starting a Ruby on Rails project and we
 know we're going to need the following things:
 
-* An up-to-date system (through `aptitude`)
-* Ruby (through `rvm`)
-* Git (through `git-core`)
+- An up-to-date system (through `aptitude`)
+- Ruby (through `rvm`)
+- Git (through `git-core`)
 
 Not the most complicated set of requirements, but sufficient for getting this
 project off the ground. Let's take a look at a `Cheffile` that gets us the
@@ -121,8 +121,7 @@ using Chef Solo, telling it where to find our cookbooks, and which recipes to
 use. After we've got those changes in place, we run `vagrant up` to have Vagrant
 initialize and provision our virtual machine.
 
-At this point, you should be able to `vagrant ssh` into your box and run `ruby
--v` to confirm that everything went as planned. Vagrant will also yell at you
+At this point, you should be able to `vagrant ssh` into your box and run `ruby -v` to confirm that everything went as planned. Vagrant will also yell at you
 during the provisioning phase if something about the process didn't go according
 to plan.
 
@@ -149,12 +148,12 @@ As you can see, Vagrant, Chef, and Librarian make a seriously powerful addition
 to your development arsenal. As such, there's a lot more things you can do with
 them; here's some links to get you started:
 
-* [Vagrant Documentation](http://vagrantup.com/v1/docs/index.html) -- more
+- [Vagrant Documentation](http://vagrantup.com/v1/docs/index.html) -- more
   detail on how you can use Vagrant to setup virtual development environments.
-* [Chef Solo Wiki](http://wiki.opscode.com/display/chef/Chef+Solo) -- more
+- [Chef Solo Wiki](http://wiki.opscode.com/display/chef/Chef+Solo) -- more
   detail on how you can use Chef Solo to provision your Vagrant box.
-* [Librarian README](https://github.com/applicationsonline/librarian/blob/master/README.md)
+- [Librarian README](https://github.com/applicationsonline/librarian/blob/master/README.md)
   -- more detail on how you can use Librarian to manage your chef cookbooks and
   recipes.
-* [Opscode's cookbooks](https://github.com/opscode/cookbooks) -- the company
+- [Opscode's cookbooks](https://github.com/opscode/cookbooks) -- the company
   behind Chef maintains this repository of cookbooks.

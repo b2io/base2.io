@@ -1,8 +1,8 @@
 ---
 title: Regex - Replace with Groups
 author: tborres
-date: "2015-05-13T04:00:00.000Z"
-path: "/2015/05/13/regex-replace-with-groups"
+date: '2015-05-13T04:00:00.000Z'
+path: '/2015/05/13/regex-replace-with-groups'
 ---
 
 I was recently confronted with a situation that required me to search and
@@ -10,7 +10,7 @@ replace my code in a way that the left and right of my search needed to be
 replaced, but the middle needed to remain the same. Could this be done with a
 single search and replace?
 
-### The Problem
+## The Problem
 
 For reasons that I do not care to detail here, I found myself needing to replace
 every instance of my Visual Studio solution where a `template` line matching
@@ -31,7 +31,7 @@ Rather than manually identifying every template line and make the necessary
 changes I wanted to do a single search and replace and be done with it. Regex
 felt like the right answer, but how?
 
-### Regex Groups
+## Regex Groups
 
 Regex, or regular expressions, is a very powerful (read as: "complicated to use
 and understand") pattern matching grammar. It provides for more advanced

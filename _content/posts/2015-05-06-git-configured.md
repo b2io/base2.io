@@ -1,8 +1,8 @@
 ---
 title: Git Configured
 author: tborres
-date: "2015-05-06T04:00:00.000Z"
-path: "/2015/05/06/git-configured"
+date: '2015-05-06T04:00:00.000Z'
+path: '/2015/05/06/git-configured'
 ---
 
 Git configurations are like snowflakes - no two are exactly the same. At least
@@ -20,7 +20,7 @@ commit messaging standards, but I [digress](http://gph.to/1EPa17p).
 
 The two primary divergents in our configurations were aliases and ignore files.
 
-### Alias all the things
+## Alias all the things
 
 If you're working with Git from the command line (that's what all the cool kids
 do) your fingers are going to get tired without aliases. Who has the time to
@@ -33,7 +33,7 @@ we use:
 
 <script src="http://gist-it.appspot.com/https://github.com/b2io/development-standards/blob/master/source-control/.gitconfig"></script>
 
-### Ignore some of the things
+## Ignore some of the things
 
 Source control is great for keeping your code safe, but mixed with all of that
 code are IDE files, merge files, build artifacts, and plenty of other files

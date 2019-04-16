@@ -1,3 +1,4 @@
+import noop from 'lodash/noop';
 import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
@@ -41,8 +42,12 @@ const Wrapper = styled.div`
   }
 `;
 
-const Earth = styled.img`
+const Earth = styled.picture`
   width: 100%;
+
+  img {
+    max-width: 100%;
+  }
 
   ${mediaQuery.small`
     width: 73%;
@@ -115,6 +120,11 @@ const ArrowIndicator = styled.img`
   `};
 `;
 
+const scroll = {
+  target: 'contact-us',
+  title: 'Scroll down for more',
+};
+
 function ContactHeader() {
   return (
     <Wrapper>
@@ -123,20 +133,25 @@ function ContactHeader() {
         is located in <strong>Columbus, OH</strong> and{' '}
         <strong>Pittsburgh, PA</strong>.
       </LocationText>
-      <Earth src="/img/planet-earth.jpg" alt="Planet Earth" />
+      <Earth>
+        <source srcSet="img/planet-earth.webp" type="image/webp" />
+        <source srcSet="img/planet-earth.jpg" type="image/jpeg" />
+        <img src="img/planet-earth.jpg" alt="Planet Earth" />
+      </Earth>
       <LocationTagline>
         Thanks to satellites and the internet, we can work with you wherever you
         are.
       </LocationTagline>
       <ScrollButton href="#contact-us">Make Contact</ScrollButton>
-      <ScrollLink target="contact-us" title="Scroll down for more">
-        <ArrowIndicator
-          alt="Arrows pointing downward"
-          src="../img/scroll-arrows.svg"
-        />
+      <ScrollLink target={scroll.target} title={scroll.title}>
+        <ArrowIndicator src="../img/scroll-arrows.svg" />
       </ScrollLink>
     </Wrapper>
   );
 }
+
+ContactHeader.defaultProps = {
+  onContact: noop,
+};
 
 export default ContactHeader;

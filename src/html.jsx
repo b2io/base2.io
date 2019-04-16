@@ -38,13 +38,10 @@ function Html({
         />
         <link color="black" href="/img/safari-pinned-tab.svg" rel="mask-icon" />
         <link
-          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,400,500"
-          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:100,100i,400,500|Anonymous+Pro"
+          rel="prefetch"
         />
-        <link
-          href="https://fonts.googleapis.com/css?family=Anonymous+Pro"
-          rel="stylesheet"
-        />
+
         <title>Base Two</title>
         {headComponents}
         <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />

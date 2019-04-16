@@ -1,8 +1,8 @@
 ---
 title: Knitting with CSS Grid
 author: csteinert
-date: "2017-11-22T04:00:00.000Z"
-path: "/2017/11/22/knitting-with-css-grid"
+date: '2017-11-22T04:00:00.000Z'
+path: '/2017/11/22/knitting-with-css-grid'
 ---
 
 As the weather turns colder here in Columbus, I have returned to my default
@@ -12,7 +12,7 @@ Developer. Knitting concepts [helped me take my first steps into JavaScript](htt
 I'm going to talk about how recreating a knit blanket in HTML and CSS helped me
 get hands-on experience with the new CSS Grid Layout.
 
-### The Grid
+## The Grid
 
 The new [CSS Grid Layout module](https://www.w3.org/TR/css3-grid-layout/) was
 something that blew me away when I first heard Eric Meyer speak about it in
@@ -25,7 +25,7 @@ and working through [Grid Garden](cssgridgarden.com) multiple times. It was duri
 a play-through of Grid Garden that I found myself wondering: can I recreate
 my favorite knit blanket with this new functionality?
 
-### The Blanket
+## The Blanket
 
 [The Blanket](https://www.flickr.com/photos/28849428@N03/albums/72157624639465736)
 in question is made up of 25 multi-color squares, joined together by black strips
@@ -57,7 +57,7 @@ So that seems straightforward enough; slap a border on it and you're good to go,
 right? Not quite. The real work is just about to begin. Not only is the blanket
 a grid of 25 squares, but the squares themselves have grids in them, too!
 
-### The Log Cabin Pattern
+## The Log Cabin Pattern
 
 ![Knit log cabin blanket square, showing color gradiation from the center outward in a counter-clockwise direction](https://farm5.staticflickr.com/4567/38390682882_b6825d3de9_z.jpg)
 
@@ -70,7 +70,7 @@ see the order in which the rectangles were added.
 
 ![Knit log cabin blanket square with numbers showing the order in which the sections were knit](https://farm5.staticflickr.com/4575/38414998926_d434047620_z.jpg)
 
-### The Markup
+## The Markup
 
 I used [Codepen](http://codepen.io), my favorite front-end sandbox and online
 developer community, for this particular project. [You can see (and fork!) the
@@ -123,7 +123,7 @@ of row five.
 Once each piece of the pattern has the correct location assigned to it, the
 blanket is complete!
 
-### Conclusion
+## Conclusion
 
 While this is not an example of a layout that I'd be able to use anywhere else,
 it was a fun and challenging way to sharpen my grid-writing skills. I learned

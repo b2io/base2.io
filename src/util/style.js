@@ -1,5 +1,6 @@
 import curry from 'lodash/curry';
 import get from 'lodash/get';
+import supportsWebP from 'supports-webp';
 import { lighten as _lighten, rem } from 'polished';
 import { css } from 'styled-components';
 
@@ -23,6 +24,7 @@ const mq = (target, ...conditions) => (...args) => css`
 const mediaQuery = {
   xsmall: mq('screen', 'max-width: 480px'),
   small: mq('screen', 'min-width: 481px'),
+  smedium: mq('screen', 'min-width: 767px'),
   medium: mq('screen', 'min-width: 961px'),
   large: mq('screen', 'min-width: 1281px'),
   xlarge: mq('screen', 'min-width: 1921px'),
@@ -42,6 +44,14 @@ const containerSizing = css`
   `};
 `;
 
+const webpBackground = (original, optimized) => {
+  const supportedImage = supportsWebP ? optimized : original;
+  const backgroundCss = css`
+    background-image: url(${supportedImage});
+  `;
+  return backgroundCss;
+};
+
 const themed = curry((path, props) => get(props.theme, path));
 
 export {
@@ -52,4 +62,5 @@ export {
   lighten,
   mediaQuery,
   themed,
+  webpBackground,
 };

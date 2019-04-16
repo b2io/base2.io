@@ -2,27 +2,33 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
+import { em, rem } from 'polished';
 import styled, { ThemeProvider } from 'styled-components';
 import {
+  BlogHeader,
   GlobalNavigation,
-  Header,
-  H1,
   Main,
   PostExcerpt,
-  Section,
   UL,
 } from '../../components';
 import { lightTheme } from '../../theme';
 import { toNodes } from '../../util/graphql';
-
-const BlogHeader = styled(Header)`
-  margin-top: 4em;
-`;
+import { mediaQuery } from '../../util/style';
 
 const PostList = styled(UL)`
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  font-size: ${rem('18px')};
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: ${em('36px', '18px')} ${em('36px', '18px')} 0;
+
+  ${mediaQuery.small`
+    font-size: ${rem('21px')};
+    line-height: 1.5;
+    padding: ${em('75px', '21px')} ${em('42px', '21px')} 0;
+  `};
 `;
 
 function BlogIndex({ posts }) {
@@ -30,20 +36,31 @@ function BlogIndex({ posts }) {
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
-        <BlogHeader>
-          <H1>Blog</H1>
-        </BlogHeader>
-        <Section>
-          <PostList>
-            {posts.map(post => (
-              <PostExcerpt {...post} key={post.id} />
-            ))}
-          </PostList>
-        </Section>
+        <BlogHeader
+          large
+          imgAlt="Satellite broadcasting into space"
+          title="Transmissions"
+          tagline="Sending our knowledge and ideas into the universe"
+        />
+        <PostList>
+          {posts.map(post => (
+            <PostExcerpt {...post} key={post.id} />
+          ))}
+        </PostList>
       </Main>
     </ThemeProvider>
   );
 }
+
+BlogIndex.defaultProps = {};
+
+BlogIndex.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+    }),
+  ).isRequired,
+};
 
 function mapPropsToProps({ data }) {
   // TODO: Find a way to resolve the author name more easily.
@@ -93,8 +110,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          id
-          excerpt(pruneLength: 200)
+          excerpt(pruneLength: 300)
           fileAbsolutePath
           frontmatter {
             author

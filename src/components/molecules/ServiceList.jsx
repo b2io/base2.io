@@ -3,11 +3,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { em, rem } from 'polished';
 import { H3, Img, P, LI, TwoToneHeading } from '../atoms';
-import { containerSizing, mediaQuery, themed } from '../../util/style';
+import {
+  containerSizing,
+  mediaQuery,
+  themed,
+  webpBackground,
+} from '../../util/style';
 
 const ServiceList = styled.ul`
   align-items: center;
-  background: url('/img/backgrounds/star-field.png');
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -15,17 +19,26 @@ const ServiceList = styled.ul`
   padding-top: ${themed('navHeight.value')};
   position: relative;
   text-align: center;
+
+  ${webpBackground(
+    'img/backgrounds/star-field.png',
+    'img/backgrounds/star-field.webp',
+  )};
 `;
 
 const Wrapper = styled(LI)`
   ${containerSizing};
-  background: url('/img/backgrounds/space-fog-purple.png') bottom center / auto
-    100% no-repeat;
+  background: bottom center / auto 100% no-repeat;
   padding-bottom: ${em('135px')};
   max-width: ${rem('1300px')};
   position: relative;
   width: 100%;
   z-index: ${themed('zindex.content')};
+
+  ${webpBackground(
+    'img/backgrounds/space-fog-purple.png',
+    'img/backgrounds/space-fog-purple.webp',
+  )};
 
   ${mediaQuery.small`
     align-items: center;

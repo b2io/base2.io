@@ -1,8 +1,8 @@
 ---
 title: Autocomplete and the Three Algorithms
 author: dmiller
-date: "2014-02-25T04:00:00.000Z"
-path: "/2014/02/25/autocomplete-and-the-three-algorithms"
+date: '2014-02-25T04:00:00.000Z'
+path: '/2014/02/25/autocomplete-and-the-three-algorithms'
 ---
 
 A lot of our projects have some form of autocomplete functionality baked into
@@ -14,7 +14,7 @@ In talking over examples of how the new autocomplete should match, the product
 owner sent us in the direction of a possible solution he'd had some experience
 with in the past: the Soundex algorithm.
 
-### This one is too cold
+## This one is too cold
 
 To give a little more context, this particular application is hosted on Heroku
 and uses a PostgreSQL database for persistent storage. Given that, we started by
@@ -41,7 +41,7 @@ a query to get some results:
 Looking those over for our data-set, we aren't getting at all the results we'd
 want. Time to start looking at other options…
 
-### This one is too hot
+## This one is too hot
 
 A little farther down
 [that page of PostgreSQL documentation](http://www.postgresql.org/docs/8.3/static/fuzzystrmatch.html)
@@ -63,7 +63,7 @@ the get from one string to the other.
 Once again, the results from this aren't really what we're looking for, so it's
 back to the drawing board…
 
-### This one is just right
+## This one is just right
 
 After a broader search, we came upon the `pg_trgm` module that adds
 [Trigram similarity](http://www.postgresql.org/docs/8.3/static/pgtrgm.html) to
@@ -104,8 +104,7 @@ etc. In short, they've got all the indicators of healthy, vibrant repositories.
 That said, let's talk about what went wrong. Of the two gems, textacular is much
 more straightforward (though not as feature rich) and has all the functionality
 we want. The `fuzzy_search` finder it adds is perfect, we should just be able to
-call from our `Brand` model like `Brand.fuzzy_search(name:
-'hazienda').limit(10)` and we should get our Trigram similarity matches.
+call from our `Brand` model like `Brand.fuzzy_search(name: 'hazienda').limit(10)` and we should get our Trigram similarity matches.
 
 The catch is, textacular adds in a `WHERE` clause that was incompatible with our
 use case. The clause they put in makes sure the fuzzy search term is a substring
@@ -114,7 +113,7 @@ performance optimization for large tables and complex combination queries, but
 for our purposes the raw query was fast enough and the substring match killed
 our ability to catch spelling mistakes.
 
-### Goldilocks made her own porridge
+## Goldilocks made her own porridge
 
 In the end, we decided to roll our own. Following one of the
 [wonderful model refactoring patterns from Code Climate](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)

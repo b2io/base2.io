@@ -48,15 +48,6 @@
     "title": "Developer"
   },
   {
-    "active": true,
-    "id": "khamper",
-    "image": "img/team/khamper.jpg",
-    "name": "Kim Hamper",
-    "lastName": "Hamper",
-    "title": "Developer"
-  },
-  {
-    "active": true,
     "id": "rdunkle",
     "image": "img/team/rdunkle.jpg",
     "name": "Reed Dunkle",

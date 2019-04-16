@@ -1,8 +1,8 @@
 ---
 title: Getting Started with JSCS and WebStorm
 author: jstevens
-date: "2015-12-30T04:00:00.000Z"
-path: "/2015/12/30/jscs-intellij-setup"
+date: '2015-12-30T04:00:00.000Z'
+path: '/2015/12/30/jscs-intellij-setup'
 ---
 
 [JSCS](http://jscs.info/) is my new favorite javascript tool. It helps keep all
@@ -12,7 +12,7 @@ I'm going to show you how to get it setup with
 [WebStorm](https://www.jetbrains.com/webstorm/) or other
 [JetBrains](https://www.jetbrains.com/) IDEs.
 
-### Installing/Setup JSCS
+## Installing/Setup JSCS
 
 First we need to install JSCS using [nodejs](https://nodejs.org/en/).
 
@@ -50,7 +50,7 @@ gulp.task('lint', function() {
 
 Running `gulp lint` will run jscs and show you if there are any issues.
 
-### WebStorm Settings
+## WebStorm Settings
 
 Now here's the main part of the post... Get WebStorm setup to format and lint
 your code based on the jscs config settings. Most of these steps can be done in
@@ -128,7 +128,7 @@ felt tricky and cumbersome to keep doing it this way and I thought to myself
 "There must be a shortcut to make this happen?" And so I found one, but you have
 to manually set it.
 
-### Add JSCS Shortcut
+## Add JSCS Shortcut
 
 Open Settings and select Keymap. Search for JSCS. Then select the Fix JSCS
 Problems and push the edit (green pencil) button. I set mine to <kbd>opt</kbd> +
