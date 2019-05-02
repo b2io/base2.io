@@ -130,6 +130,7 @@ const Wrapper = styled(LI)`
 const TeamImg = styled(Img)`
   border-radius: 50%;
   height: auto;
+  margin: 0 10% 0 10%;
   position: relative;
   vertical-align: middle;
   width: ${imageSize.default};
