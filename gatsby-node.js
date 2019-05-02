@@ -1,6 +1,7 @@
 const path = require('path');
 
 const postTemplate = path.resolve('src/templates/post.jsx');
+const caseStudyTemplate = path.resolve('src/templates/caseStudy.jsx');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -9,7 +10,22 @@ exports.createPages = ({ actions, graphql }) => {
     resolve(
       graphql(`
         query GatsbyNodeQuery {
-          markdown: allMarkdownRemark {
+          caseStudies: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/_content/caseStudies/" } }
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  id
+                  path
+                }
+              }
+            }
+          }
+          posts: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/_content/posts/" } }
+          ) {
             edges {
               node {
                 id
@@ -31,10 +47,22 @@ exports.createPages = ({ actions, graphql }) => {
             path: post.frontmatter.path,
           });
 
-        const postPages = result.data.markdown.edges
+        const createCaseStudyPage = caseStudy =>
+          createPage({
+            component: caseStudyTemplate,
+            context: { id: caseStudy.id },
+            path: `caseStudies/${caseStudy.frontmatter.path}`,
+          });
+
+        const postPages = result.data.posts.edges
           .filter(e => !!e.node.frontmatter.path)
           .map(e => createPostPage(e.node));
-        return postPages;
+
+        const caseStudyPages = result.data.caseStudies.edges
+          .filter(e => !!e.node.frontmatter.path)
+          .map(e => createCaseStudyPage(e.node));
+
+        return postPages.concat(caseStudyPages);
       })
     );
   });

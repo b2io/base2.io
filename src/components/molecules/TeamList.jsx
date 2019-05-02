@@ -170,7 +170,7 @@ function TeamListItem({ image, name, title }) {
       </div>
       <TeamMemberInfo>
         {name}
-        <Title>{title}</Title>
+      	<Title>{title}</Title>
       </TeamMemberInfo>
     </Wrapper>
   );
