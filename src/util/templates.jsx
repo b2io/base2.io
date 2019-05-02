@@ -11,7 +11,7 @@ import {
   Blockquote,
   Code,
   Del,
-  EM,
+  Em,
   H1,
   H5,
   HR,
@@ -70,7 +70,7 @@ const defaultComponentMap = {
   blockquote: Blockquote,
   code: Code,
   del: Del,
-  em: EM,
+  em: Em,
   h1: H1,
   h2: PostContentH2,
   h3: PostContentH3,
@@ -86,9 +86,6 @@ const defaultComponentMap = {
   ul: UL,
 };
 
-const HoistChildren = props =>
-  React.Children.map(props.children, child => child.props.children);
-
 const markdownToElement = (md, componentMapOverrides) =>
   remark()
     .use(remarkReact, {
@@ -100,9 +97,7 @@ const markdownToElement = (md, componentMapOverrides) =>
     .processSync(md).contents;
 
 const markdown = (raw, componentMapOverrides) => (
-  <HoistChildren>
-    {markdownToElement(grayMatter(raw).content, componentMapOverrides)}
-  </HoistChildren>
+  <>{markdownToElement(grayMatter(raw).content, componentMapOverrides)}</>
 );
 
 export default markdown;

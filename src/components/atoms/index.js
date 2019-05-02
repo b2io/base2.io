@@ -6,7 +6,7 @@ import Button from './Button';
 import CallToAction from './CallToAction';
 import Code from './Code';
 import Del from './Del';
-import EM from './EM';
+import Em from './Em';
 import HR from './HR';
 import Icon from './Icon';
 import Img from './Img';
@@ -33,7 +33,7 @@ export {
   CallToAction,
   Code,
   Del,
-  EM,
+  Em,
   HR,
   Icon,
   Img,
