@@ -146,7 +146,6 @@ CaseStudyTemplate.propTypes = {
   }).isRequired,
 };
 
-// TODO Need to get the name along with the technology
 function mapPropsToProps({ data }) {
   const technologyIdToLogo = toNodesWithImage(data.companyTechnologies).reduce(
     (hashMap, { id, image, name }) => ({
