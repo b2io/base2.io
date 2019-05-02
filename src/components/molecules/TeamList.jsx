@@ -130,7 +130,6 @@ const Wrapper = styled(LI)`
 const TeamImg = styled(Img)`
   border-radius: 50%;
   height: auto;
-  margin: 0 10% 0 10%;
   position: relative;
   vertical-align: middle;
   width: ${imageSize.default};
@@ -166,11 +165,13 @@ const Title = styled.span`
 function TeamListItem({ image, name, title }) {
   return (
     <Wrapper>
-      <TeamImg {...image} alt={name} title={name} />
-      <TeamMemberInfo>
-        {name}
-        <Title>{title}</Title>
-      </TeamMemberInfo>
+      <div>
+        <TeamImg {...image} alt={name} title={name} />
+        <TeamMemberInfo>
+          {name}
+          <Title>{title}</Title>
+        </TeamMemberInfo>
+      </div>
     </Wrapper>
   );
 }
