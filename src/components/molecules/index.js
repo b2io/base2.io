@@ -1,9 +1,21 @@
-export BlogHeader from './BlogHeader';
-export ClientList from './ClientList';
-export DescriptiveList from './DescriptiveList';
-export GlobalNavigation from './GlobalNavigation';
-export PostExcerpt from './PostExcerpt';
-export ScrollLink from './ScrollLink';
-export ServiceList from './ServiceList';
-export TeamList from './TeamList';
-export TechnologiesList from './TechnologiesList';
+import BlogHeader from './BlogHeader';
+import ClientList from './ClientList';
+import GlobalNavigation from './GlobalNavigation';
+import JobExcerpt from './JobExcerpt';
+import PostExcerpt from './PostExcerpt';
+import ScrollLink from './ScrollLink';
+import ServiceList from './ServiceList';
+import TeamList from './TeamList';
+import TechnologiesList from './TechnologiesList';
+
+export {
+  BlogHeader,
+  ClientList,
+  GlobalNavigation,
+  JobExcerpt,
+  PostExcerpt,
+  ScrollLink,
+  ServiceList,
+  TeamList,
+  TechnologiesList,
+};

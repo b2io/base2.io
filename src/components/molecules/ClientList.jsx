@@ -51,24 +51,20 @@ const ClientLogo = styled(Img)`
   `};
 `;
 
-class ClientListItem extends React.Component {
-  static defaultProps = {};
+function ClientListItem(props) {
+  const { image, name } = props;
 
-  static propTypes = {
-    image: PropTypes.shape({}).isRequired,
-    name: PropTypes.string.isRequired,
-  };
-
-  render() {
-    const { image, name } = this.props;
-
-    return (
-      <Client>
-        <ClientLogo {...image} alt={name} title={name} />
-      </Client>
-    );
-  }
+  return (
+    <Client>
+      <ClientLogo {...image} alt={name} title={name} />
+    </Client>
+  );
 }
+
+ClientListItem.propTypes = {
+  image: PropTypes.shape({}).isRequired,
+  name: PropTypes.string.isRequired,
+};
 
 ClientList.Item = ClientListItem;
 

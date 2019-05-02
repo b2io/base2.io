@@ -1,7 +1,9 @@
+import { graphql } from 'gatsby';
+import { sortBy } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { sortBy } from 'lodash';
 import { mapProps } from 'recompose';
+import { injectGlobal, ThemeProvider } from 'styled-components';
 import {
   ContactUs,
   Clients,
@@ -12,49 +14,37 @@ import {
   Team,
   Technologies,
 } from '../components';
+import theme, { darkTheme } from '../theme';
 import { toNodesWithImage } from '../util/graphql';
+import { mediaQuery } from '../util/style';
 
-class IndexPage extends React.Component {
-  static defaultProps = {};
+// eslint-disable-next-line no-unused-expressions
+injectGlobal`
+  * {
+    box-sizing: border-box;
+  }
 
-  static propTypes = {
-    clients: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.node.isRequired,
-        image: PropTypes.shape({}).isRequired,
-        name: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
-    services: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.node.isRequired,
-        image: PropTypes.shape({}).isRequired,
-        imgAlt: PropTypes.string.isRequired,
-        heading: PropTypes.string.isRequired,
-        subheading: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
-    technologies: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.node.isRequired,
-        image: PropTypes.shape({}).isRequired,
-        name: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
-    team: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.node.isRequired,
-        image: PropTypes.shape({}).isRequired,
-        lastName: PropTypes.string.isRequired,
-      }),
-    ).isRequired,
-  };
+  body,
+  html {
+    ${theme.font.sansSerif};
+    margin: 0;
+    padding: 0;
+  }
 
-  render() {
-    const { clients, services, technologies, team } = this.props;
+  .noScroll > div {
+    height: 100vh;
+    overflow: hidden;
 
-    return (
+    ${mediaQuery.small`
+      height: auto;
+      overflow: auto;
+    `};
+  }
+`;
+
+function IndexPage({ clients, services, technologies, team }) {
+  return (
+    <ThemeProvider theme={darkTheme}>
       <Main>
         <GlobalNavigation />
         <Hero />
@@ -68,9 +58,43 @@ class IndexPage extends React.Component {
         <Team team={sortBy(team, ['lastName'])} />
         <ContactUs />
       </Main>
-    );
-  }
+    </ThemeProvider>
+  );
 }
+
+IndexPage.propTypes = {
+  clients: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+      image: PropTypes.shape({}).isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  services: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+      image: PropTypes.shape({}).isRequired,
+      imgAlt: PropTypes.string.isRequired,
+      heading: PropTypes.string.isRequired,
+      subheading: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  technologies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+      image: PropTypes.shape({}).isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+  team: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+      image: PropTypes.shape({}).isRequired,
+      lastName: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
 function mapPropsToProps({ data }) {
   return {
@@ -133,7 +157,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    team: allTeamJson {
+    team: allTeamJson(filter: { active: { eq: true } }) {
       edges {
         node {
           id

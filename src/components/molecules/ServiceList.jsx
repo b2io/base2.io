@@ -79,17 +79,7 @@ const ServiceHeader = styled.header`
 `;
 
 const ServiceSubheading = styled(H3)`
-  font-size: ${em('20px')};
-  font-weight: 100;
   margin: 0;
-
-  ${mediaQuery.small`
-    font-size: ${em('24px')};
-  `};
-
-  ${mediaQuery.medium`
-    font-size: ${em('36px')};
-  `};
 `;
 
 const ServiceDescription = styled(P)`
@@ -105,36 +95,30 @@ const ServiceDescription = styled(P)`
   `};
 `;
 
-class ServiceListItem extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    image: PropTypes.shape({}).isRequired,
-    imgAlt: PropTypes.string.isRequired,
-    heading: PropTypes.string.isRequired,
-    subheading: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-  };
-
-  render() {
-    const { image, imgAlt, heading, subheading, description } = this.props;
-
-    return (
-      <Wrapper>
-        <ServiceImg {...image} alt={imgAlt} />
-        <ServiceText>
-          <ServiceHeader>
-            <TwoToneHeading>
-              <span>We</span> {heading}
-            </TwoToneHeading>
-            <ServiceSubheading>{subheading}</ServiceSubheading>
-          </ServiceHeader>
-          <ServiceDescription>{description}</ServiceDescription>
-        </ServiceText>
-      </Wrapper>
-    );
-  }
+function ServiceListItem({ image, imgAlt, heading, subheading, description }) {
+  return (
+    <Wrapper>
+      <ServiceImg {...image} alt={imgAlt} />
+      <ServiceText>
+        <ServiceHeader>
+          <TwoToneHeading>
+            <span>We</span> {heading}
+          </TwoToneHeading>
+          <ServiceSubheading>{subheading}</ServiceSubheading>
+        </ServiceHeader>
+        <ServiceDescription>{description}</ServiceDescription>
+      </ServiceText>
+    </Wrapper>
+  );
 }
+
+ServiceListItem.propTypes = {
+  image: PropTypes.shape({}).isRequired,
+  imgAlt: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired,
+  subheading: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 ServiceList.Item = ServiceListItem;
 

@@ -165,11 +165,13 @@ const Title = styled.span`
 function TeamListItem({ image, name, title }) {
   return (
     <Wrapper>
-      <TeamImg {...image} alt={name} title={name} />
-      <TeamMemberInfo>
-        {name}
-        <Title>{title}</Title>
-      </TeamMemberInfo>
+      <div>
+        <TeamImg {...image} alt={name} title={name} />
+        <TeamMemberInfo>
+          {name}
+          <Title>{title}</Title>
+        </TeamMemberInfo>
+      </div>
     </Wrapper>
   );
 }

@@ -1,17 +1,20 @@
 const path = require('path');
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+const postTemplate = path.resolve('src/templates/post.jsx');
+
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     resolve(
       graphql(`
         query GatsbyNodeQuery {
-          posts: allMarkdownRemark {
+          markdown: allMarkdownRemark {
             edges {
               node {
                 id
                 frontmatter {
+                  id
                   path
                 }
               }
@@ -21,16 +24,17 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       `).then(result => {
         if (result.errors) return reject(result.errors);
 
-        const postTemplate = path.resolve('src/templates/post.jsx');
-        const postNodes = result.data.posts.edges.map(e => e.node);
-
-        return postNodes.map(node =>
+        const createPostPage = post =>
           createPage({
             component: postTemplate,
-            context: { id: node.id },
-            path: node.frontmatter.path,
-          })
-        );
+            context: { id: post.id },
+            path: post.frontmatter.path,
+          });
+
+        const postPages = result.data.markdown.edges
+          .filter(e => !!e.node.frontmatter.path)
+          .map(e => createPostPage(e.node));
+        return postPages;
       })
     );
   });
