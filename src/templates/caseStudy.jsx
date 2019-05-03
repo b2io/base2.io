@@ -49,8 +49,6 @@ const CaseStudyContent = styled.article`
   }
 `;
 
-// TODO Post Content Styling is being handled differently once the branch merge happens.
-// Leaving PostText, PostContentH2, PostContentH3, PostContentH4, PostImg as is for now.
 const PostText = styled(P)`
   margin: 0 0 ${em('21px', '21px')};
 `;
