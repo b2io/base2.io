@@ -56,7 +56,7 @@
     "title": "Developer"
   },
   {
-    "active": true,
+    "active": false,
     "id": "mkendall",
     "image": "img/team/mkendall.jpg",
     "name": "Mandy Kendall",
