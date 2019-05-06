@@ -167,11 +167,11 @@ function TeamListItem({ image, name, title }) {
     <Wrapper>
       <div>
         <TeamImg {...image} alt={name} title={name} />
-        <TeamMemberInfo>
-          {name}
-          <Title>{title}</Title>
-        </TeamMemberInfo>
       </div>
+      <TeamMemberInfo>
+        {name}
+        <Title>{title}</Title>
+      </TeamMemberInfo>
     </Wrapper>
   );
 }
