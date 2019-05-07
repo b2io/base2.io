@@ -130,28 +130,24 @@ const scroll = {
 
 const HeroContent = ({ children }) => children;
 
-// eslint-disable-line react/prefer-stateless-function
-class Hero extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {};
-
-  render() {
-    return (
-      <HeroContent>
-        <HeroHeader>
-          <HeroHeading>
-            <BaseTwoLogoText />
-          </HeroHeading>
-          <HeroTagline> We turn ideas into beautiful software </HeroTagline>
-          <ScrollLink target={scroll.target} title={scroll.title}>
-            <SatelliteIndicator src="img/scroll-indicator.svg" />
-          </ScrollLink>
-        </HeroHeader>
-        <A id={scroll.target} />
-      </HeroContent>
-    );
-  }
+function Hero() {
+  return (
+    <HeroContent>
+      <HeroHeader>
+        <HeroHeading>
+          <BaseTwoLogoText id="hero-logo" />
+        </HeroHeading>
+        <HeroTagline> We turn ideas into beautiful software </HeroTagline>
+        <ScrollLink target={scroll.target} title={scroll.title}>
+          <SatelliteIndicator
+            alt="Arrows pointing downward"
+            src="/img/scroll-indicator.svg"
+          />
+        </ScrollLink>
+      </HeroHeader>
+      <A id="next" />
+    </HeroContent>
+  );
 }
 
 export default Hero;

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import {
   BaseTwoLogoText,
   CallToAction,
@@ -8,10 +8,11 @@ import {
   P,
   Section,
 } from '../components';
+import { darkTheme } from '../theme';
 import { mediaQuery } from '../util/style';
 
 const Wrapper = styled(Main)`
-  background-image: url('img/backgrounds/hero/b2-hero-background-1920.png');
+  background-image: url('/img/backgrounds/hero/b2-hero-background-1920.png');
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: 270%;
@@ -95,11 +96,9 @@ const GoHome = styled(CallToAction)`
   `};
 `;
 
-class ThanksPage extends React.Component {
-  static defaultProps = {};
-
-  render() {
-    return (
+function ThanksPage() {
+  return (
+    <ThemeProvider theme={darkTheme}>
       <Wrapper>
         <ThanksContent>
           <ThanksMessage>
@@ -111,14 +110,14 @@ class ThanksPage extends React.Component {
             </ThanksText>
             <ThanksText>Sincerely,</ThanksText>
             <BaseTwoLogo>
-              <BaseTwoLogoText />
+              <BaseTwoLogoText id="thanks-logo" />
             </BaseTwoLogo>
           </ThanksMessage>
           <GoHome href="../">Return Home</GoHome>
         </ThanksContent>
       </Wrapper>
-    );
-  }
+    </ThemeProvider>
+  );
 }
 
 export default ThanksPage;

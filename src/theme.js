@@ -1,21 +1,22 @@
+import { lighten, em, transparentize } from 'polished';
 import { css } from 'styled-components';
-import { lighten, rem, transparentize } from 'polished';
 
 // COLOR:
 
 const palette = {
-  black: 'rgba(0, 0, 0, 1.0)',
+  black: 'rgb(0, 0, 0)',
   blackTransparent: 'rgba(0, 0, 0, 0.3)',
-  deepBlue: 'rgba(3, 8, 40, 1.0)',
-  deepPink: 'rgba(139, 42, 109, 1.0)',
-  grey: 'rgba(153, 153, 153, 1.0)',
-  purple: 'rgba(106, 72, 153, 1.0)',
-  spacePurple: 'rgba(205, 124, 255, 1.0)',
-  spaceGreen: 'rgba(128, 203, 196, 1.0)',
-  spaceBlue: 'rgba(124, 177, 255, 1.0)',
-  spacePink: 'rgba(215, 121, 185, 1.0)',
+  deepBlue: 'rgb(3, 8, 40)',
+  deepPink: 'rgb(139, 42, 109)',
+  grey: 'rgb(153, 153, 153)',
+  greyLight: 'rgb(238, 238, 238)',
+  purple: 'rgb(106, 72, 153)',
+  spacePurple: 'rgb(205, 124, 255)',
+  spaceGreen: 'rgb(128, 203, 196)',
+  spaceBlue: 'rgb(124, 177, 255)',
+  spacePink: 'rgb(215, 121, 185)',
   transparent: 'rgba(0, 0, 0, 0.0)',
-  white: 'rgba(255, 255, 255, 1.0)',
+  white: 'rgb(255, 255, 255)',
   whiteTransparent: 'rgba(255, 255, 255, 0.3)',
 };
 
@@ -97,13 +98,13 @@ function makeTheme(color) {
       border-style: solid;
       border-width: 1px 0;
       border-color: ${color.white} transparent ${color.spaceBlue};
-      box-shadow: 0 0 10px ${color.spaceBlue};
+      box-shadow: 0 0 ${em('10px', '24px')} ${color.spaceBlue};
       color: ${color.spaceBlue};
       cursor: pointer;
-      font-size: 1.5em;
+      font-size: ${em('24px', '16px')};
       line-height: 1;
       overflow: hidden;
-      padding: ${rem('15px')} ${rem('120px')};
+      padding: ${em('16px', '24px')};
       text-transform: uppercase;
 
       &:focus,

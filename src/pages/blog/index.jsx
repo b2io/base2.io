@@ -1,8 +1,9 @@
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import { em, rem } from 'polished';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import {
   BlogHeader,
   GlobalNavigation,
@@ -10,6 +11,7 @@ import {
   PostExcerpt,
   UL,
 } from '../../components';
+import { lightTheme } from '../../theme';
 import { toNodes } from '../../util/graphql';
 import { mediaQuery } from '../../util/style';
 
@@ -31,18 +33,20 @@ const PostList = styled(UL)`
 
 function BlogIndex({ posts }) {
   return (
-    <Main>
-      <GlobalNavigation />
-      <BlogHeader
-        large
-        imgAlt="Satellite broadcasting into space"
-        title="Transmissions"
-        tagline="Sending our knowledge and ideas into the universe"
-      />
-      <PostList>
-        {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
-      </PostList>
-    </Main>
+    <ThemeProvider theme={lightTheme}>
+      <Main>
+        <GlobalNavigation />
+        <BlogHeader
+          large
+          imgAlt="Satellite broadcasting into space"
+          title="Transmissions"
+          tagline="Sending our knowledge and ideas into the universe"
+        />
+        <PostList>
+          {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
+        </PostList>
+      </Main>
+    </ThemeProvider>
   );
 }
 
@@ -78,6 +82,14 @@ function mapPropsToProps({ data }) {
   return { posts };
 }
 
+BlogIndex.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.node.isRequired,
+    }),
+  ).isRequired,
+};
+
 export default mapProps(mapPropsToProps)(BlogIndex);
 
 export const pageQuery = graphql`
@@ -92,6 +104,7 @@ export const pageQuery = graphql`
     }
     posts: allMarkdownRemark(
       sort: { fields: [fileAbsolutePath], order: DESC }
+      filter: { frontmatter: { path: { ne: null } } }
     ) {
       edges {
         node {

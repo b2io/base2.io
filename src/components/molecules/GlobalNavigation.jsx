@@ -259,7 +259,7 @@ class GlobalNavigation extends React.Component {
             <HomeLink href="/" title="Base Two - Home">
               <BaseTwoLogo />
             </HomeLink>
-            <MenuToggle onClick={this.handleClick}>
+            <MenuToggle aria-label="Toggle Menu" onClick={this.handleClick}>
               <Icon name="menutoggle" />
             </MenuToggle>
           </LogoToggleContainer>
@@ -310,4 +310,6 @@ class GlobalNavigation extends React.Component {
   }
 }
 
-export default windowSize(GlobalNavigation);
+export default (typeof window !== 'undefined'
+  ? windowSize(GlobalNavigation)
+  : GlobalNavigation);

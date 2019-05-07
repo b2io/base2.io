@@ -1,33 +1,19 @@
-import grayMatter from 'gray-matter';
+import { graphql } from 'gatsby';
 import { em, rem } from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
-import remark from 'remark';
-import styled from 'styled-components';
-import remarkReact from 'remark-react';
+import styled, { ThemeProvider } from 'styled-components';
+import markdown from '../util/templates';
 import { mediaQuery } from '../util/style';
 import {
-  A,
-  Blockquote,
   BlogHeader,
-  Code,
-  Del,
-  EM,
   GlobalNavigation,
-  H1,
-  H5,
-  HR,
-  LI,
   Main,
-  P,
-  Pre,
-  OL,
   Section,
-  Strong,
-  UL,
 } from '../components';
 import { toNodes } from '../util/graphql';
+import { lightTheme } from '../theme';
 
 const PostContent = styled(Section)`
   font-size: ${rem('18px')};
@@ -47,95 +33,21 @@ const PostContent = styled(Section)`
   `};
 `;
 
-const PostText = styled(P)`
-  margin: 0 0 ${em('21px', '21px')};
-`;
-
-const PostContentH2 = styled.h2`
-  font-size: ${rem('30px')};
-  margin: ${em('36px', '34px')} 0 ${em('18px', '30px')};
-
-  ${mediaQuery.small`
-    font-size: ${rem('34px')};
-    margin: ${em('42px', '34px')} 0 ${em('21px', '34px')};
-  `};
-`;
-
-const PostContentH3 = styled.h3`
-  font-size: ${rem('20px')};
-  margin: ${em('30px', '20px')} 0 ${em('14px', '20px')};
-
-  ${mediaQuery.small`
-    font-size: ${rem('24px')};
-    margin: ${em('36px', '24px')} 0 ${em('16px', '24px')};
-  `};
-`;
-
-const PostContentH4 = styled.h4`
-  font-size: ${rem('34px')};
-  margin: ${em('36px', '34px')} 0 0;
-
-  ${mediaQuery.small`
-    font-size: ${rem('21px')};
-    margin: ${em('30px', '21px')} 0 ${em('16px', '21px')};
-  `};
-`;
-
-const PostImg = styled.img`
-  margin: ${em('18px', '18px')} 0;
-
-  ${mediaQuery.small`
-    margin: ${em('21px', '21px')} 0;
-  `};
-`;
-
-const HoistChildren = props =>
-  React.Children.map(props.children, child => child.props.children);
-
-const markdownToElement = md =>
-  remark()
-    .use(remarkReact, {
-      remarkReactComponents: {
-        a: A,
-        blockquote: Blockquote,
-        code: Code,
-        del: Del,
-        em: EM,
-        h1: H1,
-        h2: PostContentH2,
-        h3: PostContentH3,
-        h4: PostContentH4,
-        h5: H5,
-        hr: HR,
-        img: PostImg,
-        li: LI,
-        ol: OL,
-        p: PostText,
-        pre: Pre,
-        strong: Strong,
-        ul: UL,
-      },
-    })
-    .processSync(md).contents;
-
-// TODO: Add `content` prop to GraphQL remark nodes via plugin.
-const markdown = raw => (
-  <HoistChildren>{markdownToElement(grayMatter(raw).content)}</HoistChildren>
-);
-
 function PostTemplate({ author, children, date, title }) {
   return (
-    <Main>
-      <GlobalNavigation />
-      <BlogHeader
-        author={author}
-        img="/img/transmission-constellation.png"
-        imgAlt="Satellite broadcasting into space"
-        date={date}
-        title={title}
-      />
-      <PostContent>{children}</PostContent>
-    </Main>
+    <ThemeProvider theme={lightTheme}>
+      <Main>
+        <GlobalNavigation />
+        <BlogHeader
+          author={author}
+          img="/img/transmission-constellation.png"
+          imgAlt="Satellite broadcasting into space"
+          date={date}
+          title={title}
+        />
+        <PostContent>{children}</PostContent>
+      </Main>
+    </ThemeProvider>
   );
 }
 
