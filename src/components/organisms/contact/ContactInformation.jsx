@@ -62,6 +62,9 @@ const ContactInformation = () => (
         Google Map
       </A>
     </InfoGroup>
+    <InfoGroup>
+      <Link to="/jobs">Join Our Team</Link>
+    </InfoGroup>
   </BaseTwoAddress>
 );
 
