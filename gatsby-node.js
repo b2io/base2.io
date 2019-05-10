@@ -1,6 +1,7 @@
 const path = require('path');
 
 const postTemplate = path.resolve('src/templates/post.jsx');
+const jobTemplate = path.resolve('src/templates/job.jsx');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -34,7 +35,19 @@ exports.createPages = ({ actions, graphql }) => {
         const postPages = result.data.markdown.edges
           .filter(e => !!e.node.frontmatter.path)
           .map(e => createPostPage(e.node));
-        return postPages;
+
+        const createJobPage = job =>
+          createPage({
+            component: jobTemplate,
+            context: { id: job.id },
+            path: `jobs/description/${job.frontmatter.id}`,
+          });
+
+        const jobPages = result.data.markdown.edges
+          .filter(e => !!e.node.frontmatter.id)
+          .map(e => createJobPage(e.node));
+
+        return postPages.concat(jobPages);
       })
     );
   });
