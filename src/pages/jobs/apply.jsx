@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme } from '../../theme';
-import { GlobalNavigation, JobsHeader, Main } from '../../components';
+import { GlobalNavigation, JobForm, JobsHeader, Main } from '../../components';
 
 function Apply() {
   return (
@@ -9,6 +9,7 @@ function Apply() {
       <Main>
         <GlobalNavigation />
         <JobsHeader small />
+        <JobForm isApprenticeship={false} />
       </Main>
     </ThemeProvider>
   );

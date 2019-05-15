@@ -7,7 +7,10 @@ import Input from './Input';
 import Label from './Label';
 import Textarea from './Textarea';
 
-const stateUpdateFromValue = ({ value }) => ({ value, isDirty: !!value });
+const stateUpdateFromValue = ({ type, value }) => ({
+  value,
+  isDirty: !!value || type === 'file',
+});
 
 class TextField extends React.Component {
   static defaultProps = {
