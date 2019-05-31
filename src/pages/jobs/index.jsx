@@ -52,7 +52,7 @@ export default mapProps(mapPropsToProps)(JobsPage);
 export const pageQuery = graphql`
   query JobsPageQuery {
     jobs: allMarkdownRemark(
-      filter: { frontmatter: { position: { ne: null } } }
+      filter: { frontmatter: { position: { ne: null }, active: { ne: false } } }
     ) {
       edges {
         node {

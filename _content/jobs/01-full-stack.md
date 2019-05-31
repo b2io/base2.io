@@ -2,6 +2,7 @@
 description: We’re looking for someone with a strong desire to collaborate on the various layers of an application to help maintain existing .Net Core APIs, SPAs, and mobile apps, as well as complement and enhance our development capabilities moving forward.
 id: 1
 position: Full Stack Developer
+active: true
 ---
 
 ### Relevant Technologies
