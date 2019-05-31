@@ -8,7 +8,7 @@ import {
   TextAreaField,
   TextInputField,
 } from '../../atoms';
-import { mediaQuery } from '../../../util/style';
+import { mediaQuery, themed } from '../../../util/style';
 
 const Wrapper = styled.div`
   margin: 0 auto 5em;
@@ -17,7 +17,6 @@ const Wrapper = styled.div`
 
   ${mediaQuery.small`
     max-width: ${em('700px')};
-    padding: 0 0;
   `};
 
   ${mediaQuery.medium`
@@ -25,8 +24,10 @@ const Wrapper = styled.div`
   `};
 `;
 
-const RadioButtonStyled = styled(RadioButton)`
-  margin-left: 1em;
+const RadioButtonGroupLabel = styled.label`
+  ${themed('typography.subheading')};
+  color: ${themed('color.accent')};
+  display: block;
 `;
 
 const SubmitButton = styled(Button)`
@@ -129,13 +130,13 @@ function JobForm({ isApprenticeship }) {
             />
           </>
         )}
-        Nearest Base Two Location:
-        <RadioButtonStyled label="Columbus" name="location" value="columbus" />
-        <RadioButtonStyled
-          label="Pittsburgh"
-          name="location"
-          value="pittsburgh"
-        />
+        <>
+          <RadioButtonGroupLabel>
+            Nearest Base Two Location
+          </RadioButtonGroupLabel>
+          <RadioButton label="Columbus" name="location" value="columbus" />
+          <RadioButton label="Pittsburgh" name="location" value="pittsburgh" />
+        </>
         <TextAreaField
           label="Anything else you would like to mention?"
           name="anythingElse"
