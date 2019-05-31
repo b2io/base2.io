@@ -13,6 +13,7 @@ import {
   H2,
   H3,
 } from '../components';
+import { LI, P } from '../components/organisms/jobs/common';
 import { mediaQuery, themed } from '../util/style';
 import { darkTheme } from '../theme';
 
@@ -40,6 +41,8 @@ const renderMarkdown = raw =>
   markdown(raw, {
     h2: Heading,
     h3: SubHeading,
+    li: LI,
+    p: P,
   });
 
 function JobTemplate({ job }) {

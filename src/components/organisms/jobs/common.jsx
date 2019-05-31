@@ -31,12 +31,19 @@ const H2 = styled(Heading2)`
   `};
 `;
 
-const P = styled.p`
-  ${text};
-`;
-
 const LI = styled.li`
   ${text};
+
+  & p {
+    margin-bottom: 0.25em;
+  }
 `;
 
-export { H2, P, LI };
+const P = styled.p`
+  ${text};
+  &:li {
+    margin: 0;
+  }
+`;
+
+export { H2, LI, P };
