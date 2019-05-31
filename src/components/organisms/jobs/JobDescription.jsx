@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { em, rem } from 'polished';
-import { Link, P, Section } from '../../atoms';
-import { H2 } from './common';
+import { Link, Section } from '../../atoms';
+import { H2, P } from './common';
 import { themed } from '../../../util/style';
 import JobDescriptionBoilerplate from './JobDescriptionBoilerplate';
 
@@ -11,7 +11,8 @@ const Wrapper = styled(Section)`
   font-size: ${rem('18px')};
   font-weight: 400;
   line-height: 1.5;
-  margin-bottom: ${rem('128px')};
+  margin: 0 auto ${rem('128px')};
+  max-width: 1200px;
 `;
 
 const ApplyButton = styled(Link)`
