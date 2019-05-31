@@ -34,7 +34,15 @@ const Heading = styled(H2)`
 
 const SubHeading = styled(H3)`
   color: ${themed('color.grey')};
-  font-size: ${rem(28)};
+  font-size: ${rem('18px')};
+
+  ${mediaQuery.small`
+    font-size: ${rem('20px')};
+  `};
+
+  ${mediaQuery.medium`
+    font-size: ${rem('28px')};
+  `};
 `;
 
 const renderMarkdown = raw =>

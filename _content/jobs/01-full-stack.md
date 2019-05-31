@@ -59,14 +59,14 @@ After reviewing resumes, portfolios and any other material submitted with an app
 
 We’re looking for someone with a strong desire to collaborate on architecting, building, and maintaining .NET Core APIs, SPAs, and mobile apps.
 
-#### Requirements
+### Requirements
 
 - RESTful API development experience with C# .NET 4.x or .NET Core
 - Understanding of ORMs (we use Entity Framework and Dapper)
 - Competency using debugging tools and troubleshooting
 - Interest in contributing to front-end UI/UX development
 
-#### Technologies We Frequently Use
+### Technologies We Frequently Use
 
 - Backend
   - .NET Framework

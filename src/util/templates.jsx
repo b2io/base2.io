@@ -44,7 +44,7 @@ const PostContentH3 = styled.h3`
 `;
 
 const PostContentH4 = styled.h4`
-  font-size: ${rem('34px')};
+  font-size: ${rem('18px')};
   margin: ${em('36px', '34px')} 0 0;
 
   ${mediaQuery.small`
