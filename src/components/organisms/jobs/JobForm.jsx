@@ -21,9 +21,12 @@ const Wrapper = styled.div`
   `};
 
   ${mediaQuery.medium`
-    margin: 0;
     max-width: ${em('610px')};
   `};
+`;
+
+const RadioButtonStyled = styled(RadioButton)`
+  margin-left: 1em;
 `;
 
 const SubmitButton = styled(Button)`
@@ -126,9 +129,13 @@ function JobForm({ isApprenticeship }) {
             />
           </>
         )}
-        Nearest BaseTwo Location:
-        <RadioButton label="Columbus" name="location" value="columbus" />
-        <RadioButton label="Pittsburgh" name="location" value="pittsburgh" />
+        Nearest Base Two Location:
+        <RadioButtonStyled label="Columbus" name="location" value="columbus" />
+        <RadioButtonStyled
+          label="Pittsburgh"
+          name="location"
+          value="pittsburgh"
+        />
         <TextAreaField
           label="Anything else you would like to mention?"
           name="anythingElse"
