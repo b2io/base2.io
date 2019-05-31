@@ -1,28 +1,9 @@
 ---
-description: We’re looking for someone with a strong desire to collaborate on the various layers of an application to help maintain existing .Net Core APIs, SPAs, and mobile apps, as well as complement and enhance our development capabilities moving forward.
+description: We’re looking for someone with a strong desire to collaborate on architecting, building, and maintaining .NET Core APIs, SPAs, and mobile apps.
 id: 1
 position: Full Stack Developer
 active: true
 ---
-
-### Relevant Technologies
-
-- Backend
-  - REST
-  - C#
-  - .Net Core
-  - .Net 4.x (legacy apps)
-  - Entity Framework
-  - Dapper
-  - PostgreSQL
-  - MS Sql
-- Front-end
-  - React
-  - React Native
-  - Aurelia
-  - CSS
-- Debugging tools and strategies to troubleshoot and resolve issues
-- Unit testing
 
 ## About Base Two
 
@@ -73,3 +54,30 @@ We offer great benefits so that the life portion of work-life balance can be mor
 ## Our Interview Process
 
 After reviewing resumes, portfolios and any other material submitted with an application, we schedule a Small Team Interview with the candidates we are interested in meeting. In this meeting, two members of Base Two meet with a candidate either in person or via a video call. The goal of the Small Team Interview is to answer any questions the candidate has about our company and processes, and learn what the candidate is interested in so we can determine if their skillset aligns with our present needs. If we think it might be a good fit, we schedule a Full Team Interview with the candidate. We strive to communicate each candidate’s status with them every step of the way.
+
+## Full Stack Developer
+
+We’re looking for someone with a strong desire to collaborate on architecting, building, and maintaining .NET Core APIs, SPAs, and mobile apps.
+
+#### Requirements
+
+- RESTful API development experience with C# .NET 4.x or .NET Core
+- Understanding of ORMs (we use Entity Framework and Dapper)
+- Competency using debugging tools and troubleshooting
+- Interest in contributing to front-end UI/UX development
+
+#### Technologies We Frequently Use
+
+- Backend
+  - .NET Framework
+  - Entity Framework
+  - Dapper
+  - PostgreSQL
+  - Microsoft SQL
+  - Unit testing
+- Frontend
+  - JavaScript (ES6+)
+  - React
+  - React Native
+  - Aurelia
+  - CSS
