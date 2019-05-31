@@ -1,6 +1,6 @@
 import { rem } from 'polished';
 import styled, { css } from 'styled-components';
-import { H2 as Heading2 } from '../../atoms';
+import { H2 as Heading2, H3 as Heading3 } from '../../atoms';
 import { mediaQuery, themed } from '../../../util/style';
 
 const text = css`
@@ -31,6 +31,19 @@ const H2 = styled(Heading2)`
   `};
 `;
 
+const H3 = styled(Heading3)`
+  color: ${themed('color.grey')};
+  font-size: ${rem('18px')};
+
+  ${mediaQuery.small`
+    font-size: ${rem('20px')};
+  `};
+
+  ${mediaQuery.medium`
+    font-size: ${rem('28px')};
+  `};
+`;
+
 const LI = styled.li`
   ${text};
 
@@ -46,4 +59,4 @@ const P = styled.p`
   }
 `;
 
-export { H2, LI, P };
+export { H2, H3, LI, P };

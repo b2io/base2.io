@@ -5,6 +5,7 @@ import { em, rem } from 'polished';
 import { Link, P, Section } from '../../atoms';
 import { H2 } from './common';
 import { themed } from '../../../util/style';
+import JobDescriptionBoilerplate from './JobDescriptionBoilerplate';
 
 const Wrapper = styled(Section)`
   font-size: ${rem('18px')};
@@ -24,9 +25,12 @@ const ApplyButton = styled(Link)`
 function JobDescription({ description, position, children }) {
   return (
     <Wrapper>
-      <H2>{position}</H2>
-      <P>{description}</P>
-      {children}
+      <JobDescriptionBoilerplate />
+      <Section>
+        <H2>{position}</H2>
+        <P>{description}</P>
+        {children}
+      </Section>
       <ApplyButton to="/jobs/apply/">Apply</ApplyButton>
     </Wrapper>
   );

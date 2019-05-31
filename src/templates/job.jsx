@@ -2,53 +2,22 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
-import styled, { ThemeProvider } from 'styled-components';
-import { rem } from 'polished';
+import { ThemeProvider } from 'styled-components';
 import markdown from '../util/templates';
 import {
   GlobalNavigation,
   JobDescription,
   JobsHeader,
   Main,
-  H2,
-  H3,
 } from '../components';
-import { LI, P } from '../components/organisms/jobs/common';
-import { mediaQuery, themed } from '../util/style';
+import { H2, H3, LI, P } from '../components/organisms/jobs/common';
+
 import { darkTheme } from '../theme';
-
-const Heading = styled(H2)`
-  color: ${themed('color.textAccent')};
-  font-size: ${rem('20px')};
-  font-weight: 100;
-  margin: 0;
-
-  ${mediaQuery.small`
-    font-size: ${rem('24px')};
-  `};
-
-  ${mediaQuery.medium`
-    font-size: ${rem('36px')};
-  `};
-`;
-
-const SubHeading = styled(H3)`
-  color: ${themed('color.grey')};
-  font-size: ${rem('18px')};
-
-  ${mediaQuery.small`
-    font-size: ${rem('20px')};
-  `};
-
-  ${mediaQuery.medium`
-    font-size: ${rem('28px')};
-  `};
-`;
 
 const renderMarkdown = raw =>
   markdown(raw, {
-    h2: Heading,
-    h3: SubHeading,
+    h2: H2,
+    h3: H3,
     li: LI,
     p: P,
   });
