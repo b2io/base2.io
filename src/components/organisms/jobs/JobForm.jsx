@@ -118,7 +118,7 @@ function JobForm({ isApprenticeship }) {
         ) : (
           <>
             <TextAreaField
-              label="Any project or experience you would like to highlight?"
+              label="Experience / Project Highlights"
               name="experienceHighlight"
               multiline
               rows="5"
@@ -139,7 +139,7 @@ function JobForm({ isApprenticeship }) {
           <RadioButton label="Pittsburgh" name="location" value="pittsburgh" />
         </>
         <TextAreaField
-          label="Anything else you would like to mention?"
+          label="Any Additional Information"
           name="anythingElse"
           multiline
           rows="5"
