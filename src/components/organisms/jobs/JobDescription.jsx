@@ -15,6 +15,10 @@ const Wrapper = styled(Section)`
   max-width: 1200px;
 `;
 
+const ApplyHeader = styled(H2)`
+  margin-bottom: 1em;
+`;
+
 function JobDescription({ description, position, children }) {
   return (
     <Wrapper>
@@ -25,7 +29,7 @@ function JobDescription({ description, position, children }) {
         {children}
       </Section>
       <Section>
-        <H2>Apply for the {position} position</H2>
+        <ApplyHeader>Apply for the {position} position</ApplyHeader>
         <JobForm isApprenticeship={false} position />
       </Section>
     </Wrapper>
