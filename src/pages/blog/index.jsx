@@ -43,7 +43,9 @@ function BlogIndex({ posts }) {
           tagline="Sending our knowledge and ideas into the universe"
         />
         <PostList>
-          {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
+          {posts.map(post => (
+            <PostExcerpt {...post} key={post.id} />
+          ))}
         </PostList>
       </Main>
     </ThemeProvider>
@@ -104,7 +106,10 @@ export const pageQuery = graphql`
     }
     posts: allMarkdownRemark(
       sort: { fields: [fileAbsolutePath], order: DESC }
-      filter: { frontmatter: { path: { ne: null } } }
+      filter: {
+        fileAbsolutePath: { regex: "/_content/posts/" }
+        frontmatter: { path: { ne: null } }
+      }
     ) {
       edges {
         node {
