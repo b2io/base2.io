@@ -46,7 +46,7 @@ const SubmitButton = styled(Button)`
   `};
 `;
 
-function JobForm({ isApprenticeship }) {
+function JobForm({ isApprenticeship, position }) {
   return (
     <Wrapper>
       <form
@@ -64,6 +64,7 @@ function JobForm({ isApprenticeship }) {
           name="job_type"
           value={isApprenticeship ? 'Apprenticeship' : 'Regular Job'}
         />
+        <input type="hidden" name="position" value={position} />
         <TextInputField label="Name" name="name" required />
         <TextInputField
           label="Email"
@@ -150,8 +151,18 @@ function JobForm({ isApprenticeship }) {
   );
 }
 
+JobForm.defaultProps = {
+  position: 'general',
+};
+
 JobForm.propTypes = {
   isApprenticeship: PropTypes.bool.isRequired,
+  position: PropTypes.string,
+};
+
+JobForm.def = {
+  isApprenticeship: PropTypes.bool.isRequired,
+  position: PropTypes.string,
 };
 
 export default JobForm;

@@ -26,7 +26,7 @@ function JobDescription({ description, position, children }) {
       </Section>
       <Section>
         <H2>Apply for the {position} position</H2>
-        <JobForm isApprenticeship={false} />
+        <JobForm isApprenticeship={false} position />
       </Section>
     </Wrapper>
   );
