@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { em, rem } from 'polished';
-import { Link, Section } from '../../atoms';
+import { rem } from 'polished';
+import { Section } from '../../atoms';
 import { H2, P } from './common';
-import { themed } from '../../../util/style';
 import JobDescriptionBoilerplate from './JobDescriptionBoilerplate';
+import JobForm from './JobForm';
 
 const Wrapper = styled(Section)`
   font-size: ${rem('18px')};
@@ -13,14 +13,6 @@ const Wrapper = styled(Section)`
   line-height: 1.5;
   margin: 0 auto ${rem('128px')};
   max-width: 1200px;
-`;
-
-const ApplyButton = styled(Link)`
-  ${themed('button.default')};
-  display: block;
-  margin: ${rem(20)} auto 0 auto;
-  text-align: center;
-  width: ${em('288px', '24px')};
 `;
 
 function JobDescription({ description, position, children }) {
@@ -32,7 +24,10 @@ function JobDescription({ description, position, children }) {
         <P>{description}</P>
         {children}
       </Section>
-      <ApplyButton to="/jobs/apply/">Apply</ApplyButton>
+      <Section>
+        <H2>Apply for the {position} position</H2>
+        <JobForm isApprenticeship={false} />
+      </Section>
     </Wrapper>
   );
 }
