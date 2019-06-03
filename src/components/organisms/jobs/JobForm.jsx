@@ -28,6 +28,7 @@ const RadioButtonGroupLabel = styled.label`
   ${themed('typography.subheading')};
   color: ${themed('color.accent')};
   display: block;
+  margin-bottom: 0.25em;
 `;
 
 const SubmitButton = styled(Button)`
