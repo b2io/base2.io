@@ -45,6 +45,9 @@ const CaseStudyContent = styled.article`
   max-width: 720px;
 
   img {
+    display: block;
+    margin: 0 auto;
+    max-height: 400px;
     max-width: 100%;
   }
 `;
@@ -127,7 +130,7 @@ CaseStudyTemplate.propTypes = {
     client: PropTypes.string.isRequired,
     excerpt: PropTypes.string.isRequired,
     highlights: PropTypes.array.isRequired,
-    link: PropTypes.string.isRequired,
+    link: PropTypes.string,
     logo: PropTypes.string.isRequired,
     project: PropTypes.string.isRequired,
     technologies: PropTypes.array.isRequired,
