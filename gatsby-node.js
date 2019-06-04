@@ -10,7 +10,22 @@ exports.createPages = ({ actions, graphql }) => {
     resolve(
       graphql(`
         query GatsbyNodeQuery {
-          markdown: allMarkdownRemark {
+          jobs: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/_content/jobs/" } }
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  id
+                  path
+                }
+              }
+            }
+          }
+          posts: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/_content/posts/" } }
+          ) {
             edges {
               node {
                 id
@@ -32,7 +47,7 @@ exports.createPages = ({ actions, graphql }) => {
             path: post.frontmatter.path,
           });
 
-        const postPages = result.data.markdown.edges
+        const postPages = result.data.posts.edges
           .filter(e => !!e.node.frontmatter.path)
           .map(e => createPostPage(e.node));
 
@@ -43,7 +58,7 @@ exports.createPages = ({ actions, graphql }) => {
             path: `jobs/description/${job.frontmatter.id}`,
           });
 
-        const jobPages = result.data.markdown.edges
+        const jobPages = result.data.jobs.edges
           .filter(e => !!e.node.frontmatter.id)
           .map(e => createJobPage(e.node));
 

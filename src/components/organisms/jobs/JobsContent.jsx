@@ -29,7 +29,7 @@ function JobsContent({ jobs }) {
     <React.Fragment>
       <JobsSection>
         <H2>We make software for people</H2>
-        <P largeText>
+        <P>
           We are Base Two, a multi-city company of experienced developers
           working together to turn ideas into beautiful software. We work as
           individuals and teams with small and large companies &mdash; local and
@@ -40,7 +40,7 @@ function JobsContent({ jobs }) {
       </JobsSection>
       <JobsSection>
         <H2>Our culture promotes team work</H2>
-        <P largeText>
+        <P>
           We strive to be a forward-thinking and constantly improving collection
           of knowledgeable individuals. We work together to exceed what we could
           do alone. Openness, honesty, and empathy are the building blocks of
@@ -49,7 +49,7 @@ function JobsContent({ jobs }) {
       </JobsSection>
       <JobsSection>
         <H2>People make us</H2>
-        <P largeText>
+        <P>
           Our team is composed of skilled and unique people. We have varying
           backgrounds and experience across many areas of design, development,
           and business. We believe in hiring individuals who will bring unique
@@ -63,7 +63,7 @@ function JobsContent({ jobs }) {
       </JobsSection>
       <JobsSection>
         <H2>We believe in balance</H2>
-        <P largeText>
+        <P>
           We offer great benefits so that the <strong>life</strong> portion of
           work-life balance can be more enjoyable and less stressful.
         </P>
@@ -83,19 +83,16 @@ function JobsContent({ jobs }) {
       </JobsSection>
       <JobsSection id="positions">
         <H2>Open Positions</H2>
-        {isEmpty(jobs) ? (
-          <P largeText>
-            Unfortunately, our rocket ship is currently at capacity.
-          </P>
-        ) : (
+
+        <P>
+          We are always looking for amazing people to work with us in Columbus,
+          OH and Pittsburgh, PA. If you are a talented and creative individual
+          with strong people skills and experience building web applications
+          with the latest front-end technologies, please{' '}
+          <Link to="/jobs/apply">apply</Link>.
+        </P>
+        {!isEmpty(jobs) && (
           <React.Fragment>
-            <P largeText>
-              We are always looking for amazing people to work with us in
-              Columbus, OH and Pittsburgh, PA. If you are a talented and
-              creative individual with strong people skills and experience
-              building web applications with the latest front-end technologies,
-              please <Link to="/jobs/apply">apply</Link>.
-            </P>
             <P>
               Currently, we are looking for people to join us in the following
               positions:
