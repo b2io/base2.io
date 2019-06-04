@@ -1,7 +1,6 @@
 import { pick } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
-import Observer from 'react-intersection-observer';
 import { hasAll, renameKeys, supportsWebp } from '../../util/helpers';
 
 const srcProps = obj =>
@@ -13,40 +12,23 @@ const srcProps = obj =>
   );
 
 function Img({ alt, resolutions, sizes, ...rest }) {
-  return (
-    <Observer>
-      {({ inView, ref }) => {
-        if (!inView) return <div ref={ref} />;
+  if (sizes) {
+    return <img {...rest} {...srcProps(sizes)} alt={alt} sizes={sizes.sizes} />;
+  }
 
-        if (sizes) {
-          return (
-            <img
-              {...rest}
-              {...srcProps(sizes)}
-              alt={alt}
-              ref={ref}
-              sizes={sizes.sizes}
-            />
-          );
-        }
+  if (resolutions) {
+    return (
+      <img
+        {...rest}
+        {...srcProps(resolutions)}
+        alt={alt}
+        height={resolutions.height}
+        width={resolutions.width}
+      />
+    );
+  }
 
-        if (resolutions) {
-          return (
-            <img
-              {...rest}
-              {...srcProps(resolutions)}
-              alt={alt}
-              height={resolutions.height}
-              width={resolutions.width}
-              ref={ref}
-            />
-          );
-        }
-
-        return <img {...rest} alt={alt} ref={ref} />;
-      }}
-    </Observer>
-  );
+  return <img {...rest} alt={alt} />;
 }
 
 Img.defaultProps = {
