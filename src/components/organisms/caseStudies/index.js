@@ -1,4 +1,4 @@
 import CaseStudyAside from './CaseStudyAside';
+import CaseStudyHeader from './CaseStudyHeader';
 
-// eslint-disable-next-line import/prefer-default-export
-export { CaseStudyAside };
+export { CaseStudyAside, CaseStudyHeader };
