@@ -101,14 +101,7 @@ const renderMarkdown = raw =>
   });
 
 function CaseStudyTemplate({ caseStudy }) {
-  const {
-    client,
-    highlights,
-    link,
-    linkText,
-    project,
-    technologies,
-  } = caseStudy;
+  const { client, highlights, link, project, technologies } = caseStudy;
 
   return (
     <ThemeProvider theme={lightTheme}>
@@ -119,7 +112,6 @@ function CaseStudyTemplate({ caseStudy }) {
             client={client}
             highlights={highlights}
             link={link}
-            linkText={linkText}
             project={project}
             technologies={technologies}
           />
@@ -136,7 +128,6 @@ CaseStudyTemplate.propTypes = {
     excerpt: PropTypes.string.isRequired,
     highlights: PropTypes.array.isRequired,
     link: PropTypes.string.isRequired,
-    linkText: PropTypes.string.isRequired,
     logo: PropTypes.string.isRequired,
     project: PropTypes.string.isRequired,
     technologies: PropTypes.array.isRequired,
@@ -190,7 +181,6 @@ export const pageQuery = graphql`
         excerpt
         highlights
         link
-        linkText
         logo
         path
         project

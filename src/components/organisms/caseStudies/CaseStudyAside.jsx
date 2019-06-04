@@ -43,22 +43,14 @@ const CaseStudyTechnologyLogo = styled(Img)`
   `};
 `;
 
-function CaseStudyAside({
-  client,
-  highlights,
-  link,
-  linkText,
-  project,
-  technologies,
-}) {
+function CaseStudyAside({ client, highlights, link, project, technologies }) {
   return (
     <CaseStudyAsideWrapper>
       <CaseStudyAsideH3>Company</CaseStudyAsideH3>
       <CaseStudyAsideText>{client}</CaseStudyAsideText>
       <CaseStudyAsideH3>Product</CaseStudyAsideH3>
       <CaseStudyAsideText>
-        {project} <br />
-        {link && <A href={link}>{linkText}</A>}
+        {link ? <A href={link}>{project}</A> : project}
       </CaseStudyAsideText>
       <CaseStudyAsideH3>Highlights</CaseStudyAsideH3>
       <UL>
@@ -84,7 +76,6 @@ function CaseStudyAside({
 
 CaseStudyAside.defaultProps = {
   link: '',
-  linkText: '',
 };
 
 CaseStudyAside.propTypes = {
@@ -93,7 +84,6 @@ CaseStudyAside.propTypes = {
   project: PropTypes.string.isRequired,
   technologies: PropTypes.arrayOf(PropTypes.object).isRequired,
   link: PropTypes.string,
-  linkText: PropTypes.string,
 };
 
 export default CaseStudyAside;

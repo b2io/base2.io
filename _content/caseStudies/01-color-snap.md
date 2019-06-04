@@ -7,7 +7,6 @@ highlights:
   - Save color choices or scenes to revisit or purchase.
   - Explore the color wall to find new colors and combinations.
 link: 'https://www.sherwin-williams.com/visualizer'
-linkText: 'sherwin-williams.com/visualizer'
 logo: 'img/clients/sherwin-williams-logo-white.png'
 path: 'color-snap'
 project: 'Color Snap Visualizer'
