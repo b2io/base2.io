@@ -1,8 +1,8 @@
 ---
 client: 'Sherwin-Williams'
-excerpt: 'Working with our design partner Resource/Ammirati, we developed an application for Sherwin-Williams that allows paint professionals and every day consumers to shop for paint and experience color like never before.'
+excerpt: 'Working with our design partner Resource/Ammirati (now part of IBM iX), we developed an application for Sherwin-Williams that allows paint professionals and every day consumers to shop for paint and experience color like never before.'
 highlights:
-  - Implements a complex selection tool that allows users to edit and customize their uploaded photos with any Sherwin-Williams paint color.
+  - Use a complex selection tool that allows users to edit and customize their uploaded photos with any Sherwin-Williams paint color.
   - Choose from pre-existing color palettes or create a custom palette.
   - Save color choices or scenes to revisit or purchase.
   - Explore the color wall to find new colors and combinations.
@@ -11,7 +11,7 @@ linkText: 'sherwin-williams.com/visualizer'
 logo: 'img/clients/sherwin-williams-logo-white.png'
 path: 'color-snap'
 project: 'Color Snap Visualizer'
-technologies: ['react', 'redux', 'sass', 'jasmine', 'karma']
+technologies: ['angular', 'sass', 'jasmine', 'karma']
 ---
 
 ## Color Snap Visualizer
