@@ -52,7 +52,12 @@
   {
     "id": "angular",
     "image": "img/technologies/angular.png",
-    "name": "Angular.JS"
+    "name": "AngularJS"
+  },
+  {
+    "id": "aurelia",
+    "image": "img/technologies/aurelia.png",
+    "name": "Aurelia"
   },
   {
     "id": "cssnext",

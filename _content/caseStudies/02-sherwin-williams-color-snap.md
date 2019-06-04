@@ -1,6 +1,6 @@
 ---
 client: 'Sherwin-Williams'
-excerpt: 'Working with our design partner Resource/Ammirati (now part of IBM iX), we developed an application for Sherwin-Williams that allows paint professionals and every day consumers to shop for paint and experience color like never before.'
+excerpt: 'Collaborating with our design partner, Resource/Ammirati (now part of IBM iX), we developed an application for Sherwin-Williams that allows paint professionals and every day consumers to shop for paint and experience color like never before.'
 highlights:
   - Use a complex selection tool that allows users to edit and customize their uploaded photos with any Sherwin-Williams paint color.
   - Choose from pre-existing color palettes or create a custom palette.
