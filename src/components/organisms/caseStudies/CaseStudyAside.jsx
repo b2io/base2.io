@@ -22,7 +22,7 @@ const CaseStudyAsideText = styled(P)`
   margin-top: 0;
 `;
 
-const CaseStudyAsideH3 = styled.h3`
+const CaseStudyAsideHeading = styled.h3`
   font-size: ${rem('20px')};
   margin: ${em('30px', '20px')} 0 0;
 
@@ -46,20 +46,20 @@ const CaseStudyTechnologyLogo = styled(Img)`
 function CaseStudyAside({ client, highlights, link, project, technologies }) {
   return (
     <CaseStudyAsideWrapper>
-      <CaseStudyAsideH3>Company</CaseStudyAsideH3>
+      <CaseStudyAsideHeading>Company</CaseStudyAsideHeading>
       <CaseStudyAsideText>{client}</CaseStudyAsideText>
-      <CaseStudyAsideH3>Product</CaseStudyAsideH3>
+      <CaseStudyAsideHeading>Product</CaseStudyAsideHeading>
       <CaseStudyAsideText>
         {link ? <A href={link}>{project}</A> : project}
       </CaseStudyAsideText>
-      <CaseStudyAsideH3>Highlights</CaseStudyAsideH3>
+      <CaseStudyAsideHeading>Highlights</CaseStudyAsideHeading>
       <UL>
         {highlights.map(highlight => (
           <LI key={highlight}>{highlight}</LI>
         ))}
       </UL>
 
-      <CaseStudyAsideH3>Technologies</CaseStudyAsideH3>
+      <CaseStudyAsideHeading>Technologies</CaseStudyAsideHeading>
 
       <div>
         {technologies.map(tech => (
