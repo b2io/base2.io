@@ -95,44 +95,12 @@ const Tagline = styled.span`
   `};
 `;
 
-const PostMeta = styled.div`
-  color: ${themed('color.white')};
-  display: flex;
-  flex-direction: column;
-  line-height: 1.5;
-`;
-
-const PostByline = styled.span`
-  font-size: ${rem('18px')};
-
-  ${mediaQuery.smedium`
-    font-size: ${rem('24px')};
-  `};
-`;
-
-const PostTime = styled.span`
-  text-transform: uppercase;
-
-  ${mediaQuery.medium`
-    font-size: ${rem('18px')};
-  `};
-`;
-
-function CaseStudyHeader({ author, large, date, img, imgAlt, title, tagline }) {
+function CaseStudyHeader({ large, img, imgAlt, title }) {
   return (
     <CaseStudyHeaderWrapper>
       <CaseStudyHeaderInfoWrapper>
         <CaseStudyHeaderInfo>
           <Title large={large}>{title}</Title>
-          <PostMeta>
-            {tagline && <Tagline>{tagline}</Tagline>}
-            {author && <PostByline>Posted by {author}</PostByline>}
-            {date && (
-              <PostTime>
-                <Time iso={date} />
-              </PostTime>
-            )}
-          </PostMeta>
         </CaseStudyHeaderInfo>
         <CaseStudyHeaderImageWrapper>
           <CaseStudyHeaderImage src={img} alt={imgAlt} />
@@ -143,22 +111,15 @@ function CaseStudyHeader({ author, large, date, img, imgAlt, title, tagline }) {
 }
 
 CaseStudyHeader.defaultProps = {
-  author: '',
   large: false,
-  date: '',
-  img: '/img/transmission-constellation.png',
-  imgAlt: '',
-  tagline: '',
+  img: '/img/telescope-constellation.png',
+  imgAlt: 'Telescope constellation pointing toward space',
 };
 
 CaseStudyHeader.propTypes = {
-  author: PropTypes.string,
   large: PropTypes.bool,
-  date: PropTypes.string,
   img: PropTypes.string,
   imgAlt: PropTypes.string,
-  tagline: PropTypes.string,
-
   title: PropTypes.string.isRequired,
 };
 
