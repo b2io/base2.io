@@ -101,7 +101,7 @@ function JobsContent({ jobs }) {
               <JobExcerpt
                 heading={job.position}
                 key={job.id}
-                url={`/jobs/description/${job.id}`}
+                url={`/jobs/${job.path}`}
               >
                 {job.description}
               </JobExcerpt>
@@ -118,6 +118,7 @@ JobsContent.propTypes = {
     PropTypes.shape({
       id: PropTypes.node.isRequired,
       description: PropTypes.string.isRequired,
+      path: PropTypes.string.isRequired,
       position: PropTypes.string.isRequired,
     }),
   ),

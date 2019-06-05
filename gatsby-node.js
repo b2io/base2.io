@@ -55,7 +55,7 @@ exports.createPages = ({ actions, graphql }) => {
           createPage({
             component: jobTemplate,
             context: { id: job.id },
-            path: `jobs/description/${job.frontmatter.id}`,
+            path: `jobs/${job.frontmatter.path}`,
           });
 
         const jobPages = result.data.jobs.edges

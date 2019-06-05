@@ -38,6 +38,7 @@ JobTemplate.propTypes = {
   job: PropTypes.shape({
     id: PropTypes.node.isRequired,
     description: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
   }).isRequired,
@@ -60,6 +61,7 @@ export const pageQuery = graphql`
       frontmatter {
         id
         description
+        path
         position
       }
       internal {
