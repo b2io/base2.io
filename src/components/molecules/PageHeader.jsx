@@ -2,10 +2,10 @@ import { em, rem } from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { cssEvery, mediaQuery, themed } from '../../../util/style';
-import { Header, Time } from '../../../components';
+import { cssEvery, mediaQuery, themed } from '../../util/style';
+import { Header } from '../../components';
 
-const CaseStudyHeaderWrapper = styled(Header)`
+const HeaderWrapper = styled(Header)`
   display: flex;
   background-color: ${themed('color.black')};
   background-image: url('/img/backgrounds/space-fog-purple.png'),
@@ -17,7 +17,7 @@ const CaseStudyHeaderWrapper = styled(Header)`
   `};
 `;
 
-const CaseStudyHeaderInfoWrapper = styled.div`
+const InfoWrapper = styled.div`
   align-items: center;
   display: flex;
   font-size: 1rem;
@@ -28,7 +28,7 @@ const CaseStudyHeaderInfoWrapper = styled.div`
   padding-top: ${em('28px')};
 `;
 
-const CaseStudyHeaderInfo = styled.div`
+const HeaderInfo = styled.div`
   flex: 1;
 
   ${mediaQuery.large`
@@ -36,7 +36,7 @@ const CaseStudyHeaderInfo = styled.div`
   `};
 `;
 
-const CaseStudyHeaderImageWrapper = styled.div`
+const HeaderImageWrapper = styled.div`
   display: none;
   flex: 1;
 
@@ -50,7 +50,7 @@ const CaseStudyHeaderImageWrapper = styled.div`
   `};
 `;
 
-const CaseStudyHeaderImage = styled.img`
+const HeaderImage = styled.img`
   max-width: 80%;
 `;
 
@@ -95,32 +95,48 @@ const Tagline = styled.span`
   `};
 `;
 
-function CaseStudyHeader({ large, img, imgAlt, title }) {
+const Metadata = styled.div`
+  color: ${themed('color.white')};
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+`;
+
+function PageHeader({ children, large, img, imgAlt, title, tagline }) {
   return (
-    <CaseStudyHeaderWrapper>
-      <CaseStudyHeaderInfoWrapper>
-        <CaseStudyHeaderInfo>
+    <HeaderWrapper>
+      <InfoWrapper>
+        <HeaderInfo>
           <Title large={large}>{title}</Title>
-        </CaseStudyHeaderInfo>
-        <CaseStudyHeaderImageWrapper>
-          <CaseStudyHeaderImage src={img} alt={imgAlt} />
-        </CaseStudyHeaderImageWrapper>
-      </CaseStudyHeaderInfoWrapper>
-    </CaseStudyHeaderWrapper>
+          <Metadata>
+            {tagline && <Tagline>{tagline}</Tagline>}
+            {children}
+          </Metadata>
+        </HeaderInfo>
+        <HeaderImageWrapper>
+          <HeaderImage src={img} alt={imgAlt} />
+        </HeaderImageWrapper>
+      </InfoWrapper>
+    </HeaderWrapper>
   );
 }
 
-CaseStudyHeader.defaultProps = {
+PageHeader.defaultProps = {
+  children: null,
   large: false,
-  img: '/img/telescope-constellation.png',
-  imgAlt: 'Telescope constellation pointing toward space',
+  img: '/img/transmission-constellation.png',
+  imgAlt: '',
+  tagline: '',
 };
 
-CaseStudyHeader.propTypes = {
+PageHeader.propTypes = {
+  children: PropTypes.node,
   large: PropTypes.bool,
   img: PropTypes.string,
   imgAlt: PropTypes.string,
+  tagline: PropTypes.string,
+
   title: PropTypes.string.isRequired,
 };
 
-export default CaseStudyHeader;
+export default PageHeader;

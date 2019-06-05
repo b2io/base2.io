@@ -5,7 +5,7 @@ import { mapProps } from 'recompose';
 import { em, rem } from 'polished';
 import styled, { ThemeProvider } from 'styled-components';
 import {
-  CaseStudyHeader,
+  PageHeader,
   GlobalNavigation,
   Main,
   PostExcerpt,
@@ -36,9 +36,11 @@ function CaseStudyIndex({ caseStudies }) {
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
-        <CaseStudyHeader
+        <PageHeader
           title="Our Work"
           tagline="Collaboration is what we do best"
+          img="/img/telescope-constellation.png"
+          imgAlt="Telescope constellation pointing toward space"
         />
         <PostList>
           {caseStudies.map(post => (

@@ -5,9 +5,9 @@ import { mapProps } from 'recompose';
 import { em, rem } from 'polished';
 import styled, { ThemeProvider } from 'styled-components';
 import {
-  BlogHeader,
   GlobalNavigation,
   Main,
+  PageHeader,
   PostExcerpt,
   UL,
 } from '../../components';
@@ -36,7 +36,7 @@ function BlogIndex({ posts }) {
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
-        <BlogHeader
+        <PageHeader
           large
           imgAlt="Satellite broadcasting into space"
           title="Transmissions"
