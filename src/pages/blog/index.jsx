@@ -84,11 +84,11 @@ function mapPropsToProps({ data }) {
     const { excerpt, frontmatter } = node;
 
     return {
-      excerpt,
       author: authorIdToName[frontmatter.author],
       date: frontmatter.date,
       id: frontmatter.path,
       path: frontmatter.path,
+      summary: excerpt,
       title: node.frontmatter.title,
     };
   });
