@@ -43,8 +43,15 @@ function CaseStudyIndex({ caseStudies }) {
           imgAlt="Telescope constellation pointing toward space"
         />
         <PostList>
-          {caseStudies.map(post => (
-            <ContentSummary {...post} key={post.id} />
+          {caseStudies.map(caseStudy => (
+            <ContentSummary
+              excerpt={caseStudy.excerpt}
+              featureImg={caseStudy.logo}
+              imgAlt={caseStudy.client}
+              key={caseStudy.id}
+              path={caseStudy.path}
+              title={caseStudy.project}
+            />
           ))}
         </PostList>
       </Main>
@@ -69,7 +76,10 @@ function mapPropsToProps({ data }) {
     return {
       excerpt,
       id: frontmatter.path,
+      client: frontmatter.client,
+      logo: frontmatter.logo,
       path: frontmatter.path,
+      project: frontmatter.project,
     };
   });
 
@@ -100,7 +110,10 @@ export const pageQuery = graphql`
           excerpt(pruneLength: 300)
           fileAbsolutePath
           frontmatter {
+            client
+            logo
             path
+            project
           }
         }
       }
