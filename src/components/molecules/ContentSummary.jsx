@@ -118,6 +118,7 @@ function ContentSummary({
           </Title>
         </Header>
         <Excerpt>{excerpt}</Excerpt>
+        <Link to={path}>Read more</Link>
       </Content>
     </Item>
   );

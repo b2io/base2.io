@@ -78,7 +78,7 @@ function mapPropsToProps({ data }) {
       id: frontmatter.path,
       client: frontmatter.client,
       logo: frontmatter.logo,
-      path: frontmatter.path,
+      path: `/caseStudies/${frontmatter.path}`,
       project: frontmatter.project,
     };
   });
