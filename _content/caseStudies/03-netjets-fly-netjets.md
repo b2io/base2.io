@@ -1,12 +1,11 @@
 ---
-client: 'NetJets'
-excerpt: 'We built Fly NetJets - a native application that allows NetJets’ Owners (clients) to manage their accounts, plan or update upcoming travel itineraries, and access direct contact information from their mobile devices.'
+clientId: 'netjets'
+summary: 'We built Fly NetJets - a native application that allows NetJets’ Owners (clients) to manage their accounts, plan or update upcoming travel itineraries, and access direct contact information from their mobile devices.'
 highlights:
   - Uses React Native to compile both iOS and Android applications from a single codebase
   - Leverages phone capabilities such as biometrics and geolocation
   - Provides a polished experience that matches the quality expected of a NetJets service
 link: 'https://itunes.apple.com/us/app/fly-netjets/id1015051450'
-logo: 'img/clients/netjets-logo-white.png'
 path: 'fly-netjets'
 project: 'Fly NetJets'
 technologies: ['react', 'redux', 'graphql', 'webpack', 'styled-components']

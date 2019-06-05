@@ -1,6 +1,6 @@
 ---
-client: 'American Electric Power'
-excerpt: 'Working closely with several departments within AEP we conceptualized, designed, and developed a custom web-based application to improve the efficiency, accuracy, and reportability of scoping large-scale multi-million dollar projects.'
+clientId: 'aep'
+summary: 'Working closely with several departments within AEP we conceptualized, designed, and developed a custom web-based application to improve the efficiency, accuracy, and reportability of scoping large-scale multi-million dollar projects.'
 highlights:
   - Customizable dashboards and specialized interfaces
   - External data driven user policies and assignments
@@ -8,7 +8,6 @@ highlights:
   - Interfaces for multiple departments
   - Attachments and Exports
   - Approval Workflow
-logo: 'img/clients/aep-logo-white.png'
 path: 'scopebuilder'
 project: 'ScopeBuilder'
 technologies: ['netframework', 'aurelia', 'sass', 'jasmine', 'karma', 'webpack']

@@ -112,7 +112,7 @@ function CaseStudyTemplate({ caseStudy }) {
         <GlobalNavigation />
         <CaseStudy>
           <CaseStudyAside
-            client={client}
+            client={client.name}
             highlights={highlights}
             link={link}
             project={project}
@@ -127,18 +127,24 @@ function CaseStudyTemplate({ caseStudy }) {
 
 CaseStudyTemplate.propTypes = {
   caseStudy: PropTypes.shape({
-    client: PropTypes.string.isRequired,
-    excerpt: PropTypes.string.isRequired,
+    client: PropTypes.shape({
+      id: PropTypes.node.isRequired,
+      name: PropTypes.string.isRequired,
+    }).isRequired,
     highlights: PropTypes.array.isRequired,
     link: PropTypes.string,
-    logo: PropTypes.string.isRequired,
     project: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
     technologies: PropTypes.array.isRequired,
     children: PropTypes.node.isRequired,
   }).isRequired,
 };
 
 function mapPropsToProps({ data }) {
+  const client = toNodesWithImage(data.clients).find(
+    c => c.id === data.caseStudy.frontmatter.clientId,
+  );
+
   const technologyIdToLogo = toNodesWithImage(data.companyTechnologies).reduce(
     (hashMap, { id, image, name }) => ({
       ...hashMap,
@@ -150,6 +156,7 @@ function mapPropsToProps({ data }) {
   return {
     caseStudy: {
       ...data.caseStudy.frontmatter,
+      client,
       technologies: data.caseStudy.frontmatter.technologies.map(
         tech => technologyIdToLogo[tech],
       ),
@@ -162,6 +169,22 @@ export default mapProps(mapPropsToProps)(CaseStudyTemplate);
 
 export const pageQuery = graphql`
   query CaseStudyTemplateQuery($id: String!) {
+    clients: allClientsJson {
+      edges {
+        node {
+          id
+          image {
+            childImageSharp {
+              sizes {
+                ...GatsbyImageSharpSizes_withWebp_noBase64
+              }
+            }
+          }
+          name
+        }
+      }
+    }
+
     companyTechnologies: allTechnologiesJson {
       edges {
         node {
@@ -180,13 +203,12 @@ export const pageQuery = graphql`
 
     caseStudy: markdownRemark(id: { eq: $id }) {
       frontmatter {
-        client
-        excerpt
+        clientId
         highlights
         link
-        logo
         path
         project
+        summary
         technologies
       }
       internal {

@@ -7,10 +7,11 @@ import styled, { ThemeProvider } from 'styled-components';
 import markdown from '../util/templates';
 import { mediaQuery } from '../util/style';
 import {
-  BlogHeader,
   GlobalNavigation,
   Main,
+  PageHeader,
   Section,
+  Time,
 } from '../components';
 import { toNodes } from '../util/graphql';
 import { lightTheme } from '../theme';
@@ -33,18 +34,39 @@ const PostContent = styled(Section)`
   `};
 `;
 
+const PostByline = styled.span`
+  font-size: ${rem('18px')};
+
+  ${mediaQuery.smedium`
+    font-size: ${rem('24px')};
+  `};
+`;
+
+const PostTime = styled.span`
+  text-transform: uppercase;
+
+  ${mediaQuery.medium`
+    font-size: ${rem('18px')};
+  `};
+`;
+
 function PostTemplate({ author, children, date, title }) {
   return (
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
-        <BlogHeader
-          author={author}
+        <PageHeader
           img="/img/transmission-constellation.png"
           imgAlt="Satellite broadcasting into space"
-          date={date}
           title={title}
-        />
+        >
+          {author && <PostByline>Posted by {author}</PostByline>}
+          {date && (
+            <PostTime>
+              <Time iso={date} />
+            </PostTime>
+          )}
+        </PageHeader>
         <PostContent>{children}</PostContent>
       </Main>
     </ThemeProvider>

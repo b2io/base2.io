@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { em, rem } from 'polished';
 import styled from 'styled-components';
-import { H2, Link, LI, P, Time } from '../atoms';
+import { H2, Img, Link, LI, P } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 
-const PostListItem = styled(LI)`
+const Item = styled(LI)`
   display: flex;
   margin-bottom: ${rem('58px')};
 
@@ -14,7 +14,7 @@ const PostListItem = styled(LI)`
   `};
 `;
 
-const PostListImageWrapper = styled.div`
+const ImageWrapper = styled.div`
   background-color: ${themed('color.black')};
   display: none;
   margin-right: ${rem('32px')};
@@ -27,16 +27,15 @@ const PostListImageWrapper = styled.div`
   `};
 `;
 
-const PostListImage = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+const Image = styled(Img)`
+  object-fit: contain;
 `;
 
-const PostListContent = styled.article`
+const Content = styled.article`
   flex: 1;
 `;
 
-const PostListHeader = styled.header`
+const Header = styled.header`
   display: flex;
   flex-direction: column-reverse;
   line-height: 1;
@@ -51,7 +50,7 @@ const PostListHeader = styled.header`
   `};
 `;
 
-const PostTitle = styled(H2)`
+const Title = styled(H2)`
   font-size: ${rem('32px')};
   font-weight: 600;
   line-height: 1.1;
@@ -68,7 +67,7 @@ const PostTitle = styled(H2)`
   `};
 `;
 
-const PostMeta = styled(P)`
+const Metadata = styled(P)`
   color: ${themed('color.grey')};
   display: flex;
   flex-direction: column-reverse;
@@ -91,65 +90,55 @@ const PostMeta = styled(P)`
   `};
 `;
 
-const PostAuthor = styled.span`
-  ${mediaQuery.small`
-    :before {
-      content: ' - ';
-    }
-  `};
-`;
-
-const Excerpt = styled(P)`
+const Summary = styled(P)`
   font-size: ${rem('18px')};
   font-weight: 400;
   line-height: 1.5;
 `;
 
-function PostExcerpt({
-  author,
-  date,
-  featureImg,
+function ContentSummary({
+  children,
+  img,
   imgAlt,
-  excerpt,
+  imgPath,
   path,
+  summary,
   title,
 }) {
   return (
-    <PostListItem>
-      <PostListImageWrapper>
-        <PostListImage src={featureImg} alt={imgAlt} />
-      </PostListImageWrapper>
-      <PostListContent>
-        <PostListHeader>
-          <PostMeta>
-            <Time iso={date} />
-            {author && <PostAuthor>POSTED BY {author}</PostAuthor>}
-          </PostMeta>
-          <PostTitle>
+    <Item>
+      <ImageWrapper>
+        <Image src={imgPath} {...img} alt={imgAlt} />
+      </ImageWrapper>
+      <Content>
+        <Header>
+          {children && <Metadata>{children}</Metadata>}
+          <Title>
             <Link to={path}>{title}</Link>
-          </PostTitle>
-        </PostListHeader>
-        <Excerpt>{excerpt}</Excerpt>
-      </PostListContent>
-    </PostListItem>
+          </Title>
+        </Header>
+        <Summary>{summary}</Summary>
+        <Link to={path}>Read more</Link>
+      </Content>
+    </Item>
   );
 }
 
-PostExcerpt.defaultProps = {
-  author: '',
-  featureImg: '/img/transmission-constellation-reverse.png',
+ContentSummary.defaultProps = {
+  children: null,
+  img: null,
   imgAlt: '',
+  imgPath: '/img/transmission-constellation-reverse.png',
 };
 
-PostExcerpt.propTypes = {
-  date: PropTypes.string.isRequired,
-  excerpt: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-
-  author: PropTypes.string,
-  featureImg: PropTypes.string,
+ContentSummary.propTypes = {
+  children: PropTypes.node,
   imgAlt: PropTypes.string,
+  img: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  imgPath: PropTypes.string,
+  path: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
-export default PostExcerpt;
+export default ContentSummary;

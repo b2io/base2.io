@@ -5,11 +5,12 @@ import { mapProps } from 'recompose';
 import { em, rem } from 'polished';
 import styled, { ThemeProvider } from 'styled-components';
 import {
-  BlogHeader,
+  ContentSummary,
   GlobalNavigation,
   Main,
-  PostExcerpt,
+  PageHeader,
   UL,
+  Time,
 } from '../../components';
 import { lightTheme } from '../../theme';
 import { toNodes } from '../../util/graphql';
@@ -31,12 +32,20 @@ const PostList = styled(UL)`
   `};
 `;
 
+const PostAuthor = styled.span`
+  ${mediaQuery.small`
+    :before {
+      content: ' - ';
+    }
+  `};
+`;
+
 function BlogIndex({ posts }) {
   return (
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
-        <BlogHeader
+        <PageHeader
           large
           imgAlt="Satellite broadcasting into space"
           title="Transmissions"
@@ -44,7 +53,10 @@ function BlogIndex({ posts }) {
         />
         <PostList>
           {posts.map(post => (
-            <PostExcerpt {...post} key={post.id} />
+            <ContentSummary {...post} key={post.id}>
+              <Time iso={post.date} />
+              {post.author && <PostAuthor>POSTED BY {post.author}</PostAuthor>}
+            </ContentSummary>
           ))}
         </PostList>
       </Main>
@@ -72,11 +84,11 @@ function mapPropsToProps({ data }) {
     const { excerpt, frontmatter } = node;
 
     return {
-      excerpt,
       author: authorIdToName[frontmatter.author],
       date: frontmatter.date,
       id: frontmatter.path,
       path: frontmatter.path,
+      summary: excerpt,
       title: node.frontmatter.title,
     };
   });

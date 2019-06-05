@@ -2,7 +2,7 @@
   {
     "id": "aep",
     "image": "img/clients/aep-logo-white.png",
-    "name": "AEP"
+    "name": "American Electric Power"
   },
   {
     "id": "netjets",
@@ -17,12 +17,12 @@
   {
     "id": "sherwin-williams",
     "image": "img/clients/sherwin-williams-logo-white.png",
-    "name": "Sherwin Williams"
+    "name": "Sherwin-Williams"
   },
   {
     "id": "dnv-gl",
     "image": "img/clients/dnv-gl-logo-white.png",
-    "name": "DNV GL"
+    "name": "DNV-GL"
   },
   {
     "id": "quest",

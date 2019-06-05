@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { cssEvery, mediaQuery, themed } from '../../util/style';
-import { Header, Time } from '../../components';
+import { Header } from '../../components';
 
-const BlogHeaderWrapper = styled(Header)`
+const HeaderWrapper = styled(Header)`
   display: flex;
   background-color: ${themed('color.black')};
   background-image: url('/img/backgrounds/space-fog-purple.png'),
@@ -17,7 +17,7 @@ const BlogHeaderWrapper = styled(Header)`
   `};
 `;
 
-const BlogHeaderInfoWrapper = styled.div`
+const InfoWrapper = styled.div`
   align-items: center;
   display: flex;
   font-size: 1rem;
@@ -28,7 +28,7 @@ const BlogHeaderInfoWrapper = styled.div`
   padding-top: ${em('28px')};
 `;
 
-const BlogHeaderInfo = styled.div`
+const HeaderInfo = styled.div`
   flex: 1;
 
   ${mediaQuery.large`
@@ -36,7 +36,7 @@ const BlogHeaderInfo = styled.div`
   `};
 `;
 
-const BlogHeaderImageWrapper = styled.div`
+const HeaderImageWrapper = styled.div`
   display: none;
   flex: 1;
 
@@ -50,11 +50,11 @@ const BlogHeaderImageWrapper = styled.div`
   `};
 `;
 
-const BlogHeaderImage = styled.img`
+const HeaderImage = styled.img`
   max-width: 80%;
 `;
 
-const BlogTitle = styled.h1`
+const Title = styled.h1`
   color: ${themed('color.white')};
   font-size: ${rem('36px')};
   font-weight: 600;
@@ -84,7 +84,7 @@ const BlogTitle = styled.h1`
   `};
 `;
 
-const BlogTagline = styled.span`
+const Tagline = styled.span`
   font-size: ${rem('24px')};
   font-style: italic;
   font-weight: 100;
@@ -95,66 +95,43 @@ const BlogTagline = styled.span`
   `};
 `;
 
-const PostMeta = styled.div`
+const Metadata = styled.div`
   color: ${themed('color.white')};
   display: flex;
   flex-direction: column;
   line-height: 1.5;
 `;
 
-const PostByline = styled.span`
-  font-size: ${rem('18px')};
-
-  ${mediaQuery.smedium`
-    font-size: ${rem('24px')};
-  `};
-`;
-
-const PostTime = styled.span`
-  text-transform: uppercase;
-
-  ${mediaQuery.medium`
-    font-size: ${rem('18px')};
-  `};
-`;
-
-function BlogHeader({ author, large, date, img, imgAlt, title, tagline }) {
+function PageHeader({ children, large, img, imgAlt, title, tagline }) {
   return (
-    <BlogHeaderWrapper>
-      <BlogHeaderInfoWrapper>
-        <BlogHeaderInfo>
-          <BlogTitle large={large}>{title}</BlogTitle>
-          <PostMeta>
-            {tagline && <BlogTagline>{tagline}</BlogTagline>}
-            {author && <PostByline>Posted by {author}</PostByline>}
-            {date && (
-              <PostTime>
-                <Time iso={date} />
-              </PostTime>
-            )}
-          </PostMeta>
-        </BlogHeaderInfo>
-        <BlogHeaderImageWrapper>
-          <BlogHeaderImage src={img} alt={imgAlt} />
-        </BlogHeaderImageWrapper>
-      </BlogHeaderInfoWrapper>
-    </BlogHeaderWrapper>
+    <HeaderWrapper>
+      <InfoWrapper>
+        <HeaderInfo>
+          <Title large={large}>{title}</Title>
+          <Metadata>
+            {tagline && <Tagline>{tagline}</Tagline>}
+            {children}
+          </Metadata>
+        </HeaderInfo>
+        <HeaderImageWrapper>
+          <HeaderImage src={img} alt={imgAlt} />
+        </HeaderImageWrapper>
+      </InfoWrapper>
+    </HeaderWrapper>
   );
 }
 
-BlogHeader.defaultProps = {
-  author: '',
+PageHeader.defaultProps = {
+  children: null,
   large: false,
-  date: '',
   img: '/img/transmission-constellation.png',
   imgAlt: '',
   tagline: '',
 };
 
-BlogHeader.propTypes = {
-  author: PropTypes.string,
+PageHeader.propTypes = {
+  children: PropTypes.node,
   large: PropTypes.bool,
-  date: PropTypes.string,
   img: PropTypes.string,
   imgAlt: PropTypes.string,
   tagline: PropTypes.string,
@@ -162,4 +139,4 @@ BlogHeader.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default BlogHeader;
+export default PageHeader;
