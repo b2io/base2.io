@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { em, rem } from 'polished';
 import styled from 'styled-components';
-import { H2, Link, LI, P, Time } from '../atoms';
+import { H2, Link, LI, P } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 
-const PostListItem = styled(LI)`
+const Item = styled(LI)`
   display: flex;
   margin-bottom: ${rem('58px')};
 
@@ -14,7 +14,7 @@ const PostListItem = styled(LI)`
   `};
 `;
 
-const PostListImageWrapper = styled.div`
+const ImageWrapper = styled.div`
   background-color: ${themed('color.black')};
   display: none;
   margin-right: ${rem('32px')};
@@ -27,16 +27,16 @@ const PostListImageWrapper = styled.div`
   `};
 `;
 
-const PostListImage = styled.img`
+const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
 `;
 
-const PostListContent = styled.article`
+const Content = styled.article`
   flex: 1;
 `;
 
-const PostListHeader = styled.header`
+const Header = styled.header`
   display: flex;
   flex-direction: column-reverse;
   line-height: 1;
@@ -51,7 +51,7 @@ const PostListHeader = styled.header`
   `};
 `;
 
-const PostTitle = styled(H2)`
+const Title = styled(H2)`
   font-size: ${rem('32px')};
   font-weight: 600;
   line-height: 1.1;
@@ -68,7 +68,7 @@ const PostTitle = styled(H2)`
   `};
 `;
 
-const PostMeta = styled(P)`
+const Metadata = styled(P)`
   color: ${themed('color.grey')};
   display: flex;
   flex-direction: column-reverse;
@@ -91,23 +91,14 @@ const PostMeta = styled(P)`
   `};
 `;
 
-const PostAuthor = styled.span`
-  ${mediaQuery.small`
-    :before {
-      content: ' - ';
-    }
-  `};
-`;
-
 const Excerpt = styled(P)`
   font-size: ${rem('18px')};
   font-weight: 400;
   line-height: 1.5;
 `;
 
-function PostExcerpt({
-  author,
-  date,
+function ContentSummary({
+  children,
   featureImg,
   imgAlt,
   excerpt,
@@ -115,41 +106,37 @@ function PostExcerpt({
   title,
 }) {
   return (
-    <PostListItem>
-      <PostListImageWrapper>
-        <PostListImage src={featureImg} alt={imgAlt} />
-      </PostListImageWrapper>
-      <PostListContent>
-        <PostListHeader>
-          <PostMeta>
-            <Time iso={date} />
-            {author && <PostAuthor>POSTED BY {author}</PostAuthor>}
-          </PostMeta>
-          <PostTitle>
+    <Item>
+      <ImageWrapper>
+        <Image src={featureImg} alt={imgAlt} />
+      </ImageWrapper>
+      <Content>
+        <Header>
+          {children && <Metadata>{children}</Metadata>}
+          <Title>
             <Link to={path}>{title}</Link>
-          </PostTitle>
-        </PostListHeader>
+          </Title>
+        </Header>
         <Excerpt>{excerpt}</Excerpt>
-      </PostListContent>
-    </PostListItem>
+      </Content>
+    </Item>
   );
 }
 
-PostExcerpt.defaultProps = {
-  author: '',
+ContentSummary.defaultProps = {
+  children: null,
   featureImg: '/img/transmission-constellation-reverse.png',
   imgAlt: '',
 };
 
-PostExcerpt.propTypes = {
-  date: PropTypes.string.isRequired,
+ContentSummary.propTypes = {
+  children: PropTypes.node,
   excerpt: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 
-  author: PropTypes.string,
   featureImg: PropTypes.string,
   imgAlt: PropTypes.string,
 };
 
-export default PostExcerpt;
+export default ContentSummary;

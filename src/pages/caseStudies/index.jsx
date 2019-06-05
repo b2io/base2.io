@@ -5,10 +5,10 @@ import { mapProps } from 'recompose';
 import { em, rem } from 'polished';
 import styled, { ThemeProvider } from 'styled-components';
 import {
+  ContentSummary,
   PageHeader,
   GlobalNavigation,
   Main,
-  PostExcerpt,
   UL,
 } from '../../components';
 import { lightTheme } from '../../theme';
@@ -44,7 +44,7 @@ function CaseStudyIndex({ caseStudies }) {
         />
         <PostList>
           {caseStudies.map(post => (
-            <PostExcerpt {...post} key={post.id} />
+            <ContentSummary {...post} key={post.id} />
           ))}
         </PostList>
       </Main>
