@@ -1,6 +1,6 @@
 ---
-client: 'DNV-GL'
-excerpt: "We brought to life an interactive demo of DNV-GL's Battery XT product leveraged by business and government clients around the globe to advance the safety and sustainability of their organizations."
+clientId: 'dnv-gl'
+summary: "We brought to life an interactive demo of DNV-GL's Battery XT product leveraged by business and government clients around the globe to advance the safety and sustainability of their organizations."
 highlights:
   - Interactive sales tool for demonstrating case studies
   - Designed to simulate advanced Mathlab software
@@ -9,7 +9,6 @@ highlights:
   - Built-in-tool for capturing leads
   - Designed and engineered for easy updating
 link: 'http://batteryxt.dnvgl.com/'
-logo: 'img/clients/dnv-gl-logo-white.png'
 path: 'battery-xt'
 project: 'Battery XT'
 technologies: ['react', 'webpack', 'sass']

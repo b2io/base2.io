@@ -12,7 +12,7 @@ import {
   UL,
 } from '../../components';
 import { lightTheme } from '../../theme';
-import { toNodes } from '../../util/graphql';
+import { toNodes, toNodesWithImage } from '../../util/graphql';
 import { mediaQuery } from '../../util/style';
 
 const PostList = styled(UL)`
@@ -45,11 +45,11 @@ function CaseStudyIndex({ caseStudies }) {
         <PostList>
           {caseStudies.map(caseStudy => (
             <ContentSummary
-              excerpt={caseStudy.excerpt}
-              featureImg={caseStudy.logo}
-              imgAlt={caseStudy.client}
+              img={caseStudy.client.image}
+              imgAlt={caseStudy.client.name}
               key={caseStudy.id}
               path={caseStudy.path}
+              summary={caseStudy.summary}
               title={caseStudy.project}
             />
           ))}
@@ -70,16 +70,23 @@ CaseStudyIndex.propTypes = {
 };
 
 function mapPropsToProps({ data }) {
+  const clientIdToClient = toNodesWithImage(data.clients).reduce(
+    (hashMap, { id, image, name }) => ({
+      ...hashMap,
+      [id]: { image, name },
+    }),
+    {},
+  );
+
   const caseStudies = toNodes(data.caseStudies).map(node => {
     const { frontmatter } = node;
 
     return {
-      client: frontmatter.client,
-      excerpt: frontmatter.excerpt,
-      logo: frontmatter.logo,
+      client: clientIdToClient[frontmatter.clientId],
       id: frontmatter.path,
       path: `/caseStudies/${frontmatter.path}`,
       project: frontmatter.project,
+      summary: frontmatter.summary,
     };
   });
 
@@ -98,6 +105,22 @@ export default mapProps(mapPropsToProps)(CaseStudyIndex);
 
 export const pageQuery = graphql`
   query CaseStudyIndexQuery {
+    clients: allClientsJson {
+      edges {
+        node {
+          id
+          image {
+            childImageSharp {
+              sizes {
+                ...GatsbyImageSharpSizes_withWebp_noBase64
+              }
+            }
+          }
+          name
+        }
+      }
+    }
+
     caseStudies: allMarkdownRemark(
       sort: { fields: [fileAbsolutePath], order: DESC }
       filter: {
@@ -109,9 +132,8 @@ export const pageQuery = graphql`
         node {
           fileAbsolutePath
           frontmatter {
-            client
-            excerpt
-            logo
+            clientId
+            summary
             path
             project
           }

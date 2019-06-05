@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { em, rem } from 'polished';
 import styled from 'styled-components';
-import { H2, Link, LI, P } from '../atoms';
+import { H2, Img, Link, LI, P } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 
 const Item = styled(LI)`
@@ -27,7 +27,7 @@ const ImageWrapper = styled.div`
   `};
 `;
 
-const Image = styled.img`
+const Image = styled(Img)`
   max-width: 100%;
   max-height: 100%;
 `;
@@ -91,7 +91,7 @@ const Metadata = styled(P)`
   `};
 `;
 
-const Excerpt = styled(P)`
+const Summary = styled(P)`
   font-size: ${rem('18px')};
   font-weight: 400;
   line-height: 1.5;
@@ -99,16 +99,17 @@ const Excerpt = styled(P)`
 
 function ContentSummary({
   children,
-  featureImg,
+  img,
   imgAlt,
-  excerpt,
+  imgPath,
   path,
+  summary,
   title,
 }) {
   return (
     <Item>
       <ImageWrapper>
-        <Image src={featureImg} alt={imgAlt} />
+        <Image src={imgPath} {...img} alt={imgAlt} />
       </ImageWrapper>
       <Content>
         <Header>
@@ -117,7 +118,7 @@ function ContentSummary({
             <Link to={path}>{title}</Link>
           </Title>
         </Header>
-        <Excerpt>{excerpt}</Excerpt>
+        <Summary>{summary}</Summary>
         <Link to={path}>Read more</Link>
       </Content>
     </Item>
@@ -126,18 +127,19 @@ function ContentSummary({
 
 ContentSummary.defaultProps = {
   children: null,
-  featureImg: '/img/transmission-constellation-reverse.png',
+  img: null,
   imgAlt: '',
+  imgPath: '/img/transmission-constellation-reverse.png',
 };
 
 ContentSummary.propTypes = {
   children: PropTypes.node,
-  excerpt: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-
-  featureImg: PropTypes.string,
   imgAlt: PropTypes.string,
+  img: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  imgPath: PropTypes.string,
+  path: PropTypes.string.isRequired,
+  summary: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default ContentSummary;
