@@ -107,7 +107,6 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 300)
           fileAbsolutePath
           frontmatter {
             client
