@@ -100,7 +100,7 @@ function JobsContent({ jobs }) {
             {map(jobs, job => (
               <JobExcerpt
                 heading={job.position}
-                key={job.id}
+                key={job.path}
                 url={`/jobs/${job.path}`}
               >
                 {job.description}
@@ -116,7 +116,6 @@ function JobsContent({ jobs }) {
 JobsContent.propTypes = {
   jobs: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.node.isRequired,
       description: PropTypes.string.isRequired,
       path: PropTypes.string.isRequired,
       position: PropTypes.string.isRequired,

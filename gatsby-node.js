@@ -17,7 +17,6 @@ exports.createPages = ({ actions, graphql }) => {
               node {
                 id
                 frontmatter {
-                  id
                   path
                 }
               }
@@ -30,7 +29,6 @@ exports.createPages = ({ actions, graphql }) => {
               node {
                 id
                 frontmatter {
-                  id
                   path
                 }
               }
@@ -59,7 +57,7 @@ exports.createPages = ({ actions, graphql }) => {
           });
 
         const jobPages = result.data.jobs.edges
-          .filter(e => !!e.node.frontmatter.id)
+          .filter(e => !!e.node.frontmatter.path)
           .map(e => createJobPage(e.node));
 
         return postPages.concat(jobPages);

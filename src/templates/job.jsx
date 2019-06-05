@@ -36,7 +36,6 @@ function JobTemplate({ job }) {
 
 JobTemplate.propTypes = {
   job: PropTypes.shape({
-    id: PropTypes.node.isRequired,
     description: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
@@ -59,7 +58,6 @@ export const pageQuery = graphql`
   query JobTemplateQuery($id: String!) {
     job: markdownRemark(id: { eq: $id }) {
       frontmatter {
-        id
         description
         path
         position
