@@ -75,7 +75,6 @@ BlogIndex.propTypes = {
 };
 
 function mapPropsToProps({ data }) {
-  // TODO: Find a way to resolve the author name more easily.
   const authorIdToName = toNodes(data.authors).reduce(
     (hashMap, { id, name }) => ({ ...hashMap, [id]: name }),
     {},
@@ -87,6 +86,8 @@ function mapPropsToProps({ data }) {
       author: authorIdToName[frontmatter.author],
       date: frontmatter.date,
       id: frontmatter.path,
+      imgPath:
+        frontmatter.image || '/img/transmission-constellation-reverse.png',
       path: frontmatter.path,
       summary: excerpt,
       title: node.frontmatter.title,
@@ -130,6 +131,7 @@ export const pageQuery = graphql`
           frontmatter {
             author
             date
+            image
             path
             title
           }

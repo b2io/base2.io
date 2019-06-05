@@ -1,8 +1,9 @@
 ---
 title: June is for Shortcuts
 author: tborres
-date: "2015-06-01T04:00:00.000Z"
-path: "/2015/06/01/shortcut-month"
+date: '2015-06-01T04:00:00.000Z'
+path: '/2015/06/01/shortcut-month'
+image: 'https://i.imgur.com/x3gocRv.png'
 ---
 
 Keyboard shortcuts are a great way to improve your overall efficiency with your

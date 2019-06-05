@@ -1,8 +1,9 @@
 ---
 title: Apprenticeship Month One
 author: rdunkle
-date: "2017-01-03T04:00:00.000Z"
-path: "/2017/01/03/apprenticeship-month-1"
+date: '2017-01-03T04:00:00.000Z'
+path: '/2017/01/03/apprenticeship-month-1'
+image: 'https://i.imgur.com/AxDbeSq.png'
 ---
 
 When I started this apprenticeship with Base Two, we knew it would be an
