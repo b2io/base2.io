@@ -71,13 +71,13 @@ CaseStudyIndex.propTypes = {
 
 function mapPropsToProps({ data }) {
   const caseStudies = toNodes(data.caseStudies).map(node => {
-    const { excerpt, frontmatter } = node;
+    const { frontmatter } = node;
 
     return {
-      excerpt,
-      id: frontmatter.path,
       client: frontmatter.client,
+      excerpt: frontmatter.excerpt,
       logo: frontmatter.logo,
+      id: frontmatter.path,
       path: `/caseStudies/${frontmatter.path}`,
       project: frontmatter.project,
     };
@@ -111,6 +111,7 @@ export const pageQuery = graphql`
           fileAbsolutePath
           frontmatter {
             client
+            excerpt
             logo
             path
             project
