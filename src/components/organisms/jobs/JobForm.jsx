@@ -152,16 +152,12 @@ function JobForm({ isApprenticeship, position }) {
 }
 
 JobForm.defaultProps = {
+  isApprenticeship: false,
   position: 'general',
 };
 
 JobForm.propTypes = {
-  isApprenticeship: PropTypes.bool.isRequired,
-  position: PropTypes.string,
-};
-
-JobForm.def = {
-  isApprenticeship: PropTypes.bool.isRequired,
+  isApprenticeship: PropTypes.bool,
   position: PropTypes.string,
 };
 

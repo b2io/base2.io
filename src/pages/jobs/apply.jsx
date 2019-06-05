@@ -9,7 +9,7 @@ function Apply() {
       <Main>
         <GlobalNavigation />
         <JobsHeader small />
-        <JobForm isApprenticeship={false} />
+        <JobForm />
       </Main>
     </ThemeProvider>
   );
