@@ -29,6 +29,7 @@ const ImageWrapper = styled.div`
 
 const Image = styled(Img)`
   object-fit: contain;
+  max-width: 100%;
 `;
 
 const Content = styled.article`
