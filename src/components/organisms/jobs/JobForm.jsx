@@ -8,6 +8,7 @@ import {
   TextAreaField,
   TextInputField,
 } from '../../atoms';
+import { emailPattern, phonePattern } from '../../../util/regexPatterns';
 import { mediaQuery, themed } from '../../../util/style';
 
 const Wrapper = styled.div`
@@ -71,7 +72,7 @@ function JobForm({ isApprenticeship, position }) {
           name="email"
           type="email"
           title="your@email.com"
-          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+          pattern={emailPattern}
           required
         />
         <TextInputField
@@ -79,7 +80,7 @@ function JobForm({ isApprenticeship, position }) {
           name="phoneNumber"
           type="tel"
           title="Please include country code (if applicable) and area code. Formatting will be ignored"
-          pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+          pattern={phonePattern}
         />
         <TextInputField label="GitHub, CodePen, etc" name="gitHub" />
         <TextInputField label="Website / Portfolio" name="portfolio" />
