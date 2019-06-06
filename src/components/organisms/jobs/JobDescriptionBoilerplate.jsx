@@ -4,7 +4,7 @@ import { H2, H3, LI, P } from './common';
 
 function JobDescriptionBoilerplate() {
   return (
-    <React.Fragment>
+    <>
       <Section>
         <H2>About Base Two</H2>
         <P>
@@ -105,7 +105,7 @@ function JobDescriptionBoilerplate() {
           communicate each candidate’s status with them every step of the way.
         </P>
       </Section>
-    </React.Fragment>
+    </>
   );
 }
 

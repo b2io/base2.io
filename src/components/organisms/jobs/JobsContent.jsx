@@ -26,7 +26,7 @@ const JobsSection = styled(Section)`
 
 function JobsContent({ jobs }) {
   return (
-    <React.Fragment>
+    <>
       <JobsSection>
         <H2>We make software for people</H2>
         <P>
@@ -92,7 +92,7 @@ function JobsContent({ jobs }) {
           <Link to="/jobs/apply">apply</Link>.
         </P>
         {!isEmpty(jobs) && (
-          <React.Fragment>
+          <>
             <P>
               Currently, we are looking for people to join us in the following
               positions:
@@ -106,10 +106,10 @@ function JobsContent({ jobs }) {
                 {job.description}
               </JobExcerpt>
             ))}
-          </React.Fragment>
+          </>
         )}
       </JobsSection>
-    </React.Fragment>
+    </>
   );
 }
 
