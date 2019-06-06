@@ -38,29 +38,27 @@ exports.createPages = ({ actions, graphql }) => {
       `).then(result => {
         if (result.errors) return reject(result.errors);
 
-        const createPostPage = post =>
-          createPage({
-            component: postTemplate,
-            context: { id: post.id },
-            path: post.frontmatter.path,
-          });
-
-        const postPages = result.data.posts.edges
+        result.data.posts.edges
           .filter(e => !!e.node.frontmatter.path)
-          .map(e => createPostPage(e.node));
+          .map(({ node }) =>
+            createPage({
+              component: postTemplate,
+              context: { id: node.id },
+              path: node.frontmatter.path,
+            })
+          );
 
-        const createJobPage = job =>
-          createPage({
-            component: jobTemplate,
-            context: { id: job.id },
-            path: `jobs/${job.frontmatter.path}`,
-          });
-
-        const jobPages = result.data.jobs.edges
+        result.data.jobs.edges
           .filter(e => !!e.node.frontmatter.path)
-          .map(e => createJobPage(e.node));
+          .map(({ node }) =>
+            createPage({
+              component: jobTemplate,
+              context: { id: node.id },
+              path: `jobs/${node.frontmatter.path}`,
+            })
+          );
 
-        return postPages.concat(jobPages);
+        return resolve();
       })
     );
   });
