@@ -18,7 +18,7 @@ const Label = styled.label`
   white-space: nowrap;
   width: 100%;
 
-  ${cssSome('isDirty', 'isFocused')`
+  ${cssSome('isDirty', 'isFocused', 'floatLabel')`
   ${themed('typography.caption')};
     top: 4px;
   `};
