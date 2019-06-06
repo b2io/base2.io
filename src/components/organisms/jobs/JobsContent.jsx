@@ -32,9 +32,9 @@ function JobsContent({ jobs }) {
         <P>
           We are Base Two, a multi-city company of experienced developers
           working together to turn ideas into beautiful software. We work as
-          individuals and teams with small and large companies &mdash; local and
-          abroad &mdash; to improve processes around software development and
-          deliver user-focused products and applications.
+          individuals and teams with small and large companies — local and
+          abroad — to improve processes around software development and deliver
+          user-focused products and applications.
         </P>
         <JobsImage src={teamImage} alt="Our Base Two team" width="1000" />
       </JobsSection>
