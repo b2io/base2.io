@@ -14,18 +14,10 @@ const JobsImage = styled(Img)`
   width: 100%;
 `;
 
-const JobsSection = styled(Section)`
-  font-size: ${rem('18px')};
-  font-weight: 400;
-  line-height: 1.5;
-  margin: 0 auto ${rem('128px')};
-  max-width: 1200px;
-`;
-
 function JobsContent({ jobs }) {
   return (
     <>
-      <JobsSection>
+      <Section narrow>
         <H2>We make software for people</H2>
         <P>
           We are Base Two, a multi-city company of experienced developers
@@ -35,8 +27,8 @@ function JobsContent({ jobs }) {
           user-focused products and applications.
         </P>
         <JobsImage src={teamImage} alt="Our Base Two team" width="1000" />
-      </JobsSection>
-      <JobsSection>
+      </Section>
+      <Section narrow>
         <H2>Our culture promotes team work</H2>
         <P>
           We strive to be a forward-thinking and constantly improving collection
@@ -44,8 +36,8 @@ function JobsContent({ jobs }) {
           do alone. Openness, honesty, and empathy are the building blocks of
           our culture. We have a flat hierarchy and transparent operations.
         </P>
-      </JobsSection>
-      <JobsSection>
+      </Section>
+      <Section narrow>
         <H2>People make us</H2>
         <P>
           Our team is composed of skilled and unique people. We have varying
@@ -58,8 +50,8 @@ function JobsContent({ jobs }) {
           alt="Our Base Two team"
           width="1000"
         />
-      </JobsSection>
-      <JobsSection>
+      </Section>
+      <Section narrow>
         <H2>We believe in balance</H2>
         <P>
           We offer great benefits so that the <strong>life</strong> portion of
@@ -78,8 +70,8 @@ function JobsContent({ jobs }) {
           <LI>Casual office with ergonomic desks and chairs</LI>
           <LI>Fancy office coffee</LI>
         </UL>
-      </JobsSection>
-      <JobsSection id="positions">
+      </Section>
+      <Section id="positions">
         <H2>Open Positions</H2>
 
         <P>
@@ -106,7 +98,7 @@ function JobsContent({ jobs }) {
             ))}
           </>
         )}
-      </JobsSection>
+      </Section>
     </>
   );
 }
