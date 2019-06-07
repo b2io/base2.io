@@ -14,16 +14,19 @@ active: true
 
 ### Technologies We Frequently Use
 
-- Backend
-  - .NET Framework
-  - Entity Framework
-  - Dapper
-  - PostgreSQL
-  - Microsoft SQL
-  - Unit testing
-- Frontend
-  - JavaScript (ES6+)
-  - React
-  - React Native
-  - Aurelia
-  - CSS
+#### Back-end
+
+- .NET Framework
+- Entity Framework
+- Dapper
+- PostgreSQL
+- Microsoft SQL
+- Unit testing
+
+#### Front-end
+
+- JavaScript (ES6+)
+- React
+- React Native
+- Aurelia
+- CSS

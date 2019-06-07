@@ -15,13 +15,11 @@ const JobsImage = styled(Img)`
 `;
 
 const JobsSection = styled(Section)`
-  &:not(:first-of-type) {
-    padding-top: ${rem('64px')};
-  }
-
-  &:last-of-type {
-    margin-bottom: ${rem('128px')};
-  }
+  font-size: ${rem('18px')};
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 auto ${rem('128px')};
+  max-width: 1200px;
 `;
 
 function JobsContent({ jobs }) {

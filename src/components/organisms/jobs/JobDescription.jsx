@@ -16,7 +16,8 @@ const Wrapper = styled(Section)`
 `;
 
 const ApplyHeader = styled(H2)`
-  margin-bottom: 1em;
+  margin: 4em 0 1em;
+  text-align: center;
 `;
 
 function JobDescription({ description, position, children }) {
@@ -29,7 +30,7 @@ function JobDescription({ description, position, children }) {
         {children}
       </Section>
       <Section>
-        <ApplyHeader>Apply for the {position} position</ApplyHeader>
+        <ApplyHeader>Interested? Apply!</ApplyHeader>
         <JobForm position={position} />
       </Section>
     </Wrapper>
