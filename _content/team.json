@@ -78,5 +78,14 @@
     "name": "Zack Brown",
     "lastName": "Brown",
     "title": "Founder // Developer"
+  },
+  {
+    "active": true,
+    "id": "futureTeamMember",
+    "image": "img/team/BlueAstronaut.png",
+    "name": "Join our Team",
+    "lastName": "You",
+    "title": "Apply!",
+    "url": "/jobs"
   }
 ]

@@ -128,6 +128,7 @@ const Wrapper = styled(LI)`
 `;
 
 const TeamImg = styled(Img)`
+  background-color: #f5f5f5;
   border-radius: 50%;
   height: auto;
   position: relative;
@@ -176,12 +177,13 @@ function TeamListItem({ image, name, title }) {
   );
 }
 
-TeamListItem.defaultProps = {};
+TeamListItem.defaultProps = { url: null };
 
 TeamListItem.propTypes = {
   image: PropTypes.shape({}).isRequired,
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  url: PropTypes.string,
 };
 
 TeamList.Item = TeamListItem;
