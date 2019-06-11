@@ -4,23 +4,19 @@ import { isEmpty } from 'lodash';
 import { mapProps } from 'recompose';
 import { ThemeProvider } from 'styled-components';
 import { graphql } from 'gatsby';
-import {
-  GlobalNavigation,
-  JobsContent,
-  JobsHeader,
-  Main,
-} from '../../components';
+import { GlobalNavigation, JobsContent, JobsHeader } from '../../components';
+import { JobsMain } from '../../components/organisms/jobs/common';
 import { toNodes } from '../../util/graphql';
 import { darkTheme } from '../../theme';
 
 function JobsPage({ jobs }) {
   return (
     <ThemeProvider theme={darkTheme}>
-      <Main>
+      <JobsMain>
         <GlobalNavigation />
         <JobsHeader />
         <JobsContent jobs={jobs} />
-      </Main>
+      </JobsMain>
     </ThemeProvider>
   );
 }

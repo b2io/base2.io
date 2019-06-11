@@ -4,13 +4,8 @@ import React from 'react';
 import { mapProps } from 'recompose';
 import { ThemeProvider } from 'styled-components';
 import markdown from '../util/templates';
-import {
-  GlobalNavigation,
-  JobDescription,
-  JobsHeader,
-  Main,
-} from '../components';
-import { H2, H3, LI, P } from '../components/organisms/jobs/common';
+import { GlobalNavigation, JobDescription, JobsHeader } from '../components';
+import { H2, H3, LI, P, JobsMain } from '../components/organisms/jobs/common';
 
 import { darkTheme } from '../theme';
 
@@ -25,11 +20,11 @@ const renderMarkdown = raw =>
 function JobTemplate({ job }) {
   return (
     <ThemeProvider theme={darkTheme}>
-      <Main>
+      <JobsMain>
         <GlobalNavigation />
         <JobsHeader small />
         <JobDescription {...job} />
-      </Main>
+      </JobsMain>
     </ThemeProvider>
   );
 }
