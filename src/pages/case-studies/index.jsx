@@ -84,7 +84,7 @@ function mapPropsToProps({ data }) {
     return {
       client: clientIdToClient[frontmatter.clientId],
       id: frontmatter.path,
-      path: `/caseStudies/${frontmatter.path}`,
+      path: `/case-studies/${frontmatter.path}`,
       project: frontmatter.project,
       summary: frontmatter.summary,
     };

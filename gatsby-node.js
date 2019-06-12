@@ -51,7 +51,7 @@ exports.createPages = ({ actions, graphql }) => {
           createPage({
             component: caseStudyTemplate,
             context: { id: caseStudy.id },
-            path: `caseStudies/${caseStudy.frontmatter.path}`,
+            path: `case-studies/${caseStudy.frontmatter.path}`,
           });
 
         const postPages = result.data.posts.edges

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { mediaQuery } from '../../../util/style';
-import { A, Address, Link } from '../../atoms';
+import { A, Address } from '../../atoms';
 
 const BaseTwoAddress = styled(Address)`
   display: flex;
