@@ -178,7 +178,7 @@ const Title = styled.span`
 
 function TeamListItem({ image, name, title, url }) {
   const handleClick = () => {
-    navigate(url);
+    if (url) navigate(url);
   };
 
   const Wrapper = url ? ClickableListItem : ListItem;
