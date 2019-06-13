@@ -13,6 +13,7 @@ import {
   GlobalNavigation,
   P,
   Section,
+  CaseStudyFooter,
 } from '../components';
 import { toNodesWithImage } from '../util/graphql';
 import { lightTheme } from '../theme';
@@ -120,6 +121,7 @@ function CaseStudyTemplate({ caseStudy }) {
           />
           <CaseStudyContent {...caseStudy} />
         </CaseStudy>
+        <CaseStudyFooter />
       </Main>
     </ThemeProvider>
   );
