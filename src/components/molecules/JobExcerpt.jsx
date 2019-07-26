@@ -34,7 +34,7 @@ function JobExcerpt({ children, heading, url }) {
     <Wrapper>
       <H3 dark>{heading}</H3>
       <P>{children}</P>
-      <A href={url}>Learn More</A>
+      <A href={url}>Learn More about the {heading} position</A>
     </Wrapper>
   );
 }
