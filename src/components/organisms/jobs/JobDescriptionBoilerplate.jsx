@@ -96,7 +96,7 @@ function JobDescriptionBoilerplate() {
           After reviewing resumes, portfolios and any other material submitted
           with an application, we schedule a Small Team Interview with the
           candidates we are interested in meeting. In this meeting, two members
-          of Base Two meet with a candidate either in person or via a video
+          of Base Two meet with a candidate either in-person or via a video
           call. The goal of the Small Team Interview is to answer any questions
           the candidate has about our company and processes, and learn what the
           candidate is interested in so we can determine if their skillset
