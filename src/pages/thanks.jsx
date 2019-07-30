@@ -76,7 +76,7 @@ const ThanksText = styled(P)`
   width: inherit;
 
   &:last-of-type {
-    margin-bottom: 0.2em;
+    margin-bottom: 1em;
   }
 
   ${mediaQuery.small`

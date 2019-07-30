@@ -1,6 +1,7 @@
 const path = require('path');
 
 const postTemplate = path.resolve('src/templates/post.jsx');
+const jobTemplate = path.resolve('src/templates/job.jsx');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -9,12 +10,25 @@ exports.createPages = ({ actions, graphql }) => {
     resolve(
       graphql(`
         query GatsbyNodeQuery {
-          markdown: allMarkdownRemark {
+          jobs: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/_content/jobs/" } }
+          ) {
             edges {
               node {
                 id
                 frontmatter {
-                  id
+                  path
+                }
+              }
+            }
+          }
+          posts: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/_content/posts/" } }
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
                   path
                 }
               }
@@ -24,17 +38,27 @@ exports.createPages = ({ actions, graphql }) => {
       `).then(result => {
         if (result.errors) return reject(result.errors);
 
-        const createPostPage = post =>
-          createPage({
-            component: postTemplate,
-            context: { id: post.id },
-            path: post.frontmatter.path,
-          });
-
-        const postPages = result.data.markdown.edges
+        result.data.posts.edges
           .filter(e => !!e.node.frontmatter.path)
-          .map(e => createPostPage(e.node));
-        return postPages;
+          .map(({ node }) =>
+            createPage({
+              component: postTemplate,
+              context: { id: node.id },
+              path: node.frontmatter.path,
+            })
+          );
+
+        result.data.jobs.edges
+          .filter(e => !!e.node.frontmatter.path)
+          .map(({ node }) =>
+            createPage({
+              component: jobTemplate,
+              context: { id: node.id },
+              path: `jobs/${node.frontmatter.path}`,
+            })
+          );
+
+        return resolve();
       })
     );
   });

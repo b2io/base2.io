@@ -8,6 +8,7 @@ import Label from './Label';
 import Textarea from './Textarea';
 
 const stateUpdateFromValue = ({ value }) => ({ value, isDirty: !!value });
+const floatLabel = ({ type }) => type === 'file';
 
 class TextField extends React.Component {
   static defaultProps = {
@@ -31,6 +32,7 @@ class TextField extends React.Component {
 
   state = {
     ...stateUpdateFromValue(this.props),
+    floatLabel: floatLabel(this.props),
     isFocused: false,
   };
 

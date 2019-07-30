@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { navigate } from 'gatsby';
 import { P, Img, UL, LI } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 
@@ -24,7 +25,7 @@ const TeamList = styled(UL)`
   `};
 `;
 
-const Wrapper = styled(LI)`
+const ListItem = styled(LI)`
   align-items: center;
   display: flex;
   margin: 0 1% 3em;
@@ -127,7 +128,20 @@ const Wrapper = styled(LI)`
   }
 `;
 
+const ClickableListItem = styled(ListItem)`
+  cursor: pointer;
+
+  &:hover {
+    color: ${themed('color.accent')};
+
+    img {
+      background-color: ${themed('color.deepBlue')};
+    }
+  }
+`;
+
 const TeamImg = styled(Img)`
+  background-color: #f5f5f5;
   border-radius: 50%;
   height: auto;
   position: relative;
@@ -162,9 +176,15 @@ const Title = styled.span`
   display: block;
 `;
 
-function TeamListItem({ image, name, title }) {
+function TeamListItem({ image, name, title, url }) {
+  const handleClick = () => {
+    if (url) navigate(url);
+  };
+
+  const Wrapper = url ? ClickableListItem : ListItem;
+
   return (
-    <Wrapper>
+    <Wrapper onClick={handleClick}>
       <div>
         <TeamImg {...image} alt={name} title={name} />
       </div>
@@ -176,12 +196,13 @@ function TeamListItem({ image, name, title }) {
   );
 }
 
-TeamListItem.defaultProps = {};
+TeamListItem.defaultProps = { url: null };
 
 TeamListItem.propTypes = {
   image: PropTypes.shape({}).isRequired,
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  url: PropTypes.string,
 };
 
 TeamList.Item = TeamListItem;

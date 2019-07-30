@@ -6,12 +6,7 @@ import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
 import markdown from '../util/templates';
 import { mediaQuery } from '../util/style';
-import {
-  BlogHeader,
-  GlobalNavigation,
-  Main,
-  Section,
-} from '../components';
+import { BlogHeader, GlobalNavigation, Main, Section } from '../components';
 import { toNodes } from '../util/graphql';
 import { lightTheme } from '../theme';
 
@@ -29,7 +24,6 @@ const PostContent = styled(Section)`
 
   ${mediaQuery.small`
     font-size: ${rem('21px')};
-    padding: ${em('75px', '21px')} 0 0;
   `};
 `;
 
