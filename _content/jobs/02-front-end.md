@@ -8,6 +8,8 @@ active: true
 ### Requirements
 
 - Interest in contributing to front-end UI/UX development
+- Experience creating applications with JavaScript
+- Familiarity with cross-browser compatibility testing
 - Competency using debugging tools and troubleshooting
 - Comfortable with direct client contact and communication
 
@@ -16,5 +18,7 @@ active: true
 - JavaScript (ES6+)
 - React
 - React Native
+- Gatsby
 - Aurelia
 - CSS (Sass, Styled Components)
+- Git source control
