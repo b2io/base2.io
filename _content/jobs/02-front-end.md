@@ -17,4 +17,4 @@ active: true
 - React
 - React Native
 - Aurelia
-- CSS
+- CSS (Sass, Styled Components)
