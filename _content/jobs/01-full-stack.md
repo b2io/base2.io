@@ -28,5 +28,7 @@ active: true
 - JavaScript (ES6+)
 - React
 - React Native
+- Gatsby
 - Aurelia
-- CSS
+- CSS (Sass, Styled Components)
+- Git source control
