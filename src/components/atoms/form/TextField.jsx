@@ -48,12 +48,8 @@ class TextField extends React.Component {
   handleChange = event => {
     this.setState(
       stateUpdateFromValue(event.target),
-      this.notifyAfterChange(event),
+      this.props.onChange(event),
     );
-  };
-
-  notifyAfterChange = event => {
-    this.props.onChange(event);
   };
 
   handleFocus = event => {
