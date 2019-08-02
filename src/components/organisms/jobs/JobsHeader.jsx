@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { mediaQuery, themed } from '../../../util/style';
 import { A, BaseTwoJobsLogo, Header, P } from '../../atoms';
-import { supportsWebp } from '../../../util/helpers';
 
 const imageSize = {
   default: '260px',
@@ -91,15 +90,11 @@ const JobsButton = styled(A)`
   width: ${em('288px', '24px')};
 `;
 
-const astronautSource = supportsWebp
-  ? `/img/jobs/BlueAstronaut.webp`
-  : '/img/jobs/BlueAstronaut.png';
-
 function JobsHeader({ small }) {
   return (
     <StyledHeader>
       <AstronautImg
-        src={astronautSource}
+        src="/img/jobs/BlueAstronaut.png"
         alt="Blue astronaut reaching out to the reader"
       />
       <HeaderContent>
