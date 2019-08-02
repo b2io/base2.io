@@ -35,6 +35,10 @@ const Label = styled.label`
       right: 0;
     }
 
+    [type="file"]:invalid + &::after {
+      content: 'Please select a smaller file.';
+    }
+
     [type="tel"]:invalid + &::after {
       content: 'Please enter a valid phone number.';
     }

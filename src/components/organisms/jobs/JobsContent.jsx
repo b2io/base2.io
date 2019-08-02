@@ -71,7 +71,7 @@ function JobsContent({ jobs }) {
           <LI>Fancy office coffee</LI>
         </UL>
       </Section>
-      <Section id="positions">
+      <Section id="positions" narrow>
         <H2>Open Positions</H2>
 
         <P>

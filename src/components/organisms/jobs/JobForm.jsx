@@ -11,6 +11,8 @@ import {
 import { emailPattern, phonePattern } from '../../../util/regexPatterns';
 import { mediaQuery, themed } from '../../../util/style';
 
+const FILE_SIZE_LIMIT = 1000000; // 1MB
+
 const Wrapper = styled.div`
   margin: 0 auto 5em;
   padding: 0 1em;
@@ -126,10 +128,21 @@ function JobForm({ isApprenticeship, position }) {
               rows="5"
             />
             <TextInputField
-              label="Please upload your resume"
+              label="Please upload your resume (<1MB)"
               type="file"
               name="resume"
-              multiple
+              onChange={e => {
+                if (
+                  e.target.files &&
+                  e.target.files[0].size > FILE_SIZE_LIMIT
+                ) {
+                  e.target.setCustomValidity(
+                    'File must be less than 1MB in size',
+                  );
+                } else {
+                  e.target.setCustomValidity('');
+                }
+              }}
             />
           </>
         )}
