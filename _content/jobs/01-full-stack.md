@@ -25,10 +25,9 @@ active: true
 
 #### Front-end
 
-- JavaScript (ES6+)
-- React
+- JavaScript ES6+ (React, Redux, Aurelia)
 - React Native
 - Gatsby
-- Aurelia
+- GraphQL
 - CSS (Sass, Styled Components)
 - Git source control
