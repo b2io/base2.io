@@ -32,7 +32,7 @@
     "title": "UX Developer"
   },
   {
-    "active": true,
+    "active": false,
     "id": "csteinert",
     "image": "img/team/csteinert.jpg",
     "name": "Caitlin Steinert",
