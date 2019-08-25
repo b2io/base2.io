@@ -16,7 +16,7 @@
     "title": "Developer"
   },
   {
-    "active": true,
+    "active": false,
     "id": "jridenbaugh",
     "image": "img/team/jridenbaugh.jpg",
     "name": "Jeff Ridenbaugh",
