@@ -2,7 +2,7 @@
 description: We’re looking for someone with a strong desire to collaborate on architecting, building, and maintaining .NET Core APIs, SPAs, and mobile apps.
 path: full-stack-developer
 position: Full Stack Developer
-active: true
+active: false
 ---
 
 ### Requirements
