@@ -2,7 +2,7 @@
 description: We’re looking for someone who is excited about solving real-world problems with web and mobile technologies in a collaborative, client-focused environment.
 path: front-end-developer
 position: Front-end Developer
-active: true
+active: false
 ---
 
 ### Requirements
