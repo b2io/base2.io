@@ -1,98 +1,99 @@
-[{
-        "active": true,
-        "id": "dmiller",
-        "image": "img/team/dmiller.jpg",
-        "name": "Drew Miller",
-        "lastName": "Miller",
-        "title": "Founder // Developer"
-    },
-    {
-        "active": true,
-        "id": "tborres",
-        "image": "img/team/tborres.jpg",
-        "name": "Tony Borres",
-        "lastName": "Borres",
-        "title": "Developer"
-    },
-    {
-        "active": false,
-        "id": "jridenbaugh",
-        "image": "img/team/jridenbaugh.jpg",
-        "name": "Jeff Ridenbaugh",
-        "lastName": "Ridenbaugh",
-        "title": "Developer"
-    },
-    {
-        "active": true,
-        "id": "chawkins",
-        "image": "img/team/chawkins.jpg",
-        "name": "Chris Hawkins",
-        "lastName": "Hawkins",
-        "title": "UX Developer"
-    },
-    {
-        "active": false,
-        "id": "csteinert",
-        "image": "img/team/csteinert.jpg",
-        "name": "Caitlin Steinert",
-        "lastName": "Steinert",
-        "title": "UX Developer"
-    },
-    {
-        "active": true,
-        "id": "sludemann",
-        "image": "img/team/sludemann.jpg",
-        "name": "Sean Ludemann",
-        "lastName": "Ludemann",
-        "title": "Developer"
-    },
-    {
-        "active": true,
-        "id": "rdunkle",
-        "image": "img/team/rdunkle.jpg",
-        "name": "Reed Dunkle",
-        "lastName": "Dunkle",
-        "title": "Developer"
-    },
-    {
-        "active": false,
-        "id": "mkendall",
-        "image": "img/team/mkendall.jpg",
-        "name": "Mandy Kendall",
-        "lastName": "Kendall",
-        "title": "Developer"
-    },
-    {
-        "active": false,
-        "id": "jstevens",
-        "image": "img/team/jstevens.jpg",
-        "name": "Jon Stevens",
-        "lastName": "Stevens",
-        "title": "Developer"
-    },
-    {
-        "active": false,
-        "id": "zbrown",
-        "image": "img/team/zbrown.jpg",
-        "name": "Zack Brown",
-        "lastName": "Brown",
-        "title": "Founder // Developer"
-    },
-    {
-        "active": true,
-        "id": "khansen",
-        "image": "img/team/khansen.jpeg",
-        "name": "Kate Hansen",
-        "lastName": "Hansen",
-        "title": "Developer"
-    },
-    {
-        "active": true,
-        "id": "futureTeamMember",
-        "image": "img/team/BlueAstronaut.png",
-        "name": "Join our Team",
-        "lastName": "You",
-        "title": "Apply!",
-        "url": "/jobs"
-    }
+[
+  {
+    "active": true,
+    "id": "dmiller",
+    "image": "img/team/dmiller.jpg",
+    "name": "Drew Miller",
+    "lastName": "Miller",
+    "title": "Founder // Developer"
+  },
+  {
+    "active": true,
+    "id": "tborres",
+    "image": "img/team/tborres.jpg",
+    "name": "Tony Borres",
+    "lastName": "Borres",
+    "title": "Developer"
+  },
+  {
+    "active": false,
+    "id": "jridenbaugh",
+    "image": "img/team/jridenbaugh.jpg",
+    "name": "Jeff Ridenbaugh",
+    "lastName": "Ridenbaugh",
+    "title": "Developer"
+  },
+  {
+    "active": true,
+    "id": "chawkins",
+    "image": "img/team/chawkins.jpg",
+    "name": "Chris Hawkins",
+    "lastName": "Hawkins",
+    "title": "UX Developer"
+  },
+  {
+    "active": false,
+    "id": "csteinert",
+    "image": "img/team/csteinert.jpg",
+    "name": "Caitlin Steinert",
+    "lastName": "Steinert",
+    "title": "UX Developer"
+  },
+  {
+    "active": true,
+    "id": "sludemann",
+    "image": "img/team/sludemann.jpg",
+    "name": "Sean Ludemann",
+    "lastName": "Ludemann",
+    "title": "Developer"
+  },
+  {
+    "active": true,
+    "id": "rdunkle",
+    "image": "img/team/rdunkle.jpg",
+    "name": "Reed Dunkle",
+    "lastName": "Dunkle",
+    "title": "Developer"
+  },
+  {
+    "active": false,
+    "id": "mkendall",
+    "image": "img/team/mkendall.jpg",
+    "name": "Mandy Kendall",
+    "lastName": "Kendall",
+    "title": "Developer"
+  },
+  {
+    "active": false,
+    "id": "jstevens",
+    "image": "img/team/jstevens.jpg",
+    "name": "Jon Stevens",
+    "lastName": "Stevens",
+    "title": "Developer"
+  },
+  {
+    "active": false,
+    "id": "zbrown",
+    "image": "img/team/zbrown.jpg",
+    "name": "Zack Brown",
+    "lastName": "Brown",
+    "title": "Founder // Developer"
+  },
+  {
+    "active": true,
+    "id": "khansen",
+    "image": "img/team/khansen.jpeg",
+    "name": "Kate Hansen",
+    "lastName": "Hansen",
+    "title": "Developer"
+  },
+  {
+    "active": true,
+    "id": "futureTeamMember",
+    "image": "img/team/BlueAstronaut.png",
+    "name": "Join our Team",
+    "lastName": "You",
+    "title": "Apply!",
+    "url": "/jobs"
+  }
 ]
