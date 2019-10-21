@@ -81,6 +81,14 @@
   },
   {
     "active": true,
+    "id": "khansen",
+    "image": "img/team/khansen.jpeg",
+    "name": "Kate Hansen",
+    "lastName": "Hansen",
+    "title": "Developer"
+  },
+  {
+    "active": true,
     "id": "futureTeamMember",
     "image": "img/team/BlueAstronaut.png",
     "name": "Join our Team",
