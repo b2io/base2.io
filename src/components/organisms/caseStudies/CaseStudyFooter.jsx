@@ -7,7 +7,6 @@ import { CallToActionLink } from '../../atoms';
 
 const Wrapper = styled.div`
   align-items: flex-start;
-  padding-top: 4vh;
   background: no-repeat bottom;
   background-size: cover;
   display: flex;
@@ -15,6 +14,7 @@ const Wrapper = styled.div`
   margin-top: 5vw;
   min-height: 45vw;
   overflow-x: hidden;
+  padding-top: 4vh;
   width: 100%;
 
   ${webpBackground('/img/backgrounds/moon.jpg', '/img/backgrounds/moon.webp')};

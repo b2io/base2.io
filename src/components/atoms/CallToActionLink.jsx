@@ -11,12 +11,12 @@ const CallToActionLink = styled(GatsbyLink)`
   text-transform: capitalize;
 
   ${mediaQuery.small`
-  font-size: 1.875em;
-`};
+    font-size: 1.875em;
+  `};
 
   ${mediaQuery.large`
   font-size: 2.625em;
-`};
+  `};
 `;
 
 export default CallToActionLink;
