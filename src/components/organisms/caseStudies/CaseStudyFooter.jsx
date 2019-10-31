@@ -11,10 +11,10 @@ const Wrapper = styled.div`
   background-size: cover;
   display: flex;
   justify-content: center;
-  margin-top: 5vw;
+  margin-top: 6vw;
   min-height: 45vw;
   overflow-x: hidden;
-  padding-top: 4vh;
+  padding-top: 7vh;
   width: 100%;
 
   ${webpBackground('/img/backgrounds/moon.jpg', '/img/backgrounds/moon.webp')};

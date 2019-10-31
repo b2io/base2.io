@@ -15,7 +15,7 @@ const CallToActionLink = styled(GatsbyLink)`
   `};
 
   ${mediaQuery.large`
-  font-size: 2.625em;
+    font-size: 2.625em;
   `};
 `;
 
