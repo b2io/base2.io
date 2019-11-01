@@ -6,20 +6,17 @@ import { em } from 'polished';
 import { themed, mediaQuery } from '../../util/style';
 
 const Link = ({ children, to, ...props }) => {
-  const internal = /^\/(?!\/)/.test(to)
-  if (internal) {
-    return (
-      <GatsbyLink to={to} {...props}>
-        {children}
-      </GatsbyLink>
-    )
-  }
-  return (
+  const isInternal = /^\/(?!\/)/.test(to);
+  return isInternal ? (
+    <GatsbyLink to={to} {...props}>
+      {children}
+    </GatsbyLink>
+  ) : (
     <a href={to} {...props}>
       {children}
     </a>
-  )
-}
+  );
+};
 
 Link.propTypes = {
   children: PropTypes.string.isRequired,
