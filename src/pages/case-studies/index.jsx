@@ -14,6 +14,7 @@ import {
 import { lightTheme } from '../../theme';
 import { toNodes, toNodesWithImage } from '../../util/graphql';
 import { mediaQuery } from '../../util/style';
+import { CaseStudyFooter } from '../../components/organisms/caseStudies/';
 
 const PostList = styled(UL)`
   list-style-type: none;
@@ -54,6 +55,7 @@ function CaseStudyIndex({ caseStudies }) {
             />
           ))}
         </PostList>
+        <CaseStudyFooter />
       </Main>
     </ThemeProvider>
   );

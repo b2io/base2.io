@@ -9,11 +9,11 @@ import markdown from '../util/templates';
 
 import {
   CaseStudyAside,
+  CaseStudyFooter,
   Main,
   GlobalNavigation,
   P,
   Section,
-  CaseStudyFooter,
 } from '../components';
 import { toNodesWithImage } from '../util/graphql';
 import { lightTheme } from '../theme';

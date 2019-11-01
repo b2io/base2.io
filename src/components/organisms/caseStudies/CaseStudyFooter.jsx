@@ -1,16 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../../atoms';
-import { webpBackground } from '../../../util/style';
+import { mediaQuery, webpBackground } from '../../../util/style';
+import { em } from 'polished';
+import { CallToActionLink } from '../../atoms';
 
 const Wrapper = styled.div`
-  align-items: center;
-  background: no-repeat center;
+  align-items: flex-start;
+  background: no-repeat bottom;
   background-size: cover;
   display: flex;
   justify-content: center;
+  margin-top: 6vw;
   min-height: 45vw;
   overflow-x: hidden;
+  padding-top: 7vh;
   width: 100%;
 
   ${webpBackground('/img/backgrounds/moon.jpg', '/img/backgrounds/moon.webp')};
@@ -19,7 +23,7 @@ const Wrapper = styled.div`
 function CaseStudyFooter() {
   return (
     <Wrapper>
-      <Button>Get Started</Button>
+      <CallToActionLink to="/#contact-us">Get Started</CallToActionLink>
     </Wrapper>
   );
 }

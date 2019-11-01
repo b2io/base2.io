@@ -4,6 +4,7 @@ import Blockquote from './Blockquote';
 import Blurb from './Blurb';
 import Button from './Button';
 import CallToAction from './CallToAction';
+import CallToActionLink from './CallToActionLink';
 import Code from './Code';
 import Del from './Del';
 import Em from './Em';
@@ -31,6 +32,7 @@ export {
   Blurb,
   Button,
   CallToAction,
+  CallToActionLink,
   Code,
   Del,
   Em,
