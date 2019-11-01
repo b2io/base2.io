@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '../../atoms';
-import { mediaQuery, webpBackground } from '../../../util/style';
-import { em } from 'polished';
-import { CallToActionLink } from '../../atoms';
+import { CallToAction } from '../../atoms';
+import { webpBackground } from '../../../util/style';
 
 const Wrapper = styled.div`
   align-items: flex-start;
@@ -23,7 +21,7 @@ const Wrapper = styled.div`
 function CaseStudyFooter() {
   return (
     <Wrapper>
-      <CallToActionLink to="/#contact-us">Get Started</CallToActionLink>
+      <CallToAction to="/#contact-us">Get Started</CallToAction>
     </Wrapper>
   );
 }

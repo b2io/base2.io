@@ -298,13 +298,13 @@ class GlobalNavigation extends React.Component {
         </MainNavigationContainer>
         <ContactCallToActionContainer>
           <ContactCallToAction
-            href="tel:16143981158"
+            to="tel:16143981158"
             className="contact-call--left"
           >
             614.398.1158
           </ContactCallToAction>
           <ContactCallToAction
-            href="mailto:info@base2.io"
+            to="mailto:info@base2.io"
             className="contact-call--right"
           >
             Email Us

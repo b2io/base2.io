@@ -113,7 +113,7 @@ function ThanksPage() {
               <BaseTwoLogoText id="thanks-logo" />
             </BaseTwoLogo>
           </ThanksMessage>
-          <GoHome href="../">Return Home</GoHome>
+          <GoHome to="/">Return Home</GoHome>
         </ThanksContent>
       </Wrapper>
     </ThemeProvider>

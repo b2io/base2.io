@@ -142,7 +142,7 @@ function ContactHeader() {
         Thanks to satellites and the internet, we can work with you wherever you
         are.
       </LocationTagline>
-      <ScrollButton href="#contact-us">Make Contact</ScrollButton>
+      <ScrollButton to="#contact-us">Make Contact</ScrollButton>
       <ScrollLink target={scroll.target} title={scroll.title}>
         <ArrowIndicator src="../img/scroll-arrows.svg" />
       </ScrollLink>

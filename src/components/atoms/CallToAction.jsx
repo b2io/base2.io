@@ -1,8 +1,32 @@
+import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import GatsbyLink from 'gatsby-link';
 import { em } from 'polished';
 import { themed, mediaQuery } from '../../util/style';
 
-const CallToAction = styled.a`
+const Link = ({ children, to, ...props }) => {
+  const internal = /^\/(?!\/)/.test(to)
+  if (internal) {
+    return (
+      <GatsbyLink to={to} {...props}>
+        {children}
+      </GatsbyLink>
+    )
+  }
+  return (
+    <a href={to} {...props}>
+      {children}
+    </a>
+  )
+}
+
+Link.propTypes = {
+  children: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+};
+
+const CallToAction = styled(Link)`
   ${themed('button.default')};
   display: inline-block;
   padding: ${em('10px')} ${em('13px')};
