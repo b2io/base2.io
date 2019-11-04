@@ -89,6 +89,14 @@
   },
   {
     "active": true,
+    "id": "mconso",
+    "image": "img/team/mcondo.jpg",
+    "name": "Mike Condo",
+    "lastName": "Condo",
+    "title": "Developer"
+  },
+  {
+    "active": true,
     "id": "futureTeamMember",
     "image": "img/team/BlueAstronaut.png",
     "name": "Join our Team",
