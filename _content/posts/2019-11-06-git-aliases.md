@@ -2,7 +2,7 @@
 title: Joining a Team - Git Aliases
 author: khansen
 date: '2019-11-06T04:00:00.000Z'
-path: '/2019/11/06/Git-Aliases'
+path: '/2019/11/06/git-aliases'
 ---
 
 Hi, I’m the new kid. I’ve recently joined the team at Base Two, and have come out of the other end of an onboarding process comparatively unscathed. I wanted to take this opportunity to tell my onboarding story in a series of blog posts I’ve creatively titled “Joining a Team".
