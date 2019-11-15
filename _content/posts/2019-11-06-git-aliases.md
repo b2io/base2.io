@@ -5,7 +5,7 @@ date: '2019-11-06T04:00:00.000Z'
 path: '/2019/11/06/git-aliases'
 ---
 
-Hi, I’m the new kid. I’ve recently joined the team at Base Two, and have come out of the other end of an onboarding process comparatively unscathed. I wanted to take this opportunity to tell my onboarding story in a series of blog posts I’ve creatively titled “Joining a Team".
+Hi, I’m the new kid. I’ve recently joined the Base Two team, and have come out of the other end of an onboarding process comparatively unscathed. I wanted to take this opportunity to tell my onboarding story in a series of blog posts I’ve creatively titled “Joining a Team".
 
 Everyone is anxious to dive right in when they start a new position, but the reality is that there is a ton of prep, setup, and observation of workflow nuance that has to happen. No matter how straightforward a job might be (read some code, write some code, things work or they don’t), every team has a unique set of tools and a unique working style that takes some time to make your own.
 
