@@ -69,7 +69,7 @@ This command will commit staged changes with a short message that describes wher
 
 To fully back up your work, you will need to push the commits remote `git push`.
 
-It's good practice to make many small commits as you are working. Once you feel that your collective changes are in a good spot, you can open a Pull Requeat (PR) and use the PR’s description to talk about what the PR is accomplishing and changing.
+It's good practice to make many small commits as you are working. Once you feel that your collective changes are in a good spot, you can open a Pull Request (PR) and use the PR’s description to talk about what the PR is accomplishing and changing.
 
 After the PR is open, use the “Squash & Merge” button to get rid of all of your small “WIP” commits.
 
