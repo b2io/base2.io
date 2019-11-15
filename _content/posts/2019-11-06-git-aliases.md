@@ -45,9 +45,11 @@ Delete the local branch to keep a clean pc machine.
 
 ### git s
 
-Abbreviation for `git status`. This command is useful anytime you’re looking for information about which files you’ve already added (also called “staged”) and which files you haven’t yet added. However, since this team often uses `git aa` to “add all” files, it's less of a worry to identify what you have stage and what has not been staged.
+Abbreviation for 'git status'. This command is useful anytime you’re looking for information about which files you’ve already added (also called “staged”) and which files you haven’t yet added. However, since this team often uses “git aa” to “add all” files, it's less of a worry to identify what you have stage and what has not been staged.
 
-This command is used most often when there are merge conflicts. After attempting to merge and running into a conflict, running `git s` will show files for which there were conflicts. Conflicts can then be managed in VS Code.
+This command is used most often when there are merge conflicts. After attempting to merge and running into a conflict, running 'git s' will show files for which there were conflicts. Conflicts can then be managed in VS Code.
+
+> > > > > > > 0c844e751c33553f942ee54b7376e2761a1688a3
 
 ### git cob
 
