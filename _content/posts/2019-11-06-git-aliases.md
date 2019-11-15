@@ -41,7 +41,7 @@ Pull and fast forward (we use this instead of git pull). This gets the latest an
 
 ### git d branchname
 
-Delete the local branch to keep a clean pc machine.
+Delete the local branch to keep a clean machine.
 
 ### git s
 
