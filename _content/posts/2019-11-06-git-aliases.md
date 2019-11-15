@@ -9,7 +9,7 @@ Hi, I’m the new kid. I’ve recently joined the team at Base Two, and have com
 
 Everyone is anxious to dive right in when they start a new position, but the reality is that there is a ton of prep, setup, and observation of workflow nuance that has to happen. No matter how straightforward a job might be (read some code, write some code, things work or they don’t), every team has a unique set of tools and a unique working style that takes some time to make your own.
 
-I was sent a laptop before my first day, which is something I’ve never experienced before and I highly recommend to any manager-type folks out there. My colleague Reed has written a few excellent blog posts about how he set up his [mac](https://www.base2.io/2017/02/08/mac-setup) and his [Windows machine](https://www.base2.io/2018/01/04/pc-setup) . He covered some pretty good stuff. After a simple setup of Iterm2, OhMyZsh, and VSCode, I was pretty much ready to go.
+I was sent a laptop before my first day, which is something I’ve never experienced before and I highly recommend to any manager-type folks out there. My colleague Reed has written a few excellent blog posts about how he set up his [mac](https://www.base2.io/2017/02/08/mac-setup) and his [Windows machine](https://www.base2.io/2018/01/04/pc-setup). He covered some pretty good stuff. After a simple setup of Iterm2, OhMyZsh, and VSCode, I was pretty much ready to go.
 
 The very first thing that was discussed when we met on my first day was Git Aliases. I had never used git aliases in the past, so setting them up was new to me. I’m on a mac, so I navigated to my git config file by going to my home folder (cd ~) and then typing in `code .gitconfig`. I then was able to list the following git alias’s in my [Alias] section of my config file. For more git config info, check out [this post](http://localhost:8000/2015/05/06/git-configured/) by my co-worker Tony.
 
@@ -45,11 +45,9 @@ Delete the local branch to keep a clean pc machine.
 
 ### git s
 
-Abbreviation for 'git status'. This command is useful anytime you’re looking for information about which files you’ve already added (also called “staged”) and which files you haven’t yet added. However, since this team often uses “git aa” to “add all” files, it's less of a worry to identify what you have stage and what has not been staged.
+Abbreviation for `git status`. This command is useful anytime you’re looking for information about which files you’ve already added (also called “staged”) and which files you haven’t yet added. However, since this team often uses `git aa` to “add all” files, it's less of a worry to identify what you have stage and what has not been staged.
 
-This command is used most often when there are merge conflicts. After attempting to merge and running into a conflict, running 'git s' will show files for which there were conflicts. Conflicts can then be managed in VS Code.
-
-> > > > > > > 0c844e751c33553f942ee54b7376e2761a1688a3
+This command is used most often when there are merge conflicts. After attempting to merge and running into a conflict, running `git s` will show files for which there were conflicts. Conflicts can then be managed in VS Code.
 
 ### git cob
 
@@ -61,9 +59,9 @@ Checkout (switch to) a local branch.
 
 ### git aa
 
-'The same as `git add .` which adds the current directory. Typically this is run from the root of the project, so that it effectively adds all of the current changes.
+The same as `git add .` which adds the current directory. Typically this is run from the root of the project, so that it effectively adds all of the current changes.
 
-Rather than adding specific files to our commit, you can assume that we want to commit all of your changes. Running `git aa` from the root directory will capture all of them.
+Rather than adding specific files to a commit, you can assume that you want to commit all of your changes. Running `git aa` from the root directory will capture all of them.
 
 ### git cm “one-line commit message”
 
