@@ -2,7 +2,7 @@
 description: We’re looking for a mid-to-senior level developer who has professional experience with React Native.
 path: react-developer
 position: React Developer
-active: false
+active: true
 ---
 
 ### Requirements
