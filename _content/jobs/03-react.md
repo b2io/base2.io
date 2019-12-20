@@ -1,14 +1,14 @@
 ---
-description: We’re looking for a mid- to senior-level developer who has professional experience with React.
+description: We’re looking for a mid- to senior-level front-end developer who has professional experience with React.
 path: react-developer
-position: React Developer
+position: Front-End Developer
 active: true
 ---
 
 ### Requirements
 
-- Professional experience creating applications with the React framework
-- Competency with ReactJS concepts and patterns such as Hooks, state, and component lifecycle
+- Professional experience creating applications with React
+- Competency with React concepts and patterns such as hooks, state, and component lifecycle
 - Familiarity with cross-browser compatibility testing
 - Competency using debugging tools and troubleshooting
 - Comfortable with direct client contact and communication
