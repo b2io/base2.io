@@ -15,7 +15,7 @@ active: true
 
 ### Technologies We Frequently Use
 
-- JavaScript ES6+ (React, Redux)
+- JavaScript ES6+ (React, Redux, TypeScript)
 - React Native
 - Gatsby
 - GraphQL
