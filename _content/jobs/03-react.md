@@ -7,7 +7,7 @@ active: true
 
 ### Requirements
 
-- Professional experience creating applications with the React Framework
+- Professional experience creating applications with the React framework
 - Competency with ReactJS concepts and patterns such as Hooks, state, and component lifecycle
 - Familiarity with cross-browser compatibility testing
 - Competency using debugging tools and troubleshooting
