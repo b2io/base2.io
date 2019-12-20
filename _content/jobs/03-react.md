@@ -1,5 +1,5 @@
 ---
-description: We’re looking for a mid-to-senior level developer who has professional experience with React Native.
+description: We’re looking for a mid- to senior-level developer who has professional experience with React.
 path: react-developer
 position: React Developer
 active: true
@@ -7,16 +7,15 @@ active: true
 
 ### Requirements
 
-- Professional experience creating applications with ReactJS
-- Competency with ReactJS concepts and patterns such as Hooks, state, and lifecycle
-- JavaScript proficiency
+- Professional experience creating applications with the React Framework
+- Competency with ReactJS concepts and patterns such as Hooks, state, and component lifecycle
 - Familiarity with cross-browser compatibility testing
 - Competency using debugging tools and troubleshooting
 - Comfortable with direct client contact and communication
 
-### Front-end Technologies We Frequently Use
+### Technologies We Frequently Use
 
-- JavaScript ES6+ (React, Redux, Aurelia)
+- JavaScript ES6+ (React, Redux)
 - React Native
 - Gatsby
 - GraphQL
