@@ -25,6 +25,14 @@
   },
   {
     "active": true,
+    "id": "jcanty",
+    "image": "img/team/jcanty.jpg",
+    "name": "Jeffrey Canty",
+    "lastName": "Canty",
+    "title": "UI Engineer"
+  },
+  {
+    "active": true,
     "id": "chawkins",
     "image": "img/team/chawkins.jpg",
     "name": "Chris Hawkins",
