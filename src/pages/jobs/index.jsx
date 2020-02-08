@@ -2,22 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { isEmpty } from 'lodash';
 import { mapProps } from 'recompose';
-import { ThemeProvider } from 'styled-components';
 import { graphql } from 'gatsby';
 import { GlobalNavigation, JobsContent, JobsHeader } from '../../components';
 import { JobsMain } from '../../components/organisms/jobs/common';
 import { toNodes } from '../../util/graphql';
-import { darkTheme } from '../../theme';
 
 function JobsPage({ jobs }) {
   return (
-    <ThemeProvider theme={darkTheme}>
-      <JobsMain>
-        <GlobalNavigation />
-        <JobsHeader />
-        <JobsContent jobs={jobs} />
-      </JobsMain>
-    </ThemeProvider>
+    <JobsMain>
+      <GlobalNavigation />
+      <JobsHeader />
+      <JobsContent jobs={jobs} />
+    </JobsMain>
   );
 }
 
