@@ -1,7 +1,9 @@
-/* eslint-disable global-require */
-exports.onClientEntry = () => {
+import wrapWithGlobalStyles from './wrap-with-global-styles';
+
+export const onClientEntry = () => {
   // Polyfills:
   require('whatwg-fetch');
   Object.assign = require('object-assign');
 };
-/* eslint-enable global-require */
+
+export const wrapRootElement = wrapWithGlobalStyles;

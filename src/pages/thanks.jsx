@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import {
   BaseTwoLogoText,
   CallToAction,
@@ -8,7 +8,7 @@ import {
   P,
   Section,
 } from '../components';
-import { darkTheme } from '../theme';
+
 import { mediaQuery } from '../util/style';
 
 const Wrapper = styled(Main)`
@@ -98,25 +98,23 @@ const GoHome = styled(CallToAction)`
 
 function ThanksPage() {
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Wrapper>
-        <ThanksContent>
-          <ThanksMessage>
-            <H1>Thank you!</H1>
-            <ThanksText>
-              We&rsquo;re excited to hear that you&rsquo;re interested in
-              working together. We&rsquo;ll review the information you sent and
-              get back to you shortly.
-            </ThanksText>
-            <ThanksText>Sincerely,</ThanksText>
-            <BaseTwoLogo>
-              <BaseTwoLogoText id="thanks-logo" />
-            </BaseTwoLogo>
-          </ThanksMessage>
-          <GoHome href="../">Return Home</GoHome>
-        </ThanksContent>
-      </Wrapper>
-    </ThemeProvider>
+    <Wrapper>
+      <ThanksContent>
+        <ThanksMessage>
+          <H1>Thank you!</H1>
+          <ThanksText>
+            We&rsquo;re excited to hear that you&rsquo;re interested in working
+            together. We&rsquo;ll review the information you sent and get back
+            to you shortly.
+          </ThanksText>
+          <ThanksText>Sincerely,</ThanksText>
+          <BaseTwoLogo>
+            <BaseTwoLogoText id="thanks-logo" />
+          </BaseTwoLogo>
+        </ThanksMessage>
+        <GoHome href="../">Return Home</GoHome>
+      </ThanksContent>
+    </Wrapper>
   );
 }
 

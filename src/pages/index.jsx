@@ -3,7 +3,6 @@ import { sortBy } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
-import { ThemeProvider } from 'styled-components';
 import {
   ContactUs,
   Clients,
@@ -14,30 +13,23 @@ import {
   Team,
   Technologies,
 } from '../components';
-import GlobalStyles from '../util/globalStyles';
-import { darkTheme } from '../theme';
 import { toNodesWithImage } from '../util/graphql';
 
 function IndexPage({ clients, services, technologies, team }) {
   return (
-    <>
-      <GlobalStyles />
-      <ThemeProvider theme={darkTheme}>
-        <Main>
-          <GlobalNavigation />
-          <Hero />
-          <ServiceList id="services">
-            {services.map(service => (
-              <ServiceList.Item {...service} key={service.id} />
-            ))}
-          </ServiceList>
-          <Technologies technologies={technologies} />
-          <Clients clients={clients} />
-          <Team team={sortBy(team, ['lastName'])} />
-          <ContactUs />
-        </Main>
-      </ThemeProvider>
-    </>
+    <Main>
+      <GlobalNavigation />
+      <Hero />
+      <ServiceList id="services">
+        {services.map(service => (
+          <ServiceList.Item {...service} key={service.id} />
+        ))}
+      </ServiceList>
+      <Technologies technologies={technologies} />
+      <Clients clients={clients} />
+      <Team team={sortBy(team, ['lastName'])} />
+      <ContactUs />
+    </Main>
   );
 }
 
