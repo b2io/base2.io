@@ -4,7 +4,7 @@
   "description": "The Base Two website",
   "version": "2.0.0",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.7",
+    "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.13.50",
     "gatsby-image": "^2.1.2",
     "gatsby-link": "^2.1.1",
@@ -14,7 +14,7 @@
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-react-svg": "^2.1.1",
     "gatsby-plugin-sharp": "^2.2.11",
-    "gatsby-plugin-styled-components": "^3.1.19",
+    "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-json": "^2.1.3",
     "gatsby-transformer-remark": "^2.1.6",
@@ -35,7 +35,7 @@
     "remark": "^9.0.0",
     "remark-react": "^4.0.3",
     "sharp": "^0.20.8",
-    "styled-components": "^5.0.1",
+    "styled-components": "^3.4.9",
     "supports-webp": "^1.0.7",
     "whatwg-fetch": "^3.0.0"
   },

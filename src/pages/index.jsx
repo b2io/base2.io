@@ -3,7 +3,7 @@ import { sortBy } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
-import { ThemeProvider } from 'styled-components';
+import { injectGlobal, ThemeProvider } from 'styled-components';
 import {
   ContactUs,
   Clients,
@@ -14,30 +14,51 @@ import {
   Team,
   Technologies,
 } from '../components';
-import GlobalStyles from '../util/globalStyles';
-import { darkTheme } from '../theme';
+import theme, { darkTheme } from '../theme';
 import { toNodesWithImage } from '../util/graphql';
+import { mediaQuery } from '../util/style';
+
+// eslint-disable-next-line no-unused-expressions
+injectGlobal`
+  * {
+    box-sizing: border-box;
+  }
+
+  body,
+  html {
+    ${theme.font.sansSerif};
+    margin: 0;
+    padding: 0;
+  }
+
+  .noScroll > div {
+    height: 100vh;
+    overflow: hidden;
+
+    ${mediaQuery.small`
+      height: auto;
+      overflow: auto;
+    `};
+  }
+`;
 
 function IndexPage({ clients, services, technologies, team }) {
   return (
-    <>
-      <GlobalStyles />
-      <ThemeProvider theme={darkTheme}>
-        <Main>
-          <GlobalNavigation />
-          <Hero />
-          <ServiceList id="services">
-            {services.map(service => (
-              <ServiceList.Item {...service} key={service.id} />
-            ))}
-          </ServiceList>
-          <Technologies technologies={technologies} />
-          <Clients clients={clients} />
-          <Team team={sortBy(team, ['lastName'])} />
-          <ContactUs />
-        </Main>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={darkTheme}>
+      <Main>
+        <GlobalNavigation />
+        <Hero />
+        <ServiceList id="services">
+          {services.map(service => (
+            <ServiceList.Item {...service} key={service.id} />
+          ))}
+        </ServiceList>
+        <Technologies technologies={technologies} />
+        <Clients clients={clients} />
+        <Team team={sortBy(team, ['lastName'])} />
+        <ContactUs />
+      </Main>
+    </ThemeProvider>
   );
 }
 
