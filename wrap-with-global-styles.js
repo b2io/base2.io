@@ -26,11 +26,11 @@ const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export default ({ element }) => {
-  return (
-    <ThemeProvider theme={darkTheme}>
-      <GlobalStyles />
-      {element}
-    </ThemeProvider>
-  );
-};
+// eslint-disable-next-line react/prop-types
+export default ({ element }) => (
+  // eslint-disable-next-line react/jsx-filename-extension
+  <ThemeProvider theme={darkTheme}>
+    <GlobalStyles />
+    {element}
+  </ThemeProvider>
+);
