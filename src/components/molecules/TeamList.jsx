@@ -159,6 +159,7 @@ const TeamImg = styled(Img)`
 `;
 
 const TeamMemberInfo = styled(P)`
+  line-height: 1.4;
   margin-left: 5%;
   max-width: 50%;
 
@@ -172,8 +173,18 @@ const TeamMemberInfo = styled(P)`
   `};
 `;
 
+const Name = styled.span`
+  display: block;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0.25rem auto;
+`;
+
 const Title = styled.span`
   display: block;
+  white-space: pre;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
 `;
 
 function TeamListItem({ image, name, title, url }) {
@@ -189,7 +200,7 @@ function TeamListItem({ image, name, title, url }) {
         <TeamImg {...image} alt={name} title={name} />
       </div>
       <TeamMemberInfo>
-        {name}
+        <Name>{name}</Name>
         <Title>{title}</Title>
       </TeamMemberInfo>
     </Wrapper>
