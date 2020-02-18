@@ -73,6 +73,14 @@
   },
   {
     "active": true,
+    "id": "fmartinez",
+    "image": "img/team/fmartinez.jpg",
+    "name": "Franky Martinez",
+    "lastName": "Martinez",
+    "title": "Senior Software Engineer"
+  },
+  {
+    "active": true,
     "id": "futureTeamMember",
     "image": "img/team/BlueAstronaut.png",
     "name": "Join our Team",
