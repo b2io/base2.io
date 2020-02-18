@@ -41,6 +41,14 @@
   },
   {
     "active": true,
+    "id": "zchay-dolan",
+    "image": "img/team/zchay-dolan.jpg",
+    "name": "Zachary Chay-Dolan",
+    "lastName": "Chay-Dolan",
+    "title": "Associate Software Engineer"
+  },
+  {
+    "active": true,
     "id": "rdunkle",
     "image": "img/team/rdunkle.jpg",
     "name": "Reed Dunkle",
