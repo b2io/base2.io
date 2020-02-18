@@ -2,7 +2,7 @@
 description: We’re looking for a mid- to senior-level front-end developer who has professional experience with React.
 path: react-developer
 position: Front-End Developer
-active: true
+active: false
 ---
 
 ### Requirements
