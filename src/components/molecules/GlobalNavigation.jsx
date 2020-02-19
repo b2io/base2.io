@@ -269,7 +269,7 @@ class GlobalNavigation extends React.Component {
           </LogoToggleContainer>
           <NavList>
             <NavItem>
-              <NavLink to="/#services" onClick={() => { this.handleLinkClick(); scrollTo('#services');}}>
+              <NavLink to="/#services" onClick={this.handleLinkClick}>
                 Services
               </NavLink>
             </NavItem>
