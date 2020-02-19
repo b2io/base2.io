@@ -1,3 +1,4 @@
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -265,7 +266,7 @@ class GlobalNavigation extends React.Component {
           </LogoToggleContainer>
           <NavList>
             <NavItem>
-              <NavLink to="/#services" onClick={this.handleLinkClick}>
+              <NavLink to="/#services" onClick={() => { this.handleLinkClick(); scrollTo('#services');}}>
                 Services
               </NavLink>
             </NavItem>
