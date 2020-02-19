@@ -20,7 +20,7 @@ const mobileBottomMenu = {
   value: `${em('75px')}`,
 };
 
-SmoothScroll('a[href*="#"]', {speed: 700,speedAsDuration: true, easing: 'easeOutQuad'});
+
 
 const MOBILE_NAVIGATION_BREAKPOINT = '767';
 
@@ -247,6 +247,10 @@ class GlobalNavigation extends React.Component {
     this.setState({ isOpen: false });
   };
 
+  componentDidMount() {
+    SmoothScroll('a[href*="#"]', {speed: 700,speedAsDuration: true, easing: 'easeOutQuad'});
+  }
+  
   render() {
     return (
       <NavBar
