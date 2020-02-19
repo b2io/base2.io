@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { em } from 'polished';
 import windowSize from 'react-window-size';
-import SmoothScroll from 'smooth-scroll';
+import SmoothScroll from 'smooth-scroll/dist/smooth-scroll'
 import {
   A,
   BaseTwoLogo,
