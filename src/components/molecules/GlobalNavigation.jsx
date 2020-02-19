@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { em } from 'polished';
 import windowSize from 'react-window-size';
+import SmoothScroll from 'smooth-scroll';
 import {
   A,
   BaseTwoLogo,
@@ -19,6 +20,8 @@ import { mediaQuery, themed } from '../../util/style';
 const mobileBottomMenu = {
   value: `${em('75px')}`,
 };
+
+SmoothScroll('a[href*="#"]', {speed: 700,speedAsDuration: true, easing: 'easeOutQuad'});
 
 const MOBILE_NAVIGATION_BREAKPOINT = '767';
 
@@ -257,7 +260,7 @@ class GlobalNavigation extends React.Component {
       >
         <MainNavigationContainer>
           <LogoToggleContainer>
-            <HomeLink href="/" title="Base Two - Home">
+            <HomeLink href="/#top" title="Base Two - Home">
               <BaseTwoLogo />
             </HomeLink>
             <MenuToggle aria-label="Toggle Menu" onClick={this.handleClick}>
