@@ -53,10 +53,14 @@ function BlogIndex({ posts }) {
         />
         <PostList>
           {posts.map(post => (
+<<<<<<< HEAD
             <ContentSummary {...post} key={post.id}>
               <Time iso={post.date} />
               {post.author && <PostAuthor>POSTED BY {post.author}</PostAuthor>}
             </ContentSummary>
+=======
+            <PostExcerpt {...post} key={post.id} />
+>>>>>>> master
           ))}
         </PostList>
       </Main>

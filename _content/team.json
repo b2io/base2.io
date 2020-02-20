@@ -5,7 +5,7 @@
     "image": "img/team/dmiller.jpg",
     "name": "Drew Miller",
     "lastName": "Miller",
-    "title": "Founder // Developer"
+    "title": "Owner //\nPrincipal Software Engineer"
   },
   {
     "active": true,
@@ -13,15 +13,15 @@
     "image": "img/team/tborres.jpg",
     "name": "Tony Borres",
     "lastName": "Borres",
-    "title": "Developer"
+    "title": "Director of Operations //\nSenior Software Engineer II"
   },
   {
     "active": true,
-    "id": "jridenbaugh",
-    "image": "img/team/jridenbaugh.jpg",
-    "name": "Jeff Ridenbaugh",
-    "lastName": "Ridenbaugh",
-    "title": "Developer"
+    "id": "jcanty",
+    "image": "img/team/jcanty.jpg",
+    "name": "Jeffrey Canty",
+    "lastName": "Canty",
+    "title": "Senior Software Engineer"
   },
   {
     "active": true,
@@ -29,15 +29,7 @@
     "image": "img/team/chawkins.jpg",
     "name": "Chris Hawkins",
     "lastName": "Hawkins",
-    "title": "UX Developer"
-  },
-  {
-    "active": true,
-    "id": "csteinert",
-    "image": "img/team/csteinert.jpg",
-    "name": "Caitlin Steinert",
-    "lastName": "Steinert",
-    "title": "UX Developer"
+    "title": "Senior Software Engineer"
   },
   {
     "active": true,
@@ -45,7 +37,15 @@
     "image": "img/team/sludemann.jpg",
     "name": "Sean Ludemann",
     "lastName": "Ludemann",
-    "title": "Developer"
+    "title": "Principal Software Engineer"
+  },
+  {
+    "active": true,
+    "id": "zchay-dolan",
+    "image": "img/team/zchay-dolan.jpg",
+    "name": "Zachary Chay-Dolan",
+    "lastName": "Chay-Dolan",
+    "title": "Associate Software Engineer"
   },
   {
     "active": true,
@@ -53,30 +53,39 @@
     "image": "img/team/rdunkle.jpg",
     "name": "Reed Dunkle",
     "lastName": "Dunkle",
-    "title": "Developer"
+    "title": "Software Engineer II"
   },
   {
-    "active": false,
-    "id": "mkendall",
-    "image": "img/team/mkendall.jpg",
-    "name": "Mandy Kendall",
-    "lastName": "Kendall",
-    "title": "Developer"
+    "active": true,
+    "id": "khansen",
+    "image": "img/team/khansen.jpeg",
+    "name": "Kate Hansen",
+    "lastName": "Hansen",
+    "title": "Associate Software Engineer"
   },
   {
-    "active": false,
-    "id": "jstevens",
-    "image": "img/team/jstevens.jpg",
-    "name": "Jon Stevens",
-    "lastName": "Stevens",
-    "title": "Developer"
+    "active": true,
+    "id": "mcondo",
+    "image": "img/team/mcondo.jpg",
+    "name": "Mike Condo",
+    "lastName": "Condo",
+    "title": "Senior Software Engineer"
   },
   {
-    "active": false,
-    "id": "zbrown",
-    "image": "img/team/zbrown.jpg",
-    "name": "Zack Brown",
-    "lastName": "Brown",
-    "title": "Founder // Developer"
+    "active": true,
+    "id": "fmartinez",
+    "image": "img/team/fmartinez.jpg",
+    "name": "Franky Martinez",
+    "lastName": "Martinez",
+    "title": "Senior Software Engineer"
+  },
+  {
+    "active": true,
+    "id": "futureTeamMember",
+    "image": "img/team/BlueAstronaut.png",
+    "name": "Join our Team",
+    "lastName": "You",
+    "title": "Apply!",
+    "url": "/jobs"
   }
 ]
