@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
 import { Button, TextAreaField, TextInputField } from '../../atoms';
-import { emailPattern, phonePattern } from '../../../util/regexPatterns';
 import { mediaQuery } from '../../../util/style';
 
 const Wrapper = styled.div`
@@ -65,7 +64,7 @@ function ContactForm() {
           name="email"
           type="email"
           title="your@email.com"
-          pattern={`${emailPattern}`}
+          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
           required
         />
         <TextInputField
@@ -73,7 +72,7 @@ function ContactForm() {
           name="phoneNumber"
           type="tel"
           title="Please include country code (if applicable) and area code. Formatting will be ignored"
-          pattern={phonePattern}
+          pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
         />
         <TextInputField label="Budget" name="budget" />
         <DescriptionField

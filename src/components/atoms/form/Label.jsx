@@ -18,7 +18,7 @@ const Label = styled.label`
   white-space: nowrap;
   width: 100%;
 
-  ${cssSome('isDirty', 'isFocused', 'floatLabel')`
+  ${cssSome('isDirty', 'isFocused')`
   ${themed('typography.caption')};
     top: 4px;
   `};
@@ -33,10 +33,6 @@ const Label = styled.label`
       padding: .25em .5em;
       position: absolute;
       right: 0;
-    }
-
-    [type="file"]:invalid + &::after {
-      content: 'Please select a smaller file.';
     }
 
     [type="tel"]:invalid + &::after {

@@ -23,6 +23,10 @@ import {
   UL,
 } from '../components';
 
+const PostText = styled(P)`
+  margin: 0 0 ${em('21px', '21px')};
+`;
+
 const PostContentH2 = styled.h2`
   font-size: ${rem('30px')};
   margin: ${em('36px', '34px')} 0 ${em('18px', '30px')};
@@ -44,7 +48,7 @@ const PostContentH3 = styled.h3`
 `;
 
 const PostContentH4 = styled.h4`
-  font-size: ${rem('18px')};
+  font-size: ${rem('34px')};
   margin: ${em('36px', '34px')} 0 0;
 
   ${mediaQuery.small`
@@ -76,7 +80,7 @@ const defaultComponentMap = {
   img: PostImg,
   li: LI,
   ol: OL,
-  p: P,
+  p: PostText,
   pre: Pre,
   strong: Strong,
   ul: UL,

@@ -23,12 +23,7 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        excerpt_separator: '<!-- end excerpt -->',
-      },
-    },
+    'gatsby-transformer-remark',
     'gatsby-transformer-json',
     {
       resolve: 'gatsby-plugin-manifest',

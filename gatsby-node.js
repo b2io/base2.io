@@ -2,7 +2,6 @@ const path = require('path');
 
 const postTemplate = path.resolve('src/templates/post.jsx');
 const caseStudyTemplate = path.resolve('src/templates/caseStudy.jsx');
-const jobTemplate = path.resolve('src/templates/job.jsx');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -13,19 +12,6 @@ exports.createPages = ({ actions, graphql }) => {
         query GatsbyNodeQuery {
           caseStudies: allMarkdownRemark(
             filter: { fileAbsolutePath: { regex: "/_content/caseStudies/" } }
-          ) {
-              edges {
-                node {
-                  id
-                  frontmatter {
-                    id
-                    path
-                  }
-                }
-              }
-            }
-          jobs: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/_content/jobs/" } }
           ) {
             edges {
               node {
@@ -44,6 +30,7 @@ exports.createPages = ({ actions, graphql }) => {
               node {
                 id
                 frontmatter {
+                  id
                   path
                 }
               }
@@ -53,15 +40,12 @@ exports.createPages = ({ actions, graphql }) => {
       `).then(result => {
         if (result.errors) return reject(result.errors);
 
-        result.data.posts.edges
-          .filter(e => !!e.node.frontmatter.path)
-          .map(({ node }) =>
-            createPage({
-              component: postTemplate,
-              context: { id: node.id },
-              path: node.frontmatter.path,
-            })
-          );
+        const createPostPage = post =>
+          createPage({
+            component: postTemplate,
+            context: { id: post.id },
+            path: post.frontmatter.path,
+          });
 
         const createCaseStudyPage = caseStudy =>
           createPage({
@@ -77,18 +61,8 @@ exports.createPages = ({ actions, graphql }) => {
         const caseStudyPages = result.data.caseStudies.edges
           .filter(e => !!e.node.frontmatter.path)
           .map(e => createCaseStudyPage(e.node));
-          
-        const jobPages = result.data.jobs.edges
-          .filter(e => !!e.node.frontmatter.path)
-          .map(({ node }) =>
-            createPage({
-              component: jobTemplate,
-              context: { id: node.id },
-              path: `jobs/${node.frontmatter.path}`,
-            })
-          );
 
-          return postPages.concat(caseStudyPages).concat(jobPages);
+        return postPages.concat(caseStudyPages);
       })
     );
   });
