@@ -21,7 +21,13 @@ const mobileBottomMenu = {
 };
 
 if (typeof window !== `undefined`) {
-  SmoothScroll('a[href*="#"]', {speed: 700,speedAsDuration: true, easing: 'easeOutQuad'});
+  SmoothScroll('a[href*="#"]', 
+  {
+    easing: 'easeOutQuad', 
+    speed: 700,
+    speedAsDuration: true,
+    offset: '50'
+  });
 };
 
 const MOBILE_NAVIGATION_BREAKPOINT = '767';
@@ -222,9 +228,9 @@ const ContactCallToAction = styled(CallToAction)`
 
 const toggleNoScroll = isOpen => {
   if (!isOpen) {
-    document.body.classList.add('noScroll');
+    document.body.style.overflow = 'hidden';
   } else {
-    document.body.classList.remove('noScroll');
+    document.body.style.overflow = 'auto';
   }
 };
 
@@ -264,38 +270,38 @@ class GlobalNavigation extends React.Component {
             <HomeLink href="/#top" title="Base Two - Home">
               <BaseTwoLogo />
             </HomeLink>
-            <MenuToggle aria-label="Toggle Menu" onClick={this.handleClick}>
+            <MenuToggle aria-label="Toggle Menu" onClickCapture={this.handleClick}>
               <Icon name="menutoggle" />
             </MenuToggle>
           </LogoToggleContainer>
           <NavList>
             <NavItem>
-              <NavLink to="/#services" onClick={this.handleLinkClick}>
+              <NavLink to="/#services" onClickCapture={this.handleLinkClick}>
                 Services
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#clients" onClick={this.handleLinkClick}>
+              <NavLink to="/#clients" onClickCapture={this.handleLinkClick}>
                 Clients
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#team" onClick={this.handleLinkClick}>
+              <NavLink to="/#team" onClickCapture={this.handleLinkClick}>
                 Team
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/jobs" onClick={this.handleLinkClick}>
+              <NavLink to="/jobs" onClickCapture={this.handleLinkClick}>
                 Jobs
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/blog" onClick={this.handleLinkClick}>
+              <NavLink to="/blog" onClickCapture={this.handleLinkClick}>
                 Blog
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#contact-us" onClick={this.handleLinkClick}>
+              <NavLink to="/#contact-us" onClickCapture={this.handleLinkClick}>
                 Contact
               </NavLink>
             </NavItem>
