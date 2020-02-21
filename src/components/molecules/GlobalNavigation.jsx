@@ -261,38 +261,38 @@ class GlobalNavigation extends React.Component {
             <HomeLink href="/#top" title="Base Two - Home">
               <BaseTwoLogo />
             </HomeLink>
-            <MenuToggle aria-label="Toggle Menu" onClickCapture={this.handleClick}>
+            <MenuToggle aria-label="Toggle Menu" onClick={this.handleClick}>
               <Icon name="menutoggle" />
             </MenuToggle>
           </LogoToggleContainer>
           <NavList>
             <NavItem>
-              <NavLink to="/#services" onClickCapture={this.handleLinkClick}>
+              <NavLink to="/#services" onClick={this.handleLinkClick}>
                 Services
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#clients" onClickCapture={this.handleLinkClick}>
+              <NavLink to="/#clients" onClick={this.handleLinkClick}>
                 Clients
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#team" onClickCapture={this.handleLinkClick}>
+              <NavLink to="/#team" onClick={this.handleLinkClick}>
                 Team
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/jobs" onClickCapture={this.handleLinkClick}>
+              <NavLink to="/jobs" onClick={this.handleLinkClick}>
                 Jobs
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/blog" onClickCapture={this.handleLinkClick}>
+              <NavLink to="/blog" onClick={this.handleLinkClick}>
                 Blog
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#contact-us" onClickCapture={this.handleLinkClick}>
+              <NavLink to="/#contact-us" onClick={this.handleLinkClick}>
                 Contact
               </NavLink>
             </NavItem>
