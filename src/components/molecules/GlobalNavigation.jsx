@@ -41,10 +41,11 @@ const NavBar = styled.nav`
   position: fixed;
   width: 100%;
   z-index: ${themed('zindex.overlay')};
-
+  
   &.menu-open {
     height: 100vh;
     transition: height 300ms ease-in;
+    touch-action: none;
   }
 
   &.menu-closed {
@@ -226,14 +227,6 @@ const ContactCallToAction = styled(CallToAction)`
   }
 `;
 
-const toggleNoScroll = isOpen => {
-  if (!isOpen) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'auto';
-  }
-};
-
 class GlobalNavigation extends React.Component {
   static defaultProps = {};
 
@@ -246,12 +239,10 @@ class GlobalNavigation extends React.Component {
   };
 
   handleClick = () => {
-    toggleNoScroll(this.state.isOpen);
     this.setState({ isOpen: !this.state.isOpen });
   };
 
   handleLinkClick = () => {
-    toggleNoScroll(this.state.isOpen);
     this.setState({ isOpen: false });
   };
 
