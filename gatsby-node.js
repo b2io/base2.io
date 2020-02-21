@@ -14,15 +14,16 @@ exports.createPages = ({ actions, graphql }) => {
           caseStudies: allMarkdownRemark(
             filter: { fileAbsolutePath: { regex: "/_content/caseStudies/" } }
           ) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  path
+              edges {
+                node {
+                  id
+                  frontmatter {
+                    id
+                    path
+                  }
                 }
               }
             }
-          }
           jobs: allMarkdownRemark(
             filter: { fileAbsolutePath: { regex: "/_content/jobs/" } }
           ) {
@@ -30,6 +31,7 @@ exports.createPages = ({ actions, graphql }) => {
               node {
                 id
                 frontmatter {
+                  id
                   path
                 }
               }
@@ -53,7 +55,7 @@ exports.createPages = ({ actions, graphql }) => {
 
         result.data.posts.edges
           .filter(e => !!e.node.frontmatter.path)
-          .forEach(({ node }) =>
+          .map(({ node }) =>
             createPage({
               component: postTemplate,
               context: { id: node.id },
@@ -68,13 +70,17 @@ exports.createPages = ({ actions, graphql }) => {
             path: `case-studies/${caseStudy.frontmatter.path}`,
           });
 
-        result.data.caseStudies.edges
+        const postPages = result.data.posts.edges
           .filter(e => !!e.node.frontmatter.path)
-          .forEach(e => createCaseStudyPage(e.node));
+          .map(e => createPostPage(e.node));
 
-        result.data.jobs.edges
+        const caseStudyPages = result.data.caseStudies.edges
           .filter(e => !!e.node.frontmatter.path)
-          .forEach(({ node }) =>
+          .map(e => createCaseStudyPage(e.node));
+          
+        const jobPages = result.data.jobs.edges
+          .filter(e => !!e.node.frontmatter.path)
+          .map(({ node }) =>
             createPage({
               component: jobTemplate,
               context: { id: node.id },
@@ -82,7 +88,7 @@ exports.createPages = ({ actions, graphql }) => {
             })
           );
 
-        return resolve();
+          return postPages.concat(caseStudyPages).concat(jobPages);
       })
     );
   });
