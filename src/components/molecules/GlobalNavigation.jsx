@@ -41,7 +41,7 @@ const NavBar = styled.nav`
   position: fixed;
   width: 100%;
   z-index: ${themed('zindex.overlay')};
-  
+
   &.menu-open {
     height: 100vh;
     transition: height 300ms ease-in;
