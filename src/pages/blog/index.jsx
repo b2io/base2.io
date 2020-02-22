@@ -5,12 +5,11 @@ import { mapProps } from 'recompose';
 import { em, rem } from 'polished';
 import styled, { ThemeProvider } from 'styled-components';
 import {
-  ContentSummary,
+  BlogHeader,
   GlobalNavigation,
   Main,
-  PageHeader,
+  PostExcerpt,
   UL,
-  Time,
 } from '../../components';
 import { lightTheme } from '../../theme';
 import { toNodes } from '../../util/graphql';
@@ -32,32 +31,19 @@ const PostList = styled(UL)`
   `};
 `;
 
-const PostAuthor = styled.span`
-  ${mediaQuery.small`
-    :before {
-      content: ' - ';
-    }
-  `};
-`;
-
 function BlogIndex({ posts }) {
   return (
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
-        <PageHeader
+        <BlogHeader
           large
           imgAlt="Satellite broadcasting into space"
           title="Transmissions"
           tagline="Sending our knowledge and ideas into the universe"
         />
         <PostList>
-          {posts.map(post => (
-            <ContentSummary {...post} key={post.id}>
-              <Time iso={post.date} />
-              {post.author && <PostAuthor>POSTED BY {post.author}</PostAuthor>}
-            </ContentSummary>
-          ))}
+          {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
         </PostList>
       </Main>
     </ThemeProvider>
@@ -75,6 +61,7 @@ BlogIndex.propTypes = {
 };
 
 function mapPropsToProps({ data }) {
+  // TODO: Find a way to resolve the author name more easily.
   const authorIdToName = toNodes(data.authors).reduce(
     (hashMap, { id, name }) => ({ ...hashMap, [id]: name }),
     {},
@@ -83,13 +70,11 @@ function mapPropsToProps({ data }) {
     const { excerpt, frontmatter } = node;
 
     return {
+      excerpt,
       author: authorIdToName[frontmatter.author],
       date: frontmatter.date,
       id: frontmatter.path,
-      imgPath:
-        frontmatter.image || '/img/transmission-constellation-reverse.png',
       path: frontmatter.path,
-      summary: excerpt,
       title: node.frontmatter.title,
     };
   });
@@ -131,7 +116,6 @@ export const pageQuery = graphql`
           frontmatter {
             author
             date
-            image
             path
             title
           }
