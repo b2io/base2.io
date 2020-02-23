@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-<<<<<<< HEAD
-=======
 import { navigate } from 'gatsby';
->>>>>>> case-studies-feature-branch
 import { P, Img, UL, LI } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 
@@ -28,11 +25,7 @@ const TeamList = styled(UL)`
   `};
 `;
 
-<<<<<<< HEAD
-const Wrapper = styled(LI)`
-=======
 const ListItem = styled(LI)`
->>>>>>> case-studies-feature-branch
   align-items: center;
   display: flex;
   margin: 0 1% 3em;
@@ -135,9 +128,6 @@ const ListItem = styled(LI)`
   }
 `;
 
-<<<<<<< HEAD
-const TeamImg = styled(Img)`
-=======
 const ClickableListItem = styled(ListItem)`
   cursor: pointer;
 
@@ -152,7 +142,6 @@ const ClickableListItem = styled(ListItem)`
 
 const TeamImg = styled(Img)`
   background-color: #f5f5f5;
->>>>>>> case-studies-feature-branch
   border-radius: 50%;
   height: auto;
   position: relative;
@@ -170,10 +159,7 @@ const TeamImg = styled(Img)`
 `;
 
 const TeamMemberInfo = styled(P)`
-<<<<<<< HEAD
-=======
   line-height: 1.4;
->>>>>>> case-studies-feature-branch
   margin-left: 5%;
   max-width: 50%;
 
@@ -187,15 +173,6 @@ const TeamMemberInfo = styled(P)`
   `};
 `;
 
-<<<<<<< HEAD
-const Title = styled.span`
-  display: block;
-`;
-
-function TeamListItem({ image, name, title }) {
-  return (
-    <Wrapper>
-=======
 const Name = styled.span`
   display: block;
   font-weight: 500;
@@ -219,36 +196,24 @@ function TeamListItem({ image, name, title, url }) {
 
   return (
     <Wrapper onClick={handleClick}>
->>>>>>> case-studies-feature-branch
       <div>
         <TeamImg {...image} alt={name} title={name} />
       </div>
       <TeamMemberInfo>
-<<<<<<< HEAD
-        {name}
-=======
         <Name>{name}</Name>
->>>>>>> case-studies-feature-branch
         <Title>{title}</Title>
       </TeamMemberInfo>
     </Wrapper>
   );
 }
 
-<<<<<<< HEAD
-TeamListItem.defaultProps = {};
-=======
 TeamListItem.defaultProps = { url: null };
->>>>>>> case-studies-feature-branch
 
 TeamListItem.propTypes = {
   image: PropTypes.shape({}).isRequired,
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-<<<<<<< HEAD
-=======
   url: PropTypes.string,
->>>>>>> case-studies-feature-branch
 };
 
 TeamList.Item = TeamListItem;
