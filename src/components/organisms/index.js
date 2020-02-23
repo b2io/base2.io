@@ -6,4 +6,5 @@ import Technologies from './Technologies';
 
 export * from './caseStudies';
 export * from './contact';
+export * from './jobs';
 export { Clients, ContactUs, Hero, Team, Technologies };

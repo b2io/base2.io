@@ -8,6 +8,7 @@ const Label = styled.label`
   ${themed('typography.subheading')};
   color: ${themed('color.accent')};
   display: inline-block;
+  margin-right: 1em;
 `;
 
 const RadioInput = styled.input.attrs({

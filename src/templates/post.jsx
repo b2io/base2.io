@@ -9,9 +9,8 @@ import { mediaQuery } from '../util/style';
 import {
   GlobalNavigation,
   Main,
-  PageHeader,
+  BlogHeader,
   Section,
-  Time,
 } from '../components';
 import { toNodes } from '../util/graphql';
 import { lightTheme } from '../theme';
@@ -30,10 +29,11 @@ const PostContent = styled(Section)`
 
   ${mediaQuery.small`
     font-size: ${rem('21px')};
-    padding: ${em('75px', '21px')} 0 0;
   `};
 `;
 
+// NOTE: elements left over from case-studies-feature-branch merge
+/*
 const PostByline = styled.span`
   font-size: ${rem('18px')};
 
@@ -49,24 +49,20 @@ const PostTime = styled.span`
     font-size: ${rem('18px')};
   `};
 `;
+*/
 
 function PostTemplate({ author, children, date, title }) {
   return (
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
-        <PageHeader
+        <BlogHeader
+          author={author}
           img="/img/transmission-constellation.png"
           imgAlt="Satellite broadcasting into space"
+          date={date}
           title={title}
-        >
-          {author && <PostByline>Posted by {author}</PostByline>}
-          {date && (
-            <PostTime>
-              <Time iso={date} />
-            </PostTime>
-          )}
-        </PageHeader>
+        />
         <PostContent>{children}</PostContent>
       </Main>
     </ThemeProvider>

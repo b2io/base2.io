@@ -171,6 +171,7 @@ export const pageQuery = graphql`
           name
           lastName
           title
+          url
         }
       }
     }
