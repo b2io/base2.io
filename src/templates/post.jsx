@@ -6,12 +6,7 @@ import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
 import markdown from '../util/templates';
 import { mediaQuery } from '../util/style';
-import {
-  GlobalNavigation,
-  Main,
-  BlogHeader,
-  Section,
-} from '../components';
+import { BlogHeader, GlobalNavigation, Main, Section } from '../components';
 import { toNodes } from '../util/graphql';
 import { lightTheme } from '../theme';
 

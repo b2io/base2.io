@@ -43,7 +43,9 @@ function BlogIndex({ posts }) {
           tagline="Sending our knowledge and ideas into the universe"
         />
         <PostList>
-          {posts.map(post => <PostExcerpt {...post} key={post.id} />)}
+          {posts.map(post => (
+            <PostExcerpt {...post} key={post.id} />
+          ))}
         </PostList>
       </Main>
     </ThemeProvider>
