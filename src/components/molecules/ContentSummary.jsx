@@ -20,16 +20,23 @@ const ImageWrapper = styled.div`
   margin-right: ${rem('32px')};
 
   ${mediaQuery.medium`
-    display: flex;
-    justify-content: center;
+    display: block;
+    position: relative;
     width: 352px;
     height: 235px;
   `};
 `;
 
 const Image = styled(Img)`
-  object-fit: contain;
+  display: block;
   max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const Content = styled.article`

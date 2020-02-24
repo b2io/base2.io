@@ -29,16 +29,16 @@ const InfoWrapper = styled.div`
 `;
 
 const HeaderInfo = styled.div`
-  flex: 1;
+  flex: 1 1 auto;
 
   ${mediaQuery.large`
-    flex: 3;
+    flex: 3 1 auto;
   `};
 `;
 
 const HeaderImageWrapper = styled.div`
   display: none;
-  flex: 1;
+  flex: 1 1 auto;
 
   ${mediaQuery.smedium`
     display: block;
@@ -46,7 +46,7 @@ const HeaderImageWrapper = styled.div`
   `};
 
   ${mediaQuery.large`
-    flex: 2;
+    flex: 2 1 auto;
   `};
 `;
 
