@@ -27,25 +27,6 @@ const PostContent = styled(Section)`
   `};
 `;
 
-// NOTE: elements left over from case-studies-feature-branch merge
-/*
-const PostByline = styled.span`
-  font-size: ${rem('18px')};
-
-  ${mediaQuery.smedium`
-    font-size: ${rem('24px')};
-  `};
-`;
-
-const PostTime = styled.span`
-  text-transform: uppercase;
-
-  ${mediaQuery.medium`
-    font-size: ${rem('18px')};
-  `};
-`;
-*/
-
 function PostTemplate({ author, children, date, title }) {
   return (
     <ThemeProvider theme={lightTheme}>
