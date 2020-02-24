@@ -30,16 +30,6 @@ injectGlobal`
     margin: 0;
     padding: 0;
   }
-
-  .noScroll > div {
-    height: 100%;
-    overflow: hidden;
-
-    ${mediaQuery.small`
-      height: auto;
-      overflow: auto;
-    `};
-  }
 `;
 
 function IndexPage({ clients, services, technologies, team }) {
