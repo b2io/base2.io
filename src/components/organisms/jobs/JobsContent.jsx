@@ -76,9 +76,9 @@ function JobsContent({ jobs }) {
 
         <P>
           We are always looking for amazing people to work with us in Columbus,
-          OH and Pittsburgh, PA. If you are a talented and creative individual
-          with strong people skills and experience building web applications
-          with the latest front-end technologies, please{' '}
+          OH, Pittsburgh, PA and Chicago, IL. If you are a talented and creative
+          individual with strong people skills and experience building web
+          applications with the latest front-end technologies, please{' '}
           <Link to="/jobs/apply">apply</Link>.
         </P>
         {!isEmpty(jobs) && (
