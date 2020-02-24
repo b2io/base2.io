@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { em } from 'polished';
 import windowSize from 'react-window-size';
-import SmoothScroll from 'smooth-scroll/dist/smooth-scroll'
+import SmoothScroll from 'smooth-scroll/dist/smooth-scroll';
 import {
   A,
   BaseTwoLogo,
@@ -21,14 +21,13 @@ const mobileBottomMenu = {
 };
 
 if (typeof window !== `undefined`) {
-  SmoothScroll('a[href*="#"]', 
-  {
-    easing: 'easeOutQuad', 
+  SmoothScroll('a[href*="#"]', {
+    easing: 'easeOutQuad',
+    offset: '50',
     speed: 700,
     speedAsDuration: true,
-    offset: '50'
   });
-};
+}
 
 const MOBILE_NAVIGATION_BREAKPOINT = '767';
 
@@ -44,8 +43,8 @@ const NavBar = styled.nav`
 
   &.menu-open {
     height: 100vh;
-    transition: height 300ms ease-in;
     touch-action: none;
+    transition: height 300ms ease-in;
   }
 
   &.menu-closed {
