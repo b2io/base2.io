@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { em } from 'polished';
 import windowSize from 'react-window-size';
+import SmoothScroll from 'smooth-scroll/dist/smooth-scroll';
 import {
   A,
   BaseTwoLogo,
@@ -19,6 +20,15 @@ const mobileBottomMenu = {
   value: `${em('75px')}`,
 };
 
+if (typeof window !== `undefined`) {
+  SmoothScroll('a[href*="#"]', {
+    easing: 'easeOutQuad',
+    offset: '50',
+    speed: 700,
+    speedAsDuration: true,
+  });
+}
+
 const MOBILE_NAVIGATION_BREAKPOINT = '767';
 
 const NavBar = styled.nav`
@@ -33,6 +43,7 @@ const NavBar = styled.nav`
 
   &.menu-open {
     height: 100vh;
+    touch-action: none;
     transition: height 300ms ease-in;
   }
 
@@ -215,14 +226,6 @@ const ContactCallToAction = styled(CallToAction)`
   }
 `;
 
-const toggleNoScroll = isOpen => {
-  if (!isOpen) {
-    document.body.classList.add('noScroll');
-  } else {
-    document.body.classList.remove('noScroll');
-  }
-};
-
 class GlobalNavigation extends React.Component {
   static defaultProps = {};
 
@@ -235,12 +238,10 @@ class GlobalNavigation extends React.Component {
   };
 
   handleClick = () => {
-    toggleNoScroll(this.state.isOpen);
     this.setState({ isOpen: !this.state.isOpen });
   };
 
   handleLinkClick = () => {
-    toggleNoScroll(this.state.isOpen);
     this.setState({ isOpen: false });
   };
 
@@ -256,7 +257,7 @@ class GlobalNavigation extends React.Component {
       >
         <MainNavigationContainer>
           <LogoToggleContainer>
-            <HomeLink href="/" title="Base Two - Home">
+            <HomeLink href="/#top" title="Base Two - Home">
               <BaseTwoLogo />
             </HomeLink>
             <MenuToggle aria-label="Toggle Menu" onClick={this.handleClick}>
