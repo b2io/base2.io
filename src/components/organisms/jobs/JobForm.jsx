@@ -152,6 +152,7 @@ function JobForm({ isApprenticeship, position }) {
           </RadioButtonGroupLabel>
           <RadioButton label="Columbus" name="location" value="columbus" />
           <RadioButton label="Pittsburgh" name="location" value="pittsburgh" />
+          <RadioButton label="Chicago" name="location" value="chicago" />
         </>
         <TextAreaField
           label="Any Additional Information"
