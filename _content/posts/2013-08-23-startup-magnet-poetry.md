@@ -1,8 +1,9 @@
 ---
 title: Startup Magnet Poetry
 author: zbrown
-date: "2013-08-23T04:00:00.000Z"
-path: "/2013/08/23/startup-magnet-poetry"
+date: '2013-08-23T04:00:00.000Z'
+path: '/2013/08/23/startup-magnet-poetry'
+image: 'https://i.imgur.com/rLPiq0K.jpg'
 ---
 
 This morning during our weekly meeting, I came up with an idea to facilitate our

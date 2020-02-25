@@ -1,8 +1,9 @@
 ---
 title: Knitting with CSS Grid
 author: csteinert
-date: "2017-11-22T04:00:00.000Z"
-path: "/2017/11/22/knitting-with-css-grid"
+date: '2017-11-22T04:00:00.000Z'
+path: '/2017/11/22/knitting-with-css-grid'
+image: 'https://farm8.staticflickr.com/7044/6917298081_2bb22acf16_z.jpg'
 ---
 
 As the weather turns colder here in Columbus, I have returned to my default

@@ -2,7 +2,10 @@
   "name": "@b2io/base2.io",
   "private": true,
   "description": "The Base Two website",
-  "version": "2.0.0",
+  "version": "2.1.0",
+  "engines": {
+    "node": "^8.17.0"
+  },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.13.50",
@@ -65,6 +68,9 @@
     "lint": "eslint --ext .js,.jsx src",
     "lint:css": "stylelint .js,.jsx src",
     "start": "gatsby serve"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "lint-staged": {
     "*.{js,jsx}": [

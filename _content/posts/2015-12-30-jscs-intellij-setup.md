@@ -1,8 +1,9 @@
 ---
 title: Getting Started with JSCS and WebStorm
 author: jstevens
-date: "2015-12-30T04:00:00.000Z"
-path: "/2015/12/30/jscs-intellij-setup"
+date: '2015-12-30T04:00:00.000Z'
+path: '/2015/12/30/jscs-intellij-setup'
+image: 'https://i.imgur.com/paw2sxV.png'
 ---
 
 [JSCS](http://jscs.info/) is my new favorite javascript tool. It helps keep all
