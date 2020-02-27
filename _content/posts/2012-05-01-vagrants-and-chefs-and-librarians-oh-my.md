@@ -1,8 +1,8 @@
 ---
 title: Vagrants and Chefs and Librarians... oh my!
 author: dmiller
-date: "2012-05-01T04:00:00.000Z"
-path: "/2012/05/01/vagrants-and-chefs-and-librarians-oh-my"
+date: '2012-05-01T04:00:00.000Z'
+path: '/2012/05/01/vagrants-and-chefs-and-librarians-oh-my'
 ---
 
 **Update:** Thanks to [SDude]({{page.url}}#comment-677428811),
@@ -14,14 +14,14 @@ up-to-date and working.
 For those of you out there doing development, you've probably run into some or
 all of the following problems:
 
-* Your development environment doesn't mirror your production environment.
-* It's difficult or impossible to keep everyone's development environment
+- Your development environment doesn't mirror your production environment.
+- It's difficult or impossible to keep everyone's development environment
   consistent in multi-developer projects.
-* You can never remember how to get all the configuration nuances right for
+- You can never remember how to get all the configuration nuances right for
   whatever dependencies your project requires.
-* It takes real, significant amounts of time to get yourself ready to go when
+- It takes real, significant amounts of time to get yourself ready to go when
   starting or switching projects.
-* The dependencies of one project might conflict with another project.
+- The dependencies of one project might conflict with another project.
 
 These issues kill your productivity with time-consuming and difficult-to-isolate
 issues that have _nothing_ to do with the problem you actually want to solve. To
@@ -36,7 +36,11 @@ Vagrant is essentially a command-line wrapper on top of
 suspend, resume, and destroy virtual machines right from your terminal easily.
 Getting started is as easy as:
 
-<script src="https://gist.github.com/2564740.js?file=vagrant"></script>
+```
+$ vagrant box add lucid32 http://files.vagrantup.com/lucid32.box
+$ vagrant init lucid32
+$ vagrant up
+```
 
 For a more detailed setup guide, check the
 [Getting Started](http://vagrantup.com/v1/docs/getting-started/index.html)
@@ -77,7 +81,21 @@ When you looked at the Vagrant
 you might have noticed the following use of Chef Solo to provision their sample
 box:
 
-<script src="https://gist.github.com/2564740.js?file=Vagrantfile-Getting-Started"></script>
+```
+Vagrant::Config.run do |config|
+  config.vm.box = "lucid32"
+
+  # Enable and configure the chef solo provisioner
+  config.vm.provision :chef_solo do |chef|
+    # We're going to download our cookbooks from the web
+    chef.recipe_url = "http://files.vagrantup.com/getting_started/cookbooks.tar.gz"
+
+    # Tell chef what recipe to run. In this case, the `vagrant_main` recipe
+    # does all the magic.
+    chef.add_recipe("vagrant_main")
+  end
+end
+```
 
 This kind of usage is great for a "Hello World" example, but not so great for
 showing you how to use Chef Solo to provision in a more realistic context. We
@@ -90,7 +108,12 @@ called [Librarian](https://github.com/applicationsonline/librarian) that aims to
 solve this exact problem. To setup Librarian for our project we need to run the
 following commands:
 
-<script src="https://gist.github.com/2564740.js?file=librarian"></script>
+```
+$ gem install librarian
+$ echo cookbooks >> .gitignore
+$ echo tmp >> .gitignore
+$ librarian-chef init
+```
 
 What you're doing there is ignoring a few folders in git and initializing the
 project for Librarian. Part of that initialization is to create a `Cheffile`
@@ -100,22 +123,51 @@ and portable way.
 To set the stage a bit, let's say we're starting a Ruby on Rails project and we
 know we're going to need the following things:
 
-* An up-to-date system (through `aptitude`)
-* Ruby (through `rvm`)
-* Git (through `git-core`)
+- An up-to-date system (through `aptitude`)
+- Ruby (through `rvm`)
+- Git (through `git-core`)
 
 Not the most complicated set of requirements, but sufficient for getting this
 project off the ground. Let's take a look at a `Cheffile` that gets us the
 recipes we need:
 
-<script src="https://gist.github.com/2564740.js?file=Cheffile"></script>
+```
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'apt'
+cookbook 'git', 
+  git: 'https://github.com/fnichol/chef-git.git'
+cookbook 'build-essential'
+cookbook 'rvm', 
+  git: 'git://github.com/fnichol/chef-rvm.git', ref: 'v0.8.6'
+```
 
 After we've set that, we simply run `librarian-chef install` to have Librarian
 pull down all those cookbooks and install them into our project. Now we just
 need to setup Vagrant to provision our environment:
 
-<script src="https://gist.github.com/2564740.js?file=Vagrantfile"></script>
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
 
+Vagrant::Config.run do |config|
+  config.vm.box = "lucid64"
+  config.vm.box_url = "http://files.vagrantup.com/lucid64.box"
+  config.vm.network :hostonly, "33.33.33.10"
+
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = ["cookbooks"]
+    chef.add_recipe "apt"
+    chef.add_recipe "build-essential"
+    chef.add_recipe "rvm::vagrant"
+    chef.add_recipe "rvm::system"
+    chef.add_recipe "git"
+  end
+end
+```
 Pretty straight-forward stuff there, we're just telling Vagrant to provision
 using Chef Solo, telling it where to find our cookbooks, and which recipes to
 use. After we've got those changes in place, we run `vagrant up` to have Vagrant
@@ -134,7 +186,12 @@ cross-contamination from projects. And if you're on Windows now, no more "only
 supported on \*nix" frustrations. Let's take a look at what a new developer
 coming onto the project would need to do to get setup:
 
-<script src="https://gist.github.com/2564740.js?file=finale"></script>
+```
+$ git clone <your_git_repository_url>
+$ cd <repository_name>
+$ librarian-chef install
+$ vagrant up
+```
 
 Take a moment to look at that...
 
@@ -148,12 +205,12 @@ As you can see, Vagrant, Chef, and Librarian make a seriously powerful addition
 to your development arsenal. As such, there's a lot more things you can do with
 them; here's some links to get you started:
 
-* [Vagrant Documentation](http://vagrantup.com/v1/docs/index.html) -- more
+- [Vagrant Documentation](http://vagrantup.com/v1/docs/index.html) -- more
   detail on how you can use Vagrant to setup virtual development environments.
-* [Chef Solo Wiki](http://wiki.opscode.com/display/chef/Chef+Solo) -- more
+- [Chef Solo Wiki](http://wiki.opscode.com/display/chef/Chef+Solo) -- more
   detail on how you can use Chef Solo to provision your Vagrant box.
-* [Librarian README](https://github.com/applicationsonline/librarian/blob/master/README.md)
+- [Librarian README](https://github.com/applicationsonline/librarian/blob/master/README.md)
   -- more detail on how you can use Librarian to manage your chef cookbooks and
   recipes.
-* [Opscode's cookbooks](https://github.com/opscode/cookbooks) -- the company
+- [Opscode's cookbooks](https://github.com/opscode/cookbooks) -- the company
   behind Chef maintains this repository of cookbooks.

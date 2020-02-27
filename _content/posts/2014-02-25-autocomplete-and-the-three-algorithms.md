@@ -36,7 +36,9 @@ PostgreSQL database. You can do that by dropping into the PSQL console and
 running: `CREATE EXTENSION fuzzystrmatch;`. Now in a query you can run something
 a query to get some results:
 
-<script src="https://gist.github.com/9223335.js?file=soundex.sql"></script>
+```
+SELECT *, difference(name, 'hazienda') AS similarity FROM brands ORDER BY similarity DESC, name LIMIT 10;
+```
 
 Looking those over for our data-set, we aren't getting at all the results we'd
 want. Time to start looking at other options…
@@ -53,7 +55,9 @@ That sounds promising, let's give that a try. The Levenshtein function comes
 packaged in the `fuzzystrmatch` module with Soundex, so no need to go back into
 the PSQL console, instead we'll start with a query:
 
-<script src="https://gist.github.com/9223335.js?file=levenshtein.sql"></script>
+```
+SELECT *, levenshtein(name, 'hazienda') AS distance FROM brands ORDER BY distance ASC, name LIMIT 10;
+```
 
 It wasn't immediately clear how Levenstein was sorting the results. But further
 investigations revealed that output of the function is the _edit distance_
@@ -79,7 +83,9 @@ we get. Similar to the other two algorithms, we'll have to add the module to
 PostgreSQL first by running `CREATE EXTENSION pg_trgm;` in the PSQL console.
 From there, we can hop back to the query interface:
 
-<script src="https://gist.github.com/9223335.js?file=trigram.sql"></script>
+```
+SELECT *, similarity(name, 'hazienda') AS similarity FROM brands ORDER BY similarity DESC, name LIMIT 10;
+```
 
 We've got results that match up to our use case. A search for "hazienda" matches
 first to the brand named "Hacienda", and then to some other sensible results.
@@ -119,6 +125,32 @@ In the end, we decided to roll our own. Following one of the
 [wonderful model refactoring patterns from Code Climate](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
 (#4), we extracted it as a query object:
 
-<script src="https://gist.github.com/9223335.js?file=similar_brands_query.rb"></script>
+```
+# app/queries/similar_brands_query.rb
+class SimilarBrandsQuery
+  attr_reader :relation
 
-<script src="https://gist.github.com/9223335.js?file=brands_controller.rb"></script>
+  def initialize(relation = Brand.all)
+    @relation = relation
+  end
+
+  def similar_to(name)
+    @relation.select('*', "similarity(name, #{ActiveRecord::Base.sanitize(name)}) AS similarity").order('similarity DESC, name')
+  end
+end
+```
+
+```
+# app/controllers/api/v1/brands_controller.rb
+module Api
+  module V1
+    class BrandsController < ApiController
+      def search
+        @results = SimilarBrandsQuery.new.similar_to(params.require(:q)).limit(10)
+
+        render json: @results, status: 200
+      end
+    end
+  end
+end
+```
