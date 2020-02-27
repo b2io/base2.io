@@ -8,10 +8,12 @@ import { mediaQuery } from '../util/style';
 import markdown from '../util/templates';
 
 import {
+  ClientHeader,
   CaseStudyAside,
   Main,
   GlobalNavigation,
   P,
+  // PageHeader,
   Section,
 } from '../components';
 import { toNodesWithImage } from '../util/graphql';
@@ -104,19 +106,19 @@ const renderMarkdown = raw =>
   });
 
 function CaseStudyTemplate({ caseStudy }) {
-  const { client, highlights, link, project, technologies } = caseStudy;
-
+  const { client } = caseStudy;
   return (
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
+        <ClientHeader {...client} project={caseStudy.project} />
         <CaseStudy>
           <CaseStudyAside
             client={client.name}
-            highlights={highlights}
-            link={link}
-            project={project}
-            technologies={technologies}
+            highlights={caseStudy.highlights}
+            link={caseStudy.link}
+            project={caseStudy.project}
+            technologies={caseStudy.technologies}
           />
           <CaseStudyContent {...caseStudy} />
         </CaseStudy>
