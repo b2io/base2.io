@@ -17,7 +17,7 @@ const TeamList = styled(UL)`
   padding: 0;
   width: 100%;
 
-  ${mediaQuery.small`
+  ${mediaQuery.medium`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -46,16 +46,11 @@ const ListItem = styled(LI)`
     }
   }
 
-  ${mediaQuery.small`
+  ${mediaQuery.medium`
     flex-direction: column !important;
     margin: 0 4% 3em;
     text-align: center;
     width: 24%;
-  `};
-
-  ${mediaQuery.medium`
-    margin: 0 5% 3em;
-    width: 20%;
   `};
 
   &::after {
@@ -68,10 +63,6 @@ const ListItem = styled(LI)`
     top: calc(${imageSize.default} / 2.75);
     width: calc(${imageSize.default} + 19%);
     z-index: 0;
-
-    ${mediaQuery.small`
-      width: 100%;
-    `};
 
     ${mediaQuery.medium`
       height: calc(${imageSize.medium} / 3);
@@ -87,11 +78,6 @@ const ListItem = styled(LI)`
   > div {
     position: relative;
     margin: 0 10% 0 10%;
-
-    ${mediaQuery.small`
-      margin: 0;
-      width: ${imageSize.default};
-    `};
 
     ${mediaQuery.medium`
       width: ${imageSize.medium};
