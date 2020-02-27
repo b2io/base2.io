@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import markdown from '../util/templates';
 import { mediaQuery } from '../util/style';
 import { BlogHeader, GlobalNavigation, Main, Section } from '../components';
 import { toNodes } from '../util/graphql';
 import { lightTheme } from '../theme';
 
-const PostContent = styled(Section)`
+const PostContent = styled(MDXRenderer)`
   font-size: ${rem('18px')};
   font-weight: 400;
   line-height: 1.5;
@@ -82,7 +83,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    post: markdownRemark(id: { eq: $id }) {
+    post: mdx(id: { eq: $id }) {
       frontmatter {
         author
         date

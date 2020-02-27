@@ -121,7 +121,7 @@ export const pageQuery = graphql`
       }
     }
 
-    caseStudies: allMarkdownRemark(
+    caseStudies: allMdx(
       sort: { fields: [fileAbsolutePath], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "/_content/caseStudies/" }

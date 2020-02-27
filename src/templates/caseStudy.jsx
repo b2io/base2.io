@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { mediaQuery } from '../util/style';
 import markdown from '../util/templates';
 
@@ -17,7 +18,7 @@ import {
 import { toNodesWithImage } from '../util/graphql';
 import { lightTheme } from '../theme';
 
-const CaseStudy = styled(Section)`
+const CaseStudy = styled(MDXRenderer)`
   display: flex;
   flex-direction: column-reverse;
   font-size: ${rem('18px')};
@@ -201,7 +202,7 @@ export const pageQuery = graphql`
       }
     }
 
-    caseStudy: markdownRemark(id: { eq: $id }) {
+    caseStudy: mdx(id: { eq: $id }) {
       frontmatter {
         clientId
         highlights
