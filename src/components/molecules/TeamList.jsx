@@ -48,9 +48,9 @@ const ListItem = styled(LI)`
 
   ${mediaQuery.medium`
     flex-direction: column !important;
-    margin: 0 4% 3em;
+    margin: 0 5% 3em;
     text-align: center;
-    width: 24%;
+    width: 20%;
   `};
 
   &::after {
@@ -65,6 +65,7 @@ const ListItem = styled(LI)`
     z-index: 0;
 
     ${mediaQuery.medium`
+      width: 100%;
       height: calc(${imageSize.medium} / 3);
       top: calc(${imageSize.medium} / 2.75);
     `};
@@ -78,8 +79,10 @@ const ListItem = styled(LI)`
   > div {
     position: relative;
     margin: 0 10% 0 10%;
+    width: ${imageSize.default};
 
     ${mediaQuery.medium`
+      margin: 0;  
       width: ${imageSize.medium};
     `};
 
