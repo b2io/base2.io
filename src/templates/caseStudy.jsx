@@ -212,6 +212,7 @@ export const pageQuery = graphql`
         summary
         technologies
       }
+      body
       internal {
         content
       }

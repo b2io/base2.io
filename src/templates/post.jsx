@@ -11,7 +11,7 @@ import { BlogHeader, GlobalNavigation, Main, Section } from '../components';
 import { toNodes } from '../util/graphql';
 import { lightTheme } from '../theme';
 
-const PostContent = styled(MDXRenderer)`
+const PostContent = styled(Section)`
   font-size: ${rem('18px')};
   font-weight: 400;
   line-height: 1.5;
@@ -28,7 +28,7 @@ const PostContent = styled(MDXRenderer)`
   `};
 `;
 
-function PostTemplate({ author, children, date, title }) {
+function PostTemplate({ author, children, body, date, title }) {
   return (
     <ThemeProvider theme={lightTheme}>
       <Main>
@@ -40,7 +40,13 @@ function PostTemplate({ author, children, date, title }) {
           date={date}
           title={title}
         />
-        <PostContent>{children}</PostContent>
+        
+        <PostContent>
+          <MDXRenderer>
+            {body}
+          </MDXRenderer>
+        </PostContent>
+        
       </Main>
     </ThemeProvider>
   );
@@ -66,6 +72,7 @@ function mapPropsToProps({ data }) {
   return {
     author: authorIdToName[data.post.frontmatter.author],
     children: markdown(data.post.internal.content),
+    body: data.post.body,
     date: data.post.frontmatter.date,
     title: data.post.frontmatter.title,
   };
@@ -89,6 +96,7 @@ export const pageQuery = graphql`
         date
         title
       }
+      body
       internal {
         content
       }

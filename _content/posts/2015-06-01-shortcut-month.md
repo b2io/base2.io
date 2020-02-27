@@ -144,7 +144,7 @@ screen.
 
 Now you can go to the bathroom with the peace of mind that nobody will replace
 you
-![desktop background](http://www.wikihow.com/Pull-a-Computer-Prank-on-Your-Friends).
+[desktop background](http://www.wikihow.com/Pull-a-Computer-Prank-on-Your-Friends).
 
 ### 6/6: Show me the Desktop
 
@@ -300,7 +300,7 @@ each press of the tab key.
 
 When browsing the web you will inevitably need to navigate backward - whether
 it's to get back to your search results or to return to an embarrassingly
-![cute picture](http://api.ning.com/files/OQbVc*b-KB9N8WhlPa*p43ZhR5D2*6BzUXEABZ-BvbE*si9pe31-k6QHTC6RP0wiV1YKvbHXTJCadfhxHgVI9CDC4JZ*vNiK/cutedog1920x1200.jpg)
+[cute picture](http://api.ning.com/files/OQbVc*b-KB9N8WhlPa*p43ZhR5D2*6BzUXEABZ-BvbE*si9pe31-k6QHTC6RP0wiV1YKvbHXTJCadfhxHgVI9CDC4JZ*vNiK/cutedog1920x1200.jpg)
  that you stumbled upon. You're in luck - there's a shortcut for
 that.
 
@@ -331,7 +331,7 @@ arrow keys.
 
 Using the j key you can scroll down your social stream while sipping
 on your weekend
-![margarita](https://eytanuliel.files.wordpress.com/2013/05/giant-margarita.jpg).
+[margarita](https://eytanuliel.files.wordpress.com/2013/05/giant-margarita.jpg).
 If you skipped past something interesting click k. Be careful that
 you don't have focus in an input field otherwise you're going to have a pretty
 funny status update (jjjjjkjkjjk).
@@ -418,7 +418,7 @@ that new tab out of the window learn this shortcut.
 Use ctrl + n to open a new window (**n** for **N**ew
 window). This shortcut works similarly in various other applications. For
 instance, ctrl + n will create a new document in Word and
-a new tab in ![Sublime Text](http://www.sublimetext.com/).
+a new tab in [Sublime Text](http://www.sublimetext.com/).
 
 ![Chrome incognito](https://i.imgur.com/AI7u4Ek.png)
 
@@ -522,7 +522,7 @@ it's worth mastering the art of undo and redo.
 If you make a mistake in a word document, browser field, Windows Explorer, or
 almost any other application ctrl + z will reverse the
 mistake. Think **Z** for
-![**Z**orro](http://s.emuparadise.org/fup/up/95763-Zorro_(1995)_(1995)(Capstone_Software)-1.jpg)
+[**Z**orro](http://s.emuparadise.org/fup/up/95763-Zorro_(1995)_(1995)(Capstone_Software)-1.jpg)
 cutting through your mistake. Most applications keep a list of changes so that
 you can undo multiple times.
 
@@ -560,7 +560,7 @@ Gmail has a wealth of shortcuts, but you have to opt-in to use them. We'll
 review some of the most useful shortcuts to coax you into opting-in.
 
 With Gmail shortcuts turned on the following shortcuts (and
-![many more](http://static.googleusercontent.com/media/www.google.com/en/us/support/enterprise/static/gapps/learningcenter/Gmail-Keyboard-shortcuts.pdf) ) are now available to you:
+[many more](http://static.googleusercontent.com/media/www.google.com/en/us/support/enterprise/static/gapps/learningcenter/Gmail-Keyboard-shortcuts.pdf) ) are now available to you:
 
 | Key combination                             | Result                                  |
 | ------------------------------------------- | --------------------------------------- |
@@ -595,7 +595,7 @@ use the mouse to click the Post button?
 
 Clicking ctrl + enter when typing a Facebook post submits
 that post. It's like telling Facebook
-"![This is my final answer](https://www.youtube.com/watch?v=mI5ijh15OYg&feature=youtu.be&t=17s)". 
+"[This is my final answer](https://www.youtube.com/watch?v=mI5ijh15OYg&feature=youtu.be&t=17s)". 
 This shortcut also works in Gmail to send an email that
 you are composing.
 
@@ -646,7 +646,7 @@ ctrl + [ will unident it. Think of the braces as really
 flat arrows pointing in the direction you want the list to be indented. If
 you've ever wondered how to add a new line between bullets without adding a new
 bullet you simply need to add shift to the enter for
-![more power](https://www.youtube.com/watch?v=TkyLnWm1iCs&feature=youtu.be&t=1m38s).
+[more power](https://www.youtube.com/watch?v=TkyLnWm1iCs&feature=youtu.be&t=1m38s).
 
 Learning these shortcuts will help you create bulleted lists both in Gmail and
 Google Docs.
@@ -669,7 +669,7 @@ shift + b is the way to do it.
 
 ### 6/28: Slack Channel Selector
 
-We use ![Slack](https://slack.com/) for our company's
+We use [Slack](https://slack.com/) for our company's
 internal communications. It's what you would get if AIM and IRC had a much cuter
 baby. It provides multiple channels (like chat rooms) to have conversations, but
 having to click on the channel you want to view is silly when there is a
