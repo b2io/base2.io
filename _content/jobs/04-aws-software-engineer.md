@@ -7,10 +7,8 @@ active: true
 
 ### Requirements
 
-- Professional experience creating web applications in a team environment
-- Competency with JavaScript concepts and patterns
-- Experience in Node.js and AWS Lambda
-- Familiarity with cross-browser compatibility testing
+- Professional experience with JavaScript
+- Interest in or experience with serverless Node.js on AWS Lambda
 - Competency using debugging tools and troubleshooting
 - Comfortable with direct client contact and communication
 
