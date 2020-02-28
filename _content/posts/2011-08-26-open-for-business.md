@@ -29,4 +29,4 @@ collaborate with The Columbus Idea Foundry and its member businesses.
 
 We are always looking for opportunities to make creative, interactive content.
 If you would like to contact us, send us an email at
-[info@base2.io](mailto:info@base2.io) or call us at (614) 636-0003.
+[info@base2.io](mailto:info@base2.io) or call us at (614) 398-1185.
