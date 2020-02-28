@@ -13,7 +13,6 @@ import {
   Main,
   GlobalNavigation,
   P,
-  // PageHeader,
   Section,
 } from '../components';
 import { toNodesWithImage } from '../util/graphql';
@@ -106,19 +105,19 @@ const renderMarkdown = raw =>
   });
 
 function CaseStudyTemplate({ caseStudy }) {
-  const { client } = caseStudy;
+  const { client, highlights, link, project, technologies } = caseStudy;
   return (
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
-        <ClientHeader {...client} project={caseStudy.project} />
+        <ClientHeader {...client} project={project} />
         <CaseStudy>
           <CaseStudyAside
             client={client.name}
-            highlights={caseStudy.highlights}
-            link={caseStudy.link}
-            project={caseStudy.project}
-            technologies={caseStudy.technologies}
+            highlights={highlights}
+            link={link}
+            project={project}
+            technologies={technologies}
           />
           <CaseStudyContent {...caseStudy} />
         </CaseStudy>

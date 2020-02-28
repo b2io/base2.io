@@ -1,7 +1,3 @@
-/* ========================================================================== *
- * ClientHeader
- * ========================================================================== */
-
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -13,31 +9,31 @@ import { Header, Img, H1 } from '../../components';
 const BGAspectRatio = '2.65';
 
 const ClientHeaderContainer = styled(Header)`
-  display: flex;
-  height: auto;
-  background-position: center;
+  align-items: center;
   background-color: ${themed('color.black')};
   background-image:
     url('/img/backgrounds/space-fog-purple.png'),
     url('/img/backgrounds/star-field.png');
+  background-position: center;
+  display: flex;
+  height: auto;
   justify-content: center;
-  align-items: center;
 
   ${mediaQuery.small`
-    height: 360px;
-    background-size: cover;
     background-color: ${themed('color.background')};
     background-image: url('/img/backgrounds/caseStudy/b2-case-study-background-960.png');
+    background-size: cover;
+    height: 360px;
   `};
 
   ${mediaQuery.medium`
-    height: calc((100vw / ${BGAspectRatio}) * 0.85);
     background-image: url('/img/backgrounds/caseStudy/b2-case-study-background-960.png');
+    height: calc((100vw / ${BGAspectRatio}) * 0.85);
   `};
 
   ${mediaQuery.large`
-    height: calc(100vw / ${BGAspectRatio});
     background-image: url('/img/backgrounds/caseStudy/b2-case-study-background-1920.png');
+    height: calc(100vw / ${BGAspectRatio});
   `};
 
   ${mediaQuery.xlarge`
@@ -47,14 +43,14 @@ const ClientHeaderContainer = styled(Header)`
 `;
 
 const  ClientHeaderContent = styled.div`
-  display: flex;
-  max-width: 1300px;
-  padding: ${em('28px')} 0;
-  flex: 1 1 100%;
   align-items: center;
+  display: flex;
+  flex: 1 1 100%;
   font-size: 1rem;
   font-weight: 400;
   justify-content: center;
+  max-width: 1300px;
+  padding: ${em('28px')} 0;
 
   ${mediaQuery.small`
     justify-content: space-around;
@@ -67,8 +63,8 @@ const  ClientHeaderContent = styled.div`
 
 const BaseTwoLogoContainer = styled.div`
   display: none;
-  width: 40%;
   flex: 0 0 auto;
+  width: 40%;
 
   ${mediaQuery.small`
     display: block;
@@ -77,8 +73,8 @@ const BaseTwoLogoContainer = styled.div`
 
 const ClientLogoContainer = styled.div`
   display: none;
-  width: 30%;
   flex: 0 0 auto;
+  width: 30%;
 
   ${mediaQuery.small`
     display: block;
@@ -92,11 +88,11 @@ const Image = styled(Img)`
 `;
 
 const ProjectTitle = styled(H1)`
-  display: inline-block;
-  padding: 3rem 1rem 1rem 1rem;
-  font-weight: bold;
-  text-align: center;
   color: ${themed('color.background')};
+  display: inline-block;
+  font-weight: bold;
+  padding: 3rem 1rem 1rem 1rem;
+  text-align: center;
 
   ${mediaQuery.small`
     display: none;
