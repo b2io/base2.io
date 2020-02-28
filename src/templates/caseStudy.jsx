@@ -6,7 +6,8 @@ import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { mediaQuery } from '../util/style';
-import markdown from '../util/templates';
+import { defaultComponentMap } from '../util/templates';
+import { MDXProvider } from '@mdx-js/react';
 
 import {
   CaseStudyAside,
@@ -18,7 +19,7 @@ import {
 import { toNodesWithImage } from '../util/graphql';
 import { lightTheme } from '../theme';
 
-const CaseStudy = styled(MDXRenderer)`
+const CaseStudy = styled(Section)`
   display: flex;
   flex-direction: column-reverse;
   font-size: ${rem('18px')};
@@ -119,7 +120,13 @@ function CaseStudyTemplate({ caseStudy }) {
             project={project}
             technologies={technologies}
           />
-          <CaseStudyContent {...caseStudy} />
+          <CaseStudyContent {...caseStudy}>
+            <MDXProvider components={defaultComponentMap}>
+              <MDXRenderer>
+                {caseStudy.body}
+              </MDXRenderer>
+            </MDXProvider>
+          </CaseStudyContent>
         </CaseStudy>
       </Main>
     </ThemeProvider>
@@ -137,7 +144,7 @@ CaseStudyTemplate.propTypes = {
     project: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     technologies: PropTypes.array.isRequired,
-    children: PropTypes.node.isRequired,
+    body: PropTypes.node.isRequired,
   }).isRequired,
 };
 
@@ -161,7 +168,7 @@ function mapPropsToProps({ data }) {
       technologies: data.caseStudy.frontmatter.technologies.map(
         tech => technologyIdToLogo[tech],
       ),
-      children: renderMarkdown(data.caseStudy.internal.content),
+      body: data.caseStudy.body,
     },
   };
 }
@@ -213,9 +220,6 @@ export const pageQuery = graphql`
         technologies
       }
       body
-      internal {
-        content
-      }
     }
   }
 `;

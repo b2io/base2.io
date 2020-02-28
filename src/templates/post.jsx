@@ -5,11 +5,13 @@ import React from 'react';
 import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import markdown from '../util/templates';
+import { MDXProvider } from '@mdx-js/react';
+import { defaultComponentMap } from '../util/templates';
 import { mediaQuery } from '../util/style';
 import { BlogHeader, GlobalNavigation, Main, Section } from '../components';
 import { toNodes } from '../util/graphql';
 import { lightTheme } from '../theme';
+import reactWindowSize from 'react-window-size';
 
 const PostContent = styled(Section)`
   font-size: ${rem('18px')};
@@ -28,7 +30,7 @@ const PostContent = styled(Section)`
   `};
 `;
 
-function PostTemplate({ author, children, body, date, title }) {
+function PostTemplate({ author, body, date, title }) {
   return (
     <ThemeProvider theme={lightTheme}>
       <Main>
@@ -42,9 +44,11 @@ function PostTemplate({ author, children, body, date, title }) {
         />
         
         <PostContent>
-          <MDXRenderer>
-            {body}
-          </MDXRenderer>
+          <MDXProvider components={defaultComponentMap}>
+            <MDXRenderer>
+              {body}
+            </MDXRenderer>
+          </MDXProvider>
         </PostContent>
         
       </Main>
@@ -55,7 +59,7 @@ function PostTemplate({ author, children, body, date, title }) {
 PostTemplate.defaultProps = { author: '' };
 
 PostTemplate.propTypes = {
-  children: PropTypes.node.isRequired,
+  body: PropTypes.node.isRequired,
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 
@@ -71,7 +75,6 @@ function mapPropsToProps({ data }) {
 
   return {
     author: authorIdToName[data.post.frontmatter.author],
-    children: markdown(data.post.internal.content),
     body: data.post.body,
     date: data.post.frontmatter.date,
     title: data.post.frontmatter.title,
