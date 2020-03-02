@@ -81,6 +81,14 @@
   },
   {
     "active": true,
+    "id": "nkessler",
+    "image": "img/team/nkessler.jpg",
+    "name": "Nathan Kessler",
+    "lastName": "Kessler",
+    "title": "Senior Software Engineer"
+  },
+  {
+    "active": true,
     "id": "futureTeamMember",
     "image": "img/team/BlueAstronaut.png",
     "name": "Join our Team",
