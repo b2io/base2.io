@@ -9,6 +9,7 @@ import markdown from '../util/templates';
 
 import {
   CaseStudyAside,
+  CaseStudyFooter,
   Main,
   GlobalNavigation,
   P,
@@ -26,6 +27,7 @@ const CaseStudy = styled(Section)`
   justify-content: center;
   margin: 0 auto;
   padding-top: ${em('36px', '18px')};
+  padding-bottom: 3rem;
 
   img {
     max-width: 100%;
@@ -120,6 +122,7 @@ function CaseStudyTemplate({ caseStudy }) {
           />
           <CaseStudyContent {...caseStudy} />
         </CaseStudy>
+        <CaseStudyFooter />
       </Main>
     </ThemeProvider>
   );

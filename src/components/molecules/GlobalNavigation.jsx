@@ -92,7 +92,12 @@ const NavItem = styled(LI)`
   font-size: 1.5em;
 
   ${mediaQuery.smedium`
+    font-size: 1.25em;
     border: none;
+  `};
+
+  ${mediaQuery.medium`
+    font-size: 1.5em;
   `};
 `;
 
