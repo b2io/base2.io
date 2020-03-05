@@ -80,9 +80,10 @@ const HeroTagline = styled(P)`
   font-size: 1.15em;
   font-style: italic;
   font-weight: 100;
-  margin-top: 0;
-  margin-bottom: 0.5em;
+  margin: 0 auto 0.5em;
+  max-width: 80vw;
   text-shadow: 1px 1px 4px ${themed('color.background')};
+  width: 750px;
 
   ${mediaQuery.small`
     font-size: 1.65rem;
@@ -137,7 +138,7 @@ function Hero() {
         <HeroHeading>
           <BaseTwoLogoText id="hero-logo" />
         </HeroHeading>
-        <HeroTagline> We turn ideas into beautiful software </HeroTagline>
+        <HeroTagline> Our mission is to solve problems that matter. We believe that best outcomes start on a solid foundation: open, honest, and equitable partnerships. Together we make exceptional the standard. </HeroTagline>
         <ScrollLink target={scroll.target} title={scroll.title}>
           <SatelliteIndicator
             alt="Arrows pointing downward"
