@@ -5,6 +5,7 @@ import { mapProps } from 'recompose';
 import { em, rem } from 'polished';
 import styled, { ThemeProvider } from 'styled-components';
 import {
+  CaseStudyFooter,
   ContentSummary,
   PageHeader,
   GlobalNavigation,
@@ -54,6 +55,7 @@ function CaseStudyIndex({ caseStudies }) {
             />
           ))}
         </PostList>
+        <CaseStudyFooter />
       </Main>
     </ThemeProvider>
   );

@@ -16,7 +16,7 @@ import {
 } from '../components';
 import theme, { darkTheme } from '../theme';
 import { toNodesWithImage } from '../util/graphql';
-import { mediaQuery } from '../util/style';
+import Footer from '../components/molecules/Footer';
 
 // eslint-disable-next-line no-unused-expressions
 injectGlobal`
@@ -47,6 +47,7 @@ function IndexPage({ clients, services, technologies, team }) {
         <Clients clients={clients} />
         <Team team={sortBy(team, ['lastName'])} />
         <ContactUs />
+        <Footer />
       </Main>
     </ThemeProvider>
   );

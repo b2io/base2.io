@@ -1,61 +1,45 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CallToAction } from '../../atoms';
-import { webpBackground, mediaQuery } from '../../../util/style';
+import GatsbyLink from 'gatsby-link';
+import { Button } from '../../atoms';
+import { themed } from '../../../util/style';
+import Footer from '../../molecules/Footer';
 
 const Wrapper = styled.footer`
-  align-items: center;
-  background-color: black;
-  background-position-x: center;
-  background-position-y: 5rem;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  height: 25rem;
-  justify-content: center;
-  width: 100%;
-  ${webpBackground('/img/backgrounds/moon.jpg', '/img/backgrounds/moon.webp')};
-
-  ${mediaQuery.small`
-    height: 26rem;
-  `}
-
-  ${mediaQuery.medium`
-    background-position-y: 20%;
-  `}
-
-  ${mediaQuery.large`
-    background-position-y: 30%;
-    height: 28rem;
-  `}
+  margin-top: 10em;
 `;
 
-const CallToActionButton =  styled(CallToAction)`
-  margin-bottom: 3rem;
+const LinkWrapper = styled(GatsbyLink)`
+  width: 328px;
+  margin: 0 auto 10em;
 
-  ${mediaQuery.small`
-    margin-bottom: 6rem;
-  `}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 
-  ${mediaQuery.medium`
-    margin-bottom: 5rem;
-  `}
+  text-decoration: none;
 
-  ${mediaQuery.large`
-    margin-bottom: 6rem;
-  `}
+  * {
+    z-index: ${themed('zindex.content')}
+  }
+`
 
-  ${mediaQuery.xlarge`
-    margin-bottom: 7rem;
-  `}
+const CallToActionButton = styled(Button)`
+  text-align: center;
+  font-weight: 300;
+  width: 100%;
 `
 
 function CaseStudyFooter() {
   return (
     <Wrapper>
-      <CallToActionButton href="/#contact-us">
-        Get Started
-      </CallToActionButton>
+      <LinkWrapper to="/#contact-us">
+        <CallToActionButton purple>
+          Get Started
+        </CallToActionButton>
+      </LinkWrapper>
+      <Footer />
     </Wrapper>
   );
 }

@@ -13,18 +13,18 @@ const Wrapper = styled.div`
 
   ${mediaQuery.medium`
     display: flex;
+    padding: 10em 0;
     flex-direction: column;
     justify-content: center;
     padding-right: 30vw;
     position: relative;
 
     > * {
-      z-index: ${themed('zindex.overlay')};
+      z-index: ${themed('zindex.content')};
     }
   `};
 
   ${mediaQuery.large`
-    min-height: 110vh;
     padding-right: 37vw;
   `};
 
@@ -43,10 +43,8 @@ const Wrapper = styled.div`
 `;
 
 const Earth = styled.picture`
-  width: 100%;
-
   img {
-    max-width: 100%;
+    width: 100%;
   }
 
   ${mediaQuery.small`
@@ -55,9 +53,12 @@ const Earth = styled.picture`
 
   ${mediaQuery.medium`
     position: absolute;
-    right: -34%;
+    width: 1165px;
+    height: 1096px;
+    max-width: 90vw;
+    right: -550px;
     top: 0;
-    z-index: ${themed('zindex.base')};
+    z-index: ${themed('zindex.outerSpace')};
   `};
 `;
 
@@ -70,7 +71,8 @@ const LocationText = styled.span`
   `};
 
   ${mediaQuery.medium`
-    margin-bottom: 1em;
+    margin: 0 auto 1em;
+    width: 615px;
   `};
 
   strong {
