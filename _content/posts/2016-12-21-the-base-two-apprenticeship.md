@@ -56,7 +56,7 @@ apprentice was based in Pittsburgh, which has very similar cost-of-living
 numbers to Columbus. We plan to adjust the initial salary number based on the
 current local cost-of-living for future apprentices.
 
-![Reed Dunkle, trailblazing Base Two Apprentice!](http://base2.io/assets/img/rdunkle.jpg)
+![Reed Dunkle, trailblazing Base Two Apprentice!](https://base2.io/assets/img/rdunkle.jpg)
 
 We are very excited to have finally started and are now halfway into our very
 first apprenticeship with [Reed Dunkle](https://github.com/reeddunkle). He has
