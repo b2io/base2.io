@@ -7,7 +7,7 @@ image: 'https://pbs.twimg.com/media/CqLBrxXWAAAMeJ9.jpg'
 ---
 
 Back in August the entire Base Two team attended the
-<a href="http://abstractions.io" target="blank">Abstractions conference</a> in
+[Abstractions conference](http://abstractions.io) in
 Pittsburgh. Between the seven of us, we attended a ton of different sessions.
 One particular standout was [Rachel Krantz](http://rachelkrantz.com/)’s
 [presentation on apprenticeships](https://t.co/qRxOizjqoG). We had discussed
@@ -56,7 +56,7 @@ apprentice was based in Pittsburgh, which has very similar cost-of-living
 numbers to Columbus. We plan to adjust the initial salary number based on the
 current local cost-of-living for future apprentices.
 
-<img src="http://base2.io/assets/img/rdunkle.jpg" style="float: right; margin-right: 2em; max-width: 300px;" title="Reed Dunkle, trailblazing Base Two Apprentice!" />
+![Reed Dunkle, trailblazing Base Two Apprentice!](https://base2.io/assets/img/rdunkle.jpg)
 
 We are very excited to have finally started and are now halfway into our very
 first apprenticeship with [Reed Dunkle](https://github.com/reeddunkle). He has

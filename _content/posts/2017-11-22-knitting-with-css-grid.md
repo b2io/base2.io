@@ -79,8 +79,8 @@ code here](https://codepen.io/csteinert/pen/aVBXjB/). I love how quickly I can
 spin up an environment in Codepen, especially when it comes to CSS preprocessors.
 In the case of this example, I set my preprocessor to SCSS.
 
-<p data-height="600" data-theme-id="dark" data-slug-hash="aVBXjB" data-default-tab="html,result" data-user="csteinert" data-embed-version="2" data-pen-title="Log Cabin Blanket Grid Layout" class="codepen">See the Pen <a href="https://codepen.io/csteinert/pen/aVBXjB/">Log Cabin Blanket Grid Layout</a> by Caitlin Steinert (<a href="https://codepen.io/csteinert">@csteinert</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+See the Pen [Log Cabin Blanket Grid Layout](https://codepen.io/csteinert/pen/aVBXjB/) by Caitlin Steinert [@csteinert](https://codepen.io/csteinert) on [CodePen](https://codepen.io).
+
 
 I started by counting the number of rectangles that made up each square (there
 are nine), and created that number of `div` elements. In this pattern, the

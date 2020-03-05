@@ -9,7 +9,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     query GatsbyNodeQuery {
-      caseStudies: allMarkdownRemark(
+      caseStudies: allMdx(
         filter: { fileAbsolutePath: { regex: "/_content/caseStudies/" } }
       ) {
         edges {
@@ -21,9 +21,7 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
-      jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/_content/jobs/" } }
-      ) {
+      jobs: allMdx(filter: { fileAbsolutePath: { regex: "/_content/jobs/" } }) {
         edges {
           node {
             id
@@ -33,7 +31,7 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
-      posts: allMarkdownRemark(
+      posts: allMdx(
         filter: { fileAbsolutePath: { regex: "/_content/posts/" } }
       ) {
         edges {
@@ -49,36 +47,33 @@ exports.createPages = ({ actions, graphql }) => {
   `).then(result => {
     if (result.errors) throw result.errors;
 
-    result.data.posts.edges
-      .forEach(({ node: post }) => {
-        if (!post.frontmatter.path) return;
-        createPage({
-          component: postTemplate,
-          context: { id: post.id },
-          path: post.frontmatter.path,
-        })
+    result.data.posts.edges.forEach(({ node: post }) => {
+      if (!post.frontmatter.path) return;
+      createPage({
+        component: postTemplate,
+        context: { id: post.id },
+        path: post.frontmatter.path,
       });
+    });
 
-    result.data.caseStudies.edges
-      .forEach(({ node: client }) => {
-        if (!client.frontmatter.path) return;
-        createPage({
-          component: caseStudyTemplate,
-          context: { id: client.id },
-          path: `case-studies/${client.frontmatter.path}`,
-        })
+    result.data.caseStudies.edges.forEach(({ node: client }) => {
+      if (!client.frontmatter.path) return;
+      createPage({
+        component: caseStudyTemplate,
+        context: { id: client.id },
+        path: `case-studies/${client.frontmatter.path}`,
       });
+    });
 
-    result.data.jobs.edges
-      .forEach(({node: job}) => {
-        if (!job.frontmatter.path) return;
-        createPage({
-          component: jobTemplate,
-          context: { id: job.id },
-          path: `jobs/${job.frontmatter.path}`,
-        })
+    result.data.jobs.edges.forEach(({ node: job }) => {
+      if (!job.frontmatter.path) return;
+      createPage({
+        component: jobTemplate,
+        context: { id: job.id },
+        path: `jobs/${job.frontmatter.path}`,
       });
+    });
 
     return result;
-  })
+  });
 };

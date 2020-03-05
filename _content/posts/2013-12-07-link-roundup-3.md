@@ -3,9 +3,8 @@ title: 'Link Roundup #3'
 author: dmiller
 date: '2013-12-07T04:00:00.000Z'
 path: '/2013/12/07/link-roundup-3'
+excerpt: Links 3
 ---
-
-<!-- end excerpt -->
 
 ## Libraries
 

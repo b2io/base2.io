@@ -47,7 +47,7 @@ export default mapProps(mapPropsToProps)(JobsPage);
 
 export const pageQuery = graphql`
   query JobsPageQuery {
-    jobs: allMarkdownRemark(
+    jobs: allMdx(
       filter: {
         fileAbsolutePath: { regex: "/_content/jobs/" }
         frontmatter: { position: { ne: null }, active: { ne: false } }
