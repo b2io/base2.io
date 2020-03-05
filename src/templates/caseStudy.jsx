@@ -8,6 +8,7 @@ import { mediaQuery } from '../util/style';
 import markdown from '../util/templates';
 
 import {
+  ClientHeader,
   CaseStudyAside,
   Main,
   GlobalNavigation,
@@ -105,11 +106,11 @@ const renderMarkdown = raw =>
 
 function CaseStudyTemplate({ caseStudy }) {
   const { client, highlights, link, project, technologies } = caseStudy;
-
   return (
     <ThemeProvider theme={lightTheme}>
       <Main>
         <GlobalNavigation />
+        <ClientHeader {...client} project={project} />
         <CaseStudy>
           <CaseStudyAside
             client={client.name}

@@ -1,5 +1,6 @@
 import BlogHeader from './BlogHeader';
 import ClientList from './ClientList';
+import ClientHeader from './ClientHeader';
 import ContentSummary from './ContentSummary';
 import GlobalNavigation from './GlobalNavigation';
 import JobExcerpt from './JobExcerpt';
@@ -13,6 +14,7 @@ import TechnologiesList from './TechnologiesList';
 export {
   BlogHeader,
   ClientList,
+  ClientHeader,
   ContentSummary,
   GlobalNavigation,
   JobExcerpt,

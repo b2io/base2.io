@@ -29,10 +29,9 @@ const ImageWrapper = styled.div`
 
 const Image = styled(Img)`
   display: block;
-  max-width: 100%;
-  max-height: 100%;
+  max-height: 80%;
   height: auto;
-  width: auto;
+  width: 60%;
   position: absolute;
   top: 50%;
   left: 50%;
