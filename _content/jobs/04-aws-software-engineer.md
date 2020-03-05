@@ -2,7 +2,7 @@
 description: We're looking for a Columbus, OH-based engineer who is excited about solving real-world problems in a collaborative, client-focused environment.
 path: software-engineer
 position: Software Engineer
-active: true
+active: false
 ---
 
 ### Requirements
