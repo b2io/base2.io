@@ -10,24 +10,22 @@ const Wrapper = styled.footer`
 `;
 
 const LinkWrapper = styled(GatsbyLink)`
-  width: 328px;
-  margin: 0 auto 10em;
-
+  align-content: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
-
+  margin: 0 auto 10em;
   text-decoration: none;
-
+  width: 328px;
+  
   * {
     z-index: ${themed('zindex.content')}
   }
 `
 
 const CallToActionButton = styled(Button)`
-  text-align: center;
   font-weight: 300;
+  text-align: center;
   width: 100%;
 `
 

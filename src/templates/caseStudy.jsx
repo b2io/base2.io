@@ -23,11 +23,11 @@ const CaseStudy = styled(Section)`
   flex-direction: column-reverse;
   font-size: ${rem('18px')};
   font-weight: 400;
-  line-height: 1.5;
   justify-content: center;
+  line-height: 1.5;
   margin: 0 auto;
-  padding-top: ${em('36px', '18px')};
   padding-bottom: 3rem;
+  padding-top: ${em('36px', '18px')};
 
   img {
     max-width: 100%;

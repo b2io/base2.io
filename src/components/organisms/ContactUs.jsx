@@ -5,9 +5,9 @@ import { Section } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 
 const ContactContent = styled.div`
+  padding-bottom: 7em;
   padding-top: ${themed('navHeight.value')};
   position: relative;
-  padding-bottom: 7em;
 
   * {
     z-index: ${themed('zindex.content')};

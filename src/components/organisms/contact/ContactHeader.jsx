@@ -13,10 +13,10 @@ const Wrapper = styled.div`
 
   ${mediaQuery.medium`
     display: flex;
-    padding: 10em 0;
     flex-direction: column;
     justify-content: center;
     padding-right: 30vw;
+    padding: 10em 0;
     position: relative;
 
     > * {
@@ -52,12 +52,12 @@ const Earth = styled.picture`
   `};
 
   ${mediaQuery.medium`
-    position: absolute;
-    width: 1165px;
     height: 1096px;
     max-width: 90vw;
+    position: absolute;
     right: -550px;
     top: 0;
+    width: 1165px;
     z-index: ${themed('zindex.outerSpace')};
   `};
 `;

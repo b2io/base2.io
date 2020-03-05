@@ -7,23 +7,23 @@ const footerBackgroundHeight = '600px'
 const footerHeight = '300px'
 
 const Wrapper = styled.footer`
-  position: relative;
   height: ${footerHeight};
+  position: relative;
   width: 100%;
 `;
 
 const Background = styled.div`
-  position: absolute;
-  bottom: 0;
   background-color: black;
-  background-size: cover;
   background-position-y: 50%;
-  ${webpBackground('/img/backgrounds/moon/moon-960.jpg', '/img/backgrounds/moon/moon-960.webp')}
+  background-size: cover;
+  bottom: 0;
   display: flex;
   height: ${footerBackgroundHeight};
   justify-content: center;
+  position: absolute;
   width: 100%;
   z-index: ${themed('zindex.outerSpace')};
+  ${webpBackground('/img/backgrounds/moon/moon-960.jpg', '/img/backgrounds/moon/moon-960.webp')}
 
   ${mediaQuery.smedium`
     ${webpBackground('/img/backgrounds/moon/moon-1920.jpg', '/img/backgrounds/moon/moon-1920.webp')}
