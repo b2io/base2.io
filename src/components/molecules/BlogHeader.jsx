@@ -23,6 +23,7 @@ const BlogHeaderInfoWrapper = styled.div`
   font-size: 1rem;
   font-weight: 400;
   margin-top: ${em('48px')};
+  width: 100%;
   max-width: 1300px;
   padding-bottom: ${em('28px')};
   padding-top: ${em('28px')};
