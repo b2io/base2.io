@@ -4,26 +4,19 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { ServerStyleSheet, ThemeProvider } from 'styled-components';
 import { darkTheme } from './src/theme';
-import { GlobalStyles } from './wrap-with-global-styles';
+import WrapWithGlobalStyles from './wrap-with-global-styles';
 
 export const replaceRenderer = ({
   bodyComponent,
   replaceBodyHTMLString,
   setHeadComponents,
 }) => {
-  // React Context in SSR/build
-  const ConnectedBody = () => (
-    <ThemeProvider theme={darkTheme}>
-      <GlobalStyles />
-      {bodyComponent}
-    </ThemeProvider>
-  );
-  replaceBodyHTMLString(renderToString(<ConnectedBody />));
+  replaceBodyHTMLString(renderToString(<WrapWithGlobalStyles element={bodyComponent} />));
 
   // Add styled-components in SSR/build
   const sheet = new ServerStyleSheet();
   try {
-    const html = renderToString(sheet.collectStyles(<ConnectedBody />));
+    const html = renderToString(sheet.collectStyles(<WrapWithGlobalStyles element={bodyComponent} />));
     const styleElement = sheet.getStyleElement();
     setHeadComponents(styleElement);
   } catch (error) {
