@@ -14,6 +14,7 @@ import {
   Technologies,
 } from '../components';
 import { toNodesWithImage } from '../util/graphql';
+import { mediaQuery } from '../util/style';
 
 function IndexPage({ clients, services, technologies, team }) {
   return (

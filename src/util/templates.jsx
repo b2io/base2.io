@@ -61,7 +61,7 @@ const PostImg = styled.img`
   `};
 `;
 
-const defaultComponentMap = {
+export const defaultComponentMap = {
   a: A,
   blockquote: Blockquote,
   code: Code,
@@ -97,3 +97,5 @@ const markdown = (raw, componentMapOverrides) => (
 );
 
 export default markdown;
+
+

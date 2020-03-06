@@ -3,10 +3,8 @@ title: 'Link Roundup #1'
 author: dmiller
 date: '2013-11-23T04:00:00.000Z'
 path: '/2013/11/23/link-roundup-1'
+excerpt: The first in a (hopefully weekly) recurring post where we collect interesting links from the week.
 ---
-
-The first in a (hopefully weekly) recurring post where we collect interesting
-links from the week.
 
 <!-- end excerpt -->
 

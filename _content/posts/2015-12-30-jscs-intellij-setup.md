@@ -1,8 +1,9 @@
 ---
 title: Getting Started with JSCS and WebStorm
 author: jstevens
-date: "2015-12-30T04:00:00.000Z"
-path: "/2015/12/30/jscs-intellij-setup"
+date: '2015-12-30T04:00:00.000Z'
+path: '/2015/12/30/jscs-intellij-setup'
+image: 'https://i.imgur.com/paw2sxV.png'
 ---
 
 [JSCS](http://jscs.info/) is my new favorite javascript tool. It helps keep all
@@ -102,8 +103,8 @@ Now you can close the **Code Style Schemes** dialog. Your javascript code style
 settings will be as close as possible to your settings in the .jscs config file.
 Now for the really cool part, the IDE will try to format your javascript based
 on these setting as you code. You can also take a whole file or section and run
-**Reformat Code** (my shortcut is <kbd>opt</kbd> + <kbd>cmd</kbd> +
-<kbd>L</kbd>) and it will try to clean up that code based on these settings.
+**Reformat Code** (my shortcut is opt + cmd +
+L) and it will try to clean up that code based on these settings.
 This is great and will help format your code, but there are some JSCS things
 this will not fix.
 
@@ -131,8 +132,8 @@ to manually set it.
 ## Add JSCS Shortcut
 
 Open Settings and select Keymap. Search for JSCS. Then select the Fix JSCS
-Problems and push the edit (green pencil) button. I set mine to <kbd>opt</kbd> +
-<kbd>cmd</kbd> + <kbd>S</kbd> which was unused, but feel free to set it to
+Problems and push the edit (green pencil) button. I set mine to opt +
+cmd + S which was unused, but feel free to set it to
 something else that makes sense to you and/or your team.
 
 ![Keymap JSCS Fix shortcut](https://i.imgur.com/DvfLmsi.png)

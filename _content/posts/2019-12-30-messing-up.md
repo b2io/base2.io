@@ -60,7 +60,7 @@ Since fixing mistakes is such a process, I’ve since adapted my working style t
 
 _Can you mess up literally everything? Even a commit message?? I can._
 
-I’ve been in the situation where I’ve typed some commit message like WIP: fix <wrong component name> . Not the end of the world, but certainly embarrassing.
+I’ve been in the situation where I’ve typed some commit message like `WIP: fix <wrong component name>` . Not the end of the world, but certainly embarrassing.
 
 If this happened to be your last commit message, in your console type
 `git commit --amend`

@@ -1,65 +1,79 @@
 const path = require('path');
 
-const postTemplate = path.resolve('src/templates/post.jsx');
-const jobTemplate = path.resolve('src/templates/job.jsx');
+const postTemplate = path.resolve('./src/templates/post.jsx');
+const caseStudyTemplate = path.resolve('./src/templates/caseStudy.jsx');
+const jobTemplate = path.resolve('./src/templates/job.jsx');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(`
-        query GatsbyNodeQuery {
-          jobs: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/_content/jobs/" } }
-          ) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  path
-                }
-              }
-            }
-          }
-          posts: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/_content/posts/" } }
-          ) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  path
-                }
-              }
+  return graphql(`
+    query GatsbyNodeQuery {
+      caseStudies: allMdx(
+        filter: { fileAbsolutePath: { regex: "/_content/caseStudies/" } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              path
             }
           }
         }
-      `).then(result => {
-        if (result.errors) return reject(result.errors);
+      }
+      jobs: allMdx(filter: { fileAbsolutePath: { regex: "/_content/jobs/" } }) {
+        edges {
+          node {
+            id
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+      posts: allMdx(
+        filter: { fileAbsolutePath: { regex: "/_content/posts/" } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              path
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) throw result.errors;
 
-        result.data.posts.edges
-          .filter(e => !!e.node.frontmatter.path)
-          .map(({ node }) =>
-            createPage({
-              component: postTemplate,
-              context: { id: node.id },
-              path: node.frontmatter.path,
-            })
-          );
+    result.data.posts.edges.forEach(({ node: post }) => {
+      if (!post.frontmatter.path) return;
+      createPage({
+        component: postTemplate,
+        context: { id: post.id },
+        path: post.frontmatter.path,
+      });
+    });
 
-        result.data.jobs.edges
-          .filter(e => !!e.node.frontmatter.path)
-          .map(({ node }) =>
-            createPage({
-              component: jobTemplate,
-              context: { id: node.id },
-              path: `jobs/${node.frontmatter.path}`,
-            })
-          );
+    result.data.caseStudies.edges.forEach(({ node: client }) => {
+      if (!client.frontmatter.path) return;
+      createPage({
+        component: caseStudyTemplate,
+        context: { id: client.id },
+        path: `case-studies/${client.frontmatter.path}`,
+      });
+    });
 
-        return resolve();
-      })
-    );
+    result.data.jobs.edges.forEach(({ node: job }) => {
+      if (!job.frontmatter.path) return;
+      createPage({
+        component: jobTemplate,
+        context: { id: job.id },
+        path: `jobs/${job.frontmatter.path}`,
+      });
+    });
+
+    return result;
   });
 };

@@ -51,12 +51,13 @@ export default mapProps(mapPropsToProps)(JobTemplate);
 
 export const pageQuery = graphql`
   query JobTemplateQuery($id: String!) {
-    job: markdownRemark(id: { eq: $id }) {
+    job: mdx(id: { eq: $id }) {
       frontmatter {
         description
         path
         position
       }
+      body
       internal {
         content
       }

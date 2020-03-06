@@ -1,8 +1,9 @@
 ---
 title: Regex - Replace with Groups
 author: tborres
-date: "2015-05-13T04:00:00.000Z"
-path: "/2015/05/13/regex-replace-with-groups"
+date: '2015-05-13T04:00:00.000Z'
+path: '/2015/05/13/regex-replace-with-groups'
+image: 'https://i.imgur.com/MAzCFjd.jpg'
 ---
 
 I was recently confronted with a situation that required me to search and

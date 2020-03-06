@@ -31,7 +31,45 @@ Honestly, though, aliases are a great way to make Git on the command line
 manageable. Here is the global `.gitconfig` file that contains the aliases that
 we use:
 
-<script src="http://gist-it.appspot.com/https://github.com/b2io/development-standards/blob/master/source-control/.gitconfig"></script>
+```
+[core]
+  autocrlf = false
+  excludesfile = ~/.gitignore
+[push]
+  default = simple
+[alias]
+  ### MOST COMMON
+
+  aa = add . # Stage all changes
+  amend = commit --amend -C HEAD # Amend the previous commit message
+  ba = branch --all # Show all local and remote branches
+  ci = commit # Commit, which will open an editor for the commit message
+  cm = commit -m # Commit with inline message
+  cob = checkout -b # Create new branch and checkout
+  cot = checkout -t # Create remote branch and track locally
+  d = branch -D # Hard delete branch (whether it has unpushed changes or not)
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cn)%Creset' --abbrev-commit --date=relative # More succinct log
+  puff = pull --ff --ff-only # Instead of `pull`. Avoids creating a merge branch on `pull`
+  s = status # Status
+  st = status # Status
+
+  ### Others
+
+  br = branch # Show all local branches
+  co = checkout # Checkout
+  dc = diff --cached # List changes with cached remote
+  hist = log --graph --pretty=format:'%h %ad | %s%d [%an]' --date=short # Commit history with dates
+  last = log -1 HEAD # Display log for last commit
+  unstage = reset HEAD -- # Unstages changes
+[fetch]
+  prune = true
+[mergetool]
+  keepBackup = false
+[branch "master"]
+  mergeoptions = --no-ff # ensures that all merges into master create a merge commit
+#[includeIf "gitdir:~/workspace/differentAccountDirectory/"] # load .gitconfig in a subdirectory
+#  path = ~/workspace/differentAccountDirectory/.gitconfig
+```
 
 ## Ignore some of the things
 
@@ -50,4 +88,61 @@ To create a global ignore file simply add `excludesfile = ~/.gitignore` to the
 `.gitignore` file as a peer to the `.gitconfig`. Here is the ignore file that we
 recommend:
 
-<script src="http://gist-it.appspot.com/https://github.com/b2io/development-standards/blob/master/source-control/.gitignore"></script>
+```
+# Merge files
+*.orig
+
+# Office temporary files.
+~$*
+
+# NPM debugging log files.
+npm-debug.log
+node_modules
+
+# JetBrains editor files.
+/**/.idea
+
+# Visual Studio
+## Editor files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*/**/.vs/
+.vscode/
+
+## ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+## MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## NuGet Packages
+*.nupkg
+### The packages folder can be ignored because of Package Restore
+**/packages/*
+### except build/, which is used as an MSBuild target.
+!**/packages/build/
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# js files
+tsconfig.json
+```

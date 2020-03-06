@@ -104,7 +104,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    posts: allMarkdownRemark(
+    posts: allMdx(
       sort: { fields: [fileAbsolutePath], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "/_content/posts/" }
