@@ -138,7 +138,7 @@ function Hero() {
         <HeroHeading>
           <BaseTwoLogoText id="hero-logo" />
         </HeroHeading>
-        <HeroTagline> Our mission is to solve problems that matter. We believe that best outcomes start on a solid foundation: open, honest, and equitable partnerships. Together we make exceptional the standard. </HeroTagline>
+        <HeroTagline>Our mission is to solve problems that matter. We believe that best outcomes start on a solid foundation: open, honest, and equitable partnerships. Together we make exceptional the standard.</HeroTagline>
         <ScrollLink target={scroll.target} title={scroll.title}>
           <SatelliteIndicator
             alt="Arrows pointing downward"
