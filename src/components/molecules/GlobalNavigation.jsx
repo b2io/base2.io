@@ -93,6 +93,11 @@ const NavItem = styled(LI)`
 
   ${mediaQuery.smedium`
     border: none;
+    font-size: 1.25em;
+  `};
+
+  ${mediaQuery.medium`
+    font-size: 1.5em;
   `};
 `;
 

@@ -2,25 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { ContactForm, ContactHeader, ContactInformation } from '../organisms';
 import { Section } from '../atoms';
-import { mediaQuery, themed, webpBackground } from '../../util/style';
-
-const Wrapper = styled(Section)`
-  background: center bottom / contain no-repeat;
-  display: block;
-  padding-bottom: 45vw;
-  position: relative;
-  overflow-x: hidden;
-
-  ${webpBackground('img/backgrounds/moon.jpg', 'img/backgrounds/moon.webp')};
-
-  ${mediaQuery.large`
-    padding-bottom: 28em;
-  `};
-`;
+import { mediaQuery, themed } from '../../util/style';
 
 const ContactContent = styled.div`
+  padding-bottom: 7em;
   padding-top: ${themed('navHeight.value')};
   position: relative;
+
+  * {
+    z-index: ${themed('zindex.content')};
+  }
 
   ${mediaQuery.medium`
     align-items: center;
@@ -32,13 +23,13 @@ const ContactContent = styled.div`
 
 function ContactUs() {
   return (
-    <Wrapper>
+    <Section>
       <ContactHeader />
       <ContactContent id="contact-us">
         <ContactForm />
         <ContactInformation />
       </ContactContent>
-    </Wrapper>
+    </Section>
   );
 }
 

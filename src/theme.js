@@ -64,10 +64,11 @@ function makeTheme(color) {
   };
 
   const zindex = {
-    overlay: '3',
-    dropdown: '2',
-    content: '1',
-    base: '0',
+    overlay: '4',
+    dropdown: '3',
+    content: '2',
+    outerSpace: '1',
+    background: '0',
   };
 
   const typography = {
@@ -89,22 +90,23 @@ function makeTheme(color) {
 
   const button = {
     default: css`
-      background-color: ${color.black};
+      background-color: ${props => props.purple ? color.purple : color.black};
       background-image: linear-gradient(${color.white}, ${color.spaceBlue}),
         linear-gradient(${color.white}, ${color.spaceBlue});
       background-size: 1px 100%;
       background-position: 0 0, 100% 0;
       background-repeat: no-repeat;
       border-style: solid;
-      border-width: 1px 0;
+      border-width: ${props => props.purple ? '1px 1px 1px 0' : '1px 0' };
       border-color: ${color.white} transparent ${color.spaceBlue};
       box-shadow: 0 0 ${em('10px', '24px')} ${color.spaceBlue};
-      color: ${color.spaceBlue};
+      color: ${props => props.purple ? color.white : color.spaceBlue};
       cursor: pointer;
       font-size: ${em('24px', '16px')};
       line-height: 1;
       overflow: hidden;
       padding: ${em('16px', '24px')};
+      text-decoration: none;
       text-transform: uppercase;
 
       &:focus,

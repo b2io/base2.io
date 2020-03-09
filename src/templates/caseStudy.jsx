@@ -12,6 +12,7 @@ import { MDXProvider } from '@mdx-js/react';
 import {
   ClientHeader,
   CaseStudyAside,
+  CaseStudyFooter,
   Main,
   GlobalNavigation,
   P,
@@ -25,9 +26,10 @@ const CaseStudy = styled(Section)`
   flex-direction: column-reverse;
   font-size: ${rem('18px')};
   font-weight: 400;
-  line-height: 1.5;
   justify-content: center;
+  line-height: 1.5;
   margin: 0 auto;
+  padding-bottom: 3rem;
   padding-top: ${em('36px', '18px')};
 
   img {
@@ -129,6 +131,7 @@ function CaseStudyTemplate({ caseStudy }) {
             </MDXProvider>
           </CaseStudyContent>
         </CaseStudy>
+        <CaseStudyFooter />
       </Main>
     </ThemeProvider>
   );

@@ -14,21 +14,7 @@ import {
   Technologies,
 } from '../components';
 import { toNodesWithImage } from '../util/graphql';
-import { mediaQuery } from '../util/style';
-
-// eslint-disable-next-line no-unused-expressions
-injectGlobal`
-  * {
-    box-sizing: border-box;
-  }
-
-  body,
-  html {
-    ${theme.font.sansSerif};
-    margin: 0;
-    padding: 0;
-  }
-`;
+import Footer from '../components/molecules/Footer';
 
 function IndexPage({ clients, services, technologies, team }) {
   return (
@@ -44,6 +30,7 @@ function IndexPage({ clients, services, technologies, team }) {
       <Clients clients={clients} />
       <Team team={sortBy(team, ['lastName'])} />
       <ContactUs />
+      <Footer />
     </Main>
   );
 }
