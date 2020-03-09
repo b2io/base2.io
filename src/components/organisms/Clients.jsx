@@ -33,7 +33,7 @@ const Wrapper = styled(Section)`
     left: 0;
     position: absolute;
     width: 100%;
-    z-index: ${themed('zindex.base')};
+    z-index: ${themed('zindex.outerSpace')};
   }
 `;
 

@@ -7,6 +7,7 @@ const Main = styled.main`
   display: block;
   overflow: hidden;
   position: relative;
+  z-index: ${themed('zindex.background')};
 `;
 
 export default Main;
