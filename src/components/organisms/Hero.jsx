@@ -80,7 +80,7 @@ const HeroTagline = styled(P)`
   font-size: 1.15em;
   font-style: italic;
   font-weight: 100;
-  margin: 0 auto 0.5em;
+  margin: 2em auto;
   max-width: 80vw;
   text-shadow: 1px 1px 4px ${themed('color.background')};
   width: 750px;
