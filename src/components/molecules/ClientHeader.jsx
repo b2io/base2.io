@@ -39,7 +39,6 @@ const ClientHeaderContainer = styled(Header)`
   ${mediaQuery.xlarge`
     background-image: url('/img/backgrounds/caseStudy/b2-case-study-background-2000.png');
   `};
-
 `;
 
 const  ClientHeaderContent = styled.div`

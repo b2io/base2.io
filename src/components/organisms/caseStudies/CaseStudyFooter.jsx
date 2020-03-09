@@ -17,9 +17,9 @@ const LinkWrapper = styled(GatsbyLink)`
   margin: 0 auto 10em;
   text-decoration: none;
   width: 328px;
-  
+
   * {
-    z-index: ${themed('zindex.content')}
+    z-index: ${themed('zindex.content')};
   }
 `
 
