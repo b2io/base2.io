@@ -232,18 +232,15 @@ const ContactCallToAction = styled(CallToAction)`
 `;
 
 class GlobalNavigation extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    windowWidth: PropTypes.number.isRequired,
-  };
-
-  state = {
-    isOpen: false,
+  constructor() {
+    super()
+    this.state = {
+      isOpen: false,
+    }
   };
 
   handleClick = () => {
-    this.setState({ isOpen: !this.state.isOpen });
+    this.setState(({isOpen}) => ({ isOpen: !isOpen }));
   };
 
   handleLinkClick = () => {
@@ -251,11 +248,13 @@ class GlobalNavigation extends React.Component {
   };
 
   render() {
+    const { isOpen } = this.state;
+    const { windowWidth } = this.props;
+
     return (
       <NavBar
         className={
-          this.props.windowWidth <= MOBILE_NAVIGATION_BREAKPOINT &&
-          this.state.isOpen
+          windowWidth <= MOBILE_NAVIGATION_BREAKPOINT && isOpen
             ? 'menu-open'
             : 'menu-closed'
         }
@@ -325,6 +324,12 @@ class GlobalNavigation extends React.Component {
     );
   }
 }
+
+GlobalNavigation.defaultProps = {};
+
+GlobalNavigation.propTypes = {
+  windowWidth: PropTypes.number.isRequired,
+};
 
 export default (typeof window !== 'undefined'
   ? windowSize(GlobalNavigation)

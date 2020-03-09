@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { em } from 'polished';
 
 import { mediaQuery, themed } from '../../util/style';
-import { Header, Img, H1 } from '../../components';
+import { Header, Img, H1 } from "..";
 
 const BGAspectRatio = '2.65';
 

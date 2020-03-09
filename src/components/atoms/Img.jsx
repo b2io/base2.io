@@ -49,6 +49,7 @@ Img.propTypes = {
     srcWebp: PropTypes.string,
   }),
   sizes: PropTypes.shape({
+    sizes: PropTypes.string,
     src: PropTypes.string.isRequired,
     srcSet: PropTypes.string.isRequired,
 

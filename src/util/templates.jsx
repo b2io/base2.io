@@ -4,7 +4,7 @@ import { em, rem } from 'polished';
 import remark from 'remark';
 import remarkReact from 'remark-react';
 import styled from 'styled-components';
-import { mediaQuery } from '../util/style';
+import { mediaQuery } from "./style";
 
 import {
   A,
