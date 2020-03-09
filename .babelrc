@@ -20,6 +20,7 @@
     [
       "@babel/preset-env",
       {
+        "corejs": "^2.6.11",
         "loose": true,
         "modules": false,
         "useBuiltIns": "usage",
