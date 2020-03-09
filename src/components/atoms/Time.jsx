@@ -2,23 +2,22 @@ import { DateTime } from 'luxon';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-class Time extends React.Component {
-  static defaultProps = {
-    format: DateTime.DATE_HUGE,
-  };
+function Time({
+  format,
+  iso
+}) {
+  const formattedDateTime = DateTime.fromISO(iso).toLocaleString(format);
 
-  static propTypes = {
-    iso: PropTypes.string.isRequired,
-
-    format: PropTypes.shape({}),
-  };
-
-  render() {
-    const { format, iso } = this.props;
-    const formattedDateTime = DateTime.fromISO(iso).toLocaleString(format);
-
-    return <time dateTime={iso}>{formattedDateTime}</time>;
-  }
+  return <time dateTime={iso}>{formattedDateTime}</time>;
 }
+
+Time.defaultProps = {
+  format: DateTime.DATE_HUGE,
+};
+
+Time.propTypes = {
+  format: PropTypes.shape({}),
+  iso: PropTypes.string.isRequired,
+};
 
 export default Time;
