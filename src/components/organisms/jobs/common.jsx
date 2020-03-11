@@ -61,7 +61,8 @@ const LI = styled.li`
 
 const P = styled.p`
   ${text};
-  &:li {
+
+  & li {
     margin: 0;
   }
 `;

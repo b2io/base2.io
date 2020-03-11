@@ -1,17 +1,16 @@
+import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { em, rem } from 'polished';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { MDXProvider } from '@mdx-js/react';
-import { defaultComponentMap } from '../util/templates';
-import { mediaQuery } from '../util/style';
 import { BlogHeader, GlobalNavigation, Main, Section } from '../components';
-import { toNodes } from '../util/graphql';
 import { lightTheme } from '../theme';
-import reactWindowSize from 'react-window-size';
+import { toNodes } from '../util/graphql';
+import { mediaQuery } from '../util/style';
+import { defaultComponentMap } from '../util/templates';
 
 const PostContent = styled(Section)`
   font-size: ${rem('18px')};

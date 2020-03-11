@@ -32,20 +32,6 @@ const ListItem = styled(LI)`
   position: relative;
   vertical-align: top;
 
-  &:nth-of-type(even) {
-    flex-direction: row-reverse;
-
-    p {
-      margin-right: 5%;
-      text-align: right;
-    }
-
-    &::after {
-      left: auto;
-      right: 0;
-    }
-  }
-
   ${mediaQuery.medium`
     flex-direction: column !important;
     margin: 0 5% 3em;
@@ -74,6 +60,20 @@ const ListItem = styled(LI)`
       height: calc(${imageSize.large} / 3);
       top: calc(${imageSize.large} / 2.75);
     `};
+  }
+
+  &:nth-of-type(even) {
+    flex-direction: row-reverse;
+
+    p {
+      margin-right: 5%;
+      text-align: right;
+    }
+
+    &::after {
+      left: auto;
+      right: 0;
+    }
   }
 
   > div {

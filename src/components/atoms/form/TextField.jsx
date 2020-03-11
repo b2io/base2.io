@@ -11,49 +11,38 @@ const stateUpdateFromValue = ({ value }) => ({ value, isDirty: !!value });
 const floatLabel = ({ type }) => type === 'file';
 
 class TextField extends React.Component {
-  static defaultProps = {
-    id: undefined,
-    multiline: false,
-    onBlur: noop,
-    onChange: noop,
-    onFocus: noop,
-    value: '',
-  };
-
-  static propTypes = {
-    label: PropTypes.node.isRequired,
-    id: PropTypes.string,
-    multiline: PropTypes.bool,
-    onBlur: PropTypes.func,
-    onChange: PropTypes.func,
-    onFocus: PropTypes.func,
-    value: PropTypes.string,
-  };
-
+  // eslint-disable-next-line react/state-in-constructor
   state = {
     ...stateUpdateFromValue(this.props),
     floatLabel: floatLabel(this.props),
     isFocused: false,
-  };
+  }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState(stateUpdateFromValue(nextProps));
   }
 
   handleBlur = event => {
-    this.props.onBlur(event);
+    const { onBlur } = this.props;
+
+    onBlur(event);
     this.setState({ isFocused: false });
   };
 
   handleChange = event => {
+    const { onChange } = this.props;
+
     this.setState(
       stateUpdateFromValue(event.target),
-      this.props.onChange(event),
+      onChange(event),
     );
   };
 
   handleFocus = event => {
-    this.props.onFocus(event);
+    const { onFocus } = this.props;
+
+    onFocus(event);
     this.setState({ isFocused: true });
   };
 
@@ -78,6 +67,25 @@ class TextField extends React.Component {
     );
   }
 }
+
+TextField.defaultProps = {
+  id: undefined,
+  multiline: false,
+  onBlur: noop,
+  onChange: noop,
+  onFocus: noop,
+  value: '',
+};
+
+TextField.propTypes = {
+  label: PropTypes.node.isRequired,
+  id: PropTypes.string,
+  multiline: PropTypes.bool,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  value: PropTypes.string,
+};
 
 function TextAreaField(props) {
   return <TextField {...props} input={Textarea} />;

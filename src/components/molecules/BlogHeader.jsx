@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { cssEvery, mediaQuery, themed } from '../../util/style';
-import { Header, Time } from '../../components';
+import { Header, Time } from '../atoms';
 
 const BlogHeaderWrapper = styled(Header)`
   display: flex;
