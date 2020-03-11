@@ -233,14 +233,14 @@ const ContactCallToAction = styled(CallToAction)`
 
 class GlobalNavigation extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       isOpen: false,
-    }
-  };
+    };
+  }
 
   handleClick = () => {
-    this.setState(({isOpen}) => ({ isOpen: !isOpen }));
+    this.setState(({ isOpen }) => ({ isOpen: !isOpen }));
   };
 
   handleLinkClick = () => {
