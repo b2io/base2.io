@@ -13,20 +13,20 @@ const Heading = styled.h1`
   text-align: left;
 
   ${mediaQuery.smedium`
-    margin-left: 120px;
     font-size: 42px;
     line-height: 48px;
+    margin-left: 120px;
   `};
 
   ${mediaQuery.large`
-    margin-left: 200px;
     font-size: 72px;
     line-height: 78px;
+    margin-left: 200px;
   `}
 
   > strong {
     color: ${themed('color.textAccent')};
-    font-weight: inherit
+    font-weight: inherit;
   }
 `;
 
@@ -38,15 +38,15 @@ const SubHeading = styled.p`
   text-align: left;
 
   ${mediaQuery.smedium`
-    margin-left: 120px;
     font-size: 26px;
     line-height: 28px;
+    margin-left: 120px;
   `};
 
   ${mediaQuery.large`
-    margin-left: 200px;
     font-size: 36px;
     line-height: 39px;
+    margin-left: 200px;
   `}
 
   > span {
@@ -70,14 +70,23 @@ const AbductionImage = styled.img`
     top: 50vw;
     width: 418px;
   `}
-`
+`;
 
 export default () => (
   <Main>
     <GlobalNavigation />
-    <HeroHeader as='main'>
-      <Heading>Well, <strong>that</strong> was unexpected!</Heading>
-      <SubHeading><span>Our apologies, this page</span><span>is currently... uh... missing.</span></SubHeading>
+    <HeroHeader as="main">
+      <Heading>
+        Well, 
+        {' '}
+        <strong>that</strong>
+        {' '}
+        was unexpected!
+      </Heading>
+      <SubHeading>
+        <span>Our apologies, this page</span>
+        <span>is currently... uh... missing.</span>
+      </SubHeading>
       <AbductionImage src="img/cow-abduction.png" alt="" />
     </HeroHeader>
   </Main>
