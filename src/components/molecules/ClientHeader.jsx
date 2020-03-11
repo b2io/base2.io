@@ -4,15 +4,14 @@ import PropTypes from 'prop-types';
 import { em } from 'polished';
 
 import { mediaQuery, themed } from '../../util/style';
-import { Header, Img, H1 } from "..";
+import { Header, Img, H1 } from '../atoms';
 
 const BGAspectRatio = '2.65';
 
 const ClientHeaderContainer = styled(Header)`
   align-items: center;
   background-color: ${themed('color.black')};
-  background-image:
-    url('/img/backgrounds/space-fog-purple.png'),
+  background-image: url('/img/backgrounds/space-fog-purple.png'),
     url('/img/backgrounds/star-field.png');
   background-position: center;
   display: flex;
@@ -41,7 +40,7 @@ const ClientHeaderContainer = styled(Header)`
   `};
 `;
 
-const  ClientHeaderContent = styled.div`
+const ClientHeaderContent = styled.div`
   align-items: center;
   display: flex;
   flex: 1 1 100%;
@@ -58,7 +57,7 @@ const  ClientHeaderContent = styled.div`
   ${mediaQuery.large`
     flex: 3 1 100%;
   `};
-`
+`;
 
 const BaseTwoLogoContainer = styled.div`
   display: none;
@@ -68,7 +67,7 @@ const BaseTwoLogoContainer = styled.div`
   ${mediaQuery.small`
     display: block;
   `};
-`
+`;
 
 const ClientLogoContainer = styled.div`
   display: none;
@@ -78,7 +77,7 @@ const ClientLogoContainer = styled.div`
   ${mediaQuery.small`
     display: block;
   `};
-`
+`;
 
 const Image = styled(Img)`
   display: block;
@@ -98,7 +97,7 @@ const ProjectTitle = styled(H1)`
   `};
 `;
 
-function ClientHeader (props) {
+function ClientHeader(props) {
   const { image, project, name } = props;
   return (
     <ClientHeaderContainer>
@@ -109,9 +108,7 @@ function ClientHeader (props) {
         <BaseTwoLogoContainer>
           <Image src="/img/logos/b2-logo-with-text.svg" alt="Base Two" />
         </BaseTwoLogoContainer>
-        <ProjectTitle>
-          {project}
-        </ProjectTitle>
+        <ProjectTitle>{project}</ProjectTitle>
       </ClientHeaderContent>
     </ClientHeaderContainer>
   );

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { cssEvery, mediaQuery, themed } from '../../util/style';
-import { Header } from "..";
+import { Header } from '../atoms';
 
 const HeaderWrapper = styled(Header)`
   display: flex;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ContactForm, ContactHeader, ContactInformation } from ".";
+import { ContactForm, ContactHeader, ContactInformation } from './contact';
 import { Section } from '../atoms';
 import { mediaQuery, themed } from '../../util/style';
 

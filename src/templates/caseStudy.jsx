@@ -6,12 +6,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
-import { CaseStudyAside, CaseStudyFooter, ClientHeader, GlobalNavigation, Main, Section } from '../components';
+import {
+  CaseStudyAside,
+  CaseStudyFooter,
+  ClientHeader,
+  GlobalNavigation,
+  Main,
+  Section,
+} from '../components';
 import { lightTheme } from '../theme';
 import { toNodesWithImage } from '../util/graphql';
 import { mediaQuery } from '../util/style';
 import { defaultComponentMap } from '../util/templates';
-
 
 const CaseStudy = styled(Section)`
   display: flex;
@@ -66,9 +72,7 @@ function CaseStudyTemplate({ caseStudy }) {
           />
           <CaseStudyContent {...caseStudy}>
             <MDXProvider components={defaultComponentMap}>
-              <MDXRenderer>
-                {caseStudy.body}
-              </MDXRenderer>
+              <MDXRenderer>{caseStudy.body}</MDXRenderer>
             </MDXProvider>
           </CaseStudyContent>
         </CaseStudy>

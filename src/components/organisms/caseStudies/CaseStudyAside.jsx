@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { em, rem } from 'polished';
-import { A, Img, LI, P, UL } from '../..';
+import { A, Img, LI, P, UL } from '../../atoms';
 import { mediaQuery } from '../../../util/style';
 
 const CaseStudyAsideWrapper = styled.aside`
