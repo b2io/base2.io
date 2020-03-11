@@ -36,7 +36,7 @@ PostgreSQL database. You can do that by dropping into the PSQL console and
 running: `CREATE EXTENSION fuzzystrmatch;`. Now in a query you can run something
 a query to get some results:
 
-```
+```sql
 SELECT *, difference(name, 'hazienda') AS similarity FROM brands ORDER BY similarity DESC, name LIMIT 10;
 ```
 
@@ -55,7 +55,7 @@ That sounds promising, let's give that a try. The Levenshtein function comes
 packaged in the `fuzzystrmatch` module with Soundex, so no need to go back into
 the PSQL console, instead we'll start with a query:
 
-```
+```sql
 SELECT *, levenshtein(name, 'hazienda') AS distance FROM brands ORDER BY distance ASC, name LIMIT 10;
 ```
 
@@ -83,7 +83,7 @@ we get. Similar to the other two algorithms, we'll have to add the module to
 PostgreSQL first by running `CREATE EXTENSION pg_trgm;` in the PSQL console.
 From there, we can hop back to the query interface:
 
-```
+```sql
 SELECT *, similarity(name, 'hazienda') AS similarity FROM brands ORDER BY similarity DESC, name LIMIT 10;
 ```
 
@@ -125,7 +125,7 @@ In the end, we decided to roll our own. Following one of the
 [wonderful model refactoring patterns from Code Climate](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
 (#4), we extracted it as a query object:
 
-```
+```ruby
 # app/queries/similar_brands_query.rb
 class SimilarBrandsQuery
   attr_reader :relation
@@ -140,7 +140,7 @@ class SimilarBrandsQuery
 end
 ```
 
-```
+```ruby
 # app/controllers/api/v1/brands_controller.rb
 module Api
   module V1

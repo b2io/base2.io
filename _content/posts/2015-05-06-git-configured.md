@@ -31,7 +31,7 @@ Honestly, though, aliases are a great way to make Git on the command line
 manageable. Here is the global `.gitconfig` file that contains the aliases that
 we use:
 
-```
+```ini
 [core]
   autocrlf = false
   excludesfile = ~/.gitignore
@@ -88,7 +88,7 @@ To create a global ignore file simply add `excludesfile = ~/.gitignore` to the
 `.gitignore` file as a peer to the `.gitconfig`. Here is the ignore file that we
 recommend:
 
-```
+```plaintext
 # Merge files
 *.orig
 

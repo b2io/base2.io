@@ -37,7 +37,7 @@ in a _grid_ pattern.
 To achieve that kind of layout is ridiculously easy with CSS Grid. It only
 requires the following three lines of code, placed on a parent element:
 
-```
+```css
 display: grid;
 grid-gap: 1vw;
 grid-template: repeat(5, 1fr) / repeat(5, 1fr);
@@ -92,7 +92,7 @@ this...
 
 ...I used the following CSS:
 
-```
+```css
 grid-template: 1fr 1fr 4fr 1fr 1fr / 1fr 1fr 2fr 1fr 1fr;
 ```
 
@@ -114,7 +114,7 @@ extend. For example, in the following snippet, I'm telling this element to
 exist in the fourth column and span from the beginning of row three to the end
 of row five.
 
-```
+```css
 .four {
   grid-column: 4;
   grid-row: 3 / span 2;

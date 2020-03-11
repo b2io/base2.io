@@ -35,7 +35,6 @@ module.exports = {
             wrapperStyle: 'margin-bottom: 1rem',
           },
         },
-        'gatsby-remark-prismjs',
       ],
     },
     'gatsby-transformer-json',

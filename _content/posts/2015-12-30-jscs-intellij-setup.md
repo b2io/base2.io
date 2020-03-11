@@ -17,7 +17,7 @@ I'm going to show you how to get it setup with
 
 First we need to install JSCS using [nodejs](https://nodejs.org/en/).
 
-```
+```shell
 npm install -g jscs
 ```
 
@@ -28,7 +28,7 @@ to use. To keep things simple we're just going to use the
 [AirBnB preset](https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json).
 Add this to your .jscsrc file:
 
-```
+```js
 {
   "preset": "airbnb"
 }
@@ -38,7 +38,7 @@ From here you can setup your build to run your code against these settings. We
 use [gulp](http://gulpjs.com/) so I'll just show a quick example on how to set
 that up.
 
-```
+```js
 var gulp = require('gulp');
 var jscs = require('gulp-jscs');
 
@@ -111,7 +111,7 @@ this will not fix.
 JSCS has the ability to fix a lot of those issues though and you can run the
 command line
 
-```
+```js
 jscs /my/project/root --fix
 jscs myfilename.js --fix
 ```

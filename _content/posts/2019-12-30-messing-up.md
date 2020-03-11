@@ -25,7 +25,7 @@ You’re working along nicely when all of a sudden you wake up and realize that 
 
 The easiest tactic that I’ve found is to merge the remote master into your working branch. Git steps are as follows:
 
-```
+```shell
 git checkout master
 git pull
 git checkout <yourbranch>
