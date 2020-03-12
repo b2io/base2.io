@@ -12,11 +12,7 @@ const HighlightedPre = props => {
     <Highlight
       {...defaultProps}
       code={props.children.props.children}
-      language={
-        matches && matches.groups && matches.groups.lang
-          ? matches.groups.lang
-          : ''
-      }
+      language={matches?.groups?.lang ?? ''}
       theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => {
