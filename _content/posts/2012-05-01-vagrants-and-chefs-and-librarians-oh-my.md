@@ -36,7 +36,7 @@ Vagrant is essentially a command-line wrapper on top of
 suspend, resume, and destroy virtual machines right from your terminal easily.
 Getting started is as easy as:
 
-```
+```bash
 $ vagrant box add lucid32 http://files.vagrantup.com/lucid32.box
 $ vagrant init lucid32
 $ vagrant up
@@ -81,7 +81,7 @@ When you looked at the Vagrant
 you might have noticed the following use of Chef Solo to provision their sample
 box:
 
-```
+```ruby
 Vagrant::Config.run do |config|
   config.vm.box = "lucid32"
 
@@ -108,7 +108,7 @@ called [Librarian](https://github.com/applicationsonline/librarian) that aims to
 solve this exact problem. To setup Librarian for our project we need to run the
 following commands:
 
-```
+```bash
 $ gem install librarian
 $ echo cookbooks >> .gitignore
 $ echo tmp >> .gitignore
@@ -131,7 +131,7 @@ Not the most complicated set of requirements, but sufficient for getting this
 project off the ground. Let's take a look at a `Cheffile` that gets us the
 recipes we need:
 
-```
+```ruby
 #!/usr/bin/env ruby
 #^syntax detection
 
@@ -149,7 +149,7 @@ After we've set that, we simply run `librarian-chef install` to have Librarian
 pull down all those cookbooks and install them into our project. Now we just
 need to setup Vagrant to provision our environment:
 
-```
+```ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -186,7 +186,7 @@ cross-contamination from projects. And if you're on Windows now, no more "only
 supported on \*nix" frustrations. Let's take a look at what a new developer
 coming onto the project would need to do to get setup:
 
-```
+```bash
 $ git clone <your_git_repository_url>
 $ cd <repository_name>
 $ librarian-chef install

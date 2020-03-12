@@ -16,7 +16,7 @@ backend when developing and get real data.
 The Burnside Digital blog post suggests including the following script in your
 application's index.html.
 
-```
+```javascript
 'use strict';
  
 angular.module('e2e-mocks', ['ngMockE2E'])
@@ -49,7 +49,7 @@ Karma's end-to-end tests open your application in an iFrame. To conditionally
 inject the mocked $httpBackend, we can check to see if we are in an iFrame and
 only include e2e-mocks if we are.
 
-```
+```javascript
 'use strict';
  
 angular.module('e2e-mocks', ['ngMockE2E'])

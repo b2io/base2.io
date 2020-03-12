@@ -4,7 +4,7 @@ import { em, rem } from 'polished';
 import remark from 'remark';
 import remarkReact from 'remark-react';
 import styled from 'styled-components';
-import { mediaQuery } from "./style";
+import { mediaQuery } from './style';
 
 import {
   A,
@@ -14,10 +14,10 @@ import {
   Em,
   H1,
   H5,
+  HighlightedPre,
   HR,
   LI,
   P,
-  Pre,
   OL,
   Strong,
   UL,
@@ -77,7 +77,7 @@ export const defaultComponentMap = {
   li: LI,
   ol: OL,
   p: P,
-  pre: Pre,
+  pre: HighlightedPre,
   strong: Strong,
   ul: UL,
 };
@@ -97,5 +97,3 @@ const markdown = (raw, componentMapOverrides) => (
 );
 
 export default markdown;
-
-

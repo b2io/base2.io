@@ -27,7 +27,7 @@ There's a nifty utility named `wget` in UNIX that will let you download things
 given a URL. It gives you a nice visual representation of the progress in the
 console using a text-based progress bar that looks like this:
 
-```
+```shell
 vagrant@lucid64:~$ wget https://www.google.com/images/srpr/logo3w.png
 --2012-12-01 04:59:29--  https://www.google.com/images/srpr/logo3w.png
 Resolving www.google.com... 173.194.75.99, 173.194.75.147, 173.194.75.106, ...
@@ -46,13 +46,13 @@ method, which allows you to do some UNIX-style magic in updating what you've
 already printed to the console. The `\r` character will clear the current line
 of the display in the console.
 
-```
+```ruby
 class Genre < ActiveRecord::Base
   attr_accessible :name
 end
 ```
 
-```
+```plaintext
 name
 TV Action & Adventure
 TV Comedies
@@ -75,7 +75,7 @@ Sports Movies
 Thrillers
 ```
 
-```
+```ruby
 require 'csv'
 
 def seed_from_csv(relative_path, label, has_headers = true)
@@ -110,7 +110,7 @@ seed_from_csv("db/seeds/genres.csv", "Genre") { |row| Genre.create!(name: row[0]
 
 Running a `rake db:seed` will now give you live progress updates:
 
-```
+```shell
 vagrant@lucid64:/vagrant$ rake db:seed
 Seeding Genre:
 100.00% [=====================================================================>]

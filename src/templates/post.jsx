@@ -1,4 +1,3 @@
-import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { em, rem } from 'polished';
@@ -6,6 +5,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
+import { MDXProvider } from '@mdx-js/react';
 import { BlogHeader, GlobalNavigation, Main, Section } from '../components';
 import { lightTheme } from '../theme';
 import { toNodes } from '../util/graphql';
@@ -16,7 +16,7 @@ const PostContent = styled(Section)`
   font-size: ${rem('18px')};
   font-weight: 400;
   line-height: 1.5;
-  max-width: 720px;
+  max-width: 920px;
   margin: 0 auto;
   padding-top: ${em('36px', '18px')};
 
@@ -31,27 +31,24 @@ const PostContent = styled(Section)`
 
 function PostTemplate({ author, body, date, title }) {
   return (
-    <ThemeProvider theme={lightTheme}>
-      <Main>
-        <GlobalNavigation />
-        <BlogHeader
-          author={author}
-          img="/img/transmission-constellation.png"
-          imgAlt="Satellite broadcasting into space"
-          date={date}
-          title={title}
-        />
-        
-        <PostContent>
-          <MDXProvider components={defaultComponentMap}>
-            <MDXRenderer>
-              {body}
-            </MDXRenderer>
-          </MDXProvider>
-        </PostContent>
-        
-      </Main>
-    </ThemeProvider>
+    <MDXProvider components={defaultComponentMap}>
+      <ThemeProvider theme={lightTheme}>
+        <Main>
+          <GlobalNavigation />
+          <BlogHeader
+            author={author}
+            img="/img/transmission-constellation.png"
+            imgAlt="Satellite broadcasting into space"
+            date={date}
+            title={title}
+          />
+
+          <PostContent>
+            <MDXRenderer>{body}</MDXRenderer>
+          </PostContent>
+        </Main>
+      </ThemeProvider>
+    </MDXProvider>
   );
 }
 

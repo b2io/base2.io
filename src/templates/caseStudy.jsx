@@ -58,27 +58,27 @@ const CaseStudyContent = styled.article`
 function CaseStudyTemplate({ caseStudy }) {
   const { client, highlights, link, project, technologies } = caseStudy;
   return (
-    <ThemeProvider theme={lightTheme}>
-      <Main>
-        <GlobalNavigation />
-        <ClientHeader {...client} project={project} />
-        <CaseStudy>
-          <CaseStudyAside
-            client={client.name}
-            highlights={highlights}
-            link={link}
-            project={project}
-            technologies={technologies}
-          />
-          <CaseStudyContent {...caseStudy}>
-            <MDXProvider components={defaultComponentMap}>
+    <MDXProvider components={defaultComponentMap}>
+      <ThemeProvider theme={lightTheme}>
+        <Main>
+          <GlobalNavigation />
+          <ClientHeader {...client} project={project} />
+          <CaseStudy>
+            <CaseStudyAside
+              client={client.name}
+              highlights={highlights}
+              link={link}
+              project={project}
+              technologies={technologies}
+            />
+            <CaseStudyContent {...caseStudy}>
               <MDXRenderer>{caseStudy.body}</MDXRenderer>
-            </MDXProvider>
-          </CaseStudyContent>
-        </CaseStudy>
-        <CaseStudyFooter />
-      </Main>
-    </ThemeProvider>
+            </CaseStudyContent>
+          </CaseStudy>
+          <CaseStudyFooter />
+        </Main>
+      </ThemeProvider>
+    </MDXProvider>
   );
 }
 

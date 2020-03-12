@@ -59,7 +59,7 @@ end to end tests, and even removing unused CSS rules) and
 testing and building a new [AngularJS](http://angularjs.org/) with Yeoman is as
 simple as:
 
-```
+```shell
 npm install -g generator-angular  # install generator
 yo angular                        # scaffold out a AngularJS project
 bower install angular-ui          # install a dependency from Bower
@@ -119,20 +119,20 @@ stop trying to recognize my environment and instead let me call the shots? It's
 a simple environment variable. So, if I want Heroku to look for a Ruby/Rails
 application, I would configure it to use the ruby buildpack:
 
-```
+```shell
 heroku config:set BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-ruby
 ```
 
 If, instead, I would like it to run a package.json and install dependencies like
 Compass and Grunt, I would configure it like this:
 
-```
+```shell
 heroku config:set BUILDPACK_URL=https://github.com/stephanmelzer/heroku-buildpack-nodejs-grunt-compass.git
 ```
 
 But this doesn't yet solve my problem. Enter, multi build packs.
 
-```
+```shell
 heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
 cat .buildpacks
 https://github.com/stephanmelzer/heroku-buildpack-nodejs-grunt-compass.git
