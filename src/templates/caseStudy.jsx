@@ -1,3 +1,4 @@
+import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { em, rem } from 'polished';
@@ -5,7 +6,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
-import { MDXProvider } from '@mdx-js/react';
 import {
   CaseStudyAside,
   CaseStudyFooter,
