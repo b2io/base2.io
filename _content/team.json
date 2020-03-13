@@ -95,5 +95,29 @@
     "lastName": "You",
     "title": "Apply!",
     "url": "/jobs"
+  },
+  {
+    "active": false,
+    "id": "csteinert",
+    "image": "img/team/csteinert.jpg",
+    "name": "Caitlin Steinert",
+    "lastName": "Steinert",
+    "title": "Senior Sofware Engineer"
+  },
+  {
+    "active": false,
+    "id": "jstevens",
+    "image": "img/team/jstevens.jpg",
+    "name": "Jon Stevens",
+    "lastName": "Stevens",
+    "title": "Software Engineer"
+  },
+  {
+    "active": false,
+    "id": "zbrown",
+    "image": "img/team/zbrown.jpg",
+    "name": "Zack Brown",
+    "lastName": "Brown",
+    "title": "Owner //\nSenior Software Engineer"
   }
 ]
