@@ -138,7 +138,7 @@ function ContactHeader() {
       <Earth>
         <source srcSet="img/planet-earth.webp" type="image/webp" />
         <source srcSet="img/planet-earth.jpg" type="image/jpeg" />
-        <img src="img/planet-earth.jpg" alt="Planet Earth" />
+        <img alt="Planet Earth" src="img/planet-earth.jpg" />
       </Earth>
       <LocationTagline>
         Thanks to satellites and the internet, we can work with you wherever you

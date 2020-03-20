@@ -136,7 +136,7 @@ function BlogHeader({ author, large, date, img, imgAlt, title, tagline }) {
           </PostMeta>
         </BlogHeaderInfo>
         <BlogHeaderImageWrapper>
-          <BlogHeaderImage src={img} alt={imgAlt} />
+          <BlogHeaderImage alt={imgAlt} src={img} />
         </BlogHeaderImageWrapper>
       </BlogHeaderInfoWrapper>
     </BlogHeaderWrapper>

@@ -94,8 +94,8 @@ function JobsHeader({ small }) {
   return (
     <StyledHeader>
       <AstronautImg
-        src="/img/jobs/BlueAstronaut.png"
         alt="Blue astronaut reaching out to the reader"
+        src="/img/jobs/BlueAstronaut.png"
       />
       <HeaderContent>
         <BaseTwoJobsLogo />
