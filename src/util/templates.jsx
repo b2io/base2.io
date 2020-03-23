@@ -21,6 +21,7 @@ import {
   OL,
   Strong,
   UL,
+  YouTube,
 } from '../components';
 
 const PostContentH2 = styled.h2`
@@ -80,6 +81,7 @@ export const defaultComponentMap = {
   pre: HighlightedPre,
   strong: Strong,
   ul: UL,
+  YouTube,
 };
 
 const markdownToElement = (md, componentMapOverrides) =>
