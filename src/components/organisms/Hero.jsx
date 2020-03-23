@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  A,
-  BaseTwoLogoText,
-  H1,
-  P
-} from '../atoms';
+import { A, BaseTwoLogoText, H1, P } from '../atoms';
 import { ScrollLink } from '../molecules';
 import { mediaQuery, themed } from '../../util/style';
 import HeroHeader from './HeroHeader';
@@ -21,25 +16,24 @@ const HeroHeading = styled(H1)`
 
 const HeroTagline = styled(P)`
   color: ${themed('color.text')};
-  font-size: 1.15em;
+  font-size: 0.9em;
   font-style: italic;
-  font-weight: 100;
+  font-weight: 200;
   margin: 2em auto;
   max-width: 80vw;
-  text-shadow: 1px 1px 4px ${themed('color.background')};
+  text-shadow: 2px 2px 4px ${themed('color.background')};
   width: 750px;
 
   ${mediaQuery.small`
-    font-size: 1.65rem;
-    margin-top: 0.5em;
+    font-size: 1.35rem;
   `};
 
   ${mediaQuery.medium`
-    font-size: 2.0rem;
+    font-size: 1.5rem;
   `};
 
   ${mediaQuery.large`
-    font-size: 2.25rem;
+    font-size: 1.75rem;
   `};
 `;
 
@@ -82,7 +76,11 @@ function Hero() {
         <HeroHeading>
           <BaseTwoLogoText id="hero-logo" />
         </HeroHeading>
-        <HeroTagline>Our mission is to solve problems that matter. We believe that best outcomes start on a solid foundation: open, honest, and equitable partnerships. Together we make exceptional the standard.</HeroTagline>
+        <HeroTagline>
+          Our mission is to solve problems that matter. We believe that best
+          outcomes start on a solid foundation: open, honest, and equitable
+          partnerships. Together we make exceptional the standard.
+        </HeroTagline>
         <ScrollLink target={scroll.target} title={scroll.title}>
           <SatelliteIndicator
             alt="Arrows pointing downward"
