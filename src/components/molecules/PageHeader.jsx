@@ -114,7 +114,7 @@ function PageHeader({ children, large, img, imgAlt, title, tagline }) {
           </Metadata>
         </HeaderInfo>
         <HeaderImageWrapper>
-          <HeaderImage src={img} alt={imgAlt} />
+          <HeaderImage alt={imgAlt} src={img} />
         </HeaderImageWrapper>
       </InfoWrapper>
     </HeaderWrapper>

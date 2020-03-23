@@ -270,37 +270,37 @@ class GlobalNavigation extends React.Component {
           </LogoToggleContainer>
           <NavList>
             <NavItem>
-              <NavLink to="/#services" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/#services">
                 Services
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#clients" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/#clients">
                 Clients
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/case-studies" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/case-studies">
                 Work
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#team" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/#team">
                 Team
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/jobs" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/jobs">
                 Jobs
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/blog" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/blog">
                 Blog
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#contact-us" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/#contact-us">
                 Contact
               </NavLink>
             </NavItem>
@@ -308,14 +308,14 @@ class GlobalNavigation extends React.Component {
         </MainNavigationContainer>
         <ContactCallToActionContainer>
           <ContactCallToAction
-            href="tel:16143981158"
             className="contact-call--left"
+            href="tel:16143981158"
           >
             614.398.1158
           </ContactCallToAction>
           <ContactCallToAction
-            href="mailto:info@base2.io"
             className="contact-call--right"
+            href="mailto:info@base2.io"
           >
             Email Us
           </ContactCallToAction>

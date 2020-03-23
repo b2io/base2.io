@@ -106,7 +106,7 @@ function ClientHeader(props) {
           <Image {...image} alt={name} />
         </ClientLogoContainer>
         <BaseTwoLogoContainer>
-          <Image src="/img/logos/b2-logo-with-text.svg" alt="Base Two" />
+          <Image alt="Base Two" src="/img/logos/b2-logo-with-text.svg" />
         </BaseTwoLogoContainer>
         <ProjectTitle>{project}</ProjectTitle>
       </ClientHeaderContent>

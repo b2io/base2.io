@@ -58,31 +58,31 @@ function JobForm({ isApprenticeship, position }) {
         method="post"
       >
         <input
-          type="hidden"
           name="redirect_to"
+          type="hidden"
           value="http://base2.io/thanks/"
         />
         <input
-          type="hidden"
           name="job_type"
+          type="hidden"
           value={isApprenticeship ? 'Apprenticeship' : 'Regular Job'}
         />
-        <input type="hidden" name="position" value={position} />
+        <input name="position" type="hidden" value={position} />
         <TextInputField label="Name" name="name" required />
         <TextInputField
           label="Email"
           name="email"
-          type="email"
-          title="your@email.com"
           pattern={emailPattern}
           required
+          title="your@email.com"
+          type="email"
         />
         <TextInputField
           label="Phone Number"
           name="phoneNumber"
-          type="tel"
-          title="Please include country code (if applicable) and area code. Formatting will be ignored"
           pattern={phonePattern}
+          title="Please include country code (if applicable) and area code. Formatting will be ignored"
+          type="tel"
         />
         <TextInputField label="GitHub, CodePen, etc" name="gitHub" />
         <TextInputField label="Website / Portfolio" name="portfolio" />
@@ -90,32 +90,32 @@ function JobForm({ isApprenticeship, position }) {
           <>
             <TextAreaField
               label="What technologies are you most eager to learn about/work with?"
-              name="interestedTechnologies"
               multiline
+              name="interestedTechnologies"
               rows="5"
             />
             <TextAreaField
               label="What non-technical skills do you hope to learn from us?"
-              name="interestedSkills"
               multiline
+              name="interestedSkills"
               rows="5"
             />
             <TextAreaField
               label="What is your ideal learning environment?"
-              name="learningEnvironment"
               multiline
+              name="learningEnvironment"
               rows="5"
             />
             <TextAreaField
               label="What technologies have you been working with lately?"
-              name="recentTechnologies"
               multiline
+              name="recentTechnologies"
               rows="5"
             />
             <TextAreaField
               label="What else would you like us to know about you?"
-              name="aboutYou"
               multiline
+              name="aboutYou"
               rows="5"
             />
           </>
@@ -123,13 +123,12 @@ function JobForm({ isApprenticeship, position }) {
           <>
             <TextAreaField
               label="Experience / Project Highlights"
-              name="experienceHighlight"
               multiline
+              name="experienceHighlight"
               rows="5"
             />
             <TextInputField
               label="Please upload your resume (<1MB)"
-              type="file"
               name="resume"
               onChange={e => {
                 if (
@@ -143,6 +142,7 @@ function JobForm({ isApprenticeship, position }) {
                   e.target.setCustomValidity('');
                 }
               }}
+              type="file"
             />
           </>
         )}
@@ -156,8 +156,8 @@ function JobForm({ isApprenticeship, position }) {
         </>
         <TextAreaField
           label="Any Additional Information"
-          name="anythingElse"
           multiline
+          name="anythingElse"
           rows="5"
         />
         <SubmitButton>Submit</SubmitButton>

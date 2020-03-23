@@ -37,10 +37,10 @@ function BlogIndex({ posts }) {
       <Main>
         <GlobalNavigation />
         <BlogHeader
-          large
           imgAlt="Satellite broadcasting into space"
-          title="Transmissions"
+          large
           tagline="Sending our knowledge and ideas into the universe"
+          title="Transmissions"
         />
         <PostList>
           {posts.map(post => (

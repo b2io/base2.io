@@ -14,10 +14,10 @@ function Html({
     <html lang="en" {...htmlAttributes}>
       <head>
         <meta charSet="utf-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <meta content="ie=edge" httpEquiv="x-ua-compatible" />
         <meta
-          name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          name="viewport"
         />
         <link
           href="/img/apple-touch-icon.png"
@@ -48,9 +48,9 @@ function Html({
       <body {...bodyAttributes}>
         {preBodyComponents}
         <div
-          key="body"
-          id="___gatsby"
           dangerouslySetInnerHTML={{ __html: body }}
+          id="___gatsby"
+          key="body"
         />
         {postBodyComponents}
       </body>

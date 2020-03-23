@@ -37,9 +37,9 @@ function PostTemplate({ author, body, date, title }) {
           <GlobalNavigation />
           <BlogHeader
             author={author}
+            date={date}
             img="/img/transmission-constellation.png"
             imgAlt="Satellite broadcasting into space"
-            date={date}
             title={title}
           />
 

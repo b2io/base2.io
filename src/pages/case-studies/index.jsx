@@ -38,10 +38,10 @@ function CaseStudyIndex({ caseStudies }) {
       <Main>
         <GlobalNavigation />
         <PageHeader
-          title="Our Work"
-          tagline="Collaboration is what we do best"
           img="/img/telescope-constellation.png"
           imgAlt="Telescope constellation pointing toward space"
+          tagline="Collaboration is what we do best"
+          title="Our Work"
         />
         <PostList>
           {caseStudies.map(caseStudy => (

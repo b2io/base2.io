@@ -87,7 +87,7 @@ export default () => (
         <span>Our apologies, this page</span>
         <span>is currently... uh... missing.</span>
       </SubHeading>
-      <AbductionImage src="img/cow-abduction.png" alt="" />
+      <AbductionImage alt="" src="img/cow-abduction.png" />
     </HeroHeader>
   </Main>
 );

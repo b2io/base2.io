@@ -26,7 +26,7 @@ function JobsContent({ jobs }) {
           abroad — to improve processes around software development and deliver
           user-focused products and applications.
         </P>
-        <JobsImage src={teamImage} alt="Our Base Two team" width="1000" />
+        <JobsImage alt="Our Base Two team" src={teamImage} width="1000" />
       </Section>
       <Section narrow>
         <H2>Our culture promotes team work</H2>
@@ -46,8 +46,8 @@ function JobsContent({ jobs }) {
           and creative perspectives to our team.
         </P>
         <JobsImage
-          src={officeCollageImage}
           alt="Our Base Two team"
+          src={officeCollageImage}
           width="1000"
         />
       </Section>
