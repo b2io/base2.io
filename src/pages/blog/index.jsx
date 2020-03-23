@@ -76,6 +76,7 @@ function mapPropsToProps({ data }) {
       author: authorIdToName[frontmatter.author],
       date: frontmatter.date,
       id: frontmatter.path,
+      featureImg: frontmatter.image || undefined,
       path: frontmatter.path,
       title: node.frontmatter.title,
     };
@@ -118,6 +119,7 @@ export const pageQuery = graphql`
           frontmatter {
             author
             date
+            image
             path
             title
           }
