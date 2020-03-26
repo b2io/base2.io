@@ -12,6 +12,36 @@ import { toNodes } from '../util/graphql';
 import { mediaQuery } from '../util/style';
 import { defaultComponentMap } from '../util/templates';
 
+const YouTubeWrapper = styled.div`
+  position: relative;
+  padding-top: 56.25%;
+`;
+
+const YoutubeFrame = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+const YouTube = ({ title, url }) => (
+  <YouTubeWrapper>
+    <YoutubeFrame
+      title={title}
+      src={url}
+      frameBorder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  </YouTubeWrapper>
+);
+
+YouTube.propTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
+
 const PostContent = styled(Section)`
   font-size: ${rem('18px')};
   font-weight: 400;

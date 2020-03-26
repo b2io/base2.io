@@ -14,7 +14,11 @@ excerpt: More Links
 
 ## Talks
 
-- [Super VanJS 2013: Steven Luscher - Developing User Interfaces With Facebook's React](http://www.youtube.com/watch?v=1OeXsL5mr4g)
+- Super VanJS 2013: Steven Luscher - Developing User Interfaces With Facebook's React
+  <YouTube
+    url='https://www.youtube.com/embed/1OeXsL5mr4g'
+    title="Super VanJS 2013: Steven Luscher - Developing User Interfaces With Facebook's React"
+  />
 
 ## Articles
 

@@ -10,6 +10,7 @@ import ScrollLink from './ScrollLink';
 import ServiceList from './ServiceList';
 import TeamList from './TeamList';
 import TechnologiesList from './TechnologiesList';
+import YouTube from './YouTube';
 
 export {
   BlogHeader,
@@ -24,4 +25,5 @@ export {
   ServiceList,
   TeamList,
   TechnologiesList,
+  YouTube,
 };
