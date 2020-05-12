@@ -27,7 +27,7 @@ There's a nifty utility named `wget` in UNIX that will let you download things
 given a URL. It gives you a nice visual representation of the progress in the
 console using a text-based progress bar that looks like this:
 
-```
+```shell
 vagrant@lucid64:~$ wget https://www.google.com/images/srpr/logo3w.png
 --2012-12-01 04:59:29--  https://www.google.com/images/srpr/logo3w.png
 Resolving www.google.com... 173.194.75.99, 173.194.75.147, 173.194.75.106, ...
@@ -46,18 +46,74 @@ method, which allows you to do some UNIX-style magic in updating what you've
 already printed to the console. The `\r` character will clear the current line
 of the display in the console.
 
-<script src="https://gist.github.com/4179185.js?file=genre.rb"></script>
+```ruby
+class Genre < ActiveRecord::Base
+  attr_accessible :name
+end
+```
 
-<script src="https://gist.github.com/4179185.js?file=genres.csv"></script>
+```plaintext
+name
+TV Action & Adventure
+TV Comedies
+TV Dramas
+Reality TV
+Action & Adventure
+Anime
+Children & Family Movies
+Classic Movies
+Comedies
+Documentaries
+Dramas
+Foreign Movies
+Gay & Lesbian Movies
+Horror Movies
+Independent Movies
+Romantic Movies
+Sci-Fi & Fantasy
+Sports Movies
+Thrillers
+```
 
-<script src="https://gist.github.com/4179185.js?file=seeds.rb"></script>
+```ruby
+require 'csv'
+
+def seed_from_csv(relative_path, label, has_headers = true)
+  # Read in the CSV file:
+  CSV.read(Rails.root.join(relative_path), headers: has_headers).tap do |csv|
+    print "Seeding #{label}:\n"
+    
+    # For each row in the CSV:
+    csv.each_with_index do |row, idx|
+      # Do whatever behavior is required to seed.
+      yield row if block_given?
+
+      ratio = (idx + 1).to_f / csv.size
+      per70 = (ratio * 70).round
+
+      filled = per70 < 2 ? 0 : (per70 - 1)
+      unfilled = 70 - per70
+      pad_percentage = ("%.2f" % (ratio * 100)).rjust(6)
+
+      progress = "%s%% [%s>%s]" % [ pad_percentage, ("=" * filled), (" " * unfilled) ]
+
+      # Update the progress bar display for the user.
+      print "\r#{progress}"
+    end
+    print "\n"
+  end
+end
+
+# Seed Genre data from associated CSV file.
+seed_from_csv("db/seeds/genres.csv", "Genre") { |row| Genre.create!(name: row[0]) }
+```
 
 Running a `rake db:seed` will now give you live progress updates:
 
-```
-    vagrant@lucid64:/vagrant$ rake db:seed
-    Seeding Genre:
-    100.00% [=====================================================================>]
+```shell
+vagrant@lucid64:/vagrant$ rake db:seed
+Seeding Genre:
+100.00% [=====================================================================>]
 ```
 
 Ah, much better!

@@ -1,12 +1,12 @@
 [
   {
     "id": "aep",
-    "image": "img/clients/aep-logo-white.png",
-    "name": "AEP"
+    "image": "img/clients/aep.png",
+    "name": "American Electric Power"
   },
   {
     "id": "netjets",
-    "image": "img/clients/netjets-logo-white.png",
+    "image": "img/clients/netjets.png",
     "name": "NetJets"
   },
   {
@@ -16,13 +16,13 @@
   },
   {
     "id": "sherwin-williams",
-    "image": "img/clients/sherwin-williams-logo-white.png",
-    "name": "Sherwin Williams"
+    "image": "img/clients/sherwin-williams.png",
+    "name": "Sherwin-Williams"
   },
   {
     "id": "dnv-gl",
-    "image": "img/clients/dnv-gl-logo-white.png",
-    "name": "DNV GL"
+    "image": "img/clients/dnv-gl.png",
+    "name": "DNV-GL"
   },
   {
     "id": "quest",

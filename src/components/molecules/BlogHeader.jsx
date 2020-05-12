@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { cssEvery, mediaQuery, themed } from '../../util/style';
-import { Header, Time } from '../../components';
+import { Header, Time } from '../atoms';
 
 const BlogHeaderWrapper = styled(Header)`
   display: flex;
@@ -23,6 +23,7 @@ const BlogHeaderInfoWrapper = styled.div`
   font-size: 1rem;
   font-weight: 400;
   margin-top: ${em('48px')};
+  width: 100%;
   max-width: 1300px;
   padding-bottom: ${em('28px')};
   padding-top: ${em('28px')};
@@ -135,7 +136,7 @@ function BlogHeader({ author, large, date, img, imgAlt, title, tagline }) {
           </PostMeta>
         </BlogHeaderInfo>
         <BlogHeaderImageWrapper>
-          <BlogHeaderImage src={img} alt={imgAlt} />
+          <BlogHeaderImage alt={imgAlt} src={img} />
         </BlogHeaderImageWrapper>
       </BlogHeaderInfoWrapper>
     </BlogHeaderWrapper>

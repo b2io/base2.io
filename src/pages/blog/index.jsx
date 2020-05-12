@@ -37,10 +37,10 @@ function BlogIndex({ posts }) {
       <Main>
         <GlobalNavigation />
         <BlogHeader
-          large
           imgAlt="Satellite broadcasting into space"
-          title="Transmissions"
+          large
           tagline="Sending our knowledge and ideas into the universe"
+          title="Transmissions"
         />
         <PostList>
           {posts.map(post => (
@@ -76,6 +76,7 @@ function mapPropsToProps({ data }) {
       author: authorIdToName[frontmatter.author],
       date: frontmatter.date,
       id: frontmatter.path,
+      featureImg: frontmatter.image || undefined,
       path: frontmatter.path,
       title: node.frontmatter.title,
     };
@@ -104,7 +105,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    posts: allMarkdownRemark(
+    posts: allMdx(
       sort: { fields: [fileAbsolutePath], order: DESC }
       filter: {
         fileAbsolutePath: { regex: "/_content/posts/" }
@@ -118,6 +119,7 @@ export const pageQuery = graphql`
           frontmatter {
             author
             date
+            image
             path
             title
           }

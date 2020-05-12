@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { em } from 'polished';
 import windowSize from 'react-window-size';
+import SmoothScroll from 'smooth-scroll/dist/smooth-scroll';
 import {
   A,
   BaseTwoLogo,
@@ -19,6 +20,15 @@ const mobileBottomMenu = {
   value: `${em('75px')}`,
 };
 
+if (typeof window !== `undefined`) {
+  SmoothScroll('a[href*="#"]', {
+    easing: 'easeOutQuad',
+    offset: '50',
+    speed: 700,
+    speedAsDuration: true,
+  });
+}
+
 const MOBILE_NAVIGATION_BREAKPOINT = '767';
 
 const NavBar = styled.nav`
@@ -33,6 +43,7 @@ const NavBar = styled.nav`
 
   &.menu-open {
     height: 100vh;
+    touch-action: none;
     transition: height 300ms ease-in;
   }
 
@@ -82,6 +93,11 @@ const NavItem = styled(LI)`
 
   ${mediaQuery.smedium`
     border: none;
+    font-size: 1.25em;
+  `};
+
+  ${mediaQuery.medium`
+    font-size: 1.5em;
   `};
 `;
 
@@ -215,48 +231,37 @@ const ContactCallToAction = styled(CallToAction)`
   }
 `;
 
-const toggleNoScroll = isOpen => {
-  if (!isOpen) {
-    document.body.classList.add('noScroll');
-  } else {
-    document.body.classList.remove('noScroll');
-  }
-};
-
 class GlobalNavigation extends React.Component {
-  static defaultProps = {};
-
-  static propTypes = {
-    windowWidth: PropTypes.number.isRequired,
-  };
-
-  state = {
-    isOpen: false,
-  };
+  constructor() {
+    super();
+    this.state = {
+      isOpen: false,
+    };
+  }
 
   handleClick = () => {
-    toggleNoScroll(this.state.isOpen);
-    this.setState({ isOpen: !this.state.isOpen });
+    this.setState(({ isOpen }) => ({ isOpen: !isOpen }));
   };
 
   handleLinkClick = () => {
-    toggleNoScroll(this.state.isOpen);
     this.setState({ isOpen: false });
   };
 
   render() {
+    const { isOpen } = this.state;
+    const { windowWidth } = this.props;
+
     return (
       <NavBar
         className={
-          this.props.windowWidth <= MOBILE_NAVIGATION_BREAKPOINT &&
-          this.state.isOpen
+          windowWidth <= MOBILE_NAVIGATION_BREAKPOINT && isOpen
             ? 'menu-open'
             : 'menu-closed'
         }
       >
         <MainNavigationContainer>
           <LogoToggleContainer>
-            <HomeLink href="/" title="Base Two - Home">
+            <HomeLink href="/#top" title="Base Two - Home">
               <BaseTwoLogo />
             </HomeLink>
             <MenuToggle aria-label="Toggle Menu" onClick={this.handleClick}>
@@ -265,32 +270,37 @@ class GlobalNavigation extends React.Component {
           </LogoToggleContainer>
           <NavList>
             <NavItem>
-              <NavLink to="/#services" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/#services">
                 Services
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#clients" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/#clients">
                 Clients
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#team" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/case-studies">
+                Work
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink onClick={this.handleLinkClick} to="/#team">
                 Team
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/jobs" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/jobs">
                 Jobs
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/blog" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/blog">
                 Blog
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/#contact-us" onClick={this.handleLinkClick}>
+              <NavLink onClick={this.handleLinkClick} to="/#contact-us">
                 Contact
               </NavLink>
             </NavItem>
@@ -298,14 +308,14 @@ class GlobalNavigation extends React.Component {
         </MainNavigationContainer>
         <ContactCallToActionContainer>
           <ContactCallToAction
-            href="tel:16143981158"
             className="contact-call--left"
+            href="tel:16143981158"
           >
             614.398.1158
           </ContactCallToAction>
           <ContactCallToAction
-            href="mailto:info@base2.io"
             className="contact-call--right"
+            href="mailto:info@base2.io"
           >
             Email Us
           </ContactCallToAction>
@@ -314,6 +324,12 @@ class GlobalNavigation extends React.Component {
     );
   }
 }
+
+GlobalNavigation.defaultProps = {};
+
+GlobalNavigation.propTypes = {
+  windowWidth: PropTypes.number.isRequired,
+};
 
 export default (typeof window !== 'undefined'
   ? windowSize(GlobalNavigation)

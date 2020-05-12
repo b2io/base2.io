@@ -16,15 +16,15 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     padding-right: 30vw;
+    padding: 10em 0;
     position: relative;
 
     > * {
-      z-index: ${themed('zindex.overlay')};
+      z-index: ${themed('zindex.content')};
     }
   `};
 
   ${mediaQuery.large`
-    min-height: 110vh;
     padding-right: 37vw;
   `};
 
@@ -43,10 +43,8 @@ const Wrapper = styled.div`
 `;
 
 const Earth = styled.picture`
-  width: 100%;
-
   img {
-    max-width: 100%;
+    width: 100%;
   }
 
   ${mediaQuery.small`
@@ -54,10 +52,13 @@ const Earth = styled.picture`
   `};
 
   ${mediaQuery.medium`
+    height: 1096px;
+    max-width: 90vw;
     position: absolute;
-    right: -34%;
+    right: -550px;
     top: 0;
-    z-index: ${themed('zindex.base')};
+    width: 1165px;
+    z-index: ${themed('zindex.outerSpace')};
   `};
 `;
 
@@ -70,7 +71,8 @@ const LocationText = styled.span`
   `};
 
   ${mediaQuery.medium`
-    margin-bottom: 1em;
+    margin: 0 auto 1em;
+    width: 615px;
   `};
 
   strong {
@@ -130,13 +132,13 @@ function ContactHeader() {
     <Wrapper>
       <BaseTwoLogoText id="contact-header-logo" />
       <LocationText>
-        is located in <strong>Columbus, OH</strong> and{' '}
-        <strong>Pittsburgh, PA</strong>.
+        is located in <strong>Columbus, OH</strong>;{' '}
+        <strong>Pittsburgh, PA</strong>; and <strong>Chicago, IL</strong>.
       </LocationText>
       <Earth>
         <source srcSet="img/planet-earth.webp" type="image/webp" />
         <source srcSet="img/planet-earth.jpg" type="image/jpeg" />
-        <img src="img/planet-earth.jpg" alt="Planet Earth" />
+        <img alt="Planet Earth" src="img/planet-earth.jpg" />
       </Earth>
       <LocationTagline>
         Thanks to satellites and the internet, we can work with you wherever you

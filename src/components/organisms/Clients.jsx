@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { em } from 'polished';
-import { Section, TwoToneHeading } from '../atoms';
+import { em, rem } from 'polished';
+import { Blurb, Link, Section, TwoToneHeading } from '../atoms';
 import { ClientList } from '../molecules';
 import { themed, webpBackground } from '../../util/style';
 
@@ -15,7 +15,10 @@ const Wrapper = styled(Section)`
   padding-top: ${themed('navHeight.value')};
   position: relative;
 
-  ${webpBackground('img/backgrounds/star-field.png', 'img/backgrounds/star-field.webp')};
+  ${webpBackground(
+    'img/backgrounds/star-field.png',
+    'img/backgrounds/star-field.webp',
+  )};
 
   &::after {
     background: linear-gradient(
@@ -30,7 +33,7 @@ const Wrapper = styled(Section)`
     left: 0;
     position: absolute;
     width: 100%;
-    z-index: ${themed('zindex.base')};
+    z-index: ${themed('zindex.outerSpace')};
   }
 `;
 
@@ -39,17 +42,32 @@ const ClientsHeading = styled(TwoToneHeading)`
   text-align: center;
 `;
 
+const Description = styled(Blurb)`
+  margin: 1em auto 2em auto;
+  max-width: ${rem('750px')};
+  text-align: center;
+  width: 100%;
+`;
+
 function Clients({ clients }) {
   return (
     <Wrapper id="clients">
       <ClientsHeading>
         <span>We</span> Collaborate
       </ClientsHeading>
+      <Description>
+        We work with companies, big and small, to understand their needs, learn
+        their business, hear their pain points, and collaborate to conceptualize
+        and implement software solutions.
+      </Description>
       <ClientList>
         {clients.map(client => (
           <ClientList.Item {...client} key={client.id} />
         ))}
       </ClientList>
+      <Description>
+        View <Link to="/case-studies">our work</Link>
+      </Description>
     </Wrapper>
   );
 }

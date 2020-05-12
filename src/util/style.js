@@ -31,14 +31,17 @@ const mediaQuery = {
 };
 
 const containerSizing = css`
-  padding: 0 5%;
+  padding-left: 5%;
+  padding-right: 5%;
 
   ${mediaQuery.medium`
-    padding: 0 2em;
+    padding-left: 2em;
+    padding-right: 2em;
   `};
 
   ${mediaQuery.large`
-    padding: 0 100px;
+    padding-left: 100px;
+    padding-right: 100px;
   `};
 `;
 

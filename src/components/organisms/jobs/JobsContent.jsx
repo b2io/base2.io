@@ -26,7 +26,7 @@ function JobsContent({ jobs }) {
           abroad — to improve processes around software development and deliver
           user-focused products and applications.
         </P>
-        <JobsImage src={teamImage} alt="Our Base Two team" width="1000" />
+        <JobsImage alt="Our Base Two team" src={teamImage} width="1000" />
       </Section>
       <Section narrow>
         <H2>Our culture promotes team work</H2>
@@ -46,8 +46,8 @@ function JobsContent({ jobs }) {
           and creative perspectives to our team.
         </P>
         <JobsImage
-          src={officeCollageImage}
           alt="Our Base Two team"
+          src={officeCollageImage}
           width="1000"
         />
       </Section>
@@ -76,9 +76,9 @@ function JobsContent({ jobs }) {
 
         <P>
           We are always looking for amazing people to work with us in Columbus,
-          OH and Pittsburgh, PA. If you are a talented and creative individual
-          with strong people skills and experience building web applications
-          with the latest front-end technologies, please{' '}
+          OH; Pittsburgh, PA; and Chicago, IL. If you are a talented and
+          creative individual with strong people skills and experience building
+          web applications with the latest front-end technologies, please{' '}
           <Link to="/jobs/apply">apply</Link>.
         </P>
         {!isEmpty(jobs) && (

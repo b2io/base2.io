@@ -59,7 +59,14 @@ end to end tests, and even removing unused CSS rules) and
 testing and building a new [AngularJS](http://angularjs.org/) with Yeoman is as
 simple as:
 
-<script src="https://gist.github.com/ztbrown/9549171.js"></script>
+```shell
+npm install -g generator-angular  # install generator
+yo angular                        # scaffold out a AngularJS project
+bower install angular-ui          # install a dependency from Bower
+grunt test                        # test your app
+grunt serve                       # preview your app
+grunt                             # build the application for deployment
+```
 
 At this point, if we wanted, we could begin test-driving the front-end with mock
 services while another developer begins writing Rails/PHP/.NET/Go/etc.
@@ -112,16 +119,25 @@ stop trying to recognize my environment and instead let me call the shots? It's
 a simple environment variable. So, if I want Heroku to look for a Ruby/Rails
 application, I would configure it to use the ruby buildpack:
 
-<script src="https://gist.github.com/ztbrown/9549245.js"></script>
+```shell
+heroku config:set BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-ruby
+```
 
 If, instead, I would like it to run a package.json and install dependencies like
 Compass and Grunt, I would configure it like this:
 
-<script src="https://gist.github.com/ztbrown/9549263.js"></script>
+```shell
+heroku config:set BUILDPACK_URL=https://github.com/stephanmelzer/heroku-buildpack-nodejs-grunt-compass.git
+```
 
 But this doesn't yet solve my problem. Enter, multi build packs.
 
-<script src="https://gist.github.com/ztbrown/9549269.js"></script>
+```shell
+heroku config:add BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi.git
+cat .buildpacks
+https://github.com/stephanmelzer/heroku-buildpack-nodejs-grunt-compass.git
+https://github.com/heroku/heroku-buildpack-ruby.git
+```
 
 Now, when you push to Heroku, the service will first look for a package.json and
 Gruntfile in the root (I point the Gruntfile to the Gruntfile in my subdirectory

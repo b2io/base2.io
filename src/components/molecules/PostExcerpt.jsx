@@ -117,7 +117,7 @@ function PostExcerpt({
   return (
     <PostListItem>
       <PostListImageWrapper>
-        <PostListImage src={featureImg} alt={imgAlt} />
+        <PostListImage alt={imgAlt} src={featureImg} />
       </PostListImageWrapper>
       <PostListContent>
         <PostListHeader>

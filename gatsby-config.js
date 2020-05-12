@@ -24,10 +24,18 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        excerpt_separator: '<!-- end excerpt -->',
+        extensions: [`.mdx`, `.md`],
       },
+      gatsbyRemarkPlugins: [
+        {
+          resolve: 'gatsby-remark-responsive-iframe',
+          options: {
+            wrapperStyle: 'margin-bottom: 1rem',
+          },
+        },
+      ],
     },
     'gatsby-transformer-json',
     {

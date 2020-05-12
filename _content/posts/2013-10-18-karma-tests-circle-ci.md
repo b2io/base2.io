@@ -8,7 +8,19 @@ path: "/2013/10/18/karma-tests-circle-ci"
 **Update:** I recently discovered a much smarter way to be doing this. Here it
 is:
 
-<script src="https://gist.github.com/ztbrown/7215433.js"></script>
+```yaml
+checkout:
+  post:
+    - cd angular && npm install
+    - cd angular && bower install
+    - nohup bash -c "cd angular && grunt server --force &"
+
+test:
+  override:
+    - bundle exec rspec spec
+    - cd angular && grunt karma:unit
+    - cd angular && grunt karma:e2e
+```
 
 [Circle CI](http://circleci.com) is an awesome, affordable continuous
 integration solution. I am currently using it in an Angular + Rails project,
@@ -24,4 +36,13 @@ tests.
 Boom. The npm/bower package management is a little time-consuming, but this runs
 both my rspec and karma tests.
 
-<script src="https://gist.github.com/ztbrown/7043015.js"></script>
+```yaml
+test:
+  pre:
+    - npm install -g karma
+    - npm install -g bower
+    - bower install --config.cwd=./angular --config.directory=./app/bower_components
+  override:
+    - bundle exec rspec spec
+    - karma start ./angular/karma.conf.js --single-run
+```

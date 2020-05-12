@@ -4,7 +4,7 @@ import { em, rem } from 'polished';
 import remark from 'remark';
 import remarkReact from 'remark-react';
 import styled from 'styled-components';
-import { mediaQuery } from '../util/style';
+import { mediaQuery } from './style';
 
 import {
   A,
@@ -14,13 +14,14 @@ import {
   Em,
   H1,
   H5,
+  HighlightedPre,
   HR,
   LI,
   P,
-  Pre,
   OL,
   Strong,
   UL,
+  YouTube,
 } from '../components';
 
 const PostContentH2 = styled.h2`
@@ -61,7 +62,7 @@ const PostImg = styled.img`
   `};
 `;
 
-const defaultComponentMap = {
+export const defaultComponentMap = {
   a: A,
   blockquote: Blockquote,
   code: Code,
@@ -77,9 +78,10 @@ const defaultComponentMap = {
   li: LI,
   ol: OL,
   p: P,
-  pre: Pre,
+  pre: HighlightedPre,
   strong: Strong,
   ul: UL,
+  YouTube,
 };
 
 const markdownToElement = (md, componentMapOverrides) =>

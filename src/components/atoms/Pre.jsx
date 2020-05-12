@@ -12,6 +12,10 @@ const Pre = styled.pre`
   code {
     background: ${themed('color.transparent')};
   }
+
+  > div.token-line:last-child {
+    display: none;
+  }
 `;
 
 export default Pre;

@@ -1,70 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  A,
-  BaseTwoLogoText,
-  H1,
-  P
-} from '../atoms';
+import { A, BaseTwoLogoText, H1, P } from '../atoms';
 import { ScrollLink } from '../molecules';
-import { mediaQuery, themed, webpBackground } from '../../util/style';
-
-const BGAspectRatio = '1.83';
-
-const HeroHeader = styled.header`
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-color: ${themed('color.background')};
-  height: 120vh;
-  padding: 3em 0 0 0;
-  text-align: center;
-
-  ${webpBackground(
-    'img/backgrounds/hero/b2-hero-background-480.png',
-    'img/backgrounds/hero/b2-hero-background-480.webp'
-    )
-  };
-
-  ${mediaQuery.small`
-    background-size: 120%;
-    min-height: calc((100vw * ${BGAspectRatio}) * 1.2);
-    padding-top: 6rem;
-
-    ${webpBackground(
-      'img/backgrounds/hero/b2-hero-background-960.png',
-      'img/backgrounds/hero/b2-hero-background-960.webp'
-      )
-    };
-  `};
-
-  ${mediaQuery.medium`
-    background-size: 120%;
-    padding-top: 8rem;
-
-    ${webpBackground(
-      'img/backgrounds/hero/b2-hero-background-960.png',
-      'img/backgrounds/hero/b2-hero-background-960.webp'
-      )
-    };
-  `};
-
-  ${mediaQuery.large`
-    background-size: cover;
-    min-height: calc(100vw * ${BGAspectRatio});
-    padding-top: 16rem;
-
-    ${webpBackground(
-      'img/backgrounds/hero/b2-hero-background.png',
-      'img/backgrounds/hero/b2-hero-background.webp'
-      )
-    };
-  `};
-
-  ${mediaQuery.xlarge`
-    padding-top: 18rem;
-  `};
-`;
+import { mediaQuery, themed } from '../../util/style';
+import HeroHeader from './HeroHeader';
 
 const HeroHeading = styled(H1)`
   padding: 0;
@@ -77,24 +16,24 @@ const HeroHeading = styled(H1)`
 
 const HeroTagline = styled(P)`
   color: ${themed('color.text')};
-  font-size: 1.15em;
+  font-size: 0.9em;
   font-style: italic;
-  font-weight: 100;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  text-shadow: 1px 1px 4px ${themed('color.background')};
+  font-weight: 200;
+  margin: 2em auto;
+  max-width: 80vw;
+  text-shadow: 2px 2px 4px ${themed('color.background')};
+  width: 750px;
 
   ${mediaQuery.small`
-    font-size: 1.65rem;
-    margin-top: 0.5em;
+    font-size: 1.35rem;
   `};
 
   ${mediaQuery.medium`
-    font-size: 2.0rem;
+    font-size: 1.5rem;
   `};
 
   ${mediaQuery.large`
-    font-size: 2.25rem;
+    font-size: 1.75rem;
   `};
 `;
 
@@ -137,7 +76,11 @@ function Hero() {
         <HeroHeading>
           <BaseTwoLogoText id="hero-logo" />
         </HeroHeading>
-        <HeroTagline> We turn ideas into beautiful software </HeroTagline>
+        <HeroTagline>
+          Our mission is to solve problems that matter. We believe that best
+          outcomes start on a solid foundation: open, honest, and equitable
+          partnerships. Together we make exceptional the standard.
+        </HeroTagline>
         <ScrollLink target={scroll.target} title={scroll.title}>
           <SatelliteIndicator
             alt="Arrows pointing downward"

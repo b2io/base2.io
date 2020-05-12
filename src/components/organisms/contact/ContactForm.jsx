@@ -63,25 +63,25 @@ function ContactForm() {
         <TextInputField
           label="Email"
           name="email"
-          type="email"
-          title="your@email.com"
           pattern={`${emailPattern}`}
           required
+          title="your@email.com"
+          type="email"
         />
         <TextInputField
           label="Phone Number"
           name="phoneNumber"
-          type="tel"
-          title="Please include country code (if applicable) and area code. Formatting will be ignored"
           pattern={phonePattern}
+          title="Please include country code (if applicable) and area code. Formatting will be ignored"
+          type="tel"
         />
         <TextInputField label="Budget" name="budget" />
         <DescriptionField
           label="Description"
-          name="leadDescription"
           multiline
-          rows="5"
+          name="leadDescription"
           required
+          rows="5"
         />
         <ContactSubmitButton>Submit</ContactSubmitButton>
       </form>

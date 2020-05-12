@@ -1,8 +1,8 @@
 ---
 title: A Google I/O Experience
 author: csteinert
-date: "2016-05-25T04:00:00.000Z"
-path: "/2016/05/25/a-google-io-experience"
+date: '2016-05-25T04:00:00.000Z'
+path: '/2016/05/25/a-google-io-experience'
 ---
 
 I have gone to my fair share of tech conferences so far in my career, but now I
@@ -15,8 +15,13 @@ California.
 
 The Keynote began with an amazing live
 [Earth Harp](http://williamandtheearthharp.com 'Earth Harp') performance of a
-song from the motion picture _Amélie_ followed by a slick video and then [dove
-right into the announcements](https://www.youtube.com/watch?v=862r3XS2YB0 'Google I/O 2016 - Keynote - YouTube').
+song from the motion picture _Amélie_ followed by a slick video and then dove
+right into the announcements.
+
+<YouTube
+  url='https://www.youtube.com/embed/862r3XS2YB0'
+  title="Google I/O 2016 - Keynote - YouTube"
+/>
 
 The following were the highlights for me:
 
@@ -99,8 +104,8 @@ Yes,
 [there were long lines](https://thenextweb.com/google/2016/05/19/google-io-2016-look-not-run-large-event/ 'Google I/O 2016: A look at how not to run a large event'),
 and yes, I did miss most of the sessions I’d hoped to see on Wednesday.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The lines for sessions are insane, but I finally made it into one. Excited to hear <a href="https://twitter.com/kaihaley">@kaihaley</a> talk sprints! <a href="https://twitter.com/hashtag/io16?src=hash">#io16</a> <a href="https://t.co/LP5fBftJdd">pic.twitter.com/LP5fBftJdd</a></p>&mdash; Caitlin Steinert (@csteinert) <a href="https://twitter.com/csteinert/status/733054056294277121">May 18, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> The lines for sessions are insane, but I finally made it into one. Excited to hear [@kaihaley](https://twitter.com/kaihaley) talk sprints!
+> [#io16](https://twitter.com/hashtag/io16?src=hash) [pic.twitter.com/LP5fBftJdd](https://t.co/LP5fBftJdd)- Caitlin Steinert (@csteinert) [May 18, 2016](https://twitter.com/csteinert/status/733054056294277121)
 
 I was impressed, however, by the conference’s agility in fixing the issues by
 the second day. I was able to get into every presentation I wanted to attend for
@@ -109,8 +114,9 @@ were repeated on Friday.
 
 ## The Installations
 
-<img src="https://i.imgur.com/G3a1TAD.gif" style="float: right; margin: 0 0 2em 2em;" title="Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016" alt="Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016" />
-In the meantime, there was no shortage of interactive and cool stuff to keep attendees preoccupied. A portion of the Amphitheatre, which appeared to be a restaurant usually, was repurposed to house the [Google Code Labs](https://codelabs.developers.google.com/io2016 "Google Code Labs"), where developers were invited to sit down at workstations, some complete with Nests and other devices, to hack through hands-on exercises. Googlers roamed the area, answering questions. I, for one, am very proud of the web interface I cobbled together using Polymer and the Nest API.
+![Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016](https://i.imgur.com/G3a1TAD.gif, Interacting with a Nest using the Nest API and Polymer web components at Google I/O 2016)
+
+In the meantime, there was no shortage of interactive and cool stuff to keep attendees preoccupied. A portion of the Amphitheatre, which appeared to be a restaurant usually, was repurposed to house the [Google Code Labs](https://codelabs.developers.google.com/io2016 'Google Code Labs'), where developers were invited to sit down at workstations, some complete with Nests and other devices, to hack through hands-on exercises. Googlers roamed the area, answering questions. I, for one, am very proud of the web interface I cobbled together using Polymer and the Nest API.
 
 Further afield -- in the parking lots -- tent-shaded areas showed off products
 like Nest, Firebase, a self-driving car, various smart watches, and Android
@@ -126,11 +132,11 @@ Android Auto on display in a Maserati. No big deal.
 [Project Loon](https://www.google.com/loon 'Project Loon') brings the internet
 to all by way of stratosphere balloons.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Went back to visit the self-driving car again before dinner. With both doors open, it looks like a koala. ❤️🚗🐨 <a href="https://twitter.com/hashtag/io16?src=hash">#io16</a> <a href="https://t.co/3q0foHzbgL">pic.twitter.com/3q0foHzbgL</a></p>&mdash; Caitlin Steinert (@csteinert) <a href="https://twitter.com/csteinert/status/733099281796595712">May 19, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> Went back to visit the self-driving car again before dinner. With both doors open, it looks like a koala. ❤️🚗🐨
+> [#io16](https://twitter.com/hashtag/io16?src=hash) [pic.twitter.com/3q0foHzbgL](https://t.co/3q0foHzbgL)- Caitlin Steinert (@csteinert) [May 19, 2016](https://twitter.com/csteinert/status/733099281796595712)
 
-<blockquote class="twitter-video" data-lang="en"><p lang="en" dir="ltr">There is so much going on here that I can hardly take it all in. Here&#39;s a video of phones... sight singing. <a href="https://t.co/lEU8hAUjxp">pic.twitter.com/lEU8hAUjxp</a></p>&mdash; Caitlin Steinert (@csteinert) <a href="https://twitter.com/csteinert/status/733035736627208197">May 18, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> There is so much going on here that I can hardly take it all in. Here's a video of phones... sight singing.
+> [pic.twitter.com/lEU8hAUjxp](https://t.co/lEU8hAUjxp)>- Caitlin Steinert (@csteinert) [May 18, 2016](https://twitter.com/csteinert/status/733035736627208197)
 
 There was even more stuff, but I need to wrap up this blog post eventually, and
 I haven’t even covered the sessions yet!
@@ -142,7 +148,7 @@ expected for a conference of this nature, they were all slick and well-prepared.
 My focus was mainly on the Web, with things like Polymer and Chrome DevTools.
 Here are my top favorites.
 
-### [Building for Billions on the Web](https://www.youtube.com/watch?v=E6hGubMkNfM 'Building for Billions on the Web - YouTube')
+### Building for Billions on the Web
 
 #### Tal Oppenheimer
 
@@ -152,7 +158,12 @@ the web on sub-optimal data connections and small devices. Tal Oppenheimer’s
 research and insight into this subject is eye-opening, and her recommendations
 are ones I look forward to playing around with.
 
-### [DevTools in 2016: Accelerate your workflow](https://www.youtube.com/watch?v=x8u0n4dT-WI 'DevTools in 2016: Accelerate your workflow - YouTube')
+<YouTube
+  url='https://www.youtube.com/embed/E6hGubMkNfM'
+  title="Building for Billions on the Web - YouTube"
+/>
+
+### DevTools in 2016: Accelerate your workflow
 
 #### Chrome DevTools Team
 
@@ -166,7 +177,12 @@ minutes, there are more delicious nuggets in this presentation, like Javascript
 -- and Node.js! -- debugging. I highly recommend watching the whole thing if
 this stuff is your jam.
 
-### [Practical lessons from a year of building web components](https://www.youtube.com/watch?v=zfQoleQEa4w 'Practical lessons from a year of building web components - YouTube')
+<YouTube
+  url='https://www.youtube.com/embed/x8u0n4dT-WI'
+  title="DevTools in 2016: Accelerate your workflow - YouTube"
+/>
+
+### Practical lessons from a year of building web components
 
 #### Monica Dinculescu
 
@@ -175,10 +191,14 @@ and Do Other Things Good Too,” you know this is going to be a wild ride. And i
 is. Monica delves into the tips and tricks she has learned on the Polymer team,
 with a healthy smattering of emoji and anti-input-element sass.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Test your shit, document your shit, inputs are shit. Do less, be lazy. Don&#39;t slow down the web. Make amazing components. <a href="https://twitter.com/hashtag/io16?src=hash">#io16</a> <a href="https://twitter.com/notwaldorf">@notwaldorf</a></p>&mdash; Caitlin Steinert (@csteinert) <a href="https://twitter.com/csteinert/status/733698941087145988">May 20, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+> Test your shit, document your shit, inputs are shit. Do less, be lazy. Don't slow down the web. Make amazing components. [#io16](https://twitter.com/hashtag/io16?src=hash) > [@notwaldorf](https://twitter.com/notwaldorf)"- Caitlin Steinert (@csteinert) [May 20,2016](https://twitter.com/csteinert/status/733698941087145988)
 
-### [The Mobile Web: State of the Union](https://www.youtube.com/watch?v=0SSI8liELJU 'The Mobile Web: State of the Union - YouTube')
+<YouTube
+  url='https://www.youtube.com/embed/zfQoleQEa4w'
+  title="Practical lessons from a year of building web components"
+/>
+
+### The Mobile Web: State of the Union
 
 #### Chromium Dev Team
 
@@ -189,7 +209,12 @@ the biggest jaw-drop moment in this presentation is the unveiling of the Web
 Payments API. That is going to be amazing, and I hope that wide acceptance will
 push other browsers to follow suit.
 
-### [Web Performance Tooling](https://www.youtube.com/watch?v=iMqi55rcR00 'Web Performance Tooling - YouTube')
+<YouTube
+  url='https://www.youtube.com/embed/0SSI8liELJU'
+  title="The Mobile Web: State of the Union - YouTube"
+/>
+
+### Web Performance Tooling
 
 #### Paul Irish, Sam Saccone
 
@@ -199,12 +224,22 @@ performance geeks, and taking even a little bit of knowledge away from this
 protip-rich talk is likely to improve your performance game. I am both excited
 and terrified to run these DevTool recordings on my own site.
 
-### [Understand your Place in this world](https://www.youtube.com/watch?v=QR3PIg0RDnk 'Understand your Place in this world - YouTube')
+<YouTube
+  url='https://www.youtube.com/embed/iMqi55rcR00'
+  title="Web Performance Tooling"
+/>
+
+### Understand your Place in this World
 
 #### Florian Bertele, Ravi Palanki
 
 I use Google Maps and Places on a near-daily basis, so this was an interesting
 dive into the Places API and how it works.
+
+<YouTube
+  url='https://www.youtube.com/embed/QR3PIg0RDnk'
+  title="Understand your Place in this World"
+/>
 
 ## Community Shoutouts
 

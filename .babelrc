@@ -20,21 +20,11 @@
     [
       "@babel/preset-env",
       {
+        "corejs": "^2.6.11",
         "loose": true,
         "modules": false,
         "useBuiltIns": "usage",
-        "shippedProposals": true,
-        "targets": {
-          "browsers": [
-            "ie >= 11",
-            "edge >= 16",
-            "last 2 Chrome versions",
-            "safari >= 10.1",
-            "firefox >= 52",
-            "ChromeAndroid >= 62",
-            "iOS >= 10"
-          ]
-        }
+        "shippedProposals": true
       }
     ],
     [

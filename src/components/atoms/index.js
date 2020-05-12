@@ -7,6 +7,7 @@ import CallToAction from './CallToAction';
 import Code from './Code';
 import Del from './Del';
 import Em from './Em';
+import HighlightedPre from './HighlightedPre';
 import HR from './HR';
 import Icon from './Icon';
 import Img from './Img';
@@ -34,6 +35,7 @@ export {
   Code,
   Del,
   Em,
+  HighlightedPre,
   HR,
   Icon,
   Img,

@@ -1,8 +1,9 @@
 ---
 title: Getting Started with JSCS and WebStorm
 author: jstevens
-date: "2015-12-30T04:00:00.000Z"
-path: "/2015/12/30/jscs-intellij-setup"
+date: '2015-12-30T04:00:00.000Z'
+path: '/2015/12/30/jscs-intellij-setup'
+image: 'https://i.imgur.com/paw2sxV.png'
 ---
 
 [JSCS](http://jscs.info/) is my new favorite javascript tool. It helps keep all
@@ -16,7 +17,7 @@ I'm going to show you how to get it setup with
 
 First we need to install JSCS using [nodejs](https://nodejs.org/en/).
 
-```
+```shell
 npm install -g jscs
 ```
 
@@ -27,7 +28,7 @@ to use. To keep things simple we're just going to use the
 [AirBnB preset](https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json).
 Add this to your .jscsrc file:
 
-```
+```js
 {
   "preset": "airbnb"
 }
@@ -37,7 +38,7 @@ From here you can setup your build to run your code against these settings. We
 use [gulp](http://gulpjs.com/) so I'll just show a quick example on how to set
 that up.
 
-```
+```js
 var gulp = require('gulp');
 var jscs = require('gulp-jscs');
 
@@ -102,15 +103,15 @@ Now you can close the **Code Style Schemes** dialog. Your javascript code style
 settings will be as close as possible to your settings in the .jscs config file.
 Now for the really cool part, the IDE will try to format your javascript based
 on these setting as you code. You can also take a whole file or section and run
-**Reformat Code** (my shortcut is <kbd>opt</kbd> + <kbd>cmd</kbd> +
-<kbd>L</kbd>) and it will try to clean up that code based on these settings.
+**Reformat Code** (my shortcut is opt + cmd +
+L) and it will try to clean up that code based on these settings.
 This is great and will help format your code, but there are some JSCS things
 this will not fix.
 
 JSCS has the ability to fix a lot of those issues though and you can run the
 command line
 
-```
+```js
 jscs /my/project/root --fix
 jscs myfilename.js --fix
 ```
@@ -131,8 +132,8 @@ to manually set it.
 ## Add JSCS Shortcut
 
 Open Settings and select Keymap. Search for JSCS. Then select the Fix JSCS
-Problems and push the edit (green pencil) button. I set mine to <kbd>opt</kbd> +
-<kbd>cmd</kbd> + <kbd>S</kbd> which was unused, but feel free to set it to
+Problems and push the edit (green pencil) button. I set mine to opt +
+cmd + S which was unused, but feel free to set it to
 something else that makes sense to you and/or your team.
 
 ![Keymap JSCS Fix shortcut](https://i.imgur.com/DvfLmsi.png)

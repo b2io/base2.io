@@ -1,8 +1,9 @@
 ---
 title: Knitting with CSS Grid
 author: csteinert
-date: "2017-11-22T04:00:00.000Z"
-path: "/2017/11/22/knitting-with-css-grid"
+date: '2017-11-22T04:00:00.000Z'
+path: '/2017/11/22/knitting-with-css-grid'
+image: 'https://farm8.staticflickr.com/7044/6917298081_2bb22acf16_z.jpg'
 ---
 
 As the weather turns colder here in Columbus, I have returned to my default
@@ -36,7 +37,7 @@ in a _grid_ pattern.
 To achieve that kind of layout is ridiculously easy with CSS Grid. It only
 requires the following three lines of code, placed on a parent element:
 
-```
+```css
 display: grid;
 grid-gap: 1vw;
 grid-template: repeat(5, 1fr) / repeat(5, 1fr);
@@ -78,8 +79,8 @@ code here](https://codepen.io/csteinert/pen/aVBXjB/). I love how quickly I can
 spin up an environment in Codepen, especially when it comes to CSS preprocessors.
 In the case of this example, I set my preprocessor to SCSS.
 
-<p data-height="600" data-theme-id="dark" data-slug-hash="aVBXjB" data-default-tab="html,result" data-user="csteinert" data-embed-version="2" data-pen-title="Log Cabin Blanket Grid Layout" class="codepen">See the Pen <a href="https://codepen.io/csteinert/pen/aVBXjB/">Log Cabin Blanket Grid Layout</a> by Caitlin Steinert (<a href="https://codepen.io/csteinert">@csteinert</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+See the Pen [Log Cabin Blanket Grid Layout](https://codepen.io/csteinert/pen/aVBXjB/) by Caitlin Steinert [@csteinert](https://codepen.io/csteinert) on [CodePen](https://codepen.io).
+
 
 I started by counting the number of rectangles that made up each square (there
 are nine), and created that number of `div` elements. In this pattern, the
@@ -91,7 +92,7 @@ this...
 
 ...I used the following CSS:
 
-```
+```css
 grid-template: 1fr 1fr 4fr 1fr 1fr / 1fr 1fr 2fr 1fr 1fr;
 ```
 
@@ -113,7 +114,7 @@ extend. For example, in the following snippet, I'm telling this element to
 exist in the fourth column and span from the beginning of row three to the end
 of row five.
 
-```
+```css
 .four {
   grid-column: 4;
   grid-row: 3 / span 2;
