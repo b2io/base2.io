@@ -16,11 +16,13 @@ class TextField extends React.Component {
     ...stateUpdateFromValue(this.props),
     floatLabel: floatLabel(this.props),
     isFocused: false,
-  }
+  };
 
-  // eslint-disable-next-line camelcase
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    this.setState(stateUpdateFromValue(nextProps));
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.label !== prevState.floatLabel) {
+      return { floatLabel: nextProps.label };
+    }
+    return null;
   }
 
   handleBlur = event => {
@@ -33,10 +35,7 @@ class TextField extends React.Component {
   handleChange = event => {
     const { onChange } = this.props;
 
-    this.setState(
-      stateUpdateFromValue(event.target),
-      onChange(event),
-    );
+    this.setState(stateUpdateFromValue(event.target), onChange(event));
   };
 
   handleFocus = event => {
