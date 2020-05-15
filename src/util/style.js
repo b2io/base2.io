@@ -25,7 +25,7 @@ const mediaQuery = {
   xsmall: mq('screen', 'max-width: 480px'),
   small: mq('screen', 'min-width: 481px'),
   smedium: mq('screen', 'min-width: 767px'),
-  medium: mq('screen', 'min-width: 961px'),
+  medium: mq('screen', 'min-width: 1025px'),
   large: mq('screen', 'min-width: 1281px'),
   xlarge: mq('screen', 'min-width: 1921px'),
 };
