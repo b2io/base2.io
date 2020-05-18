@@ -11,6 +11,8 @@
     "@mdx-js/react": "^1.5.7",
     "babel-plugin-styled-components": "^1.10.0",
     "core-js": "^2.6.11",
+    "custom-event-polyfill": "^1.0.7",
+    "element-closest-polyfill": "^1.0.0",
     "gatsby": "^2.13.50",
     "gatsby-image": "^2.1.2",
     "gatsby-link": "^2.1.1",
@@ -31,7 +33,6 @@
     "lodash": "^4.17.15",
     "luxon": "^1.4.2",
     "nanoid": "^1.2.6",
-    "object-assign": "^4.1.1",
     "polished": "^2.2.0",
     "prism-react-renderer": "^1.0.2",
     "prismjs": "^1.19.0",
@@ -47,8 +48,7 @@
     "sharp": "^0.20.8",
     "smooth-scroll": "^16.1.2",
     "styled-components": "^4.4.1",
-    "supports-webp": "^1.0.7",
-    "whatwg-fetch": "^3.0.0"
+    "supports-webp": "^1.0.7"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.8.7",
