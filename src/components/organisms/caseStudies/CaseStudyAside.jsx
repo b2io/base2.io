@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { em, rem } from 'polished';
+import ReactTooltip from 'react-tooltip';
 import { A, Img, LI, P, UL } from '../../atoms';
 import { mediaQuery } from '../../../util/style';
 
@@ -43,7 +44,22 @@ const CaseStudyTechnologyLogo = styled(Img)`
   `};
 `;
 
+const techLogoDiv = {
+  display: 'inline-block',
+};
+
 function CaseStudyAside({ client, highlights, link, project, technologies }) {
+  const mapToTech = technologies.map(tech => (
+    <div style={techLogoDiv}>
+      <CaseStudyTechnologyLogo
+        {...tech.image}
+        alt={tech.name}
+        data-tip={tech.name}
+        key={tech.name}
+      />
+    </div>
+  ));
+
   return (
     <CaseStudyAsideWrapper>
       <CaseStudyAsideHeading>Company</CaseStudyAsideHeading>
@@ -62,13 +78,8 @@ function CaseStudyAside({ client, highlights, link, project, technologies }) {
       <CaseStudyAsideHeading>Technologies</CaseStudyAsideHeading>
 
       <div>
-        {technologies.map(tech => (
-          <CaseStudyTechnologyLogo
-            {...tech.image}
-            alt={tech.name}
-            key={tech.name}
-          />
-        ))}
+        {mapToTech}
+        <ReactTooltip />
       </div>
     </CaseStudyAsideWrapper>
   );
