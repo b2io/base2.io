@@ -43,7 +43,6 @@ function Html({
         />
         <title>Base Two</title>
         {headComponents}
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js" />
       </head>
       <body {...bodyAttributes}>
         {preBodyComponents}
