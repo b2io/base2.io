@@ -61,7 +61,7 @@ function Technologies({ technologies }) {
       </Description>
       <TechnologiesList>
         {mapToTech}
-        <ReactTooltip effect="solid" type="success" />
+        <ReactTooltip effect="solid" />
       </TechnologiesList>
     </Wrapper>
   );

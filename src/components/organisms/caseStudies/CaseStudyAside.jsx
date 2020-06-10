@@ -79,7 +79,7 @@ function CaseStudyAside({ client, highlights, link, project, technologies }) {
 
       <div>
         {mapToTech}
-        <ReactTooltip />
+        <ReactTooltip effect="solid" />
       </div>
     </CaseStudyAsideWrapper>
   );
