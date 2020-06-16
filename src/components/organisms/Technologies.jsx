@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { rem } from 'polished';
-import ReactTooltip from 'react-tooltip';
 import { TwoToneHeading, Section, Blurb } from '../atoms';
 import { TechnologiesList } from '../molecules';
 import { mediaQuery, webpBackground } from '../../util/style';
@@ -59,10 +58,7 @@ function Technologies({ technologies }) {
         new languages, libraries, and best-practices. Here’s what we’ve been
         working with lately.
       </Description>
-      <TechnologiesList>
-        {mapToTech}
-        <ReactTooltip effect="solid" />
-      </TechnologiesList>
+      <TechnologiesList>{mapToTech}</TechnologiesList>
     </Wrapper>
   );
 }
