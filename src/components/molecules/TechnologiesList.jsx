@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { em } from 'polished';
+import ReactTooltip from 'react-tooltip';
 import { Img, UL, LI } from '../atoms';
 import { mediaQuery } from '../../util/style';
 
@@ -55,7 +56,8 @@ const TechnologyLogo = styled(Img)`
 function TechnologiesListItem({ image, name }) {
   return (
     <Technology>
-      <TechnologyLogo {...image} alt={name} title={name} />
+      <TechnologyLogo {...image} alt={name} data-tip={name} />
+      <ReactTooltip effect="solid" />
     </Technology>
   );
 }
