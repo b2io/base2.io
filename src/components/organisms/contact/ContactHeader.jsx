@@ -146,7 +146,10 @@ function ContactHeader() {
       </LocationTagline>
       <ScrollButton href="#contact-us">Make Contact</ScrollButton>
       <ScrollLink target={scroll.target} title={scroll.title}>
-        <ArrowIndicator src="../img/scroll-arrows.svg" />
+        <ArrowIndicator
+          alt="down scroll arrow"
+          src="../img/scroll-arrows.svg"
+        />
       </ScrollLink>
     </Wrapper>
   );
