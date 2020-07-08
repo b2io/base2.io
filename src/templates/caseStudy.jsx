@@ -14,6 +14,7 @@ import {
   Main,
   Section,
 } from '../components';
+import { SeoComponent } from '../components/SeoComponent';
 import { lightTheme } from '../theme';
 import { toNodesWithImage } from '../util/graphql';
 import { mediaQuery } from '../util/style';
@@ -56,10 +57,20 @@ const CaseStudyContent = styled.article`
 `;
 
 function CaseStudyTemplate({ caseStudy }) {
-  const { client, highlights, link, project, technologies } = caseStudy;
+  const {
+    cardImage,
+    client,
+    highlights,
+    link,
+    project,
+    summary,
+    technologies,
+  } = caseStudy;
+  const cardImg = cardImage || '/img/transmission-constellation.png';
   return (
     <MDXProvider components={defaultComponentMap}>
       <ThemeProvider theme={lightTheme}>
+        <SeoComponent description={summary} image={cardImg} title={project} />
         <Main>
           <GlobalNavigation />
           <ClientHeader {...client} project={project} />
@@ -84,6 +95,7 @@ function CaseStudyTemplate({ caseStudy }) {
 
 CaseStudyTemplate.propTypes = {
   caseStudy: PropTypes.shape({
+    cardImage: PropTypes.string.isRequired,
     client: PropTypes.shape({
       id: PropTypes.node.isRequired,
       name: PropTypes.string.isRequired,
@@ -160,6 +172,7 @@ export const pageQuery = graphql`
 
     caseStudy: mdx(id: { eq: $id }) {
       frontmatter {
+        cardImage
         clientId
         highlights
         link
