@@ -6,7 +6,9 @@ import React from 'react';
 import { mapProps } from 'recompose';
 import styled, { ThemeProvider } from 'styled-components';
 import { MDXProvider } from '@mdx-js/react';
+
 import { BlogHeader, GlobalNavigation, Main, Section } from '../components';
+import { SeoComponent } from '../components/SeoComponent';
 import { lightTheme } from '../theme';
 import { toNodes } from '../util/graphql';
 import { mediaQuery } from '../util/style';
@@ -28,11 +30,11 @@ const YoutubeFrame = styled.iframe`
 const YouTube = ({ title, url }) => (
   <YouTubeWrapper>
     <YoutubeFrame
-      title={title}
-      src={url}
-      frameBorder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
+      frameBorder="0"
+      src={url}
+      title={title}
     />
   </YouTubeWrapper>
 );
@@ -59,10 +61,14 @@ const PostContent = styled(Section)`
   `};
 `;
 
-function PostTemplate({ author, body, date, title }) {
+function PostTemplate({ author, body, cardImage, date, title }) {
+  // const seoImage = 'ogimage.publicURL';
+  const cardImg = cardImage || '/img/transmission-constellation.png';
+
   return (
     <MDXProvider components={defaultComponentMap}>
       <ThemeProvider theme={lightTheme}>
+        <SeoComponent description={title} image={cardImg} title={title} />
         <Main>
           <GlobalNavigation />
           <BlogHeader
@@ -82,14 +88,14 @@ function PostTemplate({ author, body, date, title }) {
   );
 }
 
-PostTemplate.defaultProps = { author: '' };
+PostTemplate.defaultProps = { author: '', cardImage: '' };
 
 PostTemplate.propTypes = {
   body: PropTypes.node.isRequired,
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-
   author: PropTypes.string,
+  cardImage: PropTypes.string,
 };
 
 function mapPropsToProps({ data }) {
@@ -104,6 +110,7 @@ function mapPropsToProps({ data }) {
     body: data.post.body,
     date: data.post.frontmatter.date,
     title: data.post.frontmatter.title,
+    cardImage: data.post.frontmatter.cardImage,
   };
 }
 
@@ -123,6 +130,7 @@ export const pageQuery = graphql`
       frontmatter {
         author
         date
+        cardImage
         title
       }
       body
