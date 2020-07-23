@@ -8,7 +8,7 @@ module.exports = {
     image: '/static/images/planet-earth.jpg',
     twitterUsername: '@base2io',
     keywords:
-      'IT Consulting, Software Development, React Application Development, Software Engineer',
+      'IT Consulting, Software Development, React Application Development, Software Engineer, Web Application Development ',
     ogimage: '',
   },
   plugins: [
