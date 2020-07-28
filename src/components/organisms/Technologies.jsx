@@ -13,7 +13,10 @@ const Wrapper = styled(Section)`
   padding-bottom: ${rem('80px')};
   text-align: center;
 
-  ${webpBackground('img/backgrounds/star-field.png', 'img/backgrounds/star-field.webp')};
+  ${webpBackground(
+    'img/backgrounds/star-field.png',
+    'img/backgrounds/star-field.webp',
+  )};
 
   ${mediaQuery.small`
     padding-bottom: ${rem('180px')};
@@ -30,7 +33,21 @@ const Description = styled(Blurb)`
   width: 100%;
 `;
 
+const techLogoDiv = {
+  display: 'inline-block',
+};
+
 function Technologies({ technologies }) {
+  const mapToTech = technologies.map(technology => (
+    <div key={technology.name} style={techLogoDiv}>
+      <TechnologiesList.Item
+        {...technology}
+        data-tip={technology.name}
+        key={technology.id}
+      />
+    </div>
+  ));
+
   return (
     <Wrapper id="technologies">
       <TwoToneHeading>
@@ -41,11 +58,7 @@ function Technologies({ technologies }) {
         new languages, libraries, and best-practices. Here’s what we’ve been
         working with lately.
       </Description>
-      <TechnologiesList>
-        {technologies.map(technology => (
-          <TechnologiesList.Item {...technology} key={technology.id} />
-        ))}
-      </TechnologiesList>
+      <TechnologiesList>{mapToTech}</TechnologiesList>
     </Wrapper>
   );
 }

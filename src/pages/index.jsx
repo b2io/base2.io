@@ -3,6 +3,7 @@ import { sortBy } from 'lodash';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
+import Helmet from 'react-helmet';
 import {
   ContactUs,
   Clients,
@@ -19,6 +20,35 @@ import Footer from '../components/molecules/Footer';
 function IndexPage({ clients, services, technologies, team }) {
   return (
     <Main>
+      <Helmet>
+        {/* Primary Meta Tags  */}
+        <title>Base Two</title>
+        <meta content="Base Two" name="title" />
+        <meta
+          content="We Implement engaging websites and applications"
+          name="description"
+        />
+
+        {/* Open Graph / Facebook  */}
+        <meta content="website" property="og:type" />
+        <meta content="https://www.base2.io/" property="og:url" />
+        <meta content="Base Two" property="og:title" />
+        <meta
+          content="We Implement engaging websites and applications"
+          property="og:description"
+        />
+        <meta content="/static/img/planet-earth.jpg" property="og:image" />
+
+        {/* Twitter */}
+        <meta content="summary_large_image" property="twitter:card" />
+        <meta content="https://www.base2.io/" property="twitter:url" />
+        <meta content="Base Two" property="twitter:title" />
+        <meta
+          content="We Implement engaging websites and applications"
+          property="twitter:description"
+        />
+        <meta content="/static/img/planet-earth.jpg" property="twitter:image" />
+      </Helmet>
       <GlobalNavigation />
       <Hero />
       <ServiceList id="services">

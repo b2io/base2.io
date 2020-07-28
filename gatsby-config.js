@@ -3,6 +3,13 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Base Two',
+    description: 'We Implement engaging websites and applications',
+    url: 'https://www.base2.io',
+    image: '/static/images/planet-earth.jpg',
+    twitterUsername: '@base2io',
+    keywords:
+      'IT Consulting, Software Development, React Application Development, Software Engineer, Web Application Development ',
+    ogimage: '',
   },
   plugins: [
     {

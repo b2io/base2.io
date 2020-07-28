@@ -3,6 +3,7 @@ title: Joining a Team - Messing Up
 author: khansen
 date: '2019-12-30T04:00:00.000Z'
 path: '/2019/12/30/messing-up'
+cardImage: 'https://i.imgur.com/zwRn3LV.jpg'
 ---
 
 Recently, I’ve spent a lot of time reading blogs about how to rebound after various degrees of messing up. As the team’s resident newbie, I’ve messed up in an impressive variety of ways.

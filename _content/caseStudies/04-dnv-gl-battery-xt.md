@@ -12,6 +12,7 @@ link: 'http://batteryxt.dnvgl.com/'
 path: 'battery-xt'
 project: 'Battery XT'
 technologies: ['react', 'webpack', 'sass']
+cardImage: '/img/caseStudies/dnvgl-mock.png'
 ---
 
 ## Battery XT
