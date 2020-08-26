@@ -4,7 +4,7 @@
 
 ## Setup
 
-Install [Node.js v8.x](https://nodejs.org).
+Install [Node.js v8.x](https://nodejs.org) {or use 10.21.0}.
 
 **Windows**
 
