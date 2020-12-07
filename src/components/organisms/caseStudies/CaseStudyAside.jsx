@@ -50,7 +50,7 @@ const techLogoDiv = {
 
 function CaseStudyAside({ client, highlights, link, project, technologies }) {
   const mapToTech = technologies.map(tech => (
-    <div style={techLogoDiv}>
+    <div key={tech.name} style={techLogoDiv}>
       <CaseStudyTechnologyLogo
         {...tech.image}
         alt={tech.name}
