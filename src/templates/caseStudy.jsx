@@ -95,7 +95,7 @@ function CaseStudyTemplate({ caseStudy }) {
 
 CaseStudyTemplate.propTypes = {
   caseStudy: PropTypes.shape({
-    cardImage: PropTypes.string.isRequired,
+    cardImage: PropTypes.string,
     client: PropTypes.shape({
       id: PropTypes.node.isRequired,
       name: PropTypes.string.isRequired,
