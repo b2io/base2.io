@@ -7,4 +7,6 @@ import Prism from 'prism-react-renderer/prism';
  */
 
 (typeof global !== 'undefined' ? global : window).Prism = Prism;
+require('prismjs/plugins/diff-highlight/prism-diff-highlight');
 require('prismjs/components/prism-ruby');
+require('prism-svelte');
