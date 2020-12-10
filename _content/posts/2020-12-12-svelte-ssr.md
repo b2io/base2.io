@@ -77,7 +77,7 @@ The rendered HTML and CSS can be injected into your HTML page. Click [here](http
 
 ## Adding interactivity
 
-The above approach is viable for this basic component because the it has no interactive elements. Once the list is rendered, the component stops making changes to the DOM. To support client-side interactivity after the component is rendered server-side, a few changes need to be made to the build and rendering process.
+The above approach is viable for this basic component because the list has no interactive elements. Once the list is rendered, the component stops making changes to the DOM. To support client-side interactivity after the component is rendered server-side, a few changes need to be made to the build and rendering process.
 
 Make the component interactive by adding toggleable ingredient display.
 
