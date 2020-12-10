@@ -5,7 +5,7 @@ date: "2020-12-12"
 path: "/2020/12/12/svelte-ssr"
 ---
 
-Svelte is gaining popularity in the frontend community due to its advantages over existing approaches to building  and shipping frontend applications. One advantage of Svelte is the ease of using the same components to render server-side or client-side. This guide will explore how to take full advantage of SSR in Svelte and allow the same components to be used with SSR or client-side rendering.
+Svelte is gaining popularity in the frontend community due to its advantages over existing approaches to building  and shipping frontend applications. One advantage of Svelte is the ease of using the same components to render server-side or client-side. This guide will explore how to take full advantage of Server Side Rendering (SSR) in Svelte and allow the same components to be used with SSR or client-side rendering.
 
 Visit the [Svelte homepage](https://svelte.dev/) for more information on Svelte.
 
