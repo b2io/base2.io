@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { mapProps } from 'recompose';
 import { em, rem } from 'polished';
+import '../../util/prism-languages'
 import styled, { ThemeProvider } from 'styled-components';
 import {
   BlogHeader,
