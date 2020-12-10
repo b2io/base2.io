@@ -56,12 +56,10 @@ The same component can be used for SSR with minor changes. To render this compon
 - 	let recipes = null;
 + 	export let recipes = null;
  
-    $: {
--     fetch("http://localhost:8080/api/")p
-+     !recipes && fetch("http://localhost:8080/api/")
-        .then((response) => response.json())
-        .then((json) => (recipes = json.results));
-    }
+-   fetch("http://localhost:8080/api/")
++   !recipes && fetch("http://localhost:8080/api/")
+      .then((response) => response.json())
+      .then((json) => (recipes = json.results));
 ```
 
 The component can now be used for SSR. Adding `require('svelte/register');` to a Node script allows us to import and render a Svelte component directly in Node. Pass the incoming `recipe` prop in object passed to the `render` function.
