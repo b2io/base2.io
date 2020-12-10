@@ -29,7 +29,7 @@ First, build a Svelte component to render the recipes:
 </script>
 
 <main>
-	{#if recipes == null}
+	{#if recipes === null}
 		<div>Loading...</div>
 	{:else}
 	<ul>
@@ -111,7 +111,7 @@ Make the component interactive by adding toggleable ingredient display.
 ...
 ```
 
-When the client initializes the component after it is rendered by the server, it is desirable to re-use the existing DOM nodes rather than remove and replace them. This process is called hydration and must be enabled at the compilation stage. Add `hydratable: true` to the Svelte compiler options to enable client-side hydration.
+When the client initializes the component after it is rendered by the server, it is preferable to prevent redrawing the screen by re-use the existing DOM nodes instead than remove and replace them. This process is called hydration and must be enabled at the compilation stage. Add `hydratable: true` to the Svelte compiler options to enable client-side hydration.
 
 ```diff
 svelte({
