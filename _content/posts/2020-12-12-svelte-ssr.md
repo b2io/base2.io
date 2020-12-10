@@ -46,7 +46,11 @@ First, build a Svelte component to render the recipes:
 </main>
 ```
 
-Great! The component is retrieving a list of recipes and rendering them in the browser. The same component can be used for SSR with minor changes. To render this component server-side, the component must also accept the list of recipes as a prop and disable making the request if the recipes are provided.
+Great! The component is retrieving a list of recipes and rendering them in the browser.
+
+![demo](https://i.imgur.com/BEEazdv.png)
+
+The same component can be used for SSR with minor changes. To render this component server-side, the component must also accept the list of recipes as a prop and disable making the request if the recipes are provided.
 
 ```diff
 - 	let recipes = null;
