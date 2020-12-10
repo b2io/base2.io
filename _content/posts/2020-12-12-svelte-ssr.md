@@ -57,7 +57,7 @@ The same component can be used for SSR with minor changes. To render this compon
 + 	export let recipes = null;
  
     $: {
--     fetch("http://localhost:8080/api/")p
+-     fetch("http://localhost:8080/api/")
 +     !recipes && fetch("http://localhost:8080/api/")
         .then((response) => response.json())
         .then((json) => (recipes = json.results));
