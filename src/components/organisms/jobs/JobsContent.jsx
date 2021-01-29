@@ -20,11 +20,11 @@ function JobsContent({ jobs }) {
       <Section narrow>
         <H2>We make software for people</H2>
         <P>
-          We are Base Two, a multi-city company of experienced developers
-          working together to turn ideas into beautiful software. We work as
-          individuals and teams with small and large companies — local and
-          abroad — to improve processes around software development and deliver
-          user-focused products and applications.
+          We are Base Two, a remote-friendly multi-city company of experienced
+          developers working together to turn ideas into beautiful software. We
+          work as individuals and teams with small and large companies — local
+          and abroad — to improve processes around software development and
+          deliver user-focused products and applications.
         </P>
         <JobsImage alt="Our Base Two team" src={teamImage} width="1000" />
       </Section>
@@ -67,6 +67,7 @@ function JobsContent({ jobs }) {
           <LI>Unlimited sick days</LI>
           <LI>Flexible work schedule/location</LI>
           <LI>Employee’s choice of machine and peripherals</LI>
+          <LI>Remote-friendly work environment</LI>
           <LI>Casual office with ergonomic desks and chairs</LI>
           <LI>Fancy office coffee</LI>
         </UL>
@@ -75,11 +76,11 @@ function JobsContent({ jobs }) {
         <H2>Open Positions</H2>
 
         <P>
-          We are always looking for amazing people to work with us in Columbus,
-          OH; Pittsburgh, PA; and Chicago, IL. If you are a talented and
-          creative individual with strong people skills and experience building
-          web applications with the latest front-end technologies, please{' '}
-          <Link to="/jobs/apply">apply</Link>.
+          We are always looking for amazing people to work with us. We currently
+          have employees in Columbus, OH; Pittsburgh, PA; and Chicago, IL. If
+          you are a talented and creative individual with strong people skills
+          and experience building web applications with the latest front-end
+          technologies, please <Link to="/jobs/apply">apply</Link>.
         </P>
         {!isEmpty(jobs) && (
           <>

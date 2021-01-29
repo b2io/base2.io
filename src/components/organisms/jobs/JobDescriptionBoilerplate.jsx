@@ -8,11 +8,11 @@ function JobDescriptionBoilerplate() {
       <Section>
         <H2>About Base Two</H2>
         <P>
-          Base Two is a multi-city company of experienced developers working
-          together to turn ideas into beautiful software. We work as individuals
-          and teams with small and large companies — local and abroad — to
-          improve processes around software development and deliver user-focused
-          products and applications.
+          Base Two is a remote-friendly multi-city company of experienced
+          developers working together to turn ideas into beautiful software. We
+          work as individuals and teams with small and large companies — local
+          and abroad — to improve processes around software development and
+          deliver user-focused products and applications.
         </P>
         <P>
           We strive to be a forward-thinking and constantly improving collection
