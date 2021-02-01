@@ -7,12 +7,13 @@ active: true
 
 ### Requirements
 
-- Enthusiasm for the web and solving real-world problems for customers
+- Enthusiasm for the web and solving real-world problems
+- Self-directed and capable of providing value with minimal supervision
+- Comfortable with direct client contact and communication
+- Passion for continuous learning and improvement of you and your colleagues
 - Experience creating applications with JavaScript
 - Familiarity with cross-browser compatibility testing
 - Competency using debugging tools and troubleshooting
-- Comfortable with direct client contact and communication
-- Passion for continuous learning and improvement of you and your colleagues
 
 ### Technologies We Frequently Use
 
