@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { em } from 'polished';
@@ -27,11 +27,27 @@ const Wrapper = styled.div`
   `};
 `;
 
+const RadioButtonGroup = styled.div`
+  padding: 0 0 1em;
+`;
+
 const RadioButtonGroupLabel = styled.label`
   ${themed('typography.subheading')};
   color: ${themed('color.accent')};
   display: block;
+  font-size: 0.75em;
   margin-bottom: 0.25em;
+  position: relative;
+
+  &::before {
+    color: inherit;
+    content: '*Required';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    font-size: 0.75em;
+  }
 `;
 
 const SubmitButton = styled(Button)`
@@ -50,6 +66,12 @@ const SubmitButton = styled(Button)`
 `;
 
 function JobForm({ isApprenticeship, position }) {
+  const [isOtherLocation, setIsOtherLocation] = useState(false);
+
+  const handleOptionChange = e => {
+    setIsOtherLocation(e.target.value === 'other');
+  };
+
   return (
     <Wrapper>
       <form
@@ -146,14 +168,40 @@ function JobForm({ isApprenticeship, position }) {
             />
           </>
         )}
-        <>
-          <RadioButtonGroupLabel>
-            Nearest Base Two Location
-          </RadioButtonGroupLabel>
-          <RadioButton label="Columbus" name="location" value="columbus" />
-          <RadioButton label="Pittsburgh" name="location" value="pittsburgh" />
-          <RadioButton label="Chicago" name="location" value="chicago" />
-        </>
+        <RadioButtonGroup>
+          <RadioButtonGroupLabel>Location</RadioButtonGroupLabel>
+          <RadioButton
+            label="Columbus, OH"
+            name="location"
+            onChange={handleOptionChange}
+            required
+            value="columbus"
+          />
+          <RadioButton
+            label="Pittsburgh, PA"
+            name="location"
+            onChange={handleOptionChange}
+            required
+            value="pittsburgh"
+          />
+          <RadioButton
+            label="Chicago, IL"
+            name="location"
+            onChange={handleOptionChange}
+            required
+            value="chicago"
+          />
+          <RadioButton
+            label="Other"
+            name="location"
+            onChange={handleOptionChange}
+            required
+            value="other"
+          />
+        </RadioButtonGroup>
+        {isOtherLocation && (
+          <TextInputField label="Other City, State" name="city" required />
+        )}
         <TextAreaField
           label="Any Additional Information"
           multiline
