@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3001",
     "type-check": "tsc --pretty --noEmit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
