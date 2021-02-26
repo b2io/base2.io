@@ -1,12 +1,13 @@
 ---
-description: We’re looking for someone who is excited about solving real-world problems with web and mobile technologies in a collaborative, client-focused environment.
-path: software-engineer
-position: Software Engineer
-active: false
+description: We’re looking for someone who is experienced at solving real-world problems with web and mobile technologies in a collaborative, client-focused environment.
+path: senior-software-engineer
+position: Senior Software Engineer
+active: true
 ---
 
 ### Requirements
 
+- 5+ years of professional software engineering experience
 - Enthusiasm for the web and solving real-world problems
 - Self-directed and capable of providing value with minimal supervision
 - Comfortable with direct client contact and communication
