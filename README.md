@@ -2,7 +2,7 @@
 
 The Base Two website.
 
-- Jira Board
+- [Jira Board](https://b2io.atlassian.net/jira/software/projects/B2IO/boards/7)
 - [Design Files](https://app.zeplin.io/project/5fff21e06012bf1d470820c3)
 
 ## Development
