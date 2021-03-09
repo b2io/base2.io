@@ -16,6 +16,7 @@ const A = styled.a(({ theme }) => ({
     backgroundColor: theme.colors.action,
   },
   color: theme.colors.text,
+  display: 'inline-block',
   fontSize: 22,
   fontWeight: 900,
   lineHeight: '22px',

@@ -1,3 +1,5 @@
+import '@emotion/react';
+
 const palette = {
   coral: '#f73a52',
   darkBlue: '#05001e',
@@ -74,5 +76,18 @@ const theme = {
   colors,
   textVariants,
 };
+
+export type ThemeType = typeof theme;
+
+declare module '@emotion/react' {
+  export interface Theme {
+    colors: {
+      [key: string]: ThemeColor;
+    };
+    textVariants: {
+      [key: string]: ThemeTextVariants;
+    };
+  }
+}
 
 export default theme;
