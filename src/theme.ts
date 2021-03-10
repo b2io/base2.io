@@ -1,5 +1,3 @@
-import '@emotion/react';
-
 const palette = {
   coral: '#f73a52',
   darkBlue: '#05001e',
