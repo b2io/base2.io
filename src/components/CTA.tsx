@@ -21,6 +21,11 @@ const A = styled.a(({ theme }) => ({
     marginTop: 8,
     width: '100%',
   },
+  ':hover': {
+    '::after': {
+      backgroundColor: theme.colors.offWhite,
+    },
+  },
 }));
 
 export const CTA: FC<CTAProps> = ({ href, ...props }) => {
