@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 
-import { Layout, Heading, Text } from '~/components';
+import { CTA, Layout, Heading, Text } from '~/components';
 
 const HomePage: NextPage = () => {
   return (
@@ -25,6 +25,7 @@ const HomePage: NextPage = () => {
           curiosity.
         </Text>
       </Heading>
+      <CTA href="/404">404</CTA>
     </Layout>
   );
 };

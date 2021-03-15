@@ -75,4 +75,6 @@ const theme = {
   textVariants,
 };
 
+export type ThemeType = typeof theme;
+
 export default theme;
