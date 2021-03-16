@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { FC } from 'react';
+import { Logo } from '.';
 
 export type LayoutProps = {
   title?: string;
@@ -25,6 +26,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
+        <Logo size={30} />
         <nav>
           <ul>
             <li>
