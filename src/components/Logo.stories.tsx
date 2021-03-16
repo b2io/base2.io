@@ -13,3 +13,10 @@ export const LogoStory: Story<LogoProps> = (args) => {
 
 LogoStory.args = {};
 LogoStory.storyName = 'Logo';
+
+export const LogoWithNameStory: Story<LogoProps> = (args) => {
+  return <Logo showName={true} {...args} />;
+};
+
+LogoWithNameStory.args = {};
+LogoWithNameStory.storyName = 'LogoWithName';

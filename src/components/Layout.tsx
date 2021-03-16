@@ -26,7 +26,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <Logo size={30} />
+        <Logo height={30} />
         <nav>
           <ul>
             <li>
