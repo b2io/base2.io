@@ -43,18 +43,12 @@ You'll need to set up Git and NPM before you can run this project locally. The s
      choco install nodejs-lts -y
      ```
 
-1. Install yarn via npm
-
-   ```
-   npm install --global yarn
-   ```
-
 </details>
 
 **Install Packages**
 
 ```
-λ yarn
+λ npm i
 ```
 
 **Local Development**
@@ -62,7 +56,7 @@ You'll need to set up Git and NPM before you can run this project locally. The s
 Starts local development on port 3000.
 
 ```
-λ yarn dev
+λ npm run dev
 ```
 
 **Build & Run**
@@ -70,8 +64,8 @@ Starts local development on port 3000.
 Build and run built assets on port 3001.
 
 ```
-λ yarn build
-λ yarn start
+λ npm run build
+λ npm start
 ```
 
 **Storybook**
@@ -79,5 +73,5 @@ Build and run built assets on port 3001.
 Starts storybook on port 6006. Storybook is a demonstration home for the library of components and a good starting point for creating more.
 
 ```
-λ yarn storybook
+λ npm run storybook
 ```
