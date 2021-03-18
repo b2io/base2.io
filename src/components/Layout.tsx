@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { FC } from 'react';
+import { bp, mq } from '~/theme';
 
 export type LayoutProps = {
   title?: string;
@@ -25,7 +26,14 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <header>
-        <nav>
+        <nav
+          css={() => ({
+            display: 'none',
+            [mq(bp.s)]: {
+              display: 'block',
+            },
+          })}
+        >
           <ul>
             <li>
               <Link href="/">
