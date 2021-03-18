@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { FC } from 'react';
-import { bp, mq } from '~/theme';
+import { atSm } from '~/breakpoints';
 
 export type LayoutProps = {
   title?: string;
@@ -29,7 +29,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
         <nav
           css={() => ({
             display: 'none',
-            [mq(bp.s)]: {
+            [atSm]: {
               display: 'block',
             },
           })}

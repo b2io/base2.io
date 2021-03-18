@@ -1,15 +1,3 @@
-export const bp = {
-  xs: 0,
-  s: 576,
-  md: 768,
-  lg: 992,
-  xl: 1200,
-  xxl: 1400,
-};
-export type Breakpoint = keyof typeof bp;
-
-export const mq = (bp: number): string => `@media (min-width: ${bp}px)`;
-
 const palette = {
   coral: '#f73a52',
   darkBlue: '#05001e',
@@ -84,7 +72,6 @@ export type ThemeTextVariants = keyof typeof theme.textVariants;
 
 const theme = {
   colors,
-  mq,
   textVariants,
 };
 
