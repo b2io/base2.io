@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/react';
+import React from 'react';
 
-import { Logo, LogoProps } from './Logo';
+import { Logo, LogoProps, LogoWithName } from './Logo';
 
 export default {
   component: Logo,
@@ -15,7 +16,7 @@ LogoStory.args = {};
 LogoStory.storyName = 'Logo';
 
 export const LogoWithNameStory: Story<LogoProps> = (args) => {
-  return <Logo showName={true} {...args} />;
+  return <LogoWithName {...args} />;
 };
 
 LogoWithNameStory.args = {};
