@@ -98,11 +98,17 @@ Starts storybook on port 6006. Storybook is a demonstration home for the library
 3. Track time in Harvest via Jira by clicking the `Open Harvest Time Tracking` option next to `Harvest Time Tracking` in the Jira card. This will start a timer in Harvest with the card's name and a link to the card.
 4. Update the card's status to be `In Progress`
 5. Create a new branch off of the `next` branch prefixed with the card id (e.g. `B2-99-short-desc-of-task`). Note that the capitalization of the ID is important. This will cause Jira to recognize the card and begin tracking it within a `Development` section of the card.
-6. When committing add `#comment` within the contents of the commit message if you'd like it to be included in the Jira card as a commit.
+6. When committing add `#comment` within the contents of the commit message if you'd like it to be included in the Jira card as a commit. Example:
+      ```
+      WIP: add commit message example
+
+      B2-55 #comment
+      ```
+
 7. When creating a PR
 
-   1. Ensure that it's being PRed into the correct base branch (e.g. `next`)
-   2. Give it a title prefixed with it's card type and a short description (e.g. `task: update readme to include dev workflow`)
+   1. Ensure that the PR's destination is the correct base branch (e.g. `next`)
+   2. Give it a title prefixed with its card type and a short description (e.g. `task: update readme to include dev workflow`)
    3. Provide a description that explains what was changed, why it was changed, and any other information that may help the reviewer (e.g. screenshots or proof of successful tests)
    4. Include the Jira card number, a link to the card number, and `#comment` to communicate which card it closes and to link the commit in Jira. E.g.:
 
@@ -116,7 +122,7 @@ Starts storybook on port 6006. Storybook is a demonstration home for the library
       ```
 
 8. Update the card's status to be `Review`
-9. Once the PR is approved and it is ready to be merged
+9.  Once the PR is approved and it is ready to be merged
 10. Use the `Squash and merge` button in Github
 11. Update the commit message if and as needed
 12. `Confirm squash and merge`
