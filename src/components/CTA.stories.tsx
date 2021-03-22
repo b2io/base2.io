@@ -7,13 +7,8 @@ export default {
   title: 'Buttons/CTA',
 } as Meta;
 
-export const CTAStory: Story = (args) => {
-  return (
-    <CTA href="/" {...args}>
-      See our approach
-    </CTA>
-  );
+export const CTAStory: Story = () => {
+  return <CTA href="/">See our approach</CTA>;
 };
 
-CTAStory.args = {};
 CTAStory.storyName = 'CTA';

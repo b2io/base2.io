@@ -44,20 +44,26 @@ const Nav = styled.nav`
 
   ul {
     display: flex;
-    gap: 40px;
     list-style: none;
   }
 
-  li::after {
-    background-color: transparent;
-    content: '';
-    display: block;
-    height: 2px;
-    margin-top: 2px;
-  }
+  li {
+    margin-right: 40px;
+    &:last-child {
+      margin-right: 0;
+    }
 
-  li.active::after {
-    background-color: ${({ theme }) => theme.colors.action};
+    &::after {
+      background-color: transparent;
+      content: '';
+      display: block;
+      height: 2px;
+      margin-top: 2px;
+    }
+
+    &.active::after {
+      background-color: ${({ theme }) => theme.colors.action};
+    }
   }
 
   a {
