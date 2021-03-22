@@ -12,7 +12,7 @@ The Base Two website.
 ## Development
 
 <details>
-<summary>Prerequisites</summary>
+<summary>Prerequisites (git, npm)</summary>
 
 You'll need to set up Git and NPM before you can run this project locally. The setup for these is slightly different depending on your OS.
 
@@ -29,15 +29,18 @@ You'll need to set up Git and NPM before you can run this project locally. The s
 
    ```
 
-1. Node - [download](https://nodejs.org/en/download/) or install via your OS's package manager
+1. NVM / Node
+   
+   It is recommended that you install NVM (Node Version Manager) rather than Node directly because NVM allows you to switch node versions more easily, which is necessary when you hop between different projects.
+   Node can be downloaded via the link above or via your OS's package manager below. 
 
-   - Mac users can install and maintain Node through the package manager [Homebrew](https://brew.sh/):
+   - Mac users can install and maintain Node through the package manager [Homebrew](https://brew.sh/) or by going to the [Node website](https://nodejs.org/en/download/):
 
      ```
      brew install node
      ```
 
-   - Windows users can install and maintain Node using the package manager [Chocolatey](https://chocolatey.org/install):
+   - Windows users can install NVM via [nvm-windows](https://github.com/coreybutler/nvm-windows). If, instead, you choose to install Node directly an installer can be dowloaded from the [Node website](https://nodejs.org/en/download/) or by using the package manager [Chocolatey](https://chocolatey.org/install):
 
      ```
      choco install nodejs-lts -y
