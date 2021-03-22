@@ -88,9 +88,9 @@ Starts storybook on port 6006. Storybook is a demonstration home for the library
     <summary>If a new card is needed</summary>   
     If you need to create a new card then click the `Create` button in Jira's header and select the correct card type
 
-     - **Story:** A user-focused feature written as a user story.
-     - **Task:** A development task or chore that isn't written as a user story.
-     - **Bug:** A task that corrects an issue with the application.
+     - **story:** A user-focused feature written as a user story.
+     - **task:** A development task or chore that isn't written as a user story.
+     - **fix:** A task that corrects an issue with the application.
 
    </details>
 
