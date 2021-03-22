@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -45,6 +46,9 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
       <Header />
       <motion.main
         animate="enter"
+        css={css`
+          margin-top: 146px;
+        `}
         exit="exit"
         initial="initial"
         variants={mainVariants}

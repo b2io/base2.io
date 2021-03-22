@@ -1,20 +1,32 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
 import { LogoWithName } from './';
-import { atSm } from '~/breakpoints';
+import { atLg, atMd, atSm } from '~/breakpoints';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { MenuIcon } from './icons';
 
 const Container = styled.header`
   align-items: center;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(4, 0, 28, 0.84) 35%,
+    rgba(6, 2, 27, 0)
+  );
   display: flex;
+  height: 146px;
   justify-content: space-between;
+  left: 0;
   padding: 24px 24px 87px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
 `;
 
 const Nav = styled.nav`
   display: none;
+
   ${atSm} {
     display: block;
   }
@@ -27,7 +39,7 @@ const Nav = styled.nav`
 
   a {
     color: ${(props) => props.theme.colors.offWhite};
-    font-size: '17px  ';
+    font-size: 17px;
     text-decoration: none;
 
     &:hover {
@@ -42,9 +54,17 @@ export const Header: FC = () => {
       <Link href="/">
         <a>
           <LogoWithName
-            height="35px"
             css={css`
+              height: 35px;
               width: auto;
+
+              ${atMd} {
+                height: 53px;
+              }
+
+              ${atLg} {
+                height: 60px;
+              }
             `}
           />
         </a>
