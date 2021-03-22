@@ -104,10 +104,10 @@ Starts storybook on port 6006. Storybook is a demonstration home for the library
    1. Ensure that it's being PRed into the correct base branch (e.g. `next`)
    2. Give it a title prefixed with it's card type and a short description (e.g. `task: update readme to include dev workflow`)
    3. Provide a description that explains what was changed, why it was changed, and any other information that may help the reviewer (e.g. screenshots or proof of successful tests)
-   4. Include the Jira card number and `#comment` to communicate which card it closes and to link the commit in Jira. E.g.:
+   4. Include the Jira card number, a link to the card number, and `#comment` to communicate which card it closes and to link the commit in Jira. E.g.:
 
       ```
-      Closes B2-55 #comment
+      Closes [B2-55](https://b2io.atlassian.net/browse/B2-55) #comment
       Update readme to include development workflow instructions. This includes
       - updates to nvm/node installation
       - Jira usage
