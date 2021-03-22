@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { SvgProps } from './types';
 
 export const LogoIcon: FC<SvgProps> = ({
-  height = 'auto',
+  height = '100%',
   width = '100%',
   ...props
 }) => {
@@ -29,8 +29,8 @@ export const LogoIcon: FC<SvgProps> = ({
 };
 
 export const LogoWithName: FC<SvgProps> = ({
-  height = 'auto',
-  width = 'auto',
+  height = '100%',
+  width = '100%',
   ...props
 }) => {
   return (
