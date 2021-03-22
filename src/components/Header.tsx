@@ -5,6 +5,7 @@ import { atLg, atMd, atSm } from '~/breakpoints';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { MenuIcon } from './icons';
+import { useRouter } from 'next/router';
 
 const Container = styled.header`
   align-items: center;
@@ -47,6 +48,18 @@ const Nav = styled.nav`
     list-style: none;
   }
 
+  li::after {
+    background-color: transparent;
+    content: '';
+    display: block;
+    height: 2px;
+    margin-top: 2px;
+  }
+
+  li.active::after {
+    background-color: ${({ theme }) => theme.colors.action};
+  }
+
   a {
     color: ${(props) => props.theme.colors.offWhite};
     font-size: 17px;
@@ -58,6 +71,22 @@ const Nav = styled.nav`
     }
   }
 `;
+
+interface NavItemProps {
+  href: string;
+}
+
+const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
+  const { asPath } = useRouter();
+
+  return (
+    <li className={asPath == href ? 'active' : ''}>
+      <Link href={href}>
+        <a {...props} />
+      </Link>
+    </li>
+  );
+};
 
 export const Header: FC = () => {
   return (
@@ -89,26 +118,10 @@ export const Header: FC = () => {
       />
       <Nav>
         <ul>
-          <li>
-            <Link href="/work">
-              <a>Work</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/approach">
-              <a>Approach</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/culture">
-              <a>Culture</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
-          </li>
+          <NavItem href="/work">Work</NavItem>
+          <NavItem href="/approach">Approach</NavItem>
+          <NavItem href="/culture">Culture</NavItem>
+          <NavItem href="/contact">Contact</NavItem>
         </ul>
       </Nav>
     </Container>
