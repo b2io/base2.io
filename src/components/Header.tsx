@@ -13,15 +13,42 @@ const Container = styled.header`
   padding: 24px 24px 87px;
 `;
 
+const Nav = styled.nav`
+  display: none;
+  ${atSm} {
+    display: block;
+  }
+
+  ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  a {
+    color: ${(props) => props.theme.colors.offWhite};
+    font-size: '17px  ';
+    text-decoration: none;
+
+    &:hover {
+      color: ${(props) => props.theme.colors.coral};
+    }
+  }
+`;
+
 export const Header: FC = () => {
   return (
     <Container>
-      <LogoWithName
-        height="35px"
-        css={css`
-          width: auto;
-        `}
-      />
+      <Link href="/">
+        <a>
+          <LogoWithName
+            height="35px"
+            css={css`
+              width: auto;
+            `}
+          />
+        </a>
+      </Link>
       <MenuIcon
         css={() => ({
           [atSm]: {
@@ -29,20 +56,8 @@ export const Header: FC = () => {
           },
         })}
       />
-      <nav
-        css={() => ({
-          display: 'none',
-          [atSm]: {
-            display: 'block',
-          },
-        })}
-      >
+      <Nav>
         <ul>
-          <li>
-            <Link href="/">
-              <a>Base Two</a>
-            </Link>
-          </li>
           <li>
             <Link href="/work">
               <a>Work</a>
@@ -64,7 +79,7 @@ export const Header: FC = () => {
             </Link>
           </li>
         </ul>
-      </nav>
+      </Nav>
     </Container>
   );
 };
