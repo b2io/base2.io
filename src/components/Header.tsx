@@ -17,11 +17,21 @@ const Container = styled.header`
   height: 146px;
   justify-content: space-between;
   left: 0;
+  margin: 0 auto;
+  max-width: 1441px;
   padding: 24px 24px 87px;
   position: fixed;
   right: 0;
   top: 0;
   width: 100%;
+
+  ${atMd} {
+    padding: 36px 40px 87px;
+  }
+
+  ${atLg} {
+    padding: 32px 80px 87px;
+  }
 `;
 
 const Nav = styled.nav`
@@ -40,6 +50,7 @@ const Nav = styled.nav`
   a {
     color: ${(props) => props.theme.colors.offWhite};
     font-size: 17px;
+    line-height: 28px;
     text-decoration: none;
 
     &:hover {
