@@ -2,11 +2,33 @@ import Link from 'next/link';
 import React, { FC } from 'react';
 import { LogoWithName } from './';
 import { atSm } from '~/breakpoints';
+import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+import { MenuIcon } from './icons';
+
+const Container = styled.header`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 24px 87px;
+`;
 
 export const Header: FC = () => {
   return (
-    <header>
-      <LogoWithName height={40} />
+    <Container>
+      <LogoWithName
+        height="35px"
+        css={css`
+          width: auto;
+        `}
+      />
+      <MenuIcon
+        css={() => ({
+          [atSm]: {
+            display: 'none',
+          },
+        })}
+      />
       <nav
         css={() => ({
           display: 'none',
@@ -43,6 +65,6 @@ export const Header: FC = () => {
           </li>
         </ul>
       </nav>
-    </header>
+    </Container>
   );
 };

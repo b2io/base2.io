@@ -1,11 +1,7 @@
 import React, { FC } from 'react';
+import { SvgProps } from './types';
 
-export interface LogoProps {
-  height?: number | string;
-  width?: number | string;
-}
-
-export const Logo: FC<LogoProps> = ({
+export const LogoIcon: FC<SvgProps> = ({
   height = 'auto',
   width = '100%',
   ...props
@@ -32,7 +28,7 @@ export const Logo: FC<LogoProps> = ({
   );
 };
 
-export const LogoWithName: FC<LogoProps> = ({
+export const LogoWithName: FC<SvgProps> = ({
   height = 'auto',
   width = 'auto',
   ...props
