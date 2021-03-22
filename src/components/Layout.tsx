@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, { FC } from 'react';
 import { LogoWithName } from './';
+import { atSm } from '~/breakpoints';
 
 export type LayoutProps = {
   title?: string;
@@ -44,7 +45,14 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
       </Head>
       <header>
         <LogoWithName height={40} />
-        <nav>
+        <nav
+          css={() => ({
+            display: 'none',
+            [atSm]: {
+              display: 'block',
+            },
+          })}
+        >
           <ul>
             <li>
               <Link href="/">
