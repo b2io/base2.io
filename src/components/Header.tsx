@@ -116,11 +116,11 @@ export const Header: FC = () => {
         </a>
       </Link>
       <MenuIcon
-        css={() => ({
-          [atSm]: {
-            display: 'none',
-          },
-        })}
+        css={css`
+          ${atSm} {
+            display: none;
+          }
+        `}
       />
       <Nav>
         <ul>
