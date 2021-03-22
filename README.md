@@ -11,6 +11,8 @@ The Base Two website.
 
 ## Development
 
+### Setup & Tools
+
 <details>
 <summary>Prerequisites (git, npm)</summary>
 
@@ -78,3 +80,37 @@ Starts storybook on port 6006. Storybook is a demonstration home for the library
 ```
 λ npm run storybook
 ```
+
+### Development Workflow
+
+1. Go to the latest sprint in [Jira](https://b2io.atlassian.net/jira/software/projects/B2IO/boards/7) to find a development task from the `TO DO` column.
+   - If you need to create a new card then click the `Create` button in Jira's header and select the correct card type
+     - **Story:** A user-focused feature written as a user story.
+     - **Task:** A development task or chore that isn't written as a user story.
+     - **Bug:** A task that corrects an issue with the application.
+2. Assign yourself to the card
+3. Track time in Harvest via Jira by clicking the `Open Harvest Time Tracking` option next to `Harvest Time Tracking` in the Jira card. This will start a timer in Harvest with the card's name and a link to the card.
+4. Update the card's status to be `In Progress`
+5. Create a new branch off of the `next` branch prefixed with the card id (e.g. `B2-99-short-desc-of-task`). Note that the capitalization of the ID is important. This will cause Jira to recognize the card and begin tracking it within a `Development` section of the card.
+6. When committing add `#comment` within the contents of the commit message if you'd like it to be included in the Jira card as a commit.
+7. When creating a PR
+   - Ensure that it's being PRed into the correct base branch (e.g. `next`)
+   - Give it a title prefixed with it's card type and a short description (e.g. `task: update readme to include dev workflow`)
+   - Provide a description that explains what was changed, why it was changed, and any other information that may help the reviewer (e.g. screenshots or proof of successful tests)
+   - Include the Jira card number and `#comment` to communicate which card it closes and to link the commit in Jira. E.g.:
+   ```
+   Closes B2-55 #comment
+   Update readme to include development workflow instructions. This includes
+   - updates to nvm/node installation
+   - Jira usage
+   - branch creation
+   - PR creation   
+   ```
+   
+8. Update the card's status to be `Review`
+9. Once the PR is approved and it is ready to be merged 
+   1. Use the `Squash and merge` button in Github
+   2. Update the commit message if and as needed
+   3. `Confirm squash and merge`
+   4. Delete the branch
+10. Update the card's status to be `Done`
