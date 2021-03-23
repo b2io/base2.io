@@ -4,8 +4,8 @@ import { LogoWithName } from './';
 import { atMd, atSm, atXXL } from '~/breakpoints';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { MenuIcon } from './icons';
 import { useRouter } from 'next/router';
+import { MobileMenu } from './';
 
 const Container = styled.header`
   align-items: center;
@@ -116,7 +116,7 @@ export const Header: FC = ({ ...props }) => {
             />
           </a>
         </Link>
-        <MenuIcon
+        <MobileMenu
           css={css`
             ${atSm} {
               display: none;
