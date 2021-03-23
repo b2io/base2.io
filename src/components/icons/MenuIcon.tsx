@@ -15,6 +15,7 @@ const Container = styled.div`
     height: 1px;
     position: absolute;
     right: 0;
+    transition: 0.25s ease;
     width: 100%;
 
     &:nth-of-type(1) {
