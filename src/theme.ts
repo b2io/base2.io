@@ -2,6 +2,7 @@ const palette = {
   coral: '#f73a52',
   darkBlue: '#05001e',
   offWhite: '#ecf0f4',
+  workThumbnailBg: '#30308a',
 };
 
 const colors = {
