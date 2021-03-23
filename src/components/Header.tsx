@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
 import { LogoWithName } from './';
-import { atLg, atMd, atSm } from '~/breakpoints';
+import { atMd, atSm, atXXL } from '~/breakpoints';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { MenuIcon } from './icons';
@@ -18,7 +18,7 @@ const Container = styled.header`
     padding: 36px 40px 40px;
   }
 
-  ${atLg} {
+  ${atXXL} {
     padding: 32px 80px 80px;
   }
 `;
@@ -109,7 +109,7 @@ export const Header: FC = ({ ...props }) => {
                   height: 53px;
                 }
 
-                ${atLg} {
+                ${atXXL} {
                   height: 60px;
                 }
               `}
