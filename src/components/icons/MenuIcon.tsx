@@ -1,24 +1,44 @@
+import styled from '@emotion/styled';
 import React, { FC } from 'react';
-import { SvgProps } from './types';
 
-export const MenuIcon: FC<SvgProps> = ({
-  height = '11px',
-  width = '25px',
-  ...props
-}) => {
+export interface MenuIconProps {
+  isClose?: boolean;
+}
+
+const Container = styled.div`
+  height: 11px;
+  margin: 0 auto;
+  position: relative;
+  width: 24px;
+  span {
+    background-color: ${(props: MenuIconProps) =>
+      props.isClose ? 'red' : 'white'};
+    height: 1px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+
+    &:nth-of-type(1) {
+      width: 19px;
+    }
+
+    &:nth-of-type(2) {
+      top: 5px;
+      width: 16px;
+    }
+
+    &:nth-of-type(3) {
+      bottom: 0;
+    }
+  }
+`;
+
+export const MenuIcon: FC<MenuIconProps> = ({ ...props }) => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      height={height}
-      width={width}
-      viewBox="0 0 25 11"
-      {...props}
-    >
-      <path
-        fill="#FFF"
-        d="M5.062 0H24.297V1H5.062zM8.099 5H24.297V6H8.099zM0 10H24.297V11H0z"
-        transform="translate(-320 -36) translate(24 24) translate(296.628 12)"
-      />
-    </svg>
+    <Container {...props}>
+      <span />
+      <span />
+      <span />
+    </Container>
   );
 };
