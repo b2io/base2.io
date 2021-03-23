@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 import theme from '~/theme';
+import 'normalize.css';
 
 const handleExitComplete = () => {
   if (typeof window !== 'undefined') {
