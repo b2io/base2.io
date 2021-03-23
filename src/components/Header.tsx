@@ -9,29 +9,17 @@ import { useRouter } from 'next/router';
 
 const Container = styled.header`
   align-items: center;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(4, 0, 28, 0.84) 35%,
-    rgba(6, 2, 27, 0)
-  );
   display: flex;
-  height: 146px;
   justify-content: space-between;
-  left: 0;
   margin: 0 auto;
-  max-width: 1441px;
-  padding: 24px 24px 87px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
+  padding: 24px 24px 40px;
 
   ${atMd} {
-    padding: 36px 40px 87px;
+    padding: 36px 40px 40px;
   }
 
   ${atLg} {
-    padding: 32px 80px 87px;
+    padding: 32px 80px 80px;
   }
 `;
 
@@ -94,42 +82,56 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   );
 };
 
-export const Header: FC = () => {
+export const Header: FC = ({ ...props }) => {
   return (
-    <Container>
-      <Link href="/">
-        <a>
-          <LogoWithName
-            css={css`
-              height: 35px;
-              width: auto;
+    <div
+      css={css`
+        background-image: linear-gradient(
+          to bottom,
+          rgba(4, 0, 28, 0.84) 35%,
+          rgba(6, 2, 27, 0)
+        );
+        height: 146px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+      `}
+    >
+      <Container {...props}>
+        <Link href="/">
+          <a>
+            <LogoWithName
+              css={css`
+                height: 35px;
+                width: auto;
 
-              ${atMd} {
-                height: 53px;
-              }
+                ${atMd} {
+                  height: 53px;
+                }
 
-              ${atLg} {
-                height: 60px;
-              }
-            `}
-          />
-        </a>
-      </Link>
-      <MenuIcon
-        css={css`
-          ${atSm} {
-            display: none;
-          }
-        `}
-      />
-      <Nav>
-        <ul>
-          <NavItem href="/work">Work</NavItem>
-          <NavItem href="/approach">Approach</NavItem>
-          <NavItem href="/culture">Culture</NavItem>
-          <NavItem href="/contact">Contact</NavItem>
-        </ul>
-      </Nav>
-    </Container>
+                ${atLg} {
+                  height: 60px;
+                }
+              `}
+            />
+          </a>
+        </Link>
+        <MenuIcon
+          css={css`
+            ${atSm} {
+              display: none;
+            }
+          `}
+        />
+        <Nav>
+          <ul>
+            <NavItem href="/work">Work</NavItem>
+            <NavItem href="/approach">Approach</NavItem>
+            <NavItem href="/culture">Culture</NavItem>
+            <NavItem href="/contact">Contact</NavItem>
+          </ul>
+        </Nav>
+      </Container>
+    </div>
   );
 };

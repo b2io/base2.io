@@ -43,7 +43,11 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header />
+      <Header
+        css={css`
+          max-width: 1600px;
+        `}
+      />
       <motion.main
         animate="enter"
         css={css`
