@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import React, { FC } from 'react';
 import { useLockBodyScroll, useToggle } from 'react-use';
 import { MenuIcon } from './icons';
@@ -22,6 +23,43 @@ const IconButton = styled.button`
   padding: 0;
 `;
 
+const Nav = styled.nav`
+  ul {
+    list-style: none;
+    padding: 163px 0 0 39px;
+  }
+
+  li {
+    margin-bottom: 16px;
+  }
+
+  a {
+    color: ${(props) => props.theme.colors.offWhite};
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.1;
+    text-decoration: none;
+
+    &:hover {
+      color: ${(props) => props.theme.colors.coral};
+    }
+  }
+`;
+
+interface NavItemProps {
+  href: string;
+}
+
+const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
+  return (
+    <li>
+      <Link href={href}>
+        <a {...props} />
+      </Link>
+    </li>
+  );
+};
+
 export const MobileMenu: FC = ({ ...props }) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
   useLockBodyScroll(isOpen);
@@ -31,7 +69,18 @@ export const MobileMenu: FC = ({ ...props }) => {
       <IconButton onClick={() => toggleIsOpen()}>
         <MenuIcon showClose={isOpen} />
       </IconButton>
-      {isOpen && <Background></Background>}
+      {isOpen && (
+        <Background>
+          <Nav>
+            <ul>
+              <NavItem href="/work">Work</NavItem>
+              <NavItem href="/approach">Approach</NavItem>
+              <NavItem href="/culture">Culture</NavItem>
+              <NavItem href="/contact">Contact</NavItem>
+            </ul>
+          </Nav>
+        </Background>
+      )}
     </div>
   );
 };
