@@ -8,6 +8,18 @@ import { useRouter } from 'next/router';
 import { MobileMenu } from './';
 
 const Container = styled.header`
+  background-image: linear-gradient(
+    to bottom,
+    rgba(4, 0, 28, 0.84) 35%,
+    rgba(6, 2, 27, 0)
+  );
+  height: 146px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+`;
+
+const Content = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -70,6 +82,29 @@ interface NavItemProps {
   href: string;
 }
 
+const LogoLink: FC = () => {
+  return (
+    <Link href="/">
+      <a>
+        <LogoWithName
+          css={css`
+            height: 35px;
+            width: auto;
+
+            ${atMd} {
+              height: 53px;
+            }
+
+            ${atXXL} {
+              height: 60px;
+            }
+          `}
+        />
+      </a>
+    </Link>
+  );
+};
+
 const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   const { asPath } = useRouter();
 
@@ -84,38 +119,9 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
 
 export const Header: FC = ({ ...props }) => {
   return (
-    <div
-      css={css`
-        background-image: linear-gradient(
-          to bottom,
-          rgba(4, 0, 28, 0.84) 35%,
-          rgba(6, 2, 27, 0)
-        );
-        height: 146px;
-        position: fixed;
-        top: 0;
-        width: 100%;
-      `}
-    >
-      <Container {...props}>
-        <Link href="/">
-          <a>
-            <LogoWithName
-              css={css`
-                height: 35px;
-                width: auto;
-
-                ${atMd} {
-                  height: 53px;
-                }
-
-                ${atXXL} {
-                  height: 60px;
-                }
-              `}
-            />
-          </a>
-        </Link>
+    <Container>
+      <Content {...props}>
+        <LogoLink />
         <MobileMenu
           css={css`
             ${atSm} {
@@ -131,7 +137,7 @@ export const Header: FC = ({ ...props }) => {
             <NavItem href="/contact">Contact</NavItem>
           </ul>
         </Nav>
-      </Container>
-    </div>
+      </Content>
+    </Container>
   );
 };
