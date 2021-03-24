@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
+import { useLockBodyScroll, useToggle } from 'react-use';
 import { MenuIcon } from './icons';
 
 const Background = styled.div`
@@ -22,12 +23,13 @@ const IconButton = styled.button`
 `;
 
 export const MobileMenu: FC = ({ ...props }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, toggleIsOpen] = useToggle(false);
+  useLockBodyScroll(isOpen);
 
   return (
     <div {...props}>
-      <IconButton onClick={() => setIsOpen(!isOpen)}>
-        <MenuIcon isClose={isOpen} />
+      <IconButton onClick={() => toggleIsOpen()}>
+        <MenuIcon showClose={isOpen} />
       </IconButton>
       {isOpen && <Background></Background>}
     </div>

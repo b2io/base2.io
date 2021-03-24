@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import React, { FC } from 'react';
 
 export interface MenuIconProps {
-  isClose?: boolean;
+  showClose?: boolean;
 }
 
 const Container = styled.div`
@@ -54,9 +54,9 @@ const Container = styled.div`
   }
 `;
 
-export const MenuIcon: FC<MenuIconProps> = ({ isClose, ...props }) => {
+export const MenuIcon: FC<MenuIconProps> = ({ showClose, ...props }) => {
   return (
-    <Container {...props} className={isClose ? 'close' : ''}>
+    <Container {...props} className={showClose ? 'close' : ''}>
       <span />
       <span />
       <span />
