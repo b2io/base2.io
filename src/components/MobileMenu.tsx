@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import React, { FC } from 'react';
 import { useLockBodyScroll, useToggle } from 'react-use';
+import { CTA } from '.';
 import { MenuIcon } from './icons';
 
 const Background = styled.div`
@@ -60,6 +61,11 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   );
 };
 
+const ContactLink = styled(CTA)`
+  display: table;
+  margin: 40px 40px 0;
+`;
+
 export const MobileMenu: FC = ({ ...props }) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
   useLockBodyScroll(isOpen);
@@ -79,6 +85,13 @@ export const MobileMenu: FC = ({ ...props }) => {
               <NavItem href="/contact">Contact</NavItem>
             </ul>
           </Nav>
+
+          <ContactLink href="tel:6143981158" isExternal>
+            614.398.1158
+          </ContactLink>
+          <ContactLink href="mailto:info@base2.io" isExternal>
+            info@base2.io
+          </ContactLink>
         </Background>
       )}
     </div>
