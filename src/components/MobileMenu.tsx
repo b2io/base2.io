@@ -5,14 +5,30 @@ import { useLockBodyScroll, useToggle } from 'react-use';
 import { CTA } from '.';
 import { MenuIcon } from './icons';
 
-const Background = styled.div`
+const textAnimation = `
+  opacity: 0;
+
+  .visible & {
+    opacity: 1;
+    transition: opacity 500ms ease 100ms;
+  }
+`;
+
+const Menu = styled.div`
   background-color: ${({ theme }) => theme.colors.workThumbnailBg};
   height: 100%;
   left: 0;
   position: fixed;
   top: 0;
+  transform: scale(0, 0);
+  transform-origin: top right;
+  transition: transform 100ms ease-in-out;
   width: 100%;
   z-index: -1;
+
+  &.visible {
+    transform: scale(1, 1);
+  }
 `;
 
 const IconButton = styled.button`
@@ -25,6 +41,8 @@ const IconButton = styled.button`
 `;
 
 const Nav = styled.nav`
+  ${textAnimation}
+
   ul {
     list-style: none;
     padding: 163px 0 0 39px;
@@ -47,6 +65,13 @@ const Nav = styled.nav`
   }
 `;
 
+const ContactLink = styled(CTA)`
+  display: table;
+  margin: 40px 40px 0;
+
+  ${textAnimation}
+`;
+
 interface NavItemProps {
   href: string;
 }
@@ -61,11 +86,6 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   );
 };
 
-const ContactLink = styled(CTA)`
-  display: table;
-  margin: 40px 40px 0;
-`;
-
 export const MobileMenu: FC = ({ ...props }) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
   useLockBodyScroll(isOpen);
@@ -75,25 +95,24 @@ export const MobileMenu: FC = ({ ...props }) => {
       <IconButton onClick={() => toggleIsOpen()}>
         <MenuIcon showClose={isOpen} />
       </IconButton>
-      {isOpen && (
-        <Background>
-          <Nav>
-            <ul>
-              <NavItem href="/work">Work</NavItem>
-              <NavItem href="/approach">Approach</NavItem>
-              <NavItem href="/culture">Culture</NavItem>
-              <NavItem href="/contact">Contact</NavItem>
-            </ul>
-          </Nav>
 
-          <ContactLink href="tel:6143981158" isExternal>
-            614.398.1158
-          </ContactLink>
-          <ContactLink href="mailto:info@base2.io" isExternal>
-            info@base2.io
-          </ContactLink>
-        </Background>
-      )}
+      <Menu className={isOpen ? 'visible' : ''}>
+        <Nav>
+          <ul>
+            <NavItem href="/work">Work</NavItem>
+            <NavItem href="/approach">Approach</NavItem>
+            <NavItem href="/culture">Culture</NavItem>
+            <NavItem href="/contact">Contact</NavItem>
+          </ul>
+        </Nav>
+
+        <ContactLink href="tel:6143981158" isExternal>
+          614.398.1158
+        </ContactLink>
+        <ContactLink href="mailto:info@base2.io" isExternal>
+          info@base2.io
+        </ContactLink>
+      </Menu>
     </div>
   );
 };
