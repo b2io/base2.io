@@ -22,7 +22,7 @@ const Menu = styled.div`
   top: 0;
   transform: scale(0, 0);
   transform-origin: top right;
-  transition: transform 100ms ease-in-out;
+  transition: transform 220ms ease-out, opacity 220ms ease-out;
   width: 100%;
   z-index: -1;
 
