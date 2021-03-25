@@ -18,6 +18,7 @@ const Menu = styled.div`
   background-color: ${({ theme }) => theme.colors.workThumbnailBg};
   height: 100%;
   left: 0;
+  opacity: 0;
   position: fixed;
   top: 0;
   transform: scale(0, 0);
@@ -27,6 +28,7 @@ const Menu = styled.div`
   z-index: -1;
 
   &.visible {
+    opacity: 1;
     transform: scale(1, 1);
   }
 `;
