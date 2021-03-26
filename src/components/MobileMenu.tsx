@@ -94,7 +94,7 @@ export const MobileMenu: FC = ({ ...props }) => {
 
   return (
     <div {...props}>
-      <IconButton onClick={() => toggleIsOpen()}>
+      <IconButton aria-expanded={isOpen} onClick={() => toggleIsOpen()}>
         <MenuIcon showClose={isOpen} />
       </IconButton>
 
