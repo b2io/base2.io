@@ -85,7 +85,7 @@ interface NavItemProps {
 const LogoLink: FC = () => {
   return (
     <Link href="/">
-      <a>
+      <a aria-label="go to home">
         <LogoWithName
           css={css`
             height: 35px;
