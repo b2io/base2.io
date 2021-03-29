@@ -5,15 +5,6 @@ import { useLockBodyScroll, useToggle } from 'react-use';
 import { CTA } from '.';
 import { MenuIcon } from './icons';
 
-const textAnimation = `
-  opacity: 0;
-
-  .visible & {
-    opacity: 1;
-    transition: opacity 500ms ease 100ms;
-  }
-`;
-
 const Menu = styled.div`
   background-color: ${({ theme }) => theme.colors.workThumbnailBg};
   height: 100%;
@@ -21,15 +12,14 @@ const Menu = styled.div`
   opacity: 0;
   position: fixed;
   top: 0;
-  transform: scale(0, 0);
-  transform-origin: top right;
-  transition: transform 220ms ease-out, opacity 220ms ease-out;
+  transform: translateX(200vw);
+  transition: transform 220ms ease-out;
   width: 100%;
   z-index: -1;
 
   &.visible {
     opacity: 1;
-    transform: scale(1, 1);
+    transform: translateX(0);
   }
 `;
 
@@ -43,8 +33,6 @@ const IconButton = styled.button`
 `;
 
 const Nav = styled.nav`
-  ${textAnimation}
-
   ul {
     list-style: none;
     padding: 163px 0 0 39px;
@@ -70,8 +58,6 @@ const Nav = styled.nav`
 const ContactLink = styled(CTA)`
   display: table;
   margin: 40px 40px 0;
-
-  ${textAnimation}
 `;
 
 interface NavItemProps {
