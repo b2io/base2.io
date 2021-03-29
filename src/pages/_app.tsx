@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 import theme from '~/theme';
+import 'normalize.css';
 
 const handleExitComplete = () => {
   if (typeof window !== 'undefined') {
@@ -25,8 +26,6 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
               * {
                 box-sizing: border-box;
                 font-family: Roobert;
-                margin: 0;
-                padding: 0;
               }
 
               body,
