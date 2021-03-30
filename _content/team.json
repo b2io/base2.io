@@ -97,6 +97,14 @@
   },
   {
     "active": true,
+    "id": "mlam",
+    "image": "img/team/mlam.jpg",
+    "name": "Melissa Lam",
+    "lastName": "Lam",
+    "title": "Software Engineer I"
+  },
+  {
+    "active": true,
     "id": "futureTeamMember",
     "image": "img/team/BlueAstronaut.png",
     "name": "Join our Team",
