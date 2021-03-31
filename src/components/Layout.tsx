@@ -19,7 +19,12 @@ const mainVariants = {
 
 export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
   return (
-    <>
+    <div
+      css={css`
+        max-width: 1600px;
+        overflow-x: hidden;
+      `}
+    >
       <Head>
         <title>{title ? `${title} | Base Two` : 'Base Two'}</title>
         <link
@@ -43,11 +48,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header
-        css={css`
-          max-width: 1600px;
-        `}
-      />
+      <Header />
       <motion.main
         animate="enter"
         css={css`
@@ -98,6 +99,6 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
           </li>
         </ul>
       </footer>
-    </>
+    </div>
   );
 };
