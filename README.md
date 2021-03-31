@@ -89,9 +89,9 @@ Starts storybook on port 6006. Storybook is a demonstration home for the library
     <summary>If a new card is needed</summary>   
     If you need to create a new card then click the `Create` button in Jira's header and select the correct card type
 
-     - **story:** A user-focused feature written as a user story.
-     - **task:** A development task or chore that isn't written as a user story.
-     - **fix:** A task that corrects an issue with the application.
+   - **story:** A user-focused feature written as a user story.
+   - **task:** A development task or chore that isn't written as a user story.
+   - **fix:** A task that corrects an issue with the application.
 
    </details>
 
@@ -100,11 +100,12 @@ Starts storybook on port 6006. Storybook is a demonstration home for the library
 4. Update the card's status to be `In Progress`
 5. Create a new branch off of the `next` branch prefixed with the card id (e.g. `B2-99-short-desc-of-task`). Note that the capitalization of the ID is important. This will cause Jira to recognize the card and begin tracking it within a `Development` section of the card.
 6. When committing add `#comment` within the contents of the commit message if you'd like it to be included in the Jira card as a commit. Example:
-      ```
-      WIP: add commit message example
 
-      B2-55 #comment
-      ```
+   ```
+   WIP: add commit message example
+
+   B2-55 #comment
+   ```
 
 7. When creating a PR
 
@@ -123,7 +124,7 @@ Starts storybook on port 6006. Storybook is a demonstration home for the library
       ```
 
 8. Update the card's status to be `Review`
-9.  Once the PR is approved and it is ready to be merged
+9. Once the PR is approved and it is ready to be merged
 10. Use the `Squash and merge` button in Github
 11. Update the commit message if and as needed
 12. `Confirm squash and merge`
