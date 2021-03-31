@@ -16,7 +16,7 @@ const Container = styled.header`
   height: 146px;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
 `;
 
 const Content = styled.div`
