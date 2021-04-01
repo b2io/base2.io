@@ -13,7 +13,7 @@
     "image": "img/team/tborres.jpg",
     "name": "Tony Borres",
     "lastName": "Borres",
-    "title": "Director of Operations //\nSenior Software Engineer II"
+    "title": "Director of Operations //\n Staff Software Engineer I"
   },
   {
     "active": false,
@@ -29,7 +29,7 @@
     "image": "img/team/chawkins.jpg",
     "name": "Chris Hawkins",
     "lastName": "Hawkins",
-    "title": "Senior Software Engineer"
+    "title": "Senior Software Engineer III"
   },
   {
     "active": true,
@@ -45,7 +45,7 @@
     "image": "img/team/zchay-dolan.jpg",
     "name": "Zachary Chay-Dolan",
     "lastName": "Chay-Dolan",
-    "title": "Software Engineer"
+    "title": "Software Engineer III"
   },
   {
     "active": true,
@@ -53,7 +53,7 @@
     "image": "img/team/rdunkle.jpg",
     "name": "Reed Dunkle",
     "lastName": "Dunkle",
-    "title": "Software Engineer II"
+    "title": "Senior Software Engineer I"
   },
   {
     "active": true,
@@ -61,15 +61,7 @@
     "image": "img/team/khansen.jpeg",
     "name": "Kate Hansen",
     "lastName": "Hansen",
-    "title": "Associate Software Engineer"
-  },
-  {
-    "active": true,
-    "id": "mcondo",
-    "image": "img/team/mcondo.jpg",
-    "name": "Mike Condo",
-    "lastName": "Condo",
-    "title": "Senior Software Engineer"
+    "title": "Software Engineer I"
   },
   {
     "active": true,
@@ -77,7 +69,7 @@
     "image": "img/team/fmartinez.jpg",
     "name": "Franky Martinez",
     "lastName": "Martinez",
-    "title": "Senior Software Engineer"
+    "title": "Senior Software Engineer III"
   },
   {
     "active": true,
@@ -85,7 +77,7 @@
     "image": "img/team/nkessler.jpg",
     "name": "Nathan Kessler",
     "lastName": "Kessler",
-    "title": "Senior Software Engineer"
+    "title": "Senior Software Engineer II"
   },
   {
     "active": true,
@@ -93,7 +85,7 @@
     "image": "img/team/mcondo.jpg",
     "name": "Mike Condo",
     "lastName": "Condo",
-    "title": "Senior Software Engineer"
+    "title": "Senior Software Engineer I"
   },
   {
     "active": true,
