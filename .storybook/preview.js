@@ -23,6 +23,7 @@ export const decorators = [
           * {
             box-sizing: border-box;
             font-family: Roobert;
+            font-feature-settings: 'ss02';
           }
         `}
       />
