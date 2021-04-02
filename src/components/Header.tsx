@@ -1,44 +1,46 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
 import { LogoWithName } from './';
-import { atMd, atSm, atXXL } from '~/breakpoints';
+import { atMinMd, atMinSm, atMinXXL } from '~/breakpoints';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/router';
-import { MobileMenu } from './';
+import { Container, MobileMenu } from './';
 
-const Container = styled.header`
+const Root = styled.header`
   background-image: linear-gradient(
     to bottom,
     rgba(4, 0, 28, 0.84) 35%,
     rgba(6, 2, 27, 0)
   );
   height: 146px;
+  left: 0;
   position: fixed;
   top: 0;
   width: 100%;
 `;
 
-const Content = styled.div`
+const Content = styled(Container)`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  padding: 24px 24px 40px;
+  padding-bottom: ${(props) => props.theme.spacing.xxl};
+  padding-top: ${(props) => props.theme.spacing.sm};
 
-  ${atMd} {
-    padding: 36px 40px 40px;
+  ${atMinMd} {
+    padding-bottom: ${(props) => props.theme.spacing.lg};
+    padding-top: ${(props) => props.theme.spacing.md};
   }
-
-  ${atXXL} {
-    padding: 32px 80px 80px;
+  ${atMinXXL} {
+    padding-bottom: ${(props) => props.theme.spacing.xxl};
+    padding-top: ${(props) => props.theme.spacing.md};
   }
 `;
 
 const Nav = styled.nav`
   display: none;
 
-  ${atSm} {
+  ${atMinSm} {
     display: block;
   }
 
@@ -91,11 +93,11 @@ const LogoLink: FC = () => {
             height: 35px;
             width: auto;
 
-            ${atMd} {
+            ${atMinMd} {
               height: 53px;
             }
 
-            ${atXXL} {
+            ${atMinXXL} {
               height: 60px;
             }
           `}
@@ -119,12 +121,12 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
 
 export const Header: FC = ({ ...props }) => {
   return (
-    <Container>
+    <Root>
       <Content {...props}>
         <LogoLink />
         <MobileMenu
           css={css`
-            ${atSm} {
+            ${atMinSm} {
               display: none;
             }
           `}
@@ -138,6 +140,6 @@ export const Header: FC = ({ ...props }) => {
           </ul>
         </Nav>
       </Content>
-    </Container>
+    </Root>
   );
 };

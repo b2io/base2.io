@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { FC } from 'react';
+
 import { Header } from './';
 
 export type LayoutProps = {
@@ -19,12 +20,7 @@ const mainVariants = {
 
 export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
   return (
-    <div
-      css={css`
-        max-width: 1600px;
-        overflow-x: hidden;
-      `}
-    >
+    <>
       <Head>
         <title>{title ? `${title} | Base Two` : 'Base Two'}</title>
         <link
@@ -99,6 +95,6 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
           </li>
         </ul>
       </footer>
-    </div>
+    </>
   );
 };
