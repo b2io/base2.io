@@ -6,7 +6,6 @@ export const Container: StyledComponent<any> = styled.div(({ theme }) => ({
   marginRight: 'auto',
   paddingLeft: theme.spacing.sm,
   paddingRight: theme.spacing.sm,
-  width: '100%',
 
   [BP.atMinMd]: {
     paddingLeft: theme.spacing.lg,

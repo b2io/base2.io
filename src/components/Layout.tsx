@@ -4,7 +4,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import React, { FC } from 'react';
 
-import { Header } from './';
+import { Container, Header } from './';
+import styled from '@emotion/styled';
+
+const Root = styled.div`
+  overflow: hidden;
+`;
 
 export type LayoutProps = {
   title?: string;
@@ -20,7 +25,7 @@ const mainVariants = {
 
 export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
   return (
-    <>
+    <Root>
       <Head>
         <title>{title ? `${title} | Base Two` : 'Base Two'}</title>
         <link
@@ -54,9 +59,9 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
         initial="initial"
         variants={mainVariants}
       >
-        {children}
+        <Container>{children}</Container>
       </motion.main>
-      <footer>
+      <Container as="footer">
         <ul>
           <li>
             <Link href="/">
@@ -94,7 +99,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
             </Link>
           </li>
         </ul>
-      </footer>
-    </>
+      </Container>
+    </Root>
   );
 };
