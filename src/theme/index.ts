@@ -1,7 +1,3 @@
-/* ========================================================================== *
- * THEME
- * ========================================================================== */
-
 import { colors } from './colors';
 import { spacing } from './spacing';
 import { textVariants } from './typography';
@@ -12,7 +8,7 @@ const theme = {
   textVariants,
 };
 
-export type ThemeColor = keyof typeof colors;
-export type ThemeTextVariants = keyof typeof textVariants;
+export type { ThemeColor } from './colors';
+export type { ThemeTextVariants } from './typography';
 export type ThemeType = typeof theme;
 export default theme;
