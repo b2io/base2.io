@@ -16,7 +16,8 @@ const FooterWrapper = styled.div`
 
   ${atMd} {
     margin-left: 25px;
-    grid-template-rows: 1;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 4px 8px;
   }
 
@@ -30,7 +31,7 @@ const FooterWrapper = styled.div`
     text-decoration: underline;
 
     ${atMd} {
-      grid-column: 2 / 4;
+      grid-column: 2;
     }
   }
 `;
@@ -39,11 +40,13 @@ const FooterLogo = styled(LogoIcon)`
   height: 50px;
   display: block;
   justify-content: center;
-  width: 15%;
+  width: auto;
   margin-top: 150px;
 
   ${atMd} {
     height: 53px;
+    margin-top: 0;
+    margin-right: 0;
   }
 
   ${atXXL} {
@@ -52,10 +55,11 @@ const FooterLogo = styled(LogoIcon)`
 `;
 
 const Branding = styled.div`
-  grid-column: 1 / -1;
+  grid-column: 1;
 
   ${atMd} {
-    grid-column: 1 / -1;
+    grid-column: 1;
+    display: block;
   }
 `;
 
@@ -109,7 +113,7 @@ const ContactBlock = styled.div`
   margin-top: 30px;
 
   ${atMd} {
-    grid-column: 4 / 5;
+    grid-column: 3;
   }
 
   a {
