@@ -16,14 +16,8 @@ const FooterWrapper = styled.div`
 
   ${atMd} {
     margin-left: 25px;
-    grid-template-columns: 2.5fr 1fr 1fr 2.5fr 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    gap: 4px 8px;
-    grid-template-areas:
-      '. . . . .'
-      '. . . . .'
-      '. . . . .'
-      '. . . . .';
+    grid-template-rows: 1;
+    grid-gap: 4px 8px;
   }
 
   ul {
@@ -31,8 +25,13 @@ const FooterWrapper = styled.div`
     grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    margin-top: 65px;
     padding-left: 0;
     text-decoration: underline;
+
+    ${atMd} {
+      grid-column: 2 / 4;
+    }
   }
 `;
 
@@ -52,8 +51,12 @@ const FooterLogo = styled(LogoIcon)`
   }
 `;
 
-const Catchphrase = styled.div`
+const Branding = styled.div`
   grid-column: 1 / -1;
+
+  ${atMd} {
+    grid-column: 1 / -1;
+  }
 `;
 
 const FooterLink = styled(CTA)`
@@ -83,6 +86,7 @@ const Slogan = styled.h3`
   font-weight: normal;
   line-height: 1.27;
   letter-spacing: normal;
+  margin: 10px 0 0;
   width: 245px;
   word-wrap: auto;
 
@@ -102,15 +106,28 @@ const ContactBlock = styled.div`
   grid-column: 1 / -1;
   line-height: 28px;
   letter-spacing: 0;
+  margin-top: 30px;
+
+  ${atMd} {
+    grid-column: 4 / 5;
+  }
+
+  a {
+    margin-top: 30px;
+  }
+
+  address {
+    margin-top: 30px;
+  }
 `;
 
 export const Footer: FC = () => {
   return (
     <FooterWrapper>
-      <Catchphrase>
+      <Branding>
         <FooterLogo />
         <Slogan>Where code meets craft.</Slogan>
-      </Catchphrase>
+      </Branding>
       <ul>
         <FooterLink href="/"> Home</FooterLink>
         <FooterLink href="/"> Careers</FooterLink>
