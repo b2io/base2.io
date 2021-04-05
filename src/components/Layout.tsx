@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-// import Link from 'next/link';
 import React, { FC } from 'react';
 import { Header, Footer } from './';
 

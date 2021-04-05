@@ -15,10 +15,10 @@ const FooterWrapper = styled.div`
   margin-left: 50px;
 
   ${atMd} {
-    margin-left: 25px;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 4px 8px;
+    margin-left: 25px;
   }
 
   ul {
@@ -37,11 +37,11 @@ const FooterWrapper = styled.div`
 `;
 
 const FooterLogo = styled(LogoIcon)`
-  height: 50px;
   display: block;
+  height: 50px;
   justify-content: center;
-  width: auto;
   margin-top: 150px;
+  width: auto;
 
   ${atMd} {
     height: 53px;
@@ -58,8 +58,8 @@ const Branding = styled.div`
   grid-column: 1;
 
   ${atMd} {
-    grid-column: 1;
     display: block;
+    grid-column: 1;
   }
 `;
 
