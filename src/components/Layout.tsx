@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { FC } from 'react';
-import { Header } from './';
+import { Header, Footer } from './';
 
 export type LayoutProps = {
   title?: string;
@@ -60,45 +60,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
       >
         {children}
       </motion.main>
-      <footer>
-        <ul>
-          <li>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/work">
-              <a>Work</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/approach">
-              <a>Approach</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/culture">
-              <a>Culture</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/careers">
-              <a>Careers</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog">
-              <a>Blog</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
-          </li>
-        </ul>
-      </footer>
+      <Footer />
     </div>
   );
 };
