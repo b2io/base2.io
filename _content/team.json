@@ -127,5 +127,13 @@
     "name": "Zack Brown",
     "lastName": "Brown",
     "title": "Owner //\nSenior Software Engineer"
+  },
+  {
+    "active": true,
+    "id": "nfoltz",
+    "image": "img/team/nfoltz.jpg",
+    "name": "Nelson Foltz",
+    "lastName": "Foltz",
+    "title": "Software Engineer III"
   }
 ]
