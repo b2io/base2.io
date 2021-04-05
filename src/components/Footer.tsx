@@ -7,10 +7,12 @@ import styled from '@emotion/styled';
 // import { css } from '@emotion/react';
 
 const FooterWrapper = styled.div`
-    display: grid;  
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr 0.5fr;
-    margin-left: 50px;
+  /* fix this bkg color or margin-left after layout is defined */
+  background-color: #0f0d34;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  margin-left: 50px;
 
   ${atMd} {
     margin-left: 25px;
@@ -18,22 +20,28 @@ const FooterWrapper = styled.div`
     grid-template-rows: repeat(4, 1fr);
     gap: 4px 8px;
     grid-template-areas:
-      ". . . . ."
-      ". . . . ."
-      ". . . . ."
-      ". . . . .";
+      '. . . . .'
+      '. . . . .'
+      '. . . . .'
+      '. . . . .';
   }
 
   ul {
     display: grid;
+    grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     padding-left: 0;
+    text-decoration: underline;
   }
 `;
 
 const FooterLogo = styled(LogoIcon)`
   height: 50px;
+  display: block;
+  justify-content: center;
+  width: 15%;
+  margin-top: 150px;
 
   ${atMd} {
     height: 53px;
@@ -44,26 +52,28 @@ const FooterLogo = styled(LogoIcon)`
   }
 `;
 
-
-const Catchphrase= styled.div`
-    grid-column: 1 / -1;
+const Catchphrase = styled.div`
+  grid-column: 1 / -1;
 `;
 
 const FooterLink = styled(CTA)`
   color: #ecf0f4;
-  display: block;
   font-size: 17px;
   font-weight: 500;
   line-height: 28px;
   letter-spacing: 0;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.coral};
   }
 
-  /* ::after {
+  ::after {
     background-color: white;
     display: none;
     height: 0;
     margin-top: 0;
-    width: 100%; */
+    width: 100%;
+  }
 `;
 
 const Slogan = styled.h3`
@@ -92,10 +102,6 @@ const ContactBlock = styled.div`
   grid-column: 1 / -1;
   line-height: 28px;
   letter-spacing: 0;
-
-  &:hover {
-    color: ${(props) => props.theme.colors.coral};
-  }
 `;
 
 export const Footer: FC = () => {
@@ -115,9 +121,11 @@ export const Footer: FC = () => {
         <FooterLink href="/"> Culture</FooterLink>
       </ul>
       <ContactBlock>
-        <Link href={"mailto:info@base2.io"}>info@base2.io</Link>
-        <Link href={"tel:614-398-1158"}>(614) 398-1158</Link>
-        <address>21E 5th Ave. Suite 102 <br /> Columbus OH 43201 </address>
+        <Link href={'mailto:info@base2.io'}>info@base2.io</Link>
+        <Link href={'tel:614-398-1158'}>(614) 398-1158</Link>
+        <address>
+          21E 5th Ave. Suite 102 <br /> Columbus OH 43201{' '}
+        </address>
       </ContactBlock>
     </FooterWrapper>
   );
