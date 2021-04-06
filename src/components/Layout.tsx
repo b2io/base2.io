@@ -1,8 +1,15 @@
 import { css } from '@emotion/react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import Link from 'next/link';
 import React, { FC } from 'react';
-import { Header, Footer } from './';
+
+import { Container, Header } from './';
+import styled from '@emotion/styled';
+
+const Root = styled.div`
+  overflow: hidden;
+`;
 
 export type LayoutProps = {
   title?: string;
@@ -18,12 +25,7 @@ const mainVariants = {
 
 export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
   return (
-    <div
-      css={css`
-        max-width: 1600px;
-        overflow-x: hidden;
-      `}
-    >
+    <Root>
       <Head>
         <title>{title ? `${title} | Base Two` : 'Base Two'}</title>
         <link
@@ -57,9 +59,47 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
         initial="initial"
         variants={mainVariants}
       >
-        {children}
+        <Container>{children}</Container>
       </motion.main>
-      <Footer />
-    </div>
+      <Container as="footer">
+        <ul>
+          <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/work">
+              <a>Work</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/approach">
+              <a>Approach</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/culture">
+              <a>Culture</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/careers">
+              <a>Careers</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
+          </li>
+        </ul>
+      </Container>
+    </Root>
   );
 };
