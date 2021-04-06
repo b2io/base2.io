@@ -7,13 +7,11 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p 3001",
-    "type-check": "tsc --pretty --noEmit",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "type-check": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.4",
-    "@emotion/styled": "^11.0.0",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
     "framer-motion": "^3.3.0",
     "next": "latest",
     "normalize.css": "^8.0.1",
@@ -24,11 +22,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
-    "@emotion/babel-plugin": "^11.1.2",
-    "@storybook/addon-actions": "^6.1.17",
-    "@storybook/addon-essentials": "^6.1.21",
-    "@storybook/addon-links": "^6.1.17",
-    "@storybook/react": "^6.1.21",
+    "@emotion/babel-plugin": "^11.2.0",
     "@testing-library/react": "^11.2.3",
     "@types/jest": "^26.0.20",
     "@types/micro": "^7.3.3",

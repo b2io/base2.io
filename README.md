@@ -74,14 +74,6 @@ Build and run built assets on port 3001.
 λ npm start
 ```
 
-**Storybook**
-
-Starts storybook on port 6006. Storybook is a demonstration home for the library of components and a good starting point for creating more.
-
-```
-λ npm run storybook
-```
-
 ### Development Workflow
 
 1. Go to the latest sprint in [Jira](https://b2io.atlassian.net/jira/software/projects/B2IO/boards/7) to find a development task from the `TO DO` column.

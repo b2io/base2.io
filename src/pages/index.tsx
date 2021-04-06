@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 
 import { CTA, Layout, Heading, Text } from '~/components';
-import css from '@emotion/css';
+import { css } from '@emotion/react';
 
 const HomePage: NextPage = () => {
   return (
