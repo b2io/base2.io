@@ -1,20 +1,6 @@
-const palette = {
-  coral: '#f73a52',
-  darkBlue: '#05001e',
-  offWhite: '#ecf0f4',
-  workThumbnailBg: '#30308a',
-};
+import { colors } from './colors';
 
-const colors = {
-  ...palette,
-  action: palette.coral,
-  background: palette.darkBlue,
-  text: palette.offWhite,
-};
-
-export type ThemeColor = keyof typeof theme.colors;
-
-const textVariants = {
+export const textVariants = {
   body: {
     color: colors.text,
     fontSize: '17px',
@@ -69,13 +55,4 @@ const textVariants = {
   },
 };
 
-export type ThemeTextVariants = keyof typeof theme.textVariants;
-
-const theme = {
-  colors,
-  textVariants,
-};
-
-export type ThemeType = typeof theme;
-
-export default theme;
+export type ThemeTextVariants = keyof typeof textVariants;
