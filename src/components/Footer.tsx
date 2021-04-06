@@ -2,8 +2,9 @@ import { CTA } from '.';
 import Link from 'next/link';
 import React, { FC } from 'react';
 import { LogoIcon } from '.';
-import { atMd, atXXL } from '~/breakpoints';
+import { atMinMd, atMinXXL } from '~/breakpoints';
 import styled from '@emotion/styled';
+// import { mkdtemp } from 'fs';
 // import { css } from '@emotion/react';
 
 const FooterWrapper = styled.div`
@@ -14,7 +15,7 @@ const FooterWrapper = styled.div`
   grid-template-rows: 0.5fr 1fr 0.5fr;
   margin-left: 50px;
 
-  ${atMd} {
+  ${atMinMd} {
     grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 4px 8px;
@@ -30,7 +31,7 @@ const FooterWrapper = styled.div`
     padding-left: 0;
     text-decoration: underline;
 
-    ${atMd} {
+    ${atMinMd} {
       grid-column: 2;
     }
   }
@@ -43,13 +44,13 @@ const FooterLogo = styled(LogoIcon)`
   margin-top: 150px;
   width: auto;
 
-  ${atMd} {
+  ${atMinMd} {
     height: 53px;
     margin-top: 0;
     margin-right: 0;
   }
 
-  ${atXXL} {
+  ${atMinXXL} {
     height: 60px;
   }
 `;
@@ -57,14 +58,14 @@ const FooterLogo = styled(LogoIcon)`
 const Branding = styled.div`
   grid-column: 1;
 
-  ${atMd} {
+  ${atMinMd} {
     display: block;
     grid-column: 1;
   }
 `;
 
 const FooterLink = styled(CTA)`
-  color: #ecf0f4;
+  color: ${(props) => props.theme.colors.offWhite};
   font-size: 17px;
   font-weight: 500;
   line-height: 28px;
@@ -75,7 +76,7 @@ const FooterLink = styled(CTA)`
   }
 
   ::after {
-    background-color: white;
+    background-color: ${(props) => props.theme.colors.offWhite};
     display: none;
     height: 0;
     margin-top: 0;
@@ -84,7 +85,7 @@ const FooterLink = styled(CTA)`
 `;
 
 const Slogan = styled.h3`
-  color: #ecf0f4;
+  color: ${(props) => props.theme.colors.offWhite};
   display: inline-block;
   font-size: 30px;
   font-weight: normal;
@@ -94,17 +95,17 @@ const Slogan = styled.h3`
   width: 245px;
   word-wrap: auto;
 
-  ${atMd} {
+  ${atMinMd} {
     font-size: 30px;
   }
 
-  ${atXXL} {
+  ${atMinXXL} {
     font-size: 30px;
   }
 `;
 
 const ContactBlock = styled.div`
-  color: #ecf0f4;
+  color: ${(props) => props.theme.colors.offWhite};
   display: grid;
   font-size: 17px;
   grid-column: 1 / -1;
@@ -116,7 +117,7 @@ const ContactBlock = styled.div`
     margin-top: 30px;
 
     :visited {
-      color: #ecf0f4;
+      color: ${(props) => props.theme.colors.offWhite};
     }
   }
 
@@ -124,7 +125,7 @@ const ContactBlock = styled.div`
     margin-top: 30px;
   }
 
-  ${atMd} {
+  ${atMinMd} {
     grid-column: 3;
   }
 `;
