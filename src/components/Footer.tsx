@@ -112,16 +112,20 @@ const ContactBlock = styled.div`
   letter-spacing: 0;
   margin-top: 30px;
 
-  ${atMd} {
-    grid-column: 3;
-  }
-
   a {
     margin-top: 30px;
+
+    :visited {
+      color: #ecf0f4;
+    }
   }
 
   address {
     margin-top: 30px;
+  }
+
+  ${atMd} {
+    grid-column: 3;
   }
 `;
 
