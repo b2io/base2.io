@@ -53,7 +53,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
       <motion.main
         animate="enter"
         css={css`
-          margin-top: 146px;
+          margin-top: 9.125rem;
         `}
         exit="exit"
         initial="initial"

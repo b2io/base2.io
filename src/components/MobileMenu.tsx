@@ -27,37 +27,35 @@ const IconButton = styled.button`
   background: none;
   border: 0;
   cursor: pointer;
-  height: 35px;
-  width: 35px;
+  height: 2.1875rem;
+  width: 2.1875rem;
   padding: 0;
 `;
 
 const Nav = styled.nav`
   ul {
     list-style: none;
-    padding: 163px 0 0 39px;
+    padding: 10.25rem 0 0 2.5rem;
   }
 
   li {
-    margin-bottom: 16px;
-  }
-
-  a {
-    color: ${(props) => props.theme.colors.offWhite};
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 1.1;
-    text-decoration: none;
-
-    &:hover {
-      color: ${(props) => props.theme.colors.coral};
-    }
+    margin-bottom: ${({ theme }) => theme.spacing.xs};
   }
 `;
 
+const A = styled.a(({ theme }) => ({
+  ...theme.textVariants.h2,
+  cursor: 'pointer',
+  textDecoration: 'none',
+  ':hover': {
+    color: theme.colors.coral,
+  },
+}));
+
 const ContactLink = styled(CTA)`
   display: table;
-  margin: 40px 40px 0;
+  margin: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.lg}
+    0;
 `;
 
 interface NavItemProps {
@@ -68,7 +66,7 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   return (
     <li>
       <Link href={href}>
-        <a {...props} />
+        <A {...props} />
       </Link>
     </li>
   );
