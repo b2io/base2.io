@@ -5,19 +5,17 @@ import { LogoIcon } from '.';
 import { atMinMd, atMinXXL } from '~/breakpoints';
 import styled from '@emotion/styled';
 
-const FooterWrapper = styled.nav`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0 4.125rem 0 3.188rem;
-  position: fixed;
+const FooterWrapper = styled.div`
   bottom: 0;
+  margin: 0 6rem 0 3.1rem;
+  padding-top: 4rem;
 
   ${atMinMd} {
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin: 0;
-    flex: 0 33.33%;
+    position: fixed;
   }
 `;
 
@@ -25,7 +23,6 @@ const FooterLogo = styled(LogoIcon)`
   display: block;
   height: 60px;
   justify-content: center;
-  margin-top: 4rem;
   width: auto;
 
   ${atMinMd} {
@@ -45,55 +42,15 @@ const Branding = styled.div`
   }
 `;
 
-const Nav = styled.nav`
-  color: ${(props) => props.theme.colors.offWhite};
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 28px;
-  letter-spacing: 0;
-
-  ${atMinMd} {
-    flex: 1 33.33%;
-  }
-
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin-top: 65px;
-    padding-left: 0;
-    text-decoration: underline;
-
-    li {
-      flex: 1 50%;
-    }
-  }
-
-  a {
-    color: ${(props) => props.theme.colors.offWhite};
-    font-size: 17px;
-    line-height: 28px;
-    text-decoration: none;
-
-    &:visited {
-      color: ${(props) => props.theme.colors.offWhite};
-    }
-
-    &:hover {
-      color: ${(props) => props.theme.colors.coral};
-    }
-  }
-`;
-
 const Slogan = styled.h3`
   color: ${(props) => props.theme.colors.offWhite};
   display: inline-block;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: normal;
   line-height: 1.27;
   letter-spacing: normal;
-  margin: 10px 0 0;
-  width: 245px;
+  margin: 0.625rem 0 0;
+  width: 10.438 rem;
   word-wrap: auto;
 
   ${atMinMd} {
@@ -105,19 +62,68 @@ const Slogan = styled.h3`
   }
 `;
 
+const Nav = styled.nav`
+  color: ${(props) => props.theme.colors.offWhite};
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 4rem;
+    padding-left: 0;
+    text-decoration: underline;
+
+    li {
+      flex-basis: 70%;
+      margin-bottom: 1.25rem;
+
+      &:nth-child(even) {
+        flex-basis: 30%;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: ${(props) => props.theme.colors.offWhite};
+      font-size: 17px;
+      line-height: 28px;
+      text-decoration: none;
+
+      &:visited {
+        color: ${(props) => props.theme.colors.offWhite};
+      }
+
+      &:hover {
+        color: ${(props) => props.theme.colors.coral};
+      }
+    }
+  }
+`;
+
 const ContactBlock = styled.div`
   color: ${(props) => props.theme.colors.offWhite};
   font-size: 17px;
   line-height: 28px;
   letter-spacing: 0;
-  margin: 3.5rem 0 2.5rem;
+  margin: 3.5rem 0 0;
+  padding-bottom: 2.5rem;
+
+  ${atMinMd} {
+    margin-top: 0;
+  }
 
   a {
     display: block;
-    margin-top: 30px;
 
-    ${atMinMd} {
-      margin-top: 0;
+    &:last-child {
+      margin-top: 30px;
     }
 
     :visited {
