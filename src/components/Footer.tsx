@@ -10,10 +10,14 @@ const FooterWrapper = styled.nav`
   flex-direction: column;
   flex-wrap: wrap;
   margin: 0 4.125rem 0 3.188rem;
+  position: fixed;
+  bottom: 0;
 
   ${atMinMd} {
     flex-direction: row;
-    margin-left: 25px;
+    flex-wrap: wrap;
+    margin: 0;
+    flex: 0 33.33%;
   }
 `;
 
@@ -48,6 +52,10 @@ const Nav = styled.nav`
   line-height: 28px;
   letter-spacing: 0;
 
+  ${atMinMd} {
+    flex: 1 33.33%;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -61,19 +69,15 @@ const Nav = styled.nav`
     }
   }
 
-  &:hover {
-    color: ${(props) => props.theme.colors.coral};
-  }
-
-  &.active::after {
-    background-color: ${({ theme }) => theme.colors.action};
-  }
-
   a {
     color: ${(props) => props.theme.colors.offWhite};
     font-size: 17px;
     line-height: 28px;
     text-decoration: none;
+
+    &:visited {
+      color: ${(props) => props.theme.colors.offWhite};
+    }
 
     &:hover {
       color: ${(props) => props.theme.colors.coral};
@@ -104,13 +108,17 @@ const Slogan = styled.h3`
 const ContactBlock = styled.div`
   color: ${(props) => props.theme.colors.offWhite};
   font-size: 17px;
-  grid-column: 1 / -1;
   line-height: 28px;
   letter-spacing: 0;
   margin: 3.5rem 0 2.5rem;
 
   a {
+    display: block;
     margin-top: 30px;
+
+    ${atMinMd} {
+      margin-top: 0;
+    }
 
     :visited {
       color: ${(props) => props.theme.colors.offWhite};
@@ -164,7 +172,7 @@ export const Footer: FC = () => {
         <Link href={'mailto:info@base2.io'}>info@base2.io</Link>
         <Link href={'tel:6143981158'}>614.398.1158</Link>
         <address>
-          21E 5th Ave. Suite 102 <br /> Columbus OH 43201{' '}
+          21E 5th Ave. Suite 102 <br /> Columbus OH 43201
         </address>
       </ContactBlock>
     </FooterWrapper>
