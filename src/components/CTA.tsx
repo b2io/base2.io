@@ -8,19 +8,16 @@ export type CTAProps = {
 };
 
 const A = styled.a(({ theme }) => ({
-  color: theme.colors.text,
+  ...theme.textVariants.CTA,
   cursor: 'pointer',
   display: 'inline-block',
-  fontSize: 22,
-  fontWeight: 900,
-  lineHeight: '22px',
   textDecoration: 'none',
   '::after': {
     backgroundColor: theme.colors.action,
     content: '""',
     display: 'block',
-    height: 2,
-    marginTop: 8,
+    height: '0.125rem',
+    marginTop: theme.spacing.xxs,
     width: '100%',
   },
   ':hover': {
