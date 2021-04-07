@@ -12,6 +12,7 @@ module.exports = {
         ...config.resolve,
         alias: {
           ...config.resolve.alias,
+          '~': toPath('src/'),
           '@emotion/styled': toPath('node_modules/@emotion/styled'),
         },
       },

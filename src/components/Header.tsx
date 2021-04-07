@@ -13,7 +13,7 @@ const Root = styled.header`
     rgba(4, 0, 28, 0.84) 35%,
     rgba(6, 2, 27, 0)
   );
-  height: 146px;
+  height: 9.125rem;
   left: 0;
   position: fixed;
   top: 0;
@@ -24,16 +24,16 @@ const Content = styled(Container)`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding-bottom: ${(props) => props.theme.spacing.xxl};
-  padding-top: ${(props) => props.theme.spacing.sm};
+  padding-bottom: ${({ theme }) => theme.spacing.xxl};
+  padding-top: ${({ theme }) => theme.spacing.sm};
 
   ${atMinMd} {
-    padding-bottom: ${(props) => props.theme.spacing.lg};
-    padding-top: ${(props) => props.theme.spacing.md};
+    padding-bottom: ${({ theme }) => theme.spacing.lg};
+    padding-top: ${({ theme }) => theme.spacing.md};
   }
   ${atMinXXL} {
-    padding-bottom: ${(props) => props.theme.spacing.xxl};
-    padding-top: ${(props) => props.theme.spacing.md};
+    padding-bottom: ${({ theme }) => theme.spacing.xxl};
+    padding-top: ${({ theme }) => theme.spacing.md};
   }
 `;
 
@@ -50,7 +50,7 @@ const Nav = styled.nav`
   }
 
   li {
-    margin-right: 40px;
+    margin-right: ${({ theme }) => theme.spacing.lg};
     &:last-child {
       margin-right: 0;
     }
@@ -59,24 +59,35 @@ const Nav = styled.nav`
       background-color: transparent;
       content: '';
       display: block;
-      height: 2px;
-      margin-top: 2px;
+      height: 0.125rem;
+      margin-top: 0.125rem;
     }
 
     &.active::after {
       background-color: ${({ theme }) => theme.colors.action};
     }
   }
+`;
 
-  a {
-    color: ${(props) => props.theme.colors.offWhite};
-    font-size: 17px;
-    line-height: 28px;
-    text-decoration: none;
+const A = styled.a(({ theme }) => ({
+  ...theme.textVariants.body,
+  cursor: 'pointer',
+  textDecoration: 'none',
+  ':hover': {
+    color: theme.colors.coral,
+  },
+}));
 
-    &:hover {
-      color: ${(props) => props.theme.colors.coral};
-    }
+const LogoImage = styled(LogoWithName)`
+  height: 2.1875rem;
+  width: auto;
+
+  ${atMinMd} {
+    height: 3.3125rem;
+  }
+
+  ${atMinXXL} {
+    height: 3.75rem;
   }
 `;
 
@@ -88,20 +99,7 @@ const LogoLink: FC = () => {
   return (
     <Link href="/">
       <a aria-label="go to home">
-        <LogoWithName
-          css={css`
-            height: 35px;
-            width: auto;
-
-            ${atMinMd} {
-              height: 53px;
-            }
-
-            ${atMinXXL} {
-              height: 60px;
-            }
-          `}
-        />
+        <LogoImage />
       </a>
     </Link>
   );
@@ -113,7 +111,7 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   return (
     <li className={asPath == href ? 'active' : ''}>
       <Link href={href}>
-        <a {...props} />
+        <A {...props} />
       </Link>
     </li>
   );
