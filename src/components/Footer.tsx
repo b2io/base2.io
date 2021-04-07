@@ -4,16 +4,13 @@ import React, { FC } from 'react';
 import { LogoIcon } from '.';
 import { atMinMd, atMinXXL } from '~/breakpoints';
 import styled from '@emotion/styled';
-// import { mkdtemp } from 'fs';
 // import { css } from '@emotion/react';
 
 const FooterWrapper = styled.div`
-  /* fix this bkg color or margin-left after layout is defined */
-  background-color: #0f0d34;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 0.5fr 1fr 0.5fr;
-  margin-left: 50px;
+  margin: 0 4.125rem 0 3.188rem;
 
   ${atMinMd} {
     grid-template-rows: 1fr;
@@ -24,11 +21,12 @@ const FooterWrapper = styled.div`
 
   ul {
     display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, auto);
+    margin-block-end: 0;
     margin-top: 65px;
     padding-left: 0;
+    place-self: bottom;
     text-decoration: underline;
 
     ${atMinMd} {
@@ -39,9 +37,9 @@ const FooterWrapper = styled.div`
 
 const FooterLogo = styled(LogoIcon)`
   display: block;
-  height: 50px;
+  height: 60px;
   justify-content: center;
-  margin-top: 150px;
+  margin-top: 4rem;
   width: auto;
 
   ${atMinMd} {
@@ -111,7 +109,7 @@ const ContactBlock = styled.div`
   grid-column: 1 / -1;
   line-height: 28px;
   letter-spacing: 0;
-  margin-top: 30px;
+  margin: 3.5rem 0 2.5rem;
 
   a {
     margin-top: 30px;
@@ -148,7 +146,7 @@ export const Footer: FC = () => {
       </ul>
       <ContactBlock>
         <Link href={'mailto:info@base2.io'}>info@base2.io</Link>
-        <Link href={'tel:614-398-1158'}>(614) 398-1158</Link>
+        <Link href={'tel:6143981158'}>614.398.1158</Link>
         <address>
           21E 5th Ave. Suite 102 <br /> Columbus OH 43201{' '}
         </address>
