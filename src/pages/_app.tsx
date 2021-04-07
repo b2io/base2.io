@@ -26,7 +26,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
               * {
                 box-sizing: border-box;
                 font-family: Roobert;
-                font-feature-settings: 'ss02';
+                font-feature-settings: 'ss02', 'ss05';
               }
 
               body,
