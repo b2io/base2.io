@@ -1,36 +1,38 @@
 import { CTA } from '.';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import { LogoIcon } from '.';
 import { atMinMd, atMinXXL } from '~/breakpoints';
 import styled from '@emotion/styled';
 // import { css } from '@emotion/react';
 
-const FooterWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 1fr 0.5fr;
+const FooterWrapper = styled.nav`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 1fr 0.5fr; */
   margin: 0 4.125rem 0 3.188rem;
 
   ${atMinMd} {
-    grid-template-rows: 1fr;
+    /* grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 4px 8px;
+    grid-gap: 4px 8px; */
+    flex-direction: row;
     margin-left: 25px;
   }
 
   ul {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(4, auto);
-    margin-block-end: 0;
+    grid-template-rows: repeat(4, auto); */
     margin-top: 65px;
     padding-left: 0;
-    place-self: bottom;
     text-decoration: underline;
 
     ${atMinMd} {
-      grid-column: 2;
+      /* grid-column: 2; */
     }
   }
 `;
@@ -54,31 +56,33 @@ const FooterLogo = styled(LogoIcon)`
 `;
 
 const Branding = styled.div`
-  grid-column: 1;
+  /* grid-column: 1; */
 
   ${atMinMd} {
     display: block;
-    grid-column: 1;
+    /* grid-column: 1; */
   }
 `;
 
-const FooterLink = styled(CTA)`
+const Nav = styled.nav`
   color: ${(props) => props.theme.colors.offWhite};
   font-size: 17px;
   font-weight: 500;
   line-height: 28px;
   letter-spacing: 0;
 
+  ul {
+    display: flex;
+    list-style: none;
+  }
+
   &:hover {
     color: ${(props) => props.theme.colors.coral};
   }
 
-  ::after {
-    background-color: ${(props) => props.theme.colors.offWhite};
-    display: none;
-    height: 0;
-    margin-top: 0;
-    width: 100%;
+  &.active::after {
+      background-color: ${({ theme }) => theme.colors.action};
+    }
   }
 `;
 
@@ -104,7 +108,6 @@ const Slogan = styled.h3`
 
 const ContactBlock = styled.div`
   color: ${(props) => props.theme.colors.offWhite};
-  display: grid;
   font-size: 17px;
   grid-column: 1 / -1;
   line-height: 28px;
@@ -128,22 +131,41 @@ const ContactBlock = styled.div`
   }
 `;
 
-export const Footer: FC = () => {
+interface FooterItemProps {
+  href: string;
+}
+
+const FooterItem: FC<FooterItemProps> = ({ href, ...props }) => {
+  const { asPath } = useRouter();
+
+  return (
+    <li className={asPath == href ? 'active' : ''}>
+      <Link href={href}>
+        <a {...props} />
+      </Link>
+    </li>
+  );
+};
+
+export const Footer: FC = (...props) => {
   return (
     <FooterWrapper>
       <Branding>
         <FooterLogo />
         <Slogan>Where code meets craft.</Slogan>
       </Branding>
-      <ul>
-        <FooterLink href="/"> Home</FooterLink>
-        <FooterLink href="/"> Careers</FooterLink>
-        <FooterLink href="/"> Work</FooterLink>
-        <FooterLink href="/"> Blog</FooterLink>
-        <FooterLink href="/"> Approach</FooterLink>
-        <FooterLink href="/"> Contact</FooterLink>
-        <FooterLink href="/"> Culture</FooterLink>
-      </ul>
+      <Nav>
+        <ul>
+          <FooterItem href="/"> Home</FooterItem>
+          <FooterItem href="/careers"> Careers</FooterItem>
+          <FooterItem href="/work"> Work</FooterItem>
+          <FooterItem href="/blog"> Blog</FooterItem>
+          <FooterItem href="/approach"> Approach</FooterItem>
+          <FooterItem href="/contact"> Contact</FooterItem>
+          <FooterItem href="/culture"> Culture</FooterItem>
+        </ul>
+      </Nav>
+      <ul></ul>
       <ContactBlock>
         <Link href={'mailto:info@base2.io'}>info@base2.io</Link>
         <Link href={'tel:6143981158'}>614.398.1158</Link>
