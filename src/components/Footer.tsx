@@ -1,39 +1,19 @@
-import { CTA } from '.';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import { LogoIcon } from '.';
 import { atMinMd, atMinXXL } from '~/breakpoints';
 import styled from '@emotion/styled';
-// import { css } from '@emotion/react';
 
 const FooterWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  /* grid-template-columns: 1fr;
-  grid-template-rows: 0.5fr 1fr 0.5fr; */
   margin: 0 4.125rem 0 3.188rem;
 
   ${atMinMd} {
-    /* grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 4px 8px; */
     flex-direction: row;
     margin-left: 25px;
-  }
-
-  ul {
-    /* display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(4, auto); */
-    margin-top: 65px;
-    padding-left: 0;
-    text-decoration: underline;
-
-    ${atMinMd} {
-      /* grid-column: 2; */
-    }
   }
 `;
 
@@ -56,11 +36,8 @@ const FooterLogo = styled(LogoIcon)`
 `;
 
 const Branding = styled.div`
-  /* grid-column: 1; */
-
   ${atMinMd} {
     display: block;
-    /* grid-column: 1; */
   }
 `;
 
@@ -73,7 +50,15 @@ const Nav = styled.nav`
 
   ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
+    margin-top: 65px;
+    padding-left: 0;
+    text-decoration: underline;
+
+    li {
+      flex: 1 50%;
+    }
   }
 
   &:hover {
@@ -81,7 +66,17 @@ const Nav = styled.nav`
   }
 
   &.active::after {
-      background-color: ${({ theme }) => theme.colors.action};
+    background-color: ${({ theme }) => theme.colors.action};
+  }
+
+  a {
+    color: ${(props) => props.theme.colors.offWhite};
+    font-size: 17px;
+    line-height: 28px;
+    text-decoration: none;
+
+    &:hover {
+      color: ${(props) => props.theme.colors.coral};
     }
   }
 `;
@@ -147,7 +142,7 @@ const FooterItem: FC<FooterItemProps> = ({ href, ...props }) => {
   );
 };
 
-export const Footer: FC = (...props) => {
+export const Footer: FC = () => {
   return (
     <FooterWrapper>
       <Branding>
@@ -165,7 +160,6 @@ export const Footer: FC = (...props) => {
           <FooterItem href="/culture"> Culture</FooterItem>
         </ul>
       </Nav>
-      <ul></ul>
       <ContactBlock>
         <Link href={'mailto:info@base2.io'}>info@base2.io</Link>
         <Link href={'tel:6143981158'}>614.398.1158</Link>
