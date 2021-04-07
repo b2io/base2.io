@@ -8,3 +8,5 @@ export * from './Text';
 export * from './MobileMenu';
 export * from './Header';
 export * from './Layout';
+
+export * from './util';

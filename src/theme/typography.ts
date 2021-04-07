@@ -15,7 +15,7 @@ export const textVariants = {
   },
   h1: {
     color: colors.text,
-    fontSize: '100px',
+    fontSize: '6.25rem',
     fontVariationSettings: '"wght" 900',
     fontWeight: 'bold',
     letterSpacing: '0px',
@@ -35,7 +35,7 @@ export const textVariants = {
   },
   h3: {
     color: colors.text,
-    fontSize: '30px',
+    fontSize: '1.875rem',
     fontVariationSettings: '"wght" 400',
     fontWeight: 'normal',
     letterSpacing: 'normal',
