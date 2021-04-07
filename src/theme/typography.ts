@@ -1,17 +1,16 @@
+import * as BP from '~/breakpoints';
 import { colors } from './colors';
 
 export const textVariants = {
   body: {
     color: colors.text,
-    fontSize: '17px',
-    letterSpacing: '0px',
-    lineHeight: '28px',
-  },
-  callout: {
-    color: colors.action,
-    fontSize: '17px',
-    letterSpacing: '0px',
-    lineHeight: '28px',
+    fontSize: '1.063rem',
+    letterSpacing: '0.006875rem',
+    lineHeight: '1.75rem',
+
+    [BP.atMinMd]: {
+      lineHeight: 0,
+    },
   },
   h1: {
     color: colors.text,
