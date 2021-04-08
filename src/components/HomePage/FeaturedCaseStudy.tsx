@@ -141,5 +141,3 @@ export const FeaturedCaseStudy: FC = () => {
     </section>
   );
 };
-
-export default FeaturedCaseStudy;

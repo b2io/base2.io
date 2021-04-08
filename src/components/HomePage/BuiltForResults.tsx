@@ -132,5 +132,3 @@ export const BuiltForResults: FC = () => {
     </section>
   );
 };
-
-export default BuiltForResults;
