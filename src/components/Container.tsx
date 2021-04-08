@@ -1,5 +1,6 @@
 import styled, { StyledComponent } from '@emotion/styled';
-import * as BP from '~/breakpoints';
+
+import { atMinMd, atMinXL, atMinXXL, atMinXXL2, viewMaxWidth } from '~/theme';
 
 export const Container: StyledComponent<any> = styled.div(({ theme }) => ({
   marginLeft: 'auto',
@@ -7,21 +8,21 @@ export const Container: StyledComponent<any> = styled.div(({ theme }) => ({
   paddingLeft: theme.spacing.sm,
   paddingRight: theme.spacing.sm,
 
-  [BP.atMinMd]: {
+  [atMinMd]: {
     paddingLeft: theme.spacing.lg,
     paddingRight: theme.spacing.lg,
   },
 
-  [BP.atMinXL]: {
+  [atMinXL]: {
     paddingLeft: theme.spacing.xxl,
     paddingRight: theme.spacing.xxl,
   },
 
-  [BP.atMinXXL]: {
-    maxWidth: BP.viewMaxWidth.xxl,
+  [atMinXXL]: {
+    maxWidth: viewMaxWidth.xxl,
   },
 
-  [BP.atMinXXL2]: {
+  [atMinXXL2]: {
     paddingLeft: 0,
     paddingRight: 0,
   },

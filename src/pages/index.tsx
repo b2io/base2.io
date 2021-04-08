@@ -1,56 +1,43 @@
 import css from '@emotion/css';
 import { NextPage } from 'next';
+import { FC } from 'react';
 
-import { atMinLg, bp } from '~/breakpoints';
-import {
-  CTA,
-  Layout,
-  Heading,
-  responsiveViewportRelativeSize,
-  Text,
-} from '~/components';
+import { atMinLg, cssClamp } from '~/theme';
+import { CTA, Layout, Heading, Text } from '~/components';
+
+const HomeHero: FC = () => {
+  return (
+    <div
+      css={css`
+        display: grid;
+        gap: ${cssClamp([2, 'xs'], [1.5, 'lg'])};
+        padding: ${cssClamp([3, 'xs'], [10.5, 'lg'])}
+          ${cssClamp([1.5, 'xs'], [5.25, 'lg'])};
+        text-align: center;
+      `}
+    >
+      <Heading as="h1">
+        Software that{' '}
+        <br
+          css={css`
+            display: none;
+
+            ${atMinLg} {
+              display: inline-block;
+            }
+          `}
+        />
+        moves people.
+      </Heading>
+      <Text variant="h3">At Base Two, it all starts with a human touch.</Text>
+    </div>
+  );
+};
 
 const HomePage: NextPage = () => {
   return (
     <Layout>
-      <div
-        css={css`
-          display: grid;
-          gap: 2rem;
-          padding: 3rem 1.5rem;
-          text-align: center;
-
-          ${atMinLg} {
-            gap: 1.5rem;
-            padding: 10.5rem 5.25rem;
-          }
-        `}
-      >
-        <Heading
-          as="h1"
-          css={css`
-            font-size: ${responsiveViewportRelativeSize({
-              maxValue: 6.25,
-              maxWidth: bp.lg / 16,
-              minValue: 3.75,
-              minWidth: (bp.sm - 1) / 16,
-            })};
-          `}
-        >
-          Software that{' '}
-          <br
-            css={css`
-              display: none;
-
-              ${atMinLg} {
-                display: block;
-              }
-            `}
-          />
-          moves people.
-        </Heading>
-        <Text variant="h3">At Base Two, it all starts with a human touch.</Text>
-      </div>
+      <HomeHero />
       <Heading as="h2" variant="h2">
         Designed for{' '}
         <Text as="span" variant="hero">
@@ -65,14 +52,7 @@ const HomePage: NextPage = () => {
       </Heading>
       <Heading as="h2" variant="h2">
         Fueled by{' '}
-        <Text
-          as="span"
-          css={css`
-            position: relative;
-            left: 50%;
-          `}
-          variant="hero"
-        >
+        <Text as="span" variant="hero">
           curiosity.
         </Text>
       </Heading>

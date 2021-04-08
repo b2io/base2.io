@@ -1,11 +1,13 @@
-import Link from 'next/link';
-import React, { FC } from 'react';
-import { LogoWithName } from './';
-import { atMinMd, atMinSm, atMinXXL } from '~/breakpoints';
-import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Container, MobileMenu } from './';
+import React, { FC } from 'react';
+
+import { atMinMd, atMinSm, atMinXXL } from '~/theme';
+import { Container } from './Container';
+import { LogoWithName } from './icons';
+import { MobileMenu } from './MobileMenu';
 
 const Root = styled.header`
   background-image: linear-gradient(
@@ -73,7 +75,7 @@ const A = styled.a(({ theme }) => ({
   ...theme.textVariants.body,
   cursor: 'pointer',
   textDecoration: 'none',
-  ':hover': {
+  '&:hover': {
     color: theme.colors.coral,
   },
 }));
