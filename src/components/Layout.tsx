@@ -1,4 +1,4 @@
-import { css } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
@@ -6,6 +6,8 @@ import React, { FC } from 'react';
 
 import { Container } from './Container';
 import { Header } from './Header';
+import { Footer } from './Footer';
+import { onlyXs } from '~/theme';
 
 const Root = styled.div`
   overflow: hidden;
@@ -70,7 +72,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
           }
         `}
       >
-        {/* <Footer /> */}
+        <Footer />
       </Container>
     </Root>
   );

@@ -2,6 +2,7 @@ export * from './Container';
 export * from './CTA';
 export * from './Header';
 export * from './Heading';
+export * from './Footer';
 export * from './icons';
 export * from './Layout';
 export * from './MobileMenu';

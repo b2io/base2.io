@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import { LogoIcon } from '.';
-import { atMinMd, atMinXXL } from '~/breakpoints';
+import { atMinMd, atMinXXL } from '~/theme';
 
 import styled from '@emotion/styled';
 
