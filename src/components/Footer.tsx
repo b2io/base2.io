@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import { LogoIcon } from './icons/LogoIcon';
-import { atMinMd, atMinXXL } from '~/theme';
+import { atMinMd, atMinLg, atMinXXL } from '~/theme';
 
 import styled from '@emotion/styled';
 
@@ -22,11 +22,11 @@ const FooterWrapper = styled.div`
 
 const FooterLogo = styled(LogoIcon)`
   display: block;
-  height: 3.438rem;
+  height: 3.562rem;
   width: auto;
 
   ${atMinMd} {
-    height: 53px;
+    height: 3.5rem;
   }
 
   ${atMinXXL} {
@@ -38,6 +38,10 @@ const Branding = styled.div`
   ${atMinMd} {
     display: block;
     flex: 0 0 5rem;
+  }
+
+  ${atMinLg} {
+    width: 20.438rem;
   }
 `;
 
@@ -53,11 +57,7 @@ const Slogan = styled.h3`
   word-wrap: auto;
 
   ${atMinMd} {
-    font-size: 30px;
-  }
-
-  ${atMinXXL} {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 `;
 
@@ -78,8 +78,12 @@ const Nav = styled.nav`
 
     ${atMinMd} {
       margin-top: 0;
-      padding: 0 0 0 4rem;
+      /* padding: 0 0 0 4rem; */
       text-decoration: none;
+    }
+
+    ${atMinLg} {
+      margin-left: 8rem;
     }
 
     li {
@@ -95,12 +99,16 @@ const Nav = styled.nav`
       }
 
       ${atMinMd} {
-        flex-basis: 1 40%;
         margin-bottom: 1.25rem;
 
-        &:nth-child(even) {
-          /* flex-basis: 30%; */
-        }
+        /* &:nth-child(even) {
+          flex-basis: 30%;
+        } */
+      }
+
+      ${atMinLg} {
+        flex-basis: 40%;
+        justify-content: center;
       }
     }
 
@@ -118,6 +126,11 @@ const Nav = styled.nav`
         color: ${(props) => props.theme.colors.coral};
       }
     }
+  }
+
+  ${atMinLg} {
+    flex-basis: 1;
+    margin: 0 4rem;
   }
 `;
 
