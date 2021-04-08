@@ -1,5 +1,6 @@
-import * as BP from '~/breakpoints';
+import { atMinLg, atMinMd } from './breakpoints';
 import { colors } from './colors';
+import { cssClamp } from './util';
 
 export const textVariants = {
   body: {
@@ -9,50 +10,45 @@ export const textVariants = {
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
 
-    [BP.atMinMd]: {
+    [atMinMd]: {
       letterSpacing: 'normal',
     },
   },
   CTA: {
     color: colors.text,
-    fontSize: '1.125rem',
+    fontSize: cssClamp([1.125, 'xs'], [1.375, 'md']),
     fontVariationSettings: '"wght" 900',
-    letterSpacing: '0.006875rem',
+    letterSpacing: cssClamp([0.006875, 'xs'], [0.125, 'lg']),
     lineHeight: 1.56,
 
-    [BP.atMinMd]: {
+    [atMinMd]: {
       fontSize: '1.375rem',
-      letterSpacing: 'normal',
       lineHeight: 'normal',
     },
   },
   h1: {
     color: colors.text,
-    fontSize: '3.75rem',
+    fontSize: cssClamp([3.75, 'xs'], [6.25, 'lg']),
     fontVariationSettings: '"wght" 900',
     lineHeight: 1,
-    letterSpacing: '-0.03125rem',
+    letterSpacing: cssClamp([-0.03125, 'xs'], [0.125, 'lg']),
     margin: 0,
     padding: 0,
 
-    [BP.atMinMd]: {
-      fontSize: '6.25rem',
-      letterSpacing: 'normal',
+    [atMinMd]: {
       lineHeight: 1.04,
     },
   },
   h2: {
     color: colors.text,
-    fontSize: '2.5rem',
+    fontSize: cssClamp([2.5, 'xs'], [3.125, 'md']),
     fontVariationSettings: '"wght" 750',
     lineHeight: 1.1,
     letterSpacing: 'normal',
     margin: 0,
     padding: 0,
 
-    [BP.atMinMd]: {
-      fontSize: '3.125rem',
-      letterSpacing: 'normal',
+    [atMinMd]: {
       lineHeight: 1.2,
     },
   },
@@ -65,26 +61,24 @@ export const textVariants = {
     margin: 0,
     padding: 0,
 
-    [BP.atMinMd]: {
+    [atMinMd]: {
       lineHeight: 1.33,
     },
   },
   hero: {
     color: colors.text,
-    fontSize: '5rem',
+    fontSize: cssClamp([5, 'xs'], [10, 'md'], [15, 'lg']),
     fontVariationSettings: '"wght" 900',
     lineHeight: 0.53,
     letterSpacing: 'normal',
     margin: 0,
     padding: 0,
 
-    [BP.atMinMd]: {
-      fontSize: '10rem',
+    [atMinMd]: {
       lineHeight: 0.74,
     },
 
-    [BP.atMinLg]: {
-      fontSize: '15rem',
+    [atMinLg]: {
       lineHeight: 0.58,
     },
   },

@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import React, { FC } from 'react';
 import { useLockBodyScroll, useToggle } from 'react-use';
-import { CTA } from '.';
+
+import { CTA } from './CTA';
 import { MenuIcon } from './icons';
 
 const Menu = styled.div`

@@ -1,11 +1,12 @@
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { FC } from 'react';
 
-import { Container, Header } from './';
-import styled from '@emotion/styled';
+import { Container } from './Container';
+import { Header } from './Header';
 
 const Root = styled.div`
   overflow: hidden;
