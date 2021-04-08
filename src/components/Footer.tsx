@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
-import { LogoIcon } from '.';
+import { LogoIcon } from './icons/LogoIcon';
 import { atMinMd, atMinXXL } from '~/theme';
 
 import styled from '@emotion/styled';
@@ -16,9 +16,7 @@ const FooterWrapper = styled.div`
     flex-direction: row;
     flex-wrap: nowrap;
     margin-left: 0;
-    padding-right: 30px;
     padding-bottom: 5rem;
-    position: fixed;
   }
 `;
 
@@ -81,6 +79,7 @@ const Nav = styled.nav`
     ${atMinMd} {
       margin-top: 0;
       padding: 0 0 0 4rem;
+      text-decoration: none;
     }
 
     li {
@@ -139,16 +138,24 @@ const ContactBlock = styled.div`
   a {
     display: block;
     color: ${(props) => props.theme.colors.offWhite};
-    margin-bottom: 2rem;
+    margin-bottom: ${({ theme }) => theme.spacing.md};
     text-decoration: none;
 
     &:last-child {
       margin-bottom: 0;
     }
+
+    ${atMinMd} {
+      margin-bottom: ${({ theme }) => theme.spacing.sm};
+    }
   }
 
   address {
     margin: 2rem 0 0;
+
+    ${atMinMd} {
+      margin-top: 0;
+    }
   }
 `;
 
@@ -188,7 +195,7 @@ export const Footer: FC = () => {
       </Nav>
       <ContactBlock>
         <Link href={'mailto:info@base2.io'}>info@base2.io</Link>
-        <Link href={'tel:6143981158'}>614.398.1158</Link>
+        <Link href={'tel:6143981158'}>(614) 398.1158</Link>
         <address>
           21E 5th Ave. Suite 102
           <br />
