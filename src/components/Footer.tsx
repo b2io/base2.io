@@ -8,7 +8,7 @@ import styled from '@emotion/styled';
 
 const FooterWrapper = styled.div`
   bottom: 0;
-  margin: 0 2rem;
+  margin: 0 0 0 2rem;
   padding-top: 4rem;
 
   ${atMinMd} {
@@ -21,8 +21,7 @@ const FooterWrapper = styled.div`
 
 const FooterLogo = styled(LogoIcon)`
   display: block;
-  height: 60px;
-  justify-content: center;
+  height: 3.438rem;
   width: auto;
 
   ${atMinMd} {
@@ -64,7 +63,7 @@ const Slogan = styled.h3`
 
 const Nav = styled.nav`
   color: ${(props) => props.theme.colors.offWhite};
-  font-size: 17px;
+  font-size: 1.062rem;
   font-weight: 500;
   line-height: 28px;
   letter-spacing: 0;
@@ -73,31 +72,35 @@ const Nav = styled.nav`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin-top: 4rem;
+    margin: 4rem 0 0 0;
     padding-left: 0;
     text-decoration: underline;
 
     li {
-      flex: 1 50%;
+      flex-basis: 55%;
       margin-bottom: 1.25rem;
+
+      &:nth-child(even) {
+        flex-basis: 45%;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       ${atMinMd} {
         flex-basis: 70%;
         margin-bottom: 1.25rem;
 
-        &:nth-child(even) {
-          flex-basis: 60%;
-        }
+        /* &:nth-child(even) {
+          flex: 1 540%;
+        } */
       }
-    }
-
-    &:last-child {
-      margin-bottom: 0;
     }
 
     a {
       color: ${(props) => props.theme.colors.offWhite};
-      font-size: 17px;
+      font-size: 1.062rem;
       line-height: 28px;
       text-decoration: none;
 
@@ -114,11 +117,11 @@ const Nav = styled.nav`
 
 const ContactBlock = styled.div`
   color: ${(props) => props.theme.colors.offWhite};
-  font-size: 17px;
+  font-size: 1.062rem;
   line-height: 28px;
   letter-spacing: 0;
-  margin: 2.25rem 0 0;
-  padding-bottom: 2.5rem;
+  margin-top: ${({ theme }) => theme.spacing.xxl};
+  padding-bottom: ${({ theme }) => theme.spacing.l};
 
   ${atMinMd} {
     margin-top: 0;
@@ -138,9 +141,9 @@ const ContactBlock = styled.div`
     margin: 2rem 0 2.5rem;
   }
 
-  ${atMinMd} {
+  /* ${atMinMd} {
     grid-column: 3;
-  }
+  } */
 `;
 
 interface FooterItemProps {
