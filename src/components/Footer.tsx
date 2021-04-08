@@ -3,11 +3,12 @@ import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import { LogoIcon } from '.';
 import { atMinMd, atMinXXL } from '~/breakpoints';
+
 import styled from '@emotion/styled';
 
 const FooterWrapper = styled.div`
   bottom: 0;
-  margin: 0 6rem 0 3.1rem;
+  margin: 0 2rem;
   padding-top: 4rem;
 
   ${atMinMd} {
@@ -15,7 +16,6 @@ const FooterWrapper = styled.div`
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0;
-    position: fixed;
   }
 `;
 
@@ -50,7 +50,7 @@ const Slogan = styled.h3`
   line-height: 1.27;
   letter-spacing: normal;
   margin: 0.625rem 0 0;
-  width: 10.438 rem;
+  width: 10.438rem;
   word-wrap: auto;
 
   ${atMinMd} {
@@ -78,11 +78,16 @@ const Nav = styled.nav`
     text-decoration: underline;
 
     li {
-      flex-basis: 70%;
+      flex: 1 50%;
       margin-bottom: 1.25rem;
 
-      &:nth-child(even) {
-        flex-basis: 30%;
+      ${atMinMd} {
+        flex-basis: 70%;
+        margin-bottom: 1.25rem;
+
+        &:nth-child(even) {
+          flex-basis: 60%;
+        }
       }
     }
 
@@ -112,7 +117,7 @@ const ContactBlock = styled.div`
   font-size: 17px;
   line-height: 28px;
   letter-spacing: 0;
-  margin: 3.5rem 0 0;
+  margin: 2.25rem 0 0;
   padding-bottom: 2.5rem;
 
   ${atMinMd} {
@@ -121,18 +126,16 @@ const ContactBlock = styled.div`
 
   a {
     display: block;
+    color: ${(props) => props.theme.colors.offWhite};
+    margin-bottom: 2rem;
 
     &:last-child {
-      margin-top: 30px;
-    }
-
-    :visited {
-      color: ${(props) => props.theme.colors.offWhite};
+      margin-bottom: 0;
     }
   }
 
   address {
-    margin-top: 30px;
+    margin: 2rem 0 2.5rem;
   }
 
   ${atMinMd} {

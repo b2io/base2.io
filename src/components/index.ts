@@ -6,6 +6,6 @@ export * from './Text';
 
 // Order based on dependent usage:
 export * from './MobileMenu';
-export * from './Footer';
 export * from './Header';
+export * from './Footer';
 export * from './Layout';
