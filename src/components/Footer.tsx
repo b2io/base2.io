@@ -121,7 +121,7 @@ const ContactBlock = styled.div`
   line-height: 28px;
   letter-spacing: 0;
   margin-top: ${({ theme }) => theme.spacing.xxl};
-  padding-bottom: ${({ theme }) => theme.spacing.l};
+  padding-bottom: ${({ theme }) => theme.spacing.lg};
 
   ${atMinMd} {
     margin-top: 0;
