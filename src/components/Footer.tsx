@@ -7,15 +7,18 @@ import { atMinMd, atMinXXL } from '~/breakpoints';
 import styled from '@emotion/styled';
 
 const FooterWrapper = styled.div`
-  bottom: 0;
   margin: 0 0 0 2rem;
   padding-top: 4rem;
 
   ${atMinMd} {
+    bottom: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin: 0;
+    margin-left: 0;
+    padding-right: 30px;
+    padding-bottom: 5rem;
+    position: fixed;
   }
 `;
 
@@ -26,8 +29,6 @@ const FooterLogo = styled(LogoIcon)`
 
   ${atMinMd} {
     height: 53px;
-    margin-top: 0;
-    margin-right: 0;
   }
 
   ${atMinXXL} {
@@ -38,6 +39,7 @@ const FooterLogo = styled(LogoIcon)`
 const Branding = styled.div`
   ${atMinMd} {
     display: block;
+    flex: 0 0 5rem;
   }
 `;
 
@@ -76,6 +78,11 @@ const Nav = styled.nav`
     padding-left: 0;
     text-decoration: underline;
 
+    ${atMinMd} {
+      margin-top: 0;
+      padding: 0 0 0 4rem;
+    }
+
     li {
       flex-basis: 55%;
       margin-bottom: 1.25rem;
@@ -89,12 +96,12 @@ const Nav = styled.nav`
       }
 
       ${atMinMd} {
-        flex-basis: 70%;
+        flex-basis: 1 40%;
         margin-bottom: 1.25rem;
 
-        /* &:nth-child(even) {
-          flex: 1 540%;
-        } */
+        &:nth-child(even) {
+          /* flex-basis: 30%; */
+        }
       }
     }
 
@@ -125,12 +132,15 @@ const ContactBlock = styled.div`
 
   ${atMinMd} {
     margin-top: 0;
+    padding-bottom: 0;
+    flex: 0 0 10.438rem;
   }
 
   a {
     display: block;
     color: ${(props) => props.theme.colors.offWhite};
     margin-bottom: 2rem;
+    text-decoration: none;
 
     &:last-child {
       margin-bottom: 0;
@@ -138,12 +148,8 @@ const ContactBlock = styled.div`
   }
 
   address {
-    margin: 2rem 0 2.5rem;
+    margin: 2rem 0 0;
   }
-
-  /* ${atMinMd} {
-    grid-column: 3;
-  } */
 `;
 
 interface FooterItemProps {
@@ -171,20 +177,22 @@ export const Footer: FC = () => {
       </Branding>
       <Nav>
         <ul>
-          <FooterItem href="/"> Home</FooterItem>
-          <FooterItem href="/careers"> Careers</FooterItem>
-          <FooterItem href="/work"> Work</FooterItem>
-          <FooterItem href="/blog"> Blog</FooterItem>
-          <FooterItem href="/approach"> Approach</FooterItem>
-          <FooterItem href="/contact"> Contact</FooterItem>
-          <FooterItem href="/culture"> Culture</FooterItem>
+          <FooterItem href="/">Home</FooterItem>
+          <FooterItem href="/careers">Careers</FooterItem>
+          <FooterItem href="/work">Work</FooterItem>
+          <FooterItem href="/blog">Blog</FooterItem>
+          <FooterItem href="/approach">Approach</FooterItem>
+          <FooterItem href="/contact">Contact</FooterItem>
+          <FooterItem href="/culture">Culture</FooterItem>
         </ul>
       </Nav>
       <ContactBlock>
         <Link href={'mailto:info@base2.io'}>info@base2.io</Link>
         <Link href={'tel:6143981158'}>614.398.1158</Link>
         <address>
-          21E 5th Ave. Suite 102 <br /> Columbus OH 43201
+          21E 5th Ave. Suite 102
+          <br />
+          Columbus OH 43201
         </address>
       </ContactBlock>
     </FooterWrapper>
