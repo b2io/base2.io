@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import { LogoIcon } from './icons/LogoIcon';
 import { atMinMd, atMinLg } from '~/theme';
-
 import styled from '@emotion/styled';
 
 const FooterWrapper = styled.div`
