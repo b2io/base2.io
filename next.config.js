@@ -6,4 +6,7 @@ module.exports = {
     defaultLocale: 'en-US',
     locales: ['en-US'],
   },
+  images: {
+    deviceSizes: [576, 768, 992, 1200, 1400, 1600],
+  },
 };

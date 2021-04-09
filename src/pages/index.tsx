@@ -1,4 +1,5 @@
 import css from '@emotion/css';
+import Image from 'next/image';
 import { NextPage } from 'next';
 import { FC } from 'react';
 
@@ -12,6 +13,7 @@ const HomeHero: FC = () => {
         display: grid;
         gap: ${cssClamp([2, 'xs'], [1.5, 'lg'])};
         padding: ${cssClamp([3, 'xs'], [10.5, 'lg'])}
+          // comment to ignore ts-styled-plugin warnings
           ${cssClamp([1.5, 'xs'], [5.25, 'lg'])};
         text-align: center;
       `}
@@ -34,16 +36,30 @@ const HomeHero: FC = () => {
   );
 };
 
-const HomePage: NextPage = () => {
+const DesignForHumans: FC = () => {
   return (
-    <Layout>
-      <HomeHero />
+    <div>
+      <Image
+        alt="woman looking at phone"
+        src="/home/humans.jpg"
+        height={375}
+        width={375}
+      />
       <Heading as="h2" variant="h2">
         Designed for{' '}
         <Text as="span" variant="hero">
           humans.
         </Text>
       </Heading>
+    </div>
+  );
+};
+
+const HomePage: NextPage = () => {
+  return (
+    <Layout>
+      <HomeHero />
+      <DesignForHumans />
       <Heading as="h2" variant="h2">
         Built for{' '}
         <Text as="span" variant="hero">
