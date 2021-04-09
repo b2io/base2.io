@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import { LogoIcon } from './icons/LogoIcon';
-import { atMinMd, atMinLg, atMinXXL } from '~/theme';
+import { atMinMd, atMinLg } from '~/theme';
 
 import styled from '@emotion/styled';
 
 const FooterWrapper = styled.div`
-  margin: 0 0 0 2rem;
+  margin-left: 1.688rem;
   padding-top: 4rem;
 
   ${atMinMd} {
@@ -15,22 +15,9 @@ const FooterWrapper = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: space-evenly;
     margin-left: 0;
     padding-bottom: 5rem;
-  }
-`;
-
-const FooterLogo = styled(LogoIcon)`
-  display: block;
-  height: 3.562rem;
-  width: auto;
-
-  ${atMinMd} {
-    height: 3.5rem;
-  }
-
-  ${atMinXXL} {
-    height: 60px;
   }
 `;
 
@@ -42,6 +29,16 @@ const Branding = styled.div`
 
   ${atMinLg} {
     width: 20.438rem;
+  }
+`;
+
+const FooterLogo = styled(LogoIcon)`
+  display: block;
+  height: 3.562rem;
+  width: auto;
+
+  ${atMinMd} {
+    height: 3.5rem;
   }
 `;
 
@@ -63,10 +60,12 @@ const Slogan = styled.h3`
 
 const Nav = styled.nav`
   color: ${(props) => props.theme.colors.offWhite};
-  font-size: 1.062rem;
-  font-weight: 500;
-  line-height: 28px;
-  letter-spacing: 0;
+  font-size: ${({ theme }) => theme.spacing.sm};
+
+  ${atMinLg} {
+    flex-basis: 1;
+    margin: 0 4rem;
+  }
 
   ul {
     display: flex;
@@ -78,12 +77,12 @@ const Nav = styled.nav`
 
     ${atMinMd} {
       margin-top: 0;
-      /* padding: 0 0 0 4rem; */
+      padding-left: 6rem;
       text-decoration: none;
     }
 
     ${atMinLg} {
-      margin-left: 8rem;
+      padding-left: 8rem;
     }
 
     li {
@@ -100,10 +99,11 @@ const Nav = styled.nav`
 
       ${atMinMd} {
         margin-bottom: 1.25rem;
+        flex-basis: 40%;
 
-        /* &:nth-child(even) {
-          flex-basis: 30%;
-        } */
+        &:nth-child(even) {
+          flex-basis: 60%;
+        }
       }
 
       ${atMinLg} {
@@ -126,11 +126,6 @@ const Nav = styled.nav`
         color: ${(props) => props.theme.colors.coral};
       }
     }
-  }
-
-  ${atMinLg} {
-    flex-basis: 1;
-    margin: 0 4rem;
   }
 `;
 
@@ -164,6 +159,7 @@ const ContactBlock = styled.div`
   }
 
   address {
+    font-style: normal;
     margin: 2rem 0 0;
 
     ${atMinMd} {
