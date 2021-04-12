@@ -1,10 +1,10 @@
 import css from '@emotion/css';
-import Image from 'next/image';
 import { NextPage } from 'next';
 import { FC } from 'react';
 
 import { atMinLg, cssClamp } from '~/theme';
 import { CTA, Layout, Heading, Text } from '~/components';
+import { DesignedForHumansPane } from '~/components/panes';
 
 const HomeHero: FC = () => {
   return (
@@ -36,30 +36,11 @@ const HomeHero: FC = () => {
   );
 };
 
-const DesignForHumans: FC = () => {
-  return (
-    <div>
-      <Image
-        alt="woman looking at phone"
-        src="/home/humans.jpg"
-        height={375}
-        width={375}
-      />
-      <Heading as="h2" variant="h2">
-        Designed for{' '}
-        <Text as="span" variant="hero">
-          humans.
-        </Text>
-      </Heading>
-    </div>
-  );
-};
-
 const HomePage: NextPage = () => {
   return (
     <Layout>
       <HomeHero />
-      <DesignForHumans />
+      <DesignedForHumansPane />
       <Heading as="h2" variant="h2">
         Built for{' '}
         <Text as="span" variant="hero">
