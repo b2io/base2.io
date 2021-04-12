@@ -1,34 +1,36 @@
+import { css } from '@emotion/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 import { LogoIcon } from './icons/LogoIcon';
-import { atMinMd, atMinLg } from '~/theme';
+import { atMinMd, atMinXL } from '~/theme';
 import styled from '@emotion/styled';
 
 const FooterWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-left: 1.688rem;
+  max-width: 1600px;
   padding-top: 4rem;
+  position: relative;
 
   ${atMinMd} {
     bottom: 0;
-    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
     margin-left: 0;
     padding-bottom: 5rem;
+  }
+
+  ${atMinXL} {
+    margin: unset;
+    max-width: 80%;
   }
 `;
 
 const Branding = styled.div`
-  ${atMinMd} {
-    display: block;
-    flex: 0 0 5rem;
-  }
-
-  ${atMinLg} {
-    width: 20.438rem;
-  }
+  display: block;
 `;
 
 const FooterLogo = styled(LogoIcon)`
@@ -49,7 +51,7 @@ const Slogan = styled.h3`
   line-height: 1.27;
   letter-spacing: normal;
   margin: 0.625rem 0 0;
-  width: 10.438rem;
+  width: 13.062rem;
   word-wrap: auto;
 
   ${atMinMd} {
@@ -60,37 +62,22 @@ const Slogan = styled.h3`
 const Nav = styled.nav`
   color: ${(props) => props.theme.colors.offWhite};
   font-size: ${({ theme }) => theme.spacing.sm};
-
-  ${atMinLg} {
-    flex-basis: 1;
-    margin: 0 4rem;
-  }
+  /* border: 2px solid green; */
 
   ul {
-    display: flex;
-    flex-wrap: wrap;
     list-style: none;
     margin: 4rem 0 0 0;
     padding-left: 0;
     text-decoration: underline;
+    columns: 2;
 
     ${atMinMd} {
       margin-top: 0;
-      padding-left: 6rem;
       text-decoration: none;
     }
 
-    ${atMinLg} {
-      padding-left: 8rem;
-    }
-
     li {
-      flex-basis: 55%;
       margin-bottom: 1.25rem;
-
-      &:nth-child(even) {
-        flex-basis: 45%;
-      }
 
       &:last-child {
         margin-bottom: 0;
@@ -98,16 +85,6 @@ const Nav = styled.nav`
 
       ${atMinMd} {
         margin-bottom: 1.25rem;
-        flex-basis: 40%;
-
-        &:nth-child(even) {
-          flex-basis: 60%;
-        }
-      }
-
-      ${atMinLg} {
-        flex-basis: 40%;
-        justify-content: center;
       }
     }
 
@@ -135,11 +112,12 @@ const ContactBlock = styled.div`
   letter-spacing: 0;
   margin-top: ${({ theme }) => theme.spacing.xxl};
   padding-bottom: ${({ theme }) => theme.spacing.lg};
+  /* border: 2px solid yellow; */
 
   ${atMinMd} {
+    columns: 2;
     margin-top: 0;
     padding-bottom: 0;
-    flex: 0 0 10.438rem;
   }
 
   a {
@@ -147,6 +125,7 @@ const ContactBlock = styled.div`
     color: ${(props) => props.theme.colors.offWhite};
     margin-bottom: ${({ theme }) => theme.spacing.md};
     text-decoration: none;
+    border: 2px solid yellow;
 
     &:last-child {
       margin-bottom: 0;
@@ -160,6 +139,7 @@ const ContactBlock = styled.div`
   address {
     font-style: normal;
     margin: 2rem 0 0;
+    order: -1;
 
     ${atMinMd} {
       margin-top: 0;
@@ -193,16 +173,26 @@ export const Footer: FC = () => {
       <Nav>
         <ul>
           <FooterItem href="/">Home</FooterItem>
-          <FooterItem href="/careers">Careers</FooterItem>
           <FooterItem href="/work">Work</FooterItem>
-          <FooterItem href="/blog">Blog</FooterItem>
           <FooterItem href="/approach">Approach</FooterItem>
-          <FooterItem href="/contact">Contact</FooterItem>
           <FooterItem href="/culture">Culture</FooterItem>
+          <FooterItem href="/careers">Careers</FooterItem>
+          <FooterItem href="/blog">Blog</FooterItem>
+          <FooterItem href="/contact">Contact</FooterItem>
         </ul>
       </Nav>
       <ContactBlock>
-        <Link href={'mailto:info@base2.io'}>info@base2.io</Link>
+        <Link
+          href={'mailto:info@base2.io'}
+          css={css`
+            ${atMinXL} {
+              position: absolute;
+              right: 0;
+            }
+          `}
+        >
+          info@base2.io
+        </Link>
         <Link href={'tel:6143981158'}>(614) 398.1158</Link>
         <address>
           21E 5th Ave. Suite 102
