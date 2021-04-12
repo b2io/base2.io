@@ -5,7 +5,6 @@ import React, { FC } from 'react';
 import { LogoIcon } from './icons/LogoIcon';
 import { atMinMd, atMinXL } from '~/theme';
 import styled from '@emotion/styled';
-
 const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,7 +13,6 @@ const FooterWrapper = styled.div`
   max-width: 1600px;
   padding-top: 4rem;
   position: relative;
-
   ${atMinMd} {
     bottom: 0;
     flex-direction: row;
@@ -22,27 +20,24 @@ const FooterWrapper = styled.div`
     margin-left: 0;
     padding-bottom: 5rem;
   }
-
   ${atMinXL} {
     margin: unset;
-    max-width: 80%;
   }
 `;
-
 const Branding = styled.div`
   display: block;
+  ${atMinMd} {
+    width: calc(100% / 3);
+  }
 `;
-
 const FooterLogo = styled(LogoIcon)`
   display: block;
   height: 3.562rem;
   width: auto;
-
   ${atMinMd} {
     height: 3.5rem;
   }
 `;
-
 const Slogan = styled.h3`
   color: ${(props) => props.theme.colors.offWhite};
   display: inline-block;
@@ -53,58 +48,50 @@ const Slogan = styled.h3`
   margin: 0.625rem 0 0;
   width: 13.062rem;
   word-wrap: auto;
-
   ${atMinMd} {
     font-size: 1.875rem;
   }
 `;
-
 const Nav = styled.nav`
   color: ${(props) => props.theme.colors.offWhite};
   font-size: ${({ theme }) => theme.spacing.sm};
-  /* border: 2px solid green; */
-
+  ${atMinMd} {
+    width: calc(100% / 3);
+  }
   ul {
     list-style: none;
     margin: 4rem 0 0 0;
     padding-left: 0;
     text-decoration: underline;
     columns: 2;
-
     ${atMinMd} {
       margin-top: 0;
       text-decoration: none;
+      width: 60%;
     }
-
     li {
       margin-bottom: 1.25rem;
-
       &:last-child {
         margin-bottom: 0;
       }
-
       ${atMinMd} {
         margin-bottom: 1.25rem;
       }
     }
-
     a {
       color: ${(props) => props.theme.colors.offWhite};
       font-size: 1.062rem;
       line-height: 28px;
       text-decoration: none;
-
       &:visited {
         color: ${(props) => props.theme.colors.offWhite};
       }
-
       &:hover {
         color: ${(props) => props.theme.colors.coral};
       }
     }
   }
 `;
-
 const ContactBlock = styled.div`
   color: ${(props) => props.theme.colors.offWhite};
   font-size: 1.062rem;
@@ -112,48 +99,46 @@ const ContactBlock = styled.div`
   letter-spacing: 0;
   margin-top: ${({ theme }) => theme.spacing.xxl};
   padding-bottom: ${({ theme }) => theme.spacing.lg};
-  /* border: 2px solid yellow; */
-
   ${atMinMd} {
-    columns: 2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: calc(100% / 3);
     margin-top: 0;
     padding-bottom: 0;
   }
-
   a {
     display: block;
     color: ${(props) => props.theme.colors.offWhite};
     margin-bottom: ${({ theme }) => theme.spacing.md};
     text-decoration: none;
-    border: 2px solid yellow;
-
     &:last-child {
       margin-bottom: 0;
     }
-
+    &:first-child {
+      ${atMinMd} {
+        position: absolute;
+        right: 0;
+      }
+    }
     ${atMinMd} {
       margin-bottom: ${({ theme }) => theme.spacing.sm};
     }
   }
-
   address {
     font-style: normal;
     margin: 2rem 0 0;
-    order: -1;
-
+    /* order: -1; */
     ${atMinMd} {
       margin-top: 0;
     }
   }
 `;
-
 interface FooterItemProps {
   href: string;
 }
-
 const FooterItem: FC<FooterItemProps> = ({ href, ...props }) => {
   const { asPath } = useRouter();
-
   return (
     <li className={asPath == href ? 'active' : ''}>
       <Link href={href}>
@@ -162,7 +147,6 @@ const FooterItem: FC<FooterItemProps> = ({ href, ...props }) => {
     </li>
   );
 };
-
 export const Footer: FC = () => {
   return (
     <FooterWrapper>
