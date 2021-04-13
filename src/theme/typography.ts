@@ -3,6 +3,20 @@ import { colors } from './colors';
 import { cssClamp } from './util';
 
 export const anchorVariants = {
+  CTA: {
+    color: colors.text,
+    cursor: 'pointer',
+    fontSize: cssClamp([1.125, 'xs'], [1.375, 'md']),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: cssClamp([0.006875, 'xs'], [0.125, 'lg']),
+    lineHeight: 1.56,
+    textDecoration: 'none',
+
+    [atMinMd]: {
+      fontSize: '1.375rem',
+      lineHeight: 'normal',
+    },
+  },
   default: {
     color: colors.text,
     cursor: 'pointer',
@@ -37,18 +51,6 @@ export const textVariants = {
 
     [atMinMd]: {
       letterSpacing: 'normal',
-    },
-  },
-  CTA: {
-    color: colors.text,
-    fontSize: cssClamp([1.125, 'xs'], [1.375, 'md']),
-    fontVariationSettings: '"wght" 900',
-    letterSpacing: cssClamp([0.006875, 'xs'], [0.125, 'lg']),
-    lineHeight: 1.56,
-
-    [atMinMd]: {
-      fontSize: '1.375rem',
-      lineHeight: 'normal',
     },
   },
   h1: {

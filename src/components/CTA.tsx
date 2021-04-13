@@ -2,16 +2,15 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import React, { FC } from 'react';
 
+import { Anchor } from './Anchor';
+
 export type CTAProps = {
   href: string;
   isExternal?: boolean;
 };
 
-const A = styled.a(({ theme }) => ({
-  ...theme.textVariants.CTA,
-  cursor: 'pointer',
+const A = styled(Anchor)(({ theme }) => ({
   display: 'inline-block',
-  textDecoration: 'none',
   '::after': {
     backgroundColor: theme.colors.action,
     content: '""',
@@ -29,10 +28,10 @@ const A = styled.a(({ theme }) => ({
 
 export const CTA: FC<CTAProps> = ({ href, isExternal, ...props }) => {
   return isExternal ? (
-    <A href={href} {...props} />
+    <A variant="CTA" href={href} {...props} />
   ) : (
     <Link href={href}>
-      <A {...props} />
+      <A variant="CTA" {...props} />
     </Link>
   );
 };
