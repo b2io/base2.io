@@ -6,7 +6,7 @@ import React, { FC } from 'react';
 import { LogoIcon } from './icons/LogoIcon';
 import { onlyXs, atMinMd, atMinLg } from '~/theme';
 import { Container } from './Container';
-import { Heading } from '~/components';
+import { Heading } from './Heading';
 
 const FooterWrapper = styled.div`
   margin-left: 1.688rem;
