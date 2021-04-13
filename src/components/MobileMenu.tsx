@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { FC } from 'react';
 import { useLockBodyScroll, useToggle } from 'react-use';
 
+import { Anchor } from './Anchor';
 import { CTA } from './CTA';
 import { MenuIcon } from './icons';
 
@@ -44,15 +45,6 @@ const Nav = styled.nav`
   }
 `;
 
-const A = styled.a(({ theme }) => ({
-  ...theme.textVariants.h2,
-  cursor: 'pointer',
-  textDecoration: 'none',
-  ':hover': {
-    color: theme.colors.coral,
-  },
-}));
-
 const ContactLink = styled(CTA)`
   display: table;
   margin: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.lg}
@@ -67,7 +59,7 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   return (
     <li>
       <Link href={href}>
-        <A {...props} />
+        <Anchor variant="large" {...props} />
       </Link>
     </li>
   );
