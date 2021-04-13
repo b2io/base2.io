@@ -1,38 +1,32 @@
-import { css } from '@emotion/react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React, { FC } from 'react';
-import { LogoIcon } from './icons/LogoIcon';
-import { atMinMd, atMinLg, atMinXL } from '~/theme';
+import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
+import Link from 'next/link';
+import React, { FC } from 'react';
+
+import { LogoIcon } from './icons/LogoIcon';
+import { onlyXs, atMinMd, atMinLg } from '~/theme';
+import { Container } from './Container';
+import { Heading } from '~/components';
 
 const FooterWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   margin-left: 1.688rem;
   max-width: 1600px;
   padding-top: 4rem;
   position: relative;
 
   ${atMinMd} {
-    bottom: 0;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    justify-content: space-between;
     margin-left: 0;
     padding-bottom: 5rem;
-  }
-
-  ${atMinXL} {
-    margin: unset;
   }
 `;
 
 const Branding = styled.div`
-  display: block;
-
   ${atMinLg} {
-    width: calc(100% / 3);
+    flex: 1;
   }
 `;
 
@@ -46,40 +40,29 @@ const FooterLogo = styled(LogoIcon)`
   }
 `;
 
-const Slogan = styled.h3`
+const Slogan = styled(Heading)`
   color: ${(props) => props.theme.colors.offWhite};
-  display: inline-block;
-  font-size: 1.875rem;
-  font-weight: normal;
-  line-height: 1.27;
-  letter-spacing: normal;
   margin: 0.625rem 0 0;
   width: 13.062rem;
-  word-wrap: auto;
-
-  ${atMinMd} {
-    font-size: 1.875rem;
-  }
 `;
 
 const Nav = styled.nav`
   color: ${(props) => props.theme.colors.offWhite};
-  font-size: ${({ theme }) => theme.spacing.sm};
+  font-size: 1.063rem;
 
   ${atMinLg} {
-    width: calc(100% / 3);
+    flex: 1;
   }
 
   ul {
+    columns: 2;
     list-style: none;
     margin: 4rem 0 0 0;
     padding-left: 0;
-    text-decoration: underline;
-    columns: 2;
 
     ${atMinMd} {
+      column-gap: 3rem;
       margin-top: 0;
-      text-decoration: none;
     }
 
     ${atMinLg} {
@@ -115,10 +98,10 @@ const Nav = styled.nav`
   }
 `;
 
-const ContactBlock = styled.div`
+const ContactBlock = styled.address`
   color: ${(props) => props.theme.colors.offWhite};
   font-size: 1.062rem;
-  line-height: 28px;
+  line-height: 1.75rem;
   letter-spacing: 0;
   margin-top: ${({ theme }) => theme.spacing.xxl};
   padding-bottom: ${({ theme }) => theme.spacing.lg};
@@ -132,7 +115,7 @@ const ContactBlock = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: calc(100% / 3);
+    flex: 1;
   }
 
   a {
@@ -167,13 +150,12 @@ const ContactBlock = styled.div`
   }
 `;
 
-interface FooterItemProps {
+interface NavItemProps {
   href: string;
 }
-const FooterItem: FC<FooterItemProps> = ({ href, ...props }) => {
-  const { asPath } = useRouter();
+const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   return (
-    <li className={asPath == href ? 'active' : ''}>
+    <li>
       <Link href={href}>
         <a {...props} />
       </Link>
@@ -182,42 +164,44 @@ const FooterItem: FC<FooterItemProps> = ({ href, ...props }) => {
 };
 
 export const Footer: FC = () => {
+  const theme = useTheme();
   return (
-    <FooterWrapper>
-      <Branding>
-        <FooterLogo />
-        <Slogan>Where code meets craft.</Slogan>
-      </Branding>
-      <Nav>
-        <ul>
-          <FooterItem href="/">Home</FooterItem>
-          <FooterItem href="/work">Work</FooterItem>
-          <FooterItem href="/approach">Approach</FooterItem>
-          <FooterItem href="/culture">Culture</FooterItem>
-          <FooterItem href="/careers">Careers</FooterItem>
-          <FooterItem href="/blog">Blog</FooterItem>
-          <FooterItem href="/contact">Contact</FooterItem>
-        </ul>
-      </Nav>
-      <ContactBlock>
-        <Link
-          href={'mailto:info@base2.io'}
-          css={css`
-            ${atMinXL} {
-              position: absolute;
-              right: 0;
-            }
-          `}
-        >
-          info@base2.io
-        </Link>
-        <Link href={'tel:6143981158'}>(614) 398.1158</Link>
-        <address>
-          21E 5th Ave. Suite 102
-          <br />
-          Columbus OH 43201
-        </address>
-      </ContactBlock>
-    </FooterWrapper>
+    <Container
+      as="footer"
+      css={css`
+        ${onlyXs} {
+          background-color: ${theme.colors.darkBlueAlt};
+        }
+      `}
+    >
+      <FooterWrapper>
+        <Branding>
+          <FooterLogo />
+          <Slogan as="h3" variant="h3">
+            Where code meets craft.
+          </Slogan>
+        </Branding>
+        <Nav>
+          <ul>
+            <NavItem href="/">Home</NavItem>
+            <NavItem href="/work">Work</NavItem>
+            <NavItem href="/approach">Approach</NavItem>
+            <NavItem href="/culture">Culture</NavItem>
+            <NavItem href="/careers">Careers</NavItem>
+            <NavItem href="/blog">Blog</NavItem>
+            <NavItem href="/contact">Contact</NavItem>
+          </ul>
+        </Nav>
+        <ContactBlock>
+          <a href={'mailto:info@base2.io'}>info@base2.io</a>
+          <a href={'tel:6143981158'}>(614) 398-1158</a>
+          <p>
+            21 E 5th Ave Suite 102
+            <br />
+            Columbus, OH 43201
+          </p>
+        </ContactBlock>
+      </FooterWrapper>
+    </Container>
   );
 };
