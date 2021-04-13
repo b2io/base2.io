@@ -2,6 +2,31 @@ import { atMinLg, atMinMd } from './breakpoints';
 import { colors } from './colors';
 import { cssClamp } from './util';
 
+export const anchorVariants = {
+  default: {
+    color: colors.text,
+    cursor: 'pointer',
+    fontSize: '1.063rem',
+    fontVariationSettings: '"wght" 500',
+    lineHeight: 1.75,
+    textDecoration: 'none',
+    '&:hover': {
+      color: colors.coral,
+    },
+  },
+  large: {
+    color: colors.text,
+    cursor: 'pointer',
+    fontSize: '2.5rem',
+    fontVariationSettings: '"wght" 750',
+    lineHeight: 1.1,
+    textDecoration: 'none',
+    '&:hover': {
+      color: colors.coral,
+    },
+  },
+};
+
 export const textVariants = {
   body: {
     color: colors.text,
@@ -84,4 +109,5 @@ export const textVariants = {
   },
 };
 
+export type ThemeAnchorVariants = keyof typeof anchorVariants;
 export type ThemeTextVariants = keyof typeof textVariants;

@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 
 import { atMinMd, atMinSm, atMinXXL } from '~/theme';
+import { Anchor } from './Anchor';
 import { Container } from './Container';
 import { LogoWithName } from './icons';
 import { MobileMenu } from './MobileMenu';
@@ -71,15 +72,6 @@ const Nav = styled.nav`
   }
 `;
 
-const A = styled.a(({ theme }) => ({
-  ...theme.textVariants.body,
-  cursor: 'pointer',
-  textDecoration: 'none',
-  '&:hover': {
-    color: theme.colors.coral,
-  },
-}));
-
 const LogoImage = styled(LogoWithName)`
   height: 2.1875rem;
   width: auto;
@@ -113,7 +105,7 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   return (
     <li className={asPath == href ? 'active' : ''}>
       <Link href={href}>
-        <A {...props} />
+        <Anchor {...props} />
       </Link>
     </li>
   );
