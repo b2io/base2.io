@@ -8,10 +8,10 @@ export const DesignedForHumansPane: FC = () => {
     <div>
       <div
         css={css`
-          height: 86.133vw;
-          left: calc(50% - 50vw);
+          height: 20.1875em;
+          left: calc(50% - 50vw - 5.8545em);
           position: relative;
-          width: 86.133vw;
+          width: 26.042em;
         `}
       >
         <Image
