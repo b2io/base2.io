@@ -1,16 +1,15 @@
 import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-// import NextLink from 'next/link';
 import React, { FC } from 'react';
 
 import { onlyXs, atMinMd, atMinLg } from '~/theme';
 import { Container } from './Container';
 import { Link } from './Link';
 import { LogoIcon } from './icons/LogoIcon';
+import Text from './Text';
 
 const FooterWrapper = styled.div`
   margin-left: 1.688rem;
-  max-width: 1600px;
   padding-top: 4rem;
   position: relative;
 
@@ -34,26 +33,14 @@ const FooterLogo = styled(LogoIcon)`
   display: block;
   height: 3.5rem;
   width: auto;
-
-  ${atMinMd} {
-    height: 3.5rem;
-  }
 `;
 
-const Slogan = styled.p`
-  color: ${({ theme }) => theme.colors.offWhite};
-  font-size: 1.875rem;
-  font-weight: 300;
-  line-height: 2.5rem;
+const Slogan = styled(Text)`
   letter-spacing: 0.06rem;
   margin: 0.625rem 0 0;
-  width: 13.062rem;
 `;
 
 const Nav = styled.nav`
-  color: ${({ theme }) => theme.colors.offWhite};
-  font-size: 1.063rem;
-
   ${atMinLg} {
     flex: 1;
   }
@@ -88,10 +75,6 @@ const Nav = styled.nav`
 `;
 
 const ContactBlock = styled.address`
-  color: ${({ theme }) => theme.colors.offWhite};
-  font-size: 1.062rem;
-  line-height: 1.75rem;
-  letter-spacing: 0;
   margin-top: ${({ theme }) => theme.spacing.xxl};
   padding-bottom: ${({ theme }) => theme.spacing.lg};
 
@@ -128,7 +111,6 @@ const ContactLink = styled(Link)`
   }
 
   address {
-    font-style: normal;
     margin: 2rem 0 0;
 
     ${atMinMd} {
@@ -151,7 +133,7 @@ export const Footer: FC = () => {
       <FooterWrapper>
         <Branding>
           <FooterLogo />
-          <Slogan>
+          <Slogan variant="h3">
             Where code <br /> meets craft.
           </Slogan>
         </Branding>
@@ -178,14 +160,6 @@ export const Footer: FC = () => {
             <li>
               <Link href="/contact">Contact</Link>
             </li>
-            {/* 
-            <NavItem href="/">Home</NavItem>
-            <NavItem href="/work">Work</NavItem>
-            <NavItem href="/approach">Approach</NavItem>
-            <NavItem href="/culture">Culture</NavItem>
-            <NavItem href="/careers">Careers</NavItem>
-            <NavItem href="/blog">Blog</NavItem>
-            <NavItem href="/contact">Contact</NavItem> */}
           </ul>
         </Nav>
         <ContactBlock>
