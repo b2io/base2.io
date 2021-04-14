@@ -48,7 +48,7 @@ export const DesignedForHumansPane: FC = () => {
           variant="callout"
           css={css`
             position: relative;
-            left: 2.813rem;
+            left: ${cssClamp([2.813, 'xs'], [3.563, 'md'])};
           `}
         >
           Designed for
