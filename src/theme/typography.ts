@@ -68,6 +68,18 @@ export const textVariants = {
       letterSpacing: 'normal',
     },
   },
+  callout: {
+    color: colors.coral,
+    fontSize: cssClamp([1.063, 'xs'], [3.125, 'md']),
+    fontVariationSettings: '"wght" 750',
+    letterSpacing: '0.006875rem',
+    lineHeight: 1.65,
+
+    [atMinMd]: {
+      letterSpacing: 'normal',
+      lineHeight: 1.2,
+    },
+  },
   h1: {
     color: colors.text,
     fontSize: cssClamp([3.75, 'xs'], [6.25, 'lg']),

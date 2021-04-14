@@ -45,8 +45,7 @@ export const DesignedForHumansPane: FC = () => {
       <Heading as="h2">
         <Text
           as="div"
-          color="coral"
-          variant="body"
+          variant="callout"
           css={css`
             position: relative;
             left: 2.813rem;
