@@ -43,9 +43,9 @@ const Slogan = styled.p`
   color: ${({ theme }) => theme.colors.offWhite};
   margin: 0.625rem 0 0;
   width: 13.062rem;
-  font-size: '1.875rem';
+  font-size: 1.875rem;
   font-weight: 300;
-  line-height: 1.75rem;
+  line-height: 2.5rem;
   letter-spacing: 0.06rem;
 `;
 
