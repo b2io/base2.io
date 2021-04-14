@@ -97,7 +97,7 @@ export const textVariants = {
   h3: {
     color: colors.text,
     fontSize: '1.875rem',
-    fontVariationSettings: '"wght" 400',
+    fontVariationSettings: '"wght" 300',
     lineHeight: 1.27,
     letterSpacing: 'normal',
     margin: 0,
