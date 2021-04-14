@@ -3,10 +3,10 @@ import styled from '@emotion/styled';
 import NextLink from 'next/link';
 import React, { FC } from 'react';
 
-import { LogoIcon } from './icons/LogoIcon';
-import { Link } from './Link';
 import { onlyXs, atMinMd, atMinLg } from '~/theme';
 import { Container } from './Container';
+import { Link } from './Link';
+import { LogoIcon } from './icons/LogoIcon';
 
 const FooterWrapper = styled.div`
   margin-left: 1.688rem;
