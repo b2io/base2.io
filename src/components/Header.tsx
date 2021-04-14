@@ -1,10 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 
 import { atMinMd, atMinSm, atMinXXL } from '~/theme';
+import { Link } from './Link';
 import { Container } from './Container';
 import { LogoWithName } from './icons';
 import { MobileMenu } from './MobileMenu';
@@ -20,6 +21,7 @@ const Root = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1100;
 `;
 
 const Content = styled(Container)`
@@ -71,15 +73,6 @@ const Nav = styled.nav`
   }
 `;
 
-const A = styled.a(({ theme }) => ({
-  ...theme.textVariants.body,
-  cursor: 'pointer',
-  textDecoration: 'none',
-  '&:hover': {
-    color: theme.colors.coral,
-  },
-}));
-
 const LogoImage = styled(LogoWithName)`
   height: 2.1875rem;
   width: auto;
@@ -99,11 +92,11 @@ interface NavItemProps {
 
 const LogoLink: FC = () => {
   return (
-    <Link href="/">
+    <NextLink href="/">
       <a aria-label="go to home">
         <LogoImage />
       </a>
-    </Link>
+    </NextLink>
   );
 };
 
@@ -112,9 +105,7 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
 
   return (
     <li className={asPath == href ? 'active' : ''}>
-      <Link href={href}>
-        <A {...props} />
-      </Link>
+      <Link href={href} {...props} />
     </li>
   );
 };

@@ -1,6 +1,60 @@
 import { atMinLg, atMinMd } from './breakpoints';
 import { colors } from './colors';
+import { spacing } from './spacing';
 import { cssClamp } from './util';
+
+export const linkVariants = {
+  CTA: {
+    color: colors.text,
+    cursor: 'pointer',
+    display: 'inline-block',
+    fontSize: cssClamp([1.125, 'xs'], [1.375, 'md']),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: cssClamp([0.006875, 'xs'], [0.125, 'lg']),
+    lineHeight: 1.56,
+    textDecoration: 'none',
+    '::after': {
+      backgroundColor: colors.action,
+      content: '""',
+      display: 'block',
+      height: '0.125rem',
+      marginTop: spacing.xxs,
+      width: '100%',
+    },
+    ':hover': {
+      '::after': {
+        backgroundColor: colors.offWhite,
+      },
+    },
+
+    [atMinMd]: {
+      fontSize: '1.375rem',
+      lineHeight: 'normal',
+    },
+  },
+  default: {
+    color: colors.text,
+    cursor: 'pointer',
+    fontSize: '1.063rem',
+    fontVariationSettings: '"wght" 500',
+    lineHeight: 1.75,
+    textDecoration: 'none',
+    '&:hover': {
+      color: colors.coral,
+    },
+  },
+  large: {
+    color: colors.text,
+    cursor: 'pointer',
+    fontSize: '2.5rem',
+    fontVariationSettings: '"wght" 750',
+    lineHeight: 1.1,
+    textDecoration: 'none',
+    '&:hover': {
+      color: colors.coral,
+    },
+  },
+};
 
 export const textVariants = {
   body: {
@@ -12,18 +66,6 @@ export const textVariants = {
 
     [atMinMd]: {
       letterSpacing: 'normal',
-    },
-  },
-  CTA: {
-    color: colors.text,
-    fontSize: cssClamp([1.125, 'xs'], [1.375, 'md']),
-    fontVariationSettings: '"wght" 900',
-    letterSpacing: cssClamp([0.006875, 'xs'], [0.125, 'lg']),
-    lineHeight: 1.56,
-
-    [atMinMd]: {
-      fontSize: '1.375rem',
-      lineHeight: 'normal',
     },
   },
   h1: {
@@ -55,7 +97,7 @@ export const textVariants = {
   h3: {
     color: colors.text,
     fontSize: '1.875rem',
-    fontVariationSettings: '"wght" 400',
+    fontVariationSettings: '"wght" 300',
     lineHeight: 1.27,
     letterSpacing: 'normal',
     margin: 0,
@@ -84,4 +126,5 @@ export const textVariants = {
   },
 };
 
+export type ThemeLinkVariants = keyof typeof linkVariants;
 export type ThemeTextVariants = keyof typeof textVariants;
