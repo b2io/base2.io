@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import { FC } from 'react';
 import { Heading, Text } from '~/components';
-import { cssClamp } from '~/theme';
+import theme, { cssClamp } from '~/theme';
 
 type ImageProps = {
   alt: string;
@@ -17,6 +17,7 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
         height: ${cssClamp([20.188, 'xs'], [26.625, 'md'], [50, 'lg'])};
         left: calc(50% - 50vw - ${cssClamp([5.8545, 'xs'], [0, 'md'])});
         position: absolute;
+        top: 2.95rem;
         width: ${cssClamp([26.042, 'xs'], [34.313, 'md'], [64.5, 'lg'])};
       `}
       {...props}
@@ -28,15 +29,19 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
 
 const Content = styled.div`
   position: relative;
+  margin-left: 1.688rem;
+  margin-top: 14.313rem;
 `;
 
 export const DesignedForHumansPane: FC = () => {
   return (
     <div
       css={css`
-        outline: 1px solid red; ;
+        outline: 1px solid red;
+        position: relative;
       `}
     >
+      <Image alt="woman looking at phone" src="/home/humans.jpg" />
       <Heading as="h2">
         <Text
           as="div"
@@ -49,14 +54,32 @@ export const DesignedForHumansPane: FC = () => {
         >
           Designed for
         </Text>
-        <Text as="div" variant="hero">
+        <Text
+          css={css`
+            position: relative;
+            top: -0.3rem;
+          `}
+          as="div"
+          variant="hero"
+        >
           humans.
         </Text>
       </Heading>
-      <Image alt="woman looking at phone" src="/home/humans.jpg" />
       <Content>
-        <Text>Passionate. Tenacious. Enthusiastic.</Text>
-        <Heading as="h3" variant="h2">
+        <Text
+          css={css`
+            margin: 0 0 0.125rem;
+          `}
+        >
+          Passionate. Tenacious. Enthusiastic.
+        </Text>
+        <Heading
+          as="h3"
+          variant="h2"
+          css={css`
+            margin-bottom: ${theme.spacing.sm};
+          `}
+        >
           The best software starts with a human touch.{' '}
         </Heading>
         <Text variant="h3">
