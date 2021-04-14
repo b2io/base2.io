@@ -1,9 +1,10 @@
 import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import React, { FC } from 'react';
 
 import { LogoIcon } from './icons/LogoIcon';
+import { Link } from './Link';
 import { onlyXs, atMinMd, atMinLg } from '~/theme';
 import { Container } from './Container';
 
@@ -84,19 +85,8 @@ const Nav = styled.nav`
       }
     }
 
-    a {
-      color: ${({ theme }) => theme.colors.offWhite};
-      font-size: 1.062rem;
-      line-height: 1.75rem;
-      text-decoration: none;
-
-      &:visited {
-        color: ${({ theme }) => theme.colors.offWhite};
-      }
-
-      &:hover {
-        color: ${({ theme }) => theme.colors.offWhite};
-      }
+    a:hover {
+      color: ${({ theme }) => theme.colors.coral};
     }
   }
 `;
@@ -120,30 +110,20 @@ const ContactBlock = styled.address`
     flex-wrap: wrap;
     flex: 1;
   }
+`;
 
-  a {
-    display: block;
-    color: ${({ theme }) => theme.colors.offWhite};
-    margin-bottom: ${({ theme }) => theme.spacing.md};
-    text-decoration: none;
+const ContactLink = styled(Link)`
+  display: block;
+  margin-bottom: ${({ theme }) => theme.spacing.md};
 
-    &:visited {
-      color: ${({ theme }) => theme.colors.offWhite};
-    }
+  &:last-child {
+    margin-bottom: 0;
+  }
 
-    &:hover {
-      color: ${({ theme }) => theme.colors.coral};
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &:first-of-type {
-      ${atMinLg} {
-        position: absolute;
-        right: 0;
-      }
+  &:first-of-type {
+    ${atMinLg} {
+      position: absolute;
+      right: 0;
     }
 
     ${atMinMd} {
@@ -167,9 +147,9 @@ interface NavItemProps {
 const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   return (
     <li>
-      <Link href={href}>
-        <a {...props} />
-      </Link>
+      <NextLink href={href}>
+        <Link href={href} {...props} />
+      </NextLink>
     </li>
   );
 };
@@ -204,13 +184,13 @@ export const Footer: FC = () => {
           </ul>
         </Nav>
         <ContactBlock>
-          <a href={'mailto:info@base2.io'}>info@base2.io</a>
-          <a href={'tel:6143981158'}>(614) 398-1158</a>
-          <a href={'https://goo.gl/maps/cesdJy5pkmTqJ7jn7'}>
+          <ContactLink href={'mailto:info@base2.io'}>info@base2.io</ContactLink>
+          <ContactLink href={'tel:6143981158'}>(614) 398-1158</ContactLink>
+          <ContactLink href={'https://goo.gl/maps/cesdJy5pkmTqJ7jn7'}>
             21 E 5th Ave Suite 102
             <br />
             Columbus, OH 43201
-          </a>
+          </ContactLink>
         </ContactBlock>
       </FooterWrapper>
     </Container>
