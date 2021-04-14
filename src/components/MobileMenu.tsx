@@ -49,18 +49,6 @@ const ContactLink = styled(Link)`
     0;
 `;
 
-interface NavItemProps {
-  href: string;
-}
-
-const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
-  return (
-    <li>
-      <Link href={href} variant="large" {...props} />
-    </li>
-  );
-};
-
 export const MobileMenu: FC = ({ ...props }) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
   useLockBodyScroll(isOpen);
@@ -78,10 +66,18 @@ export const MobileMenu: FC = ({ ...props }) => {
       <Menu className={isOpen ? 'visible' : ''}>
         <Nav>
           <ul>
-            <NavItem href="/work">Work</NavItem>
-            <NavItem href="/approach">Approach</NavItem>
-            <NavItem href="/culture">Culture</NavItem>
-            <NavItem href="/contact">Contact</NavItem>
+            <li>
+              <Link href="/work">Work</Link>
+            </li>
+            <li>
+              <Link href="/approach">Approach</Link>
+            </li>
+            <li>
+              <Link href="/culture">Culture</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
         </Nav>
 
