@@ -1,6 +1,4 @@
 export * from './Container';
-export * from './CTA';
-export * from './Footer';
 export * from './Header';
 export * from './Heading';
 export * from './icons';
