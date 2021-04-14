@@ -84,10 +84,6 @@ const Nav = styled.nav`
         margin-bottom: 1.25rem;
       }
     }
-
-    a:hover {
-      color: ${({ theme }) => theme.colors.coral};
-    }
   }
 `;
 
