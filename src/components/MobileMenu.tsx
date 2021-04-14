@@ -3,7 +3,6 @@ import React, { FC } from 'react';
 import { useLockBodyScroll, useToggle } from 'react-use';
 
 import { Link } from './Link';
-import { CTA } from './CTA';
 import { MenuIcon } from './icons';
 
 const Menu = styled.div`
@@ -44,7 +43,7 @@ const Nav = styled.nav`
   }
 `;
 
-const ContactLink = styled(CTA)`
+const ContactLink = styled(Link)`
   display: table;
   margin: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.lg}
     0;
@@ -86,10 +85,10 @@ export const MobileMenu: FC = ({ ...props }) => {
           </ul>
         </Nav>
 
-        <ContactLink href="tel:6143981158" isExternal>
+        <ContactLink href="tel:6143981158" variant="CTA">
           614.398.1158
         </ContactLink>
-        <ContactLink href="mailto:info@base2.io" isExternal>
+        <ContactLink href="mailto:info@base2.io" variant="CTA">
           info@base2.io
         </ContactLink>
       </Menu>

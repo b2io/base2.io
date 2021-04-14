@@ -1,16 +1,31 @@
 import { atMinLg, atMinMd } from './breakpoints';
 import { colors } from './colors';
+import { spacing } from './spacing';
 import { cssClamp } from './util';
 
 export const linkVariants = {
   CTA: {
     color: colors.text,
     cursor: 'pointer',
+    display: 'inline-block',
     fontSize: cssClamp([1.125, 'xs'], [1.375, 'md']),
     fontVariationSettings: '"wght" 900',
     letterSpacing: cssClamp([0.006875, 'xs'], [0.125, 'lg']),
     lineHeight: 1.56,
     textDecoration: 'none',
+    '::after': {
+      backgroundColor: colors.action,
+      content: '""',
+      display: 'block',
+      height: '0.125rem',
+      marginTop: spacing.xxs,
+      width: '100%',
+    },
+    ':hover': {
+      '::after': {
+        backgroundColor: colors.offWhite,
+      },
+    },
 
     [atMinMd]: {
       fontSize: '1.375rem',
