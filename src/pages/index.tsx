@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import { FC } from 'react';
 
 import { atMinLg, cssClamp } from '~/theme';
-import { Layout, Link, Heading, Text } from '~/components';
+import { Heading, Layout, Link, Text } from '~/components';
 
 const HomeHero: FC = () => {
   return (
@@ -12,6 +12,7 @@ const HomeHero: FC = () => {
         display: grid;
         gap: ${cssClamp([2, 'xs'], [1.5, 'lg'])};
         padding: ${cssClamp([3, 'xs'], [10.5, 'lg'])}
+          // comment to ignore ts-lint error
           ${cssClamp([1.5, 'xs'], [5.25, 'lg'])};
         text-align: center;
       `}
