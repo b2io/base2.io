@@ -6,7 +6,6 @@ import React, { FC } from 'react';
 import { LogoIcon } from './icons/LogoIcon';
 import { onlyXs, atMinMd, atMinLg } from '~/theme';
 import { Container } from './Container';
-import { Heading } from '~/components';
 
 const FooterWrapper = styled.div`
   margin-left: 1.688rem;
@@ -40,14 +39,18 @@ const FooterLogo = styled(LogoIcon)`
   }
 `;
 
-const Slogan = styled(Heading)`
-  color: ${(props) => props.theme.colors.offWhite};
+const Slogan = styled.p`
+  color: ${({ theme }) => theme.colors.offWhite};
   margin: 0.625rem 0 0;
   width: 13.062rem;
+  font-size: '1.875rem';
+  font-weight: 300;
+  line-height: 1.75rem;
+  letter-spacing: 0.06rem;
 `;
 
 const Nav = styled.nav`
-  color: ${(props) => props.theme.colors.offWhite};
+  color: ${({ theme }) => theme.colors.offWhite};
   font-size: 1.063rem;
 
   ${atMinLg} {
@@ -82,24 +85,24 @@ const Nav = styled.nav`
     }
 
     a {
-      color: ${(props) => props.theme.colors.offWhite};
+      color: ${({ theme }) => theme.colors.offWhite};
       font-size: 1.062rem;
-      line-height: 28px;
+      line-height: 1.75rem;
       text-decoration: none;
 
       &:visited {
-        color: ${(props) => props.theme.colors.offWhite};
+        color: ${({ theme }) => theme.colors.offWhite};
       }
 
       &:hover {
-        color: ${(props) => props.theme.colors.coral};
+        color: ${({ theme }) => theme.colors.offWhite};
       }
     }
   }
 `;
 
 const ContactBlock = styled.address`
-  color: ${(props) => props.theme.colors.offWhite};
+  color: ${({ theme }) => theme.colors.offWhite};
   font-size: 1.062rem;
   line-height: 1.75rem;
   letter-spacing: 0;
@@ -120,9 +123,17 @@ const ContactBlock = styled.address`
 
   a {
     display: block;
-    color: ${(props) => props.theme.colors.offWhite};
+    color: ${({ theme }) => theme.colors.offWhite};
     margin-bottom: ${({ theme }) => theme.spacing.md};
     text-decoration: none;
+
+    &:visited {
+      color: ${({ theme }) => theme.colors.offWhite};
+    }
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.coral};
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -177,8 +188,8 @@ export const Footer: FC = () => {
       <FooterWrapper>
         <Branding>
           <FooterLogo />
-          <Slogan as="h3" variant="h3">
-            Where code meets craft.
+          <Slogan>
+            Where code <br /> meets craft.
           </Slogan>
         </Branding>
         <Nav>
@@ -195,11 +206,11 @@ export const Footer: FC = () => {
         <ContactBlock>
           <a href={'mailto:info@base2.io'}>info@base2.io</a>
           <a href={'tel:6143981158'}>(614) 398-1158</a>
-          <p>
+          <a href={'https://goo.gl/maps/cesdJy5pkmTqJ7jn7'}>
             21 E 5th Ave Suite 102
             <br />
             Columbus, OH 43201
-          </p>
+          </a>
         </ContactBlock>
       </FooterWrapper>
     </Container>
