@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import React, { FC } from 'react';
 import { useLockBodyScroll, useToggle } from 'react-use';
 
-import { Anchor } from './Anchor';
+import { Link } from './Link';
 import { CTA } from './CTA';
 import { MenuIcon } from './icons';
 
@@ -58,9 +58,9 @@ interface NavItemProps {
 const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   return (
     <li>
-      <Link href={href}>
-        <Anchor variant="large" {...props} />
-      </Link>
+      <NextLink href={href}>
+        <Link variant="large" {...props} />
+      </NextLink>
     </li>
   );
 };

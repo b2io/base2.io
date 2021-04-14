@@ -2,7 +2,7 @@ import { atMinLg, atMinMd } from './breakpoints';
 import { colors } from './colors';
 import { cssClamp } from './util';
 
-export const anchorVariants = {
+export const linkVariants = {
   CTA: {
     color: colors.text,
     cursor: 'pointer',
@@ -111,5 +111,5 @@ export const textVariants = {
   },
 };
 
-export type ThemeAnchorVariants = keyof typeof anchorVariants;
+export type ThemeLinkVariants = keyof typeof linkVariants;
 export type ThemeTextVariants = keyof typeof textVariants;

@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 
 import { atMinMd, atMinSm, atMinXXL } from '~/theme';
-import { Anchor } from './Anchor';
+import { Link } from './Link';
 import { Container } from './Container';
 import { LogoWithName } from './icons';
 import { MobileMenu } from './MobileMenu';
@@ -91,11 +91,11 @@ interface NavItemProps {
 
 const LogoLink: FC = () => {
   return (
-    <Link href="/">
+    <NextLink href="/">
       <a aria-label="go to home">
         <LogoImage />
       </a>
-    </Link>
+    </NextLink>
   );
 };
 
@@ -104,9 +104,9 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
 
   return (
     <li className={asPath == href ? 'active' : ''}>
-      <Link href={href}>
-        <Anchor {...props} />
-      </Link>
+      <NextLink href={href}>
+        <Link {...props} />
+      </NextLink>
     </li>
   );
 };
