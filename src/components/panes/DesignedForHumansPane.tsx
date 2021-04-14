@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import { FC } from 'react';
-import { Heading, Text } from '~/components';
+import { Heading, Link, Text } from '~/components';
 import theme, { cssClamp } from '~/theme';
 
 type ImageProps = {
@@ -37,7 +37,7 @@ export const DesignedForHumansPane: FC = () => {
   return (
     <div
       css={css`
-        outline: 1px solid red;
+        /* outline: 1px solid red; */
         position: relative;
       `}
     >
@@ -87,6 +87,15 @@ export const DesignedForHumansPane: FC = () => {
           greater ease through a flexible approach that prioritizes you and your
           end-user.
         </Text>
+        <Link
+          css={css`
+            margin-top: ${theme.spacing.lg};
+          `}
+          href="/approach"
+          variant="CTA"
+        >
+          See our approach
+        </Link>
       </Content>
     </div>
   );

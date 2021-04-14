@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
 import React, { FC } from 'react';
 import { useLockBodyScroll, useToggle } from 'react-use';
 
-import { CTA } from './CTA';
+import { Link } from './Link';
 import { MenuIcon } from './icons';
 
 const Menu = styled.div`
@@ -44,34 +43,11 @@ const Nav = styled.nav`
   }
 `;
 
-const A = styled.a(({ theme }) => ({
-  ...theme.textVariants.h2,
-  cursor: 'pointer',
-  textDecoration: 'none',
-  ':hover': {
-    color: theme.colors.coral,
-  },
-}));
-
-const ContactLink = styled(CTA)`
+const ContactLink = styled(Link)`
   display: table;
   margin: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.lg}
     0;
 `;
-
-interface NavItemProps {
-  href: string;
-}
-
-const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
-  return (
-    <li>
-      <Link href={href}>
-        <A {...props} />
-      </Link>
-    </li>
-  );
-};
 
 export const MobileMenu: FC = ({ ...props }) => {
   const [isOpen, toggleIsOpen] = useToggle(false);
@@ -90,17 +66,25 @@ export const MobileMenu: FC = ({ ...props }) => {
       <Menu className={isOpen ? 'visible' : ''}>
         <Nav>
           <ul>
-            <NavItem href="/work">Work</NavItem>
-            <NavItem href="/approach">Approach</NavItem>
-            <NavItem href="/culture">Culture</NavItem>
-            <NavItem href="/contact">Contact</NavItem>
+            <li>
+              <Link href="/work">Work</Link>
+            </li>
+            <li>
+              <Link href="/approach">Approach</Link>
+            </li>
+            <li>
+              <Link href="/culture">Culture</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
           </ul>
         </Nav>
 
-        <ContactLink href="tel:6143981158" isExternal>
+        <ContactLink href="tel:6143981158" variant="CTA">
           614.398.1158
         </ContactLink>
-        <ContactLink href="mailto:info@base2.io" isExternal>
+        <ContactLink href="mailto:info@base2.io" variant="CTA">
           info@base2.io
         </ContactLink>
       </Menu>

@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import { FC } from 'react';
 
 import { atMinLg, cssClamp } from '~/theme';
-import { CTA, Layout, Heading, Text } from '~/components';
+import { Heading, Layout, Link, Text } from '~/components';
 import { DesignedForHumansPane } from '~/components/panes';
 
 const HomeHero: FC = () => {
@@ -53,7 +53,9 @@ const HomePage: NextPage = () => {
           curiosity.
         </Text>
       </Heading>
-      <CTA href="/404">404</CTA>
+      <Link href="/404" variant="CTA">
+        404
+      </Link>
     </Layout>
   );
 };
