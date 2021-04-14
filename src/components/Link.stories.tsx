@@ -11,5 +11,5 @@ export const LinkStory: Story<LinkProps> = (args) => {
   return <Link {...args}>Approach</Link>;
 };
 
-LinkStory.args = {};
+LinkStory.args = { href: '/', variant: 'default' };
 LinkStory.storyName = 'Link';

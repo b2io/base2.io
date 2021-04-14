@@ -31,7 +31,7 @@ export const CTA: FC<CTAProps> = ({ href, isExternal, ...props }) => {
     <A variant="CTA" href={href} {...props} />
   ) : (
     <NextLink href={href}>
-      <A variant="CTA" {...props} />
+      <A href={href} variant="CTA" {...props} />
     </NextLink>
   );
 };

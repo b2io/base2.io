@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import NextLink from 'next/link';
 import React, { FC } from 'react';
 import { useLockBodyScroll, useToggle } from 'react-use';
 
@@ -58,9 +57,7 @@ interface NavItemProps {
 const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   return (
     <li>
-      <NextLink href={href}>
-        <Link variant="large" {...props} />
-      </NextLink>
+      <Link href={href} variant="large" {...props} />
     </li>
   );
 };

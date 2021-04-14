@@ -21,6 +21,7 @@ const Root = styled.header`
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1100;
 `;
 
 const Content = styled(Container)`
@@ -104,9 +105,7 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
 
   return (
     <li className={asPath == href ? 'active' : ''}>
-      <NextLink href={href}>
-        <Link {...props} />
-      </NextLink>
+      <Link href={href} {...props} />
     </li>
   );
 };
