@@ -1,6 +1,6 @@
 import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextLink from 'next/link';
+// import NextLink from 'next/link';
 import React, { FC } from 'react';
 
 import { onlyXs, atMinMd, atMinLg } from '~/theme';
@@ -137,19 +137,6 @@ const ContactLink = styled(Link)`
   }
 `;
 
-interface NavItemProps {
-  href: string;
-}
-const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
-  return (
-    <li>
-      <NextLink href={href}>
-        <Link href={href} {...props} />
-      </NextLink>
-    </li>
-  );
-};
-
 export const Footer: FC = () => {
   const theme = useTheme();
   return (
@@ -170,19 +157,41 @@ export const Footer: FC = () => {
         </Branding>
         <Nav>
           <ul>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/work">Work</Link>
+            </li>
+            <li>
+              <Link href="/approach">Approach</Link>
+            </li>
+            <li>
+              <Link href="/culture">Culture</Link>
+            </li>
+            <li>
+              <Link href="/careers">Careers</Link>
+            </li>
+            <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
+            {/* 
             <NavItem href="/">Home</NavItem>
             <NavItem href="/work">Work</NavItem>
             <NavItem href="/approach">Approach</NavItem>
             <NavItem href="/culture">Culture</NavItem>
             <NavItem href="/careers">Careers</NavItem>
             <NavItem href="/blog">Blog</NavItem>
-            <NavItem href="/contact">Contact</NavItem>
+            <NavItem href="/contact">Contact</NavItem> */}
           </ul>
         </Nav>
         <ContactBlock>
-          <ContactLink href={'mailto:info@base2.io'}>info@base2.io</ContactLink>
-          <ContactLink href={'tel:6143981158'}>(614) 398-1158</ContactLink>
-          <ContactLink href={'https://goo.gl/maps/cesdJy5pkmTqJ7jn7'}>
+          <ContactLink href="mailto:info@base2.io">info@base2.io</ContactLink>
+          <ContactLink href="tel:6143981158">(614) 398-1158</ContactLink>
+          <ContactLink href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7">
             21 E 5th Ave Suite 102
             <br />
             Columbus, OH 43201
