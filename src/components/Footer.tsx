@@ -31,7 +31,7 @@ const Branding = styled.div`
 
 const FooterLogo = styled(LogoIcon)`
   display: block;
-  height: 3.562rem;
+  height: 3.5rem;
   width: auto;
 
   ${atMinMd} {
