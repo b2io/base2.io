@@ -1,6 +1,12 @@
 import styled, { StyledComponent } from '@emotion/styled';
 
-import { atMinMd, atMinXL, atMinXXL, atMinXXL2, viewMaxWidth } from '~/theme';
+import {
+  atMinMd,
+  atMinXL,
+  atMinXXL,
+  atMinDesktop,
+  viewMaxWidth,
+} from '~/theme';
 
 export const Container: StyledComponent<any> = styled.div(({ theme }) => ({
   marginLeft: 'auto',
@@ -22,7 +28,7 @@ export const Container: StyledComponent<any> = styled.div(({ theme }) => ({
     maxWidth: viewMaxWidth.xxl,
   },
 
-  [atMinXXL2]: {
+  [atMinDesktop]: {
     paddingLeft: 0,
     paddingRight: 0,
   },

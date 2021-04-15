@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import { FC } from 'react';
 import { Heading, Link, Text } from '~/components';
-import theme, { cssClamp } from '~/theme';
+import theme, { atMinMd, cssClamp } from '~/theme';
 
 type ImageProps = {
   alt: string;
@@ -14,11 +14,16 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div
       css={css`
-        height: ${cssClamp([20.188, 'xs'], [26.625, 'md'], [50, 'lg'])};
-        left: calc(50% - 50vw - ${cssClamp([5.8545, 'xs'], [0, 'md'])});
+        height: ${cssClamp([20.188, 'mobile'], [26.625, 'md'])};
+        left: calc(50% - 50vw - 5.8545rem);
         position: absolute;
-        top: 2.95rem;
-        width: ${cssClamp([26.042, 'xs'], [34.313, 'md'], [64.5, 'lg'])};
+        top: ${cssClamp([2.95, 'mobile'], [7, 'md'], [8.25, 'desktop'])};
+        width: ${cssClamp([26.042, 'mobile'], [34.313, 'md'])};
+        ${atMinMd} {
+          height: ${cssClamp([26.625, 'md'], [50, 'desktop'])};
+          left: max(-10rem, calc(50% - 50vw));
+          width: ${cssClamp([34.313, 'md'], [64.5, 'desktop'])};
+        }
       `}
       {...props}
     >
@@ -26,6 +31,24 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
     </div>
   );
 };
+
+const TopText = styled(Heading)`
+  margin-left: ${cssClamp([0, 'md'], [6.688, 'desktop'])};
+  position: relative;
+`;
+
+const Callout = styled(Text)`
+  position: relative;
+  left: ${cssClamp([2.813, 'mobile'], [5, 'md'], [8.375, 'desktop'])};
+`;
+
+const LargeText = styled(Text)`
+  position: relative;
+  top: -0.3rem;
+  ${atMinMd} {
+    top: -1.25rem;
+  }
+`;
 
 const Content = styled.div`
   position: relative;
@@ -37,33 +60,18 @@ export const DesignedForHumansPane: FC = () => {
   return (
     <div
       css={css`
-        /* outline: 1px solid red; */
         position: relative;
       `}
     >
       <Image alt="woman looking at phone" src="/home/humans.jpg" />
-      <Heading as="h2">
-        <Text
-          as="div"
-          variant="callout"
-          css={css`
-            position: relative;
-            left: ${cssClamp([2.813, 'xs'], [3.563, 'md'])};
-          `}
-        >
+      <TopText as="h2">
+        <Callout as="div" variant="callout">
           Designed for
-        </Text>
-        <Text
-          css={css`
-            position: relative;
-            top: -0.3rem;
-          `}
-          as="div"
-          variant="hero"
-        >
+        </Callout>
+        <LargeText as="div" variant="hero">
           humans.
-        </Text>
-      </Heading>
+        </LargeText>
+      </TopText>
       <Content>
         <Text
           css={css`

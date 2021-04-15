@@ -1,25 +1,29 @@
 // NOTE: May want to eventually restrict to (screen) and customize for (print)
 
-export type Breakpoint = 0 | 576 | 768 | 992 | 1200 | 1400 | 1600;
+export type Breakpoint = 0 | 375 | 576 | 768 | 992 | 1200 | 1400 | 1600;
+
+export type BreakpointName = keyof typeof bp;
 
 export interface BreakpointMap {
   xs: Breakpoint;
+  mobile: Breakpoint;
   sm: Breakpoint;
   md: Breakpoint;
   lg: Breakpoint;
   xl: Breakpoint;
   xxl: Breakpoint;
-  xxl2: Breakpoint;
+  desktop: Breakpoint;
 }
 
 export const bp: BreakpointMap = {
   xs: 0,
+  mobile: 375,
   sm: 576,
   md: 768,
   lg: 992,
   xl: 1200,
   xxl: 1400,
-  xxl2: 1600,
+  desktop: 1600,
 };
 
 export const viewMaxWidth = {
@@ -41,7 +45,7 @@ export const atMinMd = minMQ(bp.md);
 export const atMinLg = minMQ(bp.lg);
 export const atMinXL = minMQ(bp.xl);
 export const atMinXXL = minMQ(bp.xxl);
-export const atMinXXL2 = minMQ(bp.xxl2);
+export const atMinDesktop = minMQ(bp.desktop);
 
 /* -------------------------------------------------------------------------- *
  * (max-width) typically Desktop-First — Desktop as Default

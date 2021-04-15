@@ -11,10 +11,10 @@ const HomeHero: FC = () => {
     <div
       css={css`
         display: grid;
-        gap: ${cssClamp([2, 'xs'], [1.5, 'lg'])};
-        padding: ${cssClamp([3, 'xs'], [10.5, 'lg'])}
+        gap: ${cssClamp([2, 'mobile'], [1.5, 'desktop'])};
+        padding: ${cssClamp([3, 'mobile'], [10.5, 'desktop'])}
           // comment to ignore ts-styled-plugin warnings
-          ${cssClamp([1.5, 'xs'], [5.25, 'lg'])};
+          ${cssClamp([1.5, 'mobile'], [5.25, 'desktop'])};
         text-align: center;
       `}
     >

@@ -8,9 +8,9 @@ export const linkVariants = {
     color: colors.text,
     cursor: 'pointer',
     display: 'inline-block',
-    fontSize: cssClamp([1.125, 'xs'], [1.375, 'md']),
+    fontSize: cssClamp([1.125, 'mobile'], [1.375, 'md']),
     fontVariationSettings: '"wght" 900',
-    letterSpacing: cssClamp([0.006875, 'xs'], [0.125, 'lg']),
+    letterSpacing: cssClamp([0.006875, 'mobile'], [0.125, 'lg']),
     lineHeight: 1.56,
     textDecoration: 'none',
     '::after': {
@@ -70,7 +70,7 @@ export const textVariants = {
   },
   callout: {
     color: colors.coral,
-    fontSize: cssClamp([1.063, 'xs'], [3.125, 'md']),
+    fontSize: cssClamp([1.063, 'mobile'], [3.125, 'md']),
     fontVariationSettings: '"wght" 750',
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
@@ -82,10 +82,10 @@ export const textVariants = {
   },
   h1: {
     color: colors.text,
-    fontSize: cssClamp([3.75, 'xs'], [6.25, 'lg']),
+    fontSize: cssClamp([3.75, 'mobile'], [6.25, 'lg']),
     fontVariationSettings: '"wght" 900',
     lineHeight: 1,
-    letterSpacing: cssClamp([-0.03125, 'xs'], [0.125, 'lg']),
+    letterSpacing: cssClamp([-0.03125, 'mobile'], [0.125, 'lg']),
     margin: 0,
     padding: 0,
 
@@ -95,7 +95,7 @@ export const textVariants = {
   },
   h2: {
     color: colors.text,
-    fontSize: cssClamp([2.5, 'xs'], [3.125, 'md']),
+    fontSize: cssClamp([2.5, 'mobile'], [3.125, 'md']),
     fontVariationSettings: '"wght" 750',
     lineHeight: 1.1,
     letterSpacing: 'normal',
@@ -121,7 +121,7 @@ export const textVariants = {
   },
   hero: {
     color: colors.text,
-    fontSize: cssClamp([5, 'xs'], [10, 'md'], [15, 'lg']),
+    fontSize: cssClamp([5, 'mobile'], [10, 'md'], [15, 'lg']),
     fontVariationSettings: '"wght" 900',
     lineHeight: 0.53,
     letterSpacing: 'normal',
