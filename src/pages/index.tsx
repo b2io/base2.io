@@ -3,7 +3,8 @@ import { NextPage } from 'next';
 import { FC } from 'react';
 
 import { atMinLg, cssClamp } from '~/theme';
-import { Heading, Layout, Link, Text } from '~/components';
+import { Heading, Layout, Text } from '~/components';
+import { BuiltForResultsPane } from '~/components/panes';
 
 const HomeHero: FC = () => {
   return (
@@ -57,9 +58,7 @@ const HomePage: NextPage = () => {
           curiosity.
         </Text>
       </Heading>
-      <Link href="/404" variant="CTA">
-        404
-      </Link>
+      <BuiltForResultsPane />
     </Layout>
   );
 };
