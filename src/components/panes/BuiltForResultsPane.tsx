@@ -1,10 +1,9 @@
-import styled from '@emotion/styled';
 import css from '@emotion/css';
-import React, { FC } from 'react';
-import Image from 'next/image';
-import { Heading, Text } from '~/components';
+import styled from '@emotion/styled';
+import NextImage from 'next/image';
+import { FC } from 'react';
+import { Heading, Link, Text } from '~/components';
 import { cssClamp, atMinMd, atMinLg, atMinXL } from '~/theme';
-import { Link } from '../Link';
 
 const PaneContentContainer = styled.div`
   position: absolute;
@@ -116,7 +115,11 @@ export const BuiltForResultsPane: FC = () => {
         </PaneLink>
       </PaneContentContainer>
       <PaneImageContainer>
-        <Image alt="man at computer" src="/home/results.jpg" layout="fill" />
+        <NextImage
+          alt="man at computer"
+          src="/home/results.jpg"
+          layout="fill"
+        />
       </PaneImageContainer>
     </section>
   );
