@@ -8,7 +8,7 @@ export interface BreakpointMap {
   xs: Breakpoint;
   mobile: Breakpoint;
   sm: Breakpoint;
-  md: Breakpoint;
+  tablet: Breakpoint;
   lg: Breakpoint;
   xl: Breakpoint;
   xxl: Breakpoint;
@@ -19,7 +19,7 @@ export const bp: BreakpointMap = {
   xs: 0,
   mobile: 375,
   sm: 576,
-  md: 768,
+  tablet: 768,
   lg: 992,
   xl: 1200,
   xxl: 1400,
@@ -41,7 +41,7 @@ export const viewMaxWidth = {
 export const minMQ = (bp: number): string => `@media (min-width: ${bp}px)`;
 
 export const atMinSm = minMQ(bp.sm);
-export const atMinMd = minMQ(bp.md);
+export const atMinMd = minMQ(bp.tablet);
 export const atMinLg = minMQ(bp.lg);
 export const atMinXL = minMQ(bp.xl);
 export const atMinXXL = minMQ(bp.xxl);
@@ -58,7 +58,7 @@ export const maxMQ = (bp: number): string =>
   `@media (max-width: ${bp - 0.02}px)`;
 
 export const atMaxSm = maxMQ(bp.sm);
-export const atMaxMd = maxMQ(bp.md);
+export const atMaxMd = maxMQ(bp.tablet);
 export const atMaxLg = maxMQ(bp.lg);
 export const atMaxXL = maxMQ(bp.xl);
 export const atMaxXXL = maxMQ(bp.xxl);
@@ -71,8 +71,8 @@ export const rangeMQ = (minBP: number, maxBP: number): string =>
   `@media (min-width: ${minBP}px) and (max-width: ${maxBP - 0.02}px)`;
 
 export const onlyXs = atMaxSm;
-export const onlySm = rangeMQ(bp.sm, bp.md);
-export const onlyMd = rangeMQ(bp.md, bp.lg);
+export const onlySm = rangeMQ(bp.sm, bp.tablet);
+export const onlyMd = rangeMQ(bp.tablet, bp.lg);
 export const onlyLg = rangeMQ(bp.lg, bp.xl);
 export const onlyXL = rangeMQ(bp.xl, bp.xxl);
 export const onlyXXL = atMinXXL;
