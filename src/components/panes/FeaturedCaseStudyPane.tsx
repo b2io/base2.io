@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-// import NextImage from 'next/image';
+// import Image from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
@@ -76,6 +76,13 @@ export const FeaturedCaseStudyPane: FC = () => {
         </Link>
       </TextContainer>
       <ImagesContainer>
+        {/* <Image
+          alt="something here"
+          src="/home/img-sw-home-1@3x.jpg"
+          layout="responsive"
+          width={200}
+          height={400}
+        /> */}
         <div>image</div>
         <div>image</div>
         <div>image</div>
