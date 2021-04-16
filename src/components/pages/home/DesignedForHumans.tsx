@@ -70,24 +70,17 @@ const Content = styled.div`
   ${atMinDesktop} {
     margin-left: 7.5rem;
   }
-`;
 
-const TagLine = styled(Text)`
-  margin: 0 0 0.125rem;
-  ${atMinDesktop} {
-    margin-bottom: ${theme.spacing.xxs};
+  .heading {
+    margin-bottom: ${theme.spacing.sm};
+    max-width: 36.75rem;
   }
-`;
 
-const ContentHeader = styled(Heading)`
-  margin-bottom: ${theme.spacing.sm};
-  max-width: 36.75rem;
-`;
-
-const RightColumn = styled.div`
-  max-width: 29.125rem;
-  ${atMinDesktop} {
-    margin-left: 9rem;
+  .tagline {
+    margin: 0 0 0.125rem;
+    ${atMinDesktop} {
+      margin-bottom: ${theme.spacing.xxs};
+    }
   }
 `;
 
@@ -107,7 +100,7 @@ export const DesignedForHumans: FC = () => {
         <span className="large-text">humans.</span>
       </HeaderText>
       <Content>
-        <TagLine>Passionate. Tenacious. Enthusiastic.</TagLine>
+        <Text className="tagline">Passionate. Tenacious. Enthusiastic.</Text>
         <div
           css={css`
             ${atMinDesktop} {
@@ -115,10 +108,17 @@ export const DesignedForHumans: FC = () => {
             }
           `}
         >
-          <ContentHeader as="h3" variant="h2">
+          <Heading as="h3" className="header" variant="h2">
             The best software starts with a human touch.
-          </ContentHeader>
-          <RightColumn>
+          </Heading>
+          <div
+            css={css`
+              max-width: 29.125rem;
+              ${atMinDesktop} {
+                margin-left: 9rem;
+              }
+            `}
+          >
             <Text variant="h3">
               We build software that helps real people solve real problems with
               greater ease through a flexible approach that prioritizes you and
@@ -133,7 +133,7 @@ export const DesignedForHumans: FC = () => {
             >
               See our approach
             </Link>
-          </RightColumn>
+          </div>
         </div>
       </Content>
     </section>
