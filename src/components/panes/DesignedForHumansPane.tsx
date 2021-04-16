@@ -10,6 +10,9 @@ type ImageProps = {
   src: string;
 };
 
+const largeImageHeightCalc = cssClamp([26.625, 'md'], [50, 'desktop']);
+const imageTopCalc = cssClamp([2.95, 'mobile'], [7, 'md'], [8.25, 'desktop']);
+
 const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div
@@ -17,10 +20,10 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
         height: ${cssClamp([20.188, 'mobile'], [26.625, 'md'])};
         left: calc(50% - 50vw - 5.8545rem);
         position: absolute;
-        top: ${cssClamp([2.95, 'mobile'], [7, 'md'], [8.25, 'desktop'])};
+        top: ${imageTopCalc};
         width: ${cssClamp([26.042, 'mobile'], [34.313, 'md'])};
         ${atMinMd} {
-          height: ${cssClamp([26.625, 'md'], [50, 'desktop'])};
+          height: ${largeImageHeightCalc};
           left: max(-10rem, calc(50% - 50vw));
           width: ${cssClamp([34.313, 'md'], [64.5, 'desktop'])};
         }
@@ -66,8 +69,8 @@ export const DesignedForHumansPane: FC = () => {
   return (
     <div
       css={css`
-        outline: 1px solid red;
         position: relative;
+        min-height: calc(${imageTopCalc} + ${largeImageHeightCalc});
       `}
     >
       <Image alt="woman looking at phone" src="/home/humans.jpg" />
