@@ -66,6 +66,7 @@ export const DesignedForHumansPane: FC = () => {
   return (
     <div
       css={css`
+        outline: 1px solid red;
         position: relative;
       `}
     >
@@ -89,32 +90,47 @@ export const DesignedForHumansPane: FC = () => {
         >
           Passionate. Tenacious. Enthusiastic.
         </Text>
-        <Heading
-          as="h3"
-          variant="h2"
+        <div
           css={css`
-            margin-bottom: ${theme.spacing.sm};
             ${atMinDesktop} {
-              width: 36.75rem;
+              display: flex;
             }
           `}
         >
-          The best software starts with a human touch.{' '}
-        </Heading>
-        <Text variant="h3">
-          We build software that helps real people solve real problems with
-          greater ease through a flexible approach that prioritizes you and your
-          end-user.
-        </Text>
-        <Link
-          css={css`
-            margin-top: ${theme.spacing.lg};
-          `}
-          href="/approach"
-          variant="CTA"
-        >
-          See our approach
-        </Link>
+          <Heading
+            as="h3"
+            variant="h2"
+            css={css`
+              margin-bottom: ${theme.spacing.sm};
+              max-width: 36.75rem;
+            `}
+          >
+            The best software starts with a human touch.{' '}
+          </Heading>
+          <div
+            css={css`
+              max-width: 29.125rem;
+              ${atMinDesktop} {
+                margin-left: 9rem;
+              }
+            `}
+          >
+            <Text variant="h3">
+              We build software that helps real people solve real problems with
+              greater ease through a flexible approach that prioritizes you and
+              your end-user.
+            </Text>
+            <Link
+              css={css`
+                margin-top: ${theme.spacing.lg};
+              `}
+              href="/approach"
+              variant="CTA"
+            >
+              See our approach
+            </Link>
+          </div>
+        </div>
       </Content>
     </div>
   );
