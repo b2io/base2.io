@@ -46,8 +46,8 @@ const HeaderText = styled(Heading)`
 `;
 
 const Callout = styled(Text)`
-  position: relative;
   left: ${cssClamp([2.813, 'mobile'], [5, 'tablet'], [8.375, 'desktop'])};
+  position: relative;
 `;
 
 const LargeText = styled(Text)`
@@ -59,9 +59,9 @@ const LargeText = styled(Text)`
 `;
 
 const Content = styled.div`
-  position: relative;
   margin-left: ${cssClamp([1.688, 'mobile'], [11.563, 'tablet'])};
   margin-top: 12.75rem;
+  position: relative;
   ${atMinMd} {
     margin-top: 9.25rem;
   }
@@ -93,8 +93,8 @@ export const DesignedForHumansPane: FC = () => {
   return (
     <div
       css={css`
-        position: relative;
         min-height: calc(${imageTopCalc} + ${largeImageHeightCalc});
+        position: relative;
       `}
     >
       <Image alt="woman looking at phone" src="/home/humans.jpg" />
