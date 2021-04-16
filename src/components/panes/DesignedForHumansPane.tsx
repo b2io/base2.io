@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import { FC } from 'react';
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinMd, cssClamp } from '~/theme';
+import theme, { atMinDesktop, atMinMd, cssClamp } from '~/theme';
 
 type ImageProps = {
   alt: string;
@@ -57,6 +57,9 @@ const Content = styled.div`
   ${atMinMd} {
     margin-top: 9.25rem;
   }
+  ${atMinDesktop} {
+    margin-left: 7.5rem;
+  }
 `;
 
 export const DesignedForHumansPane: FC = () => {
@@ -79,6 +82,9 @@ export const DesignedForHumansPane: FC = () => {
         <Text
           css={css`
             margin: 0 0 0.125rem;
+            ${atMinDesktop} {
+              margin-bottom: ${theme.spacing.xxs};
+            }
           `}
         >
           Passionate. Tenacious. Enthusiastic.
@@ -88,6 +94,9 @@ export const DesignedForHumansPane: FC = () => {
           variant="h2"
           css={css`
             margin-bottom: ${theme.spacing.sm};
+            ${atMinDesktop} {
+              width: 36.75rem;
+            }
           `}
         >
           The best software starts with a human touch.{' '}
