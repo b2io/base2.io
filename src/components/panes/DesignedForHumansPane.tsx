@@ -39,7 +39,7 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
   );
 };
 
-const TopText = styled(Heading)`
+const HeaderText = styled(Heading)`
   margin-left: ${cssClamp([0, 'tablet'], [6.688, 'desktop'])};
   position: relative;
 `;
@@ -69,6 +69,25 @@ const Content = styled.div`
   }
 `;
 
+const TagLine = styled(Text)`
+  margin: 0 0 0.125rem;
+  ${atMinDesktop} {
+    margin-bottom: ${theme.spacing.xxs};
+  }
+`;
+
+const ContentHeader = styled(Heading)`
+  margin-bottom: ${theme.spacing.sm};
+  max-width: 36.75rem;
+`;
+
+const RightColumn = styled.div`
+  max-width: 29.125rem;
+  ${atMinDesktop} {
+    margin-left: 9rem;
+  }
+`;
+
 export const DesignedForHumansPane: FC = () => {
   return (
     <div
@@ -78,25 +97,16 @@ export const DesignedForHumansPane: FC = () => {
       `}
     >
       <Image alt="woman looking at phone" src="/home/humans.jpg" />
-      <TopText as="h2">
+      <HeaderText as="h2">
         <Callout as="div" variant="callout">
           Designed for
         </Callout>
         <LargeText as="div" variant="hero">
           humans.
         </LargeText>
-      </TopText>
+      </HeaderText>
       <Content>
-        <Text
-          css={css`
-            margin: 0 0 0.125rem;
-            ${atMinDesktop} {
-              margin-bottom: ${theme.spacing.xxs};
-            }
-          `}
-        >
-          Passionate. Tenacious. Enthusiastic.
-        </Text>
+        <TagLine>Passionate. Tenacious. Enthusiastic.</TagLine>
         <div
           css={css`
             ${atMinDesktop} {
@@ -104,24 +114,10 @@ export const DesignedForHumansPane: FC = () => {
             }
           `}
         >
-          <Heading
-            as="h3"
-            variant="h2"
-            css={css`
-              margin-bottom: ${theme.spacing.sm};
-              max-width: 36.75rem;
-            `}
-          >
-            The best software starts with a human touch.{' '}
-          </Heading>
-          <div
-            css={css`
-              max-width: 29.125rem;
-              ${atMinDesktop} {
-                margin-left: 9rem;
-              }
-            `}
-          >
+          <ContentHeader as="h3" variant="h2">
+            The best software starts with a human touch.
+          </ContentHeader>
+          <RightColumn>
             <Text variant="h3">
               We build software that helps real people solve real problems with
               greater ease through a flexible approach that prioritizes you and
@@ -136,7 +132,7 @@ export const DesignedForHumansPane: FC = () => {
             >
               See our approach
             </Link>
-          </div>
+          </RightColumn>
         </div>
       </Content>
     </div>
