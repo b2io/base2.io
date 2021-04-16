@@ -52,8 +52,11 @@ const LargeText = styled(Text)`
 
 const Content = styled.div`
   position: relative;
-  margin-left: 1.688rem;
-  margin-top: 14.313rem;
+  margin-left: ${cssClamp([1.688, 'mobile'], [11.563, 'md'])};
+  margin-top: 12.75rem;
+  ${atMinMd} {
+    margin-top: 9.25rem;
+  }
 `;
 
 export const DesignedForHumansPane: FC = () => {
