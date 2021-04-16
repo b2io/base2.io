@@ -43,18 +43,20 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
 const HeaderText = styled(Heading)`
   margin-left: ${cssClamp([0, 'tablet'], [6.688, 'desktop'])};
   position: relative;
-`;
 
-const Callout = styled(Text)`
-  left: ${cssClamp([2.813, 'mobile'], [5, 'tablet'], [8.375, 'desktop'])};
-  position: relative;
-`;
+  .callout {
+    display: block;
+    left: ${cssClamp([2.813, 'mobile'], [5, 'tablet'], [8.375, 'desktop'])};
+    position: relative;
+  }
 
-const LargeText = styled(Text)`
-  position: relative;
-  top: -0.3rem;
-  ${atMinTablet} {
-    top: -1.25rem;
+  .large-text {
+    display: block;
+    position: relative;
+    top: -0.3rem;
+    ${atMinTablet} {
+      top: -1.25rem;
+    }
   }
 `;
 
@@ -89,7 +91,7 @@ const RightColumn = styled.div`
   }
 `;
 
-export const DesignedForHumansPane: FC = () => {
+export const DesignedForHumans: FC = () => {
   return (
     <section
       css={css`
@@ -98,13 +100,11 @@ export const DesignedForHumansPane: FC = () => {
       `}
     >
       <Image alt="woman looking at phone" src="/home/humans.jpg" />
-      <HeaderText as="h2">
-        <Callout as="div" variant="callout">
+      <HeaderText as="h2" variant="hero">
+        <Text className="callout" as="span" variant="callout">
           Designed for
-        </Callout>
-        <LargeText as="div" variant="hero">
-          humans.
-        </LargeText>
+        </Text>
+        <span className="large-text">humans.</span>
       </HeaderText>
       <Content>
         <TagLine>Passionate. Tenacious. Enthusiastic.</TagLine>
@@ -140,4 +140,4 @@ export const DesignedForHumansPane: FC = () => {
   );
 };
 
-export default DesignedForHumansPane;
+export default DesignedForHumans;
