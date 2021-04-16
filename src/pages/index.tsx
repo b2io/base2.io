@@ -5,6 +5,8 @@ import { FC } from 'react';
 import { atMinLg, cssClamp } from '~/theme';
 import { Heading, Layout, Link, Text } from '~/components';
 
+import { FeaturedCaseStudyPane } from '~/components/panes';
+
 const HomeHero: FC = () => {
   return (
     <div
@@ -51,6 +53,7 @@ const HomePage: NextPage = () => {
           results.
         </Text>
       </Heading>
+      <FeaturedCaseStudyPane />
       <Heading as="h2" variant="h2">
         Fueled by{' '}
         <Text as="span" variant="hero">
