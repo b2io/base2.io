@@ -22,7 +22,10 @@ const FeaturedCaseStudyWrapper = styled.section`
 
 const TextContainer = styled.div``;
 
-const ImagesContainer = styled.div``;
+const ImagesContainer = styled.div`
+  columns: 2;
+  /* display: inline-block; */
+`;
 
 export const FeaturedCaseStudyPane: FC = () => {
   return (
@@ -49,7 +52,12 @@ export const FeaturedCaseStudyPane: FC = () => {
           <br />
           Visualizer
         </Heading>
-        <Text variant="h3">
+        <Text
+          variant="h3"
+          css={css`
+            max-width: 19rem;
+          `}
+        >
           As a leader in the paint industry, Sherwin-Williams wanted to create a
           tool worthy of their products - something to get customers excited
           about paint.
