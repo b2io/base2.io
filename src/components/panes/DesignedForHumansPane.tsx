@@ -91,7 +91,7 @@ const RightColumn = styled.div`
 
 export const DesignedForHumansPane: FC = () => {
   return (
-    <div
+    <section
       css={css`
         min-height: calc(${imageTopCalc} + ${largeImageHeightCalc});
         position: relative;
@@ -136,7 +136,7 @@ export const DesignedForHumansPane: FC = () => {
           </RightColumn>
         </div>
       </Content>
-    </div>
+    </section>
   );
 };
 
