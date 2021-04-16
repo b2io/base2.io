@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 // import NextImage from 'next/image';
 import { FC } from 'react';
 
-import { Heading, Text } from '~/components';
-// import theme, { atMinDesktop, atMinMd, cssClamp } from '~/theme';
+import { Heading, Link, Text } from '~/components';
+import theme from '~/theme';
 
 // type ImageProps = {
 //   alt: string;
@@ -20,31 +20,29 @@ const FeaturedCaseStudyWrapper = styled.section`
   flex-direction: column;
 `;
 
-const ContentContainer = styled.div``;
+const TextContainer = styled.div``;
 
 const ImagesContainer = styled.div``;
 
 export const FeaturedCaseStudyPane: FC = () => {
   return (
     <FeaturedCaseStudyWrapper>
-      <ContentContainer>
-        {/* TODO: make this a styled component */}
+      <TextContainer>
         <Heading
           as="h2"
           variant="body"
           color="coral"
           css={css`
-            margin-bottom: 0.75rem;
+            margin-bottom: ${theme.spacing.xxs};
           `}
         >
           Featured case study
         </Heading>
-        {/* TODO: make this a styled component */}
         <Heading
           as="h3"
           variant="h2"
           css={css`
-            margin-bottom: 1.5rem;
+            margin-bottom: ${theme.spacing.sm};
           `}
         >
           ColorSnap&reg;
@@ -56,7 +54,19 @@ export const FeaturedCaseStudyPane: FC = () => {
           tool worthy of their products - something to get customers excited
           about paint.
         </Text>
-      </ContentContainer>
+        <Link
+          css={css`
+            margin-top: ${theme.spacing.lg};
+            &::after {
+              margin-top: 0.25rem;
+            }
+          `}
+          href="/work"
+          variant="CTA"
+        >
+          See our work
+        </Link>
+      </TextContainer>
       <ImagesContainer>
         <div>image</div>
         <div>image</div>
