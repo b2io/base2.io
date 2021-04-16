@@ -1,3 +1,4 @@
+/* eslint-disable sort-keys */
 export const spacing = {
   xxs: '.5rem', // 8px
   xs: '1rem', // 16px

@@ -1,5 +1,6 @@
 import { bp } from './breakpoints';
 
+/* eslint-disable sort-keys */
 const relativeBP = {
   xs: { max: (bp.sm - 1) / 16, min: -Infinity },
   sm: { max: (bp.md - 1) / 16, min: bp.sm / 16 },
@@ -9,6 +10,7 @@ const relativeBP = {
   xxl: { max: (bp.xxl2 - 1) / 16, min: bp.xxl / 16 },
   xxl2: { max: Infinity, min: bp.xxl2 / 16 },
 };
+/* eslint-enable sort-keys */
 
 type REM = number;
 
