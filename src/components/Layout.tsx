@@ -2,11 +2,11 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import Link from 'next/link';
 import React, { FC } from 'react';
 
 import { Container } from './Container';
 import { Header } from './Header';
+import { Footer } from './Footer';
 
 const Root = styled.div`
   overflow: hidden;
@@ -62,45 +62,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
       >
         <Container>{children}</Container>
       </motion.main>
-      <Container as="footer">
-        <ul>
-          <li>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/work">
-              <a>Work</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/approach">
-              <a>Approach</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/culture">
-              <a>Culture</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/careers">
-              <a>Careers</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog">
-              <a>Blog</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a>Contact</a>
-            </Link>
-          </li>
-        </ul>
-      </Container>
+      <Footer />
     </Root>
   );
 };
