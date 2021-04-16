@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import { FC } from 'react';
+
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinDesktop, atMinMd, cssClamp } from '~/theme';
 

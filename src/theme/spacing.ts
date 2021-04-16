@@ -5,7 +5,7 @@ export const spacing = {
   md: '2rem', // 32px
   lg: '2.5rem', // 40px
   xxl: '3.5rem', // 56px
-  desktop: '6.5rem', // 104px
+  xxl2: '6.5rem', // 104px
   xxl3: '8.5rem', // 136px
   xxl4: '12.5rem', // 200px
   xxl5: '17.5rem', // 280px
