@@ -1,4 +1,4 @@
-import { atMinLg, atMinMd } from './breakpoints';
+import { atMinLg, atMinTablet } from './breakpoints';
 import { colors } from './colors';
 import { spacing } from './spacing';
 import { cssClamp } from './util';
@@ -27,7 +27,7 @@ export const linkVariants = {
       },
     },
 
-    [atMinMd]: {
+    [atMinTablet]: {
       fontSize: '1.375rem',
       lineHeight: 'normal',
     },
@@ -64,7 +64,7 @@ export const textVariants = {
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
 
-    [atMinMd]: {
+    [atMinTablet]: {
       letterSpacing: 'normal',
     },
   },
@@ -75,7 +75,7 @@ export const textVariants = {
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
 
-    [atMinMd]: {
+    [atMinTablet]: {
       letterSpacing: 'normal',
       lineHeight: 1.2,
     },
@@ -89,7 +89,7 @@ export const textVariants = {
     margin: 0,
     padding: 0,
 
-    [atMinMd]: {
+    [atMinTablet]: {
       lineHeight: 1.04,
     },
   },
@@ -102,7 +102,7 @@ export const textVariants = {
     margin: 0,
     padding: 0,
 
-    [atMinMd]: {
+    [atMinTablet]: {
       lineHeight: 1.2,
     },
   },
@@ -115,7 +115,7 @@ export const textVariants = {
     margin: 0,
     padding: 0,
 
-    [atMinMd]: {
+    [atMinTablet]: {
       lineHeight: 1.33,
     },
   },
@@ -128,7 +128,7 @@ export const textVariants = {
     margin: 0,
     padding: 0,
 
-    [atMinMd]: {
+    [atMinTablet]: {
       lineHeight: 0.74,
     },
 

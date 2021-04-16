@@ -40,8 +40,9 @@ export const viewMaxWidth = {
 
 export const minMQ = (bp: number): string => `@media (min-width: ${bp}px)`;
 
+export const atMinMobile = minMQ(bp.mobile);
 export const atMinSm = minMQ(bp.sm);
-export const atMinMd = minMQ(bp.tablet);
+export const atMinTablet = minMQ(bp.tablet);
 export const atMinLg = minMQ(bp.lg);
 export const atMinXL = minMQ(bp.xl);
 export const atMinXXL = minMQ(bp.xxl);
@@ -69,10 +70,3 @@ export const atMaxXXL = maxMQ(bp.xxl);
 
 export const rangeMQ = (minBP: number, maxBP: number): string =>
   `@media (min-width: ${minBP}px) and (max-width: ${maxBP - 0.02}px)`;
-
-export const onlyXs = atMaxSm;
-export const onlySm = rangeMQ(bp.sm, bp.tablet);
-export const onlyMd = rangeMQ(bp.tablet, bp.lg);
-export const onlyLg = rangeMQ(bp.lg, bp.xl);
-export const onlyXL = rangeMQ(bp.xl, bp.xxl);
-export const onlyXXL = atMinXXL;

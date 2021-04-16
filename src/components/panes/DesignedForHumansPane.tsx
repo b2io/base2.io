@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinDesktop, atMinMd, cssClamp } from '~/theme';
+import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
 
 type ImageProps = {
   alt: string;
@@ -27,7 +27,7 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
         position: absolute;
         top: ${imageTopCalc};
         width: ${cssClamp([26.042, 'mobile'], [34.313, 'tablet'])};
-        ${atMinMd} {
+        ${atMinTablet} {
           height: ${largeImageHeightCalc};
           left: max(-10rem, calc(50% - 50vw));
           width: ${cssClamp([34.313, 'tablet'], [64.5, 'desktop'])};
@@ -53,7 +53,7 @@ const Callout = styled(Text)`
 const LargeText = styled(Text)`
   position: relative;
   top: -0.3rem;
-  ${atMinMd} {
+  ${atMinTablet} {
     top: -1.25rem;
   }
 `;
@@ -62,7 +62,7 @@ const Content = styled.div`
   margin-left: ${cssClamp([1.688, 'mobile'], [11.563, 'tablet'])};
   margin-top: 12.75rem;
   position: relative;
-  ${atMinMd} {
+  ${atMinTablet} {
     margin-top: 9.25rem;
   }
   ${atMinDesktop} {

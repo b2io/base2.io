@@ -1,7 +1,7 @@
 import styled, { StyledComponent } from '@emotion/styled';
 
 import {
-  atMinMd,
+  atMinTablet,
   atMinXL,
   atMinXXL,
   atMinDesktop,
@@ -14,7 +14,7 @@ export const Container: StyledComponent<any> = styled.div(({ theme }) => ({
   paddingLeft: theme.spacing.sm,
   paddingRight: theme.spacing.sm,
 
-  [atMinMd]: {
+  [atMinTablet]: {
     paddingLeft: theme.spacing.lg,
     paddingRight: theme.spacing.lg,
   },
