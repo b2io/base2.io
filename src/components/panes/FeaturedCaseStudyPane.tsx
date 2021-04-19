@@ -92,13 +92,12 @@ export const FeaturedCaseStudyPane: FC = () => {
         </Heading>
         <Text
           variant="h3"
-          as="h3"
           css={css`
             max-width: 19rem;
             ${atMinSm} {
               max-width: 30rem;
             }
-            // TODO: the font styles should be done a different way, just not sure how
+            // TODO: the font styles should be done a different way, just not sure how yet
             ${atMinMd} {
               font-size: 1.063rem;
               line-height: 1.65;
