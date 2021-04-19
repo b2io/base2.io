@@ -77,32 +77,32 @@ export const FeaturedCaseStudyPane: FC = () => {
       </TextContainer>
       <ImagesContainer>
         <Image
-          alt="something here"
+          alt="case study image"
           src="/home/img-sw-home-1@3x_TEMP.png"
           layout="responsive"
-          width={322}
-          height={572}
+          width={400}
+          height={706}
         />
         <Image
-          alt="something here"
+          alt="case study image"
           src="/home/img-sw-home-3@3x_TEMP.png"
           layout="responsive"
-          width={322}
-          height={572}
+          width={400}
+          height={706}
         />
         <Image
-          alt="something here"
+          alt="case study image"
           src="/home/img-sw-home-2@3x_TEMP.png"
           layout="responsive"
-          width={322}
-          height={572}
+          width={400}
+          height={706}
         />
         <Image
-          alt="something here"
+          alt="case study image"
           src="/home/img-sw-home-4@3x_TEMP.png"
           layout="responsive"
-          width={322}
-          height={572}
+          width={400}
+          height={706}
         />
       </ImagesContainer>
     </FeaturedCaseStudyWrapper>
