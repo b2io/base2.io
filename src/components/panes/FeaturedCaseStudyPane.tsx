@@ -105,11 +105,18 @@ export const FeaturedCaseStudyPane: FC = () => {
           alt="case study image"
           src="/home/img-sw-home-1@3x_TEMP.png"
           css={css`
-            margin-bottom: ${theme.spacing.xs};
+            padding-bottom: ${theme.spacing.xs};
           `}
         />
         <Image alt="case study image" src="/home/img-sw-home-3@3x_TEMP.png" />
-        <Image alt="case study image" src="/home/img-sw-home-2@3x_TEMP.png" />
+        <Image
+          alt="case study image"
+          src="/home/img-sw-home-2@3x_TEMP.png"
+          css={css`
+            padding-bottom: ${theme.spacing.xs};
+            padding-top: 50%;
+          `}
+        />
         <Image alt="case study image" src="/home/img-sw-home-4@3x_TEMP.png" />
       </ImagesContainer>
     </FeaturedCaseStudyWrapper>
