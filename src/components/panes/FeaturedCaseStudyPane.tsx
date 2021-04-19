@@ -6,11 +6,6 @@ import { FC } from 'react';
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinSm, atMinMd, atMinXL, cssClamp } from '~/theme';
 
-// type ImageProps = {
-//   alt: string;
-//   src: string;
-// };
-
 const FeaturedCaseStudyWrapper = styled.section`
   /* DELETE BELOW: JUST FOR VISUAL REFERENCE IN DEVELOPMENT */
   margin-top: 20rem;
