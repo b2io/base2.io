@@ -135,5 +135,13 @@
     "name": "Nelson Foltz",
     "lastName": "Foltz",
     "title": "Software Engineer III"
+  },
+  {
+    "active": true,
+    "id": "asingleton",
+    "image": "img/team/asingleton.jpg",
+    "name": "Ashley Singleton",
+    "lastName": "Singleton",
+    "title": "Software Engineer IV"
   }
 ]
