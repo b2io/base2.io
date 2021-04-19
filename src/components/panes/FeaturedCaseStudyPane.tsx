@@ -27,6 +27,9 @@ const TextContainer = styled.div`
 const ImagesContainer = styled.div`
   columns: 2;
   column-gap: ${theme.spacing.xxs};
+  > div {
+    break-inside: avoid;
+  }
 `;
 
 type ImageProps = {
@@ -34,15 +37,17 @@ type ImageProps = {
   src: string;
 };
 
-const Image: FC<ImageProps> = ({ alt, src }) => {
+const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
-    <NextImage
-      layout="responsive"
-      alt={alt}
-      src={src}
-      width={400}
-      height={706}
-    />
+    <div {...props}>
+      <NextImage
+        layout="responsive"
+        alt={alt}
+        src={src}
+        width={400}
+        height={706}
+      />
+    </div>
   );
 };
 
@@ -96,7 +101,13 @@ export const FeaturedCaseStudyPane: FC = () => {
         </Link>
       </TextContainer>
       <ImagesContainer>
-        <Image alt="case study image" src="/home/img-sw-home-1@3x_TEMP.png" />
+        <Image
+          alt="case study image"
+          src="/home/img-sw-home-1@3x_TEMP.png"
+          css={css`
+            margin-bottom: ${theme.spacing.xs};
+          `}
+        />
         <Image alt="case study image" src="/home/img-sw-home-3@3x_TEMP.png" />
         <Image alt="case study image" src="/home/img-sw-home-2@3x_TEMP.png" />
         <Image alt="case study image" src="/home/img-sw-home-4@3x_TEMP.png" />
