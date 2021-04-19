@@ -107,6 +107,9 @@ export const FeaturedCaseStudyPane: FC = () => {
             &::after {
               margin-top: 0.25rem;
             }
+            ${atMinMd} {
+              margin-bottom: ${theme.spacing.xxl2};
+            }
           `}
           href="/work"
           variant="CTA"
