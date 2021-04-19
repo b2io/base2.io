@@ -6,6 +6,11 @@ import { FC } from 'react';
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinSm, atMinMd, atMinXL, cssClamp } from '~/theme';
 
+type ImageProps = {
+  alt: string;
+  src: string;
+};
+
 const FeaturedCaseStudyWrapper = styled.section`
   /* DELETE BELOW: JUST FOR VISUAL REFERENCE IN DEVELOPMENT */
   margin-top: 20rem;
@@ -40,11 +45,6 @@ const ImagesContainer = styled.div`
     break-inside: avoid;
   }
 `;
-
-type ImageProps = {
-  alt: string;
-  src: string;
-};
 
 const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
