@@ -78,28 +78,28 @@ export const FeaturedCaseStudyPane: FC = () => {
       <ImagesContainer>
         <Image
           alt="something here"
-          src="/home/img-sw-home-1@3x.png"
+          src="/home/img-sw-home-1@3x_TEMP.png"
           layout="responsive"
           width={322}
           height={572}
         />
         <Image
           alt="something here"
-          src="/home/img-sw-home-3@3x.png"
+          src="/home/img-sw-home-3@3x_TEMP.png"
           layout="responsive"
           width={322}
           height={572}
         />
         <Image
           alt="something here"
-          src="/home/img-sw-home-2@3x.png"
+          src="/home/img-sw-home-2@3x_TEMP.png"
           layout="responsive"
           width={322}
           height={572}
         />
         <Image
           alt="something here"
-          src="/home/img-sw-home-4@3x.png"
+          src="/home/img-sw-home-4@3x_TEMP.png"
           layout="responsive"
           width={322}
           height={572}
