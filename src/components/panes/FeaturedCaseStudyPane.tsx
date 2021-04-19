@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme from '~/theme';
+import theme, { cssClamp } from '~/theme';
 
 // type ImageProps = {
 //   alt: string;
@@ -20,11 +20,13 @@ const FeaturedCaseStudyWrapper = styled.section`
   flex-direction: column;
 `;
 
-const TextContainer = styled.div``;
+const TextContainer = styled.div`
+  margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'md'])};
+`;
 
 const ImagesContainer = styled.div`
   columns: 2;
-  /* display: inline-block; */
+  column-gap: ${theme.spacing.xxs};
 `;
 
 export const FeaturedCaseStudyPane: FC = () => {
