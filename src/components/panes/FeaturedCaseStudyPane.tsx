@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
@@ -28,6 +28,23 @@ const ImagesContainer = styled.div`
   columns: 2;
   column-gap: ${theme.spacing.xxs};
 `;
+
+type ImageProps = {
+  alt: string;
+  src: string;
+};
+
+const Image: FC<ImageProps> = ({ alt, src }) => {
+  return (
+    <NextImage
+      layout="responsive"
+      alt={alt}
+      src={src}
+      width={400}
+      height={706}
+    />
+  );
+};
 
 export const FeaturedCaseStudyPane: FC = () => {
   return (
@@ -78,34 +95,10 @@ export const FeaturedCaseStudyPane: FC = () => {
         </Link>
       </TextContainer>
       <ImagesContainer>
-        <Image
-          alt="case study image"
-          src="/home/img-sw-home-1@3x_TEMP.png"
-          layout="responsive"
-          width={400}
-          height={706}
-        />
-        <Image
-          alt="case study image"
-          src="/home/img-sw-home-3@3x_TEMP.png"
-          layout="responsive"
-          width={400}
-          height={706}
-        />
-        <Image
-          alt="case study image"
-          src="/home/img-sw-home-2@3x_TEMP.png"
-          layout="responsive"
-          width={400}
-          height={706}
-        />
-        <Image
-          alt="case study image"
-          src="/home/img-sw-home-4@3x_TEMP.png"
-          layout="responsive"
-          width={400}
-          height={706}
-        />
+        <Image alt="case study image" src="/home/img-sw-home-1@3x_TEMP.png" />
+        <Image alt="case study image" src="/home/img-sw-home-3@3x_TEMP.png" />
+        <Image alt="case study image" src="/home/img-sw-home-2@3x_TEMP.png" />
+        <Image alt="case study image" src="/home/img-sw-home-4@3x_TEMP.png" />
       </ImagesContainer>
     </FeaturedCaseStudyWrapper>
   );
