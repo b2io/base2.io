@@ -84,6 +84,7 @@ export const FeaturedCaseStudyPane: FC = () => {
         <Link
           css={css`
             margin-top: ${theme.spacing.lg};
+            margin-bottom: ${theme.spacing.lg};
             &::after {
               margin-top: 0.25rem;
             }
