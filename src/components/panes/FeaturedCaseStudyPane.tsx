@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinMd, atMinXL, cssClamp } from '~/theme';
+import theme, { atMinSm, atMinMd, atMinXL, cssClamp } from '~/theme';
 
 // type ImageProps = {
 //   alt: string;
@@ -92,13 +92,16 @@ export const FeaturedCaseStudyPane: FC = () => {
         </Heading>
         <Text
           variant="h3"
+          as="h3"
           css={css`
             max-width: 19rem;
-            // TODO: this should be done a different way, just not sure how
+            ${atMinSm} {
+              max-width: 30rem;
+            }
+            // TODO: the font styles should be done a different way, just not sure how
             ${atMinMd} {
               font-size: 1.063rem;
               line-height: 1.65;
-              max-width: 30rem;
             }
           `}
         >
