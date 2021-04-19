@@ -1,25 +1,14 @@
-import { bp } from './breakpoints';
-
-const relativeBP = {
-  xs: { max: (bp.sm - 1) / 16, min: -Infinity },
-  sm: { max: (bp.md - 1) / 16, min: bp.sm / 16 },
-  md: { max: (bp.lg - 1) / 16, min: bp.md / 16 },
-  lg: { max: (bp.xl - 1) / 16, min: bp.lg / 16 },
-  xl: { max: (bp.xxl - 1) / 16, min: bp.xl / 16 },
-  xxl: { max: (bp.xxl2 - 1) / 16, min: bp.xxl / 16 },
-  xxl2: { max: Infinity, min: bp.xxl2 / 16 },
-};
+import { bp, BreakpointName } from './breakpoints';
 
 type REM = number;
-
-type BreakpointName = keyof typeof relativeBP;
-
 type ClampPair = [REM, BreakpointName];
+
+const BASE_FONT_SIZE = 16;
 
 export const cssClamp = (...pairs: ClampPair[]): string => {
   const [[startValue, startBP], [endValue, endBP], ...remainingPairs] = pairs;
-  const minWidth = relativeBP[startBP].max;
-  const maxWidth = relativeBP[endBP].min;
+  const minWidth = bp[startBP] / BASE_FONT_SIZE;
+  const maxWidth = bp[endBP] / BASE_FONT_SIZE;
 
   // Rel: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
   const slope = (endValue - startValue) / (maxWidth - minWidth);
