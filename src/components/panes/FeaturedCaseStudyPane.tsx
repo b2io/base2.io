@@ -24,11 +24,11 @@ const FeaturedCaseStudyWrapper = styled.section`
 `;
 
 const TextContainer = styled.div`
-  margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'md'])};
+  margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'md'], [7.6125, 'xl'])};
   ${atMinXL} {
     margin-top: 35%;
     order: 2;
-    width: 50%;
+    width: calc(50% - 22px);
   }
 `;
 
@@ -39,7 +39,7 @@ const ImagesContainer = styled.div`
     column-gap: 2.875rem;
   }
   ${atMinXL} {
-    width: 50%;
+    width: calc(50% + 22px);
   }
   > div {
     break-inside: avoid;
