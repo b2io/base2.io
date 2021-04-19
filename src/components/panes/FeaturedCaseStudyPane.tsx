@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { cssClamp } from '~/theme';
+import theme, { atMinMd, atMinXL, cssClamp } from '~/theme';
 
 // type ImageProps = {
 //   alt: string;
@@ -18,15 +18,29 @@ const FeaturedCaseStudyWrapper = styled.section`
   /* DELETE ABOVE: JUST FOR VISUAL REFERENCE IN DEVELOPMENT */
   display: flex;
   flex-direction: column;
+  ${atMinXL} {
+    flex-direction: row;
+  }
 `;
 
 const TextContainer = styled.div`
   margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'md'])};
+  ${atMinXL} {
+    margin-top: 35%;
+    order: 2;
+    width: 50%;
+  }
 `;
 
 const ImagesContainer = styled.div`
   columns: 2;
   column-gap: ${theme.spacing.xxs};
+  ${atMinMd} {
+    column-gap: 2.875rem;
+  }
+  ${atMinXL} {
+    width: 50%;
+  }
   > div {
     break-inside: avoid;
   }
@@ -106,6 +120,9 @@ export const FeaturedCaseStudyPane: FC = () => {
           src="/home/img-sw-home-1@3x_TEMP.png"
           css={css`
             padding-bottom: ${theme.spacing.xs};
+            ${atMinMd} {
+              padding-bottom: 2.875rem;
+            }
           `}
         />
         <Image alt="case study image" src="/home/img-sw-home-3@3x_TEMP.png" />
@@ -115,6 +132,9 @@ export const FeaturedCaseStudyPane: FC = () => {
           css={css`
             padding-bottom: ${theme.spacing.xs};
             padding-top: 50%;
+            ${atMinMd} {
+              padding-bottom: 2.875rem;
+            }
           `}
         />
         <Image alt="case study image" src="/home/img-sw-home-4@3x_TEMP.png" />
