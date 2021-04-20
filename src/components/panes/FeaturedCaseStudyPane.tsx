@@ -28,6 +28,7 @@ const TextContainer = styled.div`
   ${atMinXL} {
     margin-top: 35%;
     order: 2;
+    // width: the -22px accounts for the left four panel images content leaking over the gutter
     width: calc(50% - 22px);
   }
 `;
@@ -39,6 +40,7 @@ const ImagesContainer = styled.div`
     column-gap: 2.875rem;
   }
   ${atMinXL} {
+    // width: the +22px accounts for the left four panel images content leaking over the gutter
     width: calc(50% + 22px);
   }
   > div {
@@ -46,7 +48,7 @@ const ImagesContainer = styled.div`
   }
 `;
 
-const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
+const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div {...props}>
       <NextImage
@@ -121,7 +123,7 @@ export const FeaturedCaseStudyPane: FC = () => {
         </Link>
       </TextContainer>
       <ImagesContainer>
-        <Image
+        <ResponsiveImage
           alt="case study image"
           src="/home/img-sw-home-1@3x_TEMP.png"
           css={css`
@@ -131,8 +133,11 @@ export const FeaturedCaseStudyPane: FC = () => {
             }
           `}
         />
-        <Image alt="case study image" src="/home/img-sw-home-3@3x_TEMP.png" />
-        <Image
+        <ResponsiveImage
+          alt="case study image"
+          src="/home/img-sw-home-3@3x_TEMP.png"
+        />
+        <ResponsiveImage
           alt="case study image"
           src="/home/img-sw-home-2@3x_TEMP.png"
           css={css`
@@ -143,7 +148,10 @@ export const FeaturedCaseStudyPane: FC = () => {
             }
           `}
         />
-        <Image alt="case study image" src="/home/img-sw-home-4@3x_TEMP.png" />
+        <ResponsiveImage
+          alt="case study image"
+          src="/home/img-sw-home-4@3x_TEMP.png"
+        />
       </ImagesContainer>
     </FeaturedCaseStudyWrapper>
   );
