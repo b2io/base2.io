@@ -15,10 +15,6 @@ type ImageProps = {
 };
 
 const FeaturedCaseStudyWrapper = styled.section`
-  /* DELETE BELOW: JUST FOR VISUAL REFERENCE IN DEVELOPMENT */
-  margin-top: 20rem;
-  margin-bottom: 20rem;
-  /* DELETE ABOVE: JUST FOR VISUAL REFERENCE IN DEVELOPMENT */
   display: flex;
   flex-direction: column;
   ${atMinXL} {
