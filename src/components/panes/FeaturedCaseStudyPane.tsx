@@ -28,7 +28,7 @@ const FeaturedCaseStudyWrapper = styled.section`
 const TextContainer = styled.div`
   margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'md'], [7.6125, 'xl'])};
   ${atMinXL} {
-    margin-top: 35%;
+    margin-top: 32%;
     order: 2;
     // width: the -22px accounts for the left four panel images content leaking over the gutter
     width: calc(50% - 22px);
