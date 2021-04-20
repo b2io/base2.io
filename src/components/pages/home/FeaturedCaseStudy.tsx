@@ -112,6 +112,7 @@ export const FeaturedCaseStudy: FC = () => {
             }
             ${atMinTablet} {
               margin-bottom: ${theme.spacing.xxl2};
+              margin-top: 3rem;
             }
           `}
           href="/work"
