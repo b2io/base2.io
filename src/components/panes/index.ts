@@ -1,1 +1,1 @@
-export * from './FeaturedCaseStudyPane';
+export * from './FeaturedCaseStudy';

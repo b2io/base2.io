@@ -65,7 +65,7 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   );
 };
 
-export const FeaturedCaseStudyPane: FC = () => {
+export const FeaturedCaseStudy: FC = () => {
   return (
     <FeaturedCaseStudyWrapper>
       <TextContainer>
@@ -155,4 +155,4 @@ export const FeaturedCaseStudyPane: FC = () => {
   );
 };
 
-export default FeaturedCaseStudyPane;
+export default FeaturedCaseStudy;
