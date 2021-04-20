@@ -6,9 +6,6 @@ import { FC } from 'react';
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinSm, atMinTablet, atMinXL, cssClamp } from '~/theme';
 
-// TODO: all images are temp and should be replaced
-// once images are replaced: add box-shadow and border-radius to image divs
-
 type ImageProps = {
   alt: string;
   src: string;
