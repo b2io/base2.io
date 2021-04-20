@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FC } from 'react';
 
-import { atMinMd, atMinSm, atMinXXL } from '~/theme';
+import { atMinTablet, atMinSm, atMinXXL } from '~/theme';
 import { Link } from './Link';
 import { Container } from './Container';
 import { LogoWithName } from './icons';
@@ -31,7 +31,7 @@ const Content = styled(Container)`
   padding-bottom: ${({ theme }) => theme.spacing.xxl};
   padding-top: ${({ theme }) => theme.spacing.sm};
 
-  ${atMinMd} {
+  ${atMinTablet} {
     padding-bottom: ${({ theme }) => theme.spacing.lg};
     padding-top: ${({ theme }) => theme.spacing.md};
   }
@@ -77,7 +77,7 @@ const LogoImage = styled(LogoWithName)`
   height: 2.1875rem;
   width: auto;
 
-  ${atMinMd} {
+  ${atMinTablet} {
     height: 3.3125rem;
   }
 

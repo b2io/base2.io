@@ -1,4 +1,4 @@
-import { atMinLg, atMinMd } from './breakpoints';
+import { atMinLg, atMinTablet } from './breakpoints';
 import { colors } from './colors';
 import { spacing } from './spacing';
 import { cssClamp } from './util';
@@ -18,16 +18,16 @@ export const linkVariants = {
         backgroundColor: colors.offWhite,
       },
     },
-    [atMinMd]: {
+    [atMinTablet]: {
       fontSize: '1.375rem',
       lineHeight: 'normal',
     },
     color: colors.text,
     cursor: 'pointer',
     display: 'inline-block',
-    fontSize: cssClamp([1.125, 'xs'], [1.375, 'md']),
+    fontSize: cssClamp([1.125, 'mobile'], [1.375, 'tablet']),
     fontVariationSettings: '"wght" 900',
-    letterSpacing: cssClamp([0.006875, 'xs'], [0.125, 'lg']),
+    letterSpacing: cssClamp([0.006875, 'mobile'], [0.125, 'lg']),
     lineHeight: 1.56,
     textDecoration: 'none',
   },
@@ -57,7 +57,7 @@ export const linkVariants = {
 
 export const textVariants = {
   body: {
-    [atMinMd]: {
+    [atMinTablet]: {
       letterSpacing: 'normal',
     },
     color: colors.text,
@@ -66,24 +66,35 @@ export const textVariants = {
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
   },
+  callout: {
+    [atMinTablet]: {
+      letterSpacing: 'normal',
+      lineHeight: 1.2,
+    },
+    color: colors.coral,
+    fontSize: cssClamp([1.063, 'mobile'], [3.125, 'tablet']),
+    fontVariationSettings: '"wght" 750',
+    letterSpacing: '0.006875rem',
+    lineHeight: 1.65,
+  },
   h1: {
-    [atMinMd]: {
+    [atMinTablet]: {
       lineHeight: 1.04,
     },
     color: colors.text,
-    fontSize: cssClamp([3.75, 'xs'], [6.25, 'lg']),
+    fontSize: cssClamp([3.75, 'mobile'], [6.25, 'lg']),
     fontVariationSettings: '"wght" 900',
-    letterSpacing: cssClamp([-0.03125, 'xs'], [0.125, 'lg']),
+    letterSpacing: cssClamp([-0.03125, 'mobile'], [0.125, 'lg']),
     lineHeight: 1,
     margin: 0,
     padding: 0,
   },
   h2: {
-    [atMinMd]: {
+    [atMinTablet]: {
       lineHeight: 1.2,
     },
     color: colors.text,
-    fontSize: cssClamp([2.5, 'xs'], [3.125, 'md']),
+    fontSize: cssClamp([2.5, 'mobile'], [3.125, 'tablet']),
     fontVariationSettings: '"wght" 750',
     letterSpacing: 'normal',
     lineHeight: 1.1,
@@ -91,7 +102,7 @@ export const textVariants = {
     padding: 0,
   },
   h3: {
-    [atMinMd]: {
+    [atMinTablet]: {
       lineHeight: 1.33,
     },
     color: colors.text,
@@ -106,11 +117,11 @@ export const textVariants = {
     [atMinLg]: {
       lineHeight: 0.58,
     },
-    [atMinMd]: {
+    [atMinTablet]: {
       lineHeight: 0.74,
     },
     color: colors.text,
-    fontSize: cssClamp([5, 'xs'], [10, 'md'], [15, 'lg']),
+    fontSize: cssClamp([5, 'mobile'], [10, 'tablet'], [15, 'lg']),
     fontVariationSettings: '"wght" 900',
     letterSpacing: 'normal',
     lineHeight: 0.53,
