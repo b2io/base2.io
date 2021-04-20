@@ -6,6 +6,8 @@ import { FC } from 'react';
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinSm, atMinMd, atMinXL, cssClamp } from '~/theme';
 
+// TODO: all images are temp and should be replaced
+
 type ImageProps = {
   alt: string;
   src: string;
