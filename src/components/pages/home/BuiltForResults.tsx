@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
+import theme, { atMinTablet, cssClamp } from '~/theme';
 
 type ImageProps = {
   alt: string;
@@ -42,7 +42,11 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
 };
 
 const HeaderText = styled(Heading)`
-  margin-left: ${cssClamp([0, 'tablet'], [6.688, 'desktop'])};
+  margin-left: ${cssClamp(
+    [0, 'mobile'],
+    [7.5, 'tablet'],
+    [22.8375, 'desktop'],
+  )};
   position: relative;
 
   .callout {
@@ -56,22 +60,20 @@ const HeaderText = styled(Heading)`
     position: relative;
     top: -0.3rem;
     ${atMinTablet} {
-      top: -1.25rem;
+      top: -${theme.spacing.sm};
     }
   }
 `;
 
 const Content = styled.div`
-  margin-left: ${cssClamp([1.688, 'mobile'], [11.563, 'tablet'])};
-  margin-top: 12.75rem;
-  /* TODO: adjust this once image is in good shape */
+  margin-left: 1.688rem;
+  margin-top: 13rem;
   max-width: 16rem;
   position: relative;
   ${atMinTablet} {
-    margin-top: 9.25rem;
-  }
-  ${atMinDesktop} {
-    margin-left: 7.5rem;
+    margin-top: 9rem;
+    margin-left: 0;
+    max-width: 32rem;
   }
 
   .header {
