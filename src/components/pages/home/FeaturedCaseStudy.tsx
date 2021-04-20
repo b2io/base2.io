@@ -14,6 +14,8 @@ type ImageProps = {
   src: string;
 };
 
+const GUTTER_SHIFT = '1.375rem';
+
 const FeaturedCaseStudyWrapper = styled.section`
   display: flex;
   flex-direction: column;
@@ -27,8 +29,7 @@ const TextContainer = styled.div`
   ${atMinXL} {
     margin-top: 32%;
     order: 2;
-    // width: the -22px accounts for the left four panel images content leaking over the gutter
-    width: calc(50% - 22px);
+    width: calc(50% - ${GUTTER_SHIFT});
   }
 `;
 
@@ -39,8 +40,7 @@ const ImagesContainer = styled.div`
     column-gap: 2.875rem;
   }
   ${atMinXL} {
-    // width: the +22px accounts for the left four panel images content leaking over the gutter
-    width: calc(50% + 22px);
+    width: calc(50% + ${GUTTER_SHIFT});
   }
   > div {
     break-inside: avoid;
