@@ -1,1 +1,1 @@
-export * from './BuiltForResultsPane';
+export * from './BuiltForResults';

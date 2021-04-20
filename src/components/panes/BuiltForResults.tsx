@@ -79,7 +79,7 @@ const PaneImageContainer = styled.div`
   }
 `;
 
-export const BuiltForResultsPane: FC = () => {
+export const BuiltForResults: FC = () => {
   return (
     <section
       css={css`
@@ -124,4 +124,4 @@ export const BuiltForResultsPane: FC = () => {
   );
 };
 
-export default BuiltForResultsPane;
+export default BuiltForResults;
