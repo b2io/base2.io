@@ -2,7 +2,7 @@ import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
 
-import { onlyXs, atMinMd, atMinLg } from '~/theme';
+import { atMinTablet, atMinLg } from '~/theme';
 import { Container } from './Container';
 import { Link } from './Link';
 import { LogoIcon } from './icons/LogoIcon';
@@ -13,7 +13,7 @@ const FooterWrapper = styled.div`
   padding-top: 4rem;
   position: relative;
 
-  ${atMinMd} {
+  ${atMinTablet} {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -51,7 +51,7 @@ const Nav = styled.nav`
     margin: 4rem 0 0 0;
     padding-left: 0;
 
-    ${atMinMd} {
+    ${atMinTablet} {
       column-gap: 3rem;
       margin-top: 0;
     }
@@ -67,7 +67,7 @@ const Nav = styled.nav`
         margin-bottom: 0;
       }
 
-      ${atMinMd} {
+      ${atMinTablet} {
         margin-bottom: 1.25rem;
       }
     }
@@ -78,7 +78,7 @@ const ContactBlock = styled.address`
   margin-top: ${({ theme }) => theme.spacing.xxl};
   padding-bottom: ${({ theme }) => theme.spacing.lg};
 
-  ${atMinMd} {
+  ${atMinTablet} {
     margin-top: 0;
     padding-bottom: 0;
   }
@@ -105,7 +105,7 @@ const ContactLink = styled(Link)`
       right: 0;
     }
 
-    ${atMinMd} {
+    ${atMinTablet} {
       margin-bottom: ${({ theme }) => theme.spacing.sm};
     }
   }
@@ -113,7 +113,7 @@ const ContactLink = styled(Link)`
   address {
     margin: 2rem 0 0;
 
-    ${atMinMd} {
+    ${atMinTablet} {
       margin-top: 0;
     }
   }
@@ -125,8 +125,9 @@ export const Footer: FC = () => {
     <Container
       as="footer"
       css={css`
-        ${onlyXs} {
-          background-color: ${theme.colors.darkBlueAlt};
+        background-color: ${theme.colors.darkBlueAlt};
+        ${atMinTablet} {
+          background-color: unset;
         }
       `}
     >
