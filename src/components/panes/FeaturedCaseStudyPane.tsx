@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinSm, atMinMd, atMinXL, cssClamp } from '~/theme';
+import theme, { atMinSm, atMinTablet, atMinXL, cssClamp } from '~/theme';
 
 // TODO: all images are temp and should be replaced
 // once images are replaced: add box-shadow and border-radius to image divs
@@ -27,7 +27,7 @@ const FeaturedCaseStudyWrapper = styled.section`
 `;
 
 const TextContainer = styled.div`
-  margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'md'], [7.6125, 'xl'])};
+  margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'tablet'], [7.6125, 'xl'])};
   ${atMinXL} {
     margin-top: 32%;
     order: 2;
@@ -39,7 +39,7 @@ const TextContainer = styled.div`
 const ImagesContainer = styled.div`
   columns: 2;
   column-gap: ${theme.spacing.xxs};
-  ${atMinMd} {
+  ${atMinTablet} {
     column-gap: 2.875rem;
   }
   ${atMinXL} {
@@ -110,7 +110,7 @@ export const FeaturedCaseStudyPane: FC = () => {
             &::after {
               margin-top: 0.25rem;
             }
-            ${atMinMd} {
+            ${atMinTablet} {
               margin-bottom: ${theme.spacing.xxl2};
             }
           `}
@@ -126,7 +126,7 @@ export const FeaturedCaseStudyPane: FC = () => {
           src="/home/img-sw-home-1@3x_TEMP.png"
           css={css`
             padding-bottom: ${theme.spacing.xs};
-            ${atMinMd} {
+            ${atMinTablet} {
               padding-bottom: 2.875rem;
             }
           `}
@@ -141,7 +141,7 @@ export const FeaturedCaseStudyPane: FC = () => {
           css={css`
             padding-bottom: ${theme.spacing.xs};
             padding-top: 50%;
-            ${atMinMd} {
+            ${atMinTablet} {
               padding-bottom: 2.875rem;
             }
           `}
