@@ -85,9 +85,9 @@ const ContactBlock = styled.address`
 
   ${atMinLg} {
     display: flex;
+    flex: 1;
     flex-direction: column;
     flex-wrap: wrap;
-    flex: 1;
   }
 `;
 
