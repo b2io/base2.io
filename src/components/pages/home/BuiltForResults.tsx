@@ -1,81 +1,91 @@
-import css from '@emotion/css';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import { FC } from 'react';
+
 import { Heading, Link, Text } from '~/components';
-import { cssClamp, atMinTablet, atMinLg, atMinXL } from '~/theme';
+import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
 
-const PaneContentContainer = styled.div`
-  position: absolute;
-  top: 62%;
-  left: 8%;
-  max-width: 17.25rem;
-  z-index: 2;
+type ImageProps = {
+  alt: string;
+  src: string;
+};
 
-  ${atMinTablet} {
-    top: 42%;
-    left: 0;
-    max-width: 31.25rem;
-  }
-  ${atMinLg} {
-    left: 10%;
-  }
-  ${atMinXL} {
-    max-width: 35rem;
-  }
-`;
+// TODO: rename?
+const BuiltForlargeImageHeightCalc = cssClamp(
+  [26.625, 'tablet'],
+  [50, 'desktop'],
+);
+// TODO: rename?
+const BuiltForimageTopCalc = cssClamp(
+  [2.95, 'mobile'],
+  [7, 'tablet'],
+  [8.25, 'desktop'],
+);
 
-const CalloutContainer = styled.div`
-  z-index: 2;
-  position: absolute;
-  top: -14.5%;
-
-  ${atMinTablet} {
-    left: 15%;
-    top: -30%;
-  }
-  ${atMinXL} {
-    left: 30%;
-    top: -20%;
-  }
-`;
-
-const Callout = styled(Heading)`
-  margin: 0 0 0 2.75rem;
-  line-height: 1;
-  ${atMinTablet} {
-    // TODO: remove once the update is in
-    font-size: 3.125rem;
-  }
-`;
-
-// Yes, it's empty but that will probably change. Delete if it doesn't.
-const CalloutSpan = styled(Heading)``;
-
-const ThreeWord = styled(Text)`
-  margin-bottom: 0.75rem;
-`;
-
-const Misson = styled(Text)`
-  margin-bottom: ${({ theme }) => theme.spacing.sm};
-`;
-
-const Description = styled(Text)`
-  margin-bottom: 2.5rem;
-`;
-
-const PaneLink = styled(Link)`
-  margin-top: 0.25rem;
-`;
-
-const PaneImageContainer = styled.div`
-  height: ${cssClamp([20.188, 'xs'], [26.625, 'tablet'], [50, 'lg'])};
-  left: calc(50% - 50vw - 5.8545rem);
+const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
+  return (
+    <div
+      css={css`
+        height: ${cssClamp([20.188, 'mobile'], [26.625, 'tablet'])};
+        left: calc(50% - 50vw - 5.8545rem);
+        position: absolute;
+        top: ${BuiltForimageTopCalc};
+        width: ${cssClamp([26.042, 'mobile'], [34.313, 'tablet'])};
+        ${atMinTablet} {
+          height: ${BuiltForlargeImageHeightCalc};
+          left: max(-10rem, calc(50% - 50vw));
+          width: ${cssClamp([34.313, 'tablet'], [64.5, 'desktop'])};
+        }
+      `}
+      {...props}
+    >
+      <NextImage layout="fill" alt={alt} src={src} />
+    </div>
+  );
+};
+// TODO: rename?
+const BuiltForHeaderText = styled(Heading)`
+  margin-left: ${cssClamp([0, 'tablet'], [6.688, 'desktop'])};
   position: relative;
-  width: ${cssClamp([26.042, 'xs'], [34.313, 'tablet'], [64.5, 'lg'])};
-  z-index: 1;
+
+  .callout {
+    display: block;
+    left: ${cssClamp([2.813, 'mobile'], [5, 'tablet'], [8.375, 'desktop'])};
+    position: relative;
+  }
+
+  .large-text {
+    display: block;
+    position: relative;
+    top: -0.3rem;
+    ${atMinTablet} {
+      top: -1.25rem;
+    }
+  }
+`;
+// TODO: rename?
+const BuiltForContent = styled.div`
+  margin-left: ${cssClamp([1.688, 'mobile'], [11.563, 'tablet'])};
+  margin-top: 12.75rem;
+  position: relative;
   ${atMinTablet} {
-    left: calc(50% - 5vw);
+    margin-top: 9.25rem;
+  }
+  ${atMinDesktop} {
+    margin-left: 7.5rem;
+  }
+
+  .heading {
+    margin-bottom: ${theme.spacing.sm};
+    max-width: 36.75rem;
+  }
+
+  .tagline {
+    margin: 0 0 0.125rem;
+    ${atMinDesktop} {
+      margin-bottom: ${theme.spacing.xxs};
+    }
   }
 `;
 
@@ -83,43 +93,46 @@ export const BuiltForResults: FC = () => {
   return (
     <section
       css={css`
+        min-height: calc(
+          ${BuiltForimageTopCalc} + ${BuiltForlargeImageHeightCalc}
+        );
         position: relative;
-        // DELETE THIS: just for development purposes
-        margin-top: 20rem;
-        margin-bottom: 40rem;
-        // DELETE THIS: just for development purposes
+        /* REMOVE: JUST FOR DEV VIEW */
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+        /* REMOVE: JUST FOR DEV VIEW */
       `}
     >
-      <CalloutContainer>
-        <Callout as="h2" variant="body" color="coral">
-          Built for{' '}
-        </Callout>
-        <CalloutSpan as="span" variant="hero">
-          results.
-        </CalloutSpan>
-      </CalloutContainer>
-      <PaneContentContainer>
-        <ThreeWord as="h4" variant="body">
-          Function. Form. ROI.
-        </ThreeWord>
-        <Misson as="h3" variant="h2">
-          Software that works? That&apos;s a given.
-        </Misson>
-        <Description variant="h3" as="p">
-          Let&apos;s create something that solves your biggest challenge - and
+      <Image alt="person looking at computer" src="/home/results.jpg" />
+      <BuiltForHeaderText as="h2" variant="hero">
+        <Text className="callout" as="span" variant="callout">
+          Built for
+        </Text>
+        <span className="large-text">results.</span>
+      </BuiltForHeaderText>
+      <BuiltForContent>
+        <Text className="tagline">Function. Form. ROI.</Text>
+        <Heading as="h3" className="header" variant="h2">
+          Software that works? That&rsquo;s a given.
+        </Heading>
+
+        <Text variant="h3">
+          Let&lsquo;s create something that solves your biggest challenge - and
           continues to drive value over time.
-        </Description>
-        <PaneLink href="/work" variant="CTA">
+        </Text>
+        <Link
+          css={css`
+            margin-top: ${theme.spacing.lg};
+            &:after {
+              margin-top: 0.25rem;
+            }
+          `}
+          href="/work"
+          variant="CTA"
+        >
           See our work
-        </PaneLink>
-      </PaneContentContainer>
-      <PaneImageContainer>
-        <NextImage
-          alt="man at computer"
-          src="/home/results.jpg"
-          layout="fill"
-        />
-      </PaneImageContainer>
+        </Link>
+      </BuiltForContent>
     </section>
   );
 };
