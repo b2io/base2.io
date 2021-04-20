@@ -96,11 +96,6 @@ export const FeaturedCaseStudyPane: FC = () => {
             ${atMinSm} {
               max-width: 30rem;
             }
-            // TODO: the font styles should be done a different way, just not sure how yet
-            ${atMinMd} {
-              font-size: 1.063rem;
-              line-height: 1.65;
-            }
           `}
         >
           As a leader in the paint industry, Sherwin-Williams wanted to create a
