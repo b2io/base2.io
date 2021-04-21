@@ -10,7 +10,7 @@
     "type-check": "tsc --pretty --noEmit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint:css": "stylelint ./src/**/*.tsx && ./src/**/*.ts"
+    "lint:css": "stylelint ./src/**/*.tsx"
   },
   "dependencies": {
     "@emotion/react": "^11.1.4",
@@ -60,7 +60,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged && npm run lint:css",
       "pre-push": "npm run type-check"
     }
   },
