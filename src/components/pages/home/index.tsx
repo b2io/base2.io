@@ -1,7 +1,9 @@
 import { FC } from 'react';
-
 import { Layout } from '~/components';
+
+import BuiltForResults from './BuiltForResults';
 import DesignedForHumans from './DesignedForHumans';
+import FeaturedCaseStudy from './FeaturedCaseStudy';
 import HomeHero from './HomeHero';
 
 const Home: FC = () => {
@@ -9,6 +11,8 @@ const Home: FC = () => {
     <Layout>
       <HomeHero />
       <DesignedForHumans />
+      <BuiltForResults />
+      <FeaturedCaseStudy />
     </Layout>
   );
 };
