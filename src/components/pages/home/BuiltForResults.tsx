@@ -74,7 +74,6 @@ const HeaderText = styled(Heading)`
 const Content = styled.div`
   margin-left: 1.688rem;
   margin-top: 13rem;
-  max-width: 16rem;
   position: relative;
 
   ${atMinSm} {
