@@ -4,7 +4,13 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinSm, atMinTablet, atMinLg, cssClamp } from '~/theme';
+import theme, {
+  atMinSm,
+  atMinTablet,
+  atMinLg,
+  atMinXL,
+  cssClamp,
+} from '~/theme';
 
 type ImageProps = {
   alt: string;
@@ -79,6 +85,9 @@ const Content = styled.div`
   }
   ${atMinLg} {
     margin-left: 7.6125rem;
+  }
+  ${atMinXL} {
+    max-width: 35rem;
   }
 
   .header {
