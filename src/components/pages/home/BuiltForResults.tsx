@@ -4,7 +4,13 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
+import theme, {
+  atMinLg,
+  atMinSm,
+  atMinTablet,
+  atMinXL,
+  cssClamp,
+} from '~/theme';
 import { ImageProps } from '~/types';
 
 const largeImageHeightCalc = cssClamp([26.625, 'tablet'], [50, 'desktop']);
@@ -25,7 +31,8 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
         width: ${cssClamp([26.042, 'mobile'], [34.313, 'tablet'])};
         ${atMinTablet} {
           height: ${largeImageHeightCalc};
-          left: max(-10rem, calc(50% - 50vw));
+          left: unset;
+          right: max(-10rem, calc(50% - 50vw));
           width: ${cssClamp([34.313, 'tablet'], [64.5, 'desktop'])};
         }
       `}
@@ -37,7 +44,11 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
 };
 
 const HeaderText = styled(Heading)`
-  margin-left: ${cssClamp([0, 'tablet'], [6.688, 'desktop'])};
+  margin-left: ${cssClamp(
+    [0, 'mobile'],
+    [7.5, 'tablet'],
+    [22.8375, 'desktop'],
+  )};
   position: relative;
 
   .callout {
@@ -51,36 +62,40 @@ const HeaderText = styled(Heading)`
     position: relative;
     top: -0.3rem;
     ${atMinTablet} {
-      top: -1.25rem;
+      top: -${theme.spacing.sm};
     }
   }
 `;
 
 const Content = styled.div`
-  margin-left: ${cssClamp([1.688, 'mobile'], [11.563, 'tablet'])};
-  margin-top: 12.75rem;
+  margin-left: 1.688rem;
+  margin-top: 13rem;
   position: relative;
-  ${atMinTablet} {
-    margin-top: 9.25rem;
+
+  ${atMinSm} {
+    max-width: 31rem;
   }
-  ${atMinDesktop} {
-    margin-left: 7.5rem;
+  ${atMinTablet} {
+    margin-left: 0;
+    margin-top: 8.75rem;
+  }
+  ${atMinLg} {
+    margin-left: 7.6125rem;
+  }
+  ${atMinXL} {
+    max-width: 35rem;
   }
 
-  .heading {
+  .header {
     margin-bottom: ${theme.spacing.sm};
-    max-width: 36.75rem;
   }
 
   .tagline {
-    margin: 0 0 0.125rem;
-    ${atMinDesktop} {
-      margin-bottom: ${theme.spacing.xxs};
-    }
+    margin: 0 0 ${theme.spacing.xxs} 0;
   }
 `;
 
-export const DesignedForHumans: FC = () => {
+export const BuiltForResults: FC = () => {
   return (
     <section
       css={css`
@@ -88,52 +103,37 @@ export const DesignedForHumans: FC = () => {
         position: relative;
       `}
     >
-      <Image alt="woman looking at phone" src="/home/humans.jpg" />
+      <Image alt="person looking at computer" src="/home/results.jpg" />
       <HeaderText as="h2" variant="hero">
-        <Text className="callout" as="span" variant="callout">
-          Designed for
+        <Text as="span" className="callout" variant="callout">
+          Built for
         </Text>
-        <span className="large-text">humans.</span>
+        <span className="large-text">results.</span>
       </HeaderText>
       <Content>
-        <Text className="tagline">Passionate. Tenacious. Enthusiastic.</Text>
-        <div
+        <Text className="tagline">Function. Form. ROI.</Text>
+        <Heading as="h3" className="header" variant="h2">
+          Software that works? That&rsquo;s a given.
+        </Heading>
+        <Text variant="h3">
+          Let&lsquo;s create something that solves your biggest challenge - and
+          continues to drive value over time.
+        </Text>
+        <Link
           css={css`
-            ${atMinDesktop} {
-              display: flex;
+            margin-top: ${theme.spacing.lg};
+            &:after {
+              margin-top: 0.25rem;
             }
           `}
+          href="/work"
+          variant="CTA"
         >
-          <Heading as="h3" className="header" variant="h2">
-            The best software starts with a human touch.
-          </Heading>
-          <div
-            css={css`
-              max-width: 29.125rem;
-              ${atMinDesktop} {
-                margin-left: 9rem;
-              }
-            `}
-          >
-            <Text variant="h3">
-              We build software that helps real people solve real problems with
-              greater ease through a flexible approach that prioritizes you and
-              your end-user.
-            </Text>
-            <Link
-              css={css`
-                margin-top: ${theme.spacing.lg};
-              `}
-              href="/approach"
-              variant="CTA"
-            >
-              See our approach
-            </Link>
-          </div>
-        </div>
+          See our work
+        </Link>
       </Content>
     </section>
   );
 };
 
-export default DesignedForHumans;
+export default BuiltForResults;
