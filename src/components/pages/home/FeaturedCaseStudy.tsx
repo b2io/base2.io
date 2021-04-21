@@ -9,9 +9,9 @@ import theme, { atMinSm, atMinTablet, atMinXL, cssClamp } from '~/theme';
 const GUTTER_SHIFT = '1.375rem';
 
 const FeaturedCaseStudyWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
   ${atMinXL} {
+    display: flex;
+    flex-direction: column;
     flex-direction: row;
   }
 `;
@@ -45,11 +45,11 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div {...props}>
       <NextImage
-        layout="responsive"
         alt={alt}
+        height={706}
+        layout="responsive"
         src={src}
         width={400}
-        height={706}
       />
     </div>
   );
@@ -61,33 +61,33 @@ export const FeaturedCaseStudy: FC = () => {
       <TextContainer>
         <Heading
           as="h2"
-          variant="body"
           color="coral"
           css={css`
             margin-bottom: ${theme.spacing.xxs};
           `}
+          variant="body"
         >
           Featured case study
         </Heading>
         <Heading
           as="h3"
-          variant="h2"
           css={css`
             margin-bottom: ${theme.spacing.sm};
           `}
+          variant="h2"
         >
           ColorSnap&reg;
           <br />
           Visualizer
         </Heading>
         <Text
-          variant="h3"
           css={css`
             max-width: 19rem;
             ${atMinSm} {
               max-width: 30rem;
             }
           `}
+          variant="h3"
         >
           As a leader in the paint industry, Sherwin-Williams wanted to create a
           tool worthy of their products - something to get customers excited
@@ -95,8 +95,8 @@ export const FeaturedCaseStudy: FC = () => {
         </Text>
         <Link
           css={css`
-            margin-top: ${theme.spacing.lg};
             margin-bottom: ${theme.spacing.lg};
+            margin-top: ${theme.spacing.lg};
             &::after {
               margin-top: 0.25rem;
             }
@@ -114,13 +114,13 @@ export const FeaturedCaseStudy: FC = () => {
       <ImagesContainer>
         <ResponsiveImage
           alt="paint a photo"
-          src="/home/featured-case-study-home-1.png"
           css={css`
             padding-bottom: ${theme.spacing.xs};
             ${atMinTablet} {
               padding-bottom: 2.875rem;
             }
           `}
+          src="/home/featured-case-study-home-1.png"
         />
         <ResponsiveImage
           alt="room with window, chair, and sofa"
@@ -128,7 +128,6 @@ export const FeaturedCaseStudy: FC = () => {
         />
         <ResponsiveImage
           alt="living room and kitchen with sofa"
-          src="/home/featured-case-study-home-3.png"
           css={css`
             padding-bottom: ${theme.spacing.xs};
             padding-top: 50%;
@@ -136,6 +135,7 @@ export const FeaturedCaseStudy: FC = () => {
               padding-bottom: 2.875rem;
             }
           `}
+          src="/home/featured-case-study-home-3.png"
         />
         <ResponsiveImage
           alt="bedroom with dresser and mirror"
