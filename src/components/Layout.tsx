@@ -19,9 +19,9 @@ export type LayoutProps = {
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
 
 const mainVariants = {
-  initial: { scale: 0.9, opacity: 0 },
-  enter: { scale: 1, opacity: 1, transition },
-  exit: { scale: 0.5, opacity: 0, transition },
+  enter: { opacity: 1, scale: 1, transition },
+  exit: { opacity: 0, scale: 0.5, transition },
+  initial: { opacity: 0, scale: 0.9 },
 };
 
 export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {

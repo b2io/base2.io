@@ -28,8 +28,8 @@ const IconButton = styled.button`
   border: 0;
   cursor: pointer;
   height: 2.1875rem;
-  width: 2.1875rem;
   padding: 0;
+  width: 2.1875rem;
 `;
 
 const Nav = styled.nav`

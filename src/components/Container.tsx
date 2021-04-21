@@ -9,10 +9,10 @@ import {
 } from '~/theme';
 
 export const Container: StyledComponent<any> = styled.div(({ theme }) => ({
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  paddingLeft: theme.spacing.sm,
-  paddingRight: theme.spacing.sm,
+  [atMinDesktop]: {
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
 
   [atMinTablet]: {
     paddingLeft: theme.spacing.lg,
@@ -28,8 +28,8 @@ export const Container: StyledComponent<any> = styled.div(({ theme }) => ({
     maxWidth: viewMaxWidth.xxl,
   },
 
-  [atMinDesktop]: {
-    paddingLeft: 0,
-    paddingRight: 0,
-  },
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  paddingLeft: theme.spacing.sm,
+  paddingRight: theme.spacing.sm,
 }));

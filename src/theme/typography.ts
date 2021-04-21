@@ -5,14 +5,6 @@ import { cssClamp } from './util';
 
 export const linkVariants = {
   CTA: {
-    color: colors.text,
-    cursor: 'pointer',
-    display: 'inline-block',
-    fontSize: cssClamp([1.125, 'mobile'], [1.375, 'tablet']),
-    fontVariationSettings: '"wght" 900',
-    letterSpacing: cssClamp([0.006875, 'mobile'], [0.125, 'lg']),
-    lineHeight: 1.56,
-    textDecoration: 'none',
     '::after': {
       backgroundColor: colors.action,
       content: '""',
@@ -26,115 +18,115 @@ export const linkVariants = {
         backgroundColor: colors.offWhite,
       },
     },
-
     [atMinTablet]: {
       fontSize: '1.375rem',
       lineHeight: 'normal',
     },
+    color: colors.text,
+    cursor: 'pointer',
+    display: 'inline-block',
+    fontSize: cssClamp([1.125, 'mobile'], [1.375, 'tablet']),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: cssClamp([0.006875, 'mobile'], [0.125, 'lg']),
+    lineHeight: 1.56,
+    textDecoration: 'none',
   },
   default: {
+    '&:hover': {
+      color: colors.coral,
+    },
     color: colors.text,
     cursor: 'pointer',
     fontSize: '1.063rem',
     fontVariationSettings: '"wght" 500',
     lineHeight: 1.75,
     textDecoration: 'none',
+  },
+  large: {
     '&:hover': {
       color: colors.coral,
     },
-  },
-  large: {
     color: colors.text,
     cursor: 'pointer',
     fontSize: '2.5rem',
     fontVariationSettings: '"wght" 750',
     lineHeight: 1.1,
     textDecoration: 'none',
-    '&:hover': {
-      color: colors.coral,
-    },
   },
 };
 
 export const textVariants = {
   body: {
+    [atMinTablet]: {
+      letterSpacing: 'normal',
+    },
     color: colors.text,
     fontSize: '1.063rem',
     fontVariationSettings: '"wght" 500',
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
-
-    [atMinTablet]: {
-      letterSpacing: 'normal',
-    },
   },
   callout: {
+    [atMinTablet]: {
+      letterSpacing: 'normal',
+      lineHeight: 1.2,
+    },
     color: colors.coral,
     fontSize: cssClamp([1.063, 'mobile'], [3.125, 'tablet']),
     fontVariationSettings: '"wght" 750',
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
-
-    [atMinTablet]: {
-      letterSpacing: 'normal',
-      lineHeight: 1.2,
-    },
   },
   h1: {
-    color: colors.text,
-    fontSize: cssClamp([3.75, 'mobile'], [6.25, 'lg']),
-    fontVariationSettings: '"wght" 900',
-    lineHeight: 1,
-    letterSpacing: cssClamp([-0.03125, 'mobile'], [0.125, 'lg']),
-    margin: 0,
-    padding: 0,
-
     [atMinTablet]: {
       lineHeight: 1.04,
     },
-  },
-  h2: {
     color: colors.text,
-    fontSize: cssClamp([2.5, 'mobile'], [3.125, 'tablet']),
-    fontVariationSettings: '"wght" 750',
-    lineHeight: 1.1,
-    letterSpacing: 'normal',
+    fontSize: cssClamp([3.75, 'mobile'], [6.25, 'lg']),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: cssClamp([-0.03125, 'mobile'], [0.125, 'lg']),
+    lineHeight: 1,
     margin: 0,
     padding: 0,
-
+  },
+  h2: {
     [atMinTablet]: {
       lineHeight: 1.2,
     },
-  },
-  h3: {
     color: colors.text,
-    fontSize: '1.875rem',
-    fontVariationSettings: '"wght" 300',
-    lineHeight: 1.27,
+    fontSize: cssClamp([2.5, 'mobile'], [3.125, 'tablet']),
+    fontVariationSettings: '"wght" 750',
     letterSpacing: 'normal',
+    lineHeight: 1.1,
     margin: 0,
     padding: 0,
-
+  },
+  h3: {
     [atMinTablet]: {
       lineHeight: 1.33,
     },
-  },
-  hero: {
     color: colors.text,
-    fontSize: cssClamp([5, 'mobile'], [10, 'tablet'], [15, 'lg']),
-    fontVariationSettings: '"wght" 900',
-    lineHeight: 0.53,
+    fontSize: '1.875rem',
+    fontVariationSettings: '"wght" 300',
     letterSpacing: 'normal',
+    lineHeight: 1.27,
     margin: 0,
     padding: 0,
-
-    [atMinTablet]: {
-      lineHeight: 0.74,
-    },
-
+  },
+  hero: {
     [atMinLg]: {
       lineHeight: 0.58,
     },
+    [atMinTablet]: {
+      lineHeight: 0.74,
+    },
+    color: colors.text,
+    fontSize: cssClamp([5, 'mobile'], [10, 'tablet'], [15, 'lg']),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: 'normal',
+    lineHeight: 0.53,
+    margin: 0,
+    padding: 0,
   },
 };
 

@@ -18,8 +18,8 @@ const TextContainer = styled.div`
 `;
 
 const ImagesContainer = styled.div`
-  columns: 2;
   column-gap: ${theme.spacing.xxs};
+  columns: 2;
   ${atMinTablet} {
     column-gap: 2.875rem;
   }
