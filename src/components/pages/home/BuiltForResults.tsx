@@ -11,11 +11,7 @@ import theme, {
   atMinXL,
   cssClamp,
 } from '~/theme';
-
-type ImageProps = {
-  alt: string;
-  src: string;
-};
+import { ImageProps } from '~/types';
 
 const largeImageHeightCalc = cssClamp([26.625, 'tablet'], [50, 'desktop']);
 const imageTopCalc = cssClamp(
