@@ -20,8 +20,8 @@ const TextContainer = styled.div`
   margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'tablet'], [7.6125, 'xl'])};
   ${atMinXL} {
     margin-top: 22rem;
-    order: 2;
     width: calc(50% - ${GUTTER_SHIFT});
+    order: 2;
   }
 `;
 
