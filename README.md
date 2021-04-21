@@ -15,7 +15,7 @@ The Base Two website.
 ### Setup & Tools
 
 <details>
-<summary>Prerequisites (git, npm)</summary>
+<summary>Prerequisites (git, npm, stylelint)</summary>
 
 You'll need to set up Git and NPM before you can run this project locally. The setup for these is slightly different depending on your OS.
 
@@ -47,6 +47,16 @@ You'll need to set up Git and NPM before you can run this project locally. The s
 
      ```
      choco install nodejs-lts -y
+     ```
+
+1. `stylelint`
+
+   `stylelint` has been setup on this project to lint the css-syntax of styled components. This linting runs as part of the husky pre-commit hooks (e.g. `npm run lint:css`). It is recommended that you install the [`stylelint` VS Code extension](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) so that you get warnings within your IDE. If you find the extension throwing warnings for unrelated files (such as markdown files) you can add a global `.stylelintrc` file to your personal root directory (i.e. the same location as your `.gitconfig`) that includes the following:
+
+     ```
+     {
+       "ignoreFiles": ["**/*.md"]
+     }
      ```
 
 </details>
