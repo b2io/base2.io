@@ -8,14 +8,6 @@ import theme, { atMinSm, atMinTablet, atMinXL, cssClamp } from '~/theme';
 
 const GUTTER_SHIFT = '1.375rem';
 
-const FeaturedCaseStudyWrapper = styled.section`
-  ${atMinXL} {
-    display: flex;
-    flex-direction: column;
-    flex-direction: row;
-  }
-`;
-
 const TextContainer = styled.div`
   margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'tablet'], [7.6125, 'xl'])};
   ${atMinXL} {
@@ -57,7 +49,15 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
 
 export const FeaturedCaseStudy: FC = () => {
   return (
-    <FeaturedCaseStudyWrapper>
+    <section
+      css={css`
+        ${atMinXL} {
+          display: flex;
+          flex-direction: column;
+          flex-direction: row;
+        }
+      `}
+    >
       <TextContainer>
         <Heading
           as="h2"
@@ -142,7 +142,7 @@ export const FeaturedCaseStudy: FC = () => {
           src="/home/featured-case-study-home-4.png"
         />
       </ImagesContainer>
-    </FeaturedCaseStudyWrapper>
+    </section>
   );
 };
 
