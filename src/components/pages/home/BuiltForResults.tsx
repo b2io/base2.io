@@ -106,10 +106,6 @@ export const BuiltForResults: FC = () => {
       css={css`
         min-height: calc(${imageTopCalc} + ${largeImageHeightCalc});
         position: relative;
-        /* REMOVE: JUST FOR DEV VIEW */
-        margin-top: 10rem;
-        margin-bottom: 10rem;
-        /* REMOVE: JUST FOR DEV VIEW */
       `}
     >
       <Image alt="person looking at computer" src="/home/results.jpg" />
