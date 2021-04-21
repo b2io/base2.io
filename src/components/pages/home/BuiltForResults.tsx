@@ -76,6 +76,7 @@ const Content = styled.div`
   margin-top: 13rem;
   max-width: 16rem;
   position: relative;
+
   ${atMinSm} {
     max-width: 31rem;
   }
