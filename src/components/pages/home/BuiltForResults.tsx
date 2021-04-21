@@ -80,8 +80,8 @@ const Content = styled.div`
     max-width: 31rem;
   }
   ${atMinTablet} {
-    margin-top: 8.75rem;
     margin-left: 0;
+    margin-top: 8.75rem;
   }
   ${atMinLg} {
     margin-left: 7.6125rem;
@@ -109,7 +109,7 @@ export const BuiltForResults: FC = () => {
     >
       <Image alt="person looking at computer" src="/home/results.jpg" />
       <HeaderText as="h2" variant="hero">
-        <Text className="callout" as="span" variant="callout">
+        <Text as="span" className="callout" variant="callout">
           Built for
         </Text>
         <span className="large-text">results.</span>
