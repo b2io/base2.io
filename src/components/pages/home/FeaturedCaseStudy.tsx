@@ -6,11 +6,6 @@ import { FC } from 'react';
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinSm, atMinTablet, atMinXL, cssClamp } from '~/theme';
 
-type ImageProps = {
-  alt: string;
-  src: string;
-};
-
 const GUTTER_SHIFT = '1.375rem';
 
 const FeaturedCaseStudyWrapper = styled.section`
@@ -39,10 +34,12 @@ const ImagesContainer = styled.div`
   ${atMinXL} {
     width: calc(50% + ${GUTTER_SHIFT});
   }
-  > div {
-    break-inside: avoid;
-  }
 `;
+
+type ImageProps = {
+  alt: string;
+  src: string;
+};
 
 const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
@@ -116,8 +113,8 @@ export const FeaturedCaseStudy: FC = () => {
       </TextContainer>
       <ImagesContainer>
         <ResponsiveImage
-          alt="case study image"
-          src="/home/img-sw-home-1@3x_TEMP.png"
+          alt="paint a photo"
+          src="/home/featured-case-study-home-1.png"
           css={css`
             padding-bottom: ${theme.spacing.xs};
             ${atMinTablet} {
@@ -126,12 +123,12 @@ export const FeaturedCaseStudy: FC = () => {
           `}
         />
         <ResponsiveImage
-          alt="case study image"
-          src="/home/img-sw-home-3@3x_TEMP.png"
+          alt="room with window, chair, and sofa"
+          src="/home/featured-case-study-home-2.png"
         />
         <ResponsiveImage
-          alt="case study image"
-          src="/home/img-sw-home-2@3x_TEMP.png"
+          alt="living room and kitchen with sofa"
+          src="/home/featured-case-study-home-3.png"
           css={css`
             padding-bottom: ${theme.spacing.xs};
             padding-top: 50%;
@@ -141,8 +138,8 @@ export const FeaturedCaseStudy: FC = () => {
           `}
         />
         <ResponsiveImage
-          alt="case study image"
-          src="/home/img-sw-home-4@3x_TEMP.png"
+          alt="bedroom with dresser and mirror"
+          src="/home/featured-case-study-home-4.png"
         />
       </ImagesContainer>
     </FeaturedCaseStudyWrapper>
