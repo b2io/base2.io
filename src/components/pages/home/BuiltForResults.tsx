@@ -5,9 +5,9 @@ import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
 import theme, {
+  atMinLg,
   atMinSm,
   atMinTablet,
-  atMinLg,
   atMinXL,
   cssClamp,
 } from '~/theme';
