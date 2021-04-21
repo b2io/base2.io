@@ -19,7 +19,7 @@ const FeaturedCaseStudyWrapper = styled.section`
 const TextContainer = styled.div`
   margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'tablet'], [7.6125, 'xl'])};
   ${atMinXL} {
-    margin-top: 32%;
+    margin-top: 22rem;
     order: 2;
     width: calc(50% - ${GUTTER_SHIFT});
   }
@@ -124,7 +124,7 @@ export const FeaturedCaseStudy: FC = () => {
         />
         <ResponsiveImage
           alt="room with window, chair, and sofa"
-          src="/home/featured-case-study-home-2.png"
+          src="/home/featured-case-study-home-3.png"
         />
         <ResponsiveImage
           alt="living room and kitchen with sofa"
@@ -135,7 +135,7 @@ export const FeaturedCaseStudy: FC = () => {
               padding-bottom: 2.875rem;
             }
           `}
-          src="/home/featured-case-study-home-3.png"
+          src="/home/featured-case-study-home-2.png"
         />
         <ResponsiveImage
           alt="bedroom with dresser and mirror"
