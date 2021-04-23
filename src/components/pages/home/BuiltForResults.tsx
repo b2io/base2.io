@@ -122,9 +122,6 @@ export const BuiltForResults: FC = () => {
         <Link
           css={css`
             margin-top: ${theme.spacing.lg};
-            &:after {
-              margin-top: 0.25rem;
-            }
           `}
           href="/work"
           variant="CTA"

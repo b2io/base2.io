@@ -19,6 +19,9 @@ export const linkVariants = {
       },
     },
     [atMinTablet]: {
+      '::after': {
+        marginTop: spacing.xxs,
+      },
       fontSize: '1.375rem',
       lineHeight: 'normal',
     },

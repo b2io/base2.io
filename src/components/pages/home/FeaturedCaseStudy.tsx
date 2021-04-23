@@ -97,9 +97,6 @@ export const FeaturedCaseStudy: FC = () => {
           css={css`
             margin-bottom: ${theme.spacing.lg};
             margin-top: ${theme.spacing.lg};
-            &::after {
-              margin-top: 0.25rem;
-            }
             ${atMinTablet} {
               margin-bottom: ${theme.spacing.xxl2};
               margin-top: 3rem;
