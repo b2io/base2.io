@@ -16,15 +16,38 @@ const TextContainer = styled.div`
     width: calc(50% - ${GUTTER_SHIFT});
   }
 `;
+// The gradient will overlap the "Built for Results" component, on desktop, until padding is added between each sections
+const Gradient = styled.div`
+  background: linear-gradient(
+    180deg,
+    rgba(6, 2, 29, 1) 0%,
+    rgb(222 56 86) 11%,
+    rgba(45, 45, 120, 1) 80%,
+    rgba(22, 21, 69, 1) 88%,
+    rgba(4, 0, 27, 1) 91%
+  );
+  bottom: 0;
+  height: 123%;
+  left: -1.5rem;
+  position: absolute;
+  top: -4rem;
+  width: calc(100% + (2 * 1.5rem));
+  ${atMinTablet} {
+    left: -2.5rem;
+    top: -10rem;
+    width: calc(100% + (2 * 2.5rem));
+  }
+  ${atMinXL} {
+    left: max(-10rem, calc(50% - 50vw));
+    width: 100%;
+  }
+`;
 
 const ImagesContainer = styled.div`
   column-gap: ${theme.spacing.xxs};
   columns: 2;
   ${atMinTablet} {
     column-gap: 2.875rem;
-  }
-  ${atMinXL} {
-    width: calc(50% + ${GUTTER_SHIFT});
   }
 `;
 
@@ -58,7 +81,12 @@ export const FeaturedCaseStudy: FC = () => {
         }
       `}
     >
-      <TextContainer>
+      <TextContainer
+        css={css`
+          position: relative;
+          z-index: 99;
+        `}
+      >
         <Heading
           as="h2"
           color="coral"
@@ -111,37 +139,47 @@ export const FeaturedCaseStudy: FC = () => {
           See our work
         </Link>
       </TextContainer>
-      <ImagesContainer>
-        <ResponsiveImage
-          alt="paint a photo"
-          css={css`
-            padding-bottom: ${theme.spacing.xs};
-            ${atMinTablet} {
-              padding-bottom: 2.875rem;
-            }
-          `}
-          src="/home/featured-case-study-home-1.png"
-        />
-        <ResponsiveImage
-          alt="room with window, chair, and sofa"
-          src="/home/featured-case-study-home-3.png"
-        />
-        <ResponsiveImage
-          alt="living room and kitchen with sofa"
-          css={css`
-            padding-bottom: ${theme.spacing.xs};
-            padding-top: 50%;
-            ${atMinTablet} {
-              padding-bottom: 2.875rem;
-            }
-          `}
-          src="/home/featured-case-study-home-2.png"
-        />
-        <ResponsiveImage
-          alt="bedroom with dresser and mirror"
-          src="/home/featured-case-study-home-4.png"
-        />
-      </ImagesContainer>
+      <div
+        css={css`
+          position: relative;
+          ${atMinXL} {
+            width: 50%;
+          }
+        `}
+      >
+        <Gradient />
+        <ImagesContainer>
+          <ResponsiveImage
+            alt="paint a photo"
+            css={css`
+              padding-bottom: ${theme.spacing.xs};
+              ${atMinTablet} {
+                padding-bottom: 2.875rem;
+              }
+            `}
+            src="/home/featured-case-study-home-1.png"
+          />
+          <ResponsiveImage
+            alt="room with window, chair, and sofa"
+            src="/home/featured-case-study-home-3.png"
+          />
+          <ResponsiveImage
+            alt="living room and kitchen with sofa"
+            css={css`
+              padding-bottom: ${theme.spacing.xs};
+              padding-top: 100%;
+              ${atMinTablet} {
+                padding-bottom: 2.875rem;
+              }
+            `}
+            src="/home/featured-case-study-home-2.png"
+          />
+          <ResponsiveImage
+            alt="bedroom with dresser and mirror"
+            src="/home/featured-case-study-home-4.png"
+          />
+        </ImagesContainer>
+      </div>
     </section>
   );
 };
