@@ -143,7 +143,7 @@ export const FeaturedCaseStudy: FC = () => {
         css={css`
           position: relative;
           ${atMinXL} {
-            width: 50%;
+            width: calc(50% + ${GUTTER_SHIFT});
           }
         `}
       >
