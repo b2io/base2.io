@@ -4,10 +4,10 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
+import theme, { atMinDesktop, atMinTablet, atMinXXL, cssClamp } from '~/theme';
 import { ImageProps } from '~/types';
 
-const largeImageHeightCalc = cssClamp([69.5, 'tablet'], [50, 'desktop']);
+const largeImageHeightCalc = cssClamp([69.5, 'tablet'], [69.5, 'desktop']);
 const imageTopCalc = cssClamp(
   [1.85, 'mobile'],
   [7, 'tablet'],
@@ -23,11 +23,14 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
         position: absolute;
         top: ${imageTopCalc};
         width: ${cssClamp([32, 'mobile'], [40.438, 'tablet'])};
-        /* ${atMinTablet} {
+        ${atMinTablet} {
           height: ${largeImageHeightCalc};
-          left: max(-10rem, calc(50% - 50vw));
-          width: ${cssClamp([34.313, 'tablet'], [64.5, 'desktop'])};
-        } */
+          left: max(-10rem, calc(50% - 50vw + 6.53rem));
+          width: ${cssClamp([69.5, 'tablet'], [69.5, 'desktop'])};
+        }
+        ${atMinXXL} {
+          left: calc(50% - 13vw);
+        }
       `}
       {...props}
     >
