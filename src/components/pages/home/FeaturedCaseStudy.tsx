@@ -53,7 +53,6 @@ export const FeaturedCaseStudy: FC = () => {
       css={css`
         ${atMinXL} {
           display: flex;
-          flex-direction: column;
           flex-direction: row;
         }
       `}
