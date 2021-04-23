@@ -18,15 +18,15 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div
       css={css`
-        height: ${cssClamp([32, 'mobile'], [69.5, 'tablet'])};
-        left: calc(50% - 50vw + 6.25rem);
+        height: ${cssClamp([32, 'mobile'], [40.438, 'tablet'])};
         position: absolute;
+        right: calc(50% - 50vw - 14.25rem);
         top: ${imageTopCalc};
         width: ${cssClamp([32, 'mobile'], [40.438, 'tablet'])};
         ${atMinTablet} {
           height: ${largeImageHeightCalc};
-          left: max(-10rem, calc(50% - 50vw + 6.53rem));
-          width: ${cssClamp([69.5, 'tablet'], [69.5, 'desktop'])};
+          right: calc(50% - 50vw - 28rem);
+          width: ${cssClamp([69.5, 'tablet'], [69.5, 'xxl'])};
         }
         ${atMinXXL} {
           left: calc(50% - 13vw);
