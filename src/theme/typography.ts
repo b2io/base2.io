@@ -10,7 +10,7 @@ export const linkVariants = {
       content: '""',
       display: 'block',
       height: '0.125rem',
-      marginTop: spacing.xxs,
+      marginTop: spacing.xxxs,
       width: '100%',
     },
     ':hover': {
