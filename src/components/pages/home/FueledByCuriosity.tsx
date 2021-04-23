@@ -9,7 +9,7 @@ import { ImageProps } from '~/types';
 
 const largeImageHeightCalc = cssClamp([69.5, 'tablet'], [50, 'desktop']);
 const imageTopCalc = cssClamp(
-  [2.95, 'mobile'],
+  [1.85, 'mobile'],
   [7, 'tablet'],
   [8.25, 'desktop'],
 );
@@ -19,10 +19,10 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
     <div
       css={css`
         height: ${cssClamp([32, 'mobile'], [69.5, 'tablet'])};
-        left: calc(50% - 50vw - 5.8545rem);
+        left: calc(50% - 50vw + 6.25rem);
         position: absolute;
         top: ${imageTopCalc};
-        width: ${cssClamp([17.5, 'mobile'], [40.438, 'tablet'])};
+        width: ${cssClamp([32, 'mobile'], [40.438, 'tablet'])};
         /* ${atMinTablet} {
           height: ${largeImageHeightCalc};
           left: max(-10rem, calc(50% - 50vw));
