@@ -29,7 +29,7 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
           width: ${cssClamp([69.5, 'tablet'], [69.5, 'xxl'])};
         }
         ${atMinXXL} {
-          left: calc(50% - 13vw);
+          left: calc(50% - 11.5rem);
         }
       `}
       {...props}
@@ -40,8 +40,12 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
 };
 
 const HeaderText = styled(Heading)`
-  margin-left: ${cssClamp([0, 'tablet'], [6.688, 'desktop'])};
+  /* margin-left: ${cssClamp([0, 'tablet'], [15.225, 'xxl'])}; */
   position: relative;
+
+  ${atMinXXL} {
+    margin-left: 15.225rem;
+  }
 
   .callout {
     display: block;
@@ -68,6 +72,17 @@ const Content = styled.div`
   }
   ${atMinDesktop} {
     margin-left: 7.5rem;
+  }
+  .heading {
+    margin-bottom: ${theme.spacing.sm};
+    max-width: 36.75rem;
+  }
+
+  .tagline {
+    margin: 0 0 0.125rem;
+    ${atMinDesktop} {
+      margin-bottom: ${theme.spacing.xxs};
+    }
   }
 `;
 
