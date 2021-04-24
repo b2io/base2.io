@@ -55,8 +55,11 @@ const HeaderText = styled(Heading)`
 
   .callout {
     display: block;
-    left: ${cssClamp([2.813, 'mobile'], [5, 'tablet'], [8.375, 'desktop'])};
+    left: 2rem;
     position: relative;
+    ${atMinTablet} {
+      left: 2rem;
+    }
   }
 
   .large-text {
