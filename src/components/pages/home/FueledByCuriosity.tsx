@@ -8,11 +8,13 @@ import theme, { atMinDesktop, atMinTablet, atMinXXL, cssClamp } from '~/theme';
 import { ImageProps } from '~/types';
 
 const largeImageHeightCalc = cssClamp([69.5, 'tablet'], [69.5, 'desktop']);
+// TODO: update this!!!!
 const imageTopCalc = cssClamp(
   [1.85, 'mobile'],
   [7, 'tablet'],
   [8.25, 'desktop'],
 );
+// TODO: update this!!!!
 
 const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
@@ -64,26 +66,19 @@ const HeaderText = styled(Heading)`
 `;
 
 const Content = styled.div`
-  margin-left: ${cssClamp([1.688, 'mobile'], [11.563, 'tablet'])};
+  margin-left: 1.74375rem;
   margin-top: 6.75rem;
+  max-width: 52rem;
   position: relative;
   ${atMinTablet} {
+    margin-left: ${cssClamp([0, 'tablet'], [7.6125, 'desktop'])};
+    /* TODO: use clamp for margin-top  */
     margin-top: 9.25rem;
+    /* TODO: use clamp for margin-top  */
   }
-  ${atMinDesktop} {
-    margin-left: 7.5rem;
-  }
-  .heading {
-    margin-bottom: ${theme.spacing.sm};
-    max-width: 36.75rem;
-  }
-
-  .tagline {
-    margin: 0 0 0.125rem;
-    ${atMinDesktop} {
-      margin-bottom: ${theme.spacing.xxs};
-    }
-  }
+  /* ${atMinDesktop} {
+    margin-left: 7.6125rem;
+  } */
 `;
 
 export const FueledByCuriosity: FC = () => {
@@ -109,29 +104,20 @@ export const FueledByCuriosity: FC = () => {
         <span className="large-text">curiosity.</span>
       </HeaderText>
       <Content>
-        <div
+        <Text variant="h2">
+          We’re thoughtful, passionate, and we never settle for “good enough.”
+          Undeterred by novel problems, our team tackles each one with tenacity,
+          creativity, and excitement.
+        </Text>
+        <Link
           css={css`
-            max-width: 29.125rem;
-            ${atMinDesktop} {
-              margin-left: 9rem;
-            }
+            margin-top: ${theme.spacing.lg};
           `}
+          href="/culture"
+          variant="CTA"
         >
-          <Text variant="h2">
-            We’re thoughtful, passionate, and we never settle for “good enough.”
-            Undeterred by novel problems, our team tackles each one with
-            tenacity, creativity, and excitement.
-          </Text>
-          <Link
-            css={css`
-              margin-top: ${theme.spacing.lg};
-            `}
-            href="/culture"
-            variant="CTA"
-          >
-            See our culture
-          </Link>
-        </div>
+          See our culture
+        </Link>
       </Content>
     </section>
   );
