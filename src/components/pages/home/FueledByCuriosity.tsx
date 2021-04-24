@@ -7,7 +7,9 @@ import { Heading, Link, Text } from '~/components';
 import theme, { atMinDesktop, atMinTablet, atMinXXL, cssClamp } from '~/theme';
 import { ImageProps } from '~/types';
 
+// TODO this is redundant!!
 const largeImageHeightCalc = cssClamp([69.5, 'tablet'], [69.5, 'desktop']);
+// TODO this is redundant!!
 // TODO: update this!!!!
 const imageTopCalc = cssClamp(
   [1.85, 'mobile'],
@@ -28,7 +30,9 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
         ${atMinTablet} {
           height: ${largeImageHeightCalc};
           right: calc(50% - 50vw - 28rem);
+          /* TODO: should width just be largeImageHeightCalc? */
           width: ${cssClamp([69.5, 'tablet'], [69.5, 'xxl'])};
+          /* TODO: should width just be largeImageHeightCalc? */
         }
         ${atMinXXL} {
           left: calc(50% - 11.5rem);
