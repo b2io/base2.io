@@ -8,15 +8,11 @@ import theme, { atMinDesktop, atMinTablet, atMinXXL, cssClamp } from '~/theme';
 import { ImageProps } from '~/types';
 
 // TODO this is redundant!!
-const largeImageHeightCalc = cssClamp([69.5, 'tablet'], [69.5, 'desktop']);
+const largeImageHeightCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
 // TODO this is redundant!!
-// TODO: update this!!!!
-const imageTopCalc = cssClamp(
-  [1.85, 'mobile'],
-  [7, 'tablet'],
-  [8.25, 'desktop'],
-);
-// TODO: update this!!!!
+// TODO: update this or just get rid of it. can't use calc to go smaller!!!!
+const imageTopCalc = cssClamp([1.85, 'mobile'], [0, 'tablet']);
+// TODO: update this or just get rid of it. can't use calc to go smaller!!!!
 
 const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
