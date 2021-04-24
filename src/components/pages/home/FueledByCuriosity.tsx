@@ -58,7 +58,7 @@ const HeaderText = styled(Heading)`
     left: 2rem;
     position: relative;
     ${atMinTablet} {
-      left: 2rem;
+      left: ${cssClamp([1.75, 'tablet'], [8.25, 'xl'])};
     }
   }
 
