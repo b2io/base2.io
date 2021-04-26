@@ -10,6 +10,8 @@ const GUTTER_SHIFT = '1.375rem';
 
 const TextContainer = styled.div`
   margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'tablet'], [7.6125, 'xl'])};
+  position: relative;
+  z-index: 1;
   ${atMinXL} {
     margin-top: 22rem;
     order: 2;
@@ -81,12 +83,7 @@ export const FeaturedCaseStudy: FC = () => {
         }
       `}
     >
-      <TextContainer
-        css={css`
-          position: relative;
-          z-index: 99;
-        `}
-      >
+      <TextContainer>
         <Heading
           as="h2"
           color="coral"
