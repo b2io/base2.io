@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinMobile, atMinTablet, atMinXL, cssClamp } from '~/theme';
+import theme, { atMinTablet, atMinXL, cssClamp } from '~/theme';
 import { ImageProps } from '~/types';
 
 const imageDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
@@ -56,16 +56,11 @@ const HeaderText = styled(Heading)`
 
 const Content = styled.div`
   margin-left: 1.74375rem;
-  /* margin-top: 6.75rem; */
   margin-top: ${cssClamp([6.75, 'mobile'], [19, 'tablet'])};
   max-width: 52rem;
   position: relative;
-  /* TODO: this could be redone */
-  /* ${atMinMobile} {
-    margin-top: ${cssClamp([6.75, 'mobile'], [19, 'tablet'])};
-  } */
   ${atMinTablet} {
-    margin-left: ${cssClamp([0, 'tablet'], [7.6125, 'desktop'])};
+    margin-left: ${cssClamp([0, 'tablet'], [7.6125, 'xl'])};
   }
 `;
 
