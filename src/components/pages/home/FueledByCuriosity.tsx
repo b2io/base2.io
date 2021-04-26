@@ -56,12 +56,14 @@ const HeaderText = styled(Heading)`
 
 const Content = styled.div`
   margin-left: 1.74375rem;
-  margin-top: 6.75rem;
+  /* margin-top: 6.75rem; */
+  margin-top: ${cssClamp([6.75, 'mobile'], [19, 'tablet'])};
   max-width: 52rem;
   position: relative;
-  ${atMinMobile} {
+  /* TODO: this could be redone */
+  /* ${atMinMobile} {
     margin-top: ${cssClamp([6.75, 'mobile'], [19, 'tablet'])};
-  }
+  } */
   ${atMinTablet} {
     margin-left: ${cssClamp([0, 'tablet'], [7.6125, 'desktop'])};
   }
