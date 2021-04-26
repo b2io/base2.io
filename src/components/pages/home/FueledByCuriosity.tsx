@@ -68,11 +68,6 @@ export const FueledByCuriosity: FC = () => {
   return (
     <section
       css={css`
-        /* DELETE THESE !!!!!! */
-        margin-bottom: 20rem;
-        margin-top: 20rem;
-        /* DELETE THESE !!!!!! */
-        /* TODO: update this min-height */
         min-height: calc(${imageTopCalc} + ${imageDimensionsCalc});
         position: relative;
       `}
