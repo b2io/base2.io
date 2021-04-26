@@ -4,34 +4,23 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinDesktop, atMinTablet, atMinXXL, cssClamp } from '~/theme';
+import theme, { atMinMobile, atMinTablet, atMinXL, cssClamp } from '~/theme';
 import { ImageProps } from '~/types';
 
-// TODO this is redundant!!
-const largeImageHeightCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
-// TODO this is redundant!!
-// TODO: update this or just get rid of it. can't use calc to go smaller!!!!
+const imageDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
 const imageTopCalc = cssClamp([1.85, 'mobile'], [0, 'tablet']);
-// TODO: update this or just get rid of it. can't use calc to go smaller!!!!
 
 const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div
       css={css`
-        height: ${cssClamp([32, 'mobile'], [40.438, 'tablet'])};
+        height: ${imageDimensionsCalc};
         position: absolute;
-        right: calc(50% - 50vw - 14.25rem);
+        right: calc(77.5% - ${imageDimensionsCalc});
         top: ${imageTopCalc};
-        width: ${cssClamp([32, 'mobile'], [40.438, 'tablet'])};
-        ${atMinTablet} {
-          height: ${largeImageHeightCalc};
-          right: calc(50% - 50vw - 28rem);
-          /* TODO: should width just be largeImageHeightCalc? */
-          width: ${cssClamp([69.5, 'tablet'], [69.5, 'xxl'])};
-          /* TODO: should width just be largeImageHeightCalc? */
-        }
-        ${atMinXXL} {
-          left: calc(50% - 11.5rem);
+        width: ${imageDimensionsCalc};
+        ${atMinXL} {
+          right: -22rem;
         }
       `}
       {...props}
@@ -42,12 +31,9 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
 };
 
 const HeaderText = styled(Heading)`
-  /* margin-left: ${cssClamp([0, 'tablet'], [15.225, 'xxl'])}; */
+  margin-left: ${cssClamp([0, 'xl'], [15.225, 'xxl'])};
   position: relative;
-
-  ${atMinXXL} {
-    margin-left: 15.225rem;
-  }
+  top: ${cssClamp([0, 'mobile'], [9, 'tablet'])};
 
   .callout {
     display: block;
@@ -73,15 +59,12 @@ const Content = styled.div`
   margin-top: 6.75rem;
   max-width: 52rem;
   position: relative;
+  ${atMinMobile} {
+    margin-top: ${cssClamp([6.75, 'mobile'], [19, 'tablet'])};
+  }
   ${atMinTablet} {
     margin-left: ${cssClamp([0, 'tablet'], [7.6125, 'desktop'])};
-    /* TODO: use clamp for margin-top  */
-    margin-top: 9.25rem;
-    /* TODO: use clamp for margin-top  */
   }
-  /* ${atMinDesktop} {
-    margin-left: 7.6125rem;
-  } */
 `;
 
 export const FueledByCuriosity: FC = () => {
@@ -92,7 +75,8 @@ export const FueledByCuriosity: FC = () => {
         margin-bottom: 20rem;
         margin-top: 20rem;
         /* DELETE THESE !!!!!! */
-        min-height: calc(${imageTopCalc} + ${largeImageHeightCalc});
+        /* TODO: update this min-height */
+        min-height: calc(${imageTopCalc} + ${imageDimensionsCalc});
         position: relative;
       `}
     >
