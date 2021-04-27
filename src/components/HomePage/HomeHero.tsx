@@ -184,8 +184,8 @@ export const HomeHero: FC = () => {
       css={css`
         display: grid;
         gap: ${cssClamp([2, 'xs'], [1.5, 'lg'])};
-        padding: ${cssClamp([3, 'xs'], [10.5, 'lg'])}
-          ${cssClamp([1.5, 'xs'], [5.25, 'lg'])};
+        ${cssClamp([1.5, 'xs'], [5.25, 'lg'])};
+        padding: ${cssClamp([3, 'xs'], [10.5, 'lg'])};
         position: relative;
         text-align: center;
 
