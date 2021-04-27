@@ -10,7 +10,7 @@ export const linkVariants = {
       content: '""',
       display: 'block',
       height: '0.125rem',
-      marginTop: spacing.xxs,
+      marginTop: spacing.xxxs,
       width: '100%',
     },
     ':hover': {
@@ -19,6 +19,9 @@ export const linkVariants = {
       },
     },
     [atMinTablet]: {
+      '::after': {
+        marginTop: spacing.xxs,
+      },
       fontSize: '1.375rem',
       lineHeight: 'normal',
     },
