@@ -124,7 +124,12 @@ export const textVariants = {
       lineHeight: 0.74,
     },
     color: colors.text,
-    fontSize: cssClamp([5, 'mobile'], [10, 'tablet'], [15, 'lg']),
+    fontSize: cssClamp(
+      [4.25, 'smMobile'],
+      [5, 'mobile'],
+      [10, 'tablet'],
+      [15, 'lg'],
+    ),
     fontVariationSettings: '"wght" 900',
     letterSpacing: 'normal',
     lineHeight: 0.53,

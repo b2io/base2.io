@@ -1,12 +1,13 @@
 /* eslint-disable sort-keys */
 // NOTE: May want to eventually restrict to (screen) and customize for (print)
 
-export type Breakpoint = 0 | 375 | 576 | 768 | 992 | 1200 | 1400 | 1600;
+export type Breakpoint = 0 | 320 | 375 | 576 | 768 | 992 | 1200 | 1400 | 1600;
 
 export type BreakpointName = keyof typeof bp;
 
 export interface BreakpointMap {
   xs: Breakpoint;
+  smMobile: Breakpoint;
   mobile: Breakpoint;
   sm: Breakpoint;
   tablet: Breakpoint;
@@ -18,6 +19,7 @@ export interface BreakpointMap {
 
 export const bp: BreakpointMap = {
   xs: 0,
+  smMobile: 320,
   mobile: 375,
   sm: 576,
   tablet: 768,
