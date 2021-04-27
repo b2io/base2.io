@@ -75,7 +75,11 @@ export const textVariants = {
       lineHeight: 1.2,
     },
     color: colors.coral,
-    fontSize: cssClamp([1.063, 'mobile'], [3.125, 'tablet']),
+    fontSize: cssClamp(
+      [0.9035, 'smMobile'],
+      [1.063, 'mobile'],
+      [3.125, 'tablet'],
+    ),
     fontVariationSettings: '"wght" 750',
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
