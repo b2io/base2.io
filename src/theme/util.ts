@@ -1,3 +1,5 @@
+import { hsl, parseToHsl } from 'polished';
+
 import { bp, BreakpointName } from './breakpoints';
 
 type REM = number;
@@ -22,4 +24,39 @@ export const cssClamp = (...pairs: ClampPair[]): string => {
       : `${endValue}rem`;
 
   return `clamp(${minExpression}, ${valExpression}, ${maxExpression})`;
+};
+
+const lerp = (x: number, y: number, a: number): number => x * (1 - a) + y * a;
+
+export const interpolateColors = (
+  colors: string[],
+  steps: number,
+): string[] => {
+  return colors
+    .slice(0, -1)
+    .reduce<string[]>((result, color, colorIndex) => {
+      const nextColor = colors[colorIndex + 1];
+
+      const { hue: xH, lightness: xL, saturation: xS } = parseToHsl(color);
+      const { hue: yH, lightness: yL, saturation: yS } = parseToHsl(nextColor);
+
+      return [
+        ...result,
+        ...Array.from({ length: steps + 2 }, (_, stepIndex) => {
+          const step = stepIndex / (steps + 1);
+
+          // Don't include the trailing/leading color twice for colors with length >= 3.
+          if (step === 0 && colorIndex !== 0) {
+            return '';
+          }
+
+          return hsl({
+            hue: lerp(xH, yH, step),
+            lightness: lerp(xL, yL, step),
+            saturation: lerp(xS, yS, step),
+          });
+        }),
+      ];
+    }, [])
+    .filter(Boolean);
 };
