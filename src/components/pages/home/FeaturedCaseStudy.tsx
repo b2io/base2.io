@@ -21,13 +21,14 @@ const TextContainer = styled.div`
 `;
 // The gradient will overlap the "Built for Results" component, on desktop, until padding is added between each sections
 const Gradient = styled.div`
+  background: #2d2d78;
   background: linear-gradient(
     180deg,
-    rgba(6, 2, 29, 1) 0%,
-    rgb(222 56 86) 11%,
-    rgba(45, 45, 120, 1) 80%,
-    rgba(22, 21, 69, 1) 88%,
-    rgba(4, 0, 27, 1) 91%
+    #06021d 0%,
+    #de3856 11%,
+    #2d2d78 80%,
+    #161545 88%,
+    #04001b 91%
   );
   bottom: 0;
   height: 123%;
