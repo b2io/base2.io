@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 
-import Home from '~/components/pages/home';
+import { HomePage } from '~/components';
 
-const HomePage: NextPage = () => {
-  return <Home />;
+const HomeNextPage: NextPage = () => {
+  return <HomePage />;
 };
 
-export default HomePage;
+export default HomeNextPage;

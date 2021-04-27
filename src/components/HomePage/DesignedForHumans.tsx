@@ -135,5 +135,3 @@ export const DesignedForHumans: FC = () => {
     </section>
   );
 };
-
-export default DesignedForHumans;

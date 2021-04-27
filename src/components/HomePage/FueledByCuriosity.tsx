@@ -101,5 +101,3 @@ export const FueledByCuriosity: FC = () => {
     </section>
   );
 };
-
-export default FueledByCuriosity;
