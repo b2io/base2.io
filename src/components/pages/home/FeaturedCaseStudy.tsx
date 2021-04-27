@@ -19,7 +19,6 @@ const TextContainer = styled.div`
     width: calc(50% - ${GUTTER_SHIFT});
   }
 `;
-// The gradient will overlap the "Built for Results" component, on desktop, until padding is added between each sections
 const Gradient = styled.div`
   background: #2d2d78;
   background: linear-gradient(
@@ -42,7 +41,9 @@ const Gradient = styled.div`
     width: calc(100% + (2 * ${spacing.lg}));
   }
   ${atMinXL} {
+    height: 90%;
     left: max(-10rem, calc(50% - 50vw));
+    top: 0;
     width: 100%;
   }
 `;
@@ -50,8 +51,12 @@ const Gradient = styled.div`
 const ImagesContainer = styled.div`
   column-gap: ${spacing.xxs};
   columns: 2;
+
   ${atMinTablet} {
     column-gap: 2.875rem;
+  }
+  ${atMinXL} {
+    margin-top: 8rem;
   }
 `;
 
