@@ -68,6 +68,7 @@ export const FueledByCuriosity: FC = () => {
   return (
     <section
       css={css`
+        min-height: calc(${imageTopCalc} + ${imageDimensionsCalc});
         position: relative;
       `}
     >
