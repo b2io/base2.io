@@ -75,7 +75,11 @@ export const textVariants = {
       lineHeight: 1.2,
     },
     color: colors.coral,
-    fontSize: cssClamp([1.063, 'mobile'], [3.125, 'tablet']),
+    fontSize: cssClamp(
+      [0.9035, 'smMobile'],
+      [1.063, 'mobile'],
+      [3.125, 'tablet'],
+    ),
     fontVariationSettings: '"wght" 750',
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
@@ -124,12 +128,18 @@ export const textVariants = {
       lineHeight: 0.74,
     },
     color: colors.text,
-    fontSize: cssClamp([5, 'mobile'], [10, 'tablet'], [15, 'lg']),
+    fontSize: cssClamp(
+      [4.25, 'smMobile'],
+      [5, 'mobile'],
+      [10, 'tablet'],
+      [15, 'lg'],
+    ),
     fontVariationSettings: '"wght" 900',
     letterSpacing: 'normal',
     lineHeight: 0.53,
     margin: 0,
     padding: 0,
+    textShadow: `${spacing.xxxs} ${spacing.xxxs} 0.375rem ${colors.darkBlue}`,
   },
 };
 
