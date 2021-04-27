@@ -1,10 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
+import { spacing } from '~/theme/spacing';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinSm, atMinTablet, atMinXL, cssClamp } from '~/theme';
+import { atMinSm, atMinTablet, atMinXL, cssClamp } from '~/theme';
 
 const GUTTER_SHIFT = '1.375rem';
 
@@ -30,14 +31,14 @@ const Gradient = styled.div`
   );
   bottom: 0;
   height: 123%;
-  left: -1.5rem;
+  left: -${spacing.sm};
   position: absolute;
   top: -4rem;
-  width: calc(100% + (2 * 1.5rem));
+  width: calc(100% + (2 * ${spacing.sm}));
   ${atMinTablet} {
     left: -2.5rem;
     top: -10rem;
-    width: calc(100% + (2 * 2.5rem));
+    width: calc(100% + (2 * ${spacing.lg}));
   }
   ${atMinXL} {
     left: max(-10rem, calc(50% - 50vw));
@@ -46,7 +47,7 @@ const Gradient = styled.div`
 `;
 
 const ImagesContainer = styled.div`
-  column-gap: ${theme.spacing.xxs};
+  column-gap: ${spacing.xxs};
   columns: 2;
   ${atMinTablet} {
     column-gap: 2.875rem;
@@ -88,7 +89,7 @@ export const FeaturedCaseStudy: FC = () => {
           as="h2"
           color="coral"
           css={css`
-            margin-bottom: ${theme.spacing.xxs};
+            margin-bottom: ${spacing.xxs};
           `}
           variant="body"
         >
@@ -97,7 +98,7 @@ export const FeaturedCaseStudy: FC = () => {
         <Heading
           as="h3"
           css={css`
-            margin-bottom: ${theme.spacing.sm};
+            margin-bottom: ${spacing.sm};
           `}
           variant="h2"
         >
@@ -120,13 +121,13 @@ export const FeaturedCaseStudy: FC = () => {
         </Text>
         <Link
           css={css`
-            margin-bottom: ${theme.spacing.lg};
-            margin-top: ${theme.spacing.lg};
+            margin-bottom: ${spacing.lg};
+            margin-top: ${spacing.lg};
             &::after {
               margin-top: 0.25rem;
             }
             ${atMinTablet} {
-              margin-bottom: ${theme.spacing.xxl2};
+              margin-bottom: ${spacing.xxl2};
               margin-top: 3rem;
             }
           `}
@@ -149,7 +150,7 @@ export const FeaturedCaseStudy: FC = () => {
           <ResponsiveImage
             alt="paint a photo"
             css={css`
-              padding-bottom: ${theme.spacing.xs};
+              padding-bottom: ${spacing.xs};
               ${atMinTablet} {
                 padding-bottom: 2.875rem;
               }
@@ -163,7 +164,7 @@ export const FeaturedCaseStudy: FC = () => {
           <ResponsiveImage
             alt="living room and kitchen with sofa"
             css={css`
-              padding-bottom: ${theme.spacing.xs};
+              padding-bottom: ${spacing.xs};
               padding-top: 100%;
               ${atMinTablet} {
                 padding-bottom: 2.875rem;
