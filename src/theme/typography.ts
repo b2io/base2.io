@@ -139,7 +139,6 @@ export const textVariants = {
     lineHeight: 0.53,
     margin: 0,
     padding: 0,
-    // textShadow: '0.25rem 0.25rem 0.375rem #05001e',
     textShadow: `${spacing.xxxs} ${spacing.xxxs} 0.375rem ${colors.darkBlue}`,
   },
 };
