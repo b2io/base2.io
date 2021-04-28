@@ -179,19 +179,13 @@ export const HomeHero: FC = () => {
     );
   });
 
-  const calculatedPaddingTopBottom = cssClamp([3, 'xs'], [10.5, 'lg']);
-  const calculatedPaddingRightLeft = cssClamp(
-    [0, 'xs'],
-    [1, 'smMobile'],
-    [10.5, 'lg'],
-  );
-
   return (
     <div
       css={css`
         display: grid;
         gap: ${cssClamp([2, 'xs'], [1.5, 'lg'])};
-        padding: ${calculatedPaddingTopBottom} ${calculatedPaddingRightLeft};
+        padding: ${cssClamp([3, 'xs'], [10.5, 'lg'])}
+          ${cssClamp([0, 'xs'], [1, 'smMobile'], [10.5, 'lg'])};
         position: relative;
         text-align: center;
 
