@@ -186,7 +186,7 @@ export const HomeHero: FC = () => {
         gap: ${cssClamp([2, 'xs'], [1.5, 'lg'])};
         padding: ${cssClamp([3, 'xs'], [10.5, 'lg'])}
           // ignore vscode-styled-components error
-          ${cssClamp([0, 'xs'], [1, 'smMobile'], [10.5, 'lg'])};
+          ${cssClamp([0, 'xs'], [1, 'smMobile'], [5.25, 'lg'])};
         position: relative;
         text-align: center;
 
