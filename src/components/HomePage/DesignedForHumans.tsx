@@ -90,9 +90,9 @@ export const DesignedForHumans: FC = () => {
     <>
       <PageHero
         alt="person staring at computer"
-        src="https://www.capitalgazette.com/resizer/xNi2MRnZ2TD2h4tTAurCki8ftos=/1200x0/top/cloudfront-us-east-1.images.arcpublishing.com/tronc/CIUOAA7G3BG77G6WYRRR3SRJJU.jpg"
+        src="/home/humans.jpg"
         text="People motivate what we do and how we do it"
-      ></PageHero>
+      />
       {/* TODO: DELETE */}
       <section
         css={css`
