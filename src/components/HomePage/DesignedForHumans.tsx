@@ -88,7 +88,7 @@ export const DesignedForHumans: FC = () => {
   return (
     // TODO: DELETE
     <>
-      <PageHero text="balls"></PageHero>
+      <PageHero text="People motivate what we do and how we do it"></PageHero>
       {/* TODO: DELETE */}
       <section
         css={css`

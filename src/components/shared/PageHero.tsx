@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { Heading } from '~/components';
 
 // TODO: move this to types folder
 type PageHeroProps = {
@@ -8,7 +9,7 @@ type PageHeroProps = {
 export const PageHero: FC<PageHeroProps> = ({ text }) => {
   return (
     <section>
-      <div>{text}</div>
+      <Heading as="h1">{text}</Heading>
     </section>
   );
 };
