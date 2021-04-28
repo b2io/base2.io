@@ -19,6 +19,7 @@ const TextContainer = styled.div`
     width: calc(50% - ${GUTTER_SHIFT});
   }
 `;
+
 const Gradient = styled.div`
   background: #2d2d78;
   background: linear-gradient(
@@ -30,18 +31,19 @@ const Gradient = styled.div`
     #04001b 91%
   );
   bottom: 0;
-  height: 123%;
+  height: calc(100% + 15rem);
   left: -${spacing.sm};
   position: absolute;
   top: -4rem;
   width: calc(100% + (2 * ${spacing.sm}));
   ${atMinTablet} {
+    height: calc(100% + 25rem);
     left: -2.5rem;
     top: -10rem;
     width: calc(100% + (2 * ${spacing.lg}));
   }
   ${atMinXL} {
-    height: 90%;
+    height: calc(100% - 8rem);
     left: max(-10rem, calc(50% - 50vw));
     top: 0;
     width: 100%;
@@ -51,11 +53,14 @@ const Gradient = styled.div`
 const ImagesContainer = styled.div`
   column-gap: ${spacing.xxs};
   columns: 2;
+  margin-bottom: 11rem;
 
   ${atMinTablet} {
     column-gap: 2.875rem;
+    margin-bottom: 15rem;
   }
   ${atMinXL} {
+    margin-bottom: 0%;
     margin-top: 8rem;
   }
 `;
