@@ -7,10 +7,6 @@ import { Heading, Link, Text } from '~/components';
 import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
 import { ImageProps } from '~/types';
 
-// TODO: DELETE
-import { PageHero } from '~/components/shared';
-// TODO: DELETE
-
 const largeImageHeightCalc = cssClamp([26.625, 'tablet'], [50, 'desktop']);
 const imageTopCalc = cssClamp(
   [2.95, 'mobile'],
@@ -86,67 +82,56 @@ const Content = styled.div`
 
 export const DesignedForHumans: FC = () => {
   return (
-    // TODO: DELETE
-    <>
-      <PageHero
-        alt="person staring at computer"
-        src="/shared/approach-hero.jpg"
-        text="People motivate what we do and how we do it"
-      />
-      {/* TODO: DELETE */}
-      <section
-        css={css`
-          min-height: calc(${imageTopCalc} + ${largeImageHeightCalc});
-          position: relative;
-        `}
-      >
-        <Image alt="woman looking at phone" src="/home/humans.jpg" />
-        <HeaderText as="h2" variant="hero">
-          <Text className="callout" as="span" variant="callout">
-            Designed for
-          </Text>
-          <span className="large-text">humans.</span>
-        </HeaderText>
-        <Content>
-          <Text className="tagline">Passionate. Tenacious. Enthusiastic.</Text>
+    <section
+      css={css`
+        min-height: calc(${imageTopCalc} + ${largeImageHeightCalc});
+        position: relative;
+      `}
+    >
+      <Image alt="woman looking at phone" src="/home/humans.jpg" />
+      <HeaderText as="h2" variant="hero">
+        <Text className="callout" as="span" variant="callout">
+          Designed for
+        </Text>
+        <span className="large-text">humans.</span>
+      </HeaderText>
+      <Content>
+        <Text className="tagline">Passionate. Tenacious. Enthusiastic.</Text>
+        <div
+          css={css`
+            ${atMinDesktop} {
+              display: flex;
+            }
+          `}
+        >
+          <Heading as="h3" className="header" variant="h2">
+            The best software starts with a human touch.
+          </Heading>
           <div
             css={css`
+              max-width: 29.125rem;
               ${atMinDesktop} {
-                display: flex;
+                margin-left: 9rem;
               }
             `}
           >
-            <Heading as="h3" className="header" variant="h2">
-              The best software starts with a human touch.
-            </Heading>
-            <div
+            <Text variant="h3">
+              We build software that helps real people solve real problems with
+              greater ease through a flexible approach that prioritizes you and
+              your end-user.
+            </Text>
+            <Link
               css={css`
-                max-width: 29.125rem;
-                ${atMinDesktop} {
-                  margin-left: 9rem;
-                }
+                margin-top: ${theme.spacing.lg};
               `}
+              href="/approach"
+              variant="CTA"
             >
-              <Text variant="h3">
-                We build software that helps real people solve real problems
-                with greater ease through a flexible approach that prioritizes
-                you and your end-user.
-              </Text>
-              <Link
-                css={css`
-                  margin-top: ${theme.spacing.lg};
-                `}
-                href="/approach"
-                variant="CTA"
-              >
-                See our approach
-              </Link>
-            </div>
+              See our approach
+            </Link>
           </div>
-        </Content>
-      </section>
-      {/* TODO: DELETE */}
-    </>
-    // TODO: DELETE
+        </div>
+      </Content>
+    </section>
   );
 };
