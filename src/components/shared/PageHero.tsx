@@ -1,5 +1,14 @@
 import { FC } from 'react';
 
-export const PageHero: FC = () => {
-  return <div>hello from page hero</div>;
+// TODO: move this to types folder
+type PageHeroProps = {
+  text: string;
+};
+
+export const PageHero: FC<PageHeroProps> = ({ text }) => {
+  return (
+    <section>
+      <div>{text}</div>
+    </section>
+  );
 };
