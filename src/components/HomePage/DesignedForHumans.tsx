@@ -90,7 +90,7 @@ export const DesignedForHumans: FC = () => {
     <>
       <PageHero
         alt="person staring at computer"
-        src="/home/humans.jpg"
+        src="/shared/approach-hero.jpg"
         text="People motivate what we do and how we do it"
       />
       {/* TODO: DELETE */}
