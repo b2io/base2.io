@@ -14,7 +14,7 @@ export const HomePage: FC = () => {
     <Layout>
       <PageHero
         alt="person staring at computer"
-        src="/shared/culture-hero.jpg"
+        src="/shared/approach-hero.jpg"
         text="People motivate what we do and how we do it"
       />
       {/* <HomeHero />

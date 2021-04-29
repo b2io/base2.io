@@ -44,9 +44,9 @@ const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
 export const PageHero: FC<PageHeroProps> = ({ alt, text, src }) => {
   return (
     <section>
+      <Image alt={alt} src={src} />
       <Heading as="h1">{text}</Heading>
       {/* <img src={src} alt={alt} /> */}
-      <Image alt={alt} src={src} />
     </section>
   );
 };
