@@ -39,7 +39,6 @@ import { Heading } from '~/components';
 // TODO: move this to types folder
 type HeroImageProps = {
   alt: string;
-  src: string;
   srcSet: string;
 };
 
@@ -47,16 +46,20 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
-const Image: FC<HeroImageProps> = ({ alt, src, srcSet }) => {
-  return <img src={src} srcSet={srcSet} alt={alt} />;
+const Image: FC<HeroImageProps> = ({ alt, srcSet }) => {
+  return (
+    <picture>
+      <source srcSet={srcSet} />
+      <img alt={alt} />
+    </picture>
+  );
 };
 
-export const PageHero: FC<PageHeroProps> = ({ alt, text, src, srcSet }) => {
+export const PageHero: FC<PageHeroProps> = ({ alt, text, srcSet }) => {
   return (
     <section>
-      <Image alt={alt} src={src} srcSet={srcSet} />
+      <Image alt={alt} srcSet={srcSet} />
       <Heading as="h1">{text}</Heading>
-      {/* <img src={src} alt={alt} /> */}
     </section>
   );
 };
