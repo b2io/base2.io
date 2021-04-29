@@ -7,31 +7,39 @@ import { Layout } from '~/components';
 import { FueledByCuriosity } from './FueledByCuriosity';
 // import { HomeHero } from './HomeHero';
 
-// import { PageHero } from '~/components/shared';
+import { PageHero } from '~/components/shared';
+
+const data = [
+  {
+    index: 1,
+    media: '(min-width: 1920px)',
+    srcSet: '/shared/approach-hero-1920.jpg',
+  },
+  {
+    index: 2,
+    media: '(min-width: 1600px)',
+    srcSet: '/shared/approach-hero-1600.jpg',
+  },
+  {
+    index: 3,
+    media: '(min-width: 768px)',
+    srcSet: '/shared/approach-hero-768.jpg',
+  },
+  {
+    index: 4,
+    media: '(min-width: 0px)',
+    srcSet: '/shared/approach-hero-375.jpg',
+  },
+];
 
 export const HomePage: FC = () => {
   return (
     <Layout>
-      {/* <PageHero
+      <PageHero
         alt="person staring at computer"
-        srcSet="/shared/approach-hero-375.jpeg"
+        data={data}
         text="People motivate what we do and how we do it"
-      /> */}
-      <picture>
-        <source
-          media="(min-width: 1920px)"
-          srcSet="/shared/approach-hero-1920.jpg"
-        />
-        <source
-          media="(min-width: 1600px)"
-          srcSet="/shared/approach-hero-1600.jpg"
-        />
-        <source
-          media="(min-width: 768px)"
-          srcSet="/shared/approach-hero-768.jpg"
-        />
-        <img src="/shared/approach-hero-375.jpg" alt="Flowers" />
-      </picture>
+      />
       {/* <HomeHero />
       <DesignedForHumans />
       <BuiltForResults />
