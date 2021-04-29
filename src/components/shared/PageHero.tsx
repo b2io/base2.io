@@ -4,7 +4,7 @@ import { Heading } from '~/components';
 // TODO: move this to types folder
 type HeroImageProps = {
   alt: string;
-  data: Array<{ media: string; srcSet: string; index: number }>;
+  data: Array<{ media: string; srcSet: string }>;
 };
 
 type PageHeroProps = HeroImageProps & {
@@ -12,8 +12,8 @@ type PageHeroProps = HeroImageProps & {
 };
 
 const Image: FC<HeroImageProps> = ({ alt, data }) => {
-  const sourceTag = data.map((item) => (
-    <source media={item.media} srcSet={item.srcSet} key={item.index} />
+  const sourceTag = data.map((item, index) => (
+    <source media={item.media} srcSet={item.srcSet} key={index} />
   ));
   return (
     <picture>

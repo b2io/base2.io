@@ -11,22 +11,18 @@ import { PageHero } from '~/components/shared';
 
 const data = [
   {
-    index: 1,
     media: '(min-width: 1920px)',
     srcSet: '/shared/approach-hero-1920.jpg',
   },
   {
-    index: 2,
     media: '(min-width: 1600px)',
     srcSet: '/shared/approach-hero-1600.jpg',
   },
   {
-    index: 3,
     media: '(min-width: 768px)',
     srcSet: '/shared/approach-hero-768.jpg',
   },
   {
-    index: 4,
     media: '(min-width: 0px)',
     srcSet: '/shared/approach-hero-375.jpg',
   },
