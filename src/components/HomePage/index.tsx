@@ -9,7 +9,9 @@ import { FueledByCuriosity } from './FueledByCuriosity';
 
 import { PageHero } from '~/components/shared';
 
-const data = [
+// import { bp } from '~/theme/breakpoints';
+
+const heroImageData = [
   {
     media: '(min-width: 1920px)',
     srcSet: '/shared/approach-hero-1920.jpg',
@@ -33,7 +35,7 @@ export const HomePage: FC = () => {
     <Layout>
       <PageHero
         alt="person staring at computer"
-        data={data}
+        data={heroImageData}
         text="People motivate what we do and how we do it"
       />
       {/* <HomeHero />
