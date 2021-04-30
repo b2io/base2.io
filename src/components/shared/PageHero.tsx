@@ -8,6 +8,7 @@ type HeroImageProps = {
   imgSource: Array<{ srcSet: string }>;
 };
 
+// TODO: move this to types folder
 type PageHeroProps = HeroImageProps & {
   text: string;
 };
