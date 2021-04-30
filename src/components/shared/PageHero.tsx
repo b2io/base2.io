@@ -3,17 +3,9 @@ import { Heading } from '~/components';
 import { bp } from '~/theme/breakpoints';
 
 // TODO: move this to types folder
-type HeroImageSource = {
-  xs: string;
-  tablet: string;
-  xl: string;
-  desktop: string;
-};
-
-// TODO: move this to types folder
 type HeroImageProps = {
   alt: string;
-  imgSource: HeroImageSource;
+  imgSource: Array<{ srcSet: string }>;
 };
 
 // TODO: move this to types folder
@@ -21,9 +13,21 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
+let filteredBreakpoints: Array<number>;
+
 const Image: FC<HeroImageProps> = ({ alt, imgSource }) => {
-  const sourceTag = Object.entries(imgSource).map(([name, value]) => (
-    <source key={name} media={`(min-width: ${bp[name]}px)`} srcSet={value} />
+  filteredBreakpoints = Object.values(bp)
+    .filter(
+      (item) => item === 0 || item === 768 || item === 1200 || item === 1600,
+    )
+    .reverse();
+
+  const sourceTag = imgSource.map((item, index) => (
+    <source
+      key={index}
+      media={`(min-width: ${filteredBreakpoints[index]}px)`}
+      srcSet={item.srcSet}
+    />
   ));
   return (
     <picture>
