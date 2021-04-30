@@ -64,7 +64,11 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
       >
         <Container>{children}</Container>
       </motion.main>
-      <Footer />
+      <Footer
+        css={css`
+          margin-top: 8.536rem;
+        `}
+      />
     </Root>
   );
 };
