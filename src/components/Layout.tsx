@@ -8,6 +8,8 @@ import { Container } from './Container';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
+import { cssClamp } from '~/theme';
+
 const Root = styled.div`
   overflow: hidden;
 `;
@@ -54,7 +56,7 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
       <motion.main
         animate="enter"
         css={css`
-          margin-top: 9.125rem;
+          margin-top: ${cssClamp([3.125, 'mobile'], [19.125, 'desktop'])};
         `}
         exit="exit"
         initial="initial"

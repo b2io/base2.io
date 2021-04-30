@@ -64,13 +64,14 @@ const Content = styled.div`
   }
 `;
 
-export const FueledByCuriosity: FC = () => {
+export const FueledByCuriosity: FC = (props) => {
   return (
     <section
       css={css`
         min-height: calc(${imageTopCalc} + ${imageDimensionsCalc});
         position: relative;
       `}
+      {...props}
     >
       <Image
         alt="large abstract gradient circle"

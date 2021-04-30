@@ -126,6 +126,8 @@ export const Footer: FC = () => {
       as="footer"
       css={css`
         background-color: ${theme.colors.darkBlueAlt};
+        margin-top: 8.536rem;
+
         ${atMinTablet} {
           background-color: unset;
         }
