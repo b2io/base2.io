@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Heading } from '~/components';
-import { bp } from '~/theme/breakpoints';
+import { bp, BreakpointName } from '~/theme/breakpoints';
 
 // TODO: move this to types folder
 type HeroImageSource = {
@@ -22,12 +22,16 @@ type PageHeroProps = HeroImageProps & {
 };
 
 const Image: FC<HeroImageProps> = ({ alt, imgSource }) => {
-  const sourceTag = Object.entries(imgSource).map(([name, value]) => (
-    <source key={name} media={`(min-width: ${bp[name]}px)`} srcSet={value} />
-  ));
+  const sourceTags = Object.entries(imgSource).map((item) => {
+    const name = item[0] as BreakpointName;
+    const value = item[1];
+    return (
+      <source key={name} media={`(min-width: ${bp[name]}px)`} srcSet={value} />
+    );
+  });
   return (
     <picture>
-      {sourceTag}
+      {sourceTags}
       <img alt={alt} />
     </picture>
   );
