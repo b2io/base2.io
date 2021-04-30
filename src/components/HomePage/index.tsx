@@ -8,10 +8,10 @@ import { FueledByCuriosity } from './FueledByCuriosity';
 import { PageHero } from '~/components/shared';
 
 const imgSource = [
-  { srcSet: '/shared/approach-hero-xlarge.jpg' },
-  { srcSet: '/shared/approach-hero-large.jpg' },
-  { srcSet: '/shared/approach-hero-medium.jpg' },
-  { srcSet: '/shared/approach-hero-small.jpg' },
+  { desktop: '/shared/approach-hero-xlarge.jpg' },
+  { xl: '/shared/approach-hero-large.jpg' },
+  { tablet: '/shared/approach-hero-medium.jpg' },
+  { xs: '/shared/approach-hero-small.jpg' },
 ];
 
 export const HomePage: FC = () => {
