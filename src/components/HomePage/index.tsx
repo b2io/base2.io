@@ -7,23 +7,23 @@ import { FueledByCuriosity } from './FueledByCuriosity';
 // import { HomeHero } from './HomeHero';
 import { PageHero } from '~/components/shared';
 
-import { bp } from '~/theme/breakpoints';
+// import { bp } from '~/theme/breakpoints';
 
 const heroImageData = [
   {
-    media: `(min-width: ${bp.desktop}px)`,
+    // media: `(min-width: ${bp.desktop}px)`,
     srcSet: '/shared/approach-hero-1920.jpg',
   },
   {
-    media: `(min-width: ${bp.xl}px)`,
+    // media: `(min-width: ${bp.xl}px)`,
     srcSet: '/shared/approach-hero-1600.jpg',
   },
   {
-    media: `(min-width: ${bp.tablet}px)`,
+    // media: `(min-width: ${bp.tablet}px)`,
     srcSet: '/shared/approach-hero-768.jpg',
   },
   {
-    media: `(min-width: ${bp.xs}px)`,
+    // media: `(min-width: ${bp.xs}px)`,
     srcSet: '/shared/approach-hero-375.jpg',
   },
 ];

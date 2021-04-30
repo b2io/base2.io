@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Heading } from '~/components';
-// import { bp } from '~/theme/breakpoints';
+import { bp } from '~/theme/breakpoints';
 
 // TODO: move this to types folder
 type HeroImageProps = {
@@ -12,15 +12,22 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
-// const filteredBreakpoints = Object.values(bp).filter(
-//   (item) => item === 0 || item === 768 || item === 1200 || item === 1600,
-// );
+let filteredBreakpoints = [];
 
 const Image: FC<HeroImageProps> = ({ alt, data }) => {
   // console.log(filteredBreakpoints);
+  filteredBreakpoints = Object.values(bp)
+    .filter(
+      (item) => item === 0 || item === 768 || item === 1200 || item === 1600,
+    )
+    .reverse();
 
   const sourceTag = data.map((item, index) => (
-    <source key={index} media={item.media} srcSet={item.srcSet} />
+    <source
+      key={index}
+      media={`(min-width: ${filteredBreakpoints[index]}px)`}
+      srcSet={item.srcSet}
+    />
   ));
   return (
     <picture>
