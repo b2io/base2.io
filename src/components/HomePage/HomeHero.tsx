@@ -159,7 +159,7 @@ const STOP_COLORS = interpolateColors(
 
 const GRADIENT_CENTER_OFFSET = LINE_MIN_APEX_X / LINE_WIDTH;
 
-export const HomeHero: FC = () => {
+export const HomeHero: FC = (props) => {
   const [ref, { point }] = useMouseAnimation<HTMLDivElement>({
     damping: 10,
     stiffness: 75,
@@ -202,6 +202,7 @@ export const HomeHero: FC = () => {
         }
       `}
       ref={ref}
+      {...props}
     >
       <Heading as="h1">
         Software that{' '}
