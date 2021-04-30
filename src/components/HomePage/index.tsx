@@ -7,12 +7,12 @@ import { FueledByCuriosity } from './FueledByCuriosity';
 // import { HomeHero } from './HomeHero';
 import { PageHero } from '~/components/shared';
 
-const imgSource = [
-  { srcSet: '/shared/approach-hero-xlarge.jpg' },
-  { srcSet: '/shared/approach-hero-large.jpg' },
-  { srcSet: '/shared/approach-hero-medium.jpg' },
-  { srcSet: '/shared/approach-hero-small.jpg' },
-];
+const imgSource = {
+  desktop: '/shared/approach-hero-xlarge.jpg',
+  tablet: '/shared/approach-hero-medium.jpg',
+  xl: '/shared/approach-hero-large.jpg',
+  xs: '/shared/approach-hero-small.jpg',
+};
 
 export const HomePage: FC = () => {
   return (
