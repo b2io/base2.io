@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-    <g fill="none" fill-rule="evenodd">
-        <g>
-            <circle cx="30.857" cy="16.316" r="5.661" stroke="#5656B0" stroke-width="1.02"/>
-            <circle cx="16.334" cy="16.334" r="5.661" stroke="#5656B0" stroke-width="1.02"/>
-            <circle cx="16.334" cy="30.912" r="5.661" stroke="#5656B0" stroke-width="1.02"/>
-            <circle cx="30.857" cy="30.912" r="5.661" fill="#F63A52" fill-rule="nonzero"/>
-            <path stroke="#5656B0" stroke-dasharray="2.04" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.02" d="M23.599 47.197c13.023 0 23.58-10.557 23.58-23.58C47.18 10.594 36.622.037 23.6.037 10.576.037.019 10.594.019 23.617c0 13.023 10.557 23.58 23.58 23.58z"/>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><g fill="none" fill-rule="evenodd"><circle cx="30.9" cy="16.3" r="5.7" stroke="#5656B0"/><circle cx="16.3" cy="16.3" r="5.7" stroke="#5656B0"/><circle cx="16.3" cy="30.9" r="5.7" stroke="#5656B0"/><circle cx="30.9" cy="30.9" r="5.7" fill="#F63A52" fill-rule="nonzero"/><path stroke="#5656B0" stroke-dasharray="2" stroke-linecap="round" stroke-linejoin="round" d="M23.6 47.2a23.6 23.6 0 100-47.2 23.6 23.6 0 000 47.2z"/></g></svg>

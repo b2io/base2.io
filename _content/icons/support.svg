@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="57" viewBox="0 0 48 57">
-    <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g>
-            <path stroke="#F63A52" stroke-width="2" d="M26.714.566L22.486 4.874M26.714 9.182L22.486 4.874"/>
-            <path stroke="#5656B0" stroke-width="2" d="M22.486 56.049L26.714 51.742M22.486 47.434L26.714 51.742"/>
-            <path stroke="#5656B0" stroke-dasharray="5" stroke-width="2.2" d="M20.788 51.742C9.534 50.138 1.012 40.756.494 29.4-.024 18.044 7.609 7.926 18.67 5.305"/>
-            <path stroke="#F63A52" stroke-dasharray="5" stroke-width="2.2" d="M27.262 4.874c10.93 1.582 19.31 10.515 20.194 21.524.884 11.008-5.965 21.164-16.502 24.47"/>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="57"><g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path stroke="#F63A52" stroke-width="2" d="M26.7.6l-4.2 4.3m4.2 4.3l-4.2-4.3"/><path stroke="#5656B0" stroke-width="2" d="M22.5 56l4.2-4.3m-4.2-4.3l4.2 4.3"/><path stroke="#5656B0" stroke-dasharray="5" stroke-width="2.2" d="M20.8 51.7a23.7 23.7 0 01-2.1-46.4"/><path stroke="#F63A52" stroke-dasharray="5" stroke-width="2.2" d="M27.3 4.9a23.7 23.7 0 013.7 46"/></g></svg>

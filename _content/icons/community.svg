@@ -1,12 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="50" height="48" viewBox="0 0 50 48">
-    <g fill="none" fill-rule="evenodd">
-        <g stroke-width="2">
-            <path stroke="#F63A52" stroke-dasharray="5" stroke-linecap="round" d="M25.27 46.517c11.348 0 20.549-9.2 20.549-20.549 0-11.35-9.2-20.55-20.55-20.55-11.349 0-20.549 9.2-20.549 20.55 0 11.35 9.2 20.55 20.55 20.55z"/>
-            <circle cx="36.864" cy="43.056" r="4.933" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/>
-            <circle cx="11.883" cy="43.056" r="4.933" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/>
-            <circle cx="5.28" cy="18.656" r="4.933" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/>
-            <circle cx="44.853" cy="19.744" r="4.933" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/>
-            <circle cx="25.269" cy="4.944" r="4.933" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="48"><g stroke-width="2" fill="none" fill-rule="evenodd"><path stroke="#F63A52" stroke-dasharray="5" stroke-linecap="round" d="M25.3 46.5a20.5 20.5 0 100-41 20.5 20.5 0 000 41z"/><circle cx="36.9" cy="43.1" r="4.9" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/><circle cx="11.9" cy="43.1" r="4.9" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/><circle cx="5.3" cy="18.7" r="4.9" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/><circle cx="44.9" cy="19.7" r="4.9" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/><circle cx="25.3" cy="4.9" r="4.9" fill="#5656B0" fill-rule="nonzero" stroke="#5656B0"/></g></svg>
