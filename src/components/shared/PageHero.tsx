@@ -12,10 +12,9 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
-let filteredBreakpoints = [];
+let filteredBreakpoints: Array<number>;
 
 const Image: FC<HeroImageProps> = ({ alt, imgSource }) => {
-  // console.log(filteredBreakpoints);
   filteredBreakpoints = Object.values(bp)
     .filter(
       (item) => item === 0 || item === 768 || item === 1200 || item === 1600,

@@ -7,25 +7,11 @@ import { FueledByCuriosity } from './FueledByCuriosity';
 // import { HomeHero } from './HomeHero';
 import { PageHero } from '~/components/shared';
 
-// import { bp } from '~/theme/breakpoints';
-
 const imgSource = [
-  {
-    // media: `(min-width: ${bp.desktop}px)`,
-    srcSet: '/shared/approach-hero-xlarge.jpg',
-  },
-  {
-    // media: `(min-width: ${bp.xl}px)`,
-    srcSet: '/shared/approach-hero-large.jpg',
-  },
-  {
-    // media: `(min-width: ${bp.tablet}px)`,
-    srcSet: '/shared/approach-hero-medium.jpg',
-  },
-  {
-    // media: `(min-width: ${bp.xs}px)`,
-    srcSet: '/shared/approach-hero-small.jpg',
-  },
+  { srcSet: '/shared/approach-hero-xlarge.jpg' },
+  { srcSet: '/shared/approach-hero-large.jpg' },
+  { srcSet: '/shared/approach-hero-medium.jpg' },
+  { srcSet: '/shared/approach-hero-small.jpg' },
 ];
 
 export const HomePage: FC = () => {
