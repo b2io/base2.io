@@ -12,19 +12,19 @@ import { PageHero } from '~/components/shared';
 const heroImageData = [
   {
     // media: `(min-width: ${bp.desktop}px)`,
-    srcSet: '/shared/approach-hero-1920.jpg',
+    srcSet: '/shared/approach-hero-xlarge.jpg',
   },
   {
     // media: `(min-width: ${bp.xl}px)`,
-    srcSet: '/shared/approach-hero-1600.jpg',
+    srcSet: '/shared/approach-hero-large.jpg',
   },
   {
     // media: `(min-width: ${bp.tablet}px)`,
-    srcSet: '/shared/approach-hero-768.jpg',
+    srcSet: '/shared/approach-hero-medium.jpg',
   },
   {
     // media: `(min-width: ${bp.xs}px)`,
-    srcSet: '/shared/approach-hero-375.jpg',
+    srcSet: '/shared/approach-hero-small.jpg',
   },
 ];
 

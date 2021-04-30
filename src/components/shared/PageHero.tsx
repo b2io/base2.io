@@ -5,7 +5,7 @@ import { bp } from '~/theme/breakpoints';
 // TODO: move this to types folder
 type HeroImageProps = {
   alt: string;
-  data: Array<{ media: string; srcSet: string }>;
+  data: Array<{ srcSet: string }>;
 };
 
 type PageHeroProps = HeroImageProps & {
