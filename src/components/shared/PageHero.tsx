@@ -5,7 +5,7 @@ import { bp } from '~/theme/breakpoints';
 // TODO: move this to types folder
 type HeroImageProps = {
   alt: string;
-  data: Array<{ srcSet: string }>;
+  imgSource: Array<{ srcSet: string }>;
 };
 
 type PageHeroProps = HeroImageProps & {
@@ -14,7 +14,7 @@ type PageHeroProps = HeroImageProps & {
 
 let filteredBreakpoints = [];
 
-const Image: FC<HeroImageProps> = ({ alt, data }) => {
+const Image: FC<HeroImageProps> = ({ alt, imgSource }) => {
   // console.log(filteredBreakpoints);
   filteredBreakpoints = Object.values(bp)
     .filter(
@@ -22,7 +22,7 @@ const Image: FC<HeroImageProps> = ({ alt, data }) => {
     )
     .reverse();
 
-  const sourceTag = data.map((item, index) => (
+  const sourceTag = imgSource.map((item, index) => (
     <source
       key={index}
       media={`(min-width: ${filteredBreakpoints[index]}px)`}
@@ -37,10 +37,10 @@ const Image: FC<HeroImageProps> = ({ alt, data }) => {
   );
 };
 
-export const PageHero: FC<PageHeroProps> = ({ alt, data, text }) => {
+export const PageHero: FC<PageHeroProps> = ({ alt, imgSource, text }) => {
   return (
     <section>
-      <Image alt={alt} data={data} />
+      <Image alt={alt} imgSource={imgSource} />
       <Heading as="h1">{text}</Heading>
     </section>
   );

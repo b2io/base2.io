@@ -9,7 +9,7 @@ import { PageHero } from '~/components/shared';
 
 // import { bp } from '~/theme/breakpoints';
 
-const heroImageData = [
+const imgSource = [
   {
     // media: `(min-width: ${bp.desktop}px)`,
     srcSet: '/shared/approach-hero-xlarge.jpg',
@@ -33,7 +33,7 @@ export const HomePage: FC = () => {
     <Layout>
       <PageHero
         alt="person staring at computer"
-        data={heroImageData}
+        imgSource={imgSource}
         text="People motivate what we do and how we do it"
       />
       {/* <HomeHero />
