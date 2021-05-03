@@ -20,18 +20,21 @@ type PageHeroProps = HeroImageProps & {
 
 const Image: FC<HeroImageProps> = ({ alt, imgSource }) => {
   const sortedImgSourcesDescending = Object.entries(imgSource).sort(
-    ([breakpointNameA], [breakpointNameB]) => {
-      return bp[breakpointNameB] - bp[breakpointNameA];
+    ([breakpointA], [breakpointB]) => {
+      const valueA = breakpointA as BreakpointName;
+      const valueB = breakpointB as BreakpointName;
+      return bp[valueB] - bp[valueA];
     },
   );
 
   return (
     <picture>
       {sortedImgSourcesDescending.map(([breakpointName, imgSource]) => {
+        const breakpointValue = breakpointName as BreakpointName;
         return (
           <source
             key={breakpointName}
-            media={`(min-width: ${bp[breakpointName]}px)`}
+            media={`(min-width: ${bp[breakpointValue]}px)`}
             srcSet={imgSource}
           />
         );
