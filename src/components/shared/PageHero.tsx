@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { Heading } from '~/components';
 import { bp, BreakpointName } from '~/theme/breakpoints';
 
-// TODO: move this to types folder
 type HeroImageSource = {
   xs: string;
   tablet: string;
@@ -10,13 +9,11 @@ type HeroImageSource = {
   desktop: string;
 };
 
-// TODO: move this to types folder
 type HeroImageProps = {
   alt: string;
   imgSource: HeroImageSource;
 };
 
-// TODO: move this to types folder
 type PageHeroProps = HeroImageProps & {
   text: string;
 };
