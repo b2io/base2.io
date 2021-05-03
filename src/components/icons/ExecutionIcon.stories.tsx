@@ -2,11 +2,11 @@ import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
 import { ExecutionIcon } from '..';
-import { SvgProps } from '../types';
+import { SvgProps } from './types';
 
 export default {
   component: ExecutionIcon,
-  title: 'Icons/CustomIcons/ExecutionIcon',
+  title: 'Icons/ExecutionIcon',
 } as Meta;
 
 export const Execution: Story<SvgProps> = (args) => {

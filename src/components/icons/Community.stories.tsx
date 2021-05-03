@@ -6,7 +6,7 @@ import { SvgProps } from './types';
 
 export default {
   component: CommunityIcon,
-  title: 'Icons/CustomIcons/CommunityIcon',
+  title: 'Icons/CommunityIcon',
 } as Meta;
 
 export const Community: Story<SvgProps> = (args) => {

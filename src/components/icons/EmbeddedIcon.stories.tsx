@@ -2,11 +2,11 @@ import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
 import { EmbeddedIcon } from '..';
-import { SvgProps } from '../types';
+import { SvgProps } from './types';
 
 export default {
   component: EmbeddedIcon,
-  title: 'Icons/CustomIcons/EmbeddedIcon',
+  title: 'Icons/EmbeddedIcon',
 } as Meta;
 
 export const Embedded: Story<SvgProps> = (args) => {

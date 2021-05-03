@@ -2,11 +2,11 @@ import { Meta, Story } from '@storybook/react';
 import React from 'react';
 
 import { SupportIcon } from '..';
-import { SvgProps } from '../types';
+import { SvgProps } from './types';
 
 export default {
   component: SupportIcon,
-  title: 'Icons/CustomIcons/SupportIcon',
+  title: 'Icons/SupportIcon',
 } as Meta;
 
 export const Support: Story<SvgProps> = (args) => {
