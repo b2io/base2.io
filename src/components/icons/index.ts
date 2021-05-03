@@ -9,3 +9,4 @@ export * from './custom-icons/ExecutionIcon';
 export * from './custom-icons/FullyManagedIcon';
 export * from './custom-icons/SupportIcon';
 export * from './custom-icons/SustainabilityIcon';
+export * from './custom-icons/TransparencyIcon';
