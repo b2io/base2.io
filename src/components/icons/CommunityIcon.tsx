@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { SvgProps } from '../types';
+import { SvgProps } from './types';
 
 export const CommunityIcon: FC<SvgProps> = ({
   height = '50px',
