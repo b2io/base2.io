@@ -11,7 +11,7 @@ export const EmpathyIcon: FC<SvgProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      viewBox="0 0 52 48"
+      viewBox="0 0 54 48"
       {...props}
     >
       <g
