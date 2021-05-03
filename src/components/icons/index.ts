@@ -6,3 +6,4 @@ export * from './custom-icons/DiscoveryIcon';
 export * from './custom-icons/EmbeddedIcon';
 export * from './custom-icons/EmpathyIcon';
 export * from './custom-icons/ExecutionIcon';
+export * from './custom-icons/FullyManagedIcon';
