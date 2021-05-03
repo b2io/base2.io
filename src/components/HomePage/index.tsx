@@ -9,10 +9,8 @@ import { PageHero } from '~/components/shared';
 
 const imgSource = {
   desktop: '/shared/approach-hero-xlarge.jpg',
-  xl: '/shared/approach-hero-large.jpg',
-  // this specific non-alpha order seems necessary for the proper image to render
-  // eslint-disable-next-line sort-keys
   tablet: '/shared/approach-hero-medium.jpg',
+  xl: '/shared/approach-hero-large.jpg',
   xs: '/shared/approach-hero-small.jpg',
 };
 
