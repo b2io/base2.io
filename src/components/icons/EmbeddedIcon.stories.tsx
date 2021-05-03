@@ -6,7 +6,7 @@ import { SvgProps } from './types';
 
 export default {
   component: EmbeddedIcon,
-  title: 'Icons/EmbeddedIcon',
+  title: 'Icons/Embedded',
 } as Meta;
 
 export const Embedded: Story<SvgProps> = (args) => {

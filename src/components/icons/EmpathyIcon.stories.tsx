@@ -6,7 +6,7 @@ import { SvgProps } from './types';
 
 export default {
   component: EmpathyIcon,
-  title: 'Icons/EmpathyIcon',
+  title: 'Icons/Empathy',
 } as Meta;
 
 export const Empathy: Story<SvgProps> = (args) => {

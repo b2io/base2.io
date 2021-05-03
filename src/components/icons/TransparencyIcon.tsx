@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { SvgProps } from './types';
 
 export const TransparencyIcon: FC<SvgProps> = ({
-  height = '48px',
-  width = '68px',
+  height = '100%',
+  width = '100%',
   ...props
 }) => {
   return (
@@ -11,7 +11,7 @@ export const TransparencyIcon: FC<SvgProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      viewBox="-1 0 70 48"
+      viewBox="-1 -1 79 52"
       {...props}
     >
       <g

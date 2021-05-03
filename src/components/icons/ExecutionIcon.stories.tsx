@@ -6,7 +6,7 @@ import { SvgProps } from './types';
 
 export default {
   component: ExecutionIcon,
-  title: 'Icons/ExecutionIcon',
+  title: 'Icons/Execution',
 } as Meta;
 
 export const Execution: Story<SvgProps> = (args) => {

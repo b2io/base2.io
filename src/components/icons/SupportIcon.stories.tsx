@@ -6,7 +6,7 @@ import { SvgProps } from './types';
 
 export default {
   component: SupportIcon,
-  title: 'Icons/SupportIcon',
+  title: 'Icons/Support',
 } as Meta;
 
 export const Support: Story<SvgProps> = (args) => {

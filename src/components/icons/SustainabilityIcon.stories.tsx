@@ -6,7 +6,7 @@ import { SvgProps } from './types';
 
 export default {
   component: SustainabilityIcon,
-  title: 'Icons/SustainabilityIcon',
+  title: 'Icons/Sustainability',
 } as Meta;
 
 export const Sustainability: Story<SvgProps> = (args) => {
@@ -14,4 +14,4 @@ export const Sustainability: Story<SvgProps> = (args) => {
 };
 
 Sustainability.args = {};
-Sustainability.storyName = 'Support';
+Sustainability.storyName = 'Sustainability';

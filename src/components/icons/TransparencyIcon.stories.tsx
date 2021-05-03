@@ -6,7 +6,7 @@ import { SvgProps } from './types';
 
 export default {
   component: TransparencyIcon,
-  title: 'Icons/TransparencyIcon',
+  title: 'Icons/Transparency',
 } as Meta;
 
 export const Transparency: Story<SvgProps> = (args) => {

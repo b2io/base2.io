@@ -6,7 +6,7 @@ import { SvgProps } from './types';
 
 export default {
   component: FullyManagedIcon,
-  title: 'Icons/FullyManagedIcon',
+  title: 'Icons/FullyManaged',
 } as Meta;
 
 export const FullyManaged: Story<SvgProps> = (args) => {
