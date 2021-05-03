@@ -7,3 +7,4 @@ export * from './custom-icons/EmbeddedIcon';
 export * from './custom-icons/EmpathyIcon';
 export * from './custom-icons/ExecutionIcon';
 export * from './custom-icons/FullyManagedIcon';
+export * from './custom-icons/SupportIcon';
