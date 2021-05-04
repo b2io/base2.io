@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { SvgProps } from './types';
 
 export const SustainabilityIcon: FC<SvgProps> = ({
-  height = '48px',
-  width = '55px',
+  height = '100%',
+  width = '100%',
   ...props
 }) => {
   return (
@@ -11,8 +11,10 @@ export const SustainabilityIcon: FC<SvgProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      viewBox="0 -1 55 50"
+      viewBox="0 0 55 50"
       {...props}
+      preserveAspectRatio="xMidYMin slice"
+      overflow="auto"
     >
       <g strokeWidth="2" fill="none" fillRule="evenodd" strokeLinecap="round">
         <path

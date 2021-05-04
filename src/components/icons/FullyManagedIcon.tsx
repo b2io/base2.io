@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { SvgProps } from './types';
 
 export const FullyManagedIcon: FC<SvgProps> = ({
-  height = '55px',
-  width = '48px',
+  height = '100%',
+  width = '100%',
   ...props
 }) => {
   return (

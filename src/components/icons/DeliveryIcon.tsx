@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { SvgProps } from './types';
 
 export const DeliveryIcon: FC<SvgProps> = ({
-  height = '48px',
-  width = '27px',
+  height = '100%',
+  width = '100%',
   ...props
 }) => {
   return (
