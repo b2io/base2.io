@@ -1,3 +1,6 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+
 import { FC } from 'react';
 import { Heading } from '~/components';
 import { bp, BreakpointName } from '~/theme/breakpoints';
@@ -18,7 +21,11 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
-const Image: FC<HeroImageProps> = ({ alt, imgSource }) => {
+const Image = styled.img`
+  height: 20rem;
+`;
+
+const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   const sortedImgSourcesDescending = Object.entries(imgSource).sort(
     ([breakpointA], [breakpointB]) => {
       const valueA = breakpointA as BreakpointName;
@@ -39,15 +46,25 @@ const Image: FC<HeroImageProps> = ({ alt, imgSource }) => {
           />
         );
       })}
-      <img alt={alt} />
+      <Image alt={alt} />
     </picture>
   );
 };
 
-export const PageHero: FC<PageHeroProps> = ({ alt, imgSource, text }) => {
+export const PageHero: FC<PageHeroProps> = ({
+  alt,
+  imgSource,
+  text,
+  ...props
+}) => {
   return (
-    <section>
-      <Image alt={alt} imgSource={imgSource} />
+    <section
+      css={css`
+        position: relative;
+      `}
+      {...props}
+    >
+      <ImageContainer alt={alt} imgSource={imgSource} />
       <Heading as="h1">{text}</Heading>
     </section>
   );
