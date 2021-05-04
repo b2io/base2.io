@@ -8,10 +8,10 @@ export const SupportIcon: FC<SvgProps> = ({
 }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={width}
       height={height}
-      viewBox="-1 0 51 57"
+      viewBox="0 0 50 58"
+      width={width}
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <g
@@ -20,27 +20,23 @@ export const SupportIcon: FC<SvgProps> = ({
         strokeLinecap="round"
         strokeLinejoin="round"
       >
+        <g strokeWidth="2">
+          <path d="m27.714 1.566-4.228 4.308" stroke="#f63a52" />
+          <path d="m27.714 10.182-4.228-4.308" stroke="#f63a52" />
+          <path d="m23.486 57.049 4.228-4.307" stroke="#5656b0" />
+          <path d="m23.486 48.434 4.228 4.308" stroke="#5656b0" />
+        </g>
         <path
-          stroke="#F63A52"
-          strokeWidth="2"
-          d="M26.7.6l-4.2 4.3m4.2 4.3l-4.2-4.3"
-        />
-        <path
-          stroke="#5656B0"
-          strokeWidth="2"
-          d="M22.5 56l4.2-4.3m-4.2-4.3l4.2 4.3"
-        />
-        <path
-          stroke="#5656B0"
+          d="m21.7876923 52.7415385c-11.2540991-1.6036038-19.77619196-10.9855949-20.29387779-22.3415754s7.11543868-21.4744405 18.17695469-24.09534772"
+          stroke="#5656b0"
           strokeDasharray="5"
           strokeWidth="2.2"
-          d="M20.8 51.7a23.7 23.7 0 01-2.1-46.4"
         />
         <path
-          stroke="#F63A52"
+          d="m28.2615385 5.87384615c10.9297907 1.58258513 19.3112028 10.51555745 20.1949349 21.52391415.8837321 11.0083568-5.9652782 21.1640014-16.5026272 24.469932"
+          stroke="#f63a52"
           strokeDasharray="5"
           strokeWidth="2.2"
-          d="M27.3 4.9a23.7 23.7 0 013.7 46"
         />
       </g>
     </svg>

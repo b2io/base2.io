@@ -8,59 +8,31 @@ export const CommunityIcon: FC<SvgProps> = ({
 }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={width}
       height={height}
-      viewBox="-1 0 52 48"
+      viewBox="0 0 52 50"
+      width={width}
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g strokeWidth="2" fill="none" fillRule="evenodd">
+      <g
+        fill="none"
+        fillRule="evenodd"
+        strokeWidth="2"
+        transform="translate(1 1)"
+      >
         <path
-          stroke="#F63A52"
+          d="m25.2693333 46.5173333c11.3490835 0 20.5493334-9.2002499 20.5493334-20.5493333s-9.2002499-20.54933333-20.5493334-20.54933333c-11.3490834 0-20.5493333 9.20024993-20.5493333 20.54933333s9.2002499 20.5493333 20.5493333 20.5493333z"
+          stroke="#f63a52"
           strokeDasharray="5"
           strokeLinecap="round"
-          d="M25.3 46.5a20.5 20.5 0 100-41 20.5 20.5 0 000 41z"
         />
-        <circle
-          cx="36.9"
-          cy="43.1"
-          r="4.9"
-          fill="#5656B0"
-          fillRule="nonzero"
-          stroke="#5656B0"
-        />
-        <circle
-          cx="11.9"
-          cy="43.1"
-          r="4.9"
-          fill="#5656B0"
-          fillRule="nonzero"
-          stroke="#5656B0"
-        />
-        <circle
-          cx="5.3"
-          cy="18.7"
-          r="4.9"
-          fill="#5656B0"
-          fillRule="nonzero"
-          stroke="#5656B0"
-        />
-        <circle
-          cx="44.9"
-          cy="19.7"
-          r="4.9"
-          fill="#5656B0"
-          fillRule="nonzero"
-          stroke="#5656B0"
-        />
-        <circle
-          cx="25.3"
-          cy="4.9"
-          r="4.9"
-          fill="#5656B0"
-          fillRule="nonzero"
-          stroke="#5656B0"
-        />
+        <g fill="#5656b0" fillRule="nonzero" stroke="#5656b0">
+          <circle cx="36.864" cy="43.056" r="4.933" />
+          <circle cx="11.883" cy="43.056" r="4.933" />
+          <circle cx="5.28" cy="18.656" r="4.933" />
+          <circle cx="44.853" cy="19.744" r="4.933" />
+          <circle cx="25.269" cy="4.944" r="4.933" />
+        </g>
       </g>
     </svg>
   );

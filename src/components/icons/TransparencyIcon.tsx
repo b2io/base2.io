@@ -8,27 +8,31 @@ export const TransparencyIcon: FC<SvgProps> = ({
 }) => {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={width}
       height={height}
-      viewBox="-1 -1 79 52"
+      viewBox="0 0 70 50"
+      width={width}
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <g
-        strokeWidth="2"
-        strokeDasharray="5"
-        fill="none"
-        fillRule="evenodd"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        style={
+          {
+            fill: 'none',
+            fillRule: 'evenodd',
+            strokeDasharray: '4 3',
+            strokeLinecap: 'round',
+            strokeLinejoin: 'round',
+            strokeWidth: 2,
+          } as React.CSSProperties
+        }
       >
         <path
-          stroke="#5656B0"
-          d="M24 47.7C37 47.7 47.4 37 47.4 24 47.4 11 37 .3 24 .3 11 .3.5 11 .5 24 .5 37 11 47.7 24 47.7z"
+          d="m24.9747802 48.6553846c12.9478608 0 23.4441758-10.5908764 23.4441758-23.6553846s-10.496315-23.65538462-23.4441758-23.65538462-23.4441758 10.59087642-23.4441758 23.65538462 10.496315 23.6553846 23.4441758 23.6553846z"
+          stroke="#5656b0"
         />
         <path
-          stroke="#F63A52"
-          d="M44.3 47.7c13 0 23.5-10.6 23.5-23.7C67.8 11 57.3.3 44.3.3S21 11 21 24c0 13 10.5 23.7 23.4 23.7z"
+          d="m45.3329121 48.6553846c12.9478608 0 23.4441758-10.5908764 23.4441758-23.6553846s-10.496315-23.65538462-23.4441758-23.65538462-23.4441758 10.59087642-23.4441758 23.65538462 10.496315 23.6553846 23.4441758 23.6553846z"
+          stroke="#f63a52"
         />
       </g>
     </svg>

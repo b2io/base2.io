@@ -10,3 +10,5 @@ export * from './FullyManagedIcon';
 export * from './SupportIcon';
 export * from './SustainabilityIcon';
 export * from './TransparencyIcon';
+export * from './BusinessIcon';
+export * from './DeveloperIcon';
