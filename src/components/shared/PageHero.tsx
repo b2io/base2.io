@@ -11,6 +11,7 @@ import {
   bp,
   BreakpointName,
 } from '~/theme/breakpoints';
+import { spacing } from '~/theme/spacing';
 import { cssClamp } from '~/theme/util';
 
 type HeroImageSource = {
@@ -100,7 +101,17 @@ export const PageHero: FC<PageHeroProps> = ({
   return (
     <section
       css={css`
+        /* TODO: delete padding this once Layout component is fixed */
+        padding-top: 5rem;
         position: relative;
+        ${atMinTablet} {
+          /* TODO: delete padding this once Layout component is fixed */
+          padding-top: ${spacing.xxl};
+        }
+        ${atMinLg} {
+          /* TODO: delete padding this once Layout component is fixed */
+          padding-top: 0;
+        }
       `}
       {...props}
     >
