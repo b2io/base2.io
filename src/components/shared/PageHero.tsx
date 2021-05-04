@@ -43,7 +43,11 @@ const Image = styled.img`
 `;
 
 const HeaderText = styled(Heading)`
+  bottom: 4.25rem;
   position: relative;
+  ${atMinTablet} {
+    font-size: 6.25rem;
+  }
 `;
 
 const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
