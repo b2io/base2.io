@@ -4,15 +4,14 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import { Heading } from '~/components';
 import {
-  atMinLargeDesktop,
   atMinLg,
+  atMinDesktop,
+  atMinLargeDesktop,
   atMinTablet,
-  atMinXL,
   bp,
   BreakpointName,
 } from '~/theme/breakpoints';
 import { cssClamp } from '~/theme/util';
-import { spacing } from '~/theme/spacing';
 
 type HeroImageSource = {
   largeDesktop: string;
@@ -31,16 +30,12 @@ type PageHeroProps = HeroImageProps & {
 };
 
 const Image = styled.picture`
-  margin-left: -${spacing.sm};
-  ${atMinTablet} {
-    margin-left: -${spacing.lg};
-  }
-  ${atMinXL} {
-    margin-left: -${spacing.xxl};
-  }
+  margin-left: calc(50% - 50vw);
+
   ${atMinLargeDesktop} {
-    margin-left: -20rem;
+    margin-left: -10rem;
   }
+
   img {
     filter: brightness(0.75);
     height: ${cssClamp([17.5, 'smMobile'], [20.188, 'mobile'], [35, 'tablet'])};
@@ -50,12 +45,23 @@ const Image = styled.picture`
 const HeaderText = styled(Heading)`
   bottom: 4.5rem;
   position: relative;
+
   ${atMinTablet} {
     bottom: 13.75rem;
     font-size: 6.25rem;
   }
+
   ${atMinLg} {
     max-width: 50rem;
+  }
+
+  ${atMinDesktop} {
+    bottom: 30rem;
+    left: 32rem;
+  }
+
+  ${atMinLargeDesktop} {
+    left: 42rem;
   }
 `;
 

@@ -11,7 +11,7 @@ export type Breakpoint =
   | 1200
   | 1400
   | 1600
-  | 2560;
+  | 1920;
 
 export type BreakpointName = keyof typeof bp;
 
@@ -38,7 +38,7 @@ export const bp: BreakpointMap = {
   xl: 1200,
   xxl: 1400,
   desktop: 1600,
-  largeDesktop: 2560,
+  largeDesktop: 1920,
 };
 
 export const viewMaxWidth = {
@@ -62,7 +62,7 @@ export const atMinLg = minMQ(bp.lg);
 export const atMinXL = minMQ(bp.xl);
 export const atMinXXL = minMQ(bp.xxl);
 export const atMinDesktop = minMQ(bp.desktop);
-export const atMinLargeDesktop = minMQ(bp.largeDesktop);
+export const atMinLargeDesktop = minMQ(bp.desktop);
 
 /* -------------------------------------------------------------------------- *
  * (max-width) typically Desktop-First — Desktop as Default
