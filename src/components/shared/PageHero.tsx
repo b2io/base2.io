@@ -29,7 +29,7 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
-const PictureTag = styled.picture`
+const Image = styled.picture`
   margin-left: -${spacing.sm};
   ${atMinTablet} {
     margin-left: -${spacing.lg};
@@ -40,10 +40,9 @@ const PictureTag = styled.picture`
   ${atMinLargeDesktop} {
     margin-left: -20rem;
   }
-`;
-
-const Image = styled.img`
-  height: ${cssClamp([17.5, 'smMobile'], [20.188, 'mobile'], [35, 'tablet'])};
+  img {
+    height: ${cssClamp([17.5, 'smMobile'], [20.188, 'mobile'], [35, 'tablet'])};
+  }
 `;
 
 const HeaderText = styled(Heading)`
@@ -66,7 +65,7 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   );
 
   return (
-    <PictureTag>
+    <Image>
       {sortedImgSourcesDescending.map(([breakpointName, imgSource]) => {
         const breakpointValue = breakpointName as BreakpointName;
         return (
@@ -77,8 +76,8 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
           />
         );
       })}
-      <Image alt={alt} />
-    </PictureTag>
+      <img alt={alt} />
+    </Image>
   );
 };
 
