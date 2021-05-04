@@ -4,6 +4,9 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import { Heading } from '~/components';
 import { bp, BreakpointName } from '~/theme/breakpoints';
+import { atMinTablet } from '~/theme/breakpoints';
+import { cssClamp } from '~/theme/util';
+import { spacing } from '~/theme/spacing';
 
 type HeroImageSource = {
   xs: string;
@@ -21,8 +24,23 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
+const PictureTag = styled.picture`
+  margin-left: -${spacing.sm};
+  ${atMinTablet} {
+    margin-left: -${spacing.lg};
+  }
+`;
+
 const Image = styled.img`
-  height: 20rem;
+  height: ${cssClamp(
+    [17.5, 'smMobile'],
+    [20.188, 'mobile'],
+    [26.625, 'tablet'],
+  )};
+`;
+
+const HeaderText = styled(Heading)`
+  position: relative;
 `;
 
 const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
@@ -35,7 +53,7 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   );
 
   return (
-    <picture>
+    <PictureTag>
       {sortedImgSourcesDescending.map(([breakpointName, imgSource]) => {
         const breakpointValue = breakpointName as BreakpointName;
         return (
@@ -47,7 +65,7 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
         );
       })}
       <Image alt={alt} />
-    </picture>
+    </PictureTag>
   );
 };
 
@@ -65,7 +83,7 @@ export const PageHero: FC<PageHeroProps> = ({
       {...props}
     >
       <ImageContainer alt={alt} imgSource={imgSource} />
-      <Heading as="h1">{text}</Heading>
+      <HeaderText as="h1">{text}</HeaderText>
     </section>
   );
 };
