@@ -3,8 +3,12 @@ import styled from '@emotion/styled';
 
 import { FC } from 'react';
 import { Heading } from '~/components';
-import { bp, BreakpointName } from '~/theme/breakpoints';
-import { atMinTablet } from '~/theme/breakpoints';
+import {
+  atMinLargeDesktop,
+  atMinTablet,
+  bp,
+  BreakpointName,
+} from '~/theme/breakpoints';
 import { cssClamp } from '~/theme/util';
 import { spacing } from '~/theme/spacing';
 
@@ -29,14 +33,13 @@ const PictureTag = styled.picture`
   ${atMinTablet} {
     margin-left: -${spacing.lg};
   }
+  ${atMinLargeDesktop} {
+    margin-left: -20rem;
+  }
 `;
 
 const Image = styled.img`
-  height: ${cssClamp(
-    [17.5, 'smMobile'],
-    [20.188, 'mobile'],
-    [26.625, 'tablet'],
-  )};
+  height: ${cssClamp([17.5, 'smMobile'], [20.188, 'mobile'], [35, 'tablet'])};
 `;
 
 const HeaderText = styled(Heading)`
