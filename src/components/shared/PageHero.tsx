@@ -6,6 +6,7 @@ import { Heading } from '~/components';
 import {
   atMinLargeDesktop,
   atMinTablet,
+  atMinXL,
   bp,
   BreakpointName,
 } from '~/theme/breakpoints';
@@ -33,6 +34,9 @@ const PictureTag = styled.picture`
   ${atMinTablet} {
     margin-left: -${spacing.lg};
   }
+  ${atMinXL} {
+    margin-left: -${spacing.xxl};
+  }
   ${atMinLargeDesktop} {
     margin-left: -20rem;
   }
@@ -43,10 +47,12 @@ const Image = styled.img`
 `;
 
 const HeaderText = styled(Heading)`
-  bottom: 4.25rem;
+  bottom: 4.5rem;
   position: relative;
   ${atMinTablet} {
+    bottom: 13.75rem;
     font-size: 6.25rem;
+    max-width: 50rem;
   }
 `;
 
