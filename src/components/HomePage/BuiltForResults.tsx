@@ -95,13 +95,14 @@ const Content = styled.div`
   }
 `;
 
-export const BuiltForResults: FC = () => {
+export const BuiltForResults: FC = (props) => {
   return (
     <section
       css={css`
         min-height: calc(${imageTopCalc} + ${largeImageHeightCalc});
         position: relative;
       `}
+      {...props}
     >
       <Image alt="person looking at computer" src="/home/results.jpg" />
       <HeaderText as="h2" variant="hero">

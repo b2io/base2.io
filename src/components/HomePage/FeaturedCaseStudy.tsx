@@ -84,7 +84,7 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   );
 };
 
-export const FeaturedCaseStudy: FC = () => {
+export const FeaturedCaseStudy: FC = (props) => {
   return (
     <section
       css={css`
@@ -93,6 +93,7 @@ export const FeaturedCaseStudy: FC = () => {
           flex-direction: row;
         }
       `}
+      {...props}
     >
       <TextContainer>
         <Heading

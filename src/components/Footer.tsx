@@ -119,17 +119,19 @@ const ContactLink = styled(Link)`
   }
 `;
 
-export const Footer: FC = () => {
+export const Footer: FC = (prop) => {
   const theme = useTheme();
   return (
     <Container
       as="footer"
       css={css`
         background-color: ${theme.colors.darkBlueAlt};
+
         ${atMinTablet} {
           background-color: unset;
         }
       `}
+      {...prop}
     >
       <FooterWrapper>
         <Branding>
