@@ -80,13 +80,14 @@ const Content = styled.div`
   }
 `;
 
-export const DesignedForHumans: FC = () => {
+export const DesignedForHumans: FC = (props) => {
   return (
     <section
       css={css`
         min-height: calc(${imageTopCalc} + ${largeImageHeightCalc});
         position: relative;
       `}
+      {...props}
     >
       <Image alt="woman looking at phone" src="/home/humans.jpg" />
       <HeaderText as="h2" variant="hero">
