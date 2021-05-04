@@ -5,6 +5,7 @@ import { FC } from 'react';
 import { Heading } from '~/components';
 import {
   atMinLargeDesktop,
+  atMinLg,
   atMinTablet,
   atMinXL,
   bp,
@@ -14,10 +15,10 @@ import { cssClamp } from '~/theme/util';
 import { spacing } from '~/theme/spacing';
 
 type HeroImageSource = {
-  xs: string;
+  largeDesktop: string;
   tablet: string;
   xl: string;
-  desktop: string;
+  xs: string;
 };
 
 type HeroImageProps = {
@@ -41,6 +42,7 @@ const Image = styled.picture`
     margin-left: -20rem;
   }
   img {
+    filter: brightness(0.75);
     height: ${cssClamp([17.5, 'smMobile'], [20.188, 'mobile'], [35, 'tablet'])};
   }
 `;
@@ -51,6 +53,8 @@ const HeaderText = styled(Heading)`
   ${atMinTablet} {
     bottom: 13.75rem;
     font-size: 6.25rem;
+  }
+  ${atMinLg} {
     max-width: 50rem;
   }
 `;
