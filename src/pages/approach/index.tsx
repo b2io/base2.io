@@ -1,9 +1,8 @@
 import { NextPage } from 'next';
 import { Layout } from '~/components';
-
 import { PageHero } from '~/components/shared';
 
-const imgSource = {
+const heroImageSource = {
   desktop: '/shared/approach-hero-xlarge.jpg',
   tablet: '/shared/approach-hero-medium.jpg',
   xl: '/shared/approach-hero-large.jpg',
@@ -15,7 +14,7 @@ const ApproachIndexPage: NextPage = () => {
     <Layout>
       <PageHero
         alt="person staring at computer"
-        imgSource={imgSource}
+        imgSource={heroImageSource}
         text="People motivate what we do and how we do it"
       />
     </Layout>
