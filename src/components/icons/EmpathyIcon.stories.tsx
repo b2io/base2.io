@@ -13,5 +13,4 @@ export const Empathy: Story<SvgProps> = (args) => {
   return <EmpathyIcon {...args} />;
 };
 
-Empathy.args = {};
 Empathy.storyName = 'Empathy';

@@ -13,5 +13,4 @@ export const Execution: Story<SvgProps> = (args) => {
   return <ExecutionIcon {...args} />;
 };
 
-Execution.args = {};
 Execution.storyName = 'Execution';

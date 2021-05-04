@@ -13,5 +13,4 @@ export const Embedded: Story<SvgProps> = (args) => {
   return <EmbeddedIcon {...args} />;
 };
 
-Embedded.args = {};
 Embedded.storyName = 'Embedded';

@@ -13,5 +13,4 @@ export const Developer: Story<SvgProps> = (args) => {
   return <DeveloperIcon {...args} />;
 };
 
-Developer.args = {};
 Developer.storyName = 'Developer';

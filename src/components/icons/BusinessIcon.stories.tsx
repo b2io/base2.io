@@ -13,5 +13,4 @@ export const Business: Story<SvgProps> = (args) => {
   return <BusinessIcon {...args} />;
 };
 
-Business.args = {};
 Business.storyName = 'Business';

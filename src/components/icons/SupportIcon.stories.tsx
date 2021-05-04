@@ -13,5 +13,4 @@ export const Support: Story<SvgProps> = (args) => {
   return <SupportIcon {...args} />;
 };
 
-Support.args = {};
 Support.storyName = 'Support';

@@ -13,5 +13,4 @@ export const FullyManaged: Story<SvgProps> = (args) => {
   return <FullyManagedIcon {...args} />;
 };
 
-FullyManaged.args = {};
 FullyManaged.storyName = 'FullyManaged';

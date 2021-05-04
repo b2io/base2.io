@@ -13,5 +13,4 @@ export const Sustainability: Story<SvgProps> = (args) => {
   return <SustainabilityIcon {...args} />;
 };
 
-Sustainability.args = {};
 Sustainability.storyName = 'Sustainability';

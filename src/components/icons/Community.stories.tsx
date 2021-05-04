@@ -13,5 +13,4 @@ export const Community: Story<SvgProps> = (args) => {
   return <CommunityIcon {...args} />;
 };
 
-Community.args = {};
 Community.storyName = 'Community';

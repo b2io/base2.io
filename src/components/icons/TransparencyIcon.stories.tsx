@@ -13,5 +13,4 @@ export const Transparency: Story<SvgProps> = (args) => {
   return <TransparencyIcon {...args} />;
 };
 
-Transparency.args = {};
 Transparency.storyName = 'Transparency';

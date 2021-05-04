@@ -13,5 +13,4 @@ export const Delivery: Story<SvgProps> = (args) => {
   return <DeliveryIcon {...args} />;
 };
 
-Delivery.args = {};
 Delivery.storyName = 'Delivery';
