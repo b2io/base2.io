@@ -13,7 +13,7 @@ const ApproachIndexPage: NextPage = () => {
   return (
     <Layout>
       <PageHero
-        alt="person staring at computer"
+        alt="person staring at a computer"
         imgSource={heroImageSource}
         text="People motivate what we do and how we do it"
       />
