@@ -73,7 +73,7 @@ const Content = styled.div`
   }
 
   .tagline {
-    margin: 0 0 ${theme.spacing.xxs} 0;
+    margin: 0 0 ${theme.spacing.xxs};
     ${atMinDesktop} {
       margin-bottom: ${theme.spacing.xxs};
     }
