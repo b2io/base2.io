@@ -6,7 +6,6 @@ import { Heading } from '~/components';
 import {
   atMinLg,
   atMinDesktop,
-  atMinLargeDesktop,
   atMinTablet,
   bp,
   BreakpointName,
@@ -32,8 +31,8 @@ type PageHeroProps = HeroImageProps & {
 const Image = styled.picture`
   margin-left: calc(50% - 50vw);
 
-  ${atMinLargeDesktop} {
-    margin-left: -10rem;
+  ${atMinDesktop} {
+    margin-left: ${cssClamp([-9.5, 'desktop'], [-10, 'largeDesktop'])};
   }
 
   img {
