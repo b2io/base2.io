@@ -3,10 +3,10 @@ import { Layout } from '~/components';
 import { PageHero } from '~/components/shared';
 
 const heroImageSource = {
-  largeDesktop: '/shared/approach-hero-xlarge.jpg',
-  tablet: '/shared/approach-hero-medium.jpg',
-  xl: '/shared/approach-hero-large.jpg',
-  xs: '/shared/approach-hero-small.jpg',
+  largeDesktop: '/approach/approach-hero-xlarge.jpg',
+  tablet: '/approach/approach-hero-medium.jpg',
+  xl: '/approach/approach-hero-large.jpg',
+  xs: '/approach/approach-hero-small.jpg',
 };
 
 const ApproachIndexPage: NextPage = () => {
