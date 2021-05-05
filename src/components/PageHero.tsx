@@ -57,11 +57,7 @@ const HeaderText = styled(Heading)`
 
   ${atMinDesktop} {
     bottom: 30rem;
-    left: 32rem;
-  }
-
-  ${atMinLargeDesktop} {
-    left: 42rem;
+    left: ${cssClamp([32, 'desktop'], [42, 'largeDesktop'])};
   }
 `;
 
