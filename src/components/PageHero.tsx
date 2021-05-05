@@ -8,7 +8,6 @@ import {
   atMinDesktop,
   atMinLargeDesktop,
   atMinTablet,
-  atMinXLDesktop,
   bp,
   BreakpointName,
 } from '~/theme/breakpoints';
@@ -34,7 +33,7 @@ const Image = styled.picture`
   margin-left: calc(50% - 50vw);
 
   ${atMinLargeDesktop} {
-    margin-left: ${cssClamp([-20, 'largeDesktop'], [-10, 'xlDesktop'])};
+    margin-left: ${cssClamp([-20, 'largeDesktop'], [-20, 'xlDesktop'])};
   }
 
   img {
@@ -62,9 +61,6 @@ const HeaderText = styled(Heading)`
 
   ${atMinLargeDesktop} {
     left: 32rem;
-  }
-  ${atMinXLDesktop} {
-    left: 42rem;
   }
 `;
 
