@@ -49,7 +49,8 @@ const HeaderText = styled(Heading)`
 
   ${atMinTablet} {
     bottom: 13.75rem;
-    font-size: 6.25rem;
+    /* check to make sure this is not breaking  */
+    /* font-size: 6.25rem; */
   }
 
   ${atMinLg} {
