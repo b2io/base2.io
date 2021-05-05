@@ -16,7 +16,7 @@ const Root = styled.header`
     rgba(4, 0, 28, 0.84) 35%,
     rgba(6, 2, 27, 0)
   );
-  height: 9.125rem;
+  height: 6.188rem;
   left: 0;
   position: fixed;
   top: 0;
