@@ -68,9 +68,9 @@ const HeaderText = styled(Heading)`
 const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   const sortedImgSourcesDescending = Object.entries(imgSource).sort(
     ([breakpointA], [breakpointB]) => {
-      const valueA = breakpointA as BreakpointName;
-      const valueB = breakpointB as BreakpointName;
-      return bp[valueB] - bp[valueA];
+      const keyA = breakpointA as BreakpointName;
+      const keyB = breakpointB as BreakpointName;
+      return bp[keyB] - bp[keyA];
     },
   );
 
