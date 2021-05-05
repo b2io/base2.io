@@ -67,13 +67,13 @@ const Content = styled.div`
     margin-left: 7.5rem;
   }
 
-  .heading {
+  .header {
     margin-bottom: ${theme.spacing.sm};
     max-width: 36.75rem;
   }
 
   .tagline {
-    margin: 0 0 0.125rem;
+    margin: 0 0 ${theme.spacing.xxs};
     ${atMinDesktop} {
       margin-bottom: ${theme.spacing.xxs};
     }
@@ -113,6 +113,7 @@ export const DesignedForHumans: FC = (props) => {
               max-width: 29.125rem;
               ${atMinDesktop} {
                 margin-left: 9rem;
+                margin-top: ${theme.spacing.xxs};
               }
             `}
           >
