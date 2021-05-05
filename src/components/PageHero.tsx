@@ -38,7 +38,7 @@ const Image = styled.picture`
   }
 
   img {
-    filter: brightness(0.75);
+    filter: brightness(0.85);
     height: ${cssClamp([17.5, 'smMobile'], [20.188, 'mobile'], [35, 'tablet'])};
   }
 `;

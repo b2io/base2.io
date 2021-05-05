@@ -62,7 +62,7 @@ export const atMinLg = minMQ(bp.lg);
 export const atMinXL = minMQ(bp.xl);
 export const atMinXXL = minMQ(bp.xxl);
 export const atMinDesktop = minMQ(bp.desktop);
-export const atMinLargeDesktop = minMQ(bp.desktop);
+export const atMinLargeDesktop = minMQ(bp.largeDesktop);
 
 /* -------------------------------------------------------------------------- *
  * (max-width) typically Desktop-First — Desktop as Default
