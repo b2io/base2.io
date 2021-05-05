@@ -34,12 +34,8 @@ const Image = styled.picture`
   margin-left: calc(50% - 50vw);
 
   ${atMinLargeDesktop} {
-    /* margin-left: -20rem; */
     margin-left: ${cssClamp([-20, 'largeDesktop'], [-10, 'xlDesktop'])};
   }
-  /* ${atMinXLDesktop} {
-    margin-left: -10rem;
-  } */
 
   img {
     filter: brightness(0.85);
