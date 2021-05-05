@@ -56,7 +56,12 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
       <motion.main
         animate="enter"
         css={css`
-          margin-top: ${cssClamp([2.5, 'xs'], [19.125, 'desktop'])};
+          margin-top: ${cssClamp(
+            [2.5, 'xs'],
+            [6.88, 'mobile'],
+            [10.563, 'tablet'],
+            [10.75, 'desktop'],
+          )};
         `}
         exit="exit"
         initial="initial"

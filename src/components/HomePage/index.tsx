@@ -16,6 +16,7 @@ export const HomePage: FC = () => {
       <HomeHero
         css={css`
           margin-bottom: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])};
+          /* margin-top: ${cssClamp([1.5, 'mobile'], [19.125, 'desktop'])}; */
         `}
       />
       <DesignedForHumans
