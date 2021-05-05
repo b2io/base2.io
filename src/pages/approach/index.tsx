@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
-import { Layout } from '~/components';
-import { PageHero } from '~/components/shared';
+import { Layout, PageHero } from '~/components';
 
 const heroImageSource = {
   largeDesktop: '/approach/approach-hero-xlarge.jpg',
