@@ -68,7 +68,7 @@ const HeaderText = styled(Heading)`
 const Hero = styled.section`
   position: relative;
   ${atMinDesktop} {
-    height: ${calculatedImageHeight};
+    min-height: ${calculatedImageHeight};
   }
 `;
 
