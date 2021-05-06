@@ -60,7 +60,7 @@ const HeaderText = styled(Heading)`
   }
 
   ${atMinDesktop} {
-    bottom: 30rem;
+    bottom: 31.5rem;
     left: 33.75rem;
   }
 
