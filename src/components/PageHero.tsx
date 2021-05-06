@@ -69,6 +69,19 @@ const HeaderText = styled(Heading)`
   }
 `;
 
+const Hero = styled.section`
+  ${atMinTablet} {
+    max-height: clamp(
+      ${calculatedImageHeight} + 13.75rem,
+      ${calculatedImageHeight} + 15rem,
+      ${calculatedImageHeight} + 20rem
+    );
+  }
+  ${atMinDesktop} {
+    max-height: ${calculatedImageHeight};
+  }
+`;
+
 const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   const sortedImgSourcesDescending = Object.entries(imgSource).sort(
     ([breakpointA], [breakpointB]) => {
@@ -97,9 +110,9 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
 
 export const PageHero: FC<PageHeroProps> = ({ alt, imgSource, text }) => {
   return (
-    <section>
+    <Hero>
       <ImageContainer alt={alt} imgSource={imgSource} />
       <HeaderText as="h1">{text}</HeaderText>
-    </section>
+    </Hero>
   );
 };
