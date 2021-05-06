@@ -28,6 +28,12 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
+const calculatedImageHeight = cssClamp(
+  [17.5, 'smMobile'],
+  [20.188, 'mobile'],
+  [35, 'tablet'],
+);
+
 const Image = styled.picture`
   margin-left: calc(50% - 50vw);
 
@@ -37,7 +43,7 @@ const Image = styled.picture`
 
   img {
     filter: brightness(0.85);
-    height: ${cssClamp([17.5, 'smMobile'], [20.188, 'mobile'], [35, 'tablet'])};
+    height: ${calculatedImageHeight};
   }
 `;
 
