@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { FC } from 'react';
@@ -90,9 +91,19 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   );
 };
 
-export const PageHero: FC<PageHeroProps> = ({ alt, imgSource, text }) => {
+export const PageHero: FC<PageHeroProps> = ({
+  alt,
+  imgSource,
+  text,
+  ...props
+}) => {
   return (
-    <section>
+    <section
+      css={css`
+        position: relative;
+      `}
+      {...props}
+    >
       <ImageContainer alt={alt} imgSource={imgSource} />
       <HeaderText as="h1">{text}</HeaderText>
     </section>
