@@ -28,12 +28,6 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
-const calculatedImageHeight = cssClamp(
-  [17.5, 'smMobile'],
-  [20.188, 'mobile'],
-  [35, 'tablet'],
-);
-
 const Image = styled.picture`
   margin-left: calc(50% - 50vw);
 
@@ -43,17 +37,18 @@ const Image = styled.picture`
 
   img {
     filter: brightness(0.85);
-    height: ${calculatedImageHeight};
+    height: ${cssClamp([17.5, 'smMobile'], [20.188, 'mobile'], [35, 'tablet'])};
   }
 `;
 
 const HeaderText = styled(Heading)`
-  bottom: 4.5rem;
+  /* bottom: 4.5rem; */
+  bottom: ${cssClamp([4.5, 'mobile'], [13.75, 'tablet'])};
   position: relative;
 
-  ${atMinTablet} {
+  /* ${atMinTablet} {
     bottom: 13.75rem;
-  }
+  } */
 
   ${atMinLg} {
     max-width: 50rem;
@@ -66,19 +61,6 @@ const HeaderText = styled(Heading)`
 
   ${atMinLargeDesktop} {
     left: 32rem;
-  }
-`;
-
-const Hero = styled.section`
-  ${atMinTablet} {
-    max-height: clamp(
-      ${calculatedImageHeight} + 13.75rem,
-      ${calculatedImageHeight} + 15rem,
-      ${calculatedImageHeight} + 20rem
-    );
-  }
-  ${atMinDesktop} {
-    max-height: ${calculatedImageHeight};
   }
 `;
 
@@ -110,9 +92,9 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
 
 export const PageHero: FC<PageHeroProps> = ({ alt, imgSource, text }) => {
   return (
-    <Hero>
+    <section>
       <ImageContainer alt={alt} imgSource={imgSource} />
       <HeaderText as="h1">{text}</HeaderText>
-    </Hero>
+    </section>
   );
 };
