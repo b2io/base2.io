@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { FC } from 'react';
@@ -7,7 +6,6 @@ import {
   atMinLg,
   atMinDesktop,
   atMinLargeDesktop,
-  atMinTablet,
   bp,
   BreakpointName,
 } from '~/theme/breakpoints';
@@ -29,6 +27,12 @@ type PageHeroProps = HeroImageProps & {
   text: string;
 };
 
+const calculatedImageHeight = cssClamp(
+  [17.5, 'smMobile'],
+  [20.188, 'mobile'],
+  [35, 'tablet'],
+);
+
 const Image = styled.picture`
   margin-left: calc(50% - 50vw);
 
@@ -38,30 +42,33 @@ const Image = styled.picture`
 
   img {
     filter: brightness(0.85);
-    height: ${cssClamp([17.5, 'smMobile'], [20.188, 'mobile'], [35, 'tablet'])};
+    height: ${calculatedImageHeight};
+    position: absolute;
   }
 `;
 
 const HeaderText = styled(Heading)`
-  /* bottom: 4.5rem; */
-  bottom: ${cssClamp([4.5, 'mobile'], [13.75, 'tablet'])};
+  margin-top: ${cssClamp([15, 'xs'], [20, 'tablet'])};
   position: relative;
-
-  /* ${atMinTablet} {
-    bottom: 13.75rem;
-  } */
 
   ${atMinLg} {
     max-width: 50rem;
   }
 
   ${atMinDesktop} {
-    bottom: 31.5rem;
     left: 33.75rem;
+    margin-top: 3rem;
   }
 
   ${atMinLargeDesktop} {
     left: 32rem;
+  }
+`;
+
+const Hero = styled.section`
+  position: relative;
+  ${atMinDesktop} {
+    height: ${calculatedImageHeight};
   }
 `;
 
@@ -91,21 +98,11 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   );
 };
 
-export const PageHero: FC<PageHeroProps> = ({
-  alt,
-  imgSource,
-  text,
-  ...props
-}) => {
+export const PageHero: FC<PageHeroProps> = ({ alt, imgSource, text }) => {
   return (
-    <section
-      css={css`
-        position: relative;
-      `}
-      {...props}
-    >
+    <Hero>
       <ImageContainer alt={alt} imgSource={imgSource} />
       <HeaderText as="h1">{text}</HeaderText>
-    </section>
+    </Hero>
   );
 };
