@@ -49,7 +49,7 @@ const Image = styled.picture`
 `;
 
 const HeaderText = styled(Heading)`
-  margin-top: ${cssClamp([15, 'xs'], [20, 'tablet'])};
+  margin-top: ${cssClamp([12.5, 'smMobile'], [15, 'mobile'], [20, 'tablet'])};
   position: relative;
 
   ${atMinLg} {
