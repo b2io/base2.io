@@ -4,7 +4,7 @@ import { Layout } from '~/components';
 const BlogIndexPage: NextPage = () => {
   return (
     <Layout title="Blog">
-      <h1>Blog</h1>
+      <h1>Hello from the Blog page</h1>
     </Layout>
   );
 };
