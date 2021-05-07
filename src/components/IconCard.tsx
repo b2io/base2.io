@@ -39,10 +39,13 @@ export type IconCardProps = {
   heading: string;
 };
 
-const IconImage = styled.svg`
+const IconImage = styled.div`
   height: 3rem;
   margin-bottom: ${spacing.xxs};
-  width: 3rem;
+
+  svg {
+    width: auto;
+  }
 `;
 
 const IconList = {
