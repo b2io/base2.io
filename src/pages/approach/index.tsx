@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { Layout, PageHero } from '~/components';
+import { Layout, PageHero, QuotedImage } from '~/components';
 
 const heroImageSource = {
   largeDesktop: '/approach/approach-hero-xlarge.jpg',
@@ -16,6 +16,7 @@ const ApproachIndexPage: NextPage = () => {
         imgSource={heroImageSource}
         text="People motivate what we do and how we do it"
       />
+      <QuotedImage />
     </Layout>
   );
 };
