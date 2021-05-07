@@ -16,7 +16,12 @@ const ApproachIndexPage: NextPage = () => {
         imgSource={heroImageSource}
         text="People motivate what we do and how we do it"
       />
-      <QuotedImage />
+      <QuotedImage
+        company="company text here"
+        name="name text here"
+        position="position text here"
+        text="text text here"
+      />
     </Layout>
   );
 };
