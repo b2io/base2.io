@@ -18,6 +18,13 @@ const ApproachIndexPage: NextPage = () => {
         alt="person staring at a computer"
         imgSource={heroImageSource}
         text="People motivate what we do and how we do it"
+        css={css`
+          margin-bottom: ${spacing.xxl2};
+
+          ${atMinTablet} {
+            margin-bottom: ${spacing.xxl3};
+          }
+        `}
       />
       <Heading
         as="h2"
