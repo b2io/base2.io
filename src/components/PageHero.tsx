@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { FC } from 'react';
@@ -65,13 +66,6 @@ const HeaderText = styled(Heading)`
   }
 `;
 
-const Hero = styled.section`
-  position: relative;
-  ${atMinDesktop} {
-    min-height: ${calculatedImageHeight};
-  }
-`;
-
 const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   const sortedImgSourcesDescending = Object.entries(imgSource).sort(
     ([breakpointA], [breakpointB]) => {
@@ -98,11 +92,24 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   );
 };
 
-export const PageHero: FC<PageHeroProps> = ({ alt, imgSource, text }) => {
+export const PageHero: FC<PageHeroProps> = ({
+  alt,
+  imgSource,
+  text,
+  ...props
+}) => {
   return (
-    <Hero>
+    <section
+      css={css`
+        position: relative;
+        ${atMinDesktop} {
+          min-height: ${calculatedImageHeight};
+        }
+      `}
+      {...props}
+    >
       <ImageContainer alt={alt} imgSource={imgSource} />
       <HeaderText as="h1">{text}</HeaderText>
-    </Hero>
+    </section>
   );
 };
