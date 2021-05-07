@@ -18,13 +18,10 @@ export const QuotedImage: FC<QuotedImageProps> = ({
 }) => {
   return (
     <section>
-      {company}
-      <br />
-      {name}
-      <br />
-      {position}
-      <br />
-      {text}
+      <div>{text}</div>
+      <div>{company}</div>
+      <div>{name}</div>
+      <div>{position}</div>
     </section>
   );
 };
