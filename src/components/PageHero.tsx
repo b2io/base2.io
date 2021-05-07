@@ -38,7 +38,7 @@ const Image = styled.picture`
   margin-left: calc(50% - 50vw);
 
   ${atMinLargeDesktop} {
-    margin-left: -20rem;
+    margin-left: ${cssClamp([-20, 'largeDesktop'], [-15, 'xlDesktop'])};
   }
 
   img {
@@ -62,7 +62,7 @@ const HeaderText = styled(Heading)`
   }
 
   ${atMinLargeDesktop} {
-    left: 32rem;
+    left: 37.5rem;
   }
 `;
 
