@@ -39,12 +39,11 @@ export type IconCardProps = {
   heading: string;
 };
 
-const IconImage = styled.div(`
-  svg {
-    width: 50px;
-    margin-bottom: ${spacing.xxs}
-  }
-`);
+const IconImage = styled.svg`
+  height: 3rem;
+  margin-bottom: ${spacing.xxs};
+  width: 3rem;
+`;
 
 const IconList = {
   business: <BusinessIcon />,
