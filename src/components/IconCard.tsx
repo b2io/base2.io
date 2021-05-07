@@ -61,11 +61,16 @@ const IconList = {
   transparency: <TransparencyIcon />,
 };
 
-export const IconCard: FC<IconCardProps> = ({ children, icon, heading }) => {
+export const IconCard: FC<IconCardProps> = ({
+  children,
+  icon,
+  heading,
+  ...props
+}) => {
   const iconSelected = icon;
 
   return (
-    <div>
+    <div {...props}>
       <IconImage className={icon}>{IconList[iconSelected]}</IconImage>
       <Heading
         as="h3"
