@@ -65,11 +65,7 @@ export const IconCard: FC<IconCardProps> = ({ children, icon, heading }) => {
   const iconSelected = icon;
 
   return (
-    <div
-      css={css`
-        width: 50%;
-      `}
-    >
+    <div>
       <IconImage className={icon}>{IconList[iconSelected]}</IconImage>
       <Heading
         as="h3"
