@@ -8,11 +8,6 @@ export type PageParams = Pick<Page, 'slug'>;
 
 const pages: Page[] = [
   {
-    id: 'approach',
-    slug: ['approach'],
-    title: 'People motivate what we do and how we do it.',
-  },
-  {
     id: 'careers',
     slug: ['careers'],
     title: 'Solving seemingly impervious challenges.',

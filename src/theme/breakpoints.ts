@@ -1,7 +1,18 @@
 /* eslint-disable sort-keys */
 // NOTE: May want to eventually restrict to (screen) and customize for (print)
 
-export type Breakpoint = 0 | 320 | 375 | 576 | 768 | 992 | 1200 | 1400 | 1600;
+export type Breakpoint =
+  | 0
+  | 320
+  | 375
+  | 576
+  | 768
+  | 992
+  | 1200
+  | 1400
+  | 1600
+  | 1920
+  | 2560;
 
 export type BreakpointName = keyof typeof bp;
 
@@ -15,6 +26,8 @@ export interface BreakpointMap {
   xl: Breakpoint;
   xxl: Breakpoint;
   desktop: Breakpoint;
+  largeDesktop: Breakpoint;
+  xlDesktop: Breakpoint;
 }
 
 export const bp: BreakpointMap = {
@@ -27,6 +40,8 @@ export const bp: BreakpointMap = {
   xl: 1200,
   xxl: 1400,
   desktop: 1600,
+  largeDesktop: 1920,
+  xlDesktop: 2560,
 };
 
 export const viewMaxWidth = {
@@ -50,6 +65,8 @@ export const atMinLg = minMQ(bp.lg);
 export const atMinXL = minMQ(bp.xl);
 export const atMinXXL = minMQ(bp.xxl);
 export const atMinDesktop = minMQ(bp.desktop);
+export const atMinLargeDesktop = minMQ(bp.largeDesktop);
+export const atMinXLDesktop = minMQ(bp.xlDesktop);
 
 /* -------------------------------------------------------------------------- *
  * (max-width) typically Desktop-First — Desktop as Default
