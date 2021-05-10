@@ -145,7 +145,7 @@ export const textVariants = {
       lineHeight: 0.775,
     },
     color: colors.midBlue,
-    fontSize: cssClamp([12.5, 'mobile'], [15, 'tablet'], [37.5, 'xl']),
+    fontSize: cssClamp([12.5, 'mobile'], [15, 'tablet'], [37.5, 'desktop']),
     fontVariationSettings: '"wght" 900',
     letterSpacing: 0,
     lineHeight: 0.125,
@@ -156,7 +156,7 @@ export const textVariants = {
   quotationText: {
     [atMinTablet]: {
       fontVariationSettings: '"wght" 900',
-      lineHeight: 1.2,
+      lineHeight: 1.125,
     },
     color: colors.text,
     fontSize: cssClamp([2.5, 'mobile'], [6.125, 'tablet']),

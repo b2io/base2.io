@@ -5,6 +5,7 @@ import { FC } from 'react';
 import { Heading, Text } from '~/components';
 import {
   atMaxMd,
+  atMinDesktop,
   atMinLg,
   atMinMobile,
   atMinTablet,
@@ -82,8 +83,12 @@ const TextContainer = styled.div`
   padding-top: 6.75rem;
   position: relative;
 
+  ${atMaxMd} {
+    max-width: 78vw;
+  }
+
   ${atMinTablet} {
-    padding-top: 4.25rem;
+    padding-top: 4rem;
   }
 
   ${atMinLg} {
@@ -125,6 +130,14 @@ export const QuotedImage: FC<QuotedImageProps> = ({
             variant="quotationText"
             css={css`
               margin-bottom: ${spacing.md};
+
+              ${atMinTablet} {
+                margin-bottom: 3.125rem;
+              }
+
+              ${atMinDesktop} {
+                margin-bottom: 0;
+              }
             `}
           >
             {quote}
