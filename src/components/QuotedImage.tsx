@@ -64,7 +64,7 @@ const ImageContainer: FC<ImageProps> = ({ alt, imgSource }) => {
 };
 
 const TextContainer = styled.div`
-  padding-top: 5rem;
+  padding-top: 6.75rem;
   position: relative;
   ${atMinLg} {
     display: flex;
@@ -97,9 +97,7 @@ export const QuotedImage: FC<QuotedImageProps> = ({
       <ImageContainer alt={alt} imgSource={imgSource} />
       <TextContainer>
         <ColOne>
-          <Text variant="mobileQuotation">
-            <span>&#8220;</span>
-          </Text>
+          <Text variant="mobileQuotation">&#8220;</Text>
         </ColOne>
         <ColTwo>
           <Heading
