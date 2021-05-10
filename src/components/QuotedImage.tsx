@@ -3,8 +3,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 
 import { Heading, Text } from '~/components';
-
-import { bp, BreakpointName } from '~/theme/breakpoints';
+import { atMinLg, bp, BreakpointName } from '~/theme/breakpoints';
 import { spacing } from '~/theme/spacing';
 import { cssClamp } from '~/theme/util';
 
@@ -67,6 +66,9 @@ const ImageContainer: FC<ImageProps> = ({ alt, imgSource }) => {
 const TextContainer = styled.div`
   padding-top: 5rem;
   position: relative;
+  ${atMinLg} {
+    display: flex;
+  }
 `;
 
 const ColOne = styled.div``;

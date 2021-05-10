@@ -141,6 +141,9 @@ export const textVariants = {
     padding: 0,
   },
   mobileQuotation: {
+    [atMinLg]: {
+      lineHeight: 0.775,
+    },
     color: colors.midBlue,
     fontSize: cssClamp([12.5, 'mobile'], [15, 'tablet'], [37.5, 'xl']),
     fontVariationSettings: '"wght" 900',
