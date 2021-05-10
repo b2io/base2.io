@@ -1,34 +1,12 @@
-import { GetStaticProps, NextPage } from 'next';
-import Link from 'next/link';
-
-import { BlogPost, listBlogPosts } from '~/cms';
+import { NextPage } from 'next';
 import { Layout } from '~/components';
 
-export type BlogIndexPageProps = {
-  blogPosts: BlogPost[];
-};
-
-const BlogIndexPage: NextPage<BlogIndexPageProps> = ({ blogPosts }) => {
+const BlogIndexPage: NextPage = () => {
   return (
     <Layout title="Blog">
-      <h1>Blog</h1>
-      <ul>
-        {blogPosts.map((post) => (
-          <li key={post.id}>
-            <Link href={`/blog/${post.slug.join('/')}`}>
-              <a>{post.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <h1>Hello from the Blog page</h1>
     </Layout>
   );
-};
-
-export const getStaticProps: GetStaticProps<BlogIndexPageProps> = async () => {
-  const blogPosts = await listBlogPosts();
-
-  return { props: { blogPosts } };
 };
 
 export default BlogIndexPage;
