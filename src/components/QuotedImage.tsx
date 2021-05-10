@@ -48,7 +48,7 @@ const Image = styled.picture`
   }
 
   ${atMinDesktop} {
-    right: -${spacing.xxl};
+    right: -8.5rem;
   }
 
   img {
@@ -89,16 +89,16 @@ const TextContainer = styled.div`
 
   ${atMinTablet} {
     max-width: 75vw;
-    padding-top: 4rem;
+    padding-top: 4.5rem;
   }
 
   ${atMinDesktop} {
     display: flex;
+    margin-left: -7.5rem;
+    max-width: 85rem;
+    padding-top: 8.5rem;
   }
 `;
-
-const ColOne = styled.div``;
-const ColTwo = styled.div``;
 
 const AttributionText = styled(Text)`
   line-height: 0.85rem;
@@ -122,10 +122,10 @@ export const QuotedImage: FC<QuotedImageProps> = ({
     >
       <ImageContainer alt={alt} imgSource={imgSource} />
       <TextContainer>
-        <ColOne>
+        <div>
           <Text variant="quotationsSymbol">&#8220;</Text>
-        </ColOne>
-        <ColTwo>
+        </div>
+        <div>
           <Heading
             as="h2"
             variant="quotationText"
@@ -146,7 +146,7 @@ export const QuotedImage: FC<QuotedImageProps> = ({
           <AttributionText color="coral">{name}</AttributionText>
           <AttributionText>{position}</AttributionText>
           <AttributionText>{company}</AttributionText>
-        </ColTwo>
+        </div>
       </TextContainer>
     </section>
   );
