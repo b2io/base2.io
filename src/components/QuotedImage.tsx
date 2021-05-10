@@ -91,6 +91,7 @@ const TextContainer = styled.div`
   }
 
   ${atMinTablet} {
+    max-width: 75vw;
     padding-top: 4rem;
   }
 
