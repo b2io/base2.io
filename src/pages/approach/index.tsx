@@ -1,8 +1,10 @@
 import { NextPage } from 'next';
 import { css } from '@emotion/react';
 
-import { Heading, Layout, Link, PageHero } from '~/components';
+import { Layout, PageHero } from '~/components';
 import { spacing, atMinTablet } from '~/theme';
+
+import { HowWeBuild } from './HowWeBuild';
 
 const heroImageSource = {
   largeDesktop: '/approach/approach-hero-xlarge.jpg',
@@ -26,36 +28,7 @@ const ApproachIndexPage: NextPage = () => {
           }
         `}
       />
-
-      <Heading
-        as="h2"
-        variant="h2"
-        css={css`
-          margin-bottom: ${spacing.xs};
-        `}
-      >
-        How we build.
-      </Heading>
-      <Heading
-        as="h3"
-        variant="h3"
-        css={css`
-          margin-bottom: ${spacing.xxl};
-          max-width: 51.938rem;
-
-          ${atMinTablet} {
-            margin-bottom: ${spacing.xxl1};
-          }
-        `}
-      >
-        Let&apos;s face it—things pop up along the way. Our development process
-        is intentionally flexible to allow us to accomodate the unexpected.
-        While we work with everyone uniquely, a few steps are central to our
-        approach.
-      </Heading>
-      <Link href="" variant="CTA">
-        Let&apos;s make a plan together
-      </Link>
+      <HowWeBuild />
     </Layout>
   );
 };
