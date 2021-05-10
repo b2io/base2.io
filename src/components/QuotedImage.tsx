@@ -83,12 +83,9 @@ const ImageContainer: FC<ImageProps> = ({ alt, imgSource }) => {
 };
 
 const TextContainer = styled.div`
+  max-width: 78vw;
   padding-top: 6.75rem;
   position: relative;
-
-  ${atMaxMd} {
-    max-width: 78vw;
-  }
 
   ${atMinTablet} {
     max-width: 75vw;
