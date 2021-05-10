@@ -1,8 +1,8 @@
+import { css } from '@emotion/react';
 import React, { FC } from 'react';
 import { Layout, PageHero } from '~/components';
-import { spacing } from '~/theme/spacing';
-import { css } from '@emotion/react';
 import { atMinTablet } from '~/theme';
+import { spacing } from '~/theme/spacing';
 import { HowWeEngage } from './HowWeEngage';
 
 const heroImageSource = {
@@ -18,7 +18,7 @@ export const ApproachPage: FC = () => {
       <PageHero
         alt="person staring at a computer"
         imgSource={heroImageSource}
-        text="People motivate what we do and how we do it"
+        text="People motivate what we do and how we do it."
         css={css`
           margin-bottom: ${spacing.xxl2};
 

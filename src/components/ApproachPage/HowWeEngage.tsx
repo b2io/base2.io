@@ -83,7 +83,7 @@ export const HowWeEngage: FC = (props) => {
           something stellar.
         </IconCard>
       </div>
-      <Link href="" variant="CTA">
+      <Link href="/contact" variant="CTA">
         Let&apos;s make a plan together
       </Link>
     </section>
