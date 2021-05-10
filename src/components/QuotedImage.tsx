@@ -3,7 +3,14 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 
 import { Heading, Text } from '~/components';
-import { atMinLg, bp, BreakpointName } from '~/theme/breakpoints';
+import {
+  atMaxMd,
+  atMinLg,
+  atMinMobile,
+  atMinTablet,
+  bp,
+  BreakpointName,
+} from '~/theme/breakpoints';
 import { spacing } from '~/theme/spacing';
 import { cssClamp } from '~/theme/util';
 
@@ -25,16 +32,20 @@ type QuotedImageProps = ImageProps & {
   quote: string;
 };
 
-const calculatedImageHeight = cssClamp(
-  [12, 'smMobile'],
-  [15, 'mobile'],
-  [50, 'tablet'],
-);
+const calculatedImageHeight = cssClamp([15, 'mobile'], [50, 'tablet']);
 
 const Image = styled.picture`
-  height: ${calculatedImageHeight};
+  height: 12rem;
   position: absolute;
   right: calc(50% - 50vw);
+
+  ${atMaxMd} {
+    max-height: 66vw;
+  }
+
+  ${atMinMobile} {
+    height: ${calculatedImageHeight};
+  }
 
   img {
     height: 100%;
@@ -70,6 +81,11 @@ const ImageContainer: FC<ImageProps> = ({ alt, imgSource }) => {
 const TextContainer = styled.div`
   padding-top: 6.75rem;
   position: relative;
+
+  ${atMinTablet} {
+    padding-top: 4.25rem;
+  }
+
   ${atMinLg} {
     display: flex;
   }
