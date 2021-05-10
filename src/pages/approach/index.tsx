@@ -44,7 +44,7 @@ const ApproachIndexPage: NextPage = () => {
           max-width: 51.938rem;
 
           ${atMinTablet} {
-            margin-bottom: ${spacing.xxl2};
+            margin-bottom: ${spacing.xxl1};
           }
         `}
       >
