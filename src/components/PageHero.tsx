@@ -45,16 +45,12 @@ const Image = styled.picture`
 
   img {
     filter: brightness(0.85);
-    width: 100%;
+    height: 100%;
   }
 `;
 
 const HeaderText = styled(Heading)`
-  padding-top: ${cssClamp(
-    [11, 'smMobile'],
-    [17.75, 'mobile'],
-    [24.75, 'tablet'],
-  )};
+  padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [21.5, 'tablet'])};
   position: relative;
 
   ${atMinLg} {
@@ -63,7 +59,7 @@ const HeaderText = styled(Heading)`
 
   ${atMinDesktop} {
     left: 33.75rem;
-    padding-top: 5rem;
+    padding-top: 4.25rem;
   }
 
   ${atMinLargeDesktop} {
