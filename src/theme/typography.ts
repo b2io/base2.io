@@ -140,7 +140,7 @@ export const textVariants = {
     margin: 0,
     padding: 0,
   },
-  mobileQuotation: {
+  quotationsSymbol: {
     [atMinLg]: {
       lineHeight: 0.775,
     },
@@ -150,6 +150,20 @@ export const textVariants = {
     letterSpacing: 0,
     lineHeight: 0.125,
     margin: '0 0 0 -.5rem',
+    padding: 0,
+  },
+
+  quotationText: {
+    [atMinTablet]: {
+      fontVariationSettings: '"wght" 900',
+      lineHeight: 1.2,
+    },
+    color: colors.text,
+    fontSize: cssClamp([2.5, 'mobile'], [6.125, 'tablet']),
+    fontVariationSettings: '"wght" 750',
+    letterSpacing: 'normal',
+    lineHeight: 1.1,
+    margin: 0,
     padding: 0,
   },
 };

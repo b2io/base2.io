@@ -117,12 +117,12 @@ export const QuotedImage: FC<QuotedImageProps> = ({
       <ImageContainer alt={alt} imgSource={imgSource} />
       <TextContainer>
         <ColOne>
-          <Text variant="mobileQuotation">&#8220;</Text>
+          <Text variant="quotationsSymbol">&#8220;</Text>
         </ColOne>
         <ColTwo>
           <Heading
             as="h2"
-            variant="h2"
+            variant="quotationText"
             css={css`
               margin-bottom: ${spacing.md};
             `}
