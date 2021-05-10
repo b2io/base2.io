@@ -35,7 +35,9 @@ const calculatedImageHeight = cssClamp(
 );
 
 const Image = styled.picture`
+  height: ${calculatedImageHeight};
   margin-left: calc(50% - 50vw);
+  position: absolute;
 
   ${atMinLargeDesktop} {
     margin-left: ${cssClamp([-20, 'largeDesktop'], [-15, 'xlDesktop'])};
@@ -43,13 +45,16 @@ const Image = styled.picture`
 
   img {
     filter: brightness(0.85);
-    height: ${calculatedImageHeight};
-    position: absolute;
+    width: 100%;
   }
 `;
 
 const HeaderText = styled(Heading)`
-  margin-top: ${cssClamp([12.5, 'smMobile'], [15, 'mobile'], [20, 'tablet'])};
+  padding-top: ${cssClamp(
+    [11, 'smMobile'],
+    [17.75, 'mobile'],
+    [24.75, 'tablet'],
+  )};
   position: relative;
 
   ${atMinLg} {
@@ -58,7 +63,7 @@ const HeaderText = styled(Heading)`
 
   ${atMinDesktop} {
     left: 33.75rem;
-    margin-top: 3rem;
+    padding-top: 5rem;
   }
 
   ${atMinLargeDesktop} {
