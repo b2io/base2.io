@@ -1,9 +1,8 @@
-import { NextPage } from 'next';
-import { css } from '@emotion/react';
-
+import React, { FC } from 'react';
 import { Layout, PageHero } from '~/components';
-import { spacing, atMinTablet } from '~/theme';
-
+import { spacing } from '~/theme/spacing';
+import { css } from '@emotion/react';
+import { atMinTablet } from '~/theme';
 import { HowWeEngage } from './HowWeEngage';
 
 const heroImageSource = {
@@ -13,7 +12,7 @@ const heroImageSource = {
   xs: '/approach/approach-hero-small.jpg',
 };
 
-const ApproachIndexPage: NextPage = () => {
+export const ApproachPage: FC = () => {
   return (
     <Layout>
       <PageHero
@@ -32,5 +31,3 @@ const ApproachIndexPage: NextPage = () => {
     </Layout>
   );
 };
-
-export default ApproachIndexPage;

@@ -1,12 +1,12 @@
-import { NextPage } from 'next';
 import { css } from '@emotion/react';
+import { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
 import { spacing, atMinTablet, atMinDesktop } from '~/theme';
 
-export const HowWeEngage: NextPage = () => {
+export const HowWeEngage: FC = (props) => {
   return (
-    <section>
+    <section {...props}>
       <Heading
         as="h2"
         variant="h2"
