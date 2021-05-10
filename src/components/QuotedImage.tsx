@@ -25,7 +25,11 @@ type QuotedImageProps = ImageProps & {
   quote: string;
 };
 
-const calculatedImageHeight = cssClamp([15, 'mobile'], [50, 'tablet']);
+const calculatedImageHeight = cssClamp(
+  [12, 'smMobile'],
+  [15, 'mobile'],
+  [50, 'tablet'],
+);
 
 const Image = styled.picture`
   height: ${calculatedImageHeight};
