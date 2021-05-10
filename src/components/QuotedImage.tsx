@@ -6,7 +6,6 @@ import { Heading, Text } from '~/components';
 import {
   atMaxMd,
   atMinDesktop,
-  atMinLg,
   atMinMobile,
   atMinTablet,
   bp,
@@ -46,6 +45,10 @@ const Image = styled.picture`
 
   ${atMinMobile} {
     height: ${calculatedImageHeight};
+  }
+
+  ${atMinDesktop} {
+    right: -${spacing.xxl};
   }
 
   img {
@@ -91,7 +94,7 @@ const TextContainer = styled.div`
     padding-top: 4rem;
   }
 
-  ${atMinLg} {
+  ${atMinDesktop} {
     display: flex;
   }
 `;
