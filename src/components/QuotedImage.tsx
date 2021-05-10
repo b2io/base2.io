@@ -69,6 +69,9 @@ const TextContainer = styled.div`
   position: relative;
 `;
 
+const ColOne = styled.div``;
+const ColTwo = styled.div``;
+
 const AttributionText = styled(Text)`
   line-height: 0.85rem;
 `;
@@ -91,19 +94,25 @@ export const QuotedImage: FC<QuotedImageProps> = ({
     >
       <ImageContainer alt={alt} imgSource={imgSource} />
       <TextContainer>
-        <Text variant="mobileQuotation">&ldquo;</Text>
-        <Heading
-          as="h2"
-          variant="h2"
-          css={css`
-            margin-bottom: ${spacing.md};
-          `}
-        >
-          {quote}
-        </Heading>
-        <AttributionText color="coral">{name}</AttributionText>
-        <AttributionText>{position}</AttributionText>
-        <AttributionText>{company}</AttributionText>
+        <ColOne>
+          <Text variant="mobileQuotation">
+            <span>&#8220;</span>
+          </Text>
+        </ColOne>
+        <ColTwo>
+          <Heading
+            as="h2"
+            variant="h2"
+            css={css`
+              margin-bottom: ${spacing.md};
+            `}
+          >
+            {quote}
+          </Heading>
+          <AttributionText color="coral">{name}</AttributionText>
+          <AttributionText>{position}</AttributionText>
+          <AttributionText>{company}</AttributionText>
+        </ColTwo>
       </TextContainer>
     </section>
   );
