@@ -140,6 +140,15 @@ export const textVariants = {
     margin: 0,
     padding: 0,
   },
+  mobileQuotation: {
+    color: colors.midBlue,
+    fontSize: cssClamp([12.5, 'mobile'], [15, 'tablet'], [37.5, 'xl']),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: 0,
+    lineHeight: 0.125,
+    margin: '0 0 0 -.5rem',
+    padding: 0,
+  },
 };
 
 export type ThemeLinkVariants = keyof typeof linkVariants;
