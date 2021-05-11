@@ -83,9 +83,12 @@ const ImageContainer: FC<ImageProps> = ({ alt, imgSource }) => {
 };
 
 const TextContainer = styled.div`
-  max-width: 78vw;
   padding-top: 6.75rem;
   position: relative;
+
+  ${atMinMobile} {
+    max-width: 85vw;
+  }
 
   ${atMinTablet} {
     max-width: 75vw;
@@ -96,7 +99,7 @@ const TextContainer = styled.div`
     display: flex;
     margin-left: -7.5rem;
     max-width: 85rem;
-    padding-top: 8.5rem;
+    padding-top: 6rem;
   }
 `;
 
