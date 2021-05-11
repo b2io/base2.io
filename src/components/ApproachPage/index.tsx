@@ -13,8 +13,8 @@ const heroImageSource = {
 };
 
 const quotedImageSource = {
-  desktop: '/quoted-image/approach-quote_large.jpg',
   tablet: '/quoted-image/approach-quote_medium.jpg',
+  xl: '/quoted-image/approach-quote_large.jpg',
   xs: '/quoted-image/approach-quote_small.jpg',
 };
 

@@ -15,8 +15,8 @@ import { spacing } from '~/theme/spacing';
 import { cssClamp } from '~/theme/util';
 
 type QuotedImageSource = {
-  desktop: string;
   tablet: string;
+  xl: string;
   xs: string;
 };
 
