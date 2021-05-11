@@ -27,7 +27,7 @@ const IconRow = styled.div`
     margin-right: ${spacing.sm};
 
     ${atMinDesktop} {
-      margin-right: 16.688rem;
+      margin-right: 9rem;
     }
   }
 `;
@@ -37,7 +37,7 @@ export const HowWeBuild: NextPage = () => {
     <section
       css={css`
         ${atMinDesktop} {
-          margin: 0 4.1125rem;
+          margin: 0 7.6125rem;
         }
       `}
     >

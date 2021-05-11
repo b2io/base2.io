@@ -1,9 +1,9 @@
-import { NextPage } from 'next';
 import { css } from '@emotion/react';
-
+import React, { FC } from 'react';
 import { Layout, PageHero } from '~/components';
-import { spacing, atMinTablet } from '~/theme';
-
+import { atMinTablet } from '~/theme';
+import { spacing } from '~/theme/spacing';
+import { HowWeEngage } from './HowWeEngage';
 import { HowWeBuild } from './HowWeBuild';
 
 const heroImageSource = {
@@ -13,13 +13,13 @@ const heroImageSource = {
   xs: '/approach/approach-hero-small.jpg',
 };
 
-const ApproachIndexPage: NextPage = () => {
+export const ApproachPage: FC = () => {
   return (
     <Layout>
       <PageHero
         alt="person staring at a computer"
         imgSource={heroImageSource}
-        text="People motivate what we do and how we do it"
+        text="People motivate what we do and how we do it."
         css={css`
           margin-bottom: ${spacing.xxl2};
 
@@ -28,9 +28,8 @@ const ApproachIndexPage: NextPage = () => {
           }
         `}
       />
+      <HowWeEngage />
       <HowWeBuild />
     </Layout>
   );
 };
-
-export default ApproachIndexPage;
