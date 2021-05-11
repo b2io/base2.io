@@ -36,5 +36,5 @@ jobs:
       - name: lint js
         run: npm run ci:lint:js
 
-      - name: typecheck js
+      - name: build ts
         run: npm run ci:build:ts
