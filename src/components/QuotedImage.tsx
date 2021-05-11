@@ -48,7 +48,7 @@ const Image = styled.picture`
   }
 
   ${atMinDesktop} {
-    right: -8.5rem;
+    right: -${spacing.xxl3};
   }
 
   img {
