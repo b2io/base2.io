@@ -1,3 +1,4 @@
+export * from './ApproachPage';
 export * from './Container';
 export * from './Header';
 export * from './Heading';
