@@ -7,11 +7,20 @@ import { spacing, atMinTablet, atMinDesktop, cssClamp } from '~/theme';
 
 const IconRow = styled.div`
   display: flex;
+  flex-direction: column;
+
+  ${atMinTablet} {
+    flex-direction: row;
+  }
 
   > div {
     margin-bottom: ${spacing.xxl};
     max-width: 20.625rem;
-    max-width: ${cssClamp([20.625, 'mobile'], [29.063, 'desktop'])};
+    max-width: ${cssClamp([20.625, 'tablet'], [29.063, 'desktop'])};
+
+    ${atMinDesktop} {
+      max-width: 29.063rem;
+    }
   }
 
   > :nth-child(odd) {
@@ -25,7 +34,13 @@ const IconRow = styled.div`
 
 export const HowWeBuild: NextPage = () => {
   return (
-    <section>
+    <section
+      css={css`
+        ${atMinDesktop} {
+          margin: 0 4.1125rem;
+        }
+      `}
+    >
       <Heading
         as="h2"
         variant="h2"
