@@ -107,6 +107,10 @@ const AttributionText = styled(Text)`
   line-height: 0.85rem;
 `;
 
+const AttributionTextItalic = styled(AttributionText)`
+  font-style: italic;
+`;
+
 export const QuotedImage: FC<QuotedImageProps> = ({
   alt,
   company,
@@ -147,8 +151,8 @@ export const QuotedImage: FC<QuotedImageProps> = ({
             {quote}
           </Heading>
           <AttributionText color="coral">{name}</AttributionText>
-          <AttributionText>{position}</AttributionText>
-          <AttributionText>{company}</AttributionText>
+          <AttributionTextItalic>{position}</AttributionTextItalic>
+          <AttributionTextItalic>{company}</AttributionTextItalic>
         </div>
       </TextContainer>
     </section>
