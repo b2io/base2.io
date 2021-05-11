@@ -6,7 +6,14 @@ import { spacing, atMinTablet, atMinDesktop } from '~/theme';
 
 export const HowWeEngage: FC = (props) => {
   return (
-    <section {...props}>
+    <section
+      css={css`
+        ${atMinDesktop} {
+          margin: 0 7.6125rem;
+        }
+      `}
+      {...props}
+    >
       <Heading
         as="h2"
         variant="h2"
