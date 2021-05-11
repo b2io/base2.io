@@ -1,9 +1,35 @@
-import { NextPage } from 'next';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import NextImage from 'next/image';
+import { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
 import { spacing, atMinTablet, atMinDesktop, cssClamp } from '~/theme';
+import { ImageProps } from '~/types';
+
+const imageDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
+
+const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
+  return (
+    <div
+      css={css`
+        height: ${imageDimensionsCalc};
+        position: absolute;
+        right: calc(77% - ${imageDimensionsCalc});
+        top: 0;
+        width: ${imageDimensionsCalc};
+        z-index: 0;
+
+        ${atMinDesktop} {
+          right: calc(57% - ${imageDimensionsCalc});
+        }
+      `}
+      {...props}
+    >
+      <NextImage layout="fill" alt={alt} src={src} />
+    </div>
+  );
+};
 
 const IconRow = styled.div`
   display: flex;
@@ -32,7 +58,7 @@ const IconRow = styled.div`
   }
 `;
 
-export const HowWeBuild: NextPage = () => {
+export const HowWeBuild: FC = () => {
   return (
     <section
       css={css`
@@ -41,11 +67,52 @@ export const HowWeBuild: NextPage = () => {
         }
       `}
     >
+      <div
+        css={css`
+          position: relative;
+        `}
+      >
+        <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcSet="/approach/howwebuild-large.jpg"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet="/approach/howwebuild-medium.jpg"
+          />
+          <img
+            css={css`
+              margin-bottom: 3rem;
+              margin-left: -1.5rem;
+              margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
+              max-width: 100%;
+              position: relative;
+              z-index: 1;
+
+              ${atMinTablet} {
+                margin-left: -2.5rem;
+              }
+              ${atMinTablet} {
+                margin-left: -3.5rem;
+              }
+            `}
+            src="/approach/howwebuild-small.jpg"
+            alt="man standing behind chair in a meeting with other people"
+          />
+        </picture>
+        <Image
+          alt="large abstract gradient circle"
+          src="/home/large-gradient-circle.png"
+        />
+      </div>
       <Heading
         as="h2"
         variant="h2"
         css={css`
           margin-bottom: ${spacing.xs};
+          position: relative;
+          z-index: 1;
         `}
       >
         How we build.
@@ -56,6 +123,8 @@ export const HowWeBuild: NextPage = () => {
         css={css`
           margin-bottom: ${spacing.xxl};
           max-width: 51.938rem;
+          position: relative;
+          z-index: 1;
 
           ${atMinTablet} {
             margin-bottom: ${spacing.xxl1};
