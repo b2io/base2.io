@@ -118,7 +118,7 @@ export const FeaturedCaseStudy: FC = (props) => {
           `}
           variant="h2"
         >
-          ColorSnap&reg;
+          ColorSnap<sup>&reg;</sup>
           <br />
           Visualizer
         </Heading>
