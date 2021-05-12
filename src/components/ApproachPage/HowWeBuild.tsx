@@ -92,7 +92,6 @@ export const HowWeBuild: FC = () => {
               margin-bottom: 3.813rem;
               margin-left: calc(50% - 50vw);
               margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
-              max-width: 100%;
               position: relative;
               width: ${cssClamp(
                 [16.688, 'mobile'],
