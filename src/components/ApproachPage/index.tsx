@@ -13,9 +13,9 @@ const heroImageSource = {
 };
 
 const quotedImageSource = {
-  tablet: '/quoted-image/approach-quote_medium.jpg',
-  xl: '/quoted-image/approach-quote_large.jpg',
-  xs: '/quoted-image/approach-quote_small.jpg',
+  tablet: '/approach/approach-quote_medium.jpg',
+  xl: '/approach/approach-quote_large.jpg',
+  xs: '/approach/approach-quote_small.jpg',
 };
 
 export const ApproachPage: FC = () => {
