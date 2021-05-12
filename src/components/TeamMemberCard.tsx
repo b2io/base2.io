@@ -6,6 +6,7 @@ import { colors } from '~/theme/colors';
 
 import { Heading } from './Heading';
 import { Text } from './Text';
+import { atMinTablet } from '~/theme';
 
 type ImageProps = {
   alt: string;
@@ -37,6 +38,10 @@ const MemberInfo = styled.div`
   padding-left: 1rem;
   position: relative;
 
+  ${atMinTablet} {
+    margin-top: -2.85rem;
+  }
+
   & p {
     margin-top: 0.25rem;
     padding-left: 32px;
@@ -48,7 +53,7 @@ const MemberInfo = styled.div`
     content: '';
     left: 0;
     position: absolute;
-    top: 0.95rem;
+    top: 0.925rem;
     width: 1.25rem;
   }
 `;
