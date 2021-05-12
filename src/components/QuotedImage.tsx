@@ -2,7 +2,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC } from 'react';
 
-import { Heading, Text } from '~/components';
+import { Heading } from './Heading';
+import { Text } from './Text';
 import {
   atMaxMd,
   atMinDesktop,
