@@ -54,7 +54,7 @@ const HeaderText = styled(Heading)`
   position: relative;
 
   ${atMinLg} {
-    max-width: 50rem;
+    max-width: 60rem;
   }
 
   ${atMinDesktop} {
