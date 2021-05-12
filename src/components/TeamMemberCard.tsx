@@ -32,7 +32,18 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
 
 const MemberInfo = styled.div`
   margin-top: -2rem;
+  padding-left: 1rem;
   position: relative;
+
+  & p::before {
+    border-bottom: solid 1px #fff;
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 1;
+  }
 `;
 
 export const TeamMemberCard: FC<TeamMemberCardProps> = ({
