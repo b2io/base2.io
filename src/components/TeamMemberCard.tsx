@@ -1,14 +1,22 @@
-import { FC } from 'react';
+import styled from '@emotion/styled';
 import NextImage from 'next/image';
+import { FC } from 'react';
 
-type TeamMemberCardProps = {
+import { Heading } from './Heading';
+import { Text } from './Text';
+
+type ImageProps = {
   alt: string;
   src: string;
-  position: string;
-  name: string;
 };
 
-const ResponsiveImage: FC<TeamMemberCardProps> = ({ alt, src, ...props }) => {
+type TeamMemberCardProps = ImageProps & {
+  name: string;
+  position: string;
+  src: string;
+};
+
+const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div {...props}>
       <NextImage
@@ -22,15 +30,27 @@ const ResponsiveImage: FC<TeamMemberCardProps> = ({ alt, src, ...props }) => {
   );
 };
 
-export const TeamMemberCard: FC = () => {
+const MemberInfo = styled.div`
+  margin-top: -2rem;
+  position: relative;
+`;
+
+export const TeamMemberCard: FC<TeamMemberCardProps> = ({
+  name,
+  position,
+  src,
+}) => {
   return (
-    <>
-      <ResponsiveImage
-        alt="Drew Miller"
-        name="Drew Miller"
-        position="Owner &amp; Principal Software Engineer"
-        src="/culture/dmiller.jpg"
-      />
-    </>
+    <div>
+      <article>
+        <ResponsiveImage alt={name} src={src} />
+      </article>
+      <MemberInfo>
+        <Heading as="h2" variant="h2">
+          {name}
+        </Heading>
+        <Text>{position}</Text>
+      </MemberInfo>
+    </div>
   );
 };

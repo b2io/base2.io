@@ -8,6 +8,14 @@ const heroImageSource = {
   xs: '/culture/culture-hero-small.jpg',
 };
 
+const team = [
+  {
+    name: 'Drew Miller',
+    position: 'Owner & Principal Software Engineer',
+    src: '/culture/dmiller.jpg',
+  },
+];
+
 export const CulturePage: FC = () => {
   return (
     <Layout>
@@ -16,7 +24,12 @@ export const CulturePage: FC = () => {
         imgSource={heroImageSource}
         text="We are engineers and artisans, collaborating to make custom software people love."
       />
-      <TeamMemberCard />
+      <TeamMemberCard
+        alt={team[0].name}
+        name={team[0].name}
+        position={team[0].position}
+        src={team[0].src}
+      />
     </Layout>
   );
 };
