@@ -15,7 +15,7 @@ import { ImageProps } from '~/types';
 
 const imageDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
 
-const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
+const GradientCircleImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div
       css={css`
@@ -89,11 +89,16 @@ export const HowWeBuild: FC = () => {
           />
           <img
             css={css`
-              margin-bottom: 3rem;
+              margin-bottom: 3.813rem;
               margin-left: calc(50% - 50vw);
               margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
               max-width: 100%;
               position: relative;
+              width: ${cssClamp(
+                [16.688, 'mobile'],
+                [38.063, 'tablet'],
+                [64.5, 'desktop'],
+              )};
               z-index: 1;
 
               ${atMinLargeDesktop} {
@@ -104,7 +109,7 @@ export const HowWeBuild: FC = () => {
             alt="man standing behind chair in a meeting with other people"
           />
         </picture>
-        <Image
+        <GradientCircleImage
           alt="large abstract gradient circle"
           src="/home/large-gradient-circle.png"
         />
