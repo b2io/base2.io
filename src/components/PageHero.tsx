@@ -79,7 +79,7 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   return (
     <Image>
       {sortedImgSourcesDescending.map(([breakpointName, imgSource]) => {
-        const breakpointValue = breakpointName;
+        const breakpointValue = breakpointName as BreakpointName;
         return (
           <source
             key={breakpointName}
