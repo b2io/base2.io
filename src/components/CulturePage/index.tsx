@@ -14,7 +14,7 @@ export const CulturePage: FC = () => {
       <PageHero
         alt="person staring at a computer"
         imgSource={heroImageSource}
-        text="People motivate what we do and how we do it."
+        text="We are engineers and artisans, collaborating to make custom software people love."
       />
     </Layout>
   );
