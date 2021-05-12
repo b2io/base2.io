@@ -9,4 +9,5 @@ export * from './Layout';
 export * from './Link';
 export * from './MobileMenu';
 export * from './PageHero';
+export * from './TeamMemberCard';
 export * from './Text';
