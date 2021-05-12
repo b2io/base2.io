@@ -104,7 +104,7 @@ export const textVariants = {
     fontSize: cssClamp([2.5, 'mobile'], [3.125, 'tablet']),
     fontVariationSettings: '"wght" 750',
     letterSpacing: 'normal',
-    lineHeight: 1.1,
+    lineHeight: cssClamp([2.75, 'mobile'], [3.75, 'tablet']),
     margin: 0,
     padding: 0,
   },

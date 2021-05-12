@@ -1,16 +1,16 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-
 import { FC } from 'react';
-import { Heading } from '~/components';
+
 import {
   atMinLg,
   atMinDesktop,
   atMinLargeDesktop,
   bp,
   BreakpointName,
-} from '~/theme/breakpoints';
-import { cssClamp } from '~/theme/util';
+  cssClamp,
+} from '~/theme';
+import { Heading } from './Heading';
 
 type HeroImageSource = {
   largeDesktop: string;
