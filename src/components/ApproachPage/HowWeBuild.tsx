@@ -4,7 +4,13 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
-import { spacing, atMinTablet, atMinDesktop, cssClamp } from '~/theme';
+import {
+  atMinDesktop,
+  atMinLargeDesktop,
+  atMinTablet,
+  cssClamp,
+  spacing,
+} from '~/theme';
 import { ImageProps } from '~/types';
 
 const imageDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
@@ -84,17 +90,14 @@ export const HowWeBuild: FC = () => {
           <img
             css={css`
               margin-bottom: 3rem;
-              margin-left: -1.5rem;
+              margin-left: calc(50% - 50vw);
               margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
               max-width: 100%;
               position: relative;
               z-index: 1;
 
-              ${atMinTablet} {
-                margin-left: -2.5rem;
-              }
-              ${atMinTablet} {
-                margin-left: -3.5rem;
+              ${atMinLargeDesktop} {
+                margin-left: -14rem;
               }
             `}
             src="/approach/howwebuild-small.jpg"
