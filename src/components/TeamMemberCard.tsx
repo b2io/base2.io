@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import { FC } from 'react';
+import { colors } from '~/theme/colors';
+// import { spacing } from '~/theme/spacing';
 
 import { Heading } from './Heading';
 import { Text } from './Text';
@@ -35,14 +37,19 @@ const MemberInfo = styled.div`
   padding-left: 1rem;
   position: relative;
 
+  & p {
+    margin-top: 0.25rem;
+    padding-left: 32px;
+    position: relative;
+  }
+
   & p::before {
-    border-bottom: solid 1px #fff;
+    border-bottom: solid 1px ${colors.coral};
     content: '';
     left: 0;
     position: absolute;
-    top: 50%;
-    width: 100%;
-    z-index: 1;
+    top: 0.95rem;
+    width: 1.25rem;
   }
 `;
 
