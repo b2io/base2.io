@@ -7,6 +7,7 @@ import {
   atMinLg,
   atMinDesktop,
   atMinLargeDesktop,
+  atMinXL,
   bp,
   BreakpointName,
 } from '~/theme/breakpoints';
@@ -57,13 +58,17 @@ const HeaderText = styled(Heading)`
     max-width: 60rem;
   }
 
-  ${atMinDesktop} {
-    left: 33.75rem;
+  ${atMinXL} {
+    left: ${cssClamp(
+      [22.75, 'xl'],
+      [33.75, 'desktop'],
+      [37.5, 'largeDesktop'],
+    )};
     padding-top: 4.25rem;
   }
 
-  ${atMinLargeDesktop} {
-    left: 37.5rem;
+  ${atMinDesktop} {
+    padding-top: 4.25rem;
   }
 `;
 
@@ -103,7 +108,8 @@ export const PageHero: FC<PageHeroProps> = ({
     <section
       css={css`
         position: relative;
-        ${atMinDesktop} {
+
+        ${atMinXL} {
           min-height: ${calculatedImageHeight};
         }
       `}
