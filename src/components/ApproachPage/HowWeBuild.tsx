@@ -3,13 +3,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
-import {
-  atMinDesktop,
-  atMinLargeDesktop,
-  atMinTablet,
-  cssClamp,
-  spacing,
-} from '~/theme';
+import { atMinDesktop, atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
 const imageDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
 
@@ -71,7 +65,7 @@ export const HowWeBuild: FC = () => {
   return (
     <section
       css={css`
-        ${atMinDesktop} {
+        ${atMinXL} {
           margin: 0 7.6125rem;
         }
       `}
@@ -103,7 +97,7 @@ export const HowWeBuild: FC = () => {
               )};
               z-index: 1;
 
-              ${atMinLargeDesktop} {
+              ${atMinXL} {
                 margin-left: -14rem;
               }
             `}
