@@ -2,28 +2,30 @@ import styled from '@emotion/styled';
 
 import { FC } from 'react';
 import { TeamMemberCard } from './TeamMemberCard';
-import { atMinDesktop, atMinLg, atMinXL } from '~/theme';
+import { atMinDesktop, atMinTablet, atMinXL } from '~/theme';
 
 import team from 'team.json';
 
 const TeamMasonry = styled.section`
   columns: 1;
 
-  ${atMinLg} {
-    column-gap: 3rem;
+  ${atMinTablet} {
+    column-gap: 2rem;
     columns: 2;
 
     & article {
       break-inside: avoid;
+      margin-bottom: 4rem;
+      &:nth-of-type(1) {
+        padding-top: 10rem;
+      }
     }
   }
 
   ${atMinXL} {
-    /* column-gap: 1.25rem; */
     columns: 3;
 
     & article {
-      /* break-inside: avoid; */
       margin-bottom: 8rem;
       width: 100%;
       &:nth-of-type(1) {
