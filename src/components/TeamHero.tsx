@@ -9,13 +9,15 @@ import {
   atMinLargeDesktop,
   bp,
   BreakpointName,
+  atMinTablet,
 } from '~/theme/breakpoints';
 import { cssClamp } from '~/theme/util';
 
 type TeamHeroImageSource = {
-  largeDesktop: string;
+  // largeDesktop: string;
+  desktop: string;
   tablet: string;
-  xl: string;
+  // xl: string;
   xs: string;
 };
 
@@ -30,14 +32,19 @@ type TeamHeroProps = TeamHeroImageProps & {
 
 const calculatedImageHeight = cssClamp(
   [17.5, 'smMobile'],
-  [20.188, 'mobile'],
+  [21.938, 'mobile'],
   [35, 'tablet'],
+  [37.5, 'desktop'],
 );
 
 const Image = styled.picture`
   height: ${calculatedImageHeight};
   position: absolute;
   right: calc(50% - 50vw);
+
+  ${atMinTablet} {
+    max-height: 90vw;
+  }
 
   ${atMinLargeDesktop} {
     margin-left: ${cssClamp([-20, 'largeDesktop'], [-15, 'xlDesktop'])};
@@ -51,6 +58,7 @@ const Image = styled.picture`
 const HeaderText = styled(Heading)`
   padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [21.5, 'tablet'])};
   position: relative;
+  z-index: 1;
 
   /* ${atMinLg} {
     max-width: 60rem;

@@ -9,9 +9,11 @@ const heroImageSource = {
 };
 
 const teamHeroImageSource = {
-  largeDesktop: '/culture/team-hero/culture-ourteam-xlarge.jpg',
-  tablet: '/culture/team-hero/culture-ourteam-medium.jpg',
-  xl: '/culture/team-hero/culture-ourteam-large.jpg',
+  // largeDesktop: '/culture/team-hero/culture-ourteam-xlarge.jpg',
+  desktop: '/culture/team-hero/culture-ourteam-xlarge.jpg',
+  // tablet: '/culture/team-hero/culture-ourteam-medium.jpg',
+  tablet: '/culture/team-hero/culture-ourteam-large.jpg',
+  // xl: '/culture/team-hero/culture-ourteam-large.jpg',
   xs: '/culture/team-hero/culture-ourteam-small.jpg',
 };
 
