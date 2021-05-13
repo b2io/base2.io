@@ -11,5 +11,6 @@ export * from './Link';
 export * from './MobileMenu';
 export * from './PageHero';
 export * from './TeamCardList';
+export * from './TeamHero';
 export * from './TeamMemberCard';
 export * from './Text';

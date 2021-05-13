@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Layout, PageHero, TeamCardList } from '~/components';
+import { Layout, PageHero, TeamCardList, TeamHero } from '~/components';
 
 const heroImageSource = {
   largeDesktop: '/culture/culture-hero-xlarge.jpg',
@@ -12,6 +12,11 @@ export const CulturePage: FC = () => {
   return (
     <Layout>
       <PageHero
+        alt="people sitting around conference table collaborating"
+        imgSource={heroImageSource}
+        text="We are engineers and artisans, collaborat&shy;ing to make custom software people love."
+      />
+      <TeamHero
         alt="people sitting around conference table collaborating"
         imgSource={heroImageSource}
         text="We are engineers and artisans, collaborat&shy;ing to make custom software people love."
