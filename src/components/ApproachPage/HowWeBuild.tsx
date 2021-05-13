@@ -139,7 +139,7 @@ export const HowWeBuild: FC = () => {
         `}
       >
         Let&apos;s face it—things pop up along the way. Our development process
-        is intentionally flexible to allow us to accomodate the unexpected.
+        is intentionally flexible to allow us to accommodate the unexpected.
         While we work with everyone uniquely, a few steps are central to our
         approach.
       </Heading>
