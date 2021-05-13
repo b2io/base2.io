@@ -34,6 +34,13 @@ class CustomDocument extends Document {
                   font-weight: 1 999;
                   src: url(/RoobertGX.ttf) format('truetype');
                 }
+                @font-face {
+                  font-display: swap;
+                  font-family: 'Roobert';
+                  font-style: italic;
+                  font-weight: 1 999;
+                  src: url(/RoobertItalicGX.ttf) format('truetype');
+                }
 
                 :root {
                   color-scheme: dark;

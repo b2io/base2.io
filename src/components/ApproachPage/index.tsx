@@ -1,8 +1,9 @@
 import { css } from '@emotion/react';
 import React, { FC } from 'react';
-import { Layout, PageHero } from '~/components';
+import { Layout, PageHero, QuotedImage } from '~/components';
 import { atMinTablet } from '~/theme';
 import { spacing } from '~/theme/spacing';
+import { HowWeBuild } from './HowWeBuild';
 import { HowWeEngage } from './HowWeEngage';
 
 const heroImageSource = {
@@ -10,6 +11,12 @@ const heroImageSource = {
   tablet: '/approach/approach-hero-medium.jpg',
   xl: '/approach/approach-hero-large.jpg',
   xs: '/approach/approach-hero-small.jpg',
+};
+
+const quotedImageSource = {
+  tablet: '/approach/approach-quote_medium.jpg',
+  xl: '/approach/approach-quote_large.jpg',
+  xs: '/approach/approach-quote_small.jpg',
 };
 
 export const ApproachPage: FC = () => {
@@ -28,6 +35,15 @@ export const ApproachPage: FC = () => {
         `}
       />
       <HowWeEngage />
+      <HowWeBuild />
+      <QuotedImage
+        alt="person standing by brick wall"
+        company="Base Two"
+        imgSource={quotedImageSource}
+        name="Tony Borres"
+        position="Director of Operations"
+        quote="We follow agile, an iterative approach to software development that lets us quickly pivot when challenges arise. "
+      />
     </Layout>
   );
 };
