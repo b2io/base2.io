@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { FC } from 'react';
-import { Heading } from '~/components';
+import { Heading } from './Heading';
 import {
   atMinLg,
   atMinDesktop,
@@ -65,13 +65,13 @@ const HeaderText = styled(Heading)`
   } */
 
   ${atMinDesktop} {
-    left: 33.75rem;
+    /* left: 33.75rem; */
     padding-top: 4.25rem;
   }
 
-  ${atMinLargeDesktop} {
+  /* ${atMinLargeDesktop} {
     left: 37.5rem;
-  }
+  } */
 `;
 
 const ImageContainer: FC<TeamHeroImageProps> = ({ alt, imgSource }) => {
