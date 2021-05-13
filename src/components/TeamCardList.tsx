@@ -16,7 +16,7 @@ const TeamMasonry = styled.section`
 
     & article {
       break-inside: avoid;
-      padding-bottom: 7rem;
+      margin-bottom: 8rem;
       width: 100%;
       &:nth-of-type(1) {
         padding-top: 8rem;

@@ -25,15 +25,14 @@
     "src": "/culture/team/khansen.jpg"
   },
   {
-    "name": "Franky Martinez",
-    "position": "Senior Software Engineer III",
-    "src": "/culture/team/fmartinez.jpg"
-  },
-
-  {
     "name": "Reed Dunkle",
     "position": "Senior Software Engineer I",
     "src": "/culture/team/rdunkle.jpg"
+  },
+  {
+    "name": "Franky Martinez",
+    "position": "Senior Software Engineer III",
+    "src": "/culture/team/fmartinez.jpg"
   },
   {
     "name": "Zachary Chay-Dolan",
