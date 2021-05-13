@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import { Layout, PageHero, QuotedImage } from '~/components';
 import { atMinTablet } from '~/theme';
 import { spacing } from '~/theme/spacing';
+import { HowWeBuild } from './HowWeBuild';
 import { HowWeEngage } from './HowWeEngage';
 
 const heroImageSource = {
@@ -34,6 +35,7 @@ export const ApproachPage: FC = () => {
         `}
       />
       <HowWeEngage />
+      <HowWeBuild />
       <QuotedImage
         alt="person standing by brick wall"
         company="Base Two"
