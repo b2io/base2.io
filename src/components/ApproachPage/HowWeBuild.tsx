@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
@@ -11,11 +10,10 @@ import {
   cssClamp,
   spacing,
 } from '~/theme';
-import { ImageProps } from '~/types';
 
 const imageDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
 
-const GradientCircleImage: FC<ImageProps> = ({ alt, src, ...props }) => {
+const GradientCircleImage: FC = () => {
   return (
     <div
       css={css`
@@ -30,9 +28,14 @@ const GradientCircleImage: FC<ImageProps> = ({ alt, src, ...props }) => {
           right: calc(57% - ${imageDimensionsCalc});
         }
       `}
-      {...props}
     >
-      <NextImage layout="fill" alt={alt} src={src} />
+      <img
+        css={css`
+          width: 100%;
+        `}
+        alt="large abstract gradient circle"
+        src="/home/large-gradient-circle.png"
+      />
     </div>
   );
 };
@@ -108,10 +111,7 @@ export const HowWeBuild: FC = () => {
             alt="man standing behind chair in a meeting with other people"
           />
         </picture>
-        <GradientCircleImage
-          alt="large abstract gradient circle"
-          src="/home/large-gradient-circle.png"
-        />
+        <GradientCircleImage />
       </div>
       <Heading
         as="h2"
