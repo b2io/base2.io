@@ -3,8 +3,8 @@ import React, { FC } from 'react';
 import { Layout, PageHero } from '~/components';
 import { atMinTablet } from '~/theme';
 import { spacing } from '~/theme/spacing';
-import { HowWeEngage } from './HowWeEngage';
 import { HowWeBuild } from './HowWeBuild';
+import { HowWeEngage } from './HowWeEngage';
 
 const heroImageSource = {
   largeDesktop: '/approach/approach-hero-xlarge.jpg',

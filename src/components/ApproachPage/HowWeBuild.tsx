@@ -169,7 +169,7 @@ export const HowWeBuild: FC = () => {
           documentation.
         </IconCard>
       </IconRow>
-      <Link href="" variant="CTA">
+      <Link href="/contact" variant="CTA">
         Let&apos;s make a plan together
       </Link>
     </section>
