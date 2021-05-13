@@ -1,4 +1,4 @@
-import { atMinDesktop, atMinLg, atMinTablet } from './breakpoints';
+import { atMinLg, atMinTablet, atMinXL } from './breakpoints';
 import { colors } from './colors';
 import { spacing } from './spacing';
 import { cssClamp } from './util';
@@ -141,7 +141,7 @@ export const textVariants = {
     padding: 0,
   },
   quotationsSymbol: {
-    [atMinDesktop]: {
+    [atMinXL]: {
       fontSize: '37.5rem',
       lineHeight: 0.775,
     },
