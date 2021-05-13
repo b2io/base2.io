@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import { FC } from 'react';
 import { colors } from '~/theme/colors';
-// import { spacing } from '~/theme/spacing';
 
 import { Heading } from './Heading';
 import { Text } from './Text';

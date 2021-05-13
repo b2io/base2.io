@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 import { FC } from 'react';
 import { TeamMemberCard } from './TeamMemberCard';
-import { spacing } from '~/theme/spacing';
 import { atMinXL } from '~/theme';
 
 import team from 'team.json';
@@ -11,7 +10,7 @@ const TeamMasonry = styled.section`
   columns: 1;
 
   ${atMinXL} {
-    column-gap: ${spacing.xs};
+    column-gap: 1.125rem;
     columns: 3;
 
     & article {
