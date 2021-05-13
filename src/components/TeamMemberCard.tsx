@@ -64,16 +64,16 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
   src,
 }) => {
   return (
-    <div>
-      <article>
+    <article>
+      <div>
         <ResponsiveImage alt={name} src={src} />
-      </article>
+      </div>
       <MemberInfo>
         <Heading as="h2" variant="h2">
           {name}
         </Heading>
         <Text>{position}</Text>
       </MemberInfo>
-    </div>
+    </article>
   );
 };

@@ -15,14 +15,9 @@
     "src": "/culture/team/sludemann.jpg"
   },
   {
-    "name": "Zachary Chay-Dolan",
-    "position": "Software Engineer III",
-    "src": "/culture/team/zchay-dolan.jpg"
-  },
-  {
-    "name": "Ashley Singleton",
-    "position": "Software Engineer IV",
-    "src": "/culture/team/asingleton.jpg"
+    "name": "Melissa Lam",
+    "position": "Software Engineer I",
+    "src": "/culture/team/mlam.jpg"
   },
   {
     "name": "Kate Hansen",
@@ -30,19 +25,20 @@
     "src": "/culture/team/khansen.jpg"
   },
   {
+    "name": "Franky Martinez",
+    "position": "Senior Software Engineer III",
+    "src": "/culture/team/fmartinez.jpg"
+  },
+
+  {
     "name": "Reed Dunkle",
     "position": "Senior Software Engineer I",
     "src": "/culture/team/rdunkle.jpg"
   },
   {
-    "name": "Franky Martinez",
-    "position": "Senior Software Engineer III",
-    "src": "/culture/team/fmartinez.jpg"
-  },
-  {
-    "name": "Melissa Lam",
-    "position": "Software Engineer I",
-    "src": "/culture/team/mlam.jpg"
+    "name": "Zachary Chay-Dolan",
+    "position": "Software Engineer III",
+    "src": "/culture/team/zchay-dolan.jpg"
   },
   {
     "name": "Tony Borres",
@@ -53,6 +49,11 @@
     "name": "Chris Hawkins",
     "position": "Senior Software Engineer III",
     "src": "/culture/team/chawkins.jpg"
+  },
+  {
+    "name": "Ashley Singleton",
+    "position": "Software Engineer IV",
+    "src": "/culture/team/asingleton.jpg"
   },
   {
     "name": "Nathan Kessler",
