@@ -54,7 +54,7 @@ const MemberInfo = styled.div`
     left: 0;
     position: absolute;
     top: 0.925rem;
-    width: 1.25rem;
+    width: 1.125rem;
   }
 `;
 
