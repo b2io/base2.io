@@ -1,15 +1,12 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { Heading } from '../Heading';
 import { Layout } from '../Layout';
-import { Link } from '../Link';
 import { PageHero } from '../PageHero';
-import { Text } from '../Text';
+import { AvailablePositions } from './AvailablePositions';
+import { OurCulture } from './OurCulture';
 
-export type CulturePageProps = Record<string, never>;
-
-export const CulturePage: FC<CulturePageProps> = () => {
+export const CulturePage: FC = () => {
   return (
     <Layout title="Culture">
       <PageHero
@@ -22,34 +19,16 @@ export const CulturePage: FC<CulturePageProps> = () => {
         }}
         text="We are engineers and artisans, collaborating to make custom software people love."
       />
-      <section
+      <OurCulture
         css={css`
-          display: grid;
-          gap: 1.5rem;
-          justify-items: start;
-          margin-top: 12.5rem;
-          max-width: 52rem;
+          margin-top: 8.5rem;
         `}
-      >
-        <Heading as="h2" variant="h2">
-          Let&rsquo;s turn ideas into beautiful software
-        </Heading>
-        <Text as="p" variant="h3">
-          Feeling us? We&rsquo;re always looking for like-minded people with
-          similar values and development chops. Our team is tight-knit,
-          seasoned, and intentionally small&mdash;allowing everyone&rsquo;s
-          strengths to shine.
-        </Text>
-        <Link
-          css={css`
-            margin-top: 1rem;
-          `}
-          href="/culture"
-          variant="CTA"
-        >
-          See all available positions
-        </Link>
-      </section>
+      />
+      <AvailablePositions
+        css={css`
+          margin-top: 12.5rem;
+        `}
+      />
     </Layout>
   );
 };

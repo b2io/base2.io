@@ -153,7 +153,6 @@ export const textVariants = {
     margin: '0 0 0 -.5rem',
     padding: 0,
   },
-
   quotationText: {
     [atMinTablet]: {
       fontVariationSettings: '"wght" 900',

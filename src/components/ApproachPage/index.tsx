@@ -39,6 +39,13 @@ export const ApproachPage: FC = () => {
       <QuotedImage
         alt="person standing by brick wall"
         company="Base Two"
+        css={css`
+          margin-top: 12.5rem;
+
+          ${atMinTablet} {
+            margin-top: 17rem;
+          }
+        `}
         imgSource={quotedImageSource}
         name="Tony Borres"
         position="Director of Operations"
