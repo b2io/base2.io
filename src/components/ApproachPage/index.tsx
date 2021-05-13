@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import React, { FC } from 'react';
 import { Layout, PageHero, QuotedImage } from '~/components';
-import { atMinTablet } from '~/theme';
-import { spacing } from '~/theme/spacing';
+import { cssClamp, atMinTablet, spacing } from '~/theme';
+
 import { HowWeBuild } from './HowWeBuild';
 import { HowWeEngage } from './HowWeEngage';
 
@@ -34,8 +34,20 @@ export const ApproachPage: FC = () => {
           }
         `}
       />
-      <HowWeEngage />
-      <HowWeBuild />
+      <HowWeEngage
+        css={css`
+          margin-bottom: 7.375rem;
+
+          ${atMinTablet} {
+            margin-bottom: 0.25rem;
+          }
+        `}
+      />
+      <HowWeBuild
+        css={css`
+          margin-bottom: ${cssClamp([12.5, 'mobile'], [17.313, 'tablet'])};
+        `}
+      />
       <QuotedImage
         alt="person standing by brick wall"
         company="Base Two"

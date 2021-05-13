@@ -61,7 +61,7 @@ const IconRow = styled.div`
   }
 `;
 
-export const HowWeBuild: FC = () => {
+export const HowWeBuild: FC = (props) => {
   return (
     <section
       css={css`
@@ -69,6 +69,7 @@ export const HowWeBuild: FC = () => {
           margin: 0 7.6125rem;
         }
       `}
+      {...props}
     >
       <div
         css={css`
