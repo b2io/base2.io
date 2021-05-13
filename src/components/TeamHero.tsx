@@ -36,15 +36,15 @@ const calculatedImageHeight = cssClamp(
 
 const Image = styled.picture`
   height: ${calculatedImageHeight};
-  margin-left: calc(50% - 50vw);
   position: absolute;
+  right: calc(50% - 50vw);
 
   ${atMinLargeDesktop} {
     margin-left: ${cssClamp([-20, 'largeDesktop'], [-15, 'xlDesktop'])};
   }
 
   img {
-    filter: brightness(0.85);
+    /* filter: brightness(0.85); */
     height: 100%;
   }
 `;
@@ -110,7 +110,9 @@ export const TeamHero: FC<TeamHeroProps> = ({
       {...props}
     >
       <ImageContainer alt={alt} imgSource={imgSource} />
-      <HeaderText as="h1">{text}</HeaderText>
+      <HeaderText as="h2" variant="hero" color="coral">
+        {text}
+      </HeaderText>
     </section>
   );
 };
