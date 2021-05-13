@@ -24,7 +24,7 @@ export const CulturePage: FC = () => {
         text="We are engineers and artisans, collaborat&shy;ing to make custom software people love."
       />
       <TeamHero
-        alt="people sitting around conference table collaborating"
+        alt="person wearing hat smiling"
         imgSource={teamHeroImageSource}
         text="Our team"
       />

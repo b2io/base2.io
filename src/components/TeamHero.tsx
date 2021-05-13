@@ -44,7 +44,6 @@ const Image = styled.picture`
   }
 
   img {
-    /* filter: brightness(0.85); */
     height: 100%;
   }
 `;
@@ -53,9 +52,9 @@ const HeaderText = styled(Heading)`
   padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [21.5, 'tablet'])};
   position: relative;
 
-  ${atMinLg} {
+  /* ${atMinLg} {
     max-width: 60rem;
-  }
+  } */
 
   ${atMinDesktop} {
     left: 33.75rem;
