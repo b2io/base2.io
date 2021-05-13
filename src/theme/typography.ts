@@ -1,4 +1,4 @@
-import { atMinLg, atMinTablet } from './breakpoints';
+import { atMinDesktop, atMinLg, atMinTablet } from './breakpoints';
 import { colors } from './colors';
 import { spacing } from './spacing';
 import { cssClamp } from './util';
@@ -137,6 +137,33 @@ export const textVariants = {
     fontVariationSettings: '"wght" 900',
     letterSpacing: 'normal',
     lineHeight: 0.53,
+    margin: 0,
+    padding: 0,
+  },
+  quotationsSymbol: {
+    [atMinDesktop]: {
+      fontSize: '37.5rem',
+      lineHeight: 0.775,
+    },
+    color: colors.midBlue,
+    fontSize: cssClamp([12.5, 'mobile'], [15, 'tablet']),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: 0,
+    lineHeight: 0.125,
+    margin: '0 0 0 -.5rem',
+    padding: 0,
+  },
+
+  quotationText: {
+    [atMinTablet]: {
+      fontVariationSettings: '"wght" 900',
+      lineHeight: 1.125,
+    },
+    color: colors.text,
+    fontSize: cssClamp([2.5, 'mobile'], [6.25, 'tablet']),
+    fontVariationSettings: '"wght" 750',
+    letterSpacing: 'normal',
+    lineHeight: 1.1,
     margin: 0,
     padding: 0,
   },
