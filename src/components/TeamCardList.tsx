@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
-
 import { FC } from 'react';
 import { TeamMemberCard } from './TeamMemberCard';
-import { atMinDesktop, atMinTablet, atMinXL } from '~/theme';
-
 import team from 'team.json';
+import { atMinDesktop, atMinTablet, atMinXL } from '~/theme';
+import { spacing } from '~/theme/spacing';
 
 const TeamMasonry = styled.section`
   columns: 1;
@@ -38,8 +37,8 @@ const TeamMasonry = styled.section`
   }
 
   ${atMinDesktop} {
-    margin-left: -3.5rem;
-    margin-right: -3.5rem;
+    margin-left: -${spacing.xxl};
+    margin-right: -${spacing.xxl};
   }
 `;
 

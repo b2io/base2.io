@@ -6,6 +6,7 @@ import { colors } from '~/theme/colors';
 import { Heading } from './Heading';
 import { Text } from './Text';
 import { atMinTablet } from '~/theme';
+import { spacing } from '~/theme/spacing';
 
 type ImageProps = {
   alt: string;
@@ -33,8 +34,8 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
 };
 
 const MemberInfo = styled.div`
-  margin-top: -2rem;
-  padding-left: 1rem;
+  margin-top: -${spacing.md};
+  padding-left: ${spacing.xs};
   position: relative;
 
   ${atMinTablet} {
@@ -42,8 +43,8 @@ const MemberInfo = styled.div`
   }
 
   & p {
-    margin-top: 0.25rem;
-    padding-left: 32px;
+    margin-top: ${spacing.xxxs};
+    padding-left: ${spacing.md};
     position: relative;
   }
 
