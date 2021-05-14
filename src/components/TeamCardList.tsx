@@ -4,9 +4,11 @@ import { TeamMemberCard } from './TeamMemberCard';
 import team from 'team.json';
 import { atMinDesktop, atMinTablet, atMinXL } from '~/theme';
 import { spacing } from '~/theme/spacing';
+import { colors } from '~/theme/colors';
 
 const TeamMasonry = styled.section`
   columns: 1;
+  position: relative;
 
   ${atMinTablet} {
     column-gap: 2rem;
@@ -40,6 +42,24 @@ const TeamMasonry = styled.section`
     margin-left: -${spacing.xxl};
     margin-right: -${spacing.xxl};
   }
+
+  .team-card-background {
+    display: none;
+
+    ${atMinDesktop} {
+      /* background-color: ${colors.darkBlueAlt}; */
+      background-color: white;
+      display: block;
+      height: 101.5%;
+      left: calc(50% - 50vw);
+      /* temp  */
+      opacity: 0.5;
+      /* temp   */
+      position: absolute;
+      top: -6.5%;
+      width: 100vw;
+    }
+  }
 `;
 
 export const TeamCardList: FC = () => {
@@ -56,6 +76,7 @@ export const TeamCardList: FC = () => {
           />
         );
       })}
+      <div className="team-card-background"></div>
     </TeamMasonry>
   );
 };
