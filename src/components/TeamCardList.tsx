@@ -15,7 +15,7 @@ const TeamMasonry = styled.section`
   }
 
   ${atMinTablet} {
-    column-gap: 2rem;
+    column-gap: ${spacing.md};
     columns: 2;
 
     & article {
