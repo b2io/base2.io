@@ -54,12 +54,12 @@ export const CulturePage: FC<CulturePageProps> = () => {
       </section>
       <TeamHero
         alt="person wearing hat smiling"
+        css={css`
+          margin-bottom: 5rem;
+        `}
         imgSource={{
-          // largeDesktop: '/culture/team-hero/culture-ourteam-xlarge.jpg',
           desktop: '/culture/team-hero/culture-ourteam-xlarge.jpg',
-          // tablet: '/culture/team-hero/culture-ourteam-medium.jpg',
           tablet: '/culture/team-hero/culture-ourteam-large.jpg',
-          // xl: '/culture/team-hero/culture-ourteam-large.jpg',
           xs: '/culture/team-hero/culture-ourteam-small.jpg',
         }}
         text="Our team"
