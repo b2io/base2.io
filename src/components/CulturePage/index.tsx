@@ -8,6 +8,7 @@ import { PageHero } from '../PageHero';
 import { Text } from '../Text';
 import { TeamCardList } from '../TeamCardList';
 import { TeamHero } from '../TeamHero';
+import { atMinDesktop } from '~/theme';
 
 export type CulturePageProps = Record<string, never>;
 
@@ -56,6 +57,9 @@ export const CulturePage: FC<CulturePageProps> = () => {
         alt="person wearing hat smiling"
         css={css`
           margin-bottom: 5rem;
+          ${atMinDesktop} {
+            margin-bottom: -4rem;
+          }
         `}
         imgSource={{
           desktop: '/culture/team-hero/culture-ourteam-xlarge.jpg',
