@@ -45,7 +45,7 @@ export const ApproachPage: FC = () => {
       />
       <HowWeBuild
         css={css`
-          margin-bottom: ${cssClamp([12.5, 'mobile'], [17.313, 'tablet'])};
+          margin-bottom: ${cssClamp([12.5, 'mobile'], [17.313, 'desktop'])};
         `}
       />
       <QuotedImage

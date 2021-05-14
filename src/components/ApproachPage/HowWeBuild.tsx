@@ -66,7 +66,8 @@ export const HowWeBuild: FC = (props) => {
     <section
       css={css`
         ${atMinXL} {
-          margin: 0 7.6125rem;
+          margin-left: 7.6125rem;
+          margin-right: 7.6125rem;
         }
       `}
       {...props}
