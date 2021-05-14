@@ -11,6 +11,7 @@ import {
   BreakpointName,
   atMinTablet,
 } from '~/theme/breakpoints';
+import { spacing } from '~/theme/spacing';
 import { cssClamp } from '~/theme/util';
 
 type TeamHeroImageSource = {
@@ -42,8 +43,12 @@ const Image = styled.picture`
   position: absolute;
   right: calc(50% - 50vw);
 
-  ${atMinTablet} {
+  /* ${atMinTablet} {
     max-height: 90vw;
+  } */
+
+  ${atMinDesktop} {
+    right: -${spacing.xxl3};
   }
 
   ${atMinLargeDesktop} {
@@ -56,7 +61,7 @@ const Image = styled.picture`
 `;
 
 const HeaderText = styled(Heading)`
-  padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [21.5, 'tablet'])};
+  padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [28, 'tablet'])};
   position: relative;
   z-index: 1;
 
@@ -66,7 +71,7 @@ const HeaderText = styled(Heading)`
 
   ${atMinDesktop} {
     /* left: 33.75rem; */
-    padding-top: 4.25rem;
+    /* padding-top: 4.25rem; */
   }
 
   /* ${atMinLargeDesktop} {
