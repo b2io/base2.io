@@ -65,7 +65,7 @@ export const textVariants = {
     },
     color: colors.text,
     fontSize: '1.063rem',
-    fontVariationSettings: '"wght" 500',
+    fontVariationSettings: '"wght" 300',
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
   },
