@@ -61,13 +61,14 @@ const Image = styled.picture`
 `;
 
 const HeaderText = styled(Heading)`
-  padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [28, 'tablet'])};
+  padding-left: ${cssClamp([0, 'xl'], [19, 'desktop'])};
+  padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [28.25, 'tablet'])};
   position: relative;
   z-index: 1;
 
-  /* ${atMinLg} {
-    max-width: 60rem;
-  } */
+  ${atMinLg} {
+    white-space: nowrap;
+  }
 
   ${atMinDesktop} {
     /* left: 33.75rem; */

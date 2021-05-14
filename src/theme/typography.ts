@@ -176,8 +176,8 @@ export const textVariants = {
     },
     color: colors.coral,
     fontSize: cssClamp(
-      [4.25, 'smMobile'],
-      [5, 'mobile'],
+      [3.5, 'smMobile'],
+      [4.25, 'mobile'],
       [10, 'tablet'],
       [15, 'lg'],
     ),
