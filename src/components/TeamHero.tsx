@@ -58,7 +58,7 @@ const HeaderText = styled(Heading)`
   padding-left: ${cssClamp([0, 'xl'], [19, 'desktop'])};
   padding-top: ${cssClamp(
     [16, 'smMobile'],
-    [20.5, 'mobile'],
+    [19.75, 'mobile'],
     [26, 'sm'],
     [28.5, 'tablet'],
   )};
