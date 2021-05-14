@@ -167,6 +167,26 @@ export const textVariants = {
     margin: 0,
     padding: 0,
   },
+  teamHero: {
+    [atMinLg]: {
+      lineHeight: 0.58,
+    },
+    [atMinTablet]: {
+      lineHeight: 0.74,
+    },
+    color: colors.coral,
+    fontSize: cssClamp(
+      [4.25, 'smMobile'],
+      [5, 'mobile'],
+      [10, 'tablet'],
+      [15, 'lg'],
+    ),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: 'normal',
+    lineHeight: 0.53,
+    margin: 0,
+    padding: 0,
+  },
 };
 
 export type ThemeLinkVariants = keyof typeof linkVariants;

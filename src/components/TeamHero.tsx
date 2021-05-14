@@ -122,7 +122,7 @@ export const TeamHero: FC<TeamHeroProps> = ({
       {...props}
     >
       <ImageContainer alt={alt} imgSource={imgSource} />
-      <HeaderText as="h2" variant="hero" color="coral">
+      <HeaderText as="h2" variant="teamHero" color="coral">
         {text}
       </HeaderText>
     </section>
