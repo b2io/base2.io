@@ -1,6 +1,5 @@
-import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { FC } from 'react';
+import { Children, cloneElement, ElementType, FC, ReactElement } from 'react';
 
 import { spacing } from '~/theme';
 import { Heading, Text } from '~/components';
@@ -34,46 +33,45 @@ type Icon =
   | 'sustainability'
   | 'transparency';
 
-export type IconCardProps = {
+export type IconCardProps<E extends ElementType = ElementType> = {
+  as?: E;
   icon: Icon;
   heading: string;
 };
 
-const IconImage = styled.div`
-  height: 3rem;
-  margin-bottom: ${spacing.xxs};
-
-  svg {
-    width: auto;
-  }
-`;
-
 const IconList = {
-  business: <BusinessIcon />,
-  community: <CommunityIcon />,
-  delivery: <DeliveryIcon />,
-  developer: <DeveloperIcon />,
-  discovery: <DiscoveryIcon />,
-  embedded: <EmbeddedIcon />,
-  empathy: <EmpathyIcon />,
-  execution: <ExecutionIcon />,
-  fullyManaged: <FullyManagedIcon />,
-  support: <SupportIcon />,
-  sustainability: <SustainabilityIcon />,
-  transparency: <TransparencyIcon />,
+  business: BusinessIcon,
+  community: CommunityIcon,
+  delivery: DeliveryIcon,
+  developer: DeveloperIcon,
+  discovery: DiscoveryIcon,
+  embedded: EmbeddedIcon,
+  empathy: EmpathyIcon,
+  execution: ExecutionIcon,
+  fullyManaged: FullyManagedIcon,
+  support: SupportIcon,
+  sustainability: SustainabilityIcon,
+  transparency: TransparencyIcon,
 };
 
 export const IconCard: FC<IconCardProps> = ({
+  as: Component = 'div',
   children,
   icon,
   heading,
   ...props
 }) => {
-  const iconSelected = icon;
+  const Icon = IconList[icon];
 
   return (
-    <div {...props}>
-      <IconImage className={icon}>{IconList[iconSelected]}</IconImage>
+    <Component {...props}>
+      <Icon
+        css={css`
+          height: 3rem;
+          margin-bottom: ${spacing.xxs};
+          width: auto;
+        `}
+      />
       <Heading
         as="h3"
         color="coral"
@@ -84,7 +82,38 @@ export const IconCard: FC<IconCardProps> = ({
       >
         {heading}
       </Heading>
-      <Text>{children}</Text>
-    </div>
+      <Text
+        as="p"
+        css={css`
+          margin: 0;
+        `}
+      >
+        {children}
+      </Text>
+    </Component>
+  );
+};
+
+export type IconCardGridProps = {
+  children: ReactElement<IconCardProps>[];
+};
+
+export const IconCardGrid: FC<IconCardGridProps> = ({ children, ...props }) => {
+  return (
+    <ul
+      css={css`
+        display: grid;
+        grid-column-gap: 9rem;
+        grid-row-gap: 4rem;
+        grid-template-columns: repeat(auto-fit, minmax(0, 29rem));
+        list-style: none;
+        margin: 0;
+        max-width: 67rem;
+        padding: 0;
+      `}
+      {...props}
+    >
+      {Children.map(children, (child) => cloneElement(child, { as: 'li' }))}
+    </ul>
   );
 };
