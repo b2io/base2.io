@@ -9,16 +9,13 @@ import {
   atMinLargeDesktop,
   bp,
   BreakpointName,
-  atMinTablet,
 } from '~/theme/breakpoints';
 import { spacing } from '~/theme/spacing';
 import { cssClamp } from '~/theme/util';
 
 type TeamHeroImageSource = {
-  // largeDesktop: string;
   desktop: string;
   tablet: string;
-  // xl: string;
   xs: string;
 };
 
@@ -43,10 +40,6 @@ const Image = styled.picture`
   position: absolute;
   right: calc(50% - 50vw);
 
-  /* ${atMinTablet} {
-    max-height: 90vw;
-  } */
-
   ${atMinDesktop} {
     right: -${spacing.xxl3};
   }
@@ -62,22 +55,18 @@ const Image = styled.picture`
 
 const HeaderText = styled(Heading)`
   padding-left: ${cssClamp([0, 'xl'], [19, 'desktop'])};
-  padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [28.25, 'tablet'])};
+  padding-top: ${cssClamp(
+    [16, 'smMobile'],
+    [20, 'mobile'],
+    [28.5, 'tablet'],
+    [28.25, 'desktop'],
+  )};
   position: relative;
   z-index: 1;
 
   ${atMinLg} {
     white-space: nowrap;
   }
-
-  ${atMinDesktop} {
-    /* left: 33.75rem; */
-    /* padding-top: 4.25rem; */
-  }
-
-  /* ${atMinLargeDesktop} {
-    left: 37.5rem;
-  } */
 `;
 
 const ImageContainer: FC<TeamHeroImageProps> = ({ alt, imgSource }) => {
@@ -115,10 +104,8 @@ export const TeamHero: FC<TeamHeroProps> = ({
   return (
     <section
       css={css`
+        min-height: ${calculatedImageHeight};
         position: relative;
-        ${atMinDesktop} {
-          min-height: ${calculatedImageHeight};
-        }
       `}
       {...props}
     >
