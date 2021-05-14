@@ -55,12 +55,7 @@ const Image = styled.picture`
 
 const HeaderText = styled(Heading)`
   padding-left: ${cssClamp([0, 'xl'], [19, 'desktop'])};
-  padding-top: ${cssClamp(
-    [16, 'smMobile'],
-    [20, 'mobile'],
-    [28.5, 'tablet'],
-    [28.25, 'desktop'],
-  )};
+  padding-top: ${cssClamp([16, 'smMobile'], [20, 'mobile'], [28.5, 'tablet'])};
   position: relative;
   z-index: 1;
 
