@@ -37,9 +37,14 @@ const MemberInfo = styled.div`
   margin-top: -${spacing.md};
   padding-left: ${spacing.xs};
   position: relative;
+  z-index: 3;
 
   ${atMinTablet} {
     margin-top: -2.85rem;
+  }
+
+  & img {
+    z-index: 2;
   }
 
   & p {

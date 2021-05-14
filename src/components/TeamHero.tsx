@@ -39,6 +39,7 @@ const Image = styled.picture`
   height: ${calculatedImageHeight};
   position: absolute;
   right: calc(50% - 50vw);
+  z-index: 2;
 
   ${atMinDesktop} {
     right: -${spacing.xxl3};
@@ -62,7 +63,7 @@ const HeaderText = styled(Heading)`
     [28.5, 'tablet'],
   )};
   position: relative;
-  z-index: 1;
+  z-index: 3;
 
   ${atMinLg} {
     white-space: nowrap;

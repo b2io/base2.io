@@ -10,6 +10,10 @@ const TeamMasonry = styled.section`
   columns: 1;
   position: relative;
 
+  img {
+    z-index: 2;
+  }
+
   ${atMinTablet} {
     column-gap: 2rem;
     columns: 2;
@@ -29,6 +33,7 @@ const TeamMasonry = styled.section`
     & article {
       margin-bottom: 8rem;
       width: 100%;
+      z-index: 2;
       &:nth-of-type(1) {
         padding-top: 8rem;
       }
@@ -47,17 +52,14 @@ const TeamMasonry = styled.section`
     display: none;
 
     ${atMinDesktop} {
-      /* background-color: ${colors.darkBlueAlt}; */
-      background-color: white;
+      background-color: ${colors.darkBlueAlt};
       display: block;
       height: 101.5%;
       left: calc(50% - 50vw);
-      /* temp  */
-      opacity: 0.5;
-      /* temp   */
       position: absolute;
       top: -6.5%;
       width: 100vw;
+      z-index: 0;
     }
   }
 `;
