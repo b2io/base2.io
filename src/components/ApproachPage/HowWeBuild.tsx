@@ -9,6 +9,7 @@ import {
   atMinDesktop,
   atMinLargeDesktop,
   atMinTablet,
+  atMinXL,
   cssClamp,
   spacing,
 } from '~/theme';
@@ -60,7 +61,7 @@ const IconRow = styled.div`
     }
   }
 
-  > :nth-child(odd) {
+  > :nth-of-type(odd) {
     margin-right: ${spacing.sm};
 
     ${atMinDesktop} {
@@ -75,14 +76,16 @@ const imageSource = {
   xs: '/approach/howwebuild-small.jpg',
 };
 
-export const HowWeBuild: FC = () => {
+export const HowWeBuild: FC = (props) => {
   return (
     <section
       css={css`
-        ${atMinDesktop} {
-          margin: 0 7.6125rem;
+        ${atMinXL} {
+          margin-left: 7.6125rem;
+          margin-right: 7.6125rem;
         }
       `}
+      {...props}
     >
       <div
         css={css`
@@ -131,7 +134,7 @@ export const HowWeBuild: FC = () => {
               )};
               z-index: 1;
 
-              ${atMinLargeDesktop} {
+              ${atMinXL} {
                 margin-left: -14rem;
               }
             `}
