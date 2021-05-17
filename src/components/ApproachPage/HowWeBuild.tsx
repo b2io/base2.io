@@ -3,13 +3,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
-import {
-  atMinDesktop,
-  atMinLargeDesktop,
-  atMinTablet,
-  cssClamp,
-  spacing,
-} from '~/theme';
+import { atMinDesktop, atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
 const imageDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
 
@@ -58,7 +52,7 @@ const IconRow = styled.div`
     }
   }
 
-  > :nth-child(odd) {
+  > :nth-of-type(odd) {
     margin-right: ${spacing.sm};
 
     ${atMinDesktop} {
@@ -67,14 +61,16 @@ const IconRow = styled.div`
   }
 `;
 
-export const HowWeBuild: FC = () => {
+export const HowWeBuild: FC = (props) => {
   return (
     <section
       css={css`
-        ${atMinDesktop} {
-          margin: 0 7.6125rem;
+        ${atMinXL} {
+          margin-left: 7.6125rem;
+          margin-right: 7.6125rem;
         }
       `}
+      {...props}
     >
       <div
         css={css`
@@ -103,7 +99,7 @@ export const HowWeBuild: FC = () => {
               )};
               z-index: 1;
 
-              ${atMinLargeDesktop} {
+              ${atMinXL} {
                 margin-left: -14rem;
               }
             `}

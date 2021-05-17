@@ -9,6 +9,7 @@ import {
   atMinDesktop,
   atMinMobile,
   atMinTablet,
+  atMinXL,
   bp,
   BreakpointName,
 } from '~/theme/breakpoints';
@@ -48,7 +49,7 @@ const Image = styled.picture`
     height: ${calculatedImageHeight};
   }
 
-  ${atMinDesktop} {
+  ${atMinXL} {
     right: -${spacing.xxl3};
   }
 
@@ -96,11 +97,15 @@ const TextContainer = styled.div`
     padding-top: 4.5rem;
   }
 
-  ${atMinDesktop} {
+  ${atMinXL} {
     display: flex;
-    margin-left: -7.5rem;
+    margin-left: -3.5rem;
     max-width: 85rem;
     padding-top: 6rem;
+  }
+
+  ${atMinDesktop} {
+    margin-left: -7.5rem;
   }
 `;
 
@@ -144,7 +149,7 @@ export const QuotedImage: FC<QuotedImageProps> = ({
                 margin-bottom: 3.125rem;
               }
 
-              ${atMinDesktop} {
+              ${atMinXL} {
                 margin-bottom: 0;
               }
             `}
