@@ -37,8 +37,14 @@ const TeamMasonry = styled.section`
       &:nth-of-type(1) {
         padding-top: 8rem;
       }
+      &:nth-of-type(4) {
+        margin-bottom: 0;
+      }
       &:nth-of-type(5) {
-        padding-top: 16rem;
+        padding-top: 8rem;
+      }
+      &:nth-of-type(6) {
+        padding-top: 17.5rem;
       }
     }
   }
@@ -46,6 +52,7 @@ const TeamMasonry = styled.section`
   ${atMinDesktop} {
     margin-left: -${spacing.xxl};
     margin-right: -${spacing.xxl};
+    padding-bottom: 8rem;
   }
 
   .team-card-background {
@@ -53,11 +60,13 @@ const TeamMasonry = styled.section`
 
     ${atMinDesktop} {
       background-color: ${colors.darkBlueAlt};
+      border-bottom: 1px solid #979797;
+      border-top: 1px solid #979797;
+      bottom: 0;
       display: block;
-      height: 101.5%;
+      height: calc(100% + 14rem);
       left: calc(50% - 50vw);
       position: absolute;
-      top: -6.5%;
       width: 100vw;
       z-index: 0;
     }
