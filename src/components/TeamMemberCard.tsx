@@ -16,6 +16,8 @@ type TeamMemberCardProps = ImageProps & {
 };
 
 const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
+  src = src as string;
+
   return (
     <div {...props}>
       <NextImage

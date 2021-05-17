@@ -15,6 +15,8 @@ const imageTopCalc = cssClamp(
 );
 
 const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
+  src = src as string;
+
   return (
     <div
       css={css`

@@ -11,7 +11,7 @@ export const ApproachPage: FC = () => {
     <Layout>
       <PageHero
         alt="person staring at a computer"
-        imgSource={{
+        src={{
           largeDesktop: '/approach/approach-hero-xlarge.jpg',
           tablet: '/approach/approach-hero-medium.jpg',
           xl: '/approach/approach-hero-large.jpg',
@@ -43,7 +43,7 @@ export const ApproachPage: FC = () => {
       <QuotedImage
         alt="person standing by brick wall"
         company="Base Two"
-        imgSource={{
+        src={{
           tablet: '/approach/approach-quote_medium.jpg',
           xl: '/approach/approach-quote_large.jpg',
           xs: '/approach/approach-quote_small.jpg',
