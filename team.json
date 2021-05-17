@@ -1,12 +1,12 @@
 [
   {
     "name": "Drew Miller",
-    "position": "Owner &\u00a0Principal\u00a0Software\u00a0Engineer",
+    "position": "Owner &\u00a0Principal Software Engineer",
     "src": "/culture/team/dmiller.jpg"
   },
   {
     "name": "Mike Condo",
-    "position": "Senior Software Engineer I",
+    "position": "Senior Software\u00a0Engineer\u00a0I",
     "src": "/culture/team/mcondo.jpg"
   },
   {
@@ -36,12 +36,12 @@
   },
   {
     "name": "Franky Martinez",
-    "position": "Senior Software Engineer III",
+    "position": "Senior Software Engineer\u00a0III",
     "src": "/culture/team/fmartinez.jpg"
   },
   {
     "name": "Nathan Kessler",
-    "position": "Senior Software Engineer II",
+    "position": "Senior Software Engineer\u00a0II",
     "src": "/culture/team/nkessler.jpg"
   },
   {
@@ -51,7 +51,7 @@
   },
   {
     "name": "Chris Hawkins",
-    "position": "Senior Software Engineer III",
+    "position": "Senior Software Engineer\u00a0III",
     "src": "/culture/team/chawkins.jpg"
   },
   {
