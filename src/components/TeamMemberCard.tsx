@@ -68,7 +68,7 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
     <article>
       <ResponsiveImage alt={name} src={src} />
       <MemberInfo>
-        <Heading as="h2" variant="h2">
+        <Heading as="h3" variant="h2">
           {name}
         </Heading>
         <Text>{position}</Text>
