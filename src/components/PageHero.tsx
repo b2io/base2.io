@@ -60,12 +60,7 @@ const HeaderText = styled(Heading)`
   }
 `;
 
-export const PageHero: FC<PageHeroProps> = ({
-  alt,
-  imgSource,
-  text,
-  ...props
-}) => {
+export const PageHero: FC<PageHeroProps> = ({ alt, src, text, ...props }) => {
   return (
     <section
       css={css`
@@ -77,7 +72,7 @@ export const PageHero: FC<PageHeroProps> = ({
       `}
       {...props}
     >
-      <Image alt={alt} imgSource={imgSource} />
+      <Image alt={alt} src={src} />
       <HeaderText as="h1">{text}</HeaderText>
     </section>
   );

@@ -94,7 +94,7 @@ export const HowWeBuild: FC = (props) => {
       >
         <ImageContainer
           alt="man standing behind chair in a meeting with other people"
-          imgSource={imageSource}
+          src={imageSource}
           css={css`
             img {
               margin-bottom: 3.813rem;

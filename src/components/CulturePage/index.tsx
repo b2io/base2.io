@@ -14,7 +14,7 @@ export const CulturePage: FC<CulturePageProps> = () => {
     <Layout title="Culture">
       <PageHero
         alt="people sitting around conference table collaborating"
-        imgSource={{
+        src={{
           largeDesktop: '/culture/culture-hero-xlarge.jpg',
           tablet: '/culture/culture-hero-medium.jpg',
           xl: '/culture/culture-hero-large.jpg',

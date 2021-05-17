@@ -14,5 +14,5 @@ export type ImageSource = {
 
 export type ImageProps = {
   alt: string;
-  imgSource: ImageSource;
+  src: string | ImageSource;
 };

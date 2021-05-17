@@ -24,7 +24,7 @@ export const ApproachPage: FC = () => {
     <Layout>
       <PageHero
         alt="person staring at a computer"
-        imgSource={heroImageSource}
+        src={heroImageSource}
         text="People motivate what we do and how we do it."
         css={css`
           margin-bottom: ${spacing.xxl2};
@@ -51,7 +51,7 @@ export const ApproachPage: FC = () => {
       <QuotedImage
         alt="person standing by brick wall"
         company="Base Two"
-        imgSource={quotedImageSource}
+        src={quotedImageSource}
         name="Tony Borres"
         position="Director of Operations"
         quote="We follow agile, an iterative approach to software development that lets us quickly pivot when challenges arise. "
