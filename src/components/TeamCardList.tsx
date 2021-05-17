@@ -44,7 +44,7 @@ const TeamMasonry = styled.section`
         padding-top: 8rem;
       }
       &:nth-of-type(6) {
-        padding-top: 17.5rem;
+        padding-top: ${spacing.xxl5};
       }
     }
   }
