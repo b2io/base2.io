@@ -1,18 +1,7 @@
 import { FC } from 'react';
 
 import { bp, BreakpointName } from '~/theme';
-
-export type ImageSource = {
-  largeDesktop: string;
-  tablet: string;
-  xl: string;
-  xs: string;
-};
-
-export type ImageProps = {
-  alt: string;
-  imgSource: ImageSource;
-};
+import { ImageProps } from '../types';
 
 export const ImageContainer: FC<ImageProps> = ({
   alt,
