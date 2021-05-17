@@ -76,7 +76,7 @@ export const TeamCardList: FC = () => {
           src={src}
         />
       ))}
-      <div className="team-card-background"></div>
+      <div className="team-card-background" />
     </TeamMasonry>
   );
 };
