@@ -7,11 +7,7 @@ import { Heading } from './Heading';
 import { Text } from './Text';
 import { atMinTablet } from '~/theme';
 import { spacing } from '~/theme/spacing';
-
-type ImageProps = {
-  alt: string;
-  src: string;
-};
+import { ImageProps } from '~/types';
 
 type TeamMemberCardProps = ImageProps & {
   name: string;
