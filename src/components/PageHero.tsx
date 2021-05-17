@@ -7,25 +7,12 @@ import {
   atMinDesktop,
   atMinLargeDesktop,
   atMinXL,
-  bp,
-  BreakpointName,
   cssClamp,
 } from '~/theme';
 import { Heading } from './Heading';
+import { ImageContainer, ImageProps } from './ImageContainer';
 
-type HeroImageSource = {
-  largeDesktop: string;
-  tablet: string;
-  xl: string;
-  xs: string;
-};
-
-type HeroImageProps = {
-  alt: string;
-  imgSource: HeroImageSource;
-};
-
-type PageHeroProps = HeroImageProps & {
+type PageHeroProps = ImageProps & {
   text: string;
 };
 
@@ -35,7 +22,7 @@ const calculatedImageHeight = cssClamp(
   [35, 'tablet'],
 );
 
-const Image = styled.picture`
+const Image = styled(ImageContainer)`
   height: ${calculatedImageHeight};
   margin-left: calc(50% - 50vw);
   position: absolute;
@@ -72,32 +59,6 @@ const HeaderText = styled(Heading)`
   }
 `;
 
-const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
-  const sortedImgSourcesDescending = Object.entries(imgSource).sort(
-    ([breakpointA], [breakpointB]) => {
-      const keyA = breakpointA as BreakpointName;
-      const keyB = breakpointB as BreakpointName;
-      return bp[keyB] - bp[keyA];
-    },
-  );
-
-  return (
-    <Image>
-      {sortedImgSourcesDescending.map(([breakpointName, imgSource]) => {
-        const breakpointValue = breakpointName as BreakpointName;
-        return (
-          <source
-            key={breakpointName}
-            media={`(min-width: ${bp[breakpointValue]}px)`}
-            srcSet={imgSource}
-          />
-        );
-      })}
-      <img alt={alt} />
-    </Image>
-  );
-};
-
 export const PageHero: FC<PageHeroProps> = ({
   alt,
   imgSource,
@@ -115,7 +76,7 @@ export const PageHero: FC<PageHeroProps> = ({
       `}
       {...props}
     >
-      <ImageContainer alt={alt} imgSource={imgSource} />
+      <Image alt={alt} imgSource={imgSource} />
       <HeaderText as="h1">{text}</HeaderText>
     </section>
   );

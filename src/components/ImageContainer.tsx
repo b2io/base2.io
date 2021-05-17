@@ -1,21 +1,24 @@
-// import { css } from '@emotion/react';
 import { FC } from 'react';
 
 import { bp, BreakpointName } from '~/theme';
 
-type HeroImageSource = {
+export type ImageSource = {
   largeDesktop: string;
   tablet: string;
   xl: string;
   xs: string;
 };
 
-type HeroImageProps = {
+export type ImageProps = {
   alt: string;
-  imgSource: HeroImageSource;
+  imgSource: ImageSource;
 };
 
-export const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
+export const ImageContainer: FC<ImageProps> = ({
+  alt,
+  imgSource,
+  ...props
+}) => {
   const sortedImgSourcesDescending = Object.entries(imgSource).sort(
     ([breakpointA], [breakpointB]) => {
       const keyA = breakpointA as BreakpointName;
@@ -25,13 +28,13 @@ export const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   );
 
   return (
-    <picture>
+    <picture {...props}>
       {sortedImgSourcesDescending.map(([breakpointName, imgSource]) => {
         const breakpointValue = breakpointName as BreakpointName;
         return (
           <source
             key={breakpointName}
-            media={`(min-width: ${bp[breakpointValue]}rem)`}
+            media={`(min-width: ${bp[breakpointValue]}px)`}
             srcSet={imgSource}
           />
         );
@@ -40,5 +43,3 @@ export const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
     </picture>
   );
 };
-
-export default ImageContainer;
