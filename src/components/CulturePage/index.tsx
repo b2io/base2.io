@@ -6,6 +6,9 @@ import { Layout } from '../Layout';
 import { Link } from '../Link';
 import { PageHero } from '../PageHero';
 import { Text } from '../Text';
+import { TeamCardList } from '../TeamCardList';
+import { TeamHero } from '../TeamHero';
+import { atMinDesktop } from '~/theme';
 
 export type CulturePageProps = Record<string, never>;
 
@@ -20,7 +23,7 @@ export const CulturePage: FC<CulturePageProps> = () => {
           xl: '/culture/culture-hero-large.jpg',
           xs: '/culture/culture-hero-small.jpg',
         }}
-        text="We are engineers and artisans, collaborating to make custom software people love."
+        text="We are engineers and artisans, collaborat&shy;ing to make custom software people love."
       />
       <section
         css={css`
@@ -50,6 +53,22 @@ export const CulturePage: FC<CulturePageProps> = () => {
           See all available positions
         </Link>
       </section>
+      <TeamHero
+        alt="person wearing hat smiling"
+        css={css`
+          margin-bottom: 5rem;
+          ${atMinDesktop} {
+            margin-bottom: -4rem;
+          }
+        `}
+        imgSource={{
+          desktop: '/culture/team-hero/culture-ourteam-xlarge.jpg',
+          tablet: '/culture/team-hero/culture-ourteam-large.jpg',
+          xs: '/culture/team-hero/culture-ourteam-small.jpg',
+        }}
+        text="Our team"
+      />
+      <TeamCardList />
     </Layout>
   );
 };
