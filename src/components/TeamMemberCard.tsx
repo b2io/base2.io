@@ -5,7 +5,7 @@ import { colors } from '~/theme/colors';
 
 import { Heading } from './Heading';
 import { Text } from './Text';
-import { atMinTablet } from '~/theme';
+import { atMinSm, atMinTablet } from '~/theme';
 import { spacing } from '~/theme/spacing';
 import { ImageProps } from '~/types';
 
@@ -44,18 +44,24 @@ const MemberInfo = styled.div`
   }
 
   & p {
-    margin-top: ${spacing.xxxs};
-    padding-left: ${spacing.md};
-    position: relative;
+    margin-top: 0;
   }
 
-  & p::before {
-    border-bottom: solid 1px ${colors.coral};
-    content: '';
-    left: 0;
-    position: absolute;
-    top: 0.925rem;
-    width: 1.125rem;
+  ${atMinSm} {
+    & p {
+      margin-top: ${spacing.xxxs};
+      padding-left: ${spacing.md};
+      position: relative;
+    }
+
+    & p::before {
+      border-bottom: solid 1px ${colors.coral};
+      content: '';
+      left: 0;
+      position: absolute;
+      top: 0.925rem;
+      width: 1.125rem;
+    }
   }
 `;
 

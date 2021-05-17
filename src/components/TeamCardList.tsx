@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import { TeamMemberCard } from './TeamMemberCard';
 import team from 'team.json';
-import { atMinDesktop, atMinTablet, atMinXL } from '~/theme';
+import { atMinDesktop, atMinSm, atMinXL } from '~/theme';
 import { spacing } from '~/theme/spacing';
 import { colors } from '~/theme/colors';
 
@@ -14,7 +14,7 @@ const TeamMasonry = styled.section`
     z-index: 2;
   }
 
-  ${atMinTablet} {
+  ${atMinSm} {
     column-gap: ${spacing.md};
     columns: 2;
 
