@@ -1,4 +1,4 @@
-import { atMinDesktop, atMinLg, atMinTablet } from './breakpoints';
+import { atMinLg, atMinTablet, atMinXL } from './breakpoints';
 import { colors } from './colors';
 import { spacing } from './spacing';
 import { cssClamp } from './util';
@@ -65,7 +65,7 @@ export const textVariants = {
     },
     color: colors.text,
     fontSize: '1.063rem',
-    fontVariationSettings: '"wght" 500',
+    fontVariationSettings: '"wght" 300',
     letterSpacing: '0.006875rem',
     lineHeight: 1.65,
   },
@@ -141,7 +141,7 @@ export const textVariants = {
     padding: 0,
   },
   quotationsSymbol: {
-    [atMinDesktop]: {
+    [atMinXL]: {
       fontSize: '37.5rem',
       lineHeight: 0.775,
     },
@@ -163,6 +163,26 @@ export const textVariants = {
     fontVariationSettings: '"wght" 750',
     letterSpacing: 'normal',
     lineHeight: 1.1,
+    margin: 0,
+    padding: 0,
+  },
+  teamHero: {
+    [atMinLg]: {
+      lineHeight: 0.58,
+    },
+    [atMinTablet]: {
+      lineHeight: 0.74,
+    },
+    color: colors.coral,
+    fontSize: cssClamp(
+      [3.5, 'smMobile'],
+      [4.25, 'mobile'],
+      [10, 'tablet'],
+      [15, 'lg'],
+    ),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: 'normal',
+    lineHeight: 0.53,
     margin: 0,
     padding: 0,
   },

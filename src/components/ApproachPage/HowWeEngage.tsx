@@ -2,14 +2,14 @@ import { css } from '@emotion/react';
 import { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
-import { spacing, atMinTablet, atMinDesktop } from '~/theme';
+import { spacing, atMinTablet, atMinXL } from '~/theme';
 import { IconCardGrid } from '../IconCard';
 
 export const HowWeEngage: FC = (props) => {
   return (
     <section
       css={css`
-        ${atMinDesktop} {
+        ${atMinXL} {
           margin: 0 7.6125rem;
         }
       `}

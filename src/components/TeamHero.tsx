@@ -1,78 +1,76 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { FC } from 'react';
 
+import { FC } from 'react';
+import { Heading } from './Heading';
 import {
   atMinLg,
   atMinDesktop,
   atMinLargeDesktop,
-  atMinXL,
   bp,
   BreakpointName,
-  cssClamp,
-} from '~/theme';
-import { Heading } from './Heading';
+} from '~/theme/breakpoints';
+import { spacing } from '~/theme/spacing';
+import { cssClamp } from '~/theme/util';
 
-type HeroImageSource = {
-  largeDesktop: string;
+type TeamHeroImageSource = {
+  desktop: string;
   tablet: string;
-  xl: string;
   xs: string;
 };
 
-type HeroImageProps = {
+type TeamHeroImageProps = {
   alt: string;
-  imgSource: HeroImageSource;
+  imgSource: TeamHeroImageSource;
 };
 
-type PageHeroProps = HeroImageProps & {
+type TeamHeroProps = TeamHeroImageProps & {
   text: string;
 };
 
 const calculatedImageHeight = cssClamp(
   [17.5, 'smMobile'],
-  [20.188, 'mobile'],
+  [21.938, 'mobile'],
   [35, 'tablet'],
+  [37.5, 'desktop'],
 );
 
 const Image = styled.picture`
   height: ${calculatedImageHeight};
-  margin-left: calc(50% - 50vw);
   position: absolute;
+  right: calc(50% - 50vw);
+  z-index: 2;
+
+  ${atMinDesktop} {
+    right: -${spacing.xxl3};
+  }
 
   ${atMinLargeDesktop} {
     margin-left: ${cssClamp([-20, 'largeDesktop'], [-15, 'xlDesktop'])};
   }
 
   img {
-    filter: brightness(0.85);
     height: 100%;
   }
 `;
 
 const HeaderText = styled(Heading)`
-  padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [21.5, 'tablet'])};
+  padding-left: ${cssClamp([0, 'xl'], [19, 'desktop'])};
+  padding-top: ${cssClamp(
+    [16, 'smMobile'],
+    [19.75, 'mobile'],
+    [26, 'sm'],
+    [28.5, 'tablet'],
+  )};
   position: relative;
+  z-index: 3;
 
   ${atMinLg} {
-    max-width: 60rem;
-  }
-
-  ${atMinXL} {
-    left: ${cssClamp(
-      [22.75, 'xl'],
-      [33.75, 'desktop'],
-      [37.5, 'largeDesktop'],
-    )};
-    padding-top: 4.25rem;
-  }
-
-  ${atMinDesktop} {
-    padding-top: 4.25rem;
+    white-space: nowrap;
   }
 `;
 
-const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
+const ImageContainer: FC<TeamHeroImageProps> = ({ alt, imgSource }) => {
   const sortedImgSourcesDescending = Object.entries(imgSource).sort(
     ([breakpointA], [breakpointB]) => {
       const keyA = breakpointA as BreakpointName;
@@ -98,7 +96,7 @@ const ImageContainer: FC<HeroImageProps> = ({ alt, imgSource }) => {
   );
 };
 
-export const PageHero: FC<PageHeroProps> = ({
+export const TeamHero: FC<TeamHeroProps> = ({
   alt,
   imgSource,
   text,
@@ -107,16 +105,15 @@ export const PageHero: FC<PageHeroProps> = ({
   return (
     <section
       css={css`
+        min-height: ${calculatedImageHeight};
         position: relative;
-
-        ${atMinXL} {
-          min-height: ${calculatedImageHeight};
-        }
       `}
       {...props}
     >
       <ImageContainer alt={alt} imgSource={imgSource} />
-      <HeaderText as="h1">{text}</HeaderText>
+      <HeaderText as="h2" variant="teamHero" color="coral">
+        {text}
+      </HeaderText>
     </section>
   );
 };
