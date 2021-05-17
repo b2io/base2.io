@@ -67,17 +67,15 @@ const TeamMasonry = styled.section`
 export const TeamCardList: FC = () => {
   return (
     <TeamMasonry>
-      {team.map((member, index) => {
-        return (
-          <TeamMemberCard
-            alt={member.name}
-            key={index}
-            name={member.name}
-            position={member.position}
-            src={member.src}
-          />
-        );
-      })}
+      {team.map(({ name, position, src }, index) => (
+        <TeamMemberCard
+          alt={name}
+          key={index}
+          name={name}
+          position={position}
+          src={src}
+        />
+      ))}
       <div className="team-card-background"></div>
     </TeamMasonry>
   );
