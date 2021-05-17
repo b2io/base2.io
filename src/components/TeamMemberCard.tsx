@@ -50,7 +50,7 @@ const MemberInfo = styled.div`
   ${atMinSm} {
     & p {
       margin-top: ${spacing.xxxs};
-      padding-left: ${spacing.md};
+      padding: 0 ${spacing.md};
       position: relative;
     }
 
