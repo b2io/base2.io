@@ -10,7 +10,8 @@ import {
   cssClamp,
 } from '~/theme';
 import { Heading } from './Heading';
-import { ImageContainer, ImageProps } from './ImageContainer';
+import { ImageContainer } from './ImageContainer';
+import { ImageProps } from '../types';
 
 type PageHeroProps = ImageProps & {
   text: string;
