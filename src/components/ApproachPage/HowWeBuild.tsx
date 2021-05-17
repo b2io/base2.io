@@ -52,7 +52,7 @@ const IconRow = styled.div`
     }
   }
 
-  > :nth-child(odd) {
+  > :nth-of-type(odd) {
     margin-right: ${spacing.sm};
 
     ${atMinDesktop} {
