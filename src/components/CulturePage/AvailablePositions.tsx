@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
+import { atMinXL } from '~/theme';
 
 import { Heading } from '../Heading';
 import { Link } from '../Link';
@@ -13,6 +14,10 @@ export const AvailablePositions: FC = (props) => {
         gap: 1.5rem;
         justify-items: start;
         max-width: 52rem;
+
+        ${atMinXL} {
+          margin: 0 7.6125rem;
+        }
       `}
       {...props}
     >

@@ -74,9 +74,9 @@ const TeamMasonry = styled.section`
   }
 `;
 
-export const TeamCardList: FC = () => {
+export const TeamCardList: FC = (props) => {
   return (
-    <TeamMasonry>
+    <TeamMasonry {...props}>
       {team.map(({ name, position, src }, index) => (
         <TeamMemberCard
           alt={name}

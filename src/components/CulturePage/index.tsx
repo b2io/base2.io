@@ -5,12 +5,9 @@ import { Layout } from '../Layout';
 import { PageHero } from '../PageHero';
 import { AvailablePositions } from './AvailablePositions';
 import { OurCulture } from './OurCulture';
-import { Text } from '../Text';
 import { TeamCardList } from '../TeamCardList';
 import { TeamHero } from '../TeamHero';
-import { atMinDesktop } from '~/theme';
-import { Heading } from '../Heading';
-import { Link } from '../Link';
+import { atMinDesktop, atMinTablet, spacing } from '~/theme';
 
 export const CulturePage: FC = () => {
   return (
@@ -24,37 +21,23 @@ export const CulturePage: FC = () => {
           xs: '/culture/culture-hero-small.jpg',
         }}
         text="We are engineers and artisans, collaborat&shy;ing to make custom software people love."
+        css={css`
+          margin-bottom: ${spacing.xxl2};
+
+          ${atMinTablet} {
+            margin-bottom: ${spacing.xxl3};
+          }
+        `}
       />
       <OurCulture
         css={css`
-          margin-top: 8.5rem;
+          margin-bottom: 7.375rem;
+
+          ${atMinTablet} {
+            margin-bottom: 8.5rem;
+          }
         `}
       />
-      <AvailablePositions
-        css={css`
-          margin-top: 12.5rem;
-        `}
-      />
-      <section>
-        <Heading as="h2" variant="h2">
-          Let&rsquo;s turn ideas into beautiful software
-        </Heading>
-        <Text as="p" variant="h3">
-          Feeling us? We&rsquo;re always looking for like-minded people with
-          similar values and development chops. Our team is tight-knit,
-          seasoned, and intentionally small&mdash;allowing everyone&rsquo;s
-          strengths to shine.
-        </Text>
-        <Link
-          css={css`
-            margin-top: 1rem;
-          `}
-          href="/culture"
-          variant="CTA"
-        >
-          See all available positions
-        </Link>
-      </section>
       <TeamHero
         alt="person wearing hat smiling"
         css={css`
@@ -70,7 +53,12 @@ export const CulturePage: FC = () => {
         }}
         text="Our team"
       />
-      <TeamCardList />
+      <TeamCardList
+        css={css`
+          margin-bottom: 12.5rem;
+        `}
+      />
+      <AvailablePositions />
     </Layout>
   );
 };
