@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { Children, cloneElement, ElementType, FC, ReactElement } from 'react';
 
-import { spacing } from '~/theme';
+import { atMinTablet, spacing } from '~/theme';
 import { Heading, Text } from '~/components';
 
 import {
@@ -103,13 +103,17 @@ export const IconCardGrid: FC<IconCardGridProps> = ({ children, ...props }) => {
     <ul
       css={css`
         display: grid;
-        grid-column-gap: 9rem;
         grid-row-gap: 4rem;
-        grid-template-columns: repeat(auto-fit, minmax(0, 29rem));
+        justify-content: space-between;
         list-style: none;
         margin: 0;
         max-width: 67rem;
         padding: 0;
+
+        ${atMinTablet} {
+          grid-column-gap: 1.875rem;
+          grid-template-columns: repeat(2, minmax(20rem, 30rem));
+        }
       `}
       {...props}
     >
