@@ -11,8 +11,6 @@ const imageDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
 const imageTopCalc = cssClamp([1.85, 'mobile'], [0, 'tablet']);
 
 const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
-  src = src as string;
-
   return (
     <div
       css={css`
