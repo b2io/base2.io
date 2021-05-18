@@ -2,8 +2,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { FC } from 'react';
 
-import { Heading, Link } from '~/components';
-import { IconCardGrid, IconCard } from '../IconCard';
+import { Heading, IconCard, IconCardGrid, Link } from '~/components';
 import { DynamicImage } from '../DynamicImage';
 
 import {
