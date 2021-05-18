@@ -1,11 +1,10 @@
 import { FC } from 'react';
-import { bp, BreakpointName } from '~/theme';
-
-type BpStringPair = [BreakpointName, string];
+import { bp } from '~/theme';
+import { BpMapPair } from '~/types';
 
 export type DynamicImageProps = {
   alt: string;
-  imgSources: BpStringPair[];
+  imgSources: BpMapPair<string>[];
 };
 
 export const DynamicImage: FC<DynamicImageProps> = ({

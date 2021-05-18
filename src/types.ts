@@ -1,18 +1,8 @@
-export type ImageSource = {
-  xs?: string;
-  smMobile?: string;
-  mobile?: string;
-  sm?: string;
-  tablet?: string;
-  lg?: string;
-  xl?: string;
-  xxl?: string;
-  desktop?: string;
-  largeDesktop?: string;
-  xlDesktop?: string;
-};
+import { BreakpointName } from './theme';
+
+export type BpMapPair<T> = [BreakpointName, T];
 
 export type ImageProps = {
   alt: string;
-  src: string | ImageSource;
+  src: string;
 };

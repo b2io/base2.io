@@ -10,10 +10,9 @@ import {
   cssClamp,
 } from '~/theme';
 import { Heading } from './Heading';
-import { ImageContainer } from './ImageContainer';
-import { ImageProps } from '../types';
+import { DynamicImage, DynamicImageProps } from './DynamicImage';
 
-type PageHeroProps = ImageProps & {
+type PageHeroProps = DynamicImageProps & {
   text: string;
 };
 
@@ -23,7 +22,7 @@ const calculatedImageHeight = cssClamp(
   [35, 'tablet'],
 );
 
-const Image = styled(ImageContainer)`
+const Image = styled(DynamicImage)`
   height: ${calculatedImageHeight};
   margin-left: calc(50% - 50vw);
   position: absolute;
@@ -60,7 +59,12 @@ const HeaderText = styled(Heading)`
   }
 `;
 
-export const PageHero: FC<PageHeroProps> = ({ alt, src, text, ...props }) => {
+export const PageHero: FC<PageHeroProps> = ({
+  alt,
+  imgSources,
+  text,
+  ...props
+}) => {
   return (
     <section
       css={css`
@@ -72,7 +76,7 @@ export const PageHero: FC<PageHeroProps> = ({ alt, src, text, ...props }) => {
       `}
       {...props}
     >
-      <Image alt={alt} src={src} />
+      <Image alt={alt} imgSources={imgSources} />
       <HeaderText as="h1">{text}</HeaderText>
     </section>
   );

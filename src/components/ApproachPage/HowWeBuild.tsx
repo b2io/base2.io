@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
-import { ImageContainer } from '~/components/ImageContainer';
+import { DynamicImage } from '../DynamicImage';
 
 import {
   atMinDesktop,
@@ -43,6 +43,25 @@ const GradientCircleImage: FC = () => {
   );
 };
 
+const Image = styled(DynamicImage)`
+  img {
+    margin-bottom: 3.813rem;
+    margin-left: calc(50% - 50vw);
+    margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
+    position: relative;
+    width: ${cssClamp(
+      [16.688, 'mobile'],
+      [38.063, 'tablet'],
+      [64.5, 'desktop'],
+    )};
+    z-index: 1;
+
+    ${atMinLargeDesktop} {
+      margin-left: -14rem;
+    }
+  }
+`;
+
 const IconRow = styled.div`
   display: flex;
   flex-direction: column;
@@ -69,12 +88,6 @@ const IconRow = styled.div`
     }
   }
 `;
-const imageSource = {
-  largeDesktop: '/approach/howwebuild-large.jpg',
-  tablet: '/approach/howwebuild-medium.jpg',
-  xl: '/approach/howwebuild-large.jpg',
-  xs: '/approach/howwebuild-small.jpg',
-};
 
 export const HowWeBuild: FC = (props) => {
   return (
@@ -92,27 +105,14 @@ export const HowWeBuild: FC = (props) => {
           position: relative;
         `}
       >
-        <ImageContainer
+        <Image
           alt="man standing behind chair in a meeting with other people"
-          src={imageSource}
-          css={css`
-            img {
-              margin-bottom: 3.813rem;
-              margin-left: calc(50% - 50vw);
-              margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
-              position: relative;
-              width: ${cssClamp(
-                [16.688, 'mobile'],
-                [38.063, 'tablet'],
-                [64.5, 'desktop'],
-              )};
-              z-index: 1;
-
-              ${atMinLargeDesktop} {
-                margin-left: -14rem;
-              }
-            }
-          `}
+          imgSources={[
+            ['largeDesktop', '/approach/howwebuild-large.jpg'],
+            ['tablet', '/approach/howwebuild-medium.jpg'],
+            ['xl', '/approach/howwebuild-large.jpg'],
+            ['xs', '/approach/howwebuild-small.jpg'],
+          ]}
         />
         <GradientCircleImage />
       </div>

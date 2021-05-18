@@ -11,12 +11,12 @@ export const ApproachPage: FC = () => {
     <Layout>
       <PageHero
         alt="person staring at a computer"
-        src={{
-          largeDesktop: '/approach/approach-hero-xlarge.jpg',
-          tablet: '/approach/approach-hero-medium.jpg',
-          xl: '/approach/approach-hero-large.jpg',
-          xs: '/approach/approach-hero-small.jpg',
-        }}
+        imgSources={[
+          ['largeDesktop', '/approach/approach-hero-xlarge.jpg'],
+          ['tablet', '/approach/approach-hero-medium.jpg'],
+          ['xl', '/approach/approach-hero-large.jpg'],
+          ['xs', '/approach/approach-hero-small.jpg'],
+        ]}
         text="People motivate what we do and how we do it."
         css={css`
           margin-bottom: ${spacing.xxl2};
