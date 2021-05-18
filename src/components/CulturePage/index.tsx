@@ -35,7 +35,7 @@ export const CulturePage: FC = () => {
           margin-bottom: 7.375rem;
 
           ${atMinTablet} {
-            margin-bottom: 8.5rem;
+            margin-bottom: ${spacing.xxl3};
           }
         `}
       />
@@ -56,12 +56,12 @@ export const CulturePage: FC = () => {
       />
       <TeamCardList
         css={css`
-          margin-bottom: 12.5rem;
+          margin-bottom: ${spacing.xxl4};
         `}
       />
       <AvailablePositions
         css={css`
-          margin-bottom: 12.5rem;
+          margin-bottom: ${spacing.xxl4};
         `}
       />
       <OurBlog />
