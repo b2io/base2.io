@@ -1,8 +1,9 @@
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { FC } from 'react';
 
-import { Heading, IconCard, Link } from '~/components';
+import { Heading, Link } from '~/components';
+import { IconCardGrid, IconCard } from '../IconCard';
 import { DynamicImage } from '../DynamicImage';
 
 import {
@@ -62,33 +63,6 @@ const Image = styled(DynamicImage)`
   }
 `;
 
-const IconRow = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  ${atMinTablet} {
-    flex-direction: row;
-  }
-
-  > div {
-    margin-bottom: ${spacing.xxl};
-    max-width: 20.625rem;
-    max-width: ${cssClamp([20.625, 'tablet'], [29.063, 'desktop'])};
-
-    ${atMinDesktop} {
-      max-width: 29.063rem;
-    }
-  }
-
-  > :nth-of-type(odd) {
-    margin-right: ${spacing.sm};
-
-    ${atMinDesktop} {
-      margin-right: 9rem;
-    }
-  }
-`;
-
 export const HowWeBuild: FC = (props) => {
   return (
     <section
@@ -141,12 +115,16 @@ export const HowWeBuild: FC = (props) => {
           }
         `}
       >
-        Let&apos;s face it—things pop up along the way. Our development process
-        is intentionally flexible to allow us to accommodate the unexpected.
-        While we work with everyone uniquely, a few steps are central to our
-        approach.
+        Let&apos;s face it&mdash;things pop up along the way. Our development
+        process is intentionally flexible to allow us to accommodate the
+        unexpected. While we work with everyone uniquely, a few steps are
+        central to our approach.
       </Heading>
-      <IconRow>
+      <IconCardGrid
+        css={css`
+          margin-bottom: 5rem;
+        `}
+      >
         <IconCard icon="discovery" heading="Discovery">
           Your idea forms the basis of our process. We work with you to fully
           understand the story you want communicated or the problem you want
@@ -157,8 +135,6 @@ export const HowWeBuild: FC = (props) => {
           two-week development sprints, daily standups, demos of completed
           tasks, and retrospectives for feedback and course correction.
         </IconCard>
-      </IconRow>
-      <IconRow>
         <IconCard icon="delivery" heading="Delivery">
           At the end of each sprint, we release software and gather user
           feedback to better shape it moving forward. We also debut completed
@@ -171,7 +147,7 @@ export const HowWeBuild: FC = (props) => {
           and make any necessary adjustments to the structure, flow and
           documentation.
         </IconCard>
-      </IconRow>
+      </IconCardGrid>
       <Link href="/contact" variant="CTA">
         Let&apos;s make a plan together
       </Link>
