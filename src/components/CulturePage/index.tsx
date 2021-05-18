@@ -1,18 +1,18 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { Heading } from '../Heading';
 import { Layout } from '../Layout';
-import { Link } from '../Link';
 import { PageHero } from '../PageHero';
+import { AvailablePositions } from './AvailablePositions';
+import { OurCulture } from './OurCulture';
 import { Text } from '../Text';
 import { TeamCardList } from '../TeamCardList';
 import { TeamHero } from '../TeamHero';
 import { atMinDesktop } from '~/theme';
+import { Heading } from '../Heading';
+import { Link } from '../Link';
 
-export type CulturePageProps = Record<string, never>;
-
-export const CulturePage: FC<CulturePageProps> = () => {
+export const CulturePage: FC = () => {
   return (
     <Layout title="Culture">
       <PageHero
@@ -25,15 +25,17 @@ export const CulturePage: FC<CulturePageProps> = () => {
         }}
         text="We are engineers and artisans, collaborat&shy;ing to make custom software people love."
       />
-      <section
+      <OurCulture
         css={css`
-          display: grid;
-          gap: 1.5rem;
-          justify-items: start;
-          margin-top: 12.5rem;
-          max-width: 52rem;
+          margin-top: 8.5rem;
         `}
-      >
+      />
+      <AvailablePositions
+        css={css`
+          margin-top: 12.5rem;
+        `}
+      />
+      <section>
         <Heading as="h2" variant="h2">
           Let&rsquo;s turn ideas into beautiful software
         </Heading>
