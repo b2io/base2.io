@@ -1,6 +1,7 @@
 export * from './ApproachPage';
 export * from './Container';
 export * from './CulturePage';
+export * from './DynamicImage';
 export * from './Header';
 export * from './Heading';
 export * from './HomePage';
