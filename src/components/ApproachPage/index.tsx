@@ -11,12 +11,12 @@ export const ApproachPage: FC = () => {
     <Layout>
       <PageHero
         alt="person staring at a computer"
-        imgSource={{
-          largeDesktop: '/approach/approach-hero-xlarge.jpg',
-          tablet: '/approach/approach-hero-medium.jpg',
-          xl: '/approach/approach-hero-large.jpg',
-          xs: '/approach/approach-hero-small.jpg',
-        }}
+        imgSources={[
+          ['largeDesktop', '/approach/approach-hero-xlarge.jpg'],
+          ['tablet', '/approach/approach-hero-medium.jpg'],
+          ['xl', '/approach/approach-hero-large.jpg'],
+          ['xs', '/approach/approach-hero-small.jpg'],
+        ]}
         text="People motivate what we do and how we do it."
         css={css`
           margin-bottom: ${spacing.xxl2};
@@ -43,18 +43,11 @@ export const ApproachPage: FC = () => {
       <QuotedImage
         alt="person standing by brick wall"
         company="Base Two"
-        css={css`
-          margin-top: 12.5rem;
-
-          ${atMinTablet} {
-            margin-top: 17rem;
-          }
-        `}
-        imgSource={{
-          tablet: '/approach/approach-quote_medium.jpg',
-          xl: '/approach/approach-quote_large.jpg',
-          xs: '/approach/approach-quote_small.jpg',
-        }}
+        imgSources={[
+          ['tablet', '/approach/approach-quote_medium.jpg'],
+          ['xl', '/approach/approach-quote_large.jpg'],
+          ['xs', '/approach/approach-quote_small.jpg'],
+        ]}
         name="Tony Borres"
         position="Director of Operations"
         quote="We follow agile, an iterative approach to software development that lets us quickly pivot when challenges arise. "

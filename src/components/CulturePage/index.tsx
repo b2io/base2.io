@@ -17,12 +17,12 @@ export const CulturePage: FC = () => {
     <Layout title="Culture">
       <PageHero
         alt="people sitting around conference table collaborating"
-        imgSource={{
-          largeDesktop: '/culture/culture-hero-xlarge.jpg',
-          tablet: '/culture/culture-hero-medium.jpg',
-          xl: '/culture/culture-hero-large.jpg',
-          xs: '/culture/culture-hero-small.jpg',
-        }}
+        imgSources={[
+          ['largeDesktop', '/culture/culture-hero-xlarge.jpg'],
+          ['tablet', '/culture/culture-hero-medium.jpg'],
+          ['xl', '/culture/culture-hero-large.jpg'],
+          ['xs', '/culture/culture-hero-small.jpg'],
+        ]}
         text="We are engineers and artisans, collaborat&shy;ing to make custom software people love."
       />
       <OurCulture
@@ -63,11 +63,11 @@ export const CulturePage: FC = () => {
             margin-bottom: -4rem;
           }
         `}
-        imgSource={{
-          desktop: '/culture/team-hero/culture-ourteam-xlarge.jpg',
-          tablet: '/culture/team-hero/culture-ourteam-large.jpg',
-          xs: '/culture/team-hero/culture-ourteam-small.jpg',
-        }}
+        imgSources={[
+          ['desktop', '/culture/team-hero/culture-ourteam-xlarge.jpg'],
+          ['tablet', '/culture/team-hero/culture-ourteam-large.jpg'],
+          ['xs', '/culture/team-hero/culture-ourteam-small.jpg'],
+        ]}
         text="Our team"
       />
       <TeamCardList />

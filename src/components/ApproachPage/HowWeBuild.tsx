@@ -1,9 +1,18 @@
+import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { FC } from 'react';
 
-import { Heading, IconCard, Link } from '~/components';
-import { atMinDesktop, atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
-import { IconCardGrid } from '../IconCard';
+import { Heading, IconCard, IconCardGrid, Link } from '~/components';
+import { DynamicImage } from '../DynamicImage';
+
+import {
+  atMinDesktop,
+  atMinLargeDesktop,
+  atMinTablet,
+  atMinXL,
+  cssClamp,
+  spacing,
+} from '~/theme';
 
 const imageDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
 
@@ -34,6 +43,25 @@ const GradientCircleImage: FC = () => {
   );
 };
 
+const Image = styled(DynamicImage)`
+  img {
+    margin-bottom: 3.813rem;
+    margin-left: calc(50% - 50vw);
+    margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
+    position: relative;
+    width: ${cssClamp(
+      [16.688, 'mobile'],
+      [38.063, 'tablet'],
+      [64.5, 'desktop'],
+    )};
+    z-index: 1;
+
+    ${atMinLargeDesktop} {
+      margin-left: -14rem;
+    }
+  }
+`;
+
 export const HowWeBuild: FC = (props) => {
   return (
     <section
@@ -50,36 +78,15 @@ export const HowWeBuild: FC = (props) => {
           position: relative;
         `}
       >
-        <picture>
-          <source
-            media="(min-width: 1200px)"
-            srcSet="/approach/howwebuild-large.jpg"
-          />
-          <source
-            media="(min-width: 768px)"
-            srcSet="/approach/howwebuild-medium.jpg"
-          />
-          <img
-            css={css`
-              margin-bottom: 3.813rem;
-              margin-left: calc(50% - 50vw);
-              margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
-              position: relative;
-              width: ${cssClamp(
-                [16.688, 'mobile'],
-                [38.063, 'tablet'],
-                [64.5, 'desktop'],
-              )};
-              z-index: 1;
-
-              ${atMinXL} {
-                margin-left: -14rem;
-              }
-            `}
-            src="/approach/howwebuild-small.jpg"
-            alt="man standing behind chair in a meeting with other people"
-          />
-        </picture>
+        <Image
+          alt="man standing behind chair in a meeting with other people"
+          imgSources={[
+            ['largeDesktop', '/approach/howwebuild-large.jpg'],
+            ['tablet', '/approach/howwebuild-medium.jpg'],
+            ['xl', '/approach/howwebuild-large.jpg'],
+            ['xs', '/approach/howwebuild-small.jpg'],
+          ]}
+        />
         <GradientCircleImage />
       </div>
       <Heading
