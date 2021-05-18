@@ -13,10 +13,12 @@ import {
 } from '~/theme/breakpoints';
 import { spacing } from '~/theme/spacing';
 import { cssClamp } from '~/theme/util';
-import { ImageProps } from '../types';
-import { ImageContainer } from './ImageContainer';
+import {
+  DynamicImageContainer,
+  DynamicImageContainerProps,
+} from './DynamicImageContainer';
 
-type QuotedImageProps = ImageProps & {
+type QuotedImageProps = DynamicImageContainerProps & {
   company: string;
   name: string;
   position: string;
@@ -25,7 +27,7 @@ type QuotedImageProps = ImageProps & {
 
 const calculatedImageHeight = cssClamp([15, 'mobile'], [50, 'tablet']);
 
-const Image = styled(ImageContainer)`
+const Image = styled(DynamicImageContainer)`
   height: 12rem;
   position: absolute;
   right: calc(50% - 50vw);
@@ -83,7 +85,7 @@ const AttributionTextItalic = styled(AttributionText)`
 export const QuotedImage: FC<QuotedImageProps> = ({
   alt,
   company,
-  src,
+  imgSources,
   name,
   position,
   quote,
@@ -96,7 +98,7 @@ export const QuotedImage: FC<QuotedImageProps> = ({
       `}
       {...props}
     >
-      <Image alt={alt} src={src} />
+      <Image alt={alt} imgSources={imgSources} />
       <TextContainer>
         <div>
           <Text variant="quotationsSymbol">&#8220;</Text>

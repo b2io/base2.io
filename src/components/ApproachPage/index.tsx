@@ -43,11 +43,11 @@ export const ApproachPage: FC = () => {
       <QuotedImage
         alt="person standing by brick wall"
         company="Base Two"
-        src={{
-          tablet: '/approach/approach-quote_medium.jpg',
-          xl: '/approach/approach-quote_large.jpg',
-          xs: '/approach/approach-quote_small.jpg',
-        }}
+        imgSources={[
+          ['tablet', '/approach/approach-quote_medium.jpg'],
+          ['xl', '/approach/approach-quote_large.jpg'],
+          ['xs', '/approach/approach-quote_small.jpg'],
+        ]}
         name="Tony Borres"
         position="Director of Operations"
         quote="We follow agile, an iterative approach to software development that lets us quickly pivot when challenges arise. "
