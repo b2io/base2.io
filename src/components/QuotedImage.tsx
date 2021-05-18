@@ -13,12 +13,9 @@ import {
 } from '~/theme/breakpoints';
 import { spacing } from '~/theme/spacing';
 import { cssClamp } from '~/theme/util';
-import {
-  DynamicImageContainer,
-  DynamicImageContainerProps,
-} from './DynamicImageContainer';
+import { DynamicImage, DynamicImageProps } from './DynamicImage';
 
-type QuotedImageProps = DynamicImageContainerProps & {
+type QuotedImageProps = DynamicImageProps & {
   company: string;
   name: string;
   position: string;
@@ -27,7 +24,7 @@ type QuotedImageProps = DynamicImageContainerProps & {
 
 const calculatedImageHeight = cssClamp([15, 'mobile'], [50, 'tablet']);
 
-const Image = styled(DynamicImageContainer)`
+const Image = styled(DynamicImage)`
   height: 12rem;
   position: absolute;
   right: calc(50% - 50vw);

@@ -3,12 +3,12 @@ import { bp, BreakpointName } from '~/theme';
 
 type BpStringPair = [BreakpointName, string];
 
-export type DynamicImageContainerProps = {
+export type DynamicImageProps = {
   alt: string;
   imgSources: BpStringPair[];
 };
 
-export const DynamicImageContainer: FC<DynamicImageContainerProps> = ({
+export const DynamicImage: FC<DynamicImageProps> = ({
   alt,
   imgSources,
   ...props
