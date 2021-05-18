@@ -22,20 +22,13 @@ export const CulturePage: FC = () => {
           xs: '/culture/culture-hero-small.jpg',
         }}
         text="We are engineers and artisans, collaborat&shy;ing to make custom software people love."
-        css={css`
-          margin-bottom: ${spacing.xxl2};
-
-          ${atMinTablet} {
-            margin-bottom: ${spacing.xxl3};
-          }
-        `}
       />
       <OurCulture
         css={css`
-          margin-bottom: 7.375rem;
+          margin-top: ${spacing.xxl2};
 
           ${atMinTablet} {
-            margin-bottom: ${spacing.xxl3};
+            margin-top: ${spacing.xxl3};
           }
         `}
       />
@@ -43,6 +36,12 @@ export const CulturePage: FC = () => {
         alt="person wearing hat smiling"
         css={css`
           margin-bottom: 5rem;
+          margin-top: 7.375rem;
+
+          ${atMinTablet} {
+            margin-top: ${spacing.xxl3};
+          }
+
           ${atMinDesktop} {
             margin-bottom: -4rem;
           }
@@ -54,17 +53,17 @@ export const CulturePage: FC = () => {
         }}
         text="Our team"
       />
-      <TeamCardList
-        css={css`
-          margin-bottom: ${spacing.xxl4};
-        `}
-      />
+      <TeamCardList />
       <AvailablePositions
         css={css`
-          margin-bottom: ${spacing.xxl4};
+          margin-top: ${spacing.xxl4};
         `}
       />
-      <OurBlog />
+      <OurBlog
+        css={css`
+          margin-top: ${spacing.xxl4};
+        `}
+      />
     </Layout>
   );
 };

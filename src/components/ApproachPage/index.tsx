@@ -18,37 +18,30 @@ export const ApproachPage: FC = () => {
           xs: '/approach/approach-hero-small.jpg',
         }}
         text="People motivate what we do and how we do it."
-        css={css`
-          margin-bottom: ${spacing.xxl2};
-
-          ${atMinTablet} {
-            margin-bottom: ${spacing.xxl3};
-          }
-        `}
       />
       <HowWeEngage
         css={css`
-          margin-bottom: 7.375rem;
+          margin-top: ${spacing.xxl2};
 
           ${atMinTablet} {
-            margin-bottom: 0.25rem;
+            margin-top: ${spacing.xxl3};
           }
         `}
       />
       <HowWeBuild
         css={css`
-          margin-bottom: ${cssClamp([12.5, 'mobile'], [17.313, 'desktop'])};
+          margin-top: 7.375rem;
+
+          ${atMinTablet} {
+            margin-top: 0.25rem;
+          }
         `}
       />
       <QuotedImage
         alt="person standing by brick wall"
         company="Base Two"
         css={css`
-          margin-top: 12.5rem;
-
-          ${atMinTablet} {
-            margin-top: 17rem;
-          }
+          margin-top: ${cssClamp([12.5, 'mobile'], [17.313, 'desktop'])};
         `}
         imgSource={{
           tablet: '/approach/approach-quote_medium.jpg',
