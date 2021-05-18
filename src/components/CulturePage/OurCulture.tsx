@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { FC } from 'react';
-import { atMinXL } from '~/theme';
+import { atMinXL, spacing } from '~/theme';
 
 import { Heading } from '../Heading';
 import { IconCard, IconCardGrid } from '../IconCard';
@@ -11,7 +11,8 @@ export const OurCulture: FC = (props) => {
     <section
       css={css`
         ${atMinXL} {
-          margin: 0 7.6125rem;
+          margin-left: ${spacing.marginXl};
+          margin-right: ${spacing.marginXl};
         }
       `}
       {...props}

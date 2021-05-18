@@ -4,6 +4,7 @@ import type { FC } from 'react';
 import { Layout } from '../Layout';
 import { PageHero } from '../PageHero';
 import { AvailablePositions } from './AvailablePositions';
+import { OurBlog } from './OurBlog';
 import { OurCulture } from './OurCulture';
 import { TeamCardList } from '../TeamCardList';
 import { TeamHero } from '../TeamHero';
@@ -58,7 +59,12 @@ export const CulturePage: FC = () => {
           margin-bottom: 12.5rem;
         `}
       />
-      <AvailablePositions />
+      <AvailablePositions
+        css={css`
+          margin-bottom: 12.5rem;
+        `}
+      />
+      <OurBlog />
     </Layout>
   );
 };

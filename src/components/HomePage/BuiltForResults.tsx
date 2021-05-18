@@ -10,6 +10,7 @@ import theme, {
   atMinTablet,
   atMinXL,
   cssClamp,
+  spacing,
 } from '~/theme';
 import { ImageProps } from '~/types';
 
@@ -80,7 +81,7 @@ const Content = styled.div`
     margin-top: 8.75rem;
   }
   ${atMinLg} {
-    margin-left: 7.6125rem;
+    margin-left: ${spacing.marginXl};
   }
   ${atMinXL} {
     max-width: 35rem;
