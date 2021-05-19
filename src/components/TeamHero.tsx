@@ -3,28 +3,11 @@ import styled from '@emotion/styled';
 
 import { FC } from 'react';
 import { Heading } from './Heading';
-import {
-  atMinLg,
-  atMinDesktop,
-  atMinLargeDesktop,
-  bp,
-  BreakpointName,
-} from '~/theme/breakpoints';
-import { spacing } from '~/theme/spacing';
-import { cssClamp } from '~/theme/util';
+import { atMinLg, atMinDesktop, atMinLargeDesktop } from '~/theme/breakpoints';
+import { cssClamp, spacing } from '../theme';
+import { DynamicImage, DynamicImageProps } from './DynamicImage';
 
-type TeamHeroImageSource = {
-  desktop: string;
-  tablet: string;
-  xs: string;
-};
-
-type TeamHeroImageProps = {
-  alt: string;
-  imgSource: TeamHeroImageSource;
-};
-
-type TeamHeroProps = TeamHeroImageProps & {
+type TeamHeroProps = DynamicImageProps & {
   text: string;
 };
 
@@ -35,7 +18,7 @@ const calculatedImageHeight = cssClamp(
   [37.5, 'desktop'],
 );
 
-const Image = styled.picture`
+const Image = styled(DynamicImage)`
   height: ${calculatedImageHeight};
   position: absolute;
   right: calc(50% - 50vw);
@@ -70,35 +53,9 @@ const HeaderText = styled(Heading)`
   }
 `;
 
-const ImageContainer: FC<TeamHeroImageProps> = ({ alt, imgSource }) => {
-  const sortedImgSourcesDescending = Object.entries(imgSource).sort(
-    ([breakpointA], [breakpointB]) => {
-      const keyA = breakpointA as BreakpointName;
-      const keyB = breakpointB as BreakpointName;
-      return bp[keyB] - bp[keyA];
-    },
-  );
-
-  return (
-    <Image>
-      {sortedImgSourcesDescending.map(([breakpointName, imgSource]) => {
-        const breakpointValue = breakpointName as BreakpointName;
-        return (
-          <source
-            key={breakpointName}
-            media={`(min-width: ${bp[breakpointValue]}px)`}
-            srcSet={imgSource}
-          />
-        );
-      })}
-      <img alt={alt} />
-    </Image>
-  );
-};
-
 export const TeamHero: FC<TeamHeroProps> = ({
   alt,
-  imgSource,
+  imgSources,
   text,
   ...props
 }) => {
@@ -110,7 +67,7 @@ export const TeamHero: FC<TeamHeroProps> = ({
       `}
       {...props}
     >
-      <ImageContainer alt={alt} imgSource={imgSource} />
+      <Image alt={alt} imgSources={imgSources} />
       <HeaderText as="h2" variant="teamHero" color="coral">
         {text}
       </HeaderText>
