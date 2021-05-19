@@ -4,13 +4,11 @@ import type { FC } from 'react';
 import { Layout } from '../Layout';
 import { PageHero } from '../PageHero';
 import { AvailablePositions } from './AvailablePositions';
+import { OurBlog } from './OurBlog';
 import { OurCulture } from './OurCulture';
-import { Text } from '../Text';
 import { TeamCardList } from '../TeamCardList';
 import { TeamHero } from '../TeamHero';
-import { atMinDesktop } from '~/theme';
-import { Heading } from '../Heading';
-import { Link } from '../Link';
+import { atMinDesktop, atMinTablet, spacing } from '~/theme';
 
 export const CulturePage: FC = () => {
   return (
@@ -27,38 +25,23 @@ export const CulturePage: FC = () => {
       />
       <OurCulture
         css={css`
-          margin-top: 8.5rem;
+          margin-top: ${spacing.xxl2};
+
+          ${atMinTablet} {
+            margin-top: ${spacing.xxl3};
+          }
         `}
       />
-      <AvailablePositions
-        css={css`
-          margin-top: 12.5rem;
-        `}
-      />
-      <section>
-        <Heading as="h2" variant="h2">
-          Let&rsquo;s turn ideas into beautiful software
-        </Heading>
-        <Text as="p" variant="h3">
-          Feeling us? We&rsquo;re always looking for like-minded people with
-          similar values and development chops. Our team is tight-knit,
-          seasoned, and intentionally small&mdash;allowing everyone&rsquo;s
-          strengths to shine.
-        </Text>
-        <Link
-          css={css`
-            margin-top: 1rem;
-          `}
-          href="/culture"
-          variant="CTA"
-        >
-          See all available positions
-        </Link>
-      </section>
       <TeamHero
         alt="person wearing hat smiling"
         css={css`
           margin-bottom: 5rem;
+          margin-top: 7.375rem;
+
+          ${atMinTablet} {
+            margin-top: ${spacing.xxl3};
+          }
+
           ${atMinDesktop} {
             margin-bottom: -4rem;
           }
@@ -71,6 +54,16 @@ export const CulturePage: FC = () => {
         text="Our team"
       />
       <TeamCardList />
+      <AvailablePositions
+        css={css`
+          margin-top: ${spacing.xxl4};
+        `}
+      />
+      <OurBlog
+        css={css`
+          margin-top: ${spacing.xxl4};
+        `}
+      />
     </Layout>
   );
 };

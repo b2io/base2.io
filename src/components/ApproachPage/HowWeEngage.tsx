@@ -10,7 +10,8 @@ export const HowWeEngage: FC = (props) => {
     <section
       css={css`
         ${atMinXL} {
-          margin: 0 7.6125rem;
+          margin-left: ${spacing.marginXl};
+          margin-right: ${spacing.marginXl};
         }
       `}
       {...props}

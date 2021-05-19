@@ -6,7 +6,7 @@ import { Heading } from '../Heading';
 import { Link } from '../Link';
 import { Text } from '../Text';
 
-export const AvailablePositions: FC = (props) => {
+export const OurBlog: FC = (props) => {
   return (
     <section
       css={css`
@@ -23,22 +23,22 @@ export const AvailablePositions: FC = (props) => {
       {...props}
     >
       <Heading as="h2" variant="h2">
-        Let&rsquo;s turn ideas into beautiful software
+        Our blog
       </Heading>
       <Text as="p" variant="h3">
-        Feeling us? We&rsquo;re always looking for like-minded people with
-        similar values and development chops. Our team is tight-knit, seasoned,
-        and intentionally small&mdash;allowing everyone&rsquo;s strengths to
-        shine.
+        We love to share what we&rsquo;ve learned with others. Whether
+        it&rsquo;s giving a talk at a local event or training teams on the
+        latest technology, teaching others is a core part of what we do. And the
+        best part is, we learn more about ourselves in the process.
       </Text>
       <Link
         css={css`
           margin-top: 1rem;
         `}
-        href="/careers"
+        href="/blog"
         variant="CTA"
       >
-        See all available positions
+        See all blog posts
       </Link>
     </section>
   );

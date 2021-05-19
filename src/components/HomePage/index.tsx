@@ -13,39 +13,39 @@ import { HomeHero } from './HomeHero';
 export const HomePage: FC = () => {
   return (
     <Layout>
-      <HomeHero
-        css={css`
-          margin-bottom: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])};
-        `}
-      />
+      <HomeHero />
       <DesignedForHumans
         css={css`
-          margin-bottom: ${cssClamp([12.5, 'mobile'], [16.5, 'desktop'])};
+          margin-top: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])};
         `}
       />
       <BuiltForResults
         css={css`
-          margin-bottom: ${cssClamp([12.5, 'mobile'], [17.5, 'tablet'])};
-
-          ${atMinXL} {
-            margin-bottom: ${spacing.xxl};
-          }
+          margin-top: ${cssClamp([12.5, 'mobile'], [16.5, 'desktop'])};
         `}
       />
       <FeaturedCaseStudy
         css={css`
-          margin-bottom: ${spacing.xxl5};
-
-          ${atMinTablet} {
-            margin-bottom: -${spacing.xxl2};
-          }
+          margin-top: ${cssClamp([12.5, 'mobile'], [17.5, 'tablet'])};
 
           ${atMinXL} {
-            margin-bottom: ${spacing.xxl};
+            margin-top: ${spacing.xxl};
           }
         `}
       />
-      <FueledByCuriosity />
+      <FueledByCuriosity
+        css={css`
+          margin-top: ${spacing.xxl5};
+
+          ${atMinTablet} {
+            margin-top: -${spacing.xxl2};
+          }
+
+          ${atMinXL} {
+            margin-top: ${spacing.xxl};
+          }
+        `}
+      />
     </Layout>
   );
 };

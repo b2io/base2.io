@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import { FC } from 'react';
+import { atMinXL, spacing } from '~/theme';
 
 import { Heading } from '../Heading';
 import { IconCard, IconCardGrid } from '../IconCard';
@@ -7,7 +8,15 @@ import { Text } from '../Text';
 
 export const OurCulture: FC = (props) => {
   return (
-    <section {...props}>
+    <section
+      css={css`
+        ${atMinXL} {
+          margin-left: ${spacing.marginXl};
+          margin-right: ${spacing.marginXl};
+        }
+      `}
+      {...props}
+    >
       <Heading as="h2" variant="h2">
         Our Culture &amp; Beliefs
       </Heading>
