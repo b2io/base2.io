@@ -1,8 +1,14 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 import type { FC } from 'react';
 
-import { Heading, IconCard, IconCardGrid, Link } from '~/components';
+import {
+  DynamicImage,
+  GradientCircle,
+  Heading,
+  IconCard,
+  IconCardGrid,
+  Link,
+} from '~/components';
 import {
   atMinDesktop,
   atMinLargeDesktop,
@@ -12,55 +18,7 @@ import {
   spacing,
 } from '~/theme';
 
-import { DynamicImage } from '../DynamicImage';
-
-const imageDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
-
-const GradientCircleImage: FC = () => {
-  return (
-    <div
-      css={css`
-        height: ${imageDimensionsCalc};
-        position: absolute;
-        right: calc(77% - ${imageDimensionsCalc});
-        top: 0;
-        width: ${imageDimensionsCalc};
-        z-index: 0;
-
-        ${atMinDesktop} {
-          right: calc(57% - ${imageDimensionsCalc});
-        }
-      `}
-    >
-      <img
-        css={css`
-          width: 100%;
-        `}
-        alt="large abstract gradient circle"
-        src="/home/large-gradient-circle.png"
-      />
-    </div>
-  );
-};
-
-const Image = styled(DynamicImage)`
-  img {
-    margin-bottom: 3.813rem;
-    margin-left: calc(50% - 50vw);
-    margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
-    position: relative;
-    width: ${cssClamp(
-      [16.688, 'mobile'],
-      [38.063, 'tablet'],
-      [64.5, 'desktop'],
-    )};
-    z-index: 1;
-
-    ${atMinLargeDesktop} {
-      margin-left: -14rem;
-    }
-  }
-`;
+const circleDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
 
 export const HowWeBuild: FC = (props) => {
   return (
@@ -78,8 +36,26 @@ export const HowWeBuild: FC = (props) => {
           position: relative;
         `}
       >
-        <Image
+        <DynamicImage
           alt="man standing behind chair in a meeting with other people"
+          css={css`
+            img {
+              margin-bottom: 3.813rem;
+              margin-left: calc(50% - 50vw);
+              margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
+              position: relative;
+              width: ${cssClamp(
+                [16.688, 'mobile'],
+                [38.063, 'tablet'],
+                [64.5, 'desktop'],
+              )};
+              z-index: 1;
+
+              ${atMinLargeDesktop} {
+                margin-left: -14rem;
+              }
+            }
+          `}
           imgSources={[
             ['largeDesktop', '/approach/howwebuild-large.jpg'],
             ['tablet', '/approach/howwebuild-medium.jpg'],
@@ -87,7 +63,20 @@ export const HowWeBuild: FC = (props) => {
             ['xs', '/approach/howwebuild-small.jpg'],
           ]}
         />
-        <GradientCircleImage />
+        <GradientCircle
+          css={css`
+            height: ${circleDimensionsCalc};
+            position: absolute;
+            right: calc(77% - ${circleDimensionsCalc});
+            top: 0;
+            width: ${circleDimensionsCalc};
+            z-index: 0;
+
+            ${atMinDesktop} {
+              right: calc(57% - ${circleDimensionsCalc});
+            }
+          `}
+        />
       </div>
       <Heading
         as="h2"
@@ -114,7 +103,7 @@ export const HowWeBuild: FC = (props) => {
           }
         `}
       >
-        Let&apos;s face it&mdash;things pop up along the way. Our development
+        Let&rsquo;s face it&mdash;things pop up along the way. Our development
         process is intentionally flexible to allow us to accommodate the
         unexpected. While we work with everyone uniquely, a few steps are
         central to our approach.

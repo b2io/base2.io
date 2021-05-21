@@ -1,10 +1,20 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { useId } from '@react-aria/utils';
+import { motion } from 'framer-motion';
 import NextImage from 'next/image';
-import { FC } from 'react';
+import { transparentize } from 'polished';
+import type { FC } from 'react';
 
-import { Heading, Link, Text } from '~/components';
-import { atMinSm, atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
+import { Heading, Link, Text, useAnimationWhileVisible } from '~/components';
+import theme, {
+  atMinSm,
+  atMinTablet,
+  atMinXL,
+  cssClamp,
+  interpolateColors,
+  spacing,
+} from '~/theme';
 
 const GUTTER_SHIFT = '1.375rem';
 
@@ -12,6 +22,7 @@ const TextContainer = styled.div`
   margin-left: ${cssClamp([1.74375, 'sm'], [5.625, 'tablet'], [7.6125, 'xl'])};
   position: relative;
   z-index: 1;
+
   ${atMinXL} {
     margin-top: 22rem;
     order: 2;
@@ -19,35 +30,114 @@ const TextContainer = styled.div`
   }
 `;
 
-const Gradient = styled.div`
-  background: #2d2d78;
-  background: linear-gradient(
-    180deg,
-    #06021d 0%,
-    #de3856 11%,
-    #2d2d78 80%,
-    #161545 88%,
-    #04001b 91%
+const Gradient: FC = () => {
+  const filterId = useId();
+  const linearGradientId = useId();
+  const fadeGradientId = useId();
+  const [ref, controls] = useAnimationWhileVisible(
+    {
+      transition: {
+        duration: 32,
+        ease: 'linear',
+        repeat: Infinity,
+        repeatType: 'loop',
+      },
+      x1: [0.3, 2.3],
+      x2: [1.3, 3.3],
+    },
+    { threshold: 0 },
   );
-  bottom: 0;
-  height: calc(100% + 15rem);
-  left: -${spacing.sm};
-  position: absolute;
-  top: -4rem;
-  width: calc(100% + (2 * ${spacing.sm}));
-  ${atMinTablet} {
-    height: calc(100% + 25rem);
-    left: -2.5rem;
-    top: -10rem;
-    width: calc(100% + (2 * ${spacing.lg}));
-  }
-  ${atMinXL} {
-    height: calc(100% - 8rem);
-    left: max(-10rem, calc(50% - 50vw));
-    top: 0;
-    width: 100%;
-  }
-`;
+
+  return (
+    <svg
+      css={css`
+        bottom: 0;
+        height: calc(100% + 15rem);
+        left: -${spacing.sm};
+        position: absolute;
+        top: -4rem;
+        width: calc(100% + (2 * ${spacing.sm}));
+
+        ${atMinTablet} {
+          height: calc(100% + 25rem);
+          left: -2.5rem;
+          top: -10rem;
+          width: calc(100% + (2 * ${spacing.lg}));
+        }
+
+        ${atMinXL} {
+          height: calc(100% - 8rem);
+          left: max(-10rem, calc(50% - 50vw));
+          top: 0;
+          width: 100%;
+        }
+      `}
+      preserveAspectRatio="none"
+      ref={ref}
+      viewBox="0 0 100 100"
+    >
+      <defs>
+        <motion.linearGradient
+          animate={controls}
+          gradientTransform="rotate(90)"
+          id={linearGradientId}
+          spreadMethod="reflect"
+          x1="0.3"
+          x2="1.3"
+        >
+          {interpolateColors(
+            [theme.colors.coral, theme.colors.midBlue],
+            12,
+          ).map((color, index, colors) => {
+            const offset = index / (colors.length - 1);
+
+            return (
+              <stop
+                key={`${offset}-${color}`}
+                offset={offset}
+                stopColor={color}
+              />
+            );
+          })}
+        </motion.linearGradient>
+        <linearGradient gradientTransform="rotate(90)" id={fadeGradientId}>
+          <stop offset="0%" stopColor={theme.colors.darkBlue} />
+          <stop
+            offset="20%"
+            stopColor={transparentize(1, theme.colors.darkBlue)}
+          />
+          <stop
+            offset="80%"
+            stopColor={transparentize(1, theme.colors.darkBlue)}
+          />
+          <stop offset="100%" stopColor={theme.colors.darkBlue} />
+        </linearGradient>
+        <filter id={filterId}>
+          <feTurbulence
+            baseFrequency="20"
+            result="noise"
+            stitchTiles="stitch"
+            type="fractalNoise"
+          />
+          <feBlend in="SourceGraphic" in2="noise" mode="multiply" />
+        </filter>
+      </defs>
+      <rect
+        clip="circle() view-box"
+        fill={`url('#${linearGradientId}')`}
+        filter={`url('#${filterId}')`}
+        height="100"
+        width="100"
+      />
+      <rect
+        clip="circle() view-box"
+        fill={`url('#${fadeGradientId}')`}
+        height="100"
+        width="100"
+      />
+    </svg>
+  );
+};
 
 const ImagesContainer = styled.div`
   column-gap: ${spacing.xxs};
@@ -58,6 +148,7 @@ const ImagesContainer = styled.div`
     column-gap: 2.875rem;
     margin-bottom: 15rem;
   }
+
   ${atMinXL} {
     margin-bottom: 0%;
     margin-top: 8rem;
@@ -131,8 +222,8 @@ export const FeaturedCaseStudy: FC = (props) => {
           variant="h3"
         >
           As a leader in the paint industry, Sherwin-Williams wanted to create a
-          tool worthy of their products - something to get customers excited
-          about paint.
+          tool worthy of their products &ndash; something to get customers
+          excited about paint.
         </Text>
         <Link
           css={css`

@@ -1,82 +1,9 @@
 import css from '@emotion/css';
-import {
-  motion,
-  MotionValue,
-  transform,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from 'framer-motion';
-import type { SpringOptions } from 'popmotion';
-import { FC, RefObject, useEffect, useRef } from 'react';
+import { motion, MotionValue, transform, useTransform } from 'framer-motion';
+import type { FC } from 'react';
 
-import { Heading, Text } from '~/components';
+import { Heading, Text, useMouseAnimationWhileVisible } from '~/components';
 import { atMinLg, colors, cssClamp, interpolateColors } from '~/theme';
-
-const useMouseAnimation = <T extends HTMLElement>(
-  config?: SpringOptions,
-): [
-  RefObject<T>,
-  {
-    point: MotionValue<number[]>;
-    x: MotionValue<number>;
-    y: MotionValue<number>;
-  },
-] => {
-  const ref = useRef<T>(null);
-  const x = useSpring(0, config);
-  const y = useSpring(0, config);
-  const point = useMotionValue([0, 0]);
-  x.onChange((value) => {
-    point.set([value, point.get()[1]]);
-  });
-  y.onChange((value) => {
-    point.set([point.get()[0], value]);
-  });
-
-  useEffect(() => {
-    const updatePosition = (position: { pageX: number; pageY: number }) => {
-      if (position && ref.current) {
-        const {
-          height,
-          left,
-          top,
-          width,
-        } = ref.current.getBoundingClientRect();
-
-        // Transform the mouse position to a range of [-1, 1], [-1, 1] where 0,0 is the center of the reference element.
-        const elX = position.pageX - (left + window.pageXOffset);
-        const clampedX = Math.max(0, Math.min(elX, width));
-        const elY = position.pageY - (top + window.pageYOffset);
-        const clampedY = Math.max(0, Math.min(elY, height));
-        x.set(transform(clampedX, [0, width], [-1, 1]));
-        y.set(transform(clampedY, [0, height], [-1, 1]));
-      }
-    };
-
-    const handleMouseMove = (event: MouseEvent) => {
-      updatePosition(event);
-    };
-
-    const handleTouchMove = (event: TouchEvent) => {
-      const lastTouch = event.touches.item(event.touches.length - 1);
-
-      if (lastTouch) {
-        updatePosition(lastTouch);
-      }
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('touchmove', handleTouchMove);
-
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('touchmove', handleTouchMove);
-    };
-  });
-
-  return [ref, { point, x, y }];
-};
 
 const LINE_COUNT = 75;
 const LINE_RANGE = [0, LINE_COUNT - 1];
@@ -154,16 +81,16 @@ const Line: FC<LineProps> = ({ index, mouse }) => {
 
 const STOP_COLORS = interpolateColors(
   [colors.midBlue, colors.coral, colors.midBlue],
-  4,
+  12,
 );
 
 const GRADIENT_CENTER_OFFSET = LINE_MIN_APEX_X / LINE_WIDTH;
 
 export const HomeHero: FC = (props) => {
-  const [ref, { point }] = useMouseAnimation<HTMLDivElement>({
-    damping: 10,
-    stiffness: 75,
-  });
+  const [ref, { point }] = useMouseAnimationWhileVisible<HTMLDivElement>(
+    { damping: 10, stiffness: 75 },
+    { threshold: 0 },
+  );
   const x1 = useTransform(point, ([mX]) => {
     return transform(
       mX,
