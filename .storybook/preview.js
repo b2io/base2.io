@@ -1,6 +1,7 @@
 import { css, Global, ThemeProvider } from '@emotion/react';
 
-import roobertFont from '../public/RoobertGX.ttf';
+import roobertGX from '../public/RoobertGX.woff2';
+import roobertItalicGX from '../public/RoobertItalicGX.woff2';
 import theme from '../src/theme';
 
 export const decorators = [
@@ -9,11 +10,19 @@ export const decorators = [
       <Global
         styles={css`
           @font-face {
-            font-display: swap;
+            font-display: fallback;
             font-family: 'Roobert';
             font-style: normal;
-            font-weight: 400;
-            src: url(${roobertFont}) format('truetype');
+            font-weight: 100 900;
+            src: url(${roobertGX}) format('woff2-variations');
+          }
+
+          @font-face {
+            font-display: fallback;
+            font-family: 'Roobert';
+            font-style: italic;
+            font-weight: 100 900;
+            src: url(${roobertItalicGX}) format('woff2-variations');
           }
 
           :root {
