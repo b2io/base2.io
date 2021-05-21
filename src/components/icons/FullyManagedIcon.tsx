@@ -1,19 +1,27 @@
-import React, { FC } from 'react';
+import { useId } from '@react-aria/utils';
+import type { FC } from 'react';
+
 import { SvgProps } from './types';
 
 export const FullyManagedIcon: FC<SvgProps> = ({
   height = '100%',
+  id,
+  title = 'Fully Managed',
   width = '100%',
   ...props
 }) => {
+  const titleId = useId(id);
+
   return (
     <svg
+      aria-labelledby={titleId}
       height={height}
+      role="img"
       viewBox="0 0 55 48"
       width={width}
-      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
+      <title id={titleId}>{title}</title>
       <g fill="none" fillRule="evenodd">
         <path
           d="m54.252 4.609h-1.584"

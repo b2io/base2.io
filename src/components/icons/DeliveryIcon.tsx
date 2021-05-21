@@ -1,19 +1,27 @@
-import React, { FC } from 'react';
+import { useId } from '@react-aria/utils';
+import type { FC } from 'react';
+
 import { SvgProps } from './types';
 
 export const DeliveryIcon: FC<SvgProps> = ({
   height = '100%',
+  id,
+  title = 'Delivery',
   width = '100%',
   ...props
 }) => {
+  const titleId = useId(id);
+
   return (
     <svg
+      aria-labelledby={titleId}
       height={height}
+      role="img"
       viewBox="0 0 29 50"
       width={width}
-      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
+      <title id={titleId}>{title}</title>
       <g fill="none" fillRule="evenodd" strokeWidth="2">
         <circle cx="23.067" cy="38.421" r="3.158" stroke="#5656b0" />
         <circle cx="5.623" cy="38.421" r="3.158" stroke="#5656b0" />

@@ -1,19 +1,27 @@
-import React, { FC } from 'react';
+import { useId } from '@react-aria/utils';
+import type { FC } from 'react';
+
 import { SvgProps } from './types';
 
 export const EmbeddedIcon: FC<SvgProps> = ({
   height = '100%',
+  id,
+  title = 'Embedded',
   width = '100%',
   ...props
 }) => {
+  const titleId = useId(id);
+
   return (
     <svg
+      aria-labelledby={titleId}
       height={height}
+      role="img"
       viewBox="0 0 49 49"
       width={width}
-      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
+      <title id={titleId}>{title}</title>
       <g fill="none" fillRule="evenodd">
         <g strokeWidth="1.02">
           <circle cx="17.334" cy="17.316" r="5.661" stroke="#000" />
