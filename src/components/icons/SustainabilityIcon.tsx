@@ -1,19 +1,27 @@
-import React, { FC } from 'react';
+import { useId } from '@react-aria/utils';
+import type { FC } from 'react';
+
 import { SvgProps } from './types';
 
 export const SustainabilityIcon: FC<SvgProps> = ({
   height = '100%',
+  id,
+  title = 'Sustainability',
   width = '100%',
   ...props
 }) => {
+  const titleId = useId(id);
+
   return (
     <svg
+      aria-labelledby={titleId}
       height={height}
+      role="img"
       viewBox="0 0 57 50"
       width={width}
-      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
+      <title id={titleId}>{title}</title>
       <g fill="none" fillRule="evenodd" strokeLinecap="round" strokeWidth="2">
         <path
           d="m43.565 4.572-33.381 14.901"
