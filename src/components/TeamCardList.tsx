@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import team from '~/team.json';
-import theme, { atMinDesktop, atMinSm, atMinXL, spacing } from '~/theme';
+import { atMinDesktop, atMinSm, atMinXL, colors, spacing } from '~/theme';
+
 import { TeamMemberCard } from './TeamMemberCard';
 
 const TeamMasonry = styled.section`
@@ -59,7 +60,7 @@ const TeamMasonry = styled.section`
     display: none;
 
     ${atMinDesktop} {
-      background-color: ${theme.colors.darkBlueAlt};
+      background-color: ${colors.darkBlueAlt};
       border-bottom: 1px solid #979797;
       border-top: 1px solid #979797;
       bottom: 0;

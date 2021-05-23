@@ -2,11 +2,13 @@ import styled from '@emotion/styled';
 import React, { FC } from 'react';
 import { useLockBodyScroll, useToggle } from 'react-use';
 
-import { Link } from './Link';
+import { colors, spacing } from '~/theme';
+
 import { MenuIcon } from './icons';
+import { Link } from './Link';
 
 const Menu = styled.div`
-  background-color: ${({ theme }) => theme.colors.workThumbnailBg};
+  background-color: ${colors.workThumbnailBg};
   height: 100%;
   left: 0;
   opacity: 0;
@@ -39,14 +41,13 @@ const Nav = styled.nav`
   }
 
   li {
-    margin-bottom: ${({ theme }) => theme.spacing.xs};
+    margin-bottom: ${spacing.xs};
   }
 `;
 
 const ContactLink = styled(Link)`
   display: table;
-  margin: ${({ theme }) => theme.spacing.lg} ${({ theme }) => theme.spacing.lg}
-    0;
+  margin: ${spacing.lg} ${spacing.lg} 0;
 `;
 
 export const MobileMenu: FC = ({ ...props }) => {

@@ -1,11 +1,10 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
-import { spacing } from '~/theme/spacing';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import { atMinSm, atMinTablet, atMinXL, cssClamp } from '~/theme';
+import { atMinSm, atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
 const GUTTER_SHIFT = '1.375rem';
 

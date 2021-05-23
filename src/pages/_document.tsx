@@ -1,4 +1,3 @@
-import { SSRProvider } from '@react-aria/ssr';
 import Document, {
   DocumentContext,
   DocumentInitialProps,
@@ -38,9 +37,7 @@ class CustomDocument extends Document {
           />
         </Head>
         <body>
-          <SSRProvider>
-            <Main />
-          </SSRProvider>
+          <Main />
           <NextScript />
           <style jsx global>
             {`

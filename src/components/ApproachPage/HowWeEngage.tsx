@@ -1,8 +1,9 @@
 import { css } from '@emotion/react';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
 import { spacing, atMinTablet, atMinXL } from '~/theme';
+
 import { IconCardGrid } from '../IconCard';
 
 export const HowWeEngage: FC = (props) => {

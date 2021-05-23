@@ -8,13 +8,21 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "prettier",
     "prettier/@typescript-eslint"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
   "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    },
     "react": {
       "version": "detect"
     }
@@ -33,6 +41,23 @@
     ],
     "@typescript-eslint/no-use-before-define": 0,
     "@typescript-eslint/no-var-requires": 0,
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "caseInsensitive": true, "order": "asc" },
+        "groups": [
+          ["builtin", "internal", "external"],
+          ["parent", "sibling"],
+          "index",
+          "object"
+        ],
+        "newlines-between": "always",
+        "pathGroups": [
+          { "group": "parent", "pattern": "~/**", "position": "before" }
+        ]
+      }
+    ],
+    "import/newline-after-import": 1,
     "no-console": [
       2,
       {

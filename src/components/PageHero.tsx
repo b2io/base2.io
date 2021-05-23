@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import {
   atMinLg,
@@ -9,8 +9,9 @@ import {
   atMinXL,
   cssClamp,
 } from '~/theme';
-import { Heading } from './Heading';
+
 import { DynamicImage, DynamicImageProps } from './DynamicImage';
+import { Heading } from './Heading';
 
 type PageHeroProps = DynamicImageProps & {
   text: string;

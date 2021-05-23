@@ -2,7 +2,7 @@ import { css, Global, ThemeProvider } from '@emotion/react';
 
 import roobertGX from '../public/RoobertGX.woff2';
 import roobertItalicGX from '../public/RoobertItalicGX.woff2';
-import theme from '../src/theme';
+import theme, { colors } from '../src/theme';
 
 export const decorators = [
   (Story) => (
@@ -48,8 +48,8 @@ export const parameters = {
   backgrounds: {
     default: 'dark',
     values: [
-      { name: 'dark', value: theme.colors.darkBlue },
-      { name: 'light', value: theme.colors.offWhite },
+      { name: 'dark', value: colors.darkBlue },
+      { name: 'light', value: colors.offWhite },
     ],
   },
 };

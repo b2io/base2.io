@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { EmpathyIcon } from '..';
-import { SvgProps } from './types';
+import { EmpathyIcon } from './EmpathyIcon';
+import type { SvgProps } from './types';
 
 export default {
   component: EmpathyIcon,

@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
-import { FC } from 'react';
+import type { FC } from 'react';
+
 import { atMinXL, spacing } from '~/theme';
 
 import { Heading } from '../Heading';

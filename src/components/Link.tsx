@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import NextLink from 'next/link';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { variant } from 'styled-system';
 
 import { ThemeLinkVariants } from '~/theme';

@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { DiscoveryIcon } from '..';
-import { SvgProps } from './types';
+import { DiscoveryIcon } from './DiscoveryIcon';
+import type { SvgProps } from './types';
 
 export default {
   component: DiscoveryIcon,

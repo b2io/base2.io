@@ -1,12 +1,13 @@
-import { css, useTheme } from '@emotion/react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
 
-import { atMinTablet, atMinLg } from '~/theme';
+import { atMinTablet, atMinLg, colors, spacing } from '~/theme';
+
 import { Container } from './Container';
+import { LogoIcon } from './icons';
 import { Link } from './Link';
-import { LogoIcon } from './icons/LogoIcon';
-import Text from './Text';
+import { Text } from './Text';
 
 const FooterWrapper = styled.div`
   margin-left: 1.688rem;
@@ -75,8 +76,8 @@ const Nav = styled.nav`
 `;
 
 const ContactBlock = styled.address`
-  margin-top: ${({ theme }) => theme.spacing.xxl};
-  padding-bottom: ${({ theme }) => theme.spacing.lg};
+  margin-top: ${spacing.xxl};
+  padding-bottom: ${spacing.lg};
 
   ${atMinTablet} {
     margin-top: 0;
@@ -93,7 +94,7 @@ const ContactBlock = styled.address`
 
 const ContactLink = styled(Link)`
   display: block;
-  margin-bottom: ${({ theme }) => theme.spacing.md};
+  margin-bottom: ${spacing.md};
 
   &:last-child {
     margin-bottom: 0;
@@ -106,7 +107,7 @@ const ContactLink = styled(Link)`
     }
 
     ${atMinTablet} {
-      margin-bottom: ${({ theme }) => theme.spacing.sm};
+      margin-bottom: ${spacing.sm};
     }
   }
 
@@ -120,12 +121,11 @@ const ContactLink = styled(Link)`
 `;
 
 export const Footer: FC = (prop) => {
-  const theme = useTheme();
   return (
     <Container
       as="footer"
       css={css`
-        background-color: ${theme.colors.darkBlueAlt};
+        background-color: ${colors.darkBlueAlt};
 
         ${atMinTablet} {
           background-color: unset;

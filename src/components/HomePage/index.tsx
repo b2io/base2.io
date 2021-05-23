@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import { Layout } from '~/components';
-import { spacing } from '~/theme/spacing';
 import { css } from '@emotion/react';
-import { atMinTablet, atMinXL, cssClamp } from '~/theme';
+import type { FC } from 'react';
+
+import { Layout } from '~/components';
+import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
 import { BuiltForResults } from './BuiltForResults';
 import { DesignedForHumans } from './DesignedForHumans';

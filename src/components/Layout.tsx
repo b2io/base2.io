@@ -2,13 +2,13 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-import React, { FC } from 'react';
-
-import { Container } from './Container';
-import { Header } from './Header';
-import { Footer } from './Footer';
+import type { FC } from 'react';
 
 import { cssClamp } from '~/theme';
+
+import { Container } from './Container';
+import { Footer } from './Footer';
+import { Header } from './Header';
 
 const Root = styled.div`
   overflow: hidden;

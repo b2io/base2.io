@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
-import { FC } from 'react';
-import { colors } from '~/theme/colors';
+import type { FC } from 'react';
+
+import { atMinSm, atMinTablet, colors, spacing } from '~/theme';
+import type { ImageProps } from '~/types';
 
 import { Heading } from './Heading';
 import { Text } from './Text';
-import { atMinSm, atMinTablet } from '~/theme';
-import { spacing } from '~/theme/spacing';
-import { ImageProps } from '~/types';
 
 type TeamMemberCardProps = ImageProps & {
   name: string;

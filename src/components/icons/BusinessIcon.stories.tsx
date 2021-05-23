@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { BusinessIcon } from '..';
-import { SvgProps } from './types';
+import { BusinessIcon } from './BusinessIcon';
+import type { SvgProps } from './types';
 
 export default {
   component: BusinessIcon,

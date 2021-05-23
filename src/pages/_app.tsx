@@ -1,11 +1,12 @@
+import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
+import { SSRProvider } from '@react-aria/ssr';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import theme from '~/theme';
-import 'normalize.css';
+import theme, { colors } from '~/theme';
 
 const handleExitComplete = () => {
   if (typeof window !== 'undefined') {
@@ -31,11 +32,13 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
 
               body,
               html {
-                background-color: ${theme.colors.background};
+                background-color: ${colors.background};
               }
             `}
           />
-          <Component {...pageProps} key={pageKey} />
+          <SSRProvider>
+            <Component {...pageProps} key={pageKey} />
+          </SSRProvider>
         </ThemeProvider>
       </AnimatePresence>
     </AnimateSharedLayout>
