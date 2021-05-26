@@ -1,4 +1,5 @@
-import { hsl, parseToHsl } from 'polished';
+import { hsla, parseToHsl } from 'polished';
+import { HslaColor } from 'polished/lib/types/color';
 
 import { bp, BreakpointName } from './breakpoints';
 
@@ -37,8 +38,18 @@ export const interpolateColors = (
     .reduce<string[]>((result, color, colorIndex) => {
       const nextColor = colors[colorIndex + 1];
 
-      const { hue: xH, lightness: xL, saturation: xS } = parseToHsl(color);
-      const { hue: yH, lightness: yL, saturation: yS } = parseToHsl(nextColor);
+      const {
+        alpha: xA = 1,
+        hue: xH,
+        lightness: xL,
+        saturation: xS,
+      } = parseToHsl(color) as HslaColor;
+      const {
+        alpha: yA = 1,
+        hue: yH,
+        lightness: yL,
+        saturation: yS,
+      } = parseToHsl(nextColor) as HslaColor;
 
       return [
         ...result,
@@ -50,7 +61,8 @@ export const interpolateColors = (
             return '';
           }
 
-          return hsl({
+          return hsla({
+            alpha: lerp(xA, yA, step),
             hue: lerp(xH, yH, step),
             lightness: lerp(xL, yL, step),
             saturation: lerp(xS, yS, step),
@@ -59,4 +71,10 @@ export const interpolateColors = (
       ];
     }, [])
     .filter(Boolean);
+};
+
+export const mRound = (value: number, places: number): number => {
+  const factor = 10 ** places;
+
+  return Math.round((value + Number.EPSILON) * factor) / factor;
 };

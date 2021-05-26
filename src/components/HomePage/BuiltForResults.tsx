@@ -118,8 +118,8 @@ export const BuiltForResults: FC = (props) => {
           Software that works? That&rsquo;s a given.
         </Heading>
         <Text variant="h3">
-          Let&lsquo;s create something that solves your biggest challenge - and
-          continues to drive value over time.
+          Let&rsquo;s create something that solves your biggest challenge
+          &ndash; and continues to drive value over time.
         </Text>
         <Link
           css={css`

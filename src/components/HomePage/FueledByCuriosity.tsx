@@ -1,104 +1,99 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
-import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { Heading, Link, Text } from '~/components';
-import theme, { atMinTablet, atMinXL, cssClamp } from '~/theme';
-import type { ImageProps } from '~/types';
+import { GradientCircle, Heading, Link, Text } from '~/components';
+import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
-const imageDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
-const imageTopCalc = cssClamp([1.85, 'mobile'], [0, 'tablet']);
-
-const Image: FC<ImageProps> = ({ alt, src, ...props }) => {
-  return (
-    <div
-      css={css`
-        height: ${imageDimensionsCalc};
-        position: absolute;
-        right: calc(77.5% - ${imageDimensionsCalc});
-        top: ${imageTopCalc};
-        width: ${imageDimensionsCalc};
-        ${atMinXL} {
-          right: -22rem;
-        }
-      `}
-      {...props}
-    >
-      <NextImage layout="fill" alt={alt} src={src} />
-    </div>
-  );
-};
-
-const HeaderText = styled(Heading)`
-  margin-left: ${cssClamp([0, 'xl'], [15.225, 'xxl'])};
-  position: relative;
-  top: ${cssClamp([0, 'mobile'], [9, 'tablet'])};
-
-  .callout {
-    display: block;
-    left: 2rem;
-    position: relative;
-    ${atMinTablet} {
-      left: ${cssClamp([1.75, 'tablet'], [8.25, 'xl'])};
-    }
-  }
-
-  .large-text {
-    display: block;
-    position: relative;
-    top: -0.3rem;
-    ${atMinTablet} {
-      top: -1.25rem;
-    }
-  }
-`;
-
-const Content = styled.div`
-  margin-left: 1.74375rem;
-  margin-top: ${cssClamp([6.75, 'mobile'], [19, 'tablet'])};
-  position: relative;
-  ${atMinTablet} {
-    margin-left: ${cssClamp([0, 'tablet'], [7.6125, 'xl'])};
-    max-width: 52rem;
-  }
-`;
+const circleDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
+const circleTopCalc = cssClamp([1.85, 'mobile'], [0, 'tablet']);
 
 export const FueledByCuriosity: FC = (props) => {
   return (
     <section
       css={css`
-        min-height: calc(${imageTopCalc} + ${imageDimensionsCalc});
+        min-height: calc(${circleTopCalc} + ${circleDimensionsCalc});
         position: relative;
       `}
       {...props}
     >
-      <Image
-        alt="large abstract gradient circle"
-        src="/home/large-gradient-circle.png"
+      <GradientCircle
+        css={css`
+          height: ${circleDimensionsCalc};
+          position: absolute;
+          right: calc(77.5% - ${circleDimensionsCalc});
+          top: ${circleTopCalc};
+          width: ${circleDimensionsCalc};
+
+          ${atMinXL} {
+            right: -22rem;
+          }
+        `}
       />
-      <HeaderText as="h2" variant="hero">
-        <Text className="callout" as="span" variant="callout">
+      <Heading
+        css={css`
+          margin-left: ${cssClamp([0, 'xl'], [15.225, 'xxl'])};
+          position: relative;
+          top: ${cssClamp([0, 'mobile'], [9, 'tablet'])};
+        `}
+        as="h2"
+        variant="hero"
+      >
+        <Text
+          css={css`
+            display: block;
+            left: 2rem;
+            position: relative;
+
+            ${atMinTablet} {
+              left: ${cssClamp([1.75, 'tablet'], [8.25, 'xl'])};
+            }
+          `}
+          as="span"
+          variant="callout"
+        >
           Fueled by
         </Text>
-        <span className="large-text">curiosity.</span>
-      </HeaderText>
-      <Content>
+        <span
+          css={css`
+            display: block;
+            position: relative;
+            top: -0.3rem;
+
+            ${atMinTablet} {
+              top: -1.25rem;
+            }
+          `}
+        >
+          curiosity.
+        </span>
+      </Heading>
+      <div
+        css={css`
+          margin-left: 1.74375rem;
+          margin-top: ${cssClamp([6.75, 'mobile'], [19, 'tablet'])};
+          position: relative;
+
+          ${atMinTablet} {
+            margin-left: ${cssClamp([0, 'tablet'], [7.6125, 'xl'])};
+            max-width: 52rem;
+          }
+        `}
+      >
         <Text variant="h2">
-          We’re thoughtful, passionate, and we never settle for “good enough.”
-          Undeterred by novel problems, our team tackles each one with tenacity,
-          creativity, and excitement.
+          We&rsquo;re thoughtful, passionate, and we never settle for
+          &ldquo;good enough.&rdquo; Undeterred by novel problems, our team
+          tackles each one with tenacity, creativity, and excitement.
         </Text>
         <Link
           css={css`
-            margin-top: ${theme.spacing.lg};
+            margin-top: ${spacing.lg};
           `}
           href="/culture"
           variant="CTA"
         >
           See our culture
         </Link>
-      </Content>
+      </div>
     </section>
   );
 };
