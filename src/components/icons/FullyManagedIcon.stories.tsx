@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { FullyManagedIcon } from '..';
-import { SvgProps } from './types';
+import { FullyManagedIcon } from './FullyManagedIcon';
+import type { SvgProps } from './types';
 
 export default {
   component: FullyManagedIcon,

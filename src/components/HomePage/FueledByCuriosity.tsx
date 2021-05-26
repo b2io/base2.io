@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinTablet, atMinXL, cssClamp } from '~/theme';
-import { ImageProps } from '~/types';
+import type { ImageProps } from '~/types';
 
 const imageDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
 const imageTopCalc = cssClamp([1.85, 'mobile'], [0, 'tablet']);

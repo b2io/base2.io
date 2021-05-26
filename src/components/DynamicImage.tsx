@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import type { FC } from 'react';
+
 import { bp } from '~/theme';
 import { BpMapPair } from '~/types';
 

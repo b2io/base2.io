@@ -3,8 +3,8 @@ import { spacing } from './spacing';
 import { linkVariants, textVariants } from './typography';
 
 export * from './breakpoints';
+export * from './colors';
 export * from './spacing';
-export type { ThemeColor } from './colors';
 export type { ThemeLinkVariants, ThemeTextVariants } from './typography';
 export * from './util';
 

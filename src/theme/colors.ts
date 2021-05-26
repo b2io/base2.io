@@ -1,4 +1,4 @@
-export const palette = {
+const palette = {
   coral: '#f73a52',
   darkBlue: '#05001e',
   darkBlueAlt: '#0f0d34',
@@ -6,6 +6,7 @@ export const palette = {
   offWhite: '#ecf0f4',
   workThumbnailBg: '#30308a',
 };
+
 export const colors = {
   ...palette,
   action: palette.coral,

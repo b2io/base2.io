@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
 
+import { colors } from '~/theme';
+
 export interface MenuIconProps {
   showClose?: boolean;
 }
@@ -11,7 +13,7 @@ const Container = styled.div`
   position: relative;
   width: 24px;
   span {
-    background-color: ${({ theme }) => theme.colors.offWhite};
+    background-color: ${colors.offWhite};
     height: 1px;
     position: absolute;
     right: 0;

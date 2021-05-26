@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import { Children, cloneElement, ElementType, FC, ReactElement } from 'react';
 
-import { atMinTablet, spacing } from '~/theme';
 import { Heading, Text } from '~/components';
+import { atMinTablet, spacing } from '~/theme';
 
 import {
   BusinessIcon,

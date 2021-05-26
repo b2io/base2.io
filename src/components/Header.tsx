@@ -2,12 +2,13 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import React, { FC } from 'react';
+import type { FC } from 'react';
 
-import { atMinTablet, atMinSm, atMinXXL } from '~/theme';
-import { Link } from './Link';
+import { atMinTablet, atMinSm, atMinXXL, colors, spacing } from '~/theme';
+
 import { Container } from './Container';
 import { LogoWithName } from './icons';
+import { Link } from './Link';
 import { MobileMenu } from './MobileMenu';
 
 const Root = styled.header`
@@ -28,16 +29,16 @@ const Content = styled(Container)`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding-bottom: ${({ theme }) => theme.spacing.xxl};
-  padding-top: ${({ theme }) => theme.spacing.sm};
+  padding-bottom: ${spacing.xxl};
+  padding-top: ${spacing.sm};
 
   ${atMinTablet} {
-    padding-bottom: ${({ theme }) => theme.spacing.lg};
-    padding-top: ${({ theme }) => theme.spacing.md};
+    padding-bottom: ${spacing.lg};
+    padding-top: ${spacing.md};
   }
   ${atMinXXL} {
-    padding-bottom: ${({ theme }) => theme.spacing.xxl};
-    padding-top: ${({ theme }) => theme.spacing.md};
+    padding-bottom: ${spacing.xxl};
+    padding-top: ${spacing.md};
   }
 `;
 
@@ -54,7 +55,7 @@ const Nav = styled.nav`
   }
 
   li {
-    margin-right: ${({ theme }) => theme.spacing.lg};
+    margin-right: ${spacing.lg};
     &:last-child {
       margin-right: 0;
     }
@@ -68,7 +69,7 @@ const Nav = styled.nav`
     }
 
     &.active::after {
-      background-color: ${({ theme }) => theme.colors.action};
+      background-color: ${colors.action};
     }
   }
 `;

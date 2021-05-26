@@ -1,7 +1,7 @@
 import { useId } from '@react-aria/utils';
 import type { FC } from 'react';
 
-import { SvgProps } from './types';
+import type { SvgProps } from './types';
 
 export const DeliveryIcon: FC<SvgProps> = ({
   height = '100%',

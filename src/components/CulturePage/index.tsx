@@ -1,14 +1,15 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
+import { atMinDesktop, atMinTablet, spacing } from '~/theme';
+
 import { Layout } from '../Layout';
 import { PageHero } from '../PageHero';
+import { TeamCardList } from '../TeamCardList';
+import { TeamHero } from '../TeamHero';
 import { AvailablePositions } from './AvailablePositions';
 import { OurBlog } from './OurBlog';
 import { OurCulture } from './OurCulture';
-import { TeamCardList } from '../TeamCardList';
-import { TeamHero } from '../TeamHero';
-import { atMinDesktop, atMinTablet, spacing } from '~/theme';
 
 export const CulturePage: FC = () => {
   return (

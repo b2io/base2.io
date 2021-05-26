@@ -11,7 +11,7 @@ import type { SpringOptions } from 'popmotion';
 import { FC, RefObject, useEffect, useRef } from 'react';
 
 import { Heading, Text } from '~/components';
-import theme, { atMinLg, cssClamp, interpolateColors } from '~/theme';
+import { atMinLg, colors, cssClamp, interpolateColors } from '~/theme';
 
 const useMouseAnimation = <T extends HTMLElement>(
   config?: SpringOptions,
@@ -153,7 +153,7 @@ const Line: FC<LineProps> = ({ index, mouse }) => {
 };
 
 const STOP_COLORS = interpolateColors(
-  [theme.colors.midBlue, theme.colors.coral, theme.colors.midBlue],
+  [colors.midBlue, colors.coral, colors.midBlue],
   4,
 );
 
@@ -191,7 +191,7 @@ export const HomeHero: FC = (props) => {
         text-align: center;
 
         & * {
-          text-shadow: 0.25rem 0.25rem 0.375rem ${theme.colors.darkBlue};
+          text-shadow: 0.25rem 0.25rem 0.375rem ${colors.darkBlue};
           z-index: 1;
         }
 

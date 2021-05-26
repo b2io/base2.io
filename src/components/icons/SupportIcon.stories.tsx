@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { SupportIcon } from '..';
-import { SvgProps } from './types';
+import { SupportIcon } from './SupportIcon';
+import type { SvgProps } from './types';
 
 export default {
   component: SupportIcon,

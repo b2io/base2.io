@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { LogoIcon, LogoWithName } from './';
-import { SvgProps } from './types';
+import { LogoIcon, LogoWithName } from './LogoIcon';
+import type { SvgProps } from './types';
 
 export default {
   component: LogoIcon,

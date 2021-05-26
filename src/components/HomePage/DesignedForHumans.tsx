@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
-import { ImageProps } from '~/types';
+import type { ImageProps } from '~/types';
 
 const largeImageHeightCalc = cssClamp([26.625, 'tablet'], [50, 'desktop']);
 const imageTopCalc = cssClamp(

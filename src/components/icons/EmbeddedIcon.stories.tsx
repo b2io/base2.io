@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { EmbeddedIcon } from '..';
-import { SvgProps } from './types';
+import { EmbeddedIcon } from './EmbeddedIcon';
+import type { SvgProps } from './types';
 
 export default {
   component: EmbeddedIcon,

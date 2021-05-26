@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { DeliveryIcon } from '..';
-import { SvgProps } from './types';
+import { DeliveryIcon } from './DeliveryIcon';
+import type { SvgProps } from './types';
 
 export default {
   component: DeliveryIcon,

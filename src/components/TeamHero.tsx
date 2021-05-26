@@ -1,11 +1,17 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import type { FC } from 'react';
 
-import { FC } from 'react';
-import { Heading } from './Heading';
-import { atMinLg, atMinDesktop, atMinLargeDesktop } from '~/theme/breakpoints';
-import { cssClamp, spacing } from '../theme';
+import {
+  atMinLg,
+  atMinDesktop,
+  atMinLargeDesktop,
+  cssClamp,
+  spacing,
+} from '~/theme';
+
 import { DynamicImage, DynamicImageProps } from './DynamicImage';
+import { Heading } from './Heading';
 
 type TeamHeroProps = DynamicImageProps & {
   text: string;

@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
 import React from 'react';
 
-import { TransparencyIcon } from './';
-import { SvgProps } from './types';
+import { TransparencyIcon } from './TransparencyIcon';
+import type { SvgProps } from './types';
 
 export default {
   component: TransparencyIcon,

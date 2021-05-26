@@ -1,19 +1,20 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { Heading } from './Heading';
-import { Text } from './Text';
 import {
   atMaxMd,
   atMinDesktop,
   atMinMobile,
   atMinTablet,
   atMinXL,
-} from '~/theme/breakpoints';
-import { spacing } from '~/theme/spacing';
-import { cssClamp } from '~/theme/util';
+  cssClamp,
+  spacing,
+} from '~/theme';
+
 import { DynamicImage, DynamicImageProps } from './DynamicImage';
+import { Heading } from './Heading';
+import { Text } from './Text';
 
 type QuotedImageProps = DynamicImageProps & {
   company: string;
