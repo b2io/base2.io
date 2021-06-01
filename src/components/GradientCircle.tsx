@@ -25,7 +25,7 @@ export const GradientCircle: FC = (props) => {
 
       return controls.stop;
     }
-  }, [inView]);
+  }, [inView, step]);
 
   const fx = useTransform(step, (v) => {
     // Use a cosine wave to oscillate through [0, 0.5, 1, 0.5, 0] based on v.
