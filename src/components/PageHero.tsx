@@ -48,7 +48,7 @@ const HeaderText = styled(Heading)`
 
   ${atMinXL} {
     left: ${cssClamp(
-      [22.75, 'xl'],
+      [16.75, 'xl'],
       [33.75, 'desktop'],
       [37.5, 'largeDesktop'],
     )};

@@ -1,19 +1,29 @@
-// import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import type { FC } from 'react';
 
-import { Layout, PageHero } from '~/components';
-// import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
+import { Layout } from '~/components';
+import { atMinDesktop, atMinTablet, atMinXL } from '~/theme';
 
-// import { BuiltForResults } from '../HomePage/BuiltForResults';
-// import { DesignedForHumans } from '../HomePage/DesignedForHumans';
-// import { FeaturedCaseStudy } from '../HomePage/FeaturedCaseStudy';
-// import { FueledByCuriosity } from '../HomePage/FueledByCuriosity';
-// import { HomeHero } from '../HomePage/HomeHero';
+import { PageHero } from '../PageHero';
+
+const ContactPageHero = styled(PageHero)`
+  h1 {
+    ${atMinTablet} {
+      max-width: 48rem;
+    }
+    /* ${atMinXL} {
+      left: 40%;
+    }
+    ${atMinDesktop} {
+      left: 50%;
+    } */
+  }
+`;
 
 export const ContactPage: FC = () => {
   return (
     <Layout>
-      <PageHero
+      <ContactPageHero
         alt="person staring at a computer"
         imgSources={[
           ['largeDesktop', '/contact/contact-hero-xlarge.jpg'],
