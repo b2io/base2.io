@@ -2,21 +2,18 @@ import styled from '@emotion/styled';
 import type { FC } from 'react';
 
 import { Layout } from '~/components';
-import { atMinDesktop, atMinTablet, atMinXL } from '~/theme';
+import { atMinTablet, atMinXL } from '~/theme';
 
 import { PageHero } from '../PageHero';
 
 const ContactPageHero = styled(PageHero)`
   h1 {
     ${atMinTablet} {
+      max-width: 40rem;
+    }
+    ${atMinXL} {
       max-width: 48rem;
     }
-    /* ${atMinXL} {
-      left: 40%;
-    }
-    ${atMinDesktop} {
-      left: 50%;
-    } */
   }
 `;
 
