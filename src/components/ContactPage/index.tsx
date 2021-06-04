@@ -8,7 +8,7 @@ import { PageHero } from '../PageHero';
 
 export const ContactPage: FC = () => {
   return (
-    <Layout>
+    <Layout title="Contact">
       <PageHero
         alt="coworkers collaborating in office"
         css={css`
