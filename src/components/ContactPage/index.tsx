@@ -1,27 +1,23 @@
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import { Layout } from '~/components';
-import { atMinTablet, atMinXL } from '~/theme';
+import { atMinXL } from '~/theme';
 
 import { PageHero } from '../PageHero';
-
-const ContactPageHero = styled(PageHero)`
-  h1 {
-    ${atMinTablet} {
-      max-width: 40rem;
-    }
-    ${atMinXL} {
-      max-width: 48rem;
-    }
-  }
-`;
 
 export const ContactPage: FC = () => {
   return (
     <Layout>
-      <ContactPageHero
-        alt="person staring at a computer"
+      <PageHero
+        alt="coworkers collaborating in office"
+        css={css`
+          ${atMinXL} {
+            h1 {
+              max-width: 48rem;
+            }
+          }
+        `}
         imgSources={[
           ['largeDesktop', '/contact/contact-hero-xlarge.jpg'],
           ['tablet', '/contact/contact-hero-medium.jpg'],
