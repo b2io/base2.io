@@ -1,8 +1,6 @@
-import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import { Layout } from '~/components';
-import { atMinXL } from '~/theme';
 
 import { PageHero } from '../PageHero';
 
@@ -11,13 +9,6 @@ export const ContactPage: FC = () => {
     <Layout title="Contact">
       <PageHero
         alt="coworkers collaborating in office"
-        css={css`
-          ${atMinXL} {
-            h1 {
-              max-width: 48rem;
-            }
-          }
-        `}
         imgSources={[
           ['largeDesktop', '/contact/contact-hero-xlarge.jpg'],
           ['tablet', '/contact/contact-hero-medium.jpg'],
