@@ -1,5 +1,6 @@
 export * from './ApproachPage';
 export * from './Container';
+export * from './ContactPage';
 export * from './CulturePage';
 export * from './DynamicImage';
 export * from './GradientCircle';
