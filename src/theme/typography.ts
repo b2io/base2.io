@@ -91,7 +91,7 @@ export const textVariants = {
     color: colors.text,
     fontSize: cssClamp([3.75, 'mobile'], [6.25, 'tablet']),
     fontVariationSettings: '"wght" 900',
-    letterSpacing: cssClamp([-0.03125, 'mobile'], [0.125, 'tablet']),
+    letterSpacing: cssClamp([-0.03125, 'mobile'], [0, 'tablet']),
     lineHeight: 1,
     margin: 0,
     padding: 0,

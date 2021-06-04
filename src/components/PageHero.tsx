@@ -2,13 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
 
-import {
-  atMinLg,
-  atMinDesktop,
-  atMinLargeDesktop,
-  atMinXL,
-  cssClamp,
-} from '~/theme';
+import { atMinLg, atMinLargeDesktop, atMinXL, cssClamp } from '~/theme';
 
 import { DynamicImage, DynamicImageProps } from './DynamicImage';
 import { Heading } from './Heading';
@@ -43,19 +37,15 @@ const HeaderText = styled(Heading)`
   position: relative;
 
   ${atMinLg} {
-    max-width: 60rem;
+    max-width: 53rem;
   }
 
   ${atMinXL} {
     left: ${cssClamp(
-      [22.75, 'xl'],
+      [16.75, 'xl'],
       [33.75, 'desktop'],
-      [37.5, 'largeDesktop'],
+      [38.25, 'largeDesktop'],
     )};
-    padding-top: 4.25rem;
-  }
-
-  ${atMinDesktop} {
     padding-top: 4.25rem;
   }
 `;
