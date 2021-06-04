@@ -55,7 +55,7 @@ const Nav = styled.nav`
   }
 
   li {
-    margin-right: ${spacing.lg};
+    margin-right: ${spacing.xs};
     &:last-child {
       margin-right: 0;
     }
