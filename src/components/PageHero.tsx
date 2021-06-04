@@ -44,7 +44,7 @@ const HeaderText = styled(Heading)`
     left: ${cssClamp(
       [16.75, 'xl'],
       [33.75, 'desktop'],
-      [37.5, 'largeDesktop'],
+      [38.25, 'largeDesktop'],
     )};
     padding-top: 4.25rem;
   }
