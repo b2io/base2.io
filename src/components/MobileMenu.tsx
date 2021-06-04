@@ -77,6 +77,9 @@ export const MobileMenu: FC = ({ ...props }) => {
               <Link href="/culture">Culture</Link>
             </li>
             <li>
+              <Link href="/careers">Careers</Link>
+            </li>
+            <li>
               <Link href="/contact">Contact</Link>
             </li>
           </ul>
