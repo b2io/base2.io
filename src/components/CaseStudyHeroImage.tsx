@@ -28,7 +28,13 @@ const HeroImage = styled.img`
   width: 100%;
 `;
 
-const TextContainer = styled.div``;
+const TextContainer = styled.div`
+  ${atMinDesktop} {
+    left: 50rem;
+    position: absolute;
+    top: 11.5rem;
+  }
+`;
 
 const PreviewImageContainer = styled.div`
   display: none;
