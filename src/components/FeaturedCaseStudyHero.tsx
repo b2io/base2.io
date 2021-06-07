@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { Heading, Link, Text } from '~/components';
+import { CaseStudyHeroImage, Heading, Link, Text } from '~/components';
 import { atMinDesktop, atMinTablet, cssClamp, spacing } from '~/theme';
 import type { ImageProps } from '~/types';
 
@@ -20,12 +20,6 @@ const ImageContainer = styled.div`
     margin: auto;
     max-width: 74.875rem;
   }
-`;
-
-const HeroImage = styled.img`
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
 `;
 
 const TextContainer = styled.div`
@@ -69,11 +63,14 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   );
 };
 
-export const FeaturedCaseStudyHero: FC<ImageProps> = ({ alt, src }) => {
+export const FeaturedCaseStudyHero: FC = () => {
   return (
     <SectionContainer>
       <ImageContainer>
-        <HeroImage src={src} alt={alt} />
+        <CaseStudyHeroImage
+          alt="abstract collection of product screens"
+          src="/work/work-featured-hero.jpg"
+        />
       </ImageContainer>
       <PreviewImageContainer>
         <ResponsiveImage
