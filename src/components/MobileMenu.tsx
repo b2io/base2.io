@@ -37,7 +37,7 @@ const IconButton = styled.button`
 const Nav = styled.nav`
   ul {
     list-style: none;
-    padding: 6.5rem 0 0 2.5rem;
+    padding: 10.25rem 0 0 2.5rem;
   }
 
   li {
@@ -75,12 +75,6 @@ export const MobileMenu: FC = ({ ...props }) => {
             </li>
             <li>
               <Link href="/culture">Culture</Link>
-            </li>
-            <li>
-              <Link href="/careers">Careers</Link>
-            </li>
-            <li>
-              <Link href="/blog">Blog</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>

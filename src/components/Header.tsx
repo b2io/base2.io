@@ -55,7 +55,7 @@ const Nav = styled.nav`
   }
 
   li {
-    margin-right: ${spacing.xs};
+    margin-right: ${spacing.lg};
     &:last-child {
       margin-right: 0;
     }
@@ -128,8 +128,6 @@ export const Header: FC = ({ ...props }) => {
             <NavItem href="/work">Work</NavItem>
             <NavItem href="/approach">Approach</NavItem>
             <NavItem href="/culture">Culture</NavItem>
-            <NavItem href="/careers">Careers</NavItem>
-            <NavItem href="/blog">Blog</NavItem>
             <NavItem href="/contact">Contact</NavItem>
           </ul>
         </Nav>
