@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 
 import { ColorSnapVisualizerPage } from '~/components';
 
-const ColorSnapVisualizerNextPage: NextPage = () => {
+const CaseStudyColorSnapVisualizerNextPage: NextPage = () => {
   return <ColorSnapVisualizerPage />;
 };
 
-export default ColorSnapVisualizerNextPage;
+export default CaseStudyColorSnapVisualizerNextPage;

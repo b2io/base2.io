@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 
 import { NetJetsPage } from '~/components';
 
-const NetJetsNextPage: NextPage = () => {
+const CaseStudyNetJetsNextPage: NextPage = () => {
   return <NetJetsPage />;
 };
 
-export default NetJetsNextPage;
+export default CaseStudyNetJetsNextPage;

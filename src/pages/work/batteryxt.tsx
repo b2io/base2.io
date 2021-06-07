@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 
 import { BatteryXTPage } from '~/components';
 
-const BatteryXTNextPage: NextPage = () => {
+const CaseStudyBatteryXTNextPage: NextPage = () => {
   return <BatteryXTPage />;
 };
 
-export default BatteryXTNextPage;
+export default CaseStudyBatteryXTNextPage;

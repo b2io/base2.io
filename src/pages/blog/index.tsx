@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 
 import { BlogPage } from '~/components';
 
-const BlogIndexPage: NextPage = () => {
+const BlogIndexNextPage: NextPage = () => {
   return <BlogPage />;
 };
 
-export default BlogIndexPage;
+export default BlogIndexNextPage;
