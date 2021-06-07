@@ -122,7 +122,7 @@ export const CaseStudyHeroImage: FC<ImageProps> = ({ alt, src }) => {
               margin-top: 3rem;
             }
           `}
-          href="/work"
+          href="/work/colorsnap"
           variant="CTA"
         >
           View more
