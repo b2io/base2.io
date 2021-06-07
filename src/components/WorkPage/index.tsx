@@ -8,7 +8,7 @@ export const WorkPage: FC = () => {
   return (
     <Layout title="Work">
       <CaseStudyHeroImage
-        alt="abstract collection of products"
+        alt="abstract collection of product screens"
         src="/work/work-featured-hero.jpg"
       />
     </Layout>
