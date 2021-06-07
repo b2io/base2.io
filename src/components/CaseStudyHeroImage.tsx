@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import { atMinDesktop, atMinLg, atMinTablet, cssClamp, spacing } from '~/theme';
+import { atMinDesktop, atMinTablet, cssClamp, spacing } from '~/theme';
 import type { ImageProps } from '~/types';
 
 const SectionContainer = styled.section`
@@ -16,7 +16,7 @@ const SectionContainer = styled.section`
 const ImageContainer = styled.div`
   height: 20.188rem;
   height: ${cssClamp([20.188, 'smMobile'], [50, 'desktop'])};
-  ${atMinLg} {
+  ${atMinDesktop} {
     margin: auto;
     max-width: 74.875rem;
   }
@@ -29,8 +29,13 @@ const HeroImage = styled.img`
 `;
 
 const TextContainer = styled.div`
+  margin-top: -3.5rem;
+  ${atMinTablet} {
+    max-width: 35rem;
+  }
   ${atMinDesktop} {
     left: 50rem;
+    margin-top: unset;
     position: absolute;
     top: 11.5rem;
   }
@@ -80,7 +85,11 @@ export const CaseStudyHeroImage: FC<ImageProps> = ({ alt, src }) => {
         <Heading
           as="h2"
           css={css`
-            margin-bottom: ${spacing.xxs};
+            display: none;
+            ${atMinDesktop} {
+              display: block;
+              margin-bottom: ${spacing.xxs};
+            }
           `}
           variant="body"
         >
