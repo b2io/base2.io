@@ -7,21 +7,9 @@ import { Heading, Link, Text } from '~/components';
 import { atMinDesktop, atMinLg, atMinTablet, cssClamp, spacing } from '~/theme';
 import type { ImageProps } from '~/types';
 
-const HeroSectionContainer = styled.section`
+const SectionContainer = styled.section`
   ${atMinDesktop} {
     position: relative;
-  }
-`;
-
-const HeroTextContainer = styled.div``;
-
-const HeroPreviewImageContainer = styled.div`
-  ${atMinLg} {
-    width: 19.938rem;
-    & div:nth-of-type(1) {
-      border-radius: 10px;
-      box-shadow: 0 16px 21px 0 rgba(0, 0, 0, 0.53);
-    }
   }
 `;
 
@@ -40,6 +28,22 @@ const HeroImage = styled.img`
   width: 100%;
 `;
 
+const TextContainer = styled.div``;
+
+const PreviewImageContainer = styled.div`
+  display: none;
+  ${atMinDesktop} {
+    display: block;
+    position: absolute;
+    top: 8rem;
+    width: 19.938rem;
+    & div:nth-of-type(1) {
+      border-radius: 10px;
+      box-shadow: 0 16px 21px 0 rgba(0, 0, 0, 0.53);
+    }
+  }
+`;
+
 const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div {...props}>
@@ -56,17 +60,17 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
 
 export const CaseStudyHeroImage: FC<ImageProps> = ({ alt, src }) => {
   return (
-    <HeroSectionContainer>
+    <SectionContainer>
       <ImageContainer>
         <HeroImage src={src} alt={alt} />
       </ImageContainer>
-      <HeroPreviewImageContainer>
+      <PreviewImageContainer>
         <ResponsiveImage
           alt="paint a photo"
           src="/home/featured-case-study-home-1.png"
         />
-      </HeroPreviewImageContainer>
-      <HeroTextContainer>
+      </PreviewImageContainer>
+      <TextContainer>
         <Heading
           as="h2"
           css={css`
@@ -77,11 +81,11 @@ export const CaseStudyHeroImage: FC<ImageProps> = ({ alt, src }) => {
           Sherwin Williams
         </Heading>
         <Heading
-          as="h3"
+          as="h1"
           css={css`
             margin-bottom: ${spacing.sm};
           `}
-          variant="h2"
+          variant="h1"
         >
           ColorSnap<sup>&reg;</sup>
           <br />
@@ -108,7 +112,7 @@ export const CaseStudyHeroImage: FC<ImageProps> = ({ alt, src }) => {
         >
           View more
         </Link>
-      </HeroTextContainer>
-    </HeroSectionContainer>
+      </TextContainer>
+    </SectionContainer>
   );
 };
