@@ -3,6 +3,7 @@ export * from './Container';
 export * from './ContactPage';
 export * from './CulturePage';
 export * from './DynamicImage';
+export * from './FeaturedCaseStudyHero';
 export * from './GradientCircle';
 export * from './Header';
 export * from './Heading';
