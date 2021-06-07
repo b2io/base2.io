@@ -3,9 +3,11 @@ import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { CaseStudyHeroImage, Heading, Link, Text } from '~/components';
+import { Heading, Link, Text } from '~/components';
 import { atMinDesktop, atMinTablet, cssClamp, spacing } from '~/theme';
 import type { ImageProps } from '~/types';
+
+import { CaseStudyHeroImage } from './CaseStudyHeroImage';
 
 const SectionContainer = styled.section`
   ${atMinDesktop} {
