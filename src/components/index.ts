@@ -20,3 +20,4 @@ export * from './TeamMemberCard';
 export * from './Text';
 export * from './useAnimationWhileVisible';
 export * from './useMouseAnimationWhileVisible';
+export * from './WorkPage';

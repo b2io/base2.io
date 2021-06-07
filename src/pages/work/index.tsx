@@ -1,13 +1,9 @@
 import type { NextPage } from 'next';
 
-import { Layout } from '~/components';
+import { WorkPage } from '~/components';
 
 const WorkIndexPage: NextPage = () => {
-  return (
-    <Layout title="Work">
-      <h1>Hello from the Work page</h1>
-    </Layout>
-  );
+  return <WorkPage />;
 };
 
 export default WorkIndexPage;
