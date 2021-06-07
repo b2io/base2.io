@@ -37,7 +37,7 @@ const IconButton = styled.button`
 const Nav = styled.nav`
   ul {
     list-style: none;
-    padding: 10.25rem 0 0 2.5rem;
+    padding: 5rem 0 0 2.5rem;
   }
 
   li {
