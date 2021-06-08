@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import { atMinTablet, atMinXXL, cssClamp, spacing } from '~/theme';
+import { atMinTablet, atMinXXL, cssClamp, general, spacing } from '~/theme';
 import type { ImageProps } from '~/types';
 
 import { CaseStudyHeroImage } from './CaseStudyHeroImage';
@@ -50,8 +50,8 @@ const PreviewImageContainer = styled.div`
     top: ${cssClamp([5.25, 'xxl'], [8, 'desktop'])};
     width: 19.938rem;
     & div:nth-of-type(1) {
-      border-radius: 10px;
-      box-shadow: 0 16px 21px 0 rgba(0, 0, 0, 0.53);
+      border-radius: ${general.borderRadius};
+      box-shadow: ${general.boxShadow};
     }
   }
 `;

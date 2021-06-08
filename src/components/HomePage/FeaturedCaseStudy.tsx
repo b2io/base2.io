@@ -12,6 +12,7 @@ import theme, {
   atMinTablet,
   atMinXL,
   cssClamp,
+  general,
   interpolateColors,
   spacing,
 } from '~/theme';
@@ -155,8 +156,8 @@ const ImagesContainer = styled.div`
   }
 
   & div:nth-of-type(1) {
-    border-radius: 10px;
-    box-shadow: 0 16px 21px 0 rgba(0, 0, 0, 0.53);
+    border-radius: ${general.borderRadius};
+    box-shadow: ${general.boxShadow};
   }
 `;
 
