@@ -26,10 +26,10 @@ const ImageContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  margin-top: -3.5rem;
+  margin-top: -7.125rem;
 
   ${atMinTablet} {
-    margin-top: -6rem;
+    margin-top: -9.5rem;
     max-width: 35rem;
   }
 
@@ -37,7 +37,7 @@ const TextContainer = styled.div`
     left: 50rem;
     margin-top: unset;
     position: absolute;
-    top: 11.5rem;
+    top: 10.75rem;
   }
 `;
 
@@ -89,10 +89,7 @@ export const FeaturedCaseStudyHero: FC = () => {
         <Heading
           as="h2"
           css={css`
-            display: none;
-
             ${atMinDesktop} {
-              display: block;
               margin-bottom: ${spacing.xxs};
             }
           `}
