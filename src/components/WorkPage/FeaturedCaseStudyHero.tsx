@@ -41,21 +41,6 @@ const TextContainer = styled.div`
   }
 `;
 
-const PreviewImageContainer = styled.div`
-  display: none;
-
-  ${atMinXXL} {
-    display: block;
-    position: absolute;
-    top: ${cssClamp([5.25, 'xxl'], [8, 'desktop'])};
-    width: 19.938rem;
-    & div:nth-of-type(1) {
-      border-radius: ${general.borderRadius};
-      box-shadow: ${general.boxShadow};
-    }
-  }
-`;
-
 const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
     <div {...props}>
@@ -79,12 +64,25 @@ export const FeaturedCaseStudyHero: FC = () => {
           src="/work/work-featured-hero.jpg"
         />
       </ImageContainer>
-      <PreviewImageContainer>
-        <ResponsiveImage
-          alt="paint a photo"
-          src="/home/featured-case-study-home-1.png"
-        />
-      </PreviewImageContainer>
+      <ResponsiveImage
+        alt="paint a photo"
+        css={css`
+          display: none;
+
+          ${atMinXXL} {
+            display: block;
+            position: absolute;
+            top: ${cssClamp([5.25, 'xxl'], [8, 'desktop'])};
+            width: 19.938rem;
+
+            & div:nth-of-type(1) {
+              border-radius: ${general.borderRadius};
+              box-shadow: ${general.boxShadow};
+            }
+          }
+        `}
+        src="/home/featured-case-study-home-1.png"
+      />
       <TextContainer>
         <Heading
           as="h2"
