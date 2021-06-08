@@ -4,13 +4,13 @@ import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import { atMinDesktop, atMinTablet, cssClamp, spacing } from '~/theme';
+import { atMinTablet, atMinXXL, cssClamp, spacing } from '~/theme';
 import type { ImageProps } from '~/types';
 
 import { CaseStudyHeroImage } from './CaseStudyHeroImage';
 
 const SectionContainer = styled.section`
-  ${atMinDesktop} {
+  ${atMinXXL} {
     position: relative;
   }
 `;
@@ -19,7 +19,7 @@ const ImageContainer = styled.div`
   height: 20.188rem;
   height: ${cssClamp([20.188, 'smMobile'], [50, 'desktop'])};
 
-  ${atMinDesktop} {
+  ${atMinXXL} {
     margin: auto;
     max-width: 74.875rem;
   }
@@ -33,21 +33,21 @@ const TextContainer = styled.div`
     max-width: 35rem;
   }
 
-  ${atMinDesktop} {
-    left: 50rem;
+  ${atMinXXL} {
+    left: ${cssClamp([46, 'xxl'], [50, 'desktop'])};
     margin-top: unset;
     position: absolute;
-    top: 10.75rem;
+    top: ${cssClamp([8.5, 'xxl'], [10.75, 'desktop'])};
   }
 `;
 
 const PreviewImageContainer = styled.div`
   display: none;
 
-  ${atMinDesktop} {
+  ${atMinXXL} {
     display: block;
     position: absolute;
-    top: 8rem;
+    top: ${cssClamp([5.25, 'xxl'], [8, 'desktop'])};
     width: 19.938rem;
     & div:nth-of-type(1) {
       border-radius: 10px;
@@ -89,7 +89,7 @@ export const FeaturedCaseStudyHero: FC = () => {
         <Heading
           as="h2"
           css={css`
-            ${atMinDesktop} {
+            ${atMinXXL} {
               margin-bottom: ${spacing.xxs};
             }
           `}
