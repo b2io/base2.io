@@ -27,6 +27,7 @@ const ImageContainer = styled.div`
 const TextContainer = styled.div`
   margin-top: -3.5rem;
   ${atMinTablet} {
+    margin-top: -6rem;
     max-width: 35rem;
   }
   ${atMinDesktop} {
