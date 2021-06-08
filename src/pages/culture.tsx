@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 
 import { CulturePage } from '~/components';
 
-const CultureIndexPage: NextPage = () => {
+const CultureNextPage: NextPage = () => {
   return <CulturePage />;
 };
 
-export default CultureIndexPage;
+export default CultureNextPage;

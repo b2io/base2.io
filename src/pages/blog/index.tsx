@@ -1,13 +1,9 @@
 import type { NextPage } from 'next';
 
-import { Layout } from '~/components';
+import { BlogPage } from '~/components';
 
-const BlogIndexPage: NextPage = () => {
-  return (
-    <Layout title="Blog">
-      <h1>Hello from the Blog page</h1>
-    </Layout>
-  );
+const BlogIndexNextPage: NextPage = () => {
+  return <BlogPage />;
 };
 
-export default BlogIndexPage;
+export default BlogIndexNextPage;
