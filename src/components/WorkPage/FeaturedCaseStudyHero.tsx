@@ -18,6 +18,7 @@ const SectionContainer = styled.section`
 const ImageContainer = styled.div`
   height: 20.188rem;
   height: ${cssClamp([20.188, 'smMobile'], [50, 'desktop'])};
+
   ${atMinDesktop} {
     margin: auto;
     max-width: 74.875rem;
@@ -26,10 +27,12 @@ const ImageContainer = styled.div`
 
 const TextContainer = styled.div`
   margin-top: -3.5rem;
+
   ${atMinTablet} {
     margin-top: -6rem;
     max-width: 35rem;
   }
+
   ${atMinDesktop} {
     left: 50rem;
     margin-top: unset;
@@ -40,6 +43,7 @@ const TextContainer = styled.div`
 
 const PreviewImageContainer = styled.div`
   display: none;
+
   ${atMinDesktop} {
     display: block;
     position: absolute;
@@ -86,6 +90,7 @@ export const FeaturedCaseStudyHero: FC = () => {
           as="h2"
           css={css`
             display: none;
+
             ${atMinDesktop} {
               display: block;
               margin-bottom: ${spacing.xxs};
@@ -114,9 +119,11 @@ export const FeaturedCaseStudyHero: FC = () => {
           css={css`
             margin-bottom: ${spacing.lg};
             margin-top: ${spacing.lg};
+
             &::after {
               margin-top: 0.25rem;
             }
+
             ${atMinTablet} {
               margin-bottom: ${spacing.xxl2};
               margin-top: 3rem;
