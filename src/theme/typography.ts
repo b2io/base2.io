@@ -89,7 +89,7 @@ export const textVariants = {
       lineHeight: 1.04,
     },
     color: colors.text,
-    fontSize: cssClamp([3.75, 'mobile'], [6.25, 'tablet']),
+    fontSize: cssClamp([3.125, 'smMobile'], [3.75, 'mobile'], [6.25, 'tablet']),
     fontVariationSettings: '"wght" 900',
     letterSpacing: cssClamp([-0.03125, 'mobile'], [0, 'tablet']),
     lineHeight: 1,
