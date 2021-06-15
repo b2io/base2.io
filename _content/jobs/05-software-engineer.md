@@ -2,7 +2,7 @@
 description: We’re looking for someone who is excited about solving real-world problems with web and mobile technologies in a collaborative, client-focused environment.
 path: software-engineer
 position: Software Engineer
-active: false
+active: true
 ---
 
 ### Requirements
