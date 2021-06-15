@@ -88,6 +88,10 @@ function JobDescriptionBoilerplate() {
           <LI>Flexible work schedule/location</LI>
           <LI>Employee’s choice of machine and peripherals</LI>
           <LI>Ergonomic desks and chairs (for on-site and remote employees)</LI>
+          <LI>
+            A supportive and collaborative team environment focused on your
+            growth as a developer
+          </LI>
         </UL>
       </Section>
       <Section>

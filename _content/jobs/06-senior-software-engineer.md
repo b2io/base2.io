@@ -25,6 +25,8 @@ active: true
 - Next.js
 - Gatsby
 - GraphQL
+- Ember
+- Svelte
 - CSS (Sass, Styled Components)
 - Git source control
 
@@ -33,6 +35,8 @@ active: true
 - .NET Framework
 - Entity Framework
 - Dapper
+- Docker
 - PostgreSQL
+- Go
 - Microsoft SQL
 - Unit testing

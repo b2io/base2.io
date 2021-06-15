@@ -2,7 +2,7 @@
 description: We’re looking for someone who is excited about solving real-world problems with web and mobile technologies in a collaborative, client-focused environment.
 path: software-engineer
 position: Software Engineer
-active: false
+active: true
 ---
 
 ### Requirements
@@ -24,6 +24,8 @@ active: false
 - Next.js
 - Gatsby
 - GraphQL
+- Ember
+- Svelte
 - CSS (Sass, Styled Components)
 - Git source control
 
@@ -32,6 +34,8 @@ active: false
 - .NET Framework
 - Entity Framework
 - Dapper
+- Docker
 - PostgreSQL
+- Go
 - Microsoft SQL
 - Unit testing
