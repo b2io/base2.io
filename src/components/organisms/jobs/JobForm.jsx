@@ -192,6 +192,20 @@ function JobForm({ isApprenticeship, position }) {
             value="chicago"
           />
           <RadioButton
+            label="Atlanta, GA"
+            name="location"
+            onChange={handleOptionChange}
+            required
+            value="atlanta"
+          />
+          <RadioButton
+            label="Jersey City, NJ"
+            name="location"
+            onChange={handleOptionChange}
+            required
+            value="nj"
+          />
+          <RadioButton
             label="Other"
             name="location"
             onChange={handleOptionChange}
