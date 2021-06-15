@@ -52,7 +52,16 @@ const JobsMain = styled(Main)`
 `;
 
 const LI = styled.li`
-  ${text};
+  font-size: ${rem('16px')};
+  line-height: 1.5;
+
+  ${mediaQuery.small`
+    font-size: ${props => (props.smallText ? rem('16px') : rem('18px'))};
+  `};
+
+  ${mediaQuery.medium`
+    font-size: ${props => (props.smallText ? rem('16px') : rem('24px'))};
+  `};
 
   & p {
     margin-bottom: 0.25em;
