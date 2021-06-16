@@ -133,7 +133,8 @@ function ContactHeader() {
       <BaseTwoLogoText id="contact-header-logo" />
       <LocationText>
         is located in <strong>Columbus, OH</strong>;{' '}
-        <strong>Pittsburgh, PA</strong>; and <strong>Chicago, IL</strong>.
+        <strong>Pittsburgh, PA</strong>; <strong>Chicago, IL</strong>;{' '}
+        <strong>Atlanta, GA</strong>; and <strong>Jersey City, NJ</strong>.
       </LocationText>
       <Earth>
         <source srcSet="img/planet-earth.webp" type="image/webp" />
