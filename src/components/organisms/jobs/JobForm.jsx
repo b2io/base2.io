@@ -75,9 +75,9 @@ function JobForm({ isApprenticeship, position }) {
   return (
     <Wrapper>
       <form
-        action="https://getsimpleform.com/messages?form_api_token=3e1c2d5870538837aed43b89c13caa41"
         encType="multipart/form-data"
         method="post"
+        netlify
       >
         <input
           name="redirect_to"
