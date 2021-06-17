@@ -83,7 +83,7 @@ function ContactForm() {
           required
           rows="5"
         />
-        <ContactSubmitButton>Submit</ContactSubmitButton>
+        <ContactSubmitButton type="submit">Submit</ContactSubmitButton>
       </form>
     </Wrapper>
   );

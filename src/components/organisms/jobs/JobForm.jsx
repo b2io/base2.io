@@ -218,7 +218,7 @@ function JobForm({ isApprenticeship, position }) {
           name="anythingElse"
           rows="5"
         />
-        <SubmitButton>Submit</SubmitButton>
+        <SubmitButton type="submit">Submit</SubmitButton>
       </form>
     </Wrapper>
   );
