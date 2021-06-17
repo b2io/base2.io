@@ -74,11 +74,7 @@ function JobForm({ isApprenticeship, position }) {
 
   return (
     <Wrapper>
-      <form
-        encType="multipart/form-data"
-        method="post"
-        netlify
-      >
+      <form encType="multipart/form-data" method="post" name="job" netlify>
         <input
           name="redirect_to"
           type="hidden"
