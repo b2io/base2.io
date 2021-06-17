@@ -45,7 +45,7 @@ const ContactSubmitButton = styled(Button)`
 function ContactForm() {
   return (
     <Wrapper>
-      <form action="https://formspree.io/info@base2.io" method="POST">
+      <form method="POST" netlify>
         <input
           aria-hidden="true"
           name="_gotcha"
