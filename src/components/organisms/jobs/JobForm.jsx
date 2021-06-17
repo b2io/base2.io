@@ -11,7 +11,7 @@ import {
 import { emailPattern, phonePattern } from '../../../util/regexPatterns';
 import { mediaQuery, themed } from '../../../util/style';
 
-const FILE_SIZE_LIMIT = 1000000; // 1MB
+const FILE_SIZE_LIMIT = 5000000; // 1MB
 
 const Wrapper = styled.div`
   margin: 0 auto 5em;
@@ -68,18 +68,26 @@ const SubmitButton = styled(Button)`
 function JobForm({ isApprenticeship, position }) {
   const [isOtherLocation, setIsOtherLocation] = useState(false);
 
-  const handleOptionChange = e => {
+  const handleOptionChange = (e) => {
     setIsOtherLocation(e.target.value === 'other');
   };
 
   return (
     <Wrapper>
-      <form encType="multipart/form-data" method="post" name="job" netlify>
-        <input
-          name="redirect_to"
-          type="hidden"
-          value="http://base2.io/thanks/"
-        />
+      <form
+        action="/thanks"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        encType="multipart/form-data"
+        method="POST"
+        name="job"
+      >
+        <input name="form-name" type="hidden" value="job" />
+        <p hidden>
+          <label htmlFor="bot-field">
+            Don’t fill this out: <input name="bot-field" type="text" />
+          </label>
+        </p>
         <input
           name="job_type"
           type="hidden"
@@ -146,15 +154,15 @@ function JobForm({ isApprenticeship, position }) {
               rows="5"
             />
             <TextInputField
-              label="Please upload your resume (<1MB)"
+              label="Please upload your resume (<5MB)"
               name="resume"
-              onChange={e => {
+              onChange={(e) => {
                 if (
                   e.target.files &&
                   e.target.files[0].size > FILE_SIZE_LIMIT
                 ) {
                   e.target.setCustomValidity(
-                    'File must be less than 1MB in size',
+                    'File must be less than 5MB in size',
                   );
                 } else {
                   e.target.setCustomValidity('');

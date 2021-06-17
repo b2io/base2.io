@@ -1,6 +1,6 @@
 import { has, invoke, memoize, startsWith } from 'lodash';
 
-const hasAll = (obj, paths = []) => paths.every(path => has(obj, path));
+const hasAll = (obj, paths = []) => paths.every((path) => has(obj, path));
 
 const renameKeys = (obj, pairs = []) =>
   pairs.reduce((result, [prevKey, nextKey]) => {
