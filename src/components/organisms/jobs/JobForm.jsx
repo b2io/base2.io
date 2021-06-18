@@ -11,7 +11,7 @@ import {
 import { emailPattern, phonePattern } from '../../../util/regexPatterns';
 import { mediaQuery, themed } from '../../../util/style';
 
-const FILE_SIZE_LIMIT = 5000000; // 1MB
+const FILE_SIZE_LIMIT = 5000000; // 5MB
 
 const Wrapper = styled.div`
   margin: 0 auto 5em;
