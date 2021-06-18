@@ -45,25 +45,24 @@ const ContactSubmitButton = styled(Button)`
 function ContactForm() {
   return (
     <Wrapper>
-      <form action="https://formspree.io/info@base2.io" method="POST">
-        <input
-          aria-hidden="true"
-          name="_gotcha"
-          style={{ display: 'none' }}
-          type="text"
-        />
-        <input
-          aria-hidden="true"
-          name="_subject"
-          type="hidden"
-          value="Let's work together!"
-        />
-        <input aria-hidden="true" name="_next" type="hidden" value="/thanks" />
+      <form
+        action="/thanks"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        method="POST"
+        name="contact"
+      >
+        <input name="form-name" type="hidden" value="contact" />
+        <p hidden>
+          <label htmlFor="bot-field">
+            Don’t fill this out: <input name="bot-field" type="text" />
+          </label>
+        </p>
         <TextInputField label="Name" name="name" required />
         <TextInputField
           label="Email"
           name="email"
-          pattern={`${emailPattern}`}
+          pattern={emailPattern}
           required
           title="your@email.com"
           type="email"
@@ -83,7 +82,7 @@ function ContactForm() {
           required
           rows="5"
         />
-        <ContactSubmitButton>Submit</ContactSubmitButton>
+        <ContactSubmitButton type="submit">Submit</ContactSubmitButton>
       </form>
     </Wrapper>
   );
