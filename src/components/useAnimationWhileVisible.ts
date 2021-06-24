@@ -22,7 +22,7 @@ export const useAnimationWhileVisible = (
     }
 
     return controls.stop;
-  }, [animation, inView]);
+  }, [animation, controls, inView]);
 
   return [ref, controls];
 };

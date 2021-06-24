@@ -10,7 +10,9 @@ import { FeaturedCaseStudy } from './FeaturedCaseStudy';
 import { FueledByCuriosity } from './FueledByCuriosity';
 import { HomeHero } from './HomeHero';
 
-export const HomePage: FC = () => {
+export type HomePageProps = Record<string, unknown>;
+
+export const HomePage: FC<HomePageProps> = () => {
   return (
     <Layout>
       <HomeHero />

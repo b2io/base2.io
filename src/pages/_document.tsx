@@ -39,10 +39,10 @@ class CustomDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <style jsx global>
+          <style global jsx>
             {`
               @font-face {
-                font-display: fallback;
+                font-display: swap;
                 font-family: 'Roobert';
                 font-style: normal;
                 font-weight: 100 900;
@@ -50,7 +50,7 @@ class CustomDocument extends Document {
               }
 
               @font-face {
-                font-display: fallback;
+                font-display: swap;
                 font-family: 'Roobert';
                 font-style: italic;
                 font-weight: 100 900;

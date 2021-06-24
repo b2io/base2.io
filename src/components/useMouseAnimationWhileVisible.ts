@@ -26,16 +26,16 @@ export const useMouseAnimationWhileVisible = <T extends HTMLElement>(
   const inView = useIntersection(ref, options)?.isIntersecting ?? false;
 
   useEffect(() => {
-    const unsubX = x.onChange((value) => {
-      point.set([value, point.get()[1]]);
-    });
-    const unsubY = y.onChange((value) => {
-      point.set([point.get()[0], value]);
-    });
+    const handleChange = () => {
+      point.set([x.get(), y.get()]);
+    };
+
+    const unsubscribeX = x.onChange(handleChange);
+    const unsubscribeY = y.onChange(handleChange);
 
     return () => {
-      unsubX();
-      unsubY();
+      unsubscribeX();
+      unsubscribeY();
     };
   }, [point, x, y]);
 
@@ -43,20 +43,19 @@ export const useMouseAnimationWhileVisible = <T extends HTMLElement>(
     if (inView) {
       const updatePosition = (position: { pageX: number; pageY: number }) => {
         if (position && ref.current) {
-          const {
-            height,
-            left,
-            top,
-            width,
-          } = ref.current.getBoundingClientRect();
+          const { height, left, top, width } =
+            ref.current.getBoundingClientRect();
 
           // Transform the mouse position to a range of [-1, 1], [-1, 1] where 0,0 is the center of the reference element.
           const elX = position.pageX - (left + window.pageXOffset);
           const clampedX = Math.max(0, Math.min(elX, width));
+          const transformedX = transform(clampedX, [0, width], [-1, 1]);
+          x.set(transformedX);
+
           const elY = position.pageY - (top + window.pageYOffset);
           const clampedY = Math.max(0, Math.min(elY, height));
-          x.set(transform(clampedX, [0, width], [-1, 1]));
-          y.set(transform(clampedY, [0, height], [-1, 1]));
+          const transformedY = transform(clampedY, [0, height], [-1, 1]);
+          y.set(transformedY);
         }
       };
 
@@ -80,7 +79,7 @@ export const useMouseAnimationWhileVisible = <T extends HTMLElement>(
         document.removeEventListener('touchmove', handleTouchMove);
       };
     }
-  }, [inView]);
+  }, [inView, x, y]);
 
   return [ref, { point, x, y }];
 };
