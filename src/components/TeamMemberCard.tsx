@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import type { FC } from 'react';
@@ -23,10 +24,19 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
         layout="responsive"
         src={src}
         width={465}
+        css={css`
+          filter: saturate(0%);
+          /* background-blend-mode: multiply; */
+          mix-blend-mode: multiply;
+        `}
       />
     </div>
   );
 };
+
+const ImageFilter = styled.div`
+  background-image: linear-gradient(to bottom, #0f0d34, #f63a52);
+`;
 
 const MemberInfo = styled.div`
   margin-top: -${spacing.md};
@@ -71,7 +81,9 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
 }) => {
   return (
     <article>
-      <ResponsiveImage alt={name} src={src} />
+      <ImageFilter>
+        <ResponsiveImage alt={name} src={src} />
+      </ImageFilter> 
       <MemberInfo>
         <Heading as="h3" variant="h2">
           {name}
