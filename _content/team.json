@@ -143,5 +143,14 @@
     "name": "Ashley Singleton",
     "lastName": "Singleton",
     "title": "Software Engineer IV"
+  },
+  {
+    "active": true,
+    "id": "lpadilla",
+    "image": "img/team/lpadilla.JPG",
+    "name": "Laura Padilla",
+    "lastName": "Padilla",
+    "title": "Software Engineer III"
   }
+
 ]
