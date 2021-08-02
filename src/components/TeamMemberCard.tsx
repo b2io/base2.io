@@ -25,9 +25,8 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
         src={src}
         width={465}
         css={css`
-          filter: saturate(0%);
-          /* background-blend-mode: multiply; */
-          mix-blend-mode: multiply;
+          filter: saturate(50%);
+          mix-blend-mode: screen;
         `}
       />
     </div>
