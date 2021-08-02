@@ -1,8 +1,0 @@
-public
-.cache
-node_modules
-
-.now
-
-[core]
-excludesfile = ~/.gitignore
