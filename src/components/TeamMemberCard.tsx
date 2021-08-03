@@ -25,7 +25,7 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
         src={src}
         width={465}
         css={css`
-          filter: saturate(50%);
+          filter: grayscale(1);
           mix-blend-mode: screen;
         `}
       />
