@@ -35,7 +35,7 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
 
 const ImageFilter = styled.div`
   background: linear-gradient(to bottom, rgba(4, 0, 25, 0) 63%, rgba(5, 0, 30, 0.48) 92%),
-            linear-gradient(322deg, rgba(15,13,52,0.83), rgba(246,58,82,0.32));
+            linear-gradient(322deg, rgba(15,13,52,0.83), rgba(246,58,82,0.72));
   position: relative;
 `
 
@@ -50,12 +50,12 @@ z-index: 3;
 
 const MemberInfo = styled.div`
   margin-top: -${spacing.md};
-  padding-left: ${spacing.xs};
+  padding-left: ${spacing.sm};
   position: relative;
   z-index: 3;
 
   ${atMinTablet} {
-    margin-top: -2.85rem;
+    margin-top: -2.45rem;
   }
 
   & img {

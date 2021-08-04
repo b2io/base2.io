@@ -14,8 +14,4 @@ export const colors = {
   text: palette.offWhite,
 };
 
-//  export const gradient = {
-//   gradient:  'background-image=linear-gradient(322deg, rgba(15, 13, 52)83%, rgba(246, 58, 82) -31%)}',
-// }
-
 export type ThemeColor = keyof typeof colors;
