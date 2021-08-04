@@ -34,7 +34,7 @@ You'll need to set up Git and NPM before you can run this project locally. The s
 
 1. NVM / Node
 
-   It is recommended that you install NVM (Node Version Manager) rather than Node directly because NVM allows you to switch node versions more easily, which is necessary when you hop between different projects. Node version 16 for this project due to compatiblitiy with the NextJS image component.
+   It is recommended that you install NVM (Node Version Manager) rather than Node directly because NVM allows you to switch node versions more easily, which is necessary when you hop between different projects. *Node version 16* for this project due to compatiblitiy with the NextJS image component.
    Node can be downloaded via the link above or via your OS's package manager below.
 
    - Mac users can install and maintain Node through the package manager [Homebrew](https://brew.sh/) or by going to the [Node website](https://nodejs.org/en/download/):
