@@ -62,18 +62,23 @@ const Nav = styled.nav`
     }
 
     li {
-      margin-bottom: 1.25rem;
+      margin-bottom: 2rem;
 
       &:last-child {
         margin-bottom: 0;
       }
 
       ${atMinTablet} {
-        margin-bottom: 1.25rem;
+        margin-bottom: 2rem;
       }
     }
   }
 `;
+
+const NavLink = styled(Link)`
+  display: block;
+  line-height: 1;
+`
 
 const ContactBlock = styled.address`
   margin-top: ${spacing.xxl};
@@ -95,6 +100,7 @@ const ContactBlock = styled.address`
 const ContactLink = styled(Link)`
   display: block;
   margin-bottom: ${spacing.md};
+  font-style: normal;
 
   &:last-child {
     margin-bottom: 0;
@@ -143,25 +149,25 @@ export const Footer: FC = (prop) => {
         <Nav>
           <ul>
             <li>
-              <Link href="/">Home</Link>
+              <NavLink href="/">Home</NavLink>
             </li>
             <li>
-              <Link href="/work">Work</Link>
+              <NavLink href="/work">Work</NavLink>
             </li>
             <li>
-              <Link href="/approach">Approach</Link>
+              <NavLink href="/approach">Approach</NavLink>
             </li>
             <li>
-              <Link href="/culture">Culture</Link>
+              <NavLink href="/culture">Culture</NavLink>
             </li>
             <li>
-              <Link href="/careers">Careers</Link>
+              <NavLink href="/careers">Careers</NavLink>
             </li>
             <li>
-              <Link href="/blog">Blog</Link>
+              <NavLink href="/blog">Blog</NavLink>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <NavLink href="/contact">Contact</NavLink>
             </li>
           </ul>
         </Nav>
