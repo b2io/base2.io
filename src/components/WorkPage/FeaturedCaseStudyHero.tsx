@@ -81,7 +81,7 @@ export const FeaturedCaseStudyHero: FC = () => {
             }
           }
         `}
-        src="/home/featured-case-study-home-1.png"
+        src={require('../HomePage/featured-case-study-1.png')}
       />
       <TextContainer>
         <Heading
