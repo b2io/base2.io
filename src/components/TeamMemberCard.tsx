@@ -20,6 +20,8 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
     <div {...props}>
       <NextImage
         alt={alt}
+        blurDataURL={src}
+        placeholder="blur"
         height={600}
         layout="responsive"
         src={src}
