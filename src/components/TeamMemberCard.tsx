@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import type { FC } from 'react';
@@ -23,19 +24,38 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
         layout="responsive"
         src={src}
         width={465}
+        css={css`
+          filter: grayscale(1);
+          mix-blend-mode: screen;
+        `}
       />
     </div>
   );
 };
 
+const ImageFilter = styled.div`
+  background: linear-gradient(to bottom, rgba(4, 0, 25, 0) 63%, rgba(5, 0, 30, 0.48) 92%),
+            linear-gradient(322deg, rgba(15,13,52,0.83), rgba(246,58,82,0.60));
+  position: relative;
+`
+
+const ImageNoise = styled.div`
+background: transparent url(culture/team/noise.png);
+position: absolute;
+height: 100%;
+width: 100%;
+opacity: 0.125;
+z-index: 3;
+`
+
 const MemberInfo = styled.div`
   margin-top: -${spacing.md};
-  padding-left: ${spacing.xs};
+  padding-left: ${spacing.sm};
   position: relative;
   z-index: 3;
 
   ${atMinTablet} {
-    margin-top: -2.85rem;
+    margin-top: -2.45rem;
   }
 
   & img {
@@ -71,7 +91,10 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
 }) => {
   return (
     <article>
-      <ResponsiveImage alt={name} src={src} />
+        <ImageFilter>
+          <ImageNoise/>
+          <ResponsiveImage alt={name} src={src} />
+        </ImageFilter> 
       <MemberInfo>
         <Heading as="h3" variant="h2">
           {name}

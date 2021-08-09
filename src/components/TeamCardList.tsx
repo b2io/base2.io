@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import type { FC } from 'react';
 
 import team from '~/team.json';
-import { atMinDesktop, atMinSm, atMinXL, colors, spacing } from '~/theme';
+import { atMinDesktop, atMinSm, atMinXL, spacing } from '~/theme';
 
 import { TeamMemberCard } from './TeamMemberCard';
 
@@ -12,6 +12,7 @@ const TeamMasonry = styled.section`
 
   img {
     z-index: 2;
+    object-fit: cover;
   }
 
   ${atMinSm} {
@@ -55,23 +56,6 @@ const TeamMasonry = styled.section`
     margin-right: -${spacing.xxl};
     padding-bottom: ${spacing.xxl1};
   }
-
-  .team-card-background {
-    display: none;
-
-    ${atMinDesktop} {
-      background-color: ${colors.darkBlueAlt};
-      border-bottom: 1px solid #979797;
-      border-top: 1px solid #979797;
-      bottom: 0;
-      display: block;
-      height: calc(100% + 14rem);
-      left: calc(50% - 50vw);
-      position: absolute;
-      width: 100vw;
-      z-index: 0;
-    }
-  }
 `;
 
 export const TeamCardList: FC = (props) => {
@@ -86,7 +70,6 @@ export const TeamCardList: FC = (props) => {
           src={src}
         />
       ))}
-      <div className="team-card-background" />
     </TeamMasonry>
   );
 };
