@@ -92,17 +92,17 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
   src,
 }) => {
   return (
-    <article>
+    <article>    
         <ImageFilter>
           <ImageNoise/>
           <ResponsiveImage alt={name} src={src} />
         </ImageFilter> 
-      <MemberInfo>
-        <Heading as="h3" variant="h2">
-          {name}
-        </Heading>
-        <Text>{position}</Text>
-      </MemberInfo>
-    </article>
+        <MemberInfo>
+          <Heading as="h3" variant="h2">
+            {name}
+          </Heading>
+          <Text>{position}</Text>
+        </MemberInfo>
+    </article>  
   );
 };
