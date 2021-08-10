@@ -20,6 +20,7 @@
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@formspree/react": "^2.2.3",
     "@react-aria/ssr": "^3.0.2",
     "@react-aria/utils": "^3.8.1",
     "framer-motion": "^4.1.17",
