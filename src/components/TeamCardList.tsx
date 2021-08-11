@@ -11,8 +11,8 @@ const TeamMasonry = styled.section`
   position: relative;
 
   img {
-    z-index: 2;
     object-fit: cover;
+    z-index: 2;
   }
 
   ${atMinSm} {
