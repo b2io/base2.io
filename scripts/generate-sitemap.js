@@ -24,7 +24,7 @@ const prettier = require('prettier');
         .map((slug) => {
           return `
             <url>
-              <loc>https://base2.io${slug}</loc>
+              <loc>https://www.base2.io${slug}</loc>
             </url>
           `.trim();
         })

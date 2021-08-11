@@ -5,8 +5,9 @@ import { Layout } from '~/components';
 import { FeaturedCaseStudyHero } from './FeaturedCaseStudyHero';
 
 export const WorkPage: FC = () => {
+  // TODO: Add description for WorkPage.
   return (
-    <Layout title="Work">
+    <Layout description="" title="Work">
       <FeaturedCaseStudyHero />
     </Layout>
   );

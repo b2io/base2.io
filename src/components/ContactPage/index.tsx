@@ -6,7 +6,7 @@ import { PageHero } from '../PageHero';
 
 export const ContactPage: FC = () => {
   return (
-    <Layout title="Contact">
+    <Layout description="Like what you see? Let's get started." title="Contact">
       <PageHero
         alt="coworkers collaborating in office"
         imgSources={[

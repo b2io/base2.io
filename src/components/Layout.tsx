@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 import { motion } from 'framer-motion';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
 import type { FC } from 'react';
 
 import { cssClamp } from '~/theme';
@@ -10,12 +10,10 @@ import { Container } from './Container';
 import { Footer } from './Footer';
 import { Header } from './Header';
 
-const Root = styled.div`
-  overflow: hidden;
-`;
-
 export type LayoutProps = {
-  title?: string;
+  description: string;
+  noindex?: boolean;
+  title: string;
 };
 
 const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
@@ -26,32 +24,39 @@ const mainVariants = {
   initial: { opacity: 0, scale: 0.9 },
 };
 
-export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
+export const Layout: FC<LayoutProps> = ({
+  children,
+  description,
+  noindex,
+  title,
+}) => {
+  const router = useRouter();
+  const slug = router.asPath.replace(/\/$/, '');
+
   return (
-    <Root>
-      <Head>
-        <title>{title ? `${title} | Base Two` : 'Base Two'}</title>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest"></link>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+    <div
+      css={css`
+        overflow: hidden;
+      `}
+    >
+      <NextSeo
+        description={description}
+        noindex={noindex}
+        openGraph={{
+          description,
+          images: [
+            {
+              alt: 'Base Two logo',
+              height: 627,
+              url: 'https://www.base2.io/og-image.png',
+              width: 1200,
+            },
+          ],
+          title: title === 'Base Two' ? title : `${title} | Base Two`,
+          type: 'website',
+          url: `https://www.base2.io${slug}`,
+        }}
+      />
       <Header />
       <motion.main
         animate="enter"
@@ -74,6 +79,6 @@ export const Layout: FC<LayoutProps> = ({ children, title = 'Base Two' }) => {
           margin-top: 8.536rem;
         `}
       />
-    </Root>
+    </div>
   );
 };
