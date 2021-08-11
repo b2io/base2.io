@@ -22,46 +22,10 @@ class CustomDocument extends Document {
 
     return (
       <Html lang={lang}>
-        <Head>
-          <link
-            as="font"
-            crossOrigin="anonymous"
-            href="/RoobertGX.woff2"
-            rel="preload"
-          />
-          <link
-            as="font"
-            crossOrigin="anonymous"
-            href="/RoobertItalicGX.woff2"
-            rel="preload"
-          />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
-          <style global jsx>
-            {`
-              @font-face {
-                font-display: swap;
-                font-family: 'Roobert';
-                font-style: normal;
-                font-weight: 100 900;
-                src: url(/RoobertGX.woff2) format('woff2-variations');
-              }
-
-              @font-face {
-                font-display: swap;
-                font-family: 'Roobert';
-                font-style: italic;
-                font-weight: 100 900;
-                src: url(/RoobertItalicGX.woff2) format('woff2-variations');
-              }
-
-              :root {
-                color-scheme: dark;
-              }
-            `}
-          </style>
         </body>
       </Html>
     );
