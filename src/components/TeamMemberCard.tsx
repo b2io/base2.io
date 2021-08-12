@@ -1,10 +1,9 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextImage from 'next/image';
+import NextImage, { ImageProps } from 'next/image';
 import type { FC } from 'react';
 
 import { atMinSm, atMinTablet, colors, spacing } from '~/theme';
-import type { ImageProps } from '~/types';
 
 import { Heading } from './Heading';
 import { Text } from './Text';
@@ -12,43 +11,26 @@ import { Text } from './Text';
 type TeamMemberCardProps = ImageProps & {
   name: string;
   position: string;
-  src: string;
-};
-
-const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
-  return (
-    <div {...props}>
-      <NextImage
-        alt={alt}
-        blurDataURL={src}
-        placeholder="blur"
-        height={600}
-        layout="responsive"
-        src={src}
-        width={465}
-        css={css`
-          filter: grayscale(1);
-          mix-blend-mode: screen;
-        `}
-      />
-    </div>
-  );
 };
 
 const ImageFilter = styled.div`
-  background: linear-gradient(to bottom, rgba(4, 0, 25, 0) 63%, rgba(5, 0, 30, 0.48) 92%),
-            linear-gradient(322deg, rgba(15,13,52,0.83), rgba(246,58,82,0.60));
+  background: linear-gradient(
+      to bottom,
+      rgba(4, 0, 25, 0) 63%,
+      rgba(5, 0, 30, 0.48) 92%
+    ),
+    linear-gradient(322deg, rgba(15, 13, 52, 0.83), rgba(246, 58, 82, 0.6));
   position: relative;
-`
+`;
 
 const ImageNoise = styled.div`
-background: transparent url(culture/team/noise.png);
-position: absolute;
-height: 100%;
-width: 100%;
-opacity: 0.125;
-z-index: 3;
-`
+  background: transparent url(culture/team/noise.png);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.125;
+  z-index: 3;
+`;
 
 const MemberInfo = styled.div`
   margin-top: -${spacing.md};
@@ -89,20 +71,31 @@ const MemberInfo = styled.div`
 export const TeamMemberCard: FC<TeamMemberCardProps> = ({
   name,
   position,
-  src,
+  ...props
 }) => {
   return (
-    <article>    
-        <ImageFilter>
-          <ImageNoise/>
-          <ResponsiveImage alt={name} src={src} />
-        </ImageFilter> 
-        <MemberInfo>
-          <Heading as="h3" variant="h2">
-            {name}
-          </Heading>
-          <Text>{position}</Text>
-        </MemberInfo>
-    </article>  
+    <article>
+      <ImageFilter>
+        <ImageNoise />
+        <NextImage
+          {...props}
+          alt={name}
+          placeholder="blur"
+          height={600}
+          layout="responsive"
+          width={465}
+          css={css`
+            filter: grayscale(1);
+            mix-blend-mode: screen;
+          `}
+        />
+      </ImageFilter>
+      <MemberInfo>
+        <Heading as="h3" variant="h2">
+          {name}
+        </Heading>
+        <Text>{position}</Text>
+      </MemberInfo>
+    </article>
   );
 };
