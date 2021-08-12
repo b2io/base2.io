@@ -5,8 +5,8 @@ import type { FC } from 'react';
 
 import { atMinSm, atMinTablet, colors, spacing } from '~/theme';
 
-import { Heading } from './Heading';
-import { Text } from './Text';
+import { Heading } from '../Heading';
+import { Text } from '../Text';
 
 type TeamMemberCardProps = {
   name: string;
@@ -78,7 +78,7 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
           src={src}
           width={465}
           css={css`
-            filter: grayscale(1);
+            filter: grayscale(1) !important;
             mix-blend-mode: screen;
           `}
         />

@@ -63,67 +63,67 @@ export const TeamCardList: FC = (props) => {
       <TeamMemberCard
         name="Drew Miller"
         position="Owner & Principal Software Engineer"
-        src={require('../../public/culture/team/dmiller.jpg')}
+        src={require('../../../public/culture/team/dmiller.jpg')}
       />
       <TeamMemberCard
         name="Mike Condo"
         position="Senior Software Engineer I"
-        src={require('../../public/culture/team/mcondo.jpg')}
+        src={require('../../../public/culture/team/mcondo.jpg')}
       />
       <TeamMemberCard
         name="Kate Hansen"
         position="Software Engineer I"
-        src={require('../../public/culture/team/khansen.jpg')}
+        src={require('../../../public/culture/team/khansen.jpg')}
       />
       <TeamMemberCard
         name="Melissa Lam"
         position="Software Engineer I"
-        src={require('../../public/culture/team/mlam.jpg')}
+        src={require('../../../public/culture/team/mlam.jpg')}
       />
       <TeamMemberCard
         name="Zachary Chay-Dolan"
         position="Software Engineer III"
-        src={require('../../public/culture/team/zchay-dolan.jpg')}
+        src={require('../../../public/culture/team/zchay-dolan.jpg')}
       />
       <TeamMemberCard
         name="Reed Dunkle"
         position="Senior Software Engineer I"
-        src={require('../../public/culture/team/rdunkle.jpg')}
+        src={require('../../../public/culture/team/rdunkle.jpg')}
       />
       <TeamMemberCard
         name="Franky Martinez"
         position="Senior Software Engineer III"
-        src={require('../../public/culture/team/fmartinez.jpg')}
+        src={require('../../../public/culture/team/fmartinez.jpg')}
       />
       <TeamMemberCard
         name="Nathan Kessler"
         position="Senior Software Engineer II"
-        src={require('../../public/culture/team/nkessler.jpg')}
+        src={require('../../../public/culture/team/nkessler.jpg')}
       />
       <TeamMemberCard
         name="Tony Borres"
         position="Director of Operations & Staff Software Engineer I"
-        src={require('../../public/culture/team/tborres.jpg')}
+        src={require('../../../public/culture/team/tborres.jpg')}
       />
       <TeamMemberCard
         name="Chris Hawkins"
         position="Senior Software Engineer III"
-        src={require('../../public/culture/team/chawkins.jpg')}
+        src={require('../../../public/culture/team/chawkins.jpg')}
       />
       <TeamMemberCard
         name="Ashley Singleton"
         position="Software Engineer IV"
-        src={require('../../public/culture/team/asingleton.jpg')}
+        src={require('../../../public/culture/team/asingleton.jpg')}
       />
       <TeamMemberCard
         name="Nelson Foltz"
         position="Software Engineer III"
-        src={require('../../public/culture/team/nfoltz.jpg')}
+        src={require('../../../public/culture/team/nfoltz.jpg')}
       />
       <TeamMemberCard
         name="Laura Padilla"
         position="Software Engineer III"
-        src={require('../../public/culture/team/lpadilla.jpg')}
+        src={require('../../../public/culture/team/lpadilla.jpg')}
       />
     </TeamMasonry>
   );
