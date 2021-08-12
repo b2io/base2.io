@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextImage, { ImageProps } from 'next/image';
+import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import type { FC } from 'react';
 
 import { atMinSm, atMinTablet, colors, spacing } from '~/theme';
@@ -8,9 +8,10 @@ import { atMinSm, atMinTablet, colors, spacing } from '~/theme';
 import { Heading } from './Heading';
 import { Text } from './Text';
 
-type TeamMemberCardProps = ImageProps & {
+type TeamMemberCardProps = {
   name: string;
   position: string;
+  src: Exclude<NextImageProps['src'], string>;
 };
 
 const ImageFilter = styled.div`
@@ -42,14 +43,6 @@ const MemberInfo = styled.div`
     margin-top: -2.45rem;
   }
 
-  & img {
-    z-index: 2;
-  }
-
-  & p {
-    margin-top: 0;
-  }
-
   ${atMinSm} {
     & p {
       margin-top: ${spacing.xxxs};
@@ -71,18 +64,18 @@ const MemberInfo = styled.div`
 export const TeamMemberCard: FC<TeamMemberCardProps> = ({
   name,
   position,
-  ...props
+  src,
 }) => {
   return (
     <article>
       <ImageFilter>
         <ImageNoise />
         <NextImage
-          {...props}
           alt={name}
           placeholder="blur"
           height={600}
           layout="responsive"
+          src={src}
           width={465}
           css={css`
             filter: grayscale(1);
