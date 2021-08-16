@@ -9,7 +9,7 @@ import { atMinTablet, colors, cssClamp, spacing } from '~/theme';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 
-const FORM_ID = 'https://formspree.io/f/xvodvoer';
+const FORM_ID = 'https://formspree.io/f/mbjqznky';
 
 type FormValues = {
   fullName: string;
@@ -29,24 +29,31 @@ const ContactWrapper = styled.section`
 
 const InputWrapper = styled.div`
   margin-bottom: ${spacing.xxl2};
-  min-height: 12rem;
+  min-height: 12.2rem;
 `;
 
-const Label = styled(Heading)`
+const LabelStyles = css`
+  ${Heading};
+  display: block;
   margin-bottom: ${spacing.lg};
   font-size: ${cssClamp([2.5, 'mobile'], [3.125, 'tablet'])};
   font-variation-settings: 'wght' 700;
 `;
 
+const Label = styled.label`
+  ${LabelStyles}
+`;
+
 const InputStyles = css`
-  color: white;
+  color: ${colors.offWhite};
   font-size: 1.875rem;
+  line-height: 1.3;
   width: 100%;
   height: 4rem;
   margin-bottom: ${spacing.xs};
   background: none;
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid ${colors.offWhite};
   outline: none;
   transition: border-bottom 0.3s ease;
   &:focus {
@@ -68,7 +75,7 @@ const Input = styled.input`
 `;
 
 const Textarea = styled.textarea`
-  ${InputStyles}
+  ${InputStyles};
 `;
 
 const ContactAside = styled.aside`
@@ -165,7 +172,7 @@ export const Form: FC = () => {
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <InputWrapper>
-            <Label>Hello, my name is:</Label>
+            <Label htmlFor="name">Hello, my name is:</Label>
             <Input
               id="name"
               type="name"
@@ -179,7 +186,7 @@ export const Form: FC = () => {
             {errors.fullName && <Error>{errors.fullName.message}</Error>}
           </InputWrapper>
           <InputWrapper>
-            <Label>My email is:</Label>
+            <Label htmlFor="email">My email is:</Label>
             <Input
               id="email"
               type="email"
@@ -195,16 +202,17 @@ export const Form: FC = () => {
           <InputWrapper
             css={css`
               min-height: 12.625rem;
-              margin-bottom: ${spacing.md};
+              margin-bottom: ${spacing.lg};
             `}
           >
-            <Label>I&apos;d like to talk about:</Label>
+            <Label htmlFor="message">I&apos;d like to talk about:</Label>
             <Textarea
+              contentEditable
               id="message"
               placeholder="Message*"
               required
               {...register('message', {
-                required: 'Please write a message.',
+                required: 'Please include a message.',
               })}
             />
             {errors.message && <Error>{errors.message.message}</Error>}
