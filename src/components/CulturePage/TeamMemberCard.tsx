@@ -26,10 +26,10 @@ const ImageFilter = styled.div`
 
 const ImageNoise = styled.div`
   background: transparent url(culture/team/noise.png);
-  position: absolute;
   height: 100%;
-  width: 100%;
   opacity: 0.125;
+  position: absolute;
+  width: 100%;
   z-index: 3;
 `;
 
@@ -70,18 +70,21 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
     <article>
       <ImageFilter>
         <ImageNoise />
-        <NextImage
-          alt={name}
-          placeholder="blur"
-          height={600}
-          layout="responsive"
-          src={src}
-          width={465}
+        <div
           css={css`
-            filter: grayscale(1) !important;
+            filter: grayscale(1);
             mix-blend-mode: screen;
           `}
-        />
+        >
+          <NextImage
+            alt={name}
+            placeholder="blur"
+            height={600}
+            layout="responsive"
+            src={src}
+            width={465}
+          />
+        </div>
       </ImageFilter>
       <MemberInfo>
         <Heading as="h3" variant="h2">

@@ -288,6 +288,21 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
             placeholder="blur"
             src={require('./featured-case-study-4.png')}
           />
+          <NextImage
+            alt="bedroom with dresser and mirror"
+            placeholder="blur"
+            src={require('./featured-case-study-4.png')}
+          />
+          <NextImage
+            alt="bedroom with dresser and mirror"
+            placeholder="blur"
+            src={require('./featured-case-study-4.png')}
+          />
+          <NextImage
+            alt="bedroom with dresser and mirror"
+            placeholder="blur"
+            src={require('./featured-case-study-4.png')}
+          />
         </motion.div>
       </div>
     </section>
