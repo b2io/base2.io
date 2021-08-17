@@ -1,36 +1,15 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextImage from 'next/image';
+import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import type { FC } from 'react';
 
+import { Text, Heading } from '~/components';
 import { atMinSm, atMinTablet, colors, spacing } from '~/theme';
-import type { ImageProps } from '~/types';
 
-import { Heading } from './Heading';
-import { Text } from './Text';
-
-type TeamMemberCardProps = ImageProps & {
+type TeamMemberCardProps = {
   name: string;
   position: string;
-  src: string;
-};
-
-const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
-  return (
-    <div {...props}>
-      <NextImage
-        alt={alt}
-        height={600}
-        layout="responsive"
-        src={src}
-        width={465}
-        css={css`
-          filter: grayscale(1);
-          mix-blend-mode: screen;
-        `}
-      />
-    </div>
-  );
+  src: Exclude<NextImageProps['src'], string>;
 };
 
 const ImageFilter = styled.div`
@@ -62,14 +41,6 @@ const MemberInfo = styled.div`
     margin-top: -2.45rem;
   }
 
-  & img {
-    z-index: 2;
-  }
-
-  & p {
-    margin-top: 0;
-  }
-
   ${atMinSm} {
     & p {
       margin-top: ${spacing.xxxs};
@@ -97,7 +68,21 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
     <article>
       <ImageFilter>
         <ImageNoise />
-        <ResponsiveImage alt={name} src={src} />
+        <div
+          css={css`
+            filter: grayscale(1);
+            mix-blend-mode: screen;
+          `}
+        >
+          <NextImage
+            alt={name}
+            placeholder="blur"
+            height={600}
+            layout="responsive"
+            src={src}
+            width={465}
+          />
+        </div>
       </ImageFilter>
       <MemberInfo>
         <Heading as="h3" variant="h2">
