@@ -2,6 +2,7 @@ import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
 import { SSRProvider } from '@react-aria/ssr';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -21,6 +22,33 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <>
+      <DefaultSeo
+        additionalLinkTags={[
+          {
+            href: '/apple-touch-icon.png',
+            rel: 'apple-touch-icon',
+            sizes: '180x180',
+          },
+          {
+            href: '/favicon-16x16.png',
+            rel: 'icon',
+            sizes: '16x16',
+            type: 'image/png',
+          },
+          {
+            href: '/favicon-32x32.png',
+            rel: 'icon',
+            sizes: '32x32',
+            type: 'image/png',
+          },
+        ]}
+        openGraph={{
+          locale: 'en-US',
+          site_name: 'Base Two',
+          type: 'website',
+          url: 'https://www.base2.io',
+        }}
+      />
       <Head>
         <link
           as="font"
@@ -34,6 +62,9 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
           href="/RoobertItalicGX.woff2"
           rel="preload"
         />
+        <link rel="manifest" href="/site.webmanifest"></link>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <AnimateSharedLayout>
         <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>

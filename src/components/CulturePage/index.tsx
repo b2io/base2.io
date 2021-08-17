@@ -13,7 +13,10 @@ import { TeamCardList } from './TeamCardList';
 
 export const CulturePage: FC = () => {
   return (
-    <Layout title="Culture">
+    <Layout
+      description="We are engineers and artisans, collaborat­ing to make custom software people love."
+      title="Culture"
+    >
       <PageHero
         alt="people sitting around conference table collaborating"
         imgSources={[

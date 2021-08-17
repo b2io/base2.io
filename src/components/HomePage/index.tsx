@@ -14,7 +14,10 @@ export type HomePageProps = Record<string, unknown>;
 
 export const HomePage: FC<HomePageProps> = () => {
   return (
-    <Layout>
+    <Layout
+      description="Software that moves people. At Base Two, it all starts with a human touch."
+      title="Base Two"
+    >
       <HomeHero />
       <DesignedForHumans
         css={css`

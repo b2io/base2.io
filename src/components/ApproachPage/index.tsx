@@ -9,7 +9,10 @@ import { HowWeEngage } from './HowWeEngage';
 
 export const ApproachPage: FC = () => {
   return (
-    <Layout>
+    <Layout
+      description="People motivate what we do and how we do it."
+      title="Approach"
+    >
       <PageHero
         alt="person staring at a computer"
         imgSources={[
