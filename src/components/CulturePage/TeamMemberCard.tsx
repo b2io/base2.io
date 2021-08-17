@@ -3,10 +3,8 @@ import styled from '@emotion/styled';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import type { FC } from 'react';
 
+import { Text, Heading } from '~/components';
 import { atMinSm, atMinTablet, colors, spacing } from '~/theme';
-
-import { Heading } from '../Heading';
-import { Text } from '../Text';
 
 type TeamMemberCardProps = {
   name: string;
