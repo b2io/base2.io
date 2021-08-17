@@ -183,8 +183,8 @@ export const Form: FC = () => {
           </InputWrapper>
           <InputWrapper
             css={css`
-              min-height: 12.625rem;
               margin-bottom: ${spacing.lg};
+              min-height: 12.625rem;
             `}
           >
             <Label htmlFor="message">I&apos;d like to talk about:</Label>

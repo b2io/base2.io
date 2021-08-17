@@ -23,8 +23,8 @@ export const ContactPage: FC = () => {
       {/* Should this blurb be a component? Asking for a friend */}
       <article
         css={css`
-          margin-top: ${cssClamp([6.75, 'mobile'], [6.5, 'tablet'])};
           margin-bottom: ${cssClamp([6.5, 'mobile'], [8.5, 'tablet'])};
+          margin-top: ${cssClamp([6.75, 'mobile'], [6.5, 'tablet'])};
           position: relative;
 
           ${atMinTablet} {
