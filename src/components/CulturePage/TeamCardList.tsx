@@ -38,6 +38,7 @@ const TeamMasonry = styled.section`
       width: 100%;
       z-index: 2;
     }
+    
     > * {
       &:nth-of-type(2n) {
         transform: translateY(var(--column-shift));
