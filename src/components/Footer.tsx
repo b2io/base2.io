@@ -78,7 +78,7 @@ const Nav = styled.nav`
 const NavLink = styled(Link)`
   display: block;
   line-height: 1;
-`
+`;
 
 const ContactBlock = styled.address`
   margin-top: ${spacing.xxl};
@@ -99,8 +99,8 @@ const ContactBlock = styled.address`
 
 const ContactLink = styled(Link)`
   display: block;
-  margin-bottom: ${spacing.md};
   font-style: normal;
+  margin-bottom: ${spacing.md};
 
   &:last-child {
     margin-bottom: 0;
