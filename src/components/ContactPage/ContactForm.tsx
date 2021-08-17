@@ -32,30 +32,27 @@ const InputWrapper = styled.div`
   min-height: 12.2rem;
 `;
 
-const LabelStyles = css`
+const Label = styled.label`
   ${Heading};
+  /* stylelint-disable-next-line order/properties-alphabetical-order */
   display: block;
-  margin-bottom: ${spacing.lg};
   font-size: ${cssClamp([2.5, 'mobile'], [3.125, 'tablet'])};
   font-variation-settings: 'wght' 700;
+  margin-bottom: ${spacing.lg};
 `;
 
-const Label = styled.label`
-  ${LabelStyles}
-`;
-
-const InputStyles = css`
-  color: ${colors.offWhite};
-  font-size: 1.875rem;
-  line-height: 1.3;
-  width: 100%;
-  height: 4rem;
-  margin-bottom: ${spacing.xs};
+const FormInput = styled.input`
   background: none;
   border: none;
   border-bottom: 1px solid ${colors.offWhite};
+  color: ${colors.offWhite};
+  font-size: 1.875rem;
+  height: 4rem;
+  line-height: 1.3;
+  margin-bottom: ${spacing.xs};
   outline: none;
   transition: border-bottom 0.3s ease;
+  width: 100%;
   &:focus {
     border-bottom: 1px solid ${colors.coral};
   }
@@ -64,22 +61,15 @@ const InputStyles = css`
   }
   &:-webkit-autofill:focus,
   :-webkit-autofill {
-    -webkit-text-fill-color: ${colors.offWhite};
     -webkit-box-shadow: 0 0 0px 1000px ${colors.darkBlue} inset;
     box-shadow: 0 0 0px 1000px ${colors.darkBlue} inset;
+    -webkit-text-fill-color: ${colors.offWhite};
   }
-`;
-
-const Input = styled.input`
-  ${InputStyles}
-`;
-
-const Textarea = styled.textarea`
-  ${InputStyles};
 `;
 
 const ContactAside = styled.aside`
   margin-bottom: 6.5rem;
+
   ${atMinTablet} {
     margin-bottom: 0;
   }
@@ -89,22 +79,18 @@ const ContactInfo = styled.article`
   margin-bottom: ${cssClamp([3, 'mobile'], [5, 'tablet'])};
 `;
 
-const Button = css`
+const Button = styled.button`
   background: transparent;
   border: 1px solid ${colors.coral};
-  font-size: 1.375rem;
-  padding: ${spacing.xs} ${spacing.lg};
-  font-variation-settings: 'wght' 650;
   cursor: pointer;
+  font-size: 1.375rem;
+  font-variation-settings: 'wght' 650;
+  padding: ${spacing.xs} ${spacing.lg};
   transition: background 0.3s ease;
   &:hover {
     background: ${colors.coral};
     color: ${colors.offWhite};
   }
-`;
-
-const Submit = styled.button`
-  ${Button}
 `;
 
 const Error = styled.p`
@@ -113,15 +99,11 @@ const Error = styled.p`
 `;
 
 const ThankYouMessage = styled.article`
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
-`;
-
-const SendAnotherMsg = styled.button`
-  ${Button}
 `;
 
 export const Form: FC = () => {
@@ -165,15 +147,15 @@ export const Form: FC = () => {
           >
             Thanks for your message! We&apos;ll be in touch soon.
           </Heading>
-          <SendAnotherMsg type="button" onClick={() => reset()}>
+          <Button type="button" onClick={() => reset()}>
             Send another message?
-          </SendAnotherMsg>
+          </Button>
         </ThankYouMessage>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <InputWrapper>
             <Label htmlFor="name">Hello, my name is:</Label>
-            <Input
+            <FormInput
               id="name"
               type="name"
               placeholder="Name*"
@@ -187,7 +169,7 @@ export const Form: FC = () => {
           </InputWrapper>
           <InputWrapper>
             <Label htmlFor="email">My email is:</Label>
-            <Input
+            <FormInput
               id="email"
               type="email"
               placeholder="Email*"
@@ -206,8 +188,9 @@ export const Form: FC = () => {
             `}
           >
             <Label htmlFor="message">I&apos;d like to talk about:</Label>
-            <Textarea
+            <FormInput
               contentEditable
+              as="textarea"
               id="message"
               placeholder="Message*"
               required
@@ -217,9 +200,9 @@ export const Form: FC = () => {
             />
             {errors.message && <Error>{errors.message.message}</Error>}
           </InputWrapper>
-          <Submit type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting}>
             Submit
-          </Submit>
+          </Button>
         </form>
       )}
     </>
