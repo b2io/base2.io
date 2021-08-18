@@ -131,7 +131,7 @@ export const Form: FC = () => {
       });
       reset();
     } catch (error) {
-      // catch errors
+      console.error('Error submitting form', error);
     }
   };
 
