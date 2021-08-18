@@ -29,7 +29,11 @@ const InputWrapper = styled.div`
   min-height: 12.2rem;
 `;
 
-const Label = styled.label(theme.textVariants.h2);
+const Label = styled.label({
+  ...theme.textVariants.h2,
+  display: 'block',
+  marginBottom: spacing.lg,
+});
 
 const FormInput = styled.input`
   background: none;
@@ -50,13 +54,6 @@ const FormInput = styled.input`
 
   &::placeholder {
     font-size: 1rem;
-  }
-
-  &:-webkit-autofill:focus,
-  :-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px ${colors.darkBlue} inset;
-    box-shadow: 0 0 0px 1000px ${colors.darkBlue} inset;
-    -webkit-text-fill-color: ${colors.offWhite};
   }
 `;
 
@@ -128,76 +125,72 @@ export const Form: FC = () => {
     }
   };
 
-  return (
-    <>
-      {isSubmitSuccessful ? (
-        <ThankYouMessage>
-          <Heading
-            css={css`
-              margin-bottom: ${spacing.lg};
-            `}
-            variant="h3"
-          >
-            Thanks for your message! We&apos;ll be in touch soon.
-          </Heading>
-          <Button type="button" onClick={() => reset()}>
-            Send another message?
-          </Button>
-        </ThankYouMessage>
-      ) : (
-        <form onSubmit={handleSubmit(onSubmit)} noValidate>
-          <InputWrapper>
-            <Label htmlFor="name">Hello, my name is:</Label>
-            <FormInput
-              autoComplete="off"
-              id="name"
-              placeholder="Name*"
-              required
-              type="name"
-              {...register('fullName', {
-                required: 'Please enter your name.',
-              })}
-            />
-            {errors.fullName && <Error>{errors.fullName.message}</Error>}
-          </InputWrapper>
-          <InputWrapper>
-            <Label htmlFor="email">My email is:</Label>
-            <FormInput
-              autoComplete="off"
-              id="email"
-              placeholder="Email*"
-              required
-              type="email"
-              {...register('email', {
-                required: 'Please enter your email address.',
-              })}
-            />
-            {errors.email && <Error>{errors.email.message}</Error>}
-          </InputWrapper>
-          <InputWrapper
-            css={css`
-              margin-bottom: ${spacing.lg};
-              min-height: 12.625rem;
-            `}
-          >
-            <Label htmlFor="message">I&apos;d like to talk about:</Label>
-            <FormInput
-              as="textarea"
-              id="message"
-              placeholder="Message*"
-              required
-              {...register('message', {
-                required: 'Please include a message.',
-              })}
-            />
-            {errors.message && <Error>{errors.message.message}</Error>}
-          </InputWrapper>
-          <Button type="submit" disabled={isSubmitting}>
-            Submit
-          </Button>
-        </form>
-      )}
-    </>
+  return isSubmitSuccessful ? (
+    <ThankYouMessage>
+      <Heading
+        css={css`
+          margin-bottom: ${spacing.lg};
+        `}
+        variant="h3"
+      >
+        Thanks for your message! We&apos;ll be in touch soon.
+      </Heading>
+      <Button type="button" onClick={() => reset()}>
+        Send another message?
+      </Button>
+    </ThankYouMessage>
+  ) : (
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <InputWrapper>
+        <Label htmlFor="name">Hello, my name is:</Label>
+        <FormInput
+          autoComplete="off"
+          id="name"
+          placeholder="Name*"
+          required
+          type="name"
+          {...register('fullName', {
+            required: 'Please enter your name.',
+          })}
+        />
+        {errors.fullName && <Error>{errors.fullName.message}</Error>}
+      </InputWrapper>
+      <InputWrapper>
+        <Label htmlFor="email">My email is:</Label>
+        <FormInput
+          autoComplete="off"
+          id="email"
+          placeholder="Email*"
+          required
+          type="email"
+          {...register('email', {
+            required: 'Please enter your email address.',
+          })}
+        />
+        {errors.email && <Error>{errors.email.message}</Error>}
+      </InputWrapper>
+      <InputWrapper
+        css={css`
+          margin-bottom: ${spacing.lg};
+          min-height: 12.625rem;
+        `}
+      >
+        <Label htmlFor="message">I&apos;d like to talk about:</Label>
+        <FormInput
+          as="textarea"
+          id="message"
+          placeholder="Message*"
+          required
+          {...register('message', {
+            required: 'Please include a message.',
+          })}
+        />
+        {errors.message && <Error>{errors.message.message}</Error>}
+      </InputWrapper>
+      <Button type="submit" disabled={isSubmitting}>
+        Submit
+      </Button>
+    </form>
   );
 };
 
@@ -239,18 +232,18 @@ export const Contact: FC = () => {
           >
             Address
           </Heading>
-          <Text variant="h3">
-            <address
-              css={css`
-                font-style: normal;
-              `}
-            >
-              21 E 5th Ave
-              <br />
-              Suite 102
-              <br />
-              Columbus, OH 43021
-            </address>
+          <Text
+            as="address"
+            css={css`
+              font-style: normal;
+            `}
+            variant="h3"
+          >
+            21 E 5th Ave
+            <br />
+            Suite 102
+            <br />
+            Columbus, OH 43021
           </Text>
         </ContactInfo>
       </ContactAside>
