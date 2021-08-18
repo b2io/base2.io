@@ -50,12 +50,15 @@ const FormInput = styled.input`
   outline: none;
   transition: border-bottom 0.3s ease;
   width: 100%;
+  
   &:focus {
     border-bottom: 1px solid ${colors.coral};
   }
+  
   &::placeholder {
     font-size: 1rem;
   }
+  
   &:-webkit-autofill:focus,
   :-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px ${colors.darkBlue} inset;
