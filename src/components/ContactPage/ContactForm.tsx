@@ -9,8 +9,8 @@ import { atMinTablet, colors, cssClamp, spacing } from '~/theme';
 const FORM_ID = 'https://formspree.io/f/mbjqznky';
 
 type FormValues = {
-  fullName: string;
   email: string;
+  fullName: string;
   message: string;
   submit: boolean;
 };
