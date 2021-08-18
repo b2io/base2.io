@@ -31,6 +31,15 @@ const ImageNoise = styled.div`
   z-index: 3;
 `;
 
+const ImageBoxShadow = styled.div`
+  -webkit-box-shadow: inset 0px -80px 40px -30px #05001eab;
+  box-shadow: inset 0px -80px 40px -30px #05001eab;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+`;
+
 const MemberInfo = styled.div`
   margin-top: -${spacing.md};
   padding-left: ${spacing.sm};
@@ -68,6 +77,7 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
     <article>
       <ImageFilter>
         <ImageNoise />
+        <ImageBoxShadow />
         <div
           css={css`
             filter: grayscale(1);
