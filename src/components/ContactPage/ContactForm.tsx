@@ -140,10 +140,10 @@ export const Form: FC = () => {
       {isSubmitSuccessful ? (
         <ThankYouMessage>
           <Heading
-            variant="h3"
             css={css`
               margin-bottom: ${spacing.lg};
             `}
+            variant="h3"
           >
             Thanks for your message! We&apos;ll be in touch soon.
           </Heading>
