@@ -47,7 +47,7 @@ const Nav = styled.nav`
   }
 
   ul {
-    columns: 2;
+    /* columns: 2; */
     list-style: none;
     margin: 4rem 0 0 0;
     padding-left: 0;
@@ -152,19 +152,10 @@ export const Footer: FC = (prop) => {
               <NavLink href="/">Home</NavLink>
             </li>
             <li>
-              <NavLink href="/work">Work</NavLink>
-            </li>
-            <li>
               <NavLink href="/approach">Approach</NavLink>
             </li>
             <li>
               <NavLink href="/culture">Culture</NavLink>
-            </li>
-            <li>
-              <NavLink href="/careers">Careers</NavLink>
-            </li>
-            <li>
-              <NavLink href="/blog">Blog</NavLink>
             </li>
             <li>
               <NavLink href="/contact">Contact</NavLink>
