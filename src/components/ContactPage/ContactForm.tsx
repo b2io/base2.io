@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { Heading, Text } from '~/components';
-import { atMinTablet, colors, cssClamp, spacing } from '~/theme';
+import theme, { atMinTablet, colors, cssClamp, spacing } from '~/theme';
 
 const FORM_ID = 'https://formspree.io/f/mbjqznky';
 
@@ -29,14 +29,7 @@ const InputWrapper = styled.div`
   min-height: 12.2rem;
 `;
 
-const Label = styled.label`
-  ${Heading};
-  /* stylelint-disable-next-line order/properties-alphabetical-order */
-  display: block;
-  font-size: ${cssClamp([2.5, 'mobile'], [3.125, 'tablet'])};
-  font-variation-settings: 'wght' 700;
-  margin-bottom: ${spacing.lg};
-`;
+const Label = styled.label(theme.textVariants.h2);
 
 const FormInput = styled.input`
   background: none;
@@ -189,7 +182,6 @@ export const Form: FC = () => {
           >
             <Label htmlFor="message">I&apos;d like to talk about:</Label>
             <FormInput
-              contentEditable
               as="textarea"
               id="message"
               placeholder="Message*"
