@@ -20,24 +20,23 @@ export const ContactPage: FC = () => {
         ]}
         text="Like what you see? Let's get started."
       />
-      {/* Should this blurb be a component? Asking for a friend */}
-      <article
+      <Text
+        as="article"
         css={css`
-          margin-bottom: ${cssClamp([6.5, 'mobile'], [8.5, 'tablet'])};
-          margin-top: ${cssClamp([6.75, 'mobile'], [6.5, 'tablet'])};
+          margin-bottom: ${cssClamp([6.5, "mobile"], [8.5, "tablet"])};
+          margin-top: ${cssClamp([6.75, "mobile"], [6.5, "tablet"])};
           position: relative;
 
           ${atMinTablet} {
             max-width: 52rem;
           }
         `}
+        variant="h2"
       >
-        <Text variant="h2">
-          Base Two is located in Columbus, OH, Pittsburgh, PA and Chicago, IL,
-          but thanks to satellites and the internet, we can work with you
-          wherever you are.
-        </Text>
-      </article>
+        Base Two is located in Columbus, OH, Pittsburgh, PA and Chicago, IL, but
+        thanks to satellites and the internet, we can work with you wherever you
+        are.
+      </Text>
       <Contact />
     </Layout>
   );
