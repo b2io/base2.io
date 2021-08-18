@@ -1,12 +1,10 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import { useForm } from 'react-hook-form';
-import type { SubmitHandler } from 'react-hook-form';
-
-import { atMinTablet, colors, cssClamp, spacing } from '~/theme';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 import { Heading, Text } from '~/components';
+import { atMinTablet, colors, cssClamp, spacing } from '~/theme';
 
 const FORM_ID = 'https://formspree.io/f/mbjqznky';
 
