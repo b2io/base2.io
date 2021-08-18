@@ -38,7 +38,7 @@ const TeamMasonry = styled.section`
       width: 100%;
       z-index: 2;
     }
-    
+
     > * {
       &:nth-of-type(2n) {
         transform: translateY(var(--column-shift));
@@ -120,6 +120,16 @@ export const TeamCardList: FC = (props) => {
         name="Laura Padilla"
         position="Software Engineer III"
         src={require('../../../public/culture/team/lpadilla.jpg')}
+      />
+      <TeamMemberCard
+        name="Eric Waight"
+        position="Software Engineer III"
+        src={require('../../../public/culture/team/ewaight.jpg')}
+      />
+      <TeamMemberCard
+        name="Javier Orejarena"
+        position="Software Engineer III"
+        src={require('../../../public/culture/team/jorejarena.jpg')}
       />
     </TeamMasonry>
   );

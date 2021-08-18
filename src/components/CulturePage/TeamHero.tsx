@@ -10,8 +10,8 @@ import {
   spacing,
 } from '~/theme';
 
-import { DynamicImage, DynamicImageProps } from './DynamicImage';
-import { Heading } from './Heading';
+import { DynamicImage, DynamicImageProps } from '../DynamicImage';
+import { Heading } from '../Heading';
 
 type TeamHeroProps = DynamicImageProps & {
   text: string;
