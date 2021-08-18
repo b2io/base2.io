@@ -253,8 +253,8 @@ export const Contact: FC = () => {
                 font-style: normal;
               `}
             >
-              21 E 5th Ave <br />
-              Suite 102 <br />
+              21 E 5th Ave<br />
+              Suite 102<br />
               Columbus, OH 43021
             </address>
           </Text>
