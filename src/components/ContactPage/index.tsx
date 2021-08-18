@@ -38,7 +38,6 @@ export const ContactPage: FC = () => {
           wherever you are.
         </Text>
       </article>
-      {/* Contact Form */}
       <Contact />
     </Layout>
   );
