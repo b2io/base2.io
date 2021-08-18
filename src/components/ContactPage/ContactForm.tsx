@@ -140,10 +140,10 @@ export const Form: FC = () => {
       {isSubmitSuccessful ? (
         <ThankYouMessage>
           <Heading
-            variant="h3"
             css={css`
               margin-bottom: ${spacing.lg};
             `}
+            variant="h3"
           >
             Thanks for your message! We&apos;ll be in touch soon.
           </Heading>
@@ -156,11 +156,11 @@ export const Form: FC = () => {
           <InputWrapper>
             <Label htmlFor="name">Hello, my name is:</Label>
             <FormInput
+              autoComplete="off"
               id="name"
-              type="name"
               placeholder="Name*"
               required
-              autoComplete="off"
+              type="name"
               {...register('fullName', {
                 required: 'Please enter your name.',
               })}
@@ -170,11 +170,11 @@ export const Form: FC = () => {
           <InputWrapper>
             <Label htmlFor="email">My email is:</Label>
             <FormInput
+              autoComplete="off"
               id="email"
-              type="email"
               placeholder="Email*"
               required
-              autoComplete="off"
+              type="email"
               {...register('email', {
                 required: 'Please enter your email address.',
               })}
@@ -215,11 +215,11 @@ export const Contact: FC = () => {
       <ContactAside>
         <ContactInfo>
           <Heading
-            variant="h3"
             color="coral"
             css={css`
               margin-bottom: ${cssClamp([0.5, 'mobile'], [2, 'tablet'])};
             `}
+            variant="h3"
           >
             Phone
           </Heading>
@@ -227,11 +227,11 @@ export const Contact: FC = () => {
         </ContactInfo>
         <ContactInfo>
           <Heading
-            variant="h3"
             color="coral"
             css={css`
               margin-bottom: ${cssClamp([0.5, 'mobile'], [2, 'tablet'])};
             `}
+            variant="h3"
           >
             Email
           </Heading>
@@ -239,11 +239,11 @@ export const Contact: FC = () => {
         </ContactInfo>
         <ContactInfo>
           <Heading
-            variant="h3"
             color="coral"
             css={css`
               margin-bottom: ${cssClamp([0.5, 'mobile'], [2, 'tablet'])};
             `}
+            variant="h3"
           >
             Address
           </Heading>
