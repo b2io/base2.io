@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { Heading, Link, Text } from '~/components';
+import { Heading, Text } from '~/components';
 import theme, {
   atMinLg,
   atMinSm,
@@ -136,15 +136,6 @@ export const BuiltForResults: FC = (props) => {
           Let&rsquo;s create something that solves your biggest challenge
           &ndash; and continues to drive value over time.
         </Text>
-        <Link
-          css={css`
-            margin-top: ${theme.spacing.lg};
-          `}
-          href="/work"
-          variant="CTA"
-        >
-          See our work
-        </Link>
       </div>
     </section>
   );

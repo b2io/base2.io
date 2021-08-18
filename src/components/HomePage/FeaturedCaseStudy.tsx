@@ -7,7 +7,6 @@ import type { FC } from 'react';
 
 import {
   Heading,
-  Link,
   Text,
   useAnimationWhileVisible,
   useMouseAnimationWhileVisible,
@@ -202,23 +201,6 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
           tool worthy of their products &ndash; something to get customers
           excited about paint.
         </Text>
-        <Link
-          css={css`
-            margin-bottom: ${spacing.lg};
-            margin-top: ${spacing.lg};
-            &::after {
-              margin-top: 0.25rem;
-            }
-            ${atMinTablet} {
-              margin-bottom: ${spacing.xxl2};
-              margin-top: 3rem;
-            }
-          `}
-          href="/work"
-          variant="CTA"
-        >
-          See our work
-        </Link>
       </div>
       <div
         css={css`
