@@ -189,6 +189,7 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
         </Heading>
         <Text
           css={css`
+            margin-bottom: ${spacing.xxl2};
             max-width: 19rem;
 
             ${atMinSm} {
