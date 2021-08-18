@@ -6,8 +6,7 @@ import type { SubmitHandler } from 'react-hook-form';
 
 import { atMinTablet, colors, cssClamp, spacing } from '~/theme';
 
-import { Heading } from '../Heading';
-import { Text } from '../Text';
+import { Heading, Text } from '~/components';
 
 const FORM_ID = 'https://formspree.io/f/mbjqznky';
 
