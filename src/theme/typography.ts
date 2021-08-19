@@ -140,6 +140,9 @@ export const textVariants = {
     margin: 0,
     padding: 0,
   },
+  li: {
+    marginBottom: spacing.xs,
+  },
   quotationsSymbol: {
     [atMinXL]: {
       fontSize: '37.5rem',
@@ -185,7 +188,7 @@ export const textVariants = {
     lineHeight: 0.53,
     margin: 0,
     padding: 0,
-  },
+  }
 };
 
 export type ThemeLinkVariants = keyof typeof linkVariants;
