@@ -6,11 +6,7 @@ import type { FC } from 'react';
 
 import { Heading, Text, useMouseAnimationWhileVisible } from '~/components';
 import {
-  atMinDesktop,
-  atMinLargeDesktop,
   atMinLg,
-  atMinMobile,
-  atMinXLDesktop,
   colors,
   cssClamp,
   interpolateColors,
