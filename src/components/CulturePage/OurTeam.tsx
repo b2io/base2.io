@@ -50,6 +50,15 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
             z-index: 3;
           `}
         />
+                <div
+          css={css`
+            box-shadow: inset 0px -80px 40px -60px #05001eab;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: 3;
+          `}
+        />
         <div
           css={css`
             filter: grayscale(1);
