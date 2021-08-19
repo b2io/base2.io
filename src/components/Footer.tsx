@@ -24,12 +24,6 @@ const FooterWrapper = styled.div`
   }
 `;
 
-const Branding = styled.div`
-  ${atMinLg} {
-    flex: 1;
-  }
-`;
-
 const FooterLogo = styled(LogoIcon)`
   display: block;
   height: 3.5rem;
@@ -42,10 +36,6 @@ const Slogan = styled(Text)`
 `;
 
 const Nav = styled.nav`
-  ${atMinLg} {
-    flex: 1;
-  }
-
   ul {
     list-style: none;
     margin: 4rem 0 0 0;
@@ -90,7 +80,6 @@ const ContactBlock = styled.address`
 
   ${atMinLg} {
     display: flex;
-    flex: 1;
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -103,17 +92,6 @@ const ContactLink = styled(Link)`
 
   &:last-child {
     margin-bottom: 0;
-  }
-
-  &:first-of-type {
-    ${atMinLg} {
-      position: absolute;
-      right: 0;
-    }
-
-    ${atMinTablet} {
-      margin-bottom: ${spacing.sm};
-    }
   }
 
   address {
@@ -139,12 +117,12 @@ export const Footer: FC = (prop) => {
       {...prop}
     >
       <FooterWrapper>
-        <Branding>
+        <div>
           <FooterLogo />
           <Slogan variant="h3">
             Where code <br /> meets craft.
           </Slogan>
-        </Branding>
+        </div>
         <Nav>
           <ul>
             <li>
