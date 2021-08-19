@@ -20,7 +20,6 @@ export * from './NetJetsPage';
 export * from './OpenGraphImage';
 export * from './PageHero';
 export * from './QuotedImage';
-export * from './TeamHero';
 export * from './Text';
 export * from './useAnimationWhileVisible';
 export * from './useMouseAnimationWhileVisible';
