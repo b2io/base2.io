@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
 
-import { atMinLg, atMinLargeDesktop, atMinXL, cssClamp } from '~/theme';
+import { atMinLg, atMinLargeDesktop, atMinXL, cssClamp, colors } from '~/theme';
 
 import { DynamicImage, DynamicImageProps } from './DynamicImage';
 import { Heading } from './Heading';
@@ -35,7 +35,8 @@ const Image = styled(DynamicImage)`
 const HeaderText = styled(Heading)`
   padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [21.5, 'tablet'])};
   position: relative;
-
+  text-shadow: -0.25rem 0.25rem 0.375rem ${colors.darkBlue};
+  
   ${atMinLg} {
     max-width: 53rem;
   }
