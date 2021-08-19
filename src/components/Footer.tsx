@@ -174,7 +174,11 @@ export const Footer: FC = (prop) => {
         <ContactBlock>
           <ContactLink href="mailto:info@base2.io">info@base2.io</ContactLink>
           <ContactLink href="tel:6143981158">(614) 398-1158</ContactLink>
-          <ContactLink href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7">
+          <ContactLink
+            href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             21 E 5th Ave Suite 102
             <br />
             Columbus, OH 43201
