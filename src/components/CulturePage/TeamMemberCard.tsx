@@ -22,6 +22,15 @@ const ImageFilter = styled.div`
   position: relative;
 `;
 
+const ImageBoxShadow = styled.div`
+  -webkit-box-shadow: inset 0px -80px 40px -30px #05001eab;
+  box-shadow: inset 0px -80px 40px -30px #05001eab;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+`;
+
 const ImageNoise = styled.div`
   background: transparent url(culture/team/noise.png);
   height: 100%;
@@ -67,6 +76,7 @@ export const TeamMemberCard: FC<TeamMemberCardProps> = ({
   return (
     <article>
       <ImageFilter>
+        <ImageBoxShadow />
         <ImageNoise />
         <div
           css={css`
