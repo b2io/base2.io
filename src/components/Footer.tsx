@@ -47,7 +47,6 @@ const Nav = styled.nav`
   }
 
   ul {
-    /* columns: 2; */
     list-style: none;
     margin: 4rem 0 0 0;
     padding-left: 0;
