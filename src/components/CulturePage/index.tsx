@@ -1,14 +1,12 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { Layout, PageHero } from '~/components';
-import { atMinDesktop, atMinTablet, spacing } from '~/theme';
+import { atMinTablet, spacing } from '~/theme';
 
-import { AvailablePositions } from './AvailablePositions';
-import { OurBlog } from './OurBlog';
+import { Layout } from '../Layout';
+import { PageHero } from '../PageHero';
 import { OurCulture } from './OurCulture';
-import { TeamCardList } from './TeamCardList';
-import { TeamHero } from './TeamHero';
+import { OurTeam } from './OurTeam';
 
 export const CulturePage: FC = () => {
   return (
@@ -35,36 +33,13 @@ export const CulturePage: FC = () => {
           }
         `}
       />
-      <TeamHero
-        alt="person wearing hat smiling"
+      <OurTeam
         css={css`
-          margin-bottom: 5rem;
-          margin-top: 7.375rem;
+          margin-top: ${spacing.xxl2};
 
           ${atMinTablet} {
             margin-top: ${spacing.xxl3};
           }
-
-          ${atMinDesktop} {
-            margin-bottom: -4rem;
-          }
-        `}
-        imgSources={[
-          ['desktop', '/culture/team-hero/culture-ourteam-xlarge.jpg'],
-          ['tablet', '/culture/team-hero/culture-ourteam-large.jpg'],
-          ['xs', '/culture/team-hero/culture-ourteam-small.jpg'],
-        ]}
-        text="Our team"
-      />
-      <TeamCardList />
-      <AvailablePositions
-        css={css`
-          margin-top: ${spacing.xxl4};
-        `}
-      />
-      <OurBlog
-        css={css`
-          margin-top: ${spacing.xxl4};
         `}
       />
     </Layout>
