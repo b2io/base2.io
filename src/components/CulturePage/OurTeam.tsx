@@ -231,39 +231,9 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
           src={require('./images/dmiller.jpg')}
         />
         <TeamMemberGridItem
-          name="Mike Condo"
-          position="Senior Software Engineer I"
-          src={require('./images/mcondo.jpg')}
-        />
-        <TeamMemberGridItem
-          name="Kate Hansen"
-          position="Software Engineer I"
-          src={require('./images/khansen.jpg')}
-        />
-        <TeamMemberGridItem
-          name="Melissa Lam"
-          position="Software Engineer I"
-          src={require('./images/mlam.jpg')}
-        />
-        <TeamMemberGridItem
-          name="Zachary Chay-Dolan"
-          position="Software Engineer III"
-          src={require('./images/zchay-dolan.jpg')}
-        />
-        <TeamMemberGridItem
-          name="Reed Dunkle"
-          position="Senior Software Engineer I"
-          src={require('./images/rdunkle.jpg')}
-        />
-        <TeamMemberGridItem
-          name="Franky Martinez"
-          position="Senior Software Engineer III"
-          src={require('./images/fmartinez.jpg')}
-        />
-        <TeamMemberGridItem
-          name="Nathan Kessler"
-          position="Senior Software Engineer II"
-          src={require('./images/nkessler.jpg')}
+          name="Sean Ludemann"
+          position="Principal Software Engineer"
+          src={require('./images/sludemann.jpg')}
         />
         <TeamMemberGridItem
           name="Tony Borres"
@@ -275,10 +245,35 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
           position="Senior Software Engineer III"
           src={require('./images/chawkins.jpg')}
         />
+          <TeamMemberGridItem
+          name="Franky Martinez"
+          position="Senior Software Engineer III"
+          src={require('./images/fmartinez.jpg')}
+        />
+        <TeamMemberGridItem
+          name="Nathan Kessler"
+          position="Senior Software Engineer II"
+          src={require('./images/nkessler.jpg')}
+        />
+        <TeamMemberGridItem
+          name="Reed Dunkle"
+          position="Senior Software Engineer I"
+          src={require('./images/rdunkle.jpg')}
+        />
+        <TeamMemberGridItem
+          name="Mike Condo"
+          position="Senior Software Engineer I"
+          src={require('./images/mcondo.jpg')}
+        />
         <TeamMemberGridItem
           name="Ashley Singleton"
           position="Software Engineer IV"
           src={require('./images/asingleton.jpg')}
+        />
+        <TeamMemberGridItem
+          name="Zachary Chay-Dolan"
+          position="Software Engineer III"
+          src={require('./images/zchay-dolan.jpg')}
         />
         <TeamMemberGridItem
           name="Nelson Foltz"
@@ -299,6 +294,16 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
           name="Javier Orejarena"
           position="Software Engineer III"
           src={require('./images/jorejarena.jpg')}
+        />
+        <TeamMemberGridItem
+          name="Melissa Lam"
+          position="Software Engineer I"
+          src={require('./images/mlam.jpg')}
+        />
+        <TeamMemberGridItem
+          name="Kate Hansen"
+          position="Software Engineer I"
+          src={require('./images/khansen.jpg')}
         />
       </ul>
     </section>
