@@ -5,16 +5,7 @@ import { transparentize } from 'polished';
 import type { FC } from 'react';
 
 import { Heading, Text, useMouseAnimationWhileVisible } from '~/components';
-import {
-  atMinDesktop,
-  atMinLargeDesktop,
-  atMinLg,
-  atMinMobile,
-  atMinXLDesktop,
-  colors,
-  cssClamp,
-  interpolateColors,
-} from '~/theme';
+import { atMinLg, colors, cssClamp, interpolateColors } from '~/theme';
 
 const SVG_SIZE = 1000;
 const LINE_COUNT = 75;
