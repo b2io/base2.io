@@ -140,9 +140,6 @@ export const textVariants = {
     margin: 0,
     padding: 0,
   },
-  li: {
-    marginBottom: spacing.xs,
-  },
   quotationsSymbol: {
     [atMinXL]: {
       fontSize: '37.5rem',
