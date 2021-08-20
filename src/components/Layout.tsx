@@ -32,6 +32,7 @@ export const Layout: FC<LayoutProps> = ({
 }) => {
   const router = useRouter();
   const slug = router.asPath.replace(/\/$/, '');
+  const pageTitle = title === 'Base Two' ? title : `${title} | Base Two`;
 
   return (
     <div
@@ -52,10 +53,11 @@ export const Layout: FC<LayoutProps> = ({
               width: 1200,
             },
           ],
-          title: title === 'Base Two' ? title : `${title} | Base Two`,
+          title: pageTitle,
           type: 'website',
           url: `https://www.base2.io${slug}`,
         }}
+        title={pageTitle}
       />
       <Header />
       <motion.main
