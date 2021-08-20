@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
 
-import { atMinTablet, atMinLg, colors, spacing } from '~/theme';
+import { atMinLg, atMinTablet, colors, spacing } from '~/theme';
 
 import { Container } from './Container';
 import { LogoIcon } from './icons';
@@ -24,12 +24,6 @@ const FooterWrapper = styled.div`
   }
 `;
 
-const Branding = styled.div`
-  ${atMinLg} {
-    flex: 1;
-  }
-`;
-
 const FooterLogo = styled(LogoIcon)`
   display: block;
   height: 3.5rem;
@@ -42,12 +36,7 @@ const Slogan = styled(Text)`
 `;
 
 const Nav = styled.nav`
-  ${atMinLg} {
-    flex: 1;
-  }
-
   ul {
-    columns: 2;
     list-style: none;
     margin: 4rem 0 0 0;
     padding-left: 0;
@@ -80,7 +69,7 @@ const NavLink = styled(Link)`
   line-height: 1;
 `;
 
-const ContactBlock = styled.address`
+const ContactBlock = styled.article`
   margin-top: ${spacing.xxl};
   padding-bottom: ${spacing.lg};
 
@@ -91,7 +80,6 @@ const ContactBlock = styled.address`
 
   ${atMinLg} {
     display: flex;
-    flex: 1;
     flex-direction: column;
     flex-wrap: wrap;
   }
@@ -106,18 +94,8 @@ const ContactLink = styled(Link)`
     margin-bottom: 0;
   }
 
-  &:first-of-type {
-    ${atMinLg} {
-      position: absolute;
-      right: 0;
-    }
-
-    ${atMinTablet} {
-      margin-bottom: ${spacing.sm};
-    }
-  }
-
   address {
+    font-style: normal;
     margin: 2rem 0 0;
 
     ${atMinTablet} {
@@ -140,19 +118,16 @@ export const Footer: FC = (prop) => {
       {...prop}
     >
       <FooterWrapper>
-        <Branding>
+        <div>
           <FooterLogo />
           <Slogan variant="h3">
             Where code <br /> meets craft.
           </Slogan>
-        </Branding>
+        </div>
         <Nav>
           <ul>
             <li>
               <NavLink href="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink href="/work">Work</NavLink>
             </li>
             <li>
               <NavLink href="/approach">Approach</NavLink>
@@ -161,23 +136,27 @@ export const Footer: FC = (prop) => {
               <NavLink href="/culture">Culture</NavLink>
             </li>
             <li>
-              <NavLink href="/careers">Careers</NavLink>
-            </li>
-            <li>
-              <NavLink href="/blog">Blog</NavLink>
-            </li>
-            <li>
               <NavLink href="/contact">Contact</NavLink>
             </li>
           </ul>
         </Nav>
         <ContactBlock>
-          <ContactLink href="mailto:info@base2.io">info@base2.io</ContactLink>
-          <ContactLink href="tel:6143981158">(614) 398-1158</ContactLink>
-          <ContactLink href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7">
-            21 E 5th Ave Suite 102
-            <br />
-            Columbus, OH 43201
+          <ContactLink href="mailto:info@base2.io" rel="noopener">
+            info@base2.io
+          </ContactLink>
+          <ContactLink href="tel:6143981158" rel="noopener">
+            (614) 398-1158
+          </ContactLink>
+          <ContactLink
+            href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
+            target="_blank"
+            rel="noopener"
+          >
+            <address>
+              21 E 5th Ave Suite 102
+              <br />
+              Columbus, OH 43201
+            </address>
           </ContactLink>
         </ContactBlock>
       </FooterWrapper>

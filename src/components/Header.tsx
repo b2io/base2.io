@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import type { FC } from 'react';
 
-import { atMinTablet, atMinSm, atMinXXL, colors, spacing } from '~/theme';
+import { atMinSm, atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
 import { Container } from './Container';
 import { LogoWithName } from './icons';
@@ -125,7 +125,6 @@ export const Header: FC = ({ ...props }) => {
         />
         <Nav>
           <ul>
-            <NavItem href="/work">Work</NavItem>
             <NavItem href="/approach">Approach</NavItem>
             <NavItem href="/culture">Culture</NavItem>
             <NavItem href="/contact">Contact</NavItem>

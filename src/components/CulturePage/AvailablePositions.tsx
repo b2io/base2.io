@@ -36,10 +36,10 @@ export const AvailablePositions: FC = (props) => {
         css={css`
           margin-top: 1rem;
         `}
-        href="/careers"
+        href="/contact"
         variant="CTA"
       >
-        See all available positions
+        Contact us
       </Link>
     </section>
   );

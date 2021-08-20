@@ -4,7 +4,6 @@ import type { FC } from 'react';
 import { atMinXL, spacing } from '~/theme';
 
 import { Heading } from '../Heading';
-import { Link } from '../Link';
 import { Text } from '../Text';
 
 export const OurBlog: FC = (props) => {
@@ -32,15 +31,6 @@ export const OurBlog: FC = (props) => {
         latest technology, teaching others is a core part of what we do. And the
         best part is, we learn more about ourselves in the process.
       </Text>
-      <Link
-        css={css`
-          margin-top: 1rem;
-        `}
-        href="/blog"
-        variant="CTA"
-      >
-        See all blog posts
-      </Link>
     </section>
   );
 };

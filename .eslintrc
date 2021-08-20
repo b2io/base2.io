@@ -69,6 +69,16 @@
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0,
     "sort-keys": ["warn", "asc", { "caseSensitive": false, "natural": true }],
-    "sort-vars": "warn"
+    "sort-vars": "warn",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": false
+      }
+    ]
   }
 }

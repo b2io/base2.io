@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import { Heading, IconCard, Link } from '~/components';
-import { spacing, atMinTablet, atMinXL } from '~/theme';
+import { atMinTablet, atMinXL, spacing } from '~/theme';
 
 import { IconCardGrid } from '../IconCard';
 
