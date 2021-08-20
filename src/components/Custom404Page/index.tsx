@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { Heading, Link, Text, Layout } from '~/components';
+import { Heading, Layout, Link, Text } from '~/components';
 import { atMinXL, spacing } from '~/theme';
 
 export const Custom404Page: FC = () => {
