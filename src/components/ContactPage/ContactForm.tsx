@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Heading, Text } from '~/components';
 import theme, { atMinTablet, colors, cssClamp, spacing } from '~/theme';

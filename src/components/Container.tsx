@@ -1,10 +1,10 @@
 import styled, { StyledComponent } from '@emotion/styled';
 
 import {
+  atMinDesktop,
   atMinTablet,
   atMinXL,
   atMinXXL,
-  atMinDesktop,
   viewMaxWidth,
 } from '~/theme';
 

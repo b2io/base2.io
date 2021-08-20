@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
 
-import { atMinLg, atMinLargeDesktop, atMinXL, cssClamp, colors } from '~/theme';
+import { atMinLargeDesktop, atMinLg, atMinXL, colors, cssClamp } from '~/theme';
 
 import { DynamicImage, DynamicImageProps } from './DynamicImage';
 import { Heading } from './Heading';

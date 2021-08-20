@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
 
-import { atMinTablet, atMinLg, colors, spacing } from '~/theme';
+import { atMinLg, atMinTablet, colors, spacing } from '~/theme';
 
 import { Container } from './Container';
 import { LogoIcon } from './icons';
