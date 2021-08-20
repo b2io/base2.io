@@ -69,7 +69,7 @@ const NavLink = styled(Link)`
   line-height: 1;
 `;
 
-const ContactBlock = styled.address`
+const ContactBlock = styled.article`
   margin-top: ${spacing.xxl};
   padding-bottom: ${spacing.lg};
 
@@ -95,6 +95,7 @@ const ContactLink = styled(Link)`
   }
 
   address {
+    font-style: normal;
     margin: 2rem 0 0;
 
     ${atMinTablet} {
@@ -140,12 +141,22 @@ export const Footer: FC = (prop) => {
           </ul>
         </Nav>
         <ContactBlock>
-          <ContactLink href="mailto:info@base2.io">info@base2.io</ContactLink>
-          <ContactLink href="tel:6143981158">(614) 398-1158</ContactLink>
-          <ContactLink href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7">
-            21 E 5th Ave Suite 102
-            <br />
-            Columbus, OH 43201
+          <ContactLink href="mailto:info@base2.io" rel="noopener">
+            info@base2.io
+          </ContactLink>
+          <ContactLink href="tel:6143981158" rel="noopener">
+            (614) 398-1158
+          </ContactLink>
+          <ContactLink
+            href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
+            target="_blank"
+            rel="noopener"
+          >
+            <address>
+              21 E 5th Ave Suite 102
+              <br />
+              Columbus, OH 43201
+            </address>
           </ContactLink>
         </ContactBlock>
       </FooterWrapper>

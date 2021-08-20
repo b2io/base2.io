@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import NextLink from 'next/link';
-import type { FC } from 'react';
+import type { AnchorHTMLAttributes, DetailedHTMLProps, FC } from 'react';
 import { variant } from 'styled-system';
 
 import { ThemeLinkVariants } from '~/theme';
@@ -8,7 +8,10 @@ import { ThemeLinkVariants } from '~/theme';
 export type LinkProps = {
   href: string;
   variant?: ThemeLinkVariants;
-};
+} & DetailedHTMLProps<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+>;
 
 const Anchor = styled.a<{ variant?: ThemeLinkVariants }>(
   variant({ scale: 'linkVariants' }),
