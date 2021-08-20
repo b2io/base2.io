@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
-import { Heading, Text } from '~/components';
+import { Heading, Link } from '~/components';
 import theme, { atMinTablet, colors, cssClamp, spacing } from '~/theme';
 
 const FORM_ID = 'https://formspree.io/f/mbjqznky';
@@ -26,7 +26,7 @@ const ContactWrapper = styled.section`
 
 const InputWrapper = styled.div`
   margin-bottom: ${spacing.xxl2};
-  min-height: 12.2rem;
+  min-height: 12.375rem;
 `;
 
 const Label = styled.label({
@@ -202,49 +202,76 @@ export const Contact: FC = () => {
           <Heading
             color="coral"
             css={css`
-              margin-bottom: ${cssClamp([0.5, 'mobile'], [2, 'tablet'])};
+              margin-bottom: ${cssClamp([0.5, 'mobile'], [1, 'tablet'])};
             `}
             variant="h3"
           >
             Phone
           </Heading>
-          <Text variant="h3">614.398.1158</Text>
+          <Link
+            css={css`
+              font-size: 1.875rem;
+              font-variation-settings: 'wght' 300;
+            `}
+            href="tel:6143981158"
+            target="_blank"
+            rel="noopener"
+          >
+            614.398.1158
+          </Link>
         </ContactInfo>
         <ContactInfo>
           <Heading
             color="coral"
             css={css`
-              margin-bottom: ${cssClamp([0.5, 'mobile'], [2, 'tablet'])};
+              margin-bottom: ${cssClamp([0.5, 'mobile'], [1, 'tablet'])};
             `}
             variant="h3"
           >
             Email
           </Heading>
-          <Text variant="h3">info@base2.io</Text>
+          <Link
+            css={css`
+              font-size: 1.875rem;
+              font-variation-settings: 'wght' 300;
+            `}
+            href="mailto:info@base2.io"
+            target="_blank"
+            rel="noopener"
+          >
+            info@base2.io
+          </Link>
         </ContactInfo>
         <ContactInfo>
           <Heading
             color="coral"
             css={css`
-              margin-bottom: ${cssClamp([0.5, 'mobile'], [2, 'tablet'])};
+              margin-bottom: ${cssClamp([0.5, 'mobile'], [1, 'tablet'])};
             `}
             variant="h3"
           >
             Address
           </Heading>
-          <Text
-            as="address"
+          <Link
             css={css`
-              font-style: normal;
+              font-size: 1.875rem;
+              font-variation-settings: 'wght' 300;
             `}
-            variant="h3"
+            href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
+            target="_blank"
+            rel="noopener"
           >
-            21 E 5th Ave
-            <br />
-            Suite 102
-            <br />
-            Columbus, OH 43021
-          </Text>
+            <address
+              css={css`
+                font-style: normal;
+                line-height: 1.5;
+              `}
+            >
+              21 E 5th Ave, Suite 102
+              <br />
+              Columbus, OH 43021
+            </address>
+          </Link>
         </ContactInfo>
       </ContactAside>
       <Form />
