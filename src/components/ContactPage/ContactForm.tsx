@@ -26,7 +26,7 @@ const ContactWrapper = styled.section`
 
 const InputWrapper = styled.div`
   margin-bottom: ${spacing.xxl2};
-  min-height: 12.2rem;
+  min-height: 12.375rem;
 `;
 
 const Label = styled.label({
@@ -214,6 +214,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="tel:6143981158"
+            target="_blank"
+            rel="noopener"
           >
             614.398.1158
           </Link>
@@ -234,6 +236,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="mailto:info@base2.io"
+            target="_blank"
+            rel="noopener"
           >
             info@base2.io
           </Link>
@@ -251,18 +255,22 @@ export const Contact: FC = () => {
           <Link
             css={css`
               font-size: 1.875rem;
-              font-style: normal;
               font-variation-settings: 'wght' 300;
             `}
             href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener"
           >
-            21 E 5th Ave
-            <br />
-            Suite 102
-            <br />
-            Columbus, OH 43021
+            <address
+              css={css`
+                font-style: normal;
+                line-height: 1.5;
+              `}
+            >
+              21 E 5th Ave, Suite 102
+              <br />
+              Columbus, OH 43021
+            </address>
           </Link>
         </ContactInfo>
       </ContactAside>
