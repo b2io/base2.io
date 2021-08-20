@@ -26,7 +26,7 @@ const ContactWrapper = styled.section`
 
 const InputWrapper = styled.div`
   margin-bottom: ${spacing.xxl2};
-  min-height: 12.2rem;
+  min-height: 12.375rem;
 `;
 
 const Label = styled.label({
@@ -208,7 +208,9 @@ export const Contact: FC = () => {
           >
             Phone
           </Heading>
-          <Text variant="h3">614.398.1158</Text>
+          <Text as="a" variant="h3">
+            614.398.1158
+          </Text>
         </ContactInfo>
         <ContactInfo>
           <Heading
@@ -220,7 +222,9 @@ export const Contact: FC = () => {
           >
             Email
           </Heading>
-          <Text variant="h3">info@base2.io</Text>
+          <Text as="a" variant="h3">
+            info@base2.io
+          </Text>
         </ContactInfo>
         <ContactInfo>
           <Heading
