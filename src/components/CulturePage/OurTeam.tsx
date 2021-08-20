@@ -245,7 +245,7 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
           position="Senior Software Engineer III"
           src={require('./images/chawkins.jpg')}
         />
-          <TeamMemberGridItem
+        <TeamMemberGridItem
           name="Franky Martinez"
           position="Senior Software Engineer III"
           src={require('./images/fmartinez.jpg')}
