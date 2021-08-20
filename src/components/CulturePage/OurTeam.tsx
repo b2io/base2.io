@@ -50,7 +50,7 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
             z-index: 3;
           `}
         />
-                <div
+        <div
           css={css`
             box-shadow: inset 0px -80px 40px -60px #05001eab;
             height: 100%;
