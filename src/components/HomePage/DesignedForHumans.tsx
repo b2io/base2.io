@@ -39,7 +39,7 @@ export const DesignedForHumans: FC = (props) => {
         {...props}
       >
         <NextImage
-          alt="woman looking at phone"
+          alt="desks with computers"
           placeholder="blur"
           src={require('./designed-for-humans.jpg')}
         />

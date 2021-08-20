@@ -136,7 +136,7 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
         `}
       >
         <NextImage
-          alt="person wearing hat smiling"
+          alt="base two office with red couch"
           css={css`
             right: calc(50% - 50vw);
           `}
