@@ -69,7 +69,7 @@ const NavLink = styled(Link)`
   line-height: 1;
 `;
 
-const ContactBlock = styled.address`
+const ContactBlock = styled.article`
   margin-top: ${spacing.xxl};
   padding-bottom: ${spacing.lg};
 
