@@ -104,13 +104,7 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
           }
         `}
       >
-        <Heading
-          as="h3"
-          css={css`
-            text-shadow: 0.25rem 0.25rem 0.375rem ${colors.darkBlue};
-          `}
-          variant="h2"
-        >
+        <Heading as="h3" variant="h2">
           {name}
         </Heading>
         <Text>{position}</Text>
