@@ -185,7 +185,7 @@ export const textVariants = {
     lineHeight: 0.53,
     margin: 0,
     padding: 0,
-  },
+  }
 };
 
 export type ThemeLinkVariants = keyof typeof linkVariants;
