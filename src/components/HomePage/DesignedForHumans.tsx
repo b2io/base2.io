@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
-import type { FC } from 'react';
+import type { ComponentPropsWithoutRef, FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
@@ -12,7 +12,9 @@ const imageTopCalc = cssClamp(
   [8.25, 'desktop'],
 );
 
-export const DesignedForHumans: FC = (props) => {
+export type DesignedForHumansProps = ComponentPropsWithoutRef<'section'>;
+
+export const DesignedForHumans: FC<DesignedForHumansProps> = (props) => {
   return (
     <section
       css={css`
