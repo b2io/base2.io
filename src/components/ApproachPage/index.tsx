@@ -14,7 +14,7 @@ export const ApproachPage: FC = () => {
       title="Approach"
     >
       <PageHero
-        alt="person staring at a computer"
+        alt="people sitting on a couch and working together"
         imgSources={[
           ['largeDesktop', '/approach/approach-hero-xlarge.jpg'],
           ['tablet', '/approach/approach-hero-medium.jpg'],

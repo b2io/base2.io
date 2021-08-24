@@ -11,7 +11,7 @@ export const ContactPage: FC = () => {
   return (
     <Layout description="Like what you see? Let's get started." title="Contact">
       <PageHero
-        alt="coworkers collaborating in office"
+        alt="lighting fixture mounted on a brick wall"
         imgSources={[
           ['largeDesktop', '/contact/contact-hero-xlarge.jpg'],
           ['tablet', '/contact/contact-hero-medium.jpg'],

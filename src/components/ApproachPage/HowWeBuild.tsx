@@ -37,7 +37,7 @@ export const HowWeBuild: FC = (props) => {
         `}
       >
         <DynamicImage
-          alt="man standing behind chair in a meeting with other people"
+          alt="person staring at code on a computer screen"
           css={css`
             img {
               margin-bottom: 3.813rem;
