@@ -17,7 +17,6 @@ export const IconCardStory: Story<IconCardProps & { text: string }> = ({
 IconCardStory.args = {
   heading: 'Fully managed ',
   icon: 'fullyManaged',
-  text:
-    'Our developers are skilled at handling the entire project pipeline while making sure you’re satisfied at each step of our process. A dedicated contact within our team is always available to answer your questions, and daily standups provide an opportunity for you to weigh in on our progress.',
+  text: 'Our developers are skilled at handling the entire project pipeline while making sure you’re satisfied at each step of our process. A dedicated contact within our team is always available to answer your questions, and daily standups provide an opportunity for you to weigh in on our progress.',
 };
 IconCardStory.storyName = 'IconCard';

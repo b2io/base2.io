@@ -52,6 +52,15 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
         />
         <div
           css={css`
+            box-shadow: inset 0px -80px 40px -60px #05001eab;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: 3;
+          `}
+        />
+        <div
+          css={css`
             filter: grayscale(1);
             mix-blend-mode: screen;
           `}
@@ -95,13 +104,7 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
           }
         `}
       >
-        <Heading
-          as="h3"
-          css={css`
-            text-shadow: 0.25rem 0.25rem 0.375rem ${colors.darkBlue};
-          `}
-          variant="h2"
-        >
+        <Heading as="h3" variant="h2">
           {name}
         </Heading>
         <Text>{position}</Text>
@@ -136,7 +139,7 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
         `}
       >
         <NextImage
-          alt="base two office with red couch"
+          alt="person wearing hat smiling"
           css={css`
             right: calc(50% - 50vw);
           `}
