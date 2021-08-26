@@ -34,7 +34,7 @@ export const ContactPage: FC = () => {
         variant="h2"
       >
         Our team is in Columbus, OH; Pittsburgh, PA; Philadelphia, PA; Atlanta,
-        GA; New York City, NY; Miami, FL; and Chicago, IL, but thanks to
+        GA; New York City, NY; Miami, FL; and Chicago, IL but thanks to
         satellites and the internet, we can work with you wherever you are.
       </Text>
       <Contact />
