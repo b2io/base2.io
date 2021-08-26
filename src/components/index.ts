@@ -24,5 +24,5 @@ export * from './Text';
 export * from './useAnimationWhileVisible';
 export * from './useMouseAnimationWhileVisible';
 export * from './WorkPage';
-export * from './Custom404Page'
-export * from './Custom500Page'
+export * from './Custom404Page';
+export * from './Custom500Page';

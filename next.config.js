@@ -7,7 +7,7 @@ module.exports = {
             key: 'Content-Security-Policy',
             value: [
               "base-uri 'self';",
-              "connect-src 'self';",
+              "connect-src 'self' https://formspree.io;",
               "default-src 'none';",
               "form-action 'self';",
               "font-src 'self';",
