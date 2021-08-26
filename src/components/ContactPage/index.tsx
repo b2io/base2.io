@@ -33,7 +33,7 @@ export const ContactPage: FC = () => {
         `}
         variant="h2"
       >
-        Base Two is located in Columbus, OH, Pittsburgh, PA and Chicago, IL, but
+        Base Two is located in Columbus, OH; Pittsburgh, PA and Chicago, IL, but
         thanks to satellites and the internet, we can work with you wherever you
         are.
       </Text>
