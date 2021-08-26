@@ -72,6 +72,7 @@ const ContactInfo = styled.article`
 const Button = styled.button`
   background: transparent;
   border: 1px solid ${colors.coral};
+  color: ${colors.offWhite};
   cursor: pointer;
   font-size: 1.375rem;
   font-variation-settings: 'wght' 650;
@@ -79,7 +80,6 @@ const Button = styled.button`
   transition: background 0.3s ease;
   &:hover {
     background: ${colors.coral};
-    color: ${colors.offWhite};
   }
 `;
 
