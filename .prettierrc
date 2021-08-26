@@ -1,13 +1,4 @@
 {
-  "overrides": [
-    {
-      "files": ["gatsby-node.js", "gatsby-config.js"],
-      "options": {
-        "trailingComma": "es5"
-      }
-    }
-  ],
-  "printWidth": 80,
   "singleQuote": true,
   "trailingComma": "all"
 }
