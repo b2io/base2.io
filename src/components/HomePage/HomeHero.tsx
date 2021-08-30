@@ -126,16 +126,18 @@ export const HomeHero: FC = (props) => {
     );
   });
   const lineFillGradientId = useId();
-  const overlayFillGradientId = useId();
+  const sideOverlayFillGradientId = useId();
+  const topOverlayFillGradientId = useId();
 
   return (
     <div
       css={css`
         display: grid;
         gap: ${cssClamp([2, 'xs'], [1.5, 'lg'])};
-        padding: ${cssClamp([3, 'xs'], [10.5, 'lg'])}
-          // ignore vscode-styled-components error
-          ${cssClamp([0, 'xs'], [1, 'smMobile'], [5.25, 'lg'])};
+        padding: ${[
+          cssClamp([5.5, 'xs'], [21.25, 'lg']),
+          cssClamp([0, 'xs'], [1, 'smMobile'], [5.25, 'lg']),
+        ].join(' ')};
         position: relative;
         text-align: center;
 
@@ -172,16 +174,6 @@ export const HomeHero: FC = (props) => {
           position: absolute;
           top: 0;
           width: 100vw;
-
-          rect {
-            opacity: 0;
-          }
-
-          @media (min-width: 1648px) {
-            rect {
-              opacity: 1;
-            }
-          }
         `}
         height="100%"
         overflow="visible"
@@ -193,7 +185,13 @@ export const HomeHero: FC = (props) => {
           <motion.linearGradient id={lineFillGradientId} x1={x1} x2={x2}>
             {LINE_FILL_STOPS}
           </motion.linearGradient>
-          <linearGradient id={overlayFillGradientId}>
+          <linearGradient id={sideOverlayFillGradientId}>
+            {OVERLAY_FILL_STOPS}
+          </linearGradient>
+          <linearGradient
+            gradientTransform="rotate(90)"
+            id={topOverlayFillGradientId}
+          >
             {OVERLAY_FILL_STOPS}
           </linearGradient>
         </defs>
@@ -208,9 +206,9 @@ export const HomeHero: FC = (props) => {
           ))}
         </g>
         <rect
-          fill={`url('#${overlayFillGradientId}')`}
+          fill={`url('#${sideOverlayFillGradientId}')`}
           height={SVG_SIZE + 2 * LINE_APEX_Y}
-          width="10rem"
+          width="33%"
           x="0"
           y={-LINE_APEX_Y}
         />
@@ -219,11 +217,18 @@ export const HomeHero: FC = (props) => {
             transform: scale(-1, 1);
             transform-origin: center;
           `}
-          fill={`url('#${overlayFillGradientId}')`}
+          fill={`url('#${sideOverlayFillGradientId}')`}
           height={SVG_SIZE + 2 * LINE_APEX_Y}
-          width="10rem"
+          width="33%"
           x="0"
           y={-LINE_APEX_Y}
+        />
+        <rect
+          fill={`url('#${topOverlayFillGradientId}')`}
+          height="33%"
+          width="100%"
+          x="0"
+          y="0"
         />
       </svg>
     </div>
