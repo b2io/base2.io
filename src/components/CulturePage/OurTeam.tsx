@@ -300,7 +300,7 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
         />
         <TeamMemberGridItem
           name="Melissa Lam"
-          location="New York City, NY"
+          location="New York, NY"
           src={require('./images/mlam.jpg')}
         />
         <TeamMemberGridItem
