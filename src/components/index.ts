@@ -20,9 +20,10 @@ export * from './NetJetsPage';
 export * from './OpenGraphImage';
 export * from './PageHero';
 export * from './QuotedImage';
+export * from './ScopeBuilderPage';
 export * from './Text';
 export * from './useAnimationWhileVisible';
 export * from './useMouseAnimationWhileVisible';
 export * from './WorkPage';
-export * from './Custom404Page'
-export * from './Custom500Page'
+export * from './Custom404Page';
+export * from './Custom500Page';
