@@ -117,6 +117,7 @@ export const BuiltForResults: FC = (props) => {
         `}
       >
         <Text
+          color="coral"
           css={css`
             margin: 0 0 ${theme.spacing.xxs} 0;
           `}
