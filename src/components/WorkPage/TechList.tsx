@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { ElementType, FC, ReactElement } from 'react';
+import { Children, cloneElement, ElementType, FC, ReactElement } from 'react';
 
 import { atMinTablet, spacing } from '~/theme';
 
@@ -22,7 +22,7 @@ type Logo =
   | 'redux'
   | 'sass';
 
-export type TechListProps<E extends ElementType = ElementType> = {
+export type TechCardProps<E extends ElementType = ElementType> = {
   as?: E;
   logo: Logo;
 };
@@ -58,10 +58,10 @@ export const TechCard: FC<TechCardProps> = ({
 };
 
 export type TechListGridProps = {
-  children: ReactElement<TechListProps>[];
+  children: ReactElement<TechCardProps>[];
 };
 
-export const TechListGrid: FC<TechListGridProps> = ({ ...props }) => {
+export const TechListGrid: FC<TechListGridProps> = ({ children, ...props }) => {
   return (
     <ul
       css={css`
@@ -79,6 +79,8 @@ export const TechListGrid: FC<TechListGridProps> = ({ ...props }) => {
         }
       `}
       {...props}
-    ></ul>
+    >
+      {Children.map(children, (child) => cloneElement(child, { as: 'li' }))}
+    </ul>
   );
 };
