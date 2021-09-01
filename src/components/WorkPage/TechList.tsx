@@ -4,13 +4,13 @@ import { ElementType, FC, ReactElement } from 'react';
 import { atMinTablet, spacing } from '~/theme';
 
 import {
-  AngularLogo,
-  JasmineAltLogo,
-  JasmineLogo,
-  NetLogo,
-  ReactLogo,
-  ReduxLogo,
-  SassLogo,
+  AngularIcon,
+  JasminealtIcon,
+  JasmineIcon,
+  NetIcon,
+  ReactIcon,
+  ReduxIcon,
+  SassIcon,
 } from './../icons';
 
 type Logo =
@@ -28,13 +28,13 @@ export type TechListProps<E extends ElementType = ElementType> = {
 };
 
 const TechList = {
-  angular: AngularLogo,
-  jasmine: JasmineLogo,
-  jasminealt: JasmineAltLogo,
-  net: NetLogo,
-  react: ReactLogo,
-  redux: ReduxLogo,
-  sass: SassLogo,
+  angular: AngularIcon,
+  jasmine: JasmineIcon,
+  jasminealt: JasminealtIcon,
+  net: NetIcon,
+  react: ReactIcon,
+  redux: ReduxIcon,
+  sass: SassIcon,
 };
 
 export const TechCard: FC<TechCardProps> = ({
