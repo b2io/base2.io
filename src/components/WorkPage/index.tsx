@@ -8,7 +8,6 @@ import { CaseStudyPreview } from './CaseStudyPreview';
 import { FeaturedCaseStudyHero } from './FeaturedCaseStudyHero';
 
 export const WorkPage: FC = () => {
-  // TODO: Add description for WorkPage.
   return (
     <Layout description="" title="Work">
       <FeaturedCaseStudyHero />
@@ -28,7 +27,7 @@ export const WorkPage: FC = () => {
           display: grid;
           gap: ${spacing.lg};
           grid-template-columns: minmax(350px) 1fr;
-          margin: ${spacing.xxl4} 0;
+          margin: ${spacing.xxl2} 0;
           padding: 0;
           position: relative;
           ${atMinTablet} {
