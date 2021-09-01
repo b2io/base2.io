@@ -1,16 +1,10 @@
 import { css } from '@emotion/react';
 import { useId } from '@react-aria/utils';
-import { motion, transform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import NextImage from 'next/image';
-import { transparentize } from 'polished';
 import type { FC } from 'react';
 
-import {
-  Heading,
-  Text,
-  useAnimationWhileVisible,
-  useMouseAnimationWhileVisible,
-} from '~/components';
+import { Heading, Text, useAnimationWhileVisible } from '~/components';
 import theme, {
   atMinSm,
   atMinTablet,
@@ -22,6 +16,15 @@ import theme, {
 } from '~/theme';
 
 const GUTTER_SHIFT = '1.375rem';
+
+const GRADIENT_STOPS = interpolateColors(
+  [theme.colors.coral, theme.colors.midBlue],
+  12,
+).map((color, index, colors) => {
+  const offset = index / (colors.length - 1);
+
+  return <stop key={`${offset}-${color}`} offset={offset} stopColor={color} />;
+});
 
 const Gradient: FC = () => {
   const filterId = useId();
@@ -76,33 +79,8 @@ const Gradient: FC = () => {
           id={linearGradientId}
           spreadMethod="reflect"
         >
-          {interpolateColors(
-            [theme.colors.coral, theme.colors.midBlue],
-            12,
-          ).map((color, index, colors) => {
-            const offset = index / (colors.length - 1);
-
-            return (
-              <stop
-                key={`${offset}-${color}`}
-                offset={offset}
-                stopColor={color}
-              />
-            );
-          })}
+          {GRADIENT_STOPS}
         </motion.linearGradient>
-        <linearGradient gradientTransform="rotate(90)" id={fadeGradientId}>
-          <stop offset="0%" stopColor={theme.colors.darkBlue} />
-          <stop
-            offset="20%"
-            stopColor={transparentize(1, theme.colors.darkBlue)}
-          />
-          <stop
-            offset="80%"
-            stopColor={transparentize(1, theme.colors.darkBlue)}
-          />
-          <stop offset="100%" stopColor={theme.colors.darkBlue} />
-        </linearGradient>
         <filter id={filterId}>
           <feTurbulence
             baseFrequency="20"
@@ -133,11 +111,6 @@ const Gradient: FC = () => {
 export type FeaturedCaseStudyProps = Record<string, unknown>;
 
 export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
-  const [ref, { x, y }] = useMouseAnimationWhileVisible(
-    { damping: 10, stiffness: 75 },
-    { threshold: 0 },
-  );
-
   return (
     <section
       css={css`
@@ -147,7 +120,6 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
         }
       `}
       {...props}
-      ref={ref}
     >
       <div
         css={css`
@@ -213,7 +185,7 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
         `}
       >
         <Gradient />
-        <motion.div
+        <div
           css={css`
             --column-shift: ${spacing.xxl};
 
@@ -243,13 +215,6 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
               }
             }
           `}
-          style={{ x, y }}
-          transformTemplate={({ x = 0, y = 0 }) => {
-            const rX = transform(parseFloat(String(y)), [-1, 1], [-0.75, 0.75]);
-            const rY = transform(parseFloat(String(x)), [-1, 1], [-0.75, 0.75]);
-
-            return `perspective(100px) rotateX(${-rX}deg) rotateY(${rY}deg)`;
-          }}
         >
           <NextImage
             alt="paint a photo"
@@ -271,7 +236,7 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
             placeholder="blur"
             src={require('./featured-case-study-4.png')}
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
