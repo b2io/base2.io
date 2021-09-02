@@ -5,8 +5,6 @@ import type { FC } from 'react';
 import { Heading, Link, Text } from '~/components';
 import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
 
-// import { SassIcon } from './../icons';
-
 const largeImageHeightCalc = cssClamp([26.625, 'tablet'], [50, 'desktop']);
 const imageTopCalc = cssClamp(
   [2.95, 'mobile'],
@@ -152,7 +150,6 @@ export const DesignedForHumans: FC = (props) => {
           </div>
         </div>
       </div>
-      {/* <SassIcon /> */}
     </section>
   );
 };
