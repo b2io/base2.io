@@ -3,14 +3,7 @@ import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, {
-  atMinDesktop,
-  atMinLg,
-  atMinTablet,
-  atMinXL,
-  atMinXXL,
-  cssClamp,
-} from '~/theme';
+import theme, { atMinDesktop, atMinTablet, atMinXL, cssClamp } from '~/theme';
 
 const largeImageHeightCalc = cssClamp([26.625, 'tablet'], [50, 'desktop']);
 const imageTopCalc = cssClamp(
