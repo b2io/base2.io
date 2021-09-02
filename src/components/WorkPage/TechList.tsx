@@ -75,6 +75,8 @@ export const TechListGrid: FC<TechListGridProps> = ({ children, ...props }) => {
     <ul
       css={css`
         display: flex;
+        flex-wrap: wrap;
+        gap: ${spacing.md};
         justify-content: space-evenly;
         list-style: none;
         margin: 0;
