@@ -5,7 +5,6 @@ import { Layout } from '~/components';
 import { PageHero } from '../PageHero';
 
 export const CareersPage: FC = () => {
-  // TODO: Add description for CareersPage.
   return (
     <Layout description="Working at Base Two" title="Careers">
       <PageHero
