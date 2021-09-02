@@ -22,11 +22,6 @@ export const HomePage: FC<HomePageProps> = () => {
     >
       <HomeHero />
 
-      <DesignedForHumans
-        css={css`
-          margin-top: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])};
-        `}
-      />
       <TechListGrid
         css={css`
           margin-top: ${cssClamp([10.5, 'mobile'], [16.5, 'desktop'])};
@@ -40,11 +35,18 @@ export const HomePage: FC<HomePageProps> = () => {
         <TechCard logo="jasmine" />
         <TechCard logo="karma" />
       </TechListGrid>
+
+      <DesignedForHumans
+        css={css`
+          margin-top: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])};
+        `}
+      />
       <BuiltForResults
         css={css`
           margin-top: ${cssClamp([12.5, 'mobile'], [16.5, 'desktop'])};
         `}
       />
+
       <FeaturedCaseStudy
         css={css`
           margin-top: ${cssClamp([12.5, 'mobile'], [17.5, 'tablet'])};
