@@ -1,12 +1,19 @@
 import { css } from '@emotion/react';
-import { Children, cloneElement, ElementType, FC, ReactElement } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  ElementType,
+  FC,
+  ReactElement,
+} from 'react';
 
-import { atMinTablet, spacing } from '~/theme';
+import { spacing } from '~/theme';
 
 import {
   AngularIcon,
   JasminealtIcon,
   JasmineIcon,
+  KarmaIcon,
   NetIcon,
   ReactIcon,
   ReduxIcon,
@@ -17,6 +24,7 @@ type Logo =
   | 'angular'
   | 'jasmine'
   | 'jasminealt'
+  | 'karma'
   | 'net'
   | 'react'
   | 'redux'
@@ -31,6 +39,7 @@ const TechList = {
   angular: AngularIcon,
   jasmine: JasmineIcon,
   jasminealt: JasminealtIcon,
+  karma: KarmaIcon,
   net: NetIcon,
   react: ReactIcon,
   redux: ReduxIcon,
@@ -65,18 +74,11 @@ export const TechListGrid: FC<TechListGridProps> = ({ children, ...props }) => {
   return (
     <ul
       css={css`
-        display: grid;
-        grid-row-gap: 4rem;
-        justify-content: space-between;
+        display: flex;
+        justify-content: space-evenly;
         list-style: none;
         margin: 0;
-        max-width: 67rem;
         padding: 0;
-
-        ${atMinTablet} {
-          grid-column-gap: 1.875rem;
-          grid-template-columns: repeat(2, minmax(20rem, 30rem));
-        }
       `}
       {...props}
     >

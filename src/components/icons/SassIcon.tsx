@@ -17,7 +17,7 @@ export const SassIcon: FC<SvgProps> = ({
       aria-labelledby={titleId}
       height={height}
       role="img"
-      viewBox="0 0 50 50"
+      viewBox="0 0 600 450"
       width={width}
       {...props}
     >

@@ -17,7 +17,7 @@ export const JasmineIcon: FC<SvgProps> = ({
       aria-labelledby={titleId}
       height={height}
       role="img"
-      viewBox="0 0 50 50"
+      viewBox="0 0 200 200"
       width={width}
       {...props}
     >

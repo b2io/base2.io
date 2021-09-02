@@ -17,7 +17,7 @@ export const ReactIcon: FC<SvgProps> = ({
       aria-labelledby={titleId}
       height={height}
       role="img"
-      viewBox="0 0 50 50"
+      viewBox="0 0 500 500"
       width={width}
       {...props}
     >
