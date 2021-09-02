@@ -7,32 +7,19 @@ import { atMinSm, atMinTablet, colors, spacing } from '~/theme';
 
 type CaseStudyPreviewImageProps = NextImageProps & {
   alt: string;
+  href: string;
+  info: string;
+
   src: Exclude<NextImageProps['src'], string | StaticImageData>;
   title: string;
-  info: string;
-  link: string;
-};
-
-const ResponsiveImage: FC<NextImageProps> = ({ alt, src, ...props }) => {
-  return (
-    <div {...props}>
-      <NextImage
-        alt={alt}
-        height={400}
-        layout="responsive"
-        src={src}
-        width={400}
-      />
-    </div>
-  );
 };
 
 export const CaseStudyPreview: FC<CaseStudyPreviewImageProps> = ({
   alt,
+  href,
+  info,
   src,
   title,
-  info,
-  link,
   ...props
 }) => {
   return (
@@ -43,38 +30,8 @@ export const CaseStudyPreview: FC<CaseStudyPreviewImageProps> = ({
             margin-top: ${spacing.xxxs};
             padding: 0 ${spacing.md};
             position: relative;
-          }
 
-          & p::before {
-            border-bottom: solid 1px ${colors.coral};
-            content: '';
-            left: 0;
-            position: absolute;
-            top: 0.925rem;
-            width: 1.125rem;
-          }
-        }
-      `}
-      {...props}
-    >
-      <ResponsiveImage alt={alt} src={src} />
-      <div
-        css={css`
-          margin-top: -${spacing.md};
-          padding-left: ${spacing.sm};
-          position: relative;
-          ${atMinTablet} {
-            margin-top: -2.45rem;
-          }
-
-          ${atMinSm} {
-            & p {
-              margin-top: ${spacing.xxxs};
-              padding: 0 ${spacing.md};
-              position: relative;
-            }
-
-            & p::before {
+            ::before {
               border-bottom: solid 1px ${colors.coral};
               content: '';
               left: 0;
@@ -83,14 +40,51 @@ export const CaseStudyPreview: FC<CaseStudyPreviewImageProps> = ({
               width: 1.125rem;
             }
           }
+        }
+      `}
+      {...props}
+    >
+      <NextImage
+        alt={alt}
+        height={400}
+        layout="responsive"
+        src={src}
+        width={400}
+      />
+      <div
+        css={css`
+          margin-top: -${spacing.md};
+          padding-left: ${spacing.sm};
+          position: relative;
+
+          ${atMinSm} {
+            & p {
+              margin-top: ${spacing.xxxs};
+              padding: 0 ${spacing.md};
+              position: relative;
+
+              ::before {
+                border-bottom: solid 1px ${colors.coral};
+                content: '';
+                left: 0;
+                position: absolute;
+                top: 0.925rem;
+                width: 1.125rem;
+              }
+            }
+
+            ${atMinTablet} {
+              margin-top: -2.45rem;
+            }
+          }
         `}
       >
         <Link
-          href={`/work/${link}`}
-          variant="large"
+          href={href}
           css={css`
             font-size: 4rem;
           `}
+          variant="large"
         >
           {title}
         </Link>
