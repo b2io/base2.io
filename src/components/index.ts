@@ -1,6 +1,7 @@
 export * from './ApproachPage';
 export * from './BatteryXTPage';
 export * from './BlogPage';
+export * from './Card';
 export * from './CareersPage';
 export * from './ColorSnapVisualizerPage';
 export * from './Container';

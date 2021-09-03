@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
+import React from 'react';
 
-import { Layout } from '~/components';
+import { Card, CardGrid, Layout } from '~/components';
 import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
 import { BuiltForResults } from './BuiltForResults';
@@ -54,6 +55,29 @@ export const HomePage: FC<HomePageProps> = () => {
           }
         `}
       />
+      <CardGrid>
+        <Card
+          icon="business"
+          heading="Heading"
+          subheading="This is a subheading"
+          link="Click me"
+        >
+          -
+        </Card>
+        <Card
+          icon="business"
+          heading="Heading"
+          text="This is some text check me out"
+          link="Click me"
+        />
+        <Card
+          icon="business"
+          heading="Heading"
+          subheading="This is a subheading"
+          text="This is some text check me out"
+          link="Click me"
+        />
+      </CardGrid>
     </Layout>
   );
 };
