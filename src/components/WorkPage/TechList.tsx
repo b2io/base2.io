@@ -7,7 +7,7 @@ import React, {
   ReactElement,
 } from 'react';
 
-import { spacing } from '~/theme';
+import { atMinTablet, atMinXL, spacing } from '~/theme';
 
 import {
   AngularIcon,
@@ -60,6 +60,14 @@ export const TechCard: FC<TechCardProps> = ({
           height: 3rem;
           margin-bottom: ${spacing.xxs};
           width: auto;
+
+          ${atMinTablet} {
+            height: 4rem;
+          }
+
+          ${atMinXL} {
+            height: 6rem;
+          }
         `}
       />
     </Component>
