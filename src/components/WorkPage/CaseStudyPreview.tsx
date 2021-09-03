@@ -9,7 +9,6 @@ type CaseStudyPreviewImageProps = NextImageProps & {
   alt: string;
   href: string;
   info: string;
-
   src: Exclude<NextImageProps['src'], string | StaticImageData>;
   title: string;
 };
@@ -20,37 +19,10 @@ export const CaseStudyPreview: FC<CaseStudyPreviewImageProps> = ({
   info,
   src,
   title,
-  ...props
 }) => {
   return (
-    <div
-      css={css`
-        ${atMinSm} {
-          & p {
-            margin-top: ${spacing.xxxs};
-            padding: 0 ${spacing.md};
-            position: relative;
-
-            ::before {
-              border-bottom: solid 1px ${colors.coral};
-              content: '';
-              left: 0;
-              position: absolute;
-              top: 0.925rem;
-              width: 1.125rem;
-            }
-          }
-        }
-      `}
-      {...props}
-    >
-      <NextImage
-        alt={alt}
-        height={400}
-        layout="responsive"
-        src={src}
-        width={400}
-      />
+    <div>
+      <NextImage alt={alt} layout="responsive" src={src} />
       <div
         css={css`
           margin-top: -${spacing.md};
