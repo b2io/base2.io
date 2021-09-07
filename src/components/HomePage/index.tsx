@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { FC } from 'react';
 import React from 'react';
 
-import { Card, CardGrid, Layout } from '~/components';
+import { Card, CardGrid, Layout, Link } from '~/components';
 import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
 import { BuiltForResults } from './BuiltForResults';
@@ -57,26 +57,34 @@ export const HomePage: FC<HomePageProps> = () => {
       />
       <CardGrid>
         <Card
+          largeHeading="4.3"
+          heading="stars on the app store"
+          text="This is some text check me out. This is some text check me out. This is some text check me out. "
+        ></Card>
+        <Card
           icon="business"
-          heading="Heading"
-          subheading="This is a subheading"
-          link="Click me"
+          subheading="Business"
+          text="This is some text check me out. This is some text check me out. This is some text check me out. This is some text check me out. "
+        />
+        <Card
+          heading="The solution"
+          text="This is some text check me out. This is some text check me out. This is some text check me out. This is some text check me out. "
+        />
+        <Card
+          subheading="Joining a team — blog post"
+          text="This is some text check me out. This is some text check me out. This is some text check me out. This is some text check me out. This is some text check me out. "
         >
-          -
+          <Link
+            css={css`
+              font-size: 2rem;
+            `}
+            color="coral"
+            href="#"
+            variant="CTA"
+          >
+            Read more
+          </Link>
         </Card>
-        <Card
-          icon="business"
-          heading="Heading"
-          text="This is some text check me out"
-          link="Click me"
-        />
-        <Card
-          icon="business"
-          heading="Heading"
-          subheading="This is a subheading"
-          text="This is some text check me out"
-          link="Click me"
-        />
       </CardGrid>
     </Layout>
   );
