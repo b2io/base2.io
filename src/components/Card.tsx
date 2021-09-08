@@ -13,6 +13,7 @@ import { atMinTablet, spacing } from '~/theme';
 import {
   BusinessIcon,
   CommunityIcon,
+  DashIcon,
   DeliveryIcon,
   DeveloperIcon,
   DiscoveryIcon,
@@ -28,6 +29,7 @@ import {
 type Icon =
   | 'business'
   | 'community'
+  | 'dash'
   | 'delivery'
   | 'developer'
   | 'discovery'
@@ -52,6 +54,7 @@ export type CardProps<E extends ElementType = ElementType> = {
 const IconList = {
   business: BusinessIcon,
   community: CommunityIcon,
+  dash: DashIcon,
   delivery: DeliveryIcon,
   developer: DeveloperIcon,
   discovery: DiscoveryIcon,
@@ -151,12 +154,13 @@ export const CardGrid: FC<CardGridProps> = ({ children, ...props }) => {
         grid-row-gap: 4rem;
         justify-content: space-between;
         list-style: none;
-        margin: 0;
+        margin: 0 auto;
+        max-width: 67rem;
         padding: 0;
 
         ${atMinTablet} {
-          grid-column-gap: 1.875rem;
-          grid-template-columns: repeat(2, minmax(30rem, 35rem));
+          grid-column-gap: 4rem;
+          grid-template-columns: repeat(2, minmax(20rem, 35rem));
         }
       `}
       {...props}

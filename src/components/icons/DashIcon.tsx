@@ -6,7 +6,7 @@ import { SvgProps } from './types';
 export const DashIcon: FC<SvgProps> = ({
   height = '100%',
   id,
-  title = 'Transparency',
+  title = 'Dash',
   width = '100%',
   ...props
 }) => {
@@ -17,7 +17,7 @@ export const DashIcon: FC<SvgProps> = ({
       aria-labelledby={titleId}
       height={height}
       role="img"
-      viewBox="0 0 70 50"
+      viewBox="0 0 50 50"
       width={width}
       {...props}
     >

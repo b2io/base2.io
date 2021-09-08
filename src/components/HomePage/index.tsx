@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import React from 'react';
 
 import { Card, CardGrid, Layout, Link } from '~/components';
-import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
+import { atMinTablet, atMinXL, colors, cssClamp, spacing } from '~/theme';
 
 import { BuiltForResults } from './BuiltForResults';
 import { DesignedForHumans } from './DesignedForHumans';
@@ -57,8 +57,18 @@ export const HomePage: FC<HomePageProps> = () => {
       />
       <CardGrid>
         <Card
-          largeHeading="4.3"
-          heading="stars on the app store"
+          css={css`
+            &:before {
+              background-color: ${colors.lightBlue};
+              content: '';
+              display: block;
+              height: 0.25rem;
+              margin-bottom: 1rem;
+              width: 2.5rem;
+            }
+          `}
+          largeHeading="Millions"
+          heading="of users worldwide"
           text="This is some text check me out. This is some text check me out. This is some text check me out. "
         ></Card>
         <Card
