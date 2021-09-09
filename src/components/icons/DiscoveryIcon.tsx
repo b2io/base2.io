@@ -45,3 +45,5 @@ export const DiscoveryIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default DiscoveryIcon;

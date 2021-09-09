@@ -4,6 +4,7 @@ export * from './DashIcon';
 export * from './DeliveryIcon';
 export * from './DeveloperIcon';
 export * from './DiscoveryIcon';
+export * from './DynamicIcon';
 export * from './EmbeddedIcon';
 export * from './EmpathyIcon';
 export * from './ExecutionIcon';

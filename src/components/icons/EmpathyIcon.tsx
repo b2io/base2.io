@@ -42,3 +42,5 @@ export const EmpathyIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default EmpathyIcon;

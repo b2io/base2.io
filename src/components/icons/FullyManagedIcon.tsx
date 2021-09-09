@@ -52,3 +52,5 @@ export const FullyManagedIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default FullyManagedIcon;

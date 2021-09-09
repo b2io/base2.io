@@ -53,3 +53,5 @@ export const DeliveryIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default DeliveryIcon;

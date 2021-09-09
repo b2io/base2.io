@@ -26,3 +26,5 @@ export const DashIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default DashIcon;

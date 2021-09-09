@@ -42,3 +42,5 @@ export const BusinessIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default BusinessIcon;
