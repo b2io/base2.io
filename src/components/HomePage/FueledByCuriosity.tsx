@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
-import React from 'react';
 
 import { GradientCircle, Heading, Link, Text } from '~/components';
 import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';

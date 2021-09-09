@@ -46,7 +46,6 @@ export type CardProps<E extends ElementType = ElementType> = {
   icon?: Icon;
   largeHeading?: string;
   heading?: string;
-  link?: string;
   subheading?: string;
   text?: string;
 };
