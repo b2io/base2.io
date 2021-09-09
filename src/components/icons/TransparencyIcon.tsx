@@ -46,3 +46,5 @@ export const TransparencyIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default TransparencyIcon;

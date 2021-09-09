@@ -48,3 +48,5 @@ export const EmbeddedIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default EmbeddedIcon;

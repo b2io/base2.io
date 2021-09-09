@@ -45,3 +45,5 @@ export const CommunityIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default CommunityIcon;

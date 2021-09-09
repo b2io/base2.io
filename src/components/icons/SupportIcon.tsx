@@ -50,3 +50,5 @@ export const SupportIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default SupportIcon;

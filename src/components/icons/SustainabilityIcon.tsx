@@ -55,3 +55,5 @@ export const SustainabilityIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default SustainabilityIcon;

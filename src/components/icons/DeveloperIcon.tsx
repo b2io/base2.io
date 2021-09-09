@@ -47,3 +47,5 @@ export const DeveloperIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default DeveloperIcon;

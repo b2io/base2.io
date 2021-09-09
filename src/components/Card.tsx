@@ -7,64 +7,17 @@ import React, {
   ReactElement,
 } from 'react';
 
-import { Heading, Text } from '~/components';
+import { DynamicIcon, DynamicIconProps, Heading, Text } from '~/components';
 import { atMinTablet, spacing } from '~/theme';
-
-import {
-  BusinessIcon,
-  CommunityIcon,
-  DashIcon,
-  DeliveryIcon,
-  DeveloperIcon,
-  DiscoveryIcon,
-  EmbeddedIcon,
-  EmpathyIcon,
-  ExecutionIcon,
-  FullyManagedIcon,
-  SupportIcon,
-  SustainabilityIcon,
-  TransparencyIcon,
-} from './icons';
-
-type Icon =
-  | 'business'
-  | 'community'
-  | 'dash'
-  | 'delivery'
-  | 'developer'
-  | 'discovery'
-  | 'embedded'
-  | 'empathy'
-  | 'execution'
-  | 'fullyManaged'
-  | 'support'
-  | 'sustainability'
-  | 'transparency';
 
 export type CardProps<E extends ElementType = ElementType> = {
   as?: E;
-  icon?: Icon;
+  icon?: DynamicIconProps['type'];
   largeHeading?: string;
   heading?: string;
   link?: string;
   subheading?: string;
   text?: string;
-};
-
-const IconList = {
-  business: BusinessIcon,
-  community: CommunityIcon,
-  dash: DashIcon,
-  delivery: DeliveryIcon,
-  developer: DeveloperIcon,
-  discovery: DiscoveryIcon,
-  embedded: EmbeddedIcon,
-  empathy: EmpathyIcon,
-  execution: ExecutionIcon,
-  fullyManaged: FullyManagedIcon,
-  support: SupportIcon,
-  sustainability: SustainabilityIcon,
-  transparency: TransparencyIcon,
 };
 
 export const Card: FC<CardProps> = ({
@@ -77,17 +30,16 @@ export const Card: FC<CardProps> = ({
   text,
   ...props
 }) => {
-  const Icon = icon ? IconList[icon] : null;
-
   return (
     <Component {...props}>
-      {Icon && (
-        <Icon
+      {icon && (
+        <DynamicIcon
           css={css`
             height: 3rem;
             margin-bottom: ${spacing.xxs};
             width: auto;
           `}
+          type={icon}
         />
       )}
       {largeHeading && (
@@ -165,7 +117,9 @@ export const CardGrid: FC<CardGridProps> = ({ children, ...props }) => {
       `}
       {...props}
     >
-      {Children.map(children, (child) => cloneElement(child, { as: 'li' }))}
+      {Children.map(children, (child) =>
+        cloneElement(child as ReactElement<CardProps>, { as: 'li' }),
+      )}
     </ul>
   );
 };

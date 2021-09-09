@@ -1,57 +1,13 @@
 import { css } from '@emotion/react';
 import { Children, cloneElement, ElementType, FC, ReactElement } from 'react';
 
-import { Heading, Text } from '~/components';
+import { DynamicIcon, DynamicIconProps, Heading, Text } from '~/components';
 import { atMinTablet, spacing } from '~/theme';
-
-import {
-  BusinessIcon,
-  CommunityIcon,
-  DeliveryIcon,
-  DeveloperIcon,
-  DiscoveryIcon,
-  EmbeddedIcon,
-  EmpathyIcon,
-  ExecutionIcon,
-  FullyManagedIcon,
-  SupportIcon,
-  SustainabilityIcon,
-  TransparencyIcon,
-} from './icons';
-
-type Icon =
-  | 'business'
-  | 'community'
-  | 'delivery'
-  | 'developer'
-  | 'discovery'
-  | 'embedded'
-  | 'empathy'
-  | 'execution'
-  | 'fullyManaged'
-  | 'support'
-  | 'sustainability'
-  | 'transparency';
 
 export type IconCardProps<E extends ElementType = ElementType> = {
   as?: E;
-  icon: Icon;
+  icon: DynamicIconProps['type'];
   heading: string;
-};
-
-const IconList = {
-  business: BusinessIcon,
-  community: CommunityIcon,
-  delivery: DeliveryIcon,
-  developer: DeveloperIcon,
-  discovery: DiscoveryIcon,
-  embedded: EmbeddedIcon,
-  empathy: EmpathyIcon,
-  execution: ExecutionIcon,
-  fullyManaged: FullyManagedIcon,
-  support: SupportIcon,
-  sustainability: SustainabilityIcon,
-  transparency: TransparencyIcon,
 };
 
 export const IconCard: FC<IconCardProps> = ({
@@ -61,16 +17,15 @@ export const IconCard: FC<IconCardProps> = ({
   heading,
   ...props
 }) => {
-  const Icon = IconList[icon];
-
   return (
     <Component {...props}>
-      <Icon
+      <DynamicIcon
         css={css`
           height: 3rem;
           margin-bottom: ${spacing.xxs};
           width: auto;
         `}
+        type={icon}
       />
       <Heading
         as="h3"
@@ -117,7 +72,9 @@ export const IconCardGrid: FC<IconCardGridProps> = ({ children, ...props }) => {
       `}
       {...props}
     >
-      {Children.map(children, (child) => cloneElement(child, { as: 'li' }))}
+      {Children.map(children, (child) =>
+        cloneElement(child as ReactElement<IconCardProps>, { as: 'li' }),
+      )}
     </ul>
   );
 };

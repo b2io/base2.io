@@ -1,4 +1,8 @@
-module.exports = {
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+const config = {
   headers: async () => {
     return [
       {
@@ -66,3 +70,5 @@ module.exports = {
     return config;
   },
 };
+
+module.exports = withBundleAnalyzer(config);
