@@ -3,7 +3,7 @@ import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import theme, { atMinDesktop, atMinTablet, cssClamp } from '~/theme';
+import theme, { atMinDesktop, atMinTablet, atMinXL, cssClamp } from '~/theme';
 
 const largeImageHeightCalc = cssClamp([26.625, 'tablet'], [50, 'desktop']);
 const imageTopCalc = cssClamp(
@@ -31,7 +31,6 @@ export const DesignedForHumans: FC = (props) => {
           width: ${cssClamp([26.042, 'mobile'], [34.313, 'tablet'])};
 
           ${atMinTablet} {
-            height: ${largeImageHeightCalc};
             left: max(-10rem, calc(50% - 50vw));
             width: ${cssClamp([34.313, 'tablet'], [64.5, 'desktop'])};
           }
@@ -84,11 +83,11 @@ export const DesignedForHumans: FC = (props) => {
       <div
         css={css`
           margin-left: ${cssClamp([1.688, 'mobile'], [11.563, 'tablet'])};
-          margin-top: 12.75rem;
+          margin-top: 9.75rem;
           position: relative;
 
           ${atMinTablet} {
-            margin-top: 9.25rem;
+            margin-top: 12.25rem;
           }
 
           ${atMinDesktop} {
@@ -109,7 +108,7 @@ export const DesignedForHumans: FC = (props) => {
         </Text>
         <div
           css={css`
-            ${atMinDesktop} {
+            ${atMinXL} {
               display: flex;
             }
           `}
