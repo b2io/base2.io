@@ -1,7 +1,8 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
+import React from 'react';
 
-import { Card, CardGrid, Layout, Link } from '~/components';
+import { Card, CardGrid, Layout, Link, StatCard } from '~/components';
 import { atMinTablet, atMinXL, colors, cssClamp, spacing } from '~/theme';
 
 import { BuiltForResults } from './BuiltForResults';
@@ -55,7 +56,9 @@ export const HomePage: FC<HomePageProps> = () => {
         `}
       />
       <CardGrid>
-        <Card
+        <StatCard
+          heading="Millions of users worldwide"
+          text="of users worldwide"
           css={css`
             &::before {
               background-color: ${colors.lightBlue};
@@ -66,23 +69,10 @@ export const HomePage: FC<HomePageProps> = () => {
               width: 2.5rem;
             }
           `}
-          heading="of users worldwide"
-          largeHeading="Millions"
-          text="This is some text check me out. This is some text check me out. This is some text check me out. "
-        ></Card>
-        <Card
-          icon="business"
-          subheading="Business"
-          text="This is some text check me out. This is some text check me out. This is some text check me out. This is some text check me out. "
-        />
-        <Card
-          heading="The solution"
-          text="This is some text check me out. This is some text check me out. This is some text check me out. This is some text check me out. "
-        />
-        <Card
-          subheading="Joining a team — blog post"
-          text="This is some text check me out. This is some text check me out. This is some text check me out. This is some text check me out. This is some text check me out. "
-        >
+        ></StatCard>
+        <Card></Card>
+        <Card />
+        <Card>
           <Link href="#" variant="CTA">
             Read more
           </Link>

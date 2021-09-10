@@ -1,103 +1,107 @@
 import { css } from '@emotion/react';
-import React, {
-  Children,
-  cloneElement,
-  ElementType,
-  FC,
-  ReactElement,
-} from 'react';
+import React, { Children, cloneElement, FC, ReactElement } from 'react';
 
-import { DynamicIcon, DynamicIconProps, Heading, Text } from '~/components';
+import {
+  DynamicIcon,
+  DynamicIconProps,
+  Heading,
+  Link,
+  Text,
+} from '~/components';
 import { atMinTablet, spacing } from '~/theme';
 
-export type CardProps<E extends ElementType = ElementType> = {
-  as?: E;
-  icon?: DynamicIconProps['type'];
-  largeHeading?: string;
-  heading?: string;
-  subheading?: string;
-  text?: string;
+export const CardHeading: FC = ({ children, ...props }) => {
+  return <div {...props}>{children}</div>;
 };
 
-export const Card: FC<CardProps> = ({
-  as: Component = 'div',
-  children,
-  icon,
-  heading,
-  largeHeading,
-  subheading,
-  text,
-  ...props
-}) => {
+export const CardContent: FC = ({ children, ...props }) => {
+  return <div {...props}>{children}</div>;
+};
+
+export const CardActions: FC = ({ children, ...props }) => {
+  return <div {...props}>{children}</div>;
+};
+
+export const Card: FC = ({ children, ...props }) => {
   return (
-    <Component {...props}>
-      {icon && (
-        <DynamicIcon
-          css={css`
-            height: 3rem;
-            margin-bottom: ${spacing.xxs};
-            width: auto;
-          `}
-          type={icon}
-        />
-      )}
-      {largeHeading && (
-        <Heading
-          as="h1"
-          color="coral"
-          variant="h1"
-          css={css`
-            margin-bottom: ${spacing.xs};
-          `}
-        >
-          {largeHeading}
-        </Heading>
-      )}
-      {heading && (
-        <Heading
-          as="h2"
-          color="offWhite"
-          css={css`
-            margin-bottom: ${spacing.xs};
-          `}
-          variant="h2"
-        >
-          {heading}
-        </Heading>
-      )}
-      {subheading && (
-        <Heading
-          as="h3"
-          color="coral"
-          css={css`
-            margin-bottom: ${spacing.xxs};
-          `}
-          variant="h3"
-        >
-          {subheading}
-        </Heading>
-      )}
-      {text && (
-        <Text
-          as="p"
-          css={css`
-            margin: 0;
-            margin-bottom: ${spacing.lg};
-          `}
-        >
-          {text}
-        </Text>
-      )}
+    <div
+      css={css`
+        display: flex;
+        flex-direction: column;
+        gap: ${spacing.sm};
+      `}
+      {...props}
+    >
       {children}
-    </Component>
+    </div>
   );
 };
 
-export type CardGridProps = {
-  children: ReactElement<CardProps>[];
+<Card>
+  <Heading as="h1" color="coral" variant="h1">
+    This is a card hading
+  </Heading>
+  <Text>This is some text for the card content.</Text>
+</Card>;
+
+export type StatCardProps = {
+  heading: string;
+  text: string;
 };
 
-export const CardGrid: FC<CardGridProps> = ({ children, ...props }) => {
+export const StatCard: FC<StatCardProps> = ({ heading, text }) => {
+  const [highlight, ...remainder] = heading.split(' ');
+  return (
+    <Card>
+      <Heading as="h3" color="coral" variant="h1">
+        {highlight}
+        <br />
+        <Text as="span" variant="h2">
+          {remainder.join(' ')}
+        </Text>
+      </Heading>
+      <Text>{text}</Text>
+    </Card>
+  );
+};
+
+export type IconCardProps = {
+  heading: string;
+  icon: DynamicIconProps['type'];
+  text: string;
+};
+
+export const IconCard: FC<IconCardProps> = ({ heading, icon, text }) => {
+  return (
+    <Card>
+      <DynamicIcon type={icon} />
+      <Heading as="h3" color="coral" variant="h3">
+        {heading}
+      </Heading>
+      <Text>{text}</Text>
+    </Card>
+  );
+};
+
+<Card>
+  <DynamicIcon type="business" />
+  <Heading as="h3" color="coral" variant="h3">
+    Business
+  </Heading>
+  <Text>This is some text for the card content.</Text>
+</Card>;
+
+<Card>
+  <Heading as="h3" color="coral" variant="h3">
+    Business
+  </Heading>
+  <Text>This is some text for the card content.</Text>
+  <Link variant="CTA" href="/">
+    Read more
+  </Link>
+</Card>;
+
+export const CardGrid: FC = ({ children, ...props }) => {
   return (
     <ul
       css={css`
@@ -117,7 +121,7 @@ export const CardGrid: FC<CardGridProps> = ({ children, ...props }) => {
       {...props}
     >
       {Children.map(children, (child) =>
-        cloneElement(child as ReactElement<CardProps>, { as: 'li' }),
+        cloneElement(child as ReactElement<any>, { as: 'li' }),
       )}
     </ul>
   );
