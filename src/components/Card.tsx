@@ -1,5 +1,11 @@
 import { css } from '@emotion/react';
-import React, { Children, cloneElement, FC, ReactElement } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  ElementType,
+  FC,
+  ReactElement,
+} from 'react';
 
 import {
   DynamicIcon,
@@ -22,9 +28,17 @@ export const CardActions: FC = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
-export const Card: FC = ({ children, ...props }) => {
+export type CardProps = {
+  as?: ElementType;
+};
+
+export const Card: FC<CardProps> = ({
+  as: Component = 'div',
+  children,
+  ...props
+}) => {
   return (
-    <div
+    <Component
       css={css`
         display: flex;
         flex-direction: column;
@@ -33,7 +47,7 @@ export const Card: FC = ({ children, ...props }) => {
       {...props}
     >
       {children}
-    </div>
+    </Component>
   );
 };
 

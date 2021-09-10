@@ -4,8 +4,6 @@ import type { FC } from 'react';
 import { CardGrid, Heading, IconCard, Link } from '~/components';
 import { atMinTablet, atMinXL, spacing } from '~/theme';
 
-import { CardGrid, IconCard } from '../Card';
-
 export const HowWeEngage: FC = (props) => {
   return (
     <section

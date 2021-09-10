@@ -1,11 +1,8 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
+import { CardGrid, Heading, IconCard, Text } from '~/components';
 import { atMinXL, spacing } from '~/theme';
-
-import { CardGrid, IconCard } from '../Card';
-import { Heading } from '../Heading';
-import { Text } from '../Text';
 
 export const OurCulture: FC = (props) => {
   return (
