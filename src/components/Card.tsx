@@ -8,7 +8,7 @@ import {
   Link,
   Text,
 } from '~/components';
-import { atMinTablet, spacing } from '~/theme';
+import { atMinTablet, colors, spacing } from '~/theme';
 
 export const CardHeading: FC = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
@@ -28,7 +28,7 @@ export const Card: FC = ({ children, ...props }) => {
       css={css`
         display: flex;
         flex-direction: column;
-        gap: ${spacing.sm};
+        gap: ${spacing.xs};
       `}
       {...props}
     >
@@ -37,30 +37,46 @@ export const Card: FC = ({ children, ...props }) => {
   );
 };
 
-<Card>
-  <Heading as="h1" color="coral" variant="h1">
-    This is a card hading
-  </Heading>
-  <Text>This is some text for the card content.</Text>
-</Card>;
-
-export type StatCardProps = {
+export type ResultCardProps = {
   heading: string;
   text: string;
 };
 
-export const StatCard: FC<StatCardProps> = ({ heading, text }) => {
+export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
   const [highlight, ...remainder] = heading.split(' ');
   return (
-    <Card>
+    <Card
+      css={css`
+        &::before {
+          background: ${colors.lightBlue};
+          content: ' ';
+          display: block;
+          height: 0.25rem;
+          width: 2.5rem;
+        }
+      `}
+    >
       <Heading as="h3" color="coral" variant="h1">
         {highlight}
         <br />
-        <Text as="span" variant="h2">
+        <Text
+          as="span"
+          css={css`
+            display: block;
+          `}
+          variant="h2"
+        >
           {remainder.join(' ')}
         </Text>
       </Heading>
-      <Text>{text}</Text>
+      <Text
+        as="p"
+        css={css`
+          margin: 0;
+        `}
+      >
+        {text}
+      </Text>
     </Card>
   );
 };
@@ -78,28 +94,57 @@ export const IconCard: FC<IconCardProps> = ({ heading, icon, text }) => {
       <Heading as="h3" color="coral" variant="h3">
         {heading}
       </Heading>
-      <Text>{text}</Text>
+      <Text
+        as="p"
+        css={css`
+          margin: 0;
+        `}
+      >
+        {text}
+      </Text>
     </Card>
   );
 };
 
-<Card>
-  <DynamicIcon type="business" />
-  <Heading as="h3" color="coral" variant="h3">
-    Business
-  </Heading>
-  <Text>This is some text for the card content.</Text>
-</Card>;
+export type BlogCardProps = {
+  heading: string;
+  text: string;
+  href: string;
+  linkText: string;
+};
 
-<Card>
-  <Heading as="h3" color="coral" variant="h3">
-    Business
-  </Heading>
-  <Text>This is some text for the card content.</Text>
-  <Link variant="CTA" href="/">
-    Read more
-  </Link>
-</Card>;
+export const BlogCard: FC<BlogCardProps> = ({
+  heading,
+  href,
+  linkText,
+  text,
+}) => {
+  return (
+    <Card>
+      <Heading as="h3" color="coral" variant="h3">
+        {heading}
+      </Heading>
+      <Text
+        as="p"
+        css={css`
+          margin: 0;
+          margin-bottom: ${spacing.lg};
+        `}
+      >
+        {text}
+      </Text>
+      <Link
+        css={css`
+          width: fit-content;
+        `}
+        href={href}
+        variant="CTA"
+      >
+        {linkText}
+      </Link>
+    </Card>
+  );
+};
 
 export const CardGrid: FC = ({ children, ...props }) => {
   return (

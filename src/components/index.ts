@@ -12,7 +12,6 @@ export * from './GradientCircle';
 export * from './Header';
 export * from './Heading';
 export * from './HomePage';
-export * from './IconCard';
 export * from './icons';
 export * from './Layout';
 export * from './Link';

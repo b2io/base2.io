@@ -2,8 +2,16 @@ import { css } from '@emotion/react';
 import type { FC } from 'react';
 import React from 'react';
 
-import { Card, CardGrid, Layout, Link, StatCard } from '~/components';
-import { atMinTablet, atMinXL, colors, cssClamp, spacing } from '~/theme';
+import {
+  BlogCard,
+  Card,
+  CardGrid,
+  Heading,
+  Layout,
+  ResultCard,
+  Text,
+} from '~/components';
+import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
 import { BuiltForResults } from './BuiltForResults';
 import { DesignedForHumans } from './DesignedForHumans';
@@ -56,27 +64,36 @@ export const HomePage: FC<HomePageProps> = () => {
         `}
       />
       <CardGrid>
-        <StatCard
-          heading="Millions of users worldwide"
-          text="of users worldwide"
-          css={css`
-            &::before {
-              background-color: ${colors.lightBlue};
-              content: '';
-              display: block;
-              height: 0.25rem;
-              margin-bottom: 1rem;
-              width: 2.5rem;
-            }
-          `}
-        ></StatCard>
-        <Card></Card>
-        <Card />
+        <BlogCard
+          heading="Starting a new job"
+          href="/"
+          linkText="Continue reading"
+          text="This is some text for a blog card."
+        />
         <Card>
-          <Link href="#" variant="CTA">
-            Read more
-          </Link>
+          <Heading as="h3" color="coral" variant="h3">
+            This is a heading
+          </Heading>
+          <Text
+            as="p"
+            css={css`
+              margin: 0;
+            `}
+          >
+            This is some text for the card content
+          </Text>
         </Card>
+        <BlogCard
+          heading="Getting Started"
+          href="/"
+          linkText="Read more"
+          text="This is some text for a blog card"
+        />
+
+        <ResultCard
+          heading="Millions of users worldwide"
+          text="This is some text for the Result Card content."
+        />
       </CardGrid>
     </Layout>
   );
