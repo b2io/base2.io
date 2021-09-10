@@ -1,11 +1,8 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
+import { CardGrid, Heading, IconCard, Text } from '~/components';
 import { atMinXL, spacing } from '~/theme';
-
-import { Heading } from '../Heading';
-import { IconCard, IconCardGrid } from '../IconCard';
-import { Text } from '../Text';
 
 export const OurCulture: FC = (props) => {
   return (
@@ -34,35 +31,43 @@ export const OurCulture: FC = (props) => {
         for a challenge. Here&rsquo;s a little more about our guiding
         principles:
       </Text>
-      <IconCardGrid
+      <CardGrid
         css={css`
           margin-top: 5rem;
         `}
       >
-        <IconCard icon="transparency" heading="Transparency">
-          The best working relationships are built on trust and transparency. So
+        <IconCard
+          heading="Transparency"
+          icon="transparency"
+          text="The best working relationships are built on trust and transparency. So
           we communicate clearly and honestly&mdash;no jargon here. Only by
           being straightforward and honest can we get to the beautiful result
-          we’re all driving toward.
-        </IconCard>
-        <IconCard icon="sustainability" heading="Sustainability">
-          Our software is engineered for the long haul. Yes, we&rsquo;re going
+          we’re all driving toward."
+        ></IconCard>
+        <IconCard
+          heading="Sustainability"
+          icon="sustainability"
+          text="Our software is engineered for the long haul. Yes, we&rsquo;re going
           to meet today&rsquo;s spec. But we also build flexibility into every
           piece we ship. Through rigorous attention to detail and intentionality
-          in every decision, Base Two creates lasting value.
-        </IconCard>
-        <IconCard icon="empathy" heading="Empathy">
-          Empathy shines through in everything we do at Base Two&mdash;from
+          in every decision, Base Two creates lasting value."
+        ></IconCard>
+        <IconCard
+          heading="Empathy"
+          icon="empathy"
+          text="Empathy shines through in everything we do at Base Two&mdash;from
           relationships with clients to friendships with one another. By always
           keeping the user front and center, we create software that people
-          actually enjoy using.
-        </IconCard>
-        <IconCard icon="community" heading="Community">
-          We love to share what we&rsquo;ve learned with others. Whether
+          actually enjoy using."
+        ></IconCard>
+        <IconCard
+          heading="Community"
+          icon="community"
+          text="We love to share what we&rsquo;ve learned with others. Whether
           it&rsquo;s giving a talk at a local event or training teams on the
-          latest technology, teaching others is a core part of what we do.
-        </IconCard>
-      </IconCardGrid>
+          latest technology, teaching others is a core part of what we do."
+        ></IconCard>
+      </CardGrid>
     </section>
   );
 };
