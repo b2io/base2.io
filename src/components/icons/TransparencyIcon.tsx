@@ -4,10 +4,10 @@ import type { FC } from 'react';
 import { SvgProps } from './types';
 
 export const TransparencyIcon: FC<SvgProps> = ({
-  height = '100%',
+  height = '48px',
   id,
   title = 'Transparency',
-  width = '100%',
+  width = '48px',
   ...props
 }) => {
   const titleId = useId(id);
@@ -46,3 +46,5 @@ export const TransparencyIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default TransparencyIcon;
