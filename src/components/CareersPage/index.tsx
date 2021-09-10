@@ -7,7 +7,7 @@ import { PageHero } from '../PageHero';
 export const CareersPage: FC = () => {
   return (
     <Layout
-      description="Interested in a career at Base Two? Check out some of the open positions ae are hiring for. If you don't see any current openings, please reach out through our Contact page."
+      description="Solving seemingly impervious challenges."
       title="Careers"
     >
       <PageHero
