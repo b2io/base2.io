@@ -31,7 +31,7 @@ export const CaseStudyNavContainer = styled.section`
 `;
 
 export const CaseStudyContainer = styled.div`
-  margin-bottom: 4.5rem;
+  margin-bottom: 9rem;
   position: relative;
   width: ${cssClamp([13.5, 'mobile'], [29.125, 'desktop'])};
 
@@ -48,12 +48,15 @@ export const CaseStudyContainer = styled.div`
 `;
 
 export const CaseStudyInfo = styled.article`
-  margin-left: 2rem;
+  left: 50%;
+  /* margin-left: 2rem; */
   margin-top: -3rem;
-  position: relative;
+  position: absolute;
+  transform: translateX(-50%);
   z-index: 2;
   ${atMinXL} {
     left: -6rem;
+    margin-left: 0;
     margin-top: 0;
     position: absolute;
     top: 50%;
@@ -87,9 +90,7 @@ export const CaseStudy: FC<CaseStudyProps> = ({
         <NextImage
           alt={alt}
           css={css`
-            div {
-              position: absolute;
-            }
+            position: absolute;
           `}
           src={src}
         />
@@ -110,7 +111,13 @@ export const CaseStudy: FC<CaseStudyProps> = ({
         >
           {caseStudy}
         </Heading>
-        <Link href={href} variant="CTA">
+        <Link
+          css={css`
+            width: max-content;
+          `}
+          href={href}
+          variant="CTA"
+        >
           Explore case study
         </Link>
       </CaseStudyInfo>
