@@ -1,4 +1,5 @@
 import css from '@emotion/css';
+import styled from '@emotion/styled';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { Children, cloneElement, FC, ReactElement } from 'react';
 
@@ -13,6 +14,52 @@ export type CaseStudyProps = NextImageProps & {
   src: Exclude<NextImageProps['src'], string | StaticImageData>;
 };
 
+export const CaseStudyNavContainer = styled.section`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  margin-top: ${spacing.xxl2};
+  object-fit: contain;
+
+  ${atMinXL} {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: ${spacing.xxl3};
+  }
+`;
+
+export const CaseStudyContainer = styled.div`
+  margin-bottom: 4.5rem;
+  position: relative;
+  width: ${cssClamp([13.5, 'mobile'], [29.125, 'desktop'])};
+
+  &:nth-of-type(2) article {
+    right: unset;
+    ${atMinXL} {
+      right: -3rem;
+      text-align: right;
+    }
+  }
+  ${atMinXL} {
+    margin-bottom: 0;
+  }
+`;
+
+export const CaseStudyInfo = styled.article`
+  left: 0;
+  margin-top: 1rem;
+  position: unset;
+  z-index: 2;
+  ${atMinXL} {
+    left: -6rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+`;
+
 export const CaseStudy: FC<CaseStudyProps> = ({
   client,
   href,
@@ -21,24 +68,7 @@ export const CaseStudy: FC<CaseStudyProps> = ({
   src,
 }) => {
   return (
-    <div
-      css={css`
-        margin-bottom: 4.5rem;
-        position: relative;
-        width: ${cssClamp([13.5, 'mobile'], [29.125, 'desktop'])};
-
-        &:nth-of-type(2) article {
-          right: unset;
-          ${atMinXL} {
-            right: -3rem;
-            text-align: right;
-          }
-        }
-        ${atMinXL} {
-          margin-bottom: 0;
-        }
-      `}
-    >
+    <CaseStudyContainer>
       <NextImage
         alt={alt}
         css={css`
@@ -46,20 +76,7 @@ export const CaseStudy: FC<CaseStudyProps> = ({
         `}
         src={src}
       />
-      <article
-        css={css`
-          left: 0;
-          margin-top: 1rem;
-          position: unset;
-          z-index: 2;
-          ${atMinXL} {
-            left: -6rem;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-          }
-        `}
-      >
+      <CaseStudyInfo>
         <Text as="span">{client}</Text>
         <Heading
           as="h2"
@@ -78,34 +95,17 @@ export const CaseStudy: FC<CaseStudyProps> = ({
         <Link href={href} variant="CTA">
           Explore case study
         </Link>
-      </article>
-    </div>
+      </CaseStudyInfo>
+    </CaseStudyContainer>
   );
 };
 
 export const CaseStudyNav: FC = ({ children, ...props }) => {
   return (
-    <section
-      css={css`
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-
-        margin-top: ${spacing.xxl2};
-        object-fit: contain;
-
-        ${atMinXL} {
-          flex-direction: row;
-          gap: 2rem;
-          justify-content: center;
-          margin-bottom: ${spacing.xxl3};
-        }
-      `}
-      {...props}
-    >
+    <CaseStudyNavContainer {...props}>
       {Children.map(children, (child) =>
         cloneElement(child as ReactElement<any>, { as: 'div' }),
       )}
-    </section>
+    </CaseStudyNavContainer>
   );
 };
