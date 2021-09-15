@@ -48,16 +48,29 @@ export const CaseStudyContainer = styled.div`
 `;
 
 export const CaseStudyInfo = styled.article`
-  left: 0;
-  margin-top: 1rem;
-  position: unset;
+  margin-left: 2rem;
+  margin-top: -3rem;
+  position: relative;
   z-index: 2;
   ${atMinXL} {
     left: -6rem;
+    margin-top: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
+`;
+
+export const OverlayWrapper = styled.div`
+  position: relative;
+`;
+
+export const Overlay = styled.div`
+  background: rgba(35, 35, 100, 0.8);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 `;
 
 export const CaseStudy: FC<CaseStudyProps> = ({
@@ -69,13 +82,18 @@ export const CaseStudy: FC<CaseStudyProps> = ({
 }) => {
   return (
     <CaseStudyContainer>
-      <NextImage
-        alt={alt}
-        css={css`
-          opacity: 0.3;
-        `}
-        src={src}
-      />
+      <OverlayWrapper>
+        <Overlay />
+        <NextImage
+          alt={alt}
+          css={css`
+            div {
+              position: absolute;
+            }
+          `}
+          src={src}
+        />
+      </OverlayWrapper>
       <CaseStudyInfo>
         <Text as="span">{client}</Text>
         <Heading
