@@ -4,7 +4,7 @@ import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { Children, cloneElement, FC, ReactElement } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import { atMinXL, cssClamp, spacing } from '~/theme';
+import { atMinXL, colors, cssClamp, spacing } from '~/theme';
 
 export type CaseStudyProps = NextImageProps & {
   alt: string;
@@ -69,8 +69,9 @@ export const OverlayWrapper = styled.div`
 `;
 
 export const Overlay = styled.div`
-  background: rgba(35, 35, 100, 0.8);
+  background: ${colors.midBlue};
   height: 100%;
+  mix-blend-mode: hard-light;
   position: absolute;
   width: 100%;
   z-index: 1;
@@ -90,7 +91,7 @@ export const CaseStudy: FC<CaseStudyProps> = ({
         <NextImage
           alt={alt}
           css={css`
-            position: absolute;
+            position: relative;
           `}
           src={src}
         />
