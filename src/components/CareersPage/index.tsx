@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { Layout } from '~/components';
 
 import { PageHero } from '../PageHero';
+import { WorkingAtB2 } from './WorkingAtB2';
 
 export const CareersPage: FC = () => {
   return (
@@ -20,6 +21,7 @@ export const CareersPage: FC = () => {
         ]}
         text="Solving seemingly impervious challenges."
       />
+      <WorkingAtB2 />
     </Layout>
   );
 };
