@@ -23,8 +23,6 @@ export type PositionProps = {
   description: string;
 };
 
-// Create a styled component for posiiton
-// TODO: create type props to pass down
 export const Position: FC<PositionProps> = ({ description, role }) => {
   return (
     <PositionContainer>
