@@ -73,7 +73,7 @@ export const OpenPositions: FC = ({ children }) => {
         ${atMinXL} {
           margin-left: ${spacing.marginXl};
           margin-right: ${spacing.marginXl};
-          margin-top: ${spacing.xxl};
+          margin-top: ${spacing.xxl5};
         }
       `}
     >

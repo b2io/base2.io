@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import { Card, CardGrid, Heading, IconCard } from '~/components';
-import { atMinXL, spacing } from '~/theme';
+import { atMinTablet, atMinXL, spacing } from '~/theme';
 
 export const WorkingAtB2: FC = () => {
   return (
@@ -39,7 +39,11 @@ export const WorkingAtB2: FC = () => {
       </Card>
       <CardGrid
         css={css`
-          margin-bottom: 5rem;
+          margin-bottom: ${spacing.xxl1};
+
+          ${atMinTablet} {
+            margin-bottom: ${spacing.xxl5};
+          }
         `}
       >
         <IconCard

@@ -2,82 +2,102 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { FC, useState } from 'react';
 
-import { Heading, Text } from '~/components';
-import { atMinTablet, colors, spacing } from '~/theme';
+import { GradientCircle, Heading } from '~/components';
+import { atMinXL, atMinXXL, colors, cssClamp, spacing } from '~/theme';
 
-export type BenefitProps = {
-  benefit: string;
-  info: string;
-};
+import { benefitsData } from './BenefitsData';
 
-export const Container = styled.section`
-  display: block;
-  margin-bottom: 4rem;
-  ${atMinTablet} {
-    display: none;
-  }
-`;
+const circleDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
 
-export const BenefitItem = styled.article`
-  /* background: gray; */
-  border-bottom: 1px solid rgba(169, 180, 217, 0.2);
-  /* margin-bottom: 1rem; */
-  padding: 2rem 0;
-`;
-
-export const BenefitHeader = styled.header`
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  gap: ${spacing.sm};
-  justify-content: space-between;
-  .open {
-    color: ${colors.coral};
-    transition: color 0.3s ease;
-  }
-`;
-
-export const Toggle = styled.button`
-  align-items: center;
-  align-self: center;
+const Button = styled.button`
   background: transparent;
   border: none;
-  color: ${colors.coral};
   cursor: pointer;
-  display: flex;
-  font-size: 2rem;
-  height: 2rem;
-  justify-content: center;
-  width: 2rem;
+  margin-bottom: ${spacing.xs};
+  outline: none;
+  text-align: right;
 `;
 
-export const Benefit: FC<BenefitProps> = ({ benefit, info }) => {
-  const [showInfo, setShowInfo] = useState(false);
-  return (
-    <BenefitItem>
-      <BenefitHeader onClick={() => setShowInfo(!showInfo)}>
-        <Heading as="h2" variant="h2" className={showInfo ? 'open' : ''}>
-          {benefit}
-        </Heading>
-        <Toggle onClick={() => setShowInfo(!showInfo)}>
-          {showInfo ? '-' : '+'}
-        </Toggle>
-      </BenefitHeader>
-      {showInfo && (
-        <Text
-          as="p"
-          css={css`
-            margin-top: ${spacing.sm};
-            max-width: 36.688rem;
-          `}
-        >
-          {info}
-        </Text>
-      )}
-    </BenefitItem>
-  );
-};
+export const Benefits: FC = () => {
+  const benefits = benefitsData;
+  const [value, setValue] = useState(0);
 
-export const Benefits: FC = ({ children }) => {
-  return <Container>{children}</Container>;
+  const { text } = benefits[value];
+  return (
+    <section
+      css={css`
+        display: none;
+        ${atMinXXL} {
+          display: grid;
+          gap: 20rem;
+          grid-template-columns: 1fr 1fr;
+          margin-bottom: ${spacing.xxl};
+          margin-top: ${spacing.xxl};
+          position: relative;
+        }
+      `}
+    >
+      <ul
+        css={css`
+          list-style: none;
+          padding: 0;
+          text-align: right;
+          z-index: 1;
+        `}
+      >
+        {benefits.map((item, index) => {
+          return (
+            <li key={item.id}>
+              <Button key={item.id} onMouseEnter={() => setValue(index)}>
+                <Heading
+                  as="h2"
+                  css={css`
+                    margin-bottom: ${spacing.md};
+                    transition: color 0.3s ease;
+                    &:hover {
+                      color: ${colors.coral};
+                    }
+                  `}
+                  variant="h2"
+                >
+                  {item.benefit}
+                </Heading>
+              </Button>
+            </li>
+          );
+        })}
+      </ul>
+      <GradientCircle
+        css={css`
+          height: ${circleDimensionsCalc};
+          position: absolute;
+          right: calc(77.5% - ${circleDimensionsCalc});
+          top: -16rem;
+          width: ${circleDimensionsCalc};
+
+          ${atMinXL} {
+            right: -22rem;
+          }
+        `}
+      />
+      <article
+        css={css`
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          z-index: 1;
+        `}
+      >
+        <Heading
+          as="h2"
+          css={css`
+            max-width: 700px;
+          `}
+          variant="h3"
+        >
+          {text}
+        </Heading>
+      </article>
+    </section>
+  );
 };
