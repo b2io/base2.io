@@ -3,11 +3,18 @@ import styled from '@emotion/styled';
 import { FC, useState } from 'react';
 
 import { GradientCircle, Heading } from '~/components';
-import { atMinXL, atMinXXL, colors, cssClamp, spacing } from '~/theme';
+import { atMinXL, colors, cssClamp, spacing } from '~/theme';
 
 import { benefitsData } from './BenefitsData';
 
 const circleDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
+
+const BenefitsList = styled.ul`
+  list-style: none;
+  padding: 0;
+  text-align: right;
+  z-index: 1;
+`;
 
 const Button = styled.button`
   background: transparent;
@@ -26,18 +33,15 @@ export const Benefits: FC = () => {
   return (
     <section
       css={css`
-        display: none;
-        ${atMinXXL} {
-          display: grid;
-          gap: 20rem;
-          grid-template-columns: 1fr 1fr;
-          margin-bottom: ${spacing.xxl};
-          margin-top: ${spacing.xxl};
-          position: relative;
-        }
+        display: grid;
+        gap: 20rem;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: ${spacing.xxl};
+        margin-top: ${spacing.xxl};
+        position: relative;
       `}
     >
-      <ul
+      <BenefitsList
         css={css`
           list-style: none;
           padding: 0;
@@ -66,7 +70,7 @@ export const Benefits: FC = () => {
             </li>
           );
         })}
-      </ul>
+      </BenefitsList>
       <GradientCircle
         css={css`
           height: ${circleDimensionsCalc};
