@@ -75,7 +75,7 @@ const ContactInfo = styled.article`
   margin-bottom: ${cssClamp([3, 'mobile'], [5, 'tablet'])};
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   background: transparent;
   border: 1px solid ${colors.coral};
   color: ${colors.offWhite};

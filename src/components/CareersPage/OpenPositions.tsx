@@ -6,6 +6,8 @@ import React from 'react';
 import { Card, Heading, Text } from '~/components';
 import { atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
+import { Button } from '../ContactPage/ContactForm';
+
 export const PositionContainer = styled.div`
   background: ${colors.darkBlueAlt};
   margin-bottom: ${spacing.xs};
@@ -13,24 +15,6 @@ export const PositionContainer = styled.div`
   width: 100%;
   ${atMinTablet} {
     padding: ${spacing.xxl1} 12rem;
-  }
-`;
-
-const Button = styled.button`
-  background: transparent;
-  border: 1px solid ${colors.coral};
-  color: ${colors.offWhite};
-  cursor: pointer;
-  font-size: 1.375rem;
-  font-variation-settings: 'wght' 650;
-  padding: ${spacing.xs} ${spacing.lg};
-  transition: background 0.3s ease;
-  width: 100%;
-  &:hover {
-    background: ${colors.coral};
-  }
-  ${atMinTablet} {
-    width: auto;
   }
 `;
 
@@ -61,7 +45,16 @@ export const Position: FC<PositionProps> = ({ description, role }) => {
       >
         {description}
       </Text>
-      <Button>Apply</Button>
+      <Button
+        css={css`
+          width: 100%;
+          ${atMinTablet} {
+            width: auto;
+          }
+        `}
+      >
+        Apply
+      </Button>
     </PositionContainer>
   );
 };

@@ -9,6 +9,15 @@ import { benefitsData } from './BenefitsData';
 
 const circleDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
 
+const BenefitsContainer = styled.section`
+  display: grid;
+  gap: 20rem;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: ${spacing.xxl};
+  margin-top: ${spacing.xxl};
+  position: relative;
+`;
+
 const BenefitsList = styled.ul`
   list-style: none;
   padding: 0;
@@ -16,7 +25,7 @@ const BenefitsList = styled.ul`
   z-index: 1;
 `;
 
-const Button = styled.button`
+const BenefitListItem = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
@@ -25,22 +34,20 @@ const Button = styled.button`
   text-align: right;
 `;
 
+const BenefitDescription = styled.article`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+`;
+
 export const Benefits: FC = () => {
   const benefits = benefitsData;
   const [value, setValue] = useState(0);
 
   const { text } = benefits[value];
   return (
-    <section
-      css={css`
-        display: grid;
-        gap: 20rem;
-        grid-template-columns: 1fr 1fr;
-        margin-bottom: ${spacing.xxl};
-        margin-top: ${spacing.xxl};
-        position: relative;
-      `}
-    >
+    <BenefitsContainer>
       <BenefitsList
         css={css`
           list-style: none;
@@ -52,7 +59,10 @@ export const Benefits: FC = () => {
         {benefits.map((item, index) => {
           return (
             <li key={item.id}>
-              <Button key={item.id} onMouseEnter={() => setValue(index)}>
+              <BenefitListItem
+                key={item.id}
+                onMouseEnter={() => setValue(index)}
+              >
                 <Heading
                   as="h2"
                   css={css`
@@ -66,7 +76,7 @@ export const Benefits: FC = () => {
                 >
                   {item.benefit}
                 </Heading>
-              </Button>
+              </BenefitListItem>
             </li>
           );
         })}
@@ -84,24 +94,11 @@ export const Benefits: FC = () => {
           }
         `}
       />
-      <article
-        css={css`
-          align-items: center;
-          display: flex;
-          justify-content: center;
-          z-index: 1;
-        `}
-      >
-        <Heading
-          as="h2"
-          css={css`
-            max-width: 700px;
-          `}
-          variant="h3"
-        >
+      <BenefitDescription>
+        <Heading as="h2" variant="h3">
           {text}
         </Heading>
-      </article>
-    </section>
+      </BenefitDescription>
+    </BenefitsContainer>
   );
 };
