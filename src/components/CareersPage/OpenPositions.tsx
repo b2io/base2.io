@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
-import React from 'react';
 
 import { Card, Heading, Text } from '~/components';
 import { atMinTablet, atMinXL, colors, spacing } from '~/theme';
