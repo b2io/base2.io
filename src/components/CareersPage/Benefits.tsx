@@ -5,7 +5,7 @@ import { FC, useState } from 'react';
 import { GradientCircle, Heading } from '~/components';
 import { atMinXL, colors, cssClamp, spacing } from '~/theme';
 
-import { benefitsData } from './BenefitsData';
+import { benefitsData } from './CareersData';
 
 const circleDimensionsCalc = cssClamp([32, 'mobile'], [69.5, 'tablet']);
 
