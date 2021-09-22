@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { FC, useState } from 'react';
 
 import { Heading, Text } from '~/components';
-import { colors, spacing } from '~/theme';
+import { atMinXL, colors, spacing } from '~/theme';
 
 export type BenefitProps = {
   benefit: string;
@@ -46,7 +46,7 @@ export const Benefit: FC<BenefitProps> = ({ benefit, info }) => {
   return (
     <BenefitAccordionItem>
       <BenefitAccordionHeader onClick={() => setShowInfo(!showInfo)}>
-        <Heading as="h2" variant="h2" className={showInfo ? 'open' : ''}>
+        <Heading as="h2" className={showInfo ? 'open' : ''} variant="h2">
           {benefit}
         </Heading>
         <Toggle onClick={() => setShowInfo(!showInfo)}>
@@ -74,6 +74,10 @@ export const BenefitsAccordion: FC = ({ children }) => {
     <section
       css={css`
         margin-bottom: ${spacing.xxl2};
+        ${atMinXL} {
+          margin-left: ${spacing.marginXl};
+          margin-right: ${spacing.marginXl};
+        }
       `}
     >
       {children}

@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import { Card, CardGrid, Heading, IconCard } from '~/components';
-import { atMinTablet, atMinXL, spacing } from '~/theme';
+import { atMinXL, spacing } from '~/theme';
 
 export const WorkingAtB2: FC = () => {
   return (
@@ -23,10 +23,10 @@ export const WorkingAtB2: FC = () => {
         `}
       >
         <Heading
+          as="h2"
           css={css`
             margin-bottom: ${spacing.sm};
           `}
-          as="h2"
           variant="h2"
         >
           Working at Base Two
@@ -40,10 +40,6 @@ export const WorkingAtB2: FC = () => {
       <CardGrid
         css={css`
           margin-bottom: ${spacing.xxl1};
-
-          ${atMinTablet} {
-            margin-bottom: ${spacing.xxl5};
-          }
         `}
       >
         <IconCard
@@ -55,7 +51,6 @@ export const WorkingAtB2: FC = () => {
           questions, and daily standups provide an opportunity for you to weigh
           in on our progress."
         />
-
         <IconCard
           heading="Community"
           icon="community"

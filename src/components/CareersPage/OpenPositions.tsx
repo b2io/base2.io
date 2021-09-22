@@ -27,7 +27,7 @@ export const OpenPositions: FC = () => {
         ${atMinXL} {
           margin-left: ${spacing.marginXl};
           margin-right: ${spacing.marginXl};
-          margin-top: ${spacing.xxl5};
+          margin-top: ${spacing.xxl1};
         }
       `}
     >
@@ -54,29 +54,27 @@ export const OpenPositions: FC = () => {
 
       {jobs.map((job) => {
         return (
-          <>
-            <PositionContainer key={job.id}>
-              <Heading
-                as="h3"
-                color="coral"
-                css={css`
-                  font-variation-settings: 'wght' 700;
-                `}
-                variant="h3"
-              >
-                {job.job}
-              </Heading>
+          <PositionContainer key={job.id}>
+            <Heading
+              as="h3"
+              color="coral"
+              css={css`
+                font-variation-settings: 'wght' 700;
+              `}
+              variant="h3"
+            >
+              {job.job}
+            </Heading>
 
-              <Text
-                css={css`
-                  margin-bottom: ${spacing.lg};
-                `}
-              >
-                {job.desc}
-              </Text>
-              <Button>Apply</Button>
-            </PositionContainer>
-          </>
+            <Text
+              css={css`
+                margin-bottom: ${spacing.lg};
+              `}
+            >
+              {job.desc}
+            </Text>
+            <Button>Apply</Button>
+          </PositionContainer>
         );
       })}
     </section>

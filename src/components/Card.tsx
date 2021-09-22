@@ -58,6 +58,7 @@ export type ResultCardProps = {
 
 export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
   const [highlight, ...remainder] = heading.split(' ');
+
   return (
     <Card
       css={css`
