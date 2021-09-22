@@ -6,7 +6,7 @@ import { Card, Heading, Text } from '~/components';
 import { atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
 import { Button } from '../ContactPage/ContactForm';
-import { PositionsData } from './CareersData';
+import { PositionsData } from './PositionsData';
 
 export const PositionContainer = styled.div`
   background: ${colors.darkBlueAlt};
