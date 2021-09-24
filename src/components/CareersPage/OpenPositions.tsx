@@ -1,12 +1,13 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import { Card, Heading, Text } from '~/components';
 import { atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
 import { Button } from '../ContactPage/ContactForm';
-import { PositionsData } from './PositionsData';
+
+type PositionProps = { description: string; title: string };
 
 export const PositionContainer = styled.div`
   background: ${colors.darkBlueAlt};
@@ -18,9 +19,33 @@ export const PositionContainer = styled.div`
   }
 `;
 
-export const OpenPositions: FC = () => {
-  const jobs = PositionsData;
+export const Position: FC<PositionProps> = ({ description, title }) => {
+  return (
+    <PositionContainer>
+      <Heading
+        as="h3"
+        color="coral"
+        css={css`
+          font-variation-settings: 'wght' 700;
+        `}
+        variant="h3"
+      >
+        {title}
+      </Heading>
 
+      <Text
+        css={css`
+          margin-bottom: ${spacing.lg};
+        `}
+      >
+        {description}
+      </Text>
+      <Button>Apply</Button>
+    </PositionContainer>
+  );
+};
+
+export const OpenPositions: FC = () => {
   return (
     <section
       css={css`
@@ -51,32 +76,22 @@ export const OpenPositions: FC = () => {
           besides and beyond development do we need the most.
         </Heading>
       </Card>
-
-      {jobs.map((job) => {
-        return (
-          <PositionContainer key={job.id}>
-            <Heading
-              as="h3"
-              color="coral"
-              css={css`
-                font-variation-settings: 'wght' 700;
-              `}
-              variant="h3"
-            >
-              {job.job}
-            </Heading>
-
-            <Text
-              css={css`
-                margin-bottom: ${spacing.lg};
-              `}
-            >
-              {job.desc}
-            </Text>
-            <Button>Apply</Button>
-          </PositionContainer>
-        );
-      })}
+      <Position
+        description="We are always looking for amazing people to work with us in Columbus, OH; Pittsburgh, PA; and Chicago, IL. If you are a talented and creative individual with strong people skills and experience building web applications with the latest front-end technologies, please apply."
+        title="Software Engineer"
+      />
+      <Position
+        description="We are always looking for amazing people to work with us in Columbus, OH; Pittsburgh, PA; and Chicago, IL. If you are a talented and creative individual with strong people skills and experience building web applications with the latest front-end technologies, please apply."
+        title="Senior Software Engineer"
+      />
+      <Position
+        description="We are always looking for amazing people to work with us in Columbus, OH; Pittsburgh, PA; and Chicago, IL. If you are a talented and creative individual with strong people skills and experience building web applications with the latest front-end technologies, please apply."
+        title="Mid/Senior Software Engineer"
+      />
+      <Position
+        description="We are always looking for amazing people to work with us in Columbus, OH; Pittsburgh, PA; and Chicago, IL. If you are a talented and creative individual with strong people skills and experience building web applications with the latest front-end technologies, please apply."
+        title="Junior Software Engineer"
+      />
     </section>
   );
 };

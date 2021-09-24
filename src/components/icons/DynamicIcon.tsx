@@ -8,7 +8,7 @@ const ICONS_BY_TYPE: {
 } = {
   business: dynamic(() => import('./BusinessIcon')),
   community: dynamic(() => import('./CommunityIcon')),
-  dash: dynamic(() => import('./DashIcon')),
+
   delivery: dynamic(() => import('./DeliveryIcon')),
   developer: dynamic(() => import('./DeveloperIcon')),
   discovery: dynamic(() => import('./DiscoveryIcon')),
@@ -25,7 +25,6 @@ export type DynamicIconProps = SvgProps & {
   type:
     | 'business'
     | 'community'
-    | 'dash'
     | 'delivery'
     | 'developer'
     | 'discovery'
