@@ -6,7 +6,7 @@ import { atMinXL, spacing } from '~/theme';
 
 export const Custom500Page: FC = () => {
   return (
-    <Layout noindex description="500 Error" title="Custom500ErrorPage">
+    <Layout description="500 Error" noindex title="Custom500ErrorPage">
       <div
         css={css`
           ${atMinXL} {

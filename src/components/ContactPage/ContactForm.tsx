@@ -141,12 +141,12 @@ export const Form: FC = () => {
       >
         Thanks for your message! We&apos;ll be in touch soon.
       </Heading>
-      <Button type="button" onClick={() => reset()}>
+      <Button onClick={() => reset()} type="button">
         Send another message?
       </Button>
     </ThankYouMessage>
   ) : (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form noValidate onSubmit={handleSubmit(onSubmit)}>
       <InputWrapper>
         <Label htmlFor="name">Hello, my name is:</Label>
         <FormInput
@@ -193,7 +193,7 @@ export const Form: FC = () => {
         />
         {errors.message && <Error>{errors.message.message}</Error>}
       </InputWrapper>
-      <Button type="submit" disabled={isSubmitting}>
+      <Button disabled={isSubmitting} type="submit">
         Submit
       </Button>
     </form>
@@ -220,8 +220,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="tel:6143981158"
-            target="_blank"
             rel="noopener"
+            target="_blank"
           >
             614.398.1158
           </Link>
@@ -242,8 +242,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="mailto:info@base2.io"
-            target="_blank"
             rel="noopener"
+            target="_blank"
           >
             info@base2.io
           </Link>
@@ -264,8 +264,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
-            target="_blank"
             rel="noopener"
+            target="_blank"
           >
             <address
               css={css`
