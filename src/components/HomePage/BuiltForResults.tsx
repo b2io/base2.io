@@ -64,7 +64,6 @@ export const BuiltForResults: FC = (props) => {
       >
         <Text
           as="span"
-          className="callout"
           css={css`
             display: block;
             left: ${cssClamp(
@@ -74,6 +73,7 @@ export const BuiltForResults: FC = (props) => {
             )};
             position: relative;
           `}
+          className="callout"
           variant="callout"
         >
           Built for

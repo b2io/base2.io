@@ -75,7 +75,7 @@ const ContactInfo = styled.article`
   margin-bottom: ${cssClamp([3, 'mobile'], [5, 'tablet'])};
 `;
 
-export const Button = styled.button`
+const Button = styled.button`
   background: transparent;
   border: 1px solid ${colors.coral};
   color: ${colors.offWhite};
@@ -141,12 +141,12 @@ export const Form: FC = () => {
       >
         Thanks for your message! We&apos;ll be in touch soon.
       </Heading>
-      <Button onClick={() => reset()} type="button">
+      <Button type="button" onClick={() => reset()}>
         Send another message?
       </Button>
     </ThankYouMessage>
   ) : (
-    <form noValidate onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <InputWrapper>
         <Label htmlFor="name">Hello, my name is:</Label>
         <FormInput
@@ -193,7 +193,7 @@ export const Form: FC = () => {
         />
         {errors.message && <Error>{errors.message.message}</Error>}
       </InputWrapper>
-      <Button disabled={isSubmitting} type="submit">
+      <Button type="submit" disabled={isSubmitting}>
         Submit
       </Button>
     </form>
@@ -220,8 +220,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="tel:6143981158"
-            rel="noopener"
             target="_blank"
+            rel="noopener"
           >
             614.398.1158
           </Link>
@@ -242,8 +242,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="mailto:info@base2.io"
-            rel="noopener"
             target="_blank"
+            rel="noopener"
           >
             info@base2.io
           </Link>
@@ -264,8 +264,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
-            rel="noopener"
             target="_blank"
+            rel="noopener"
           >
             <address
               css={css`
