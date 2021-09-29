@@ -104,6 +104,7 @@ export const QuotedImage: FC<QuotedImageProps> = ({
         <div>
           <Heading
             as="h2"
+            variant="quotationText"
             css={css`
               margin-bottom: ${spacing.md};
 
@@ -115,7 +116,6 @@ export const QuotedImage: FC<QuotedImageProps> = ({
                 margin-bottom: 0;
               }
             `}
-            variant="quotationText"
           >
             {quote}
           </Heading>

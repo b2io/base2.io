@@ -10,5 +10,5 @@ const HeroImage = styled.img`
 `;
 
 export const CaseStudyHeroImage: FC<ImageProps> = ({ alt, src }) => {
-  return <HeroImage alt={alt} src={src} />;
+  return <HeroImage src={src} alt={alt} />;
 };

@@ -80,17 +80,18 @@ export const HowWeBuild: FC = (props) => {
       </div>
       <Heading
         as="h2"
+        variant="h2"
         css={css`
           margin-bottom: ${spacing.xs};
           position: relative;
           z-index: 1;
         `}
-        variant="h2"
       >
         How we build.
       </Heading>
       <Heading
         as="h3"
+        variant="h3"
         css={css`
           margin-bottom: ${spacing.xxl};
           max-width: 51.938rem;
@@ -101,7 +102,6 @@ export const HowWeBuild: FC = (props) => {
             margin-bottom: ${spacing.xxl1};
           }
         `}
-        variant="h3"
       >
         Let&rsquo;s face it&mdash;things pop up along the way. Our development
         process is intentionally flexible to allow us to accommodate the
@@ -119,30 +119,30 @@ export const HowWeBuild: FC = (props) => {
           text="Your idea forms the basis of our process. We work with you to fully
           understand the story you want communicated or the problem you want
           solved—and how it fits into your entire ecosystem."
-        />
+        ></IconCard>
         <IconCard
           heading="Execution"
           icon="execution"
           text="We follow a software development methodology called agile, involving
           two-week development sprints, daily standups, demos of completed
           tasks, and retrospectives for feedback and course correction."
-        />
+        ></IconCard>
         <IconCard
-          heading="Delivery"
-          icon="delivery"
           text=" At the end of each sprint, we release software and gather user
           feedback to better shape it moving forward. We also debut completed
           software outside of the production environment, take it fully live,
           and share it with the world."
-        />
+          icon="delivery"
+          heading="Delivery"
+        ></IconCard>
         <IconCard
-          heading="Support"
-          icon="support"
           text=" Support completes the loop, but not our relationship. During this
           phase, a concentrated team of developers will be available to fix bugs
           and make any necessary adjustments to the structure, flow and
           documentation."
-        />
+          icon="support"
+          heading="Support"
+        ></IconCard>
       </CardGrid>
       <Link href="/contact" variant="CTA">
         Let&apos;s make a plan together
