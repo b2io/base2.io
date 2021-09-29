@@ -4,7 +4,8 @@ export * from './BatteryXTPage';
 export * from './BlogPage';
 export * from './Card';
 export * from './CareersPage';
-export * from './CaseStudy';
+export * from './CaseStudy/CaseStudyHeaderPane';
+export * from './CaseStudy/CaseStudyIntroContentPane';
 export * from './ColorSnapVisualizerPage';
 export * from './Container';
 export * from './ContactPage';
@@ -29,4 +30,3 @@ export * from './Text';
 export * from './useAnimationWhileVisible';
 export * from './useMouseAnimationWhileVisible';
 export * from './WorkPage';
-

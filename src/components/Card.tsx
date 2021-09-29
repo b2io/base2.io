@@ -160,6 +160,29 @@ export const BlogCard: FC<BlogCardProps> = ({
   );
 };
 
+export type BasicCardProps = {
+  heading: string;
+  text: string;
+};
+
+export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
+  return (
+    <Card>
+      <Heading as="h2" variant="h2">
+        {heading}
+      </Heading>
+      <Text
+        as="p"
+        css={css`
+          margin: 0;
+        `}
+      >
+        {text}
+      </Text>
+    </Card>
+  );
+};
+
 export const CardGrid: FC = ({ children, ...props }) => {
   return (
     <ul
