@@ -4,7 +4,6 @@ import type { FC } from 'react';
 import { Layout } from '~/components';
 import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
-import { CaseStudy, CaseStudyNav } from '../WorkPage/CaseStudyNav';
 import { BuiltForResults } from './BuiltForResults';
 import { DesignedForHumans } from './DesignedForHumans';
 import { FeaturedCaseStudy } from './FeaturedCaseStudy';
@@ -55,22 +54,6 @@ export const HomePage: FC<HomePageProps> = () => {
           }
         `}
       />
-      <CaseStudyNav>
-        <CaseStudy
-          alt="netjets case study image"
-          client="NetJets"
-          caseStudy="Fly NetJets"
-          href="/work/netjets"
-          src={require('../WorkPage/images/netjets.jpg')}
-        />
-        <CaseStudy
-          alt="scopebuilder case study image"
-          caseStudy="ScopeBuilder"
-          client="AEP"
-          href="/work/scopebuilder"
-          src={require('../WorkPage/images/scopebuilder.jpg')}
-        />
-      </CaseStudyNav>
     </Layout>
   );
 };
