@@ -40,7 +40,7 @@ export const GradientCircle: FC = (props) => {
   return (
     <svg height="100" ref={ref} viewBox="0 0 100 100" width="100" {...props}>
       <defs>
-        <motion.radialGradient fx={fx} fy={fy} r="100%" id={gradientId}>
+        <motion.radialGradient fx={fx} fy={fy} id={gradientId} r="100%">
           {interpolateColors([colors.coral, colors.darkBlueAlt], 1).map(
             (color, index, colors) => {
               const offset = index / (colors.length - 1);

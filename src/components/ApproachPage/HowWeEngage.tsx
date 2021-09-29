@@ -17,16 +17,15 @@ export const HowWeEngage: FC = (props) => {
     >
       <Heading
         as="h2"
-        variant="h2"
         css={css`
           margin-bottom: ${spacing.xs};
         `}
+        variant="h2"
       >
         How we engage.
       </Heading>
       <Heading
         as="h3"
-        variant="h3"
         css={css`
           margin-bottom: ${spacing.xxl};
           max-width: 51.938rem;
@@ -35,6 +34,7 @@ export const HowWeEngage: FC = (props) => {
             margin-bottom: ${spacing.xxl1};
           }
         `}
+        variant="h3"
       >
         Whether we&apos;re embedded in your team or managing a project
         internally, you&apos;ll hear from us often.
@@ -53,7 +53,6 @@ export const HowWeEngage: FC = (props) => {
           questions, and daily standups provide an opportunity for you to weigh
           in on our progress."
         />
-
         <IconCard
           heading="Embedded"
           icon="embedded"

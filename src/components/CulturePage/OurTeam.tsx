@@ -67,9 +67,9 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
         >
           <NextImage
             alt={name}
-            placeholder="blur"
             height={600}
             layout="responsive"
+            placeholder="blur"
             src={src}
             width={465}
           />
@@ -229,83 +229,83 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
         {...props}
       >
         <TeamMemberGridItem
-          name="Drew Miller"
           location="Columbus, OH"
+          name="Drew Miller"
           src={require('./images/dmiller.jpg')}
         />
         <TeamMemberGridItem
-          name="Sean Ludemann"
           location="Columbus, OH"
+          name="Sean Ludemann"
           src={require('./images/sludemann.jpg')}
         />
         <TeamMemberGridItem
-          name="Tony Borres"
           location="Pittsburgh, PA"
+          name="Tony Borres"
           src={require('./images/tborres.jpg')}
         />
         <TeamMemberGridItem
-          name="Chris Hawkins"
           location="Columbus, OH"
+          name="Chris Hawkins"
           src={require('./images/chawkins.jpg')}
         />
         <TeamMemberGridItem
-          name="Franky Martinez"
           location="Chicago, IL"
+          name="Franky Martinez"
           src={require('./images/fmartinez.jpg')}
         />
         <TeamMemberGridItem
-          name="Nathan Kessler"
           location="Columbus, OH"
+          name="Nathan Kessler"
           src={require('./images/nkessler.jpg')}
         />
         <TeamMemberGridItem
-          name="Reed Dunkle"
           location="Pittsburgh, PA"
+          name="Reed Dunkle"
           src={require('./images/rdunkle.jpg')}
         />
         <TeamMemberGridItem
-          name="Mike Condo"
           location="Columbus, OH"
+          name="Mike Condo"
           src={require('./images/mcondo.jpg')}
         />
         <TeamMemberGridItem
-          name="Ashley Singleton"
           location="Atlanta, GA"
+          name="Ashley Singleton"
           src={require('./images/asingleton.jpg')}
         />
         <TeamMemberGridItem
-          name="Zachary Chay-Dolan"
           location="Pittsburgh, PA"
+          name="Zachary Chay-Dolan"
           src={require('./images/zchay-dolan.jpg')}
         />
         <TeamMemberGridItem
-          name="Nelson Foltz"
           location="Pittsburgh, PA"
+          name="Nelson Foltz"
           src={require('./images/nfoltz.jpg')}
         />
         <TeamMemberGridItem
-          name="Laura Padilla"
           location="Philadelphia, PA"
+          name="Laura Padilla"
           src={require('./images/lpadilla.jpg')}
         />
         <TeamMemberGridItem
-          name="Eric Waight"
           location="Pittsburgh, PA"
+          name="Eric Waight"
           src={require('./images/ewaight.jpg')}
         />
         <TeamMemberGridItem
-          name="Javier Orejarena"
           location="Miami, FL"
+          name="Javier Orejarena"
           src={require('./images/jorejarena.jpg')}
         />
         <TeamMemberGridItem
-          name="Melissa Lam"
           location="New York, NY"
+          name="Melissa Lam"
           src={require('./images/mlam.jpg')}
         />
         <TeamMemberGridItem
-          name="Kate Hansen"
           location="Pittsburgh, PA"
+          name="Kate Hansen"
           src={require('./images/khansen.jpg')}
         />
       </ul>

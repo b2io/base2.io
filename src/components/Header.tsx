@@ -19,6 +19,7 @@ const Root = styled.header`
   );
   height: 6.188rem;
   left: 0;
+  pointer-events: none;
   position: fixed;
   top: 0;
   width: 100%;
@@ -52,6 +53,7 @@ const Nav = styled.nav`
   ul {
     display: flex;
     list-style: none;
+    pointer-events: all;
   }
 
   li {

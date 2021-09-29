@@ -43,7 +43,7 @@ export const OurCulture: FC = (props) => {
           we communicate clearly and honestly&mdash;no jargon here. Only by
           being straightforward and honest can we get to the beautiful result
           we’re all driving toward."
-        ></IconCard>
+        />
         <IconCard
           heading="Sustainability"
           icon="sustainability"
@@ -51,7 +51,7 @@ export const OurCulture: FC = (props) => {
           to meet today&rsquo;s spec. But we also build flexibility into every
           piece we ship. Through rigorous attention to detail and intentionality
           in every decision, Base Two creates lasting value."
-        ></IconCard>
+        />
         <IconCard
           heading="Empathy"
           icon="empathy"
@@ -59,14 +59,14 @@ export const OurCulture: FC = (props) => {
           relationships with clients to friendships with one another. By always
           keeping the user front and center, we create software that people
           actually enjoy using."
-        ></IconCard>
+        />
         <IconCard
           heading="Community"
           icon="community"
           text="We love to share what we&rsquo;ve learned with others. Whether
           it&rsquo;s giving a talk at a local event or training teams on the
           latest technology, teaching others is a core part of what we do."
-        ></IconCard>
+        />
       </CardGrid>
     </section>
   );
