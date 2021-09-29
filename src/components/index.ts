@@ -1,6 +1,7 @@
 export * from './ApproachPage';
 export * from './BatteryXTPage';
 export * from './BlogPage';
+export * from './Card';
 export * from './CareersPage';
 export * from './ColorSnapVisualizerPage';
 export * from './Container';
@@ -11,7 +12,6 @@ export * from './GradientCircle';
 export * from './Header';
 export * from './Heading';
 export * from './HomePage';
-export * from './IconCard';
 export * from './icons';
 export * from './Layout';
 export * from './Link';
@@ -24,5 +24,5 @@ export * from './Text';
 export * from './useAnimationWhileVisible';
 export * from './useMouseAnimationWhileVisible';
 export * from './WorkPage';
-export * from './Custom404Page'
-export * from './Custom500Page'
+export * from './Custom404Page';
+export * from './Custom500Page';

@@ -55,6 +55,12 @@ const FormInput = styled.input`
   &::placeholder {
     font-size: 1rem;
   }
+
+  &:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px ${colors.darkBlue} inset;
+    -webkit-text-fill-color: ${colors.offWhite};
+    transition: background-color 5000s ease-in-out 0s;
+  }
 `;
 
 const ContactAside = styled.aside`
@@ -69,9 +75,10 @@ const ContactInfo = styled.article`
   margin-bottom: ${cssClamp([3, 'mobile'], [5, 'tablet'])};
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   background: transparent;
   border: 1px solid ${colors.coral};
+  color: ${colors.offWhite};
   cursor: pointer;
   font-size: 1.375rem;
   font-variation-settings: 'wght' 650;
@@ -79,7 +86,6 @@ const Button = styled.button`
   transition: background 0.3s ease;
   &:hover {
     background: ${colors.coral};
-    color: ${colors.offWhite};
   }
 `;
 
@@ -135,12 +141,12 @@ export const Form: FC = () => {
       >
         Thanks for your message! We&apos;ll be in touch soon.
       </Heading>
-      <Button type="button" onClick={() => reset()}>
+      <Button onClick={() => reset()} type="button">
         Send another message?
       </Button>
     </ThankYouMessage>
   ) : (
-    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <form noValidate onSubmit={handleSubmit(onSubmit)}>
       <InputWrapper>
         <Label htmlFor="name">Hello, my name is:</Label>
         <FormInput
@@ -187,7 +193,7 @@ export const Form: FC = () => {
         />
         {errors.message && <Error>{errors.message.message}</Error>}
       </InputWrapper>
-      <Button type="submit" disabled={isSubmitting}>
+      <Button disabled={isSubmitting} type="submit">
         Submit
       </Button>
     </form>
@@ -214,8 +220,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="tel:6143981158"
-            target="_blank"
             rel="noopener"
+            target="_blank"
           >
             614.398.1158
           </Link>
@@ -236,8 +242,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="mailto:info@base2.io"
-            target="_blank"
             rel="noopener"
+            target="_blank"
           >
             info@base2.io
           </Link>
@@ -258,8 +264,8 @@ export const Contact: FC = () => {
               font-variation-settings: 'wght' 300;
             `}
             href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
-            target="_blank"
             rel="noopener"
+            target="_blank"
           >
             <address
               css={css`

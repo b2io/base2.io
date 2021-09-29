@@ -29,6 +29,7 @@ export const Layout: FC<LayoutProps> = ({
   description,
   noindex,
   title,
+  ...props
 }) => {
   const router = useRouter();
   const slug = router.asPath.replace(/\/$/, '');
@@ -73,6 +74,7 @@ export const Layout: FC<LayoutProps> = ({
         exit="exit"
         initial="initial"
         variants={mainVariants}
+        {...props}
       >
         <Container>{children}</Container>
       </motion.main>

@@ -4,10 +4,10 @@ import type { FC } from 'react';
 import type { SvgProps } from './types';
 
 export const DiscoveryIcon: FC<SvgProps> = ({
-  height = '100%',
+  height = '48px',
   id,
   title = 'Discovery',
-  width = '100%',
+  width = '48px',
   ...props
 }) => {
   const titleId = useId(id);
@@ -45,3 +45,5 @@ export const DiscoveryIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default DiscoveryIcon;

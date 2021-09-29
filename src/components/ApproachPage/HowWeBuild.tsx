@@ -2,11 +2,11 @@ import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import {
+  CardGrid,
   DynamicImage,
   GradientCircle,
   Heading,
   IconCard,
-  IconCardGrid,
   Link,
 } from '~/components';
 import {
@@ -80,18 +80,17 @@ export const HowWeBuild: FC = (props) => {
       </div>
       <Heading
         as="h2"
-        variant="h2"
         css={css`
           margin-bottom: ${spacing.xs};
           position: relative;
           z-index: 1;
         `}
+        variant="h2"
       >
         How we build.
       </Heading>
       <Heading
         as="h3"
-        variant="h3"
         css={css`
           margin-bottom: ${spacing.xxl};
           max-width: 51.938rem;
@@ -102,40 +101,49 @@ export const HowWeBuild: FC = (props) => {
             margin-bottom: ${spacing.xxl1};
           }
         `}
+        variant="h3"
       >
         Let&rsquo;s face it&mdash;things pop up along the way. Our development
         process is intentionally flexible to allow us to accommodate the
         unexpected. While we work with everyone uniquely, a few steps are
         central to our approach.
       </Heading>
-      <IconCardGrid
+      <CardGrid
         css={css`
           margin-bottom: 5rem;
         `}
       >
-        <IconCard icon="discovery" heading="Discovery">
-          Your idea forms the basis of our process. We work with you to fully
+        <IconCard
+          heading="Discovery"
+          icon="discovery"
+          text="Your idea forms the basis of our process. We work with you to fully
           understand the story you want communicated or the problem you want
-          solved—and how it fits into your entire ecosystem.
-        </IconCard>
-        <IconCard icon="execution" heading="Execution">
-          We follow a software development methodology called agile, involving
+          solved—and how it fits into your entire ecosystem."
+        />
+        <IconCard
+          heading="Execution"
+          icon="execution"
+          text="We follow a software development methodology called agile, involving
           two-week development sprints, daily standups, demos of completed
-          tasks, and retrospectives for feedback and course correction.
-        </IconCard>
-        <IconCard icon="delivery" heading="Delivery">
-          At the end of each sprint, we release software and gather user
+          tasks, and retrospectives for feedback and course correction."
+        />
+        <IconCard
+          heading="Delivery"
+          icon="delivery"
+          text=" At the end of each sprint, we release software and gather user
           feedback to better shape it moving forward. We also debut completed
           software outside of the production environment, take it fully live,
-          and share it with the world.
-        </IconCard>
-        <IconCard icon="support" heading="Support">
-          Support completes the loop, but not our relationship. During this
+          and share it with the world."
+        />
+        <IconCard
+          heading="Support"
+          icon="support"
+          text=" Support completes the loop, but not our relationship. During this
           phase, a concentrated team of developers will be available to fix bugs
           and make any necessary adjustments to the structure, flow and
-          documentation.
-        </IconCard>
-      </IconCardGrid>
+          documentation."
+        />
+      </CardGrid>
       <Link href="/contact" variant="CTA">
         Let&apos;s make a plan together
       </Link>

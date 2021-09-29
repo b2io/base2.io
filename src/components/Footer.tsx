@@ -136,6 +136,9 @@ export const Footer: FC = (prop) => {
               <NavLink href="/culture">Culture</NavLink>
             </li>
             <li>
+              <NavLink href="/careers">Careers</NavLink>
+            </li>
+            <li>
               <NavLink href="/contact">Contact</NavLink>
             </li>
           </ul>
@@ -149,8 +152,8 @@ export const Footer: FC = (prop) => {
           </ContactLink>
           <ContactLink
             href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
-            target="_blank"
             rel="noopener"
+            target="_blank"
           >
             <address>
               21 E 5th Ave Suite 102

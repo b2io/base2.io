@@ -29,8 +29,7 @@ export const linkVariants = {
     cursor: 'pointer',
     display: 'inline-block',
     fontSize: cssClamp([1.125, 'mobile'], [1.375, 'tablet']),
-    fontVariationSettings: '"wght" 900',
-    letterSpacing: cssClamp([0.006875, 'mobile'], [0.125, 'lg']),
+    fontVariationSettings: '"wght" 600',
     lineHeight: 1.56,
     textDecoration: 'none',
   },
@@ -185,7 +184,7 @@ export const textVariants = {
     lineHeight: 0.53,
     margin: 0,
     padding: 0,
-  }
+  },
 };
 
 export type ThemeLinkVariants = keyof typeof linkVariants;

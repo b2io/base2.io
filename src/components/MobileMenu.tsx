@@ -43,11 +43,17 @@ const Nav = styled.nav`
   li {
     margin-bottom: ${spacing.xs};
   }
+
+  a {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+  }
 `;
 
 const ContactLink = styled(Link)`
   display: table;
-  margin: ${spacing.lg} ${spacing.lg} 0;
+  margin: 3rem ${spacing.lg} 0;
 `;
 
 export const MobileMenu: FC = ({ ...props }) => {

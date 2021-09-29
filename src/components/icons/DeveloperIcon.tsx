@@ -4,10 +4,10 @@ import type { FC } from 'react';
 import type { SvgProps } from './types';
 
 export const DeveloperIcon: FC<SvgProps> = ({
-  height = '100%',
+  height = '48px',
   id,
   title = 'Developer',
-  width = '100%',
+  width = '48px',
   ...props
 }) => {
   const titleId = useId(id);
@@ -47,3 +47,5 @@ export const DeveloperIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default DeveloperIcon;

@@ -4,10 +4,10 @@ import type { FC } from 'react';
 import { SvgProps } from './types';
 
 export const SustainabilityIcon: FC<SvgProps> = ({
-  height = '100%',
+  height = '48px',
   id,
   title = 'Sustainability',
-  width = '100%',
+  width = '48px',
   ...props
 }) => {
   const titleId = useId(id);
@@ -55,3 +55,5 @@ export const SustainabilityIcon: FC<SvgProps> = ({
     </svg>
   );
 };
+
+export default SustainabilityIcon;

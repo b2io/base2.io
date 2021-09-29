@@ -13,14 +13,14 @@ import {
 } from '~/theme';
 
 type TeamMemberGridItemProps = {
+  location: string;
   name: string;
-  position: string;
   src: Exclude<NextImageProps['src'], string | StaticImageData>;
 };
 
 const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
+  location,
   name,
-  position,
   src,
 }) => {
   return (
@@ -67,9 +67,9 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
         >
           <NextImage
             alt={name}
-            placeholder="blur"
             height={600}
             layout="responsive"
+            placeholder="blur"
             src={src}
             width={465}
           />
@@ -107,7 +107,7 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
         <Heading as="h3" variant="h2">
           {name}
         </Heading>
-        <Text>{position}</Text>
+        <Text>{location}</Text>
       </div>
     </li>
   );
@@ -229,83 +229,83 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
         {...props}
       >
         <TeamMemberGridItem
+          location="Columbus, OH"
           name="Drew Miller"
-          position="Owner, Principal Software Engineer"
           src={require('./images/dmiller.jpg')}
         />
         <TeamMemberGridItem
+          location="Columbus, OH"
           name="Sean Ludemann"
-          position="Principal Software Engineer"
           src={require('./images/sludemann.jpg')}
         />
         <TeamMemberGridItem
+          location="Pittsburgh, PA"
           name="Tony Borres"
-          position="Director of Operations, Staff Software Engineer I"
           src={require('./images/tborres.jpg')}
         />
         <TeamMemberGridItem
+          location="Columbus, OH"
           name="Chris Hawkins"
-          position="Senior Software Engineer III"
           src={require('./images/chawkins.jpg')}
         />
         <TeamMemberGridItem
+          location="Chicago, IL"
           name="Franky Martinez"
-          position="Senior Software Engineer III"
           src={require('./images/fmartinez.jpg')}
         />
         <TeamMemberGridItem
+          location="Columbus, OH"
           name="Nathan Kessler"
-          position="Senior Software Engineer II"
           src={require('./images/nkessler.jpg')}
         />
         <TeamMemberGridItem
+          location="Pittsburgh, PA"
           name="Reed Dunkle"
-          position="Senior Software Engineer I"
           src={require('./images/rdunkle.jpg')}
         />
         <TeamMemberGridItem
+          location="Columbus, OH"
           name="Mike Condo"
-          position="Senior Software Engineer I"
           src={require('./images/mcondo.jpg')}
         />
         <TeamMemberGridItem
+          location="Atlanta, GA"
           name="Ashley Singleton"
-          position="Software Engineer IV"
           src={require('./images/asingleton.jpg')}
         />
         <TeamMemberGridItem
+          location="Pittsburgh, PA"
           name="Zachary Chay-Dolan"
-          position="Software Engineer III"
           src={require('./images/zchay-dolan.jpg')}
         />
         <TeamMemberGridItem
+          location="Pittsburgh, PA"
           name="Nelson Foltz"
-          position="Software Engineer III"
           src={require('./images/nfoltz.jpg')}
         />
         <TeamMemberGridItem
+          location="Philadelphia, PA"
           name="Laura Padilla"
-          position="Software Engineer III"
           src={require('./images/lpadilla.jpg')}
         />
         <TeamMemberGridItem
+          location="Pittsburgh, PA"
           name="Eric Waight"
-          position="Software Engineer III"
           src={require('./images/ewaight.jpg')}
         />
         <TeamMemberGridItem
+          location="Miami, FL"
           name="Javier Orejarena"
-          position="Software Engineer III"
           src={require('./images/jorejarena.jpg')}
         />
         <TeamMemberGridItem
+          location="New York, NY"
           name="Melissa Lam"
-          position="Software Engineer I"
           src={require('./images/mlam.jpg')}
         />
         <TeamMemberGridItem
+          location="Pittsburgh, PA"
           name="Kate Hansen"
-          position="Software Engineer I"
           src={require('./images/khansen.jpg')}
         />
       </ul>

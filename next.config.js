@@ -1,4 +1,8 @@
-module.exports = {
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+const config = {
   headers: async () => {
     return [
       {
@@ -7,7 +11,7 @@ module.exports = {
             key: 'Content-Security-Policy',
             value: [
               "base-uri 'self';",
-              "connect-src 'self';",
+              "connect-src 'self' https://formspree.io;",
               "default-src 'none';",
               "form-action 'self';",
               "font-src 'self';",
@@ -66,3 +70,5 @@ module.exports = {
     return config;
   },
 };
+
+module.exports = withBundleAnalyzer(config);

@@ -30,15 +30,16 @@ export const FueledByCuriosity: FC = (props) => {
         `}
       />
       <Heading
+        as="h2"
         css={css`
           margin-left: ${cssClamp([0, 'xl'], [15.225, 'xxl'])};
           position: relative;
           top: ${cssClamp([0, 'mobile'], [9, 'tablet'])};
         `}
-        as="h2"
         variant="hero"
       >
         <Text
+          as="span"
           css={css`
             display: block;
             left: 2rem;
@@ -48,7 +49,6 @@ export const FueledByCuriosity: FC = (props) => {
               left: ${cssClamp([1.75, 'tablet'], [8.25, 'xl'])};
             }
           `}
-          as="span"
           variant="callout"
         >
           Fueled by

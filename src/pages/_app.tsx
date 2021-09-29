@@ -62,9 +62,9 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
           href="/RoobertItalicGX.woff2"
           rel="preload"
         />
-        <link rel="manifest" href="/site.webmanifest"></link>
+        <link href="/site.webmanifest" rel="manifest"></link>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta content="initial-scale=1.0, width=device-width" name="viewport" />
       </Head>
       <AnimateSharedLayout>
         <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
