@@ -1,6 +1,5 @@
 export * from './BusinessIcon';
 export * from './CommunityIcon';
-export * from './DashIcon';
 export * from './DeliveryIcon';
 export * from './DeveloperIcon';
 export * from './DiscoveryIcon';
