@@ -1,3 +1,5 @@
+import { format } from 'path/posix';
+
 export * from './BusinessIcon';
 export * from './CommunityIcon';
 export * from './DashIcon';
@@ -14,3 +16,11 @@ export * from './MenuIcon';
 export * from './SupportIcon';
 export * from './SustainabilityIcon';
 export * from './TransparencyIcon';
+export * from './AngularIcon';
+export * from './JasmineIcon';
+export * from './JasminealtIcon';
+export * from './NetIcon';
+export * from './KarmaIcon';
+export * from './ReactIcon';
+export * from './ReduxIcon';
+export * from './SassIcon';
