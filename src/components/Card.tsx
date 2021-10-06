@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import React, {
   Children,
   cloneElement,
@@ -105,6 +106,46 @@ export const IconCard: FC<IconCardProps> = ({ heading, icon, text }) => {
   return (
     <Card>
       <DynamicIcon type={icon} />
+      <Heading as="h3" color="coral" variant="h3">
+        {heading}
+      </Heading>
+      <Text
+        as="p"
+        css={css`
+          margin: 0;
+        `}
+      >
+        {text}
+      </Text>
+    </Card>
+  );
+};
+
+export type ImageCardProps = {
+  heading: string;
+  src: Exclude<NextImageProps['src'], string | StaticImageData>;
+  text: string;
+};
+
+export const ImageCard: FC<ImageCardProps> = ({ heading, src, text }) => {
+  return (
+    <Card
+      css={css`
+        margin-bottom: ${spacing.xxl2};
+      `}
+    >
+      <figure
+        css={css`
+          align-items: center;
+          background: ${colors.offWhite};
+          display: flex;
+          justify-content: center;
+          margin: 0 0 1rem 0;
+          padding: ${spacing.xxl};
+        `}
+      >
+        <NextImage src={src} />
+      </figure>
       <Heading as="h3" color="coral" variant="h3">
         {heading}
       </Heading>
