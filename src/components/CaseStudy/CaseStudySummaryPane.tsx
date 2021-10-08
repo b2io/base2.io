@@ -3,21 +3,40 @@ import styled from '@emotion/styled';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import type { FC } from 'react';
 
-import { BasicCard, CardGrid, Heading } from '~/components';
-import { colors, spacing, xxl2 } from '~/theme';
+import { colors, spacing } from '~/theme';
 
-const ImageContainer = styled.div`
+const ColorBlock = styled.div`
+  align-items: center;
   background: ${colors.coral};
-  display: inline-block;
+  display: flex;
+  height: 40em;
+  justify-content: center;
+  /* margin: 0; */
+  padding: ${spacing.md};
+  width: 35em;
+`;
+const ImageContainer = styled.div`
   height: 100%;
+  justify-content: center;
+  margin: 50px;
+  position: relative;
   width: 100%;
 `;
 
-type CaseStudySummaryPaneProps = {
+const Summary = styled.h2`
+  display: inline-block;
+  line-height: 2rem;
+  margin-left: -2rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-90%);
+  width: 50%;
+  word-break: keep-all;
+`;
+
+type CaseStudySummaryPaneProps = NextImageProps & {
   summaryText: string;
   alt: string;
-  height: number;
-  width: number;
   src: string;
 };
 
@@ -35,19 +54,26 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
         z-index: 1;
       `}
     >
-      <ImageContainer>
-        <NextImage alt={alt} src={src} height={300} width={150} />
-      </ImageContainer>
-      <Heading
-        as="h3"
-        variant="h3"
+      <div
         css={css`
-          width: 50%;
-          margin-top: -1em;
+          display: inline-block;
         `}
       >
+        <ColorBlock>
+          <ImageContainer>
+            <NextImage
+              alt={alt}
+              src={src}
+              placeholder="blur"
+              layout="fill"
+              objectFit="contain"
+            />
+          </ImageContainer>
+        </ColorBlock>
+      </div>
+      <Summary as="h2" variant="h2">
         {summaryText}
-      </Heading>
+      </Summary>
     </section>
   );
 };

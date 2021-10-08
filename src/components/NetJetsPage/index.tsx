@@ -39,10 +39,10 @@ export const NetJetsPage: FC = () => {
         src={require('./images/netjets-full-width.jpg')}
       />
       <CaseStudySummaryPane
-        summaryText="FlyNetjets Lets Clients manage their accounts, book upcoming trips, and 
-      fully control their in-flight experience. Behind the scenes, a number of systems communicate
-       to make this all possible, from a shared data layer supporting mobile and web interfaces to 
-       constantly changing updates on aircraft ability"
+        summaryText="FlyNetjets lets clients manage their accounts, book upcoming trips, and 
+        fully control their in-flight experience. Behind the scenes, a number of systems communicate
+        to make this all possible, from a shared data layer supporting mobile and web interfaces to 
+        constantly changing updates on aircraft ability"
         src={require('./images/NJ_OP.jpg')}
         alt="screenshot"
       />
