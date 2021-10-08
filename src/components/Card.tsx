@@ -139,12 +139,22 @@ export const ImageCard: FC<ImageCardProps> = ({ heading, src, text }) => {
           align-items: center;
           background: ${colors.offWhite};
           display: flex;
+          height: 37.5rem;
           justify-content: center;
-          margin: 0 0 1rem 0;
-          padding: ${spacing.xxl};
+          margin: 0;
+          padding: 2rem 6rem;
+          width: 100%;
         `}
       >
-        <NextImage src={src} />
+        <div
+          css={css`
+            height: 100%;
+            position: relative;
+            width: 100%;
+          `}
+        >
+          <NextImage objectFit="contain" layout="fill" src={src} />
+        </div>
       </figure>
       <Heading as="h3" color="coral" variant="h3">
         {heading}

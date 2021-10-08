@@ -35,7 +35,7 @@ export const WorkPage: FC = () => {
         />
         <ImageCard
           heading="Match a photo"
-          src={require('../../../public/careers/careers-hero-xlarge.jpg')}
+          src={require('../../../public/contact/contact-hero-small.jpg')}
           text="Generate paint suggestions from any photo you upload to capture your favorite colors"
         />
       </div>
