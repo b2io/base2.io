@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 
-import { atMinLg, atMinTablet, colors, spacing } from '~/theme';
+import { atMinLg, atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
 import { Container } from './Container';
 import { LogoIcon } from './icons';
@@ -104,19 +104,90 @@ const ContactLink = styled(Link)`
   }
 `;
 
+const LetsChatLink = styled(Link)`
+  display: none;
+
+  ${atMinTablet} {
+    display: block;
+    font-size: 1.375rem;
+    font-weight: 900;
+    position: absolute;
+    right: 2.5rem;
+    top: -2.05rem;
+  }
+  ${atMinXL} {
+    right: 3.5rem;
+  }
+`;
+
+const WhiteLine = styled.div`
+  display: none;
+  ${atMinTablet} {
+    background-color: ${colors.offWhite};
+    display: block;
+    height: 1px;
+  }
+`;
+
 export const Footer: FC = (prop) => {
+  const [isScrolledToFooter, setIsScrolledToFooter] = useState(false);
+  const footerRef = useRef(null);
+
+  const scrollListener = () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0] !== null) {
+          if (entries[0].isIntersecting === true) {
+            setIsScrolledToFooter(true);
+          }
+        }
+      },
+      { threshold: [0] },
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollListener);
+    return () => window.removeEventListener('scroll', scrollListener);
+  });
+
   return (
     <Container
       as="footer"
       css={css`
         background-color: ${colors.darkBlueAlt};
-
+        position: relative;
         ${atMinTablet} {
           background-color: unset;
         }
       `}
       {...prop}
+      ref={footerRef}
     >
+      <LetsChatLink href="/contact" variant="CTA">
+        Lets talk
+      </LetsChatLink>
+      <WhiteLine
+        css={css`
+          ${isScrolledToFooter &&
+          css`
+            animation: lineLeftToRight 1s 1 forwards;
+          `};
+
+          @keyframes lineLeftToRight {
+            0% {
+              width: 0;
+            }
+            100% {
+              width: calc(100% - 7rem);
+            }
+          }
+        `}
+      />
       <FooterWrapper>
         <div>
           <FooterLogo />
