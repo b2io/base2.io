@@ -139,11 +139,15 @@ export const ImageCard: FC<ImageCardProps> = ({ heading, src, text }) => {
           align-items: center;
           background: ${colors.offWhite};
           display: flex;
-          height: 37.5rem;
+          height: 22.125rem;
           justify-content: center;
           margin: 0;
-          padding: 2rem 6rem;
+          padding: ${spacing.md};
           width: 100%;
+          ${atMinTablet} {
+            height: 37.5rem;
+            padding: ${spacing.md} ${spacing.xxl2};
+          }
         `}
       >
         <div
