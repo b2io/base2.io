@@ -175,7 +175,7 @@ export const Footer: FC = (prop) => {
         css={css`
           ${isScrolledToFooter &&
           css`
-            animation: lineLeftToRight 1s 1 forwards;
+            animation: lineLeftToRight 1s 1 forwards cubic-bezier(0.45,0.05,0.55,0.95) ;
           `};
 
           @keyframes lineLeftToRight {
