@@ -3,35 +3,52 @@ import styled from '@emotion/styled';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import type { FC } from 'react';
 
-import { colors, spacing } from '~/theme';
+import { atMinDesktop, atMinTablet, colors, spacing } from '~/theme';
 
 const ColorBlock = styled.div`
   align-items: center;
   background: ${colors.coral};
   display: flex;
-  height: 40em;
   justify-content: center;
-  /* margin: 0; */
+  margin: 0;
   padding: ${spacing.md};
-  width: 35em;
+  width: 100%;
+  height: 40em;
+
+  ${atMinTablet} {
+    width: 35em;
+  }
 `;
 const ImageContainer = styled.div`
-  height: 100%;
   justify-content: center;
-  margin: 50px;
   position: relative;
-  width: 100%;
+  height: 20rem;
+  width: 20rem;
+
+  ${atMinTablet} {
+    height: 100%;
+    margin: 120px;
+    width: 100%;
+  }
 `;
 
 const Summary = styled.h2`
-  display: inline-block;
-  line-height: 2rem;
-  margin-left: -2rem;
+  line-height: 1.5;
   position: relative;
-  top: 50%;
-  transform: translateY(-90%);
-  width: 50%;
   word-break: keep-all;
+
+  ${atMinTablet} {
+    font-size: 2rem;
+  }
+
+  ${atMinDesktop} {
+    display: inline-block;
+    font-size: 2rem;
+    margin-left: -4rem;
+    top: 50%;
+    transform: translateY(-35%);
+    width: 50%;
+  }
 `;
 
 type CaseStudySummaryPaneProps = NextImageProps & {
@@ -71,9 +88,7 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
           </ImageContainer>
         </ColorBlock>
       </div>
-      <Summary as="h2" variant="h2">
-        {summaryText}
-      </Summary>
+      <Summary as="h2">{summaryText}</Summary>
     </section>
   );
 };
