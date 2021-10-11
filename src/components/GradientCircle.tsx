@@ -66,7 +66,6 @@ export const GradientCircle: FC = (props) => {
       height="100"
       initial="hidden"
       ref={ref}
-      style={{ originX: 0.5, originY: 0.5 }}
       variants={circleVariants}
       viewBox="0 0 100 100"
       width="100"
