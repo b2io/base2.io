@@ -1,9 +1,24 @@
 import { useId } from '@react-aria/utils';
-import { animate, motion, useMotionValue, useTransform } from 'framer-motion';
+import {
+  animate,
+  motion,
+  useAnimation,
+  useMotionValue,
+  useTransform,
+} from 'framer-motion';
 import { FC, useEffect, useRef } from 'react';
 import { useIntersection } from 'react-use';
 
 import { colors, interpolateColors, mRound } from '~/theme';
+
+const circleVariants = {
+  hidden: { opacity: 0, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1, ease: 'easeInOut' },
+  },
+};
 
 export const GradientCircle: FC = (props) => {
   const filterId = useId();
@@ -27,6 +42,14 @@ export const GradientCircle: FC = (props) => {
     }
   }, [inView, step]);
 
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   const fx = useTransform(step, (v) => {
     // Use a cosine wave to oscillate through [0, 0.5, 1, 0.5, 0] based on v.
     return mRound(0.5 * Math.cos((Math.PI / 2) * (v + 2)) + 0.5, 5);
@@ -38,9 +61,19 @@ export const GradientCircle: FC = (props) => {
   });
 
   return (
-    <svg height="100" ref={ref} viewBox="0 0 100 100" width="100" {...props}>
+    <motion.svg
+      animate={controls}
+      height="100"
+      initial="hidden"
+      ref={ref}
+      style={{ originX: 0.5, originY: 0.5 }}
+      variants={circleVariants}
+      viewBox="0 0 100 100"
+      width="100"
+      {...props}
+    >
       <defs>
-        <motion.radialGradient fx={fx} fy={fy} r="100%" id={gradientId}>
+        <motion.radialGradient fx={fx} fy={fy} id={gradientId} r="100%">
           {interpolateColors([colors.coral, colors.darkBlueAlt], 1).map(
             (color, index, colors) => {
               const offset = index / (colors.length - 1);
@@ -73,6 +106,6 @@ export const GradientCircle: FC = (props) => {
         filter={`url('#${filterId}')`}
         r="50"
       />
-    </svg>
+    </motion.svg>
   );
 };
