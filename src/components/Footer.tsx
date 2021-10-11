@@ -113,7 +113,7 @@ const LetsChatLink = styled(Link)`
     font-weight: 900;
     position: absolute;
     right: 2.5rem;
-    top: -2.05rem;
+    top: -1.89rem;
   }
   ${atMinXL} {
     right: 3.5rem;
@@ -125,7 +125,7 @@ const WhiteLine = styled.div`
   ${atMinTablet} {
     background-color: ${colors.offWhite};
     display: block;
-    height: 1px;
+    height: 0.063rem;
   }
 `;
 
