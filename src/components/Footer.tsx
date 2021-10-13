@@ -126,6 +126,7 @@ const WhiteLine = styled.div`
     background-color: ${colors.offWhite};
     display: block;
     height: 0.063rem;
+    max-width: calc(100% - 7rem);
   }
 `;
 
