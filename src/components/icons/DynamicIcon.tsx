@@ -6,19 +6,19 @@ import { SvgProps } from './types';
 const ICONS_BY_TYPE: {
   [key in DynamicIconProps['type']]: ComponentType<SvgProps>;
 } = {
-  business: dynamic(() => import('./BusinessIcon')),
-  community: dynamic(() => import('./CommunityIcon')),
-  dash: dynamic(() => import('./DashIcon')),
-  delivery: dynamic(() => import('./DeliveryIcon')),
-  developer: dynamic(() => import('./DeveloperIcon')),
-  discovery: dynamic(() => import('./DiscoveryIcon')),
-  embedded: dynamic(() => import('./EmbeddedIcon')),
-  empathy: dynamic(() => import('./EmpathyIcon')),
-  execution: dynamic(() => import('./ExecutionIcon')),
-  fullyManaged: dynamic(() => import('./FullyManagedIcon')),
-  support: dynamic(() => import('./SupportIcon')),
-  sustainability: dynamic(() => import('./SustainabilityIcon')),
-  transparency: dynamic(() => import('./TransparencyIcon')),
+  business: dynamic(() => import('./BusinessIcon'), { ssr: false }),
+  community: dynamic(() => import('./CommunityIcon'), { ssr: false }),
+  dash: dynamic(() => import('./DashIcon'), { ssr: false }),
+  delivery: dynamic(() => import('./DeliveryIcon'), { ssr: false }),
+  developer: dynamic(() => import('./DeveloperIcon'), { ssr: false }),
+  discovery: dynamic(() => import('./DiscoveryIcon'), { ssr: false }),
+  embedded: dynamic(() => import('./EmbeddedIcon'), { ssr: false }),
+  empathy: dynamic(() => import('./EmpathyIcon'), { ssr: false }),
+  execution: dynamic(() => import('./ExecutionIcon'), { ssr: false }),
+  fullyManaged: dynamic(() => import('./FullyManagedIcon'), { ssr: false }),
+  support: dynamic(() => import('./SupportIcon'), { ssr: false }),
+  sustainability: dynamic(() => import('./SustainabilityIcon'), { ssr: false }),
+  transparency: dynamic(() => import('./TransparencyIcon'), { ssr: false }),
 };
 
 export type DynamicIconProps = SvgProps & {
