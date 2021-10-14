@@ -1,12 +1,10 @@
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import {
-  CaseStudyHeaderPane,
-  CaseStudyIntroContentPane,
-  Layout,
-} from '~/components';
+import { Layout } from '~/components';
 
+import { CaseStudyHeaderPane } from '../CaseStudy/CaseStudyHeaderPane';
+import { CaseStudyIntroContentPane } from '../CaseStudy/CaseStudyIntroContentPane';
 import { CaseStudySummaryPane } from '../CaseStudy/CaseStudySummaryPane';
 
 export const NetJetsPage: FC = () => {
