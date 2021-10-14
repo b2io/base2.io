@@ -3,51 +3,59 @@ import styled from '@emotion/styled';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import type { FC } from 'react';
 
-import { atMinDesktop, atMinTablet, colors, spacing } from '~/theme';
+import {
+  atMinDesktop,
+  atMinTablet,
+  atMinXL,
+  colors,
+  spacing,
+} from '~/theme';
 
 const ColorBlock = styled.div`
   align-items: center;
   background: ${colors.coral};
   display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: ${spacing.md};
-  width: 100%;
   height: 40em;
+  justify-content: center;
+  width: 100%;
 
-  ${atMinTablet} {
-    width: 35em;
+  ${atMinXL} {
+    height: 56.25rem;
+    width: 41.688em;
   }
 `;
+
 const ImageContainer = styled.div`
+  height: 100%;
   justify-content: center;
   position: relative;
-  height: 20rem;
-  width: 20rem;
+  width: 14.375rem;
 
-  ${atMinTablet} {
+  ${atMinXL} {
     height: 100%;
-    margin: 120px;
-    width: 100%;
+    width: 20.625rem;
   }
 `;
 
 const Summary = styled.h2`
-  line-height: 1.5;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  margin: 0 1.5rem;
   position: relative;
+  top: -3.7rem;
   word-break: keep-all;
 
   ${atMinTablet} {
-    font-size: 2rem;
+    font-size: 3.125rem;
+    max-width: 54.188rem;
   }
 
-  ${atMinDesktop} {
-    display: inline-block;
-    font-size: 2rem;
-    margin-left: -4rem;
-    top: 50%;
-    transform: translateY(-35%);
-    width: 50%;
+  ${atMinXL} {
+    left: 35.438rem;
+    margin: 0;
+    
+    position: absolute;
+    top: 4rem;
   }
 `;
 
@@ -65,29 +73,36 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
   return (
     <section
       css={css`
+        margin: 0 -${spacing.sm};
         margin-top: ${spacing.xxl2};
-        display: inline-block;
         position: relative;
         z-index: 1;
+
+        ${atMinTablet} {
+          margin-left: -${spacing.lg};
+          margin-right: -${spacing.lg};
+        }
+
+        ${atMinXL} {
+          margin-left: calc(50% - 50vw);
+        }
+
+        ${atMinDesktop} {
+          margin-left: -5rem;
+        }
       `}
     >
-      <div
-        css={css`
-          display: inline-block;
-        `}
-      >
-        <ColorBlock>
-          <ImageContainer>
-            <NextImage
-              alt={alt}
-              src={src}
-              placeholder="blur"
-              layout="fill"
-              objectFit="contain"
-            />
-          </ImageContainer>
-        </ColorBlock>
-      </div>
+      <ColorBlock>
+        <ImageContainer>
+          <NextImage
+            alt={alt}
+            src={src}
+            placeholder="blur"
+            layout="fill"
+            objectFit="contain"
+          />
+        </ImageContainer>
+      </ColorBlock>
       <Summary as="h2">{summaryText}</Summary>
     </section>
   );
