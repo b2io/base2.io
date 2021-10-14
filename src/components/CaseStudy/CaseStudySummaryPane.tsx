@@ -7,6 +7,7 @@ import {
   atMinDesktop,
   atMinTablet,
   atMinXL,
+  atMinXXL,
   colors,
   spacing,
 } from '~/theme';
@@ -79,16 +80,16 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
         z-index: 1;
 
         ${atMinTablet} {
-          margin-left: -${spacing.lg};
-          margin-right: -${spacing.lg};
+          margin-left: -${spacing.xxl};
+          margin-right: -${spacing.xxl};
         }
 
-        ${atMinXL} {
+        ${atMinXXL} {
           margin-left: calc(50% - 50vw);
         }
 
         ${atMinDesktop} {
-          margin-left: -5rem;
+          margin-left: -${spacing.xxl1};
         }
       `}
     >

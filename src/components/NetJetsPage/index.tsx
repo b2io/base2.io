@@ -1,7 +1,9 @@
+import { css } from '@emotion/react';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Layout } from '~/components';
+import { atMinDesktop, spacing } from '~/theme';
 
 import { CaseStudyHeaderPane } from '../CaseStudy/CaseStudyHeaderPane';
 import { CaseStudyIntroContentPane } from '../CaseStudy/CaseStudyIntroContentPane';
@@ -31,11 +33,21 @@ export const NetJetsPage: FC = () => {
       Android and iPhone users. The result was Fly NetJets, a React Native app that makes
       flight bookings easy and elegant."
       />
-      <NextImage
-        alt="Jet"
-        layout="responsive"
-        src={require('./images/netjets-full-width.jpg')}
-      />
+      <section
+        css={css`
+          margin: 0 calc(50% - 50vw);
+
+          ${atMinDesktop} {
+            margin: 0 -${spacing.xxl1};
+          }
+        `}
+      >
+        <NextImage
+          alt="Jet"
+          layout="responsive"
+          src={require('./images/netjets-full-width.jpg')}
+        />
+      </section>
       <CaseStudySummaryPane
         summaryText="Fly NetJets lets clients manage their accounts, book upcoming trips, and 
         fully control their in-flight experience. Behind the scenes, a number of systems communicate 

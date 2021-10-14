@@ -19,7 +19,7 @@ export const CaseStudyHeaderPane: FC<CaseStudyProps> = ({
   src,
 }) => {
   return (
-    <div>
+    <section>
       <Heading
         as="h1"
         variant="h2"
@@ -40,6 +40,6 @@ export const CaseStudyHeaderPane: FC<CaseStudyProps> = ({
       </Heading>
 
       <CaseStudyHero alt={alt} src={src} />
-    </div>
+    </section>
   );
 };

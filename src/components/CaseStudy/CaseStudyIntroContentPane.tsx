@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import { BasicCard, CardGrid, Heading } from '~/components';
-import { atMinTablet, atMinXL, spacing } from '~/theme';
+import { atMinDesktop, atMinTablet, spacing } from '~/theme';
 
 type CaseStudyIntroContentPaneProps = {
   introText: string;
@@ -18,9 +18,9 @@ export const CaseStudyIntroContentPane: FC<CaseStudyIntroContentPaneProps> = ({
   return (
     <section
       css={css`
-        ${atMinXL} {
-          margin-left: ${spacing.marginXl};
-          margin-right: ${spacing.marginXl};
+        ${atMinDesktop} {
+          margin-left: ${spacing.xxl1};
+          margin-right: ${spacing.xxl1};
         }
       `}
     >
@@ -41,7 +41,9 @@ export const CaseStudyIntroContentPane: FC<CaseStudyIntroContentPaneProps> = ({
 
       <CardGrid
         css={css`
+          margin: 0;
           margin-bottom: ${spacing.marginXl};
+          max-width: 100%;
         `}
       >
         <BasicCard heading="The ask" text={askText} />
