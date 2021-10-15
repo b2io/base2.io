@@ -3,7 +3,7 @@ import { animate, motion, useMotionValue, useTransform } from 'framer-motion';
 import { FC, useEffect, useRef } from 'react';
 import { useIntersection } from 'react-use';
 
-import { colors, interpolateColors, mRound } from '~/theme';
+import { atMinTablet, colors, interpolateColors, mRound } from '~/theme';
 
 export const GradientCircle: FC = (props) => {
   const filterId = useId();
@@ -42,7 +42,8 @@ export const GradientCircle: FC = (props) => {
   const step2 = useMotionValue(10);
 
   useEffect(() => {
-    if (inView) {
+    const isMobile = window.innerWidth < 960;
+    if (inView && !isMobile) {
       const controls = animate(step2, 0, {
         delay: 0.5,
         duration: 1,
