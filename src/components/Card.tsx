@@ -1,11 +1,15 @@
 import { css } from '@emotion/react';
+import { motion, useAnimation } from 'framer-motion';
 import React, {
   Children,
   cloneElement,
   ElementType,
   FC,
   ReactElement,
+  useEffect,
+  useRef,
 } from 'react';
+import { useIntersection } from 'react-use';
 
 import {
   DynamicIcon,
@@ -32,22 +36,54 @@ export type CardProps = {
   as?: ElementType;
 };
 
+const cardVariants = {
+  animate: {
+    opacity: 1,
+    staggerChildren: 0.5,
+    transition: { duration: 1, ease: 'easeInOut' },
+    y: '0',
+  },
+  initial: {
+    opacity: 0,
+  },
+};
+
 export const Card: FC<CardProps> = ({
-  as: Component = 'div',
+  // as: Component = 'div',
   children,
   ...props
 }) => {
+  const ref = useRef(null);
+  const inView =
+    useIntersection(ref, { threshold: 0 })?.isIntersecting ?? false;
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('animate');
+    }
+  }, [controls, inView]);
+
   return (
-    <Component
+    <motion.div
+      animate={controls}
       css={css`
         display: flex;
         flex-direction: column;
         gap: ${spacing.xs};
+        transform: translateY(100px);
+        & * > {
+          transform: translateY(100px);
+        }
       `}
+      initial="initial"
+      ref={ref}
+      variants={cardVariants}
       {...props}
     >
       {children}
-    </Component>
+    </motion.div>
   );
 };
 
