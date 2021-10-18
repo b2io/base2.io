@@ -8,6 +8,8 @@ import { colors, interpolateColors, mRound } from '~/theme';
 export const GradientCircle: FC = (props) => {
   const filterId = useId();
   const gradientId = useId();
+  const clip1Id = useId();
+  const clip2Id = useId();
 
   const ref = useRef(null);
   const inView =
@@ -37,9 +39,56 @@ export const GradientCircle: FC = (props) => {
     return mRound(0.5 * Math.cos((Math.PI / 2) * (v + 1)) + 0.5, 5);
   });
 
+  const step2 = useMotionValue(10);
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(step2, 0, {
+        delay: 0.5,
+        duration: 1,
+        ease: 'easeOut',
+      });
+
+      return controls.stop;
+    }
+  }, [inView, step2]);
+
+  const cy1 = useTransform(step2, (v) => {
+    return mRound(50 - v, 5);
+  });
+
+  const cy2 = useTransform(step2, (v) => {
+    return mRound(50 + v, 5);
+  });
+
   return (
-    <svg height="100" ref={ref} viewBox="0 0 100 100" width="100" {...props}>
+    <svg
+      height="100"
+      overflow="visible"
+      ref={ref}
+      viewBox="0 0 100 100"
+      width="100"
+      {...props}
+    >
       <defs>
+        <clipPath id={clip1Id}>
+          <motion.path
+            d="M0,50 A50,50 0 0,1 100,50 L0,50Z"
+            style={{ originX: '50%', originY: '50%', x: step2 }}
+            transformTemplate={({ x }) => {
+              return `rotate(90deg) translateX(-${x})`;
+            }}
+          />
+        </clipPath>
+        <clipPath id={clip2Id}>
+          <motion.path
+            d="M0,50 A50,50 0 0,1 100,50 L0,50Z"
+            style={{ originX: '50%', originY: '50%', x: step2 }}
+            transformTemplate={({ x }) => {
+              return `rotate(-90deg) translateX(-${x})`;
+            }}
+          />
+        </clipPath>
         <motion.radialGradient fx={fx} fy={fy} r="100%" id={gradientId}>
           {interpolateColors([colors.coral, colors.darkBlueAlt], 1).map(
             (color, index, colors) => {
@@ -65,10 +114,18 @@ export const GradientCircle: FC = (props) => {
           <feBlend in="SourceGraphic" in2="turbulence" mode="multiply" />
         </filter>
       </defs>
-      <circle
-        clipPath="circle(50%)"
+      <motion.circle
+        clipPath={`url('#${clip1Id}')`}
         cx="50"
-        cy="50"
+        cy={cy1}
+        fill={`url('#${gradientId}')`}
+        filter={`url('#${filterId}')`}
+        r="50"
+      />
+      <motion.circle
+        clipPath={`url('#${clip2Id}')`}
+        cx="50"
+        cy={cy2}
         fill={`url('#${gradientId}')`}
         filter={`url('#${filterId}')`}
         r="50"

@@ -111,7 +111,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         </AnimatePresence>
         <BGNoise
           css={css`
-            animation: ${noise} 0.2s infinite;
+            animation: ${noise} 0.2s infinite alternate-reverse;
           `}
         />
       </AnimateSharedLayout>
