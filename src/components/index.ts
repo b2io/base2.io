@@ -1,5 +1,4 @@
 export * from './ApproachPage';
-export * from './BackgroundNoise'
 export * from './BatteryXTPage';
 export * from './BlogPage';
 export * from './Card';
