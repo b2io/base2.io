@@ -2,11 +2,11 @@ import type { FC } from 'react';
 
 import { Layout } from '~/components';
 
-import { ResultsPane } from '../ResultsPane';
+import { CaseStudyResultsResultsPane } from '../CaseStudy/CaseStudyResultsPane';
 
 export const BatteryXTPage: FC = () => {
   // TODO: Add description for BatteryXTPage.
-  const resultPaneProps = {
+  const CaseStudyResultsResultsProps = {
     children: [
       {
         heading: 'Generate inbound leads',
@@ -32,7 +32,7 @@ export const BatteryXTPage: FC = () => {
   return (
     <Layout description="" title="BatteryXT">
       <h1>hello from the batteryxt page</h1>
-      <ResultsPane {...resultPaneProps} />
+      <CaseStudyResultsResultsPane {...CaseStudyResultsResultsProps} />
     </Layout>
   );
 };
