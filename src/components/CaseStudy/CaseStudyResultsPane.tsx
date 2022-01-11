@@ -3,6 +3,7 @@ import { FC } from 'react';
 
 import { CardGrid, Heading, ResultCard, Text } from '~/components';
 import {
+  atMinDesktop,
   atMinLg,
   atMinTablet,
   atMinXL,
@@ -33,18 +34,24 @@ export const CaseStudyResultsResultsPane: FC<CaseStudyResultsPaneProps> = ({
         padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])} ${spacing.sm};
 
         ${atMinTablet} {
-          margin: 0 -${spacing.lg};
+          margin-left: -${spacing.xxl};
+          margin-right: -${spacing.xxl};
           padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])} ${spacing.lg};
         }
 
         ${atMinXL} {
-          margin: 0 -${spacing.xxl};
-          padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])} ${spacing.xxl};
+          padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])}
+            ${spacing.xxl};
         }
 
         ${atMinXXL} {
           padding-left: ${spacing.marginXl};
           padding-right: ${spacing.marginXl};
+          margin-left: calc(50% - 50vw);
+        }
+
+        ${atMinDesktop} {
+          margin-left: -${spacing.xxl1};
         }
       `}
       {...props}
