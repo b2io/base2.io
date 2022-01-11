@@ -2,14 +2,15 @@ import { css } from '@emotion/react';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { Layout } from '~/components';
+import {
+  CaseStudyBottomNav,
+  CaseStudyHeaderPane,
+  CaseStudyIntroContentPane,
+  CaseStudyResultsPane,
+  CaseStudySummaryPane,
+  Layout,
+} from '~/components';
 import { atMinDesktop, spacing } from '~/theme';
-
-import { CaseStudyBottomNav } from '../CaseStudy/CaseStudyBottomNav';
-import { CaseStudyHeaderPane } from '../CaseStudy/CaseStudyHeaderPane';
-import { CaseStudyIntroContentPane } from '../CaseStudy/CaseStudyIntroContentPane';
-import { CaseStudyResultsResultsPane } from '../CaseStudy/CaseStudyResultsPane';
-import { CaseStudySummaryPane } from '../CaseStudy/CaseStudySummaryPane';
 
 export const NetJetsPage: FC = () => {
   const CaseStudyResultsProps = {
@@ -98,7 +99,7 @@ export const NetJetsPage: FC = () => {
         src={require('./images/NJ_OP.jpg')}
         alt="screenshot"
       />
-      <CaseStudyResultsResultsPane {...CaseStudyResultsProps} />
+      <CaseStudyResultsPane {...CaseStudyResultsProps} />
       <CaseStudyBottomNav {...caseStudyBottomNavProps} />
     </Layout>
   );

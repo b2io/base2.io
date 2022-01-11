@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 
-import { Layout } from '~/components';
-
-import { CaseStudyResultsResultsPane } from '../CaseStudy/CaseStudyResultsPane';
+import {
+  CaseStudyHeaderPane,
+  CaseStudyResultsPane,
+  Layout,
+} from '~/components';
 
 export const BatteryXTPage: FC = () => {
   // TODO: Add description for BatteryXTPage.
@@ -26,13 +28,17 @@ export const BatteryXTPage: FC = () => {
       },
     ],
     resultsParagraph:
-      "By breaking down a complicated software into a bite-size application, we’ve provided DNV GL with a versatile marketing tool. Since its completion, the demo has helped the company generate leads, convert prospects into clients, and communicate the merit of BatteryXT to stakeholders across the world.",
+      'By breaking down a complicated software into a bite-size application, we’ve provided DNV GL with a versatile marketing tool. Since its completion, the demo has helped the company generate leads, convert prospects into clients, and communicate the merit of BatteryXT to stakeholders across the world.',
   };
 
   return (
     <Layout description="" title="BatteryXT">
-      <h1>hello from the batteryxt page</h1>
-      <CaseStudyResultsResultsPane {...CaseStudyResultsResultsProps} />
+      <CaseStudyHeaderPane
+        alt="BatteryXT"
+        client="BatteryXT"
+        src={require('./images/batteryxt-hero.jpg')}
+      />
+      <CaseStudyResultsPane {...CaseStudyResultsResultsProps} />
     </Layout>
   );
 };

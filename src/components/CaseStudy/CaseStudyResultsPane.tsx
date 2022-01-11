@@ -21,7 +21,7 @@ export type CaseStudyResultsPaneProps = {
   resultsParagraph: string;
 };
 
-export const CaseStudyResultsResultsPane: FC<CaseStudyResultsPaneProps> = ({
+export const CaseStudyResultsPane: FC<CaseStudyResultsPaneProps> = ({
   resultsParagraph,
   children,
   ...props
