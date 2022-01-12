@@ -10,7 +10,6 @@ import {
 } from '~/components';
 
 export const BatteryXTPage: FC = () => {
-  // TODO: Add description for BatteryXTPage.
   const CaseStudyResultsResultsProps = {
     children: [
       {
@@ -52,7 +51,7 @@ export const BatteryXTPage: FC = () => {
   };
 
   return (
-    <Layout description="" title="BatteryXT">
+    <Layout description="Case study about BatteryXT" title="BatteryXT">
       <CaseStudyHeaderPane
         alt="BatteryXT"
         client="BatteryXT"
