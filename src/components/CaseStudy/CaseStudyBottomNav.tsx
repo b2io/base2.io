@@ -3,7 +3,15 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import { atMaxXL, colors, spacing } from '~/theme';
+import {
+  atMaxLg,
+  atMaxMd,
+  atMaxSm,
+  atMaxXL,
+  colors,
+  cssClamp,
+  spacing,
+} from '~/theme';
 
 export type CaseStudyBottomNavProps = {
   children: {
@@ -22,14 +30,14 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
     <section
       css={css`
         display: flex;
+        gap: ${spacing.lg};
         justify-content: center;
-        gap: ${spacing.md};
+        margin-top: ${spacing.xxl2};
 
-        ${atMaxXL} {
+        ${atMaxLg} {
           flex-direction: column;
           align-items: center;
-          margin-top: 0;
-          gap: 0;
+          gap: ${spacing.xxl2};
         }
       `}
       {...props}
@@ -38,11 +46,16 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
         <div
           key={index}
           css={css`
-            &:nth-child(2) article {
-              text-align: right;
-              left: ${spacing.xxl2};
+            height: 100%;
+            position: relative;
+            width: 100%;
 
-              ${atMaxXL} {
+            &:nth-child(2) article {
+              right: -${spacing.md};
+              text-align: right;
+
+              ${atMaxLg} {
+                right: unset;
                 text-align: left;
               }
             }
@@ -50,14 +63,20 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
         >
           <article
             css={css`
+              left: -${spacing.md};
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
               z-index: 3;
-              position: relative;
-              bottom: -${spacing.xxl5};
-              left: -${spacing.xxl2};
 
-              ${atMaxXL} {
-                bottom: -${spacing.xxl6};
-                left: ${spacing.xxl2};
+              ${atMaxLg} {
+                left: 50%;
+                top: 85%;
+                transform: translateX(-50%);
+              }
+
+              ${atMaxSm} {
+                top: 75%;
               }
             `}
           >
@@ -73,8 +92,9 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
               as="h2"
               variant="h2"
               css={css`
-                margin-bottom: ${spacing.xxxs};
                 color: ${colors.coral};
+                margin-bottom: ${spacing.xxxs};
+                white-space: nowrap;
               `}
             >
               {child.title}
@@ -90,9 +110,10 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             </Link>
           </article>
           <NextImage
-            alt={'test'}
+            alt={'screenshot'}
+            css={css``}
             height={400}
-            layout="fixed"
+            layout="responsive"
             src={child.imagePath}
             width={466}
           />

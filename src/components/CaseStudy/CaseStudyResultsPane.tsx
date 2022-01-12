@@ -45,9 +45,9 @@ export const CaseStudyResultsPane: FC<CaseStudyResultsPaneProps> = ({
         }
 
         ${atMinXXL} {
+          margin-left: calc(50% - 50vw);
           padding-left: ${spacing.marginXl};
           padding-right: ${spacing.marginXl};
-          margin-left: calc(50% - 50vw);
         }
 
         ${atMinDesktop} {

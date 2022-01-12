@@ -12,6 +12,8 @@ import {
 } from '~/components';
 import { atMinDesktop, spacing } from '~/theme';
 
+import { CaseStudyNav, CaseStudyProps } from '../WorkPage/CaseStudyNav';
+
 export const NetJetsPage: FC = () => {
   const CaseStudyResultsProps = {
     children: [
