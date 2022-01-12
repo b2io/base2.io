@@ -23,7 +23,7 @@ export const BatteryXTPage: FC = () => {
       },
       {
         heading: 'Simplifies a complex software',
-        text: 'Provides consumers quick and easy insight into an otherwise technical softwar',
+        text: 'Provides consumers quick and easy insight into an otherwise technical software',
       },
       {
         heading: 'Promotes clean energy',
