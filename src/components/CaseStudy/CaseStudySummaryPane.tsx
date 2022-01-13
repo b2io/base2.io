@@ -54,7 +54,7 @@ const Summary = styled.h2`
   ${atMinXL} {
     left: 35.438rem;
     margin: 0;
-    
+
     position: absolute;
     top: 4rem;
   }
@@ -95,13 +95,7 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
     >
       <ColorBlock>
         <ImageContainer>
-          <NextImage
-            alt={alt}
-            src={src}
-            placeholder="blur"
-            layout="fill"
-            objectFit="contain"
-          />
+          <NextImage alt={alt} src={src} layout="fill" objectFit="contain" />
         </ImageContainer>
       </ColorBlock>
       <Summary as="h2">{summaryText}</Summary>

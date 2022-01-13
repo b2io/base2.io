@@ -42,16 +42,22 @@ export const CaseStudyResultsPane: FC<CaseStudyResultsPaneProps> = ({
         ${atMinXL} {
           padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])}
             ${spacing.xxl};
+          position: relative;
+          top: -75px;
         }
 
         ${atMinXXL} {
           margin-left: calc(50% - 50vw);
           padding-left: ${spacing.marginXl};
           padding-right: ${spacing.marginXl};
+          position: relative;
+          top: -75px;
         }
 
         ${atMinDesktop} {
           margin-left: -${spacing.xxl1};
+          position: relative;
+          top: -75px;
         }
       `}
       {...props}

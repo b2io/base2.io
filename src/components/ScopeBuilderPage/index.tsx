@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import {
@@ -7,7 +8,10 @@ import {
   CaseStudyResultsPane,
   CaseStudySummaryPane,
   Layout,
+  TechCard,
+  TechListGrid,
 } from '~/components';
+import { spacing } from '~/theme';
 
 export const ScopeBuilderPage: FC = () => {
   const CaseStudyResultsProps = {
@@ -57,6 +61,14 @@ export const ScopeBuilderPage: FC = () => {
         client="ScopeBuilder"
         src={require('./images/scopebuilder-hero.jpg')}
       />
+      <TechListGrid
+        css={css`
+          margin-top: ${spacing.sm};
+        `}
+      >
+        <TechCard logo="react" />
+        <TechCard logo="net" />
+      </TechListGrid>
       <CaseStudyIntroContentPane
         introText="American Electric Power (AEP) needed an easy, standardized way to capture
         and report on the variable costs and details of capital-intensive power station and
@@ -77,7 +89,7 @@ export const ScopeBuilderPage: FC = () => {
         showcases all relevant projects—along with progress on each. From here, they’re able to complete
         scoping checklists and questionnaires, add attachments, select building materials and equipment,
         and route proposals to their supervisors for approval."
-        src={require('./images/scopebuilder-hero.jpg')}
+        src={require('./images/aep-logo.svg')}
         alt="screenshot"
       />
       <CaseStudyResultsPane {...CaseStudyResultsProps} />

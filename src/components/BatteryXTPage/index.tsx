@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import {
@@ -7,7 +8,10 @@ import {
   CaseStudyResultsPane,
   CaseStudySummaryPane,
   Layout,
+  TechCard,
+  TechListGrid,
 } from '~/components';
+import { spacing } from '~/theme';
 
 export const BatteryXTPage: FC = () => {
   const CaseStudyResultsResultsProps = {
@@ -57,6 +61,14 @@ export const BatteryXTPage: FC = () => {
         client="BatteryXT"
         src={require('./images/batteryxt-hero.jpg')}
       />
+      <TechListGrid
+        css={css`
+          margin-top: ${spacing.sm};
+        `}
+      >
+        <TechCard logo="react" />
+        <TechCard logo="sass" />
+      </TechListGrid>
       <CaseStudyIntroContentPane
         introText="DNV GL, an international risk management group, helps people across the globe
         realize new possibilities in battery power. Base Two simplified DNV GL’s BatteryXT software
