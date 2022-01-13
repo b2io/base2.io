@@ -1,12 +1,117 @@
+import { css } from '@emotion/react';
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { Layout } from '~/components';
+import {
+  CaseStudyBottomNav,
+  CaseStudyHeaderPane,
+  CaseStudyIntroContentPane,
+  CaseStudyResultsPane,
+  CaseStudySummaryPane,
+  Layout,
+  TechCard,
+  TechListGrid,
+} from '~/components';
+import { atMinDesktop, spacing } from '~/theme';
 
 export const ColorSnapVisualizerPage: FC = () => {
-  // TODO: Add description for ColorSnapVisualizerPage.
+  const CaseStudyResultsProps = {
+    children: [
+      {
+        heading: '4.3 stars on App store',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+      },
+      {
+        heading: '+30% conversion rate',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+      },
+      {
+        heading: '8% ROI over 2 years',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+      },
+      {
+        heading: '143,568+ new downloads',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+      },
+    ],
+    resultsParagraph:
+      'ColorSnap® Visualizer for Web didn’t just set a new standard for customer engagement in the paint industry—it also modernized an age-old process. Instead of buying paint samples at the store and manually applying them to walls, customers can now trial new paints in seconds.',
+  };
+
+  const caseStudyBottomNavProps = {
+    children: [
+      {
+        company: 'DNV',
+        imagePath: '/work/net-jets.jpg',
+        navPath: '/work/batteryxt',
+        title: 'GL Battery XT',
+      },
+      {
+        company: 'Net Jets',
+        imagePath: '/work/net-jets.jpg',
+        navPath: '/work/netjets',
+        title: 'Fly NetJets',
+      },
+    ],
+  };
+
   return (
-    <Layout description="" title="ColorSnap Visualizer">
-      <h1>hello from the colorsnap visualizer page</h1>
+    <Layout
+      description="Case study about ColorSnap Visualizer"
+      title="ColorSnap Visualizer"
+    >
+      <CaseStudyHeaderPane
+        alt="ColorSnap Visualizer"
+        client="ColorSnap Visualizer &reg;"
+        src={require('./images/colorsnap-hero.jpg')}
+      />
+      <TechListGrid
+        css={css`
+          margin-top: ${spacing.sm};
+        `}
+      >
+        <TechCard logo="angular" />
+        <TechCard logo="sass" />
+        <TechCard logo="jasmine" />
+        <TechCard logo="karma" />
+      </TechListGrid>
+      <CaseStudyIntroContentPane
+        introText="Sherwin-Williams wanted customers to easily visualize exciting new paint colors on
+        their walls. We created ColorSnap® Visualizer for Web, an application that enables users to
+        virtually transform their space with any Sherwin-Williams color."
+        askText="Sherwin-Williams knew that if their customers could effortlessly test a paint color
+        in their space, they’d be inspired to pick up a brush. But as a brand new application—one that
+        would have to accommodate mobile phones, computers, and the quirky Internet Explorer 10—building
+        it would be a tricky endeavor. Realizing they needed a team that was comfortable navigating uncharted
+        technical waters, Sherwin-Williams turned to Base Two."
+        solutionText="Working closely with the Sherwin-Williams design and marketing team, our developers dove
+        in. The goal was to create an application that allowed users to both virtually test colors in their
+        space and immerse them in the Sherwin-Williams paint catalogue. The finished product became ColorSnap® Visualizer
+        for Web, an application that elevated the painting experience to an entirely new dimension."
+      />
+      <section
+        css={css`
+          margin: 0 calc(50% - 50vw);
+
+          ${atMinDesktop} {
+            margin: 0 -${spacing.xxl1};
+          }
+        `}
+      >
+        <NextImage
+          alt="Jet"
+          layout="responsive"
+          src={require('./images/colorsnap-full-width.jpg')}
+        />
+      </section>
+      <CaseStudySummaryPane
+        summaryText="The app lets customers effortlessly browse Sherwin-Williams’ digital paint collection, curate color schemes,
+        generate paint suggestions from their favorite images, and digitally paint their physical spaces."
+        src={require('./images/colorsnap-screenshot.jpg')}
+        alt="screenshot"
+      />
+      <CaseStudyResultsPane {...CaseStudyResultsProps} />
+      <CaseStudyBottomNav {...caseStudyBottomNavProps} />
     </Layout>
   );
 };

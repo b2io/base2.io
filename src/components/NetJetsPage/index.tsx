@@ -69,6 +69,7 @@ export const NetJetsPage: FC = () => {
       >
         <TechCard logo="react" />
         <TechCard logo="redux" />
+        <TechCard logo="jasmine" />
       </TechListGrid>
       <CaseStudyIntroContentPane
         introText="With its wide range of highly personalized, upscale flight services,
@@ -106,7 +107,7 @@ export const NetJetsPage: FC = () => {
         fully control their in-flight experience. Behind the scenes, a number of systems communicate 
         to make this all possible, from a shared data layer supporting mobile and web interfaces to 
         constantly changing updates on aircraft availability."
-        src={require('./images/NJ_OP.jpg')}
+        src={require('./images/netjets-screenshot.jpg')}
         alt="screenshot"
       />
       <CaseStudyResultsPane {...CaseStudyResultsProps} />
