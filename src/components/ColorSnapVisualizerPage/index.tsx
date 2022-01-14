@@ -9,10 +9,11 @@ import {
   CaseStudyResultsPane,
   CaseStudySummaryPane,
   Layout,
+  QuotedImage,
   TechCard,
   TechListGrid,
 } from '~/components';
-import { atMinDesktop, spacing } from '~/theme';
+import { atMinDesktop, cssClamp, spacing } from '~/theme';
 
 export const ColorSnapVisualizerPage: FC = () => {
   const CaseStudyResultsProps = {
@@ -111,6 +112,21 @@ export const ColorSnapVisualizerPage: FC = () => {
         alt="screenshot"
       />
       <CaseStudyResultsPane {...CaseStudyResultsProps} />
+      <QuotedImage
+        alt="people looking at computer"
+        company="Sherwin Williams"
+        css={css`
+          margin-top: ${cssClamp([12.5, 'mobile'], [17.313, 'desktop'])};
+        `}
+        imgSources={[
+          ['tablet', '/work/colorsnap-quote_medium.jpg'],
+          ['xl', '/work/colorsnap-quote_large.jpg'],
+          ['xs', '/work/colorsnap-quote_small.jpg'],
+        ]}
+        name="James Weaver"
+        position="Project Manager"
+        quote="Best group of  developers. Amazing front end and back end skills! Great partners to work with!"
+      />
       <CaseStudyBottomNav {...caseStudyBottomNavProps} />
     </Layout>
   );
