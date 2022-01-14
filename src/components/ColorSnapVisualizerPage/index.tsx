@@ -125,7 +125,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         ]}
         name="James Weaver"
         position="Project Manager"
-        quote="Best group of  developers. Amazing front end and back end skills! Great partners to work with!"
+        quote="Best group of developers. Amazing front end and back end skills! Great partners to work with!"
       />
       <CaseStudyBottomNav {...caseStudyBottomNavProps} />
     </Layout>
