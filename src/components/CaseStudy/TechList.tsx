@@ -91,7 +91,9 @@ export const TechListGrid: FC<TechListGridProps> = ({ children, ...props }) => {
       `}
       {...props}
     >
-      {Children.map(children, (child) => cloneElement(child, { as: 'li' }))}
+      {Children.map(children, (child: ReactElement) =>
+        cloneElement(child, { as: 'li' }),
+      )}
     </ul>
   );
 };
