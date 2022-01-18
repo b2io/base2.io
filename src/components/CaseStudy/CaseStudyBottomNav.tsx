@@ -3,7 +3,7 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import { atMaxLg, atMaxSm, colors, spacing } from '~/theme';
+import { atMaxLg, atMaxMd, atMaxSm, colors, spacing } from '~/theme';
 
 export type CaseStudyBottomNavProps = {
   children: {
@@ -25,8 +25,9 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
         gap: ${spacing.lg};
         justify-content: center;
         margin-top: ${spacing.xxl2};
+        padding: ${spacing.md};
 
-        ${atMaxLg} {
+        ${atMaxMd} {
           flex-direction: column;
           align-items: center;
           gap: ${spacing.xxl2};
@@ -46,7 +47,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
               right: -${spacing.md};
               text-align: right;
 
-              ${atMaxLg} {
+              ${atMaxMd} {
                 right: unset;
                 text-align: left;
               }
@@ -61,7 +62,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
               transform: translateY(-50%);
               z-index: 3;
 
-              ${atMaxLg} {
+              ${atMaxMd} {
                 left: 50%;
                 top: 85%;
                 transform: translateX(-50%);
