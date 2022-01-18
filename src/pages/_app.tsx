@@ -8,7 +8,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import type { FC } from 'react';
 
-import { BGNoise, noise } from '~/components';
 import theme, { colors } from '~/theme';
 
 const handleExitComplete = () => {
@@ -109,11 +108,6 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
             </SSRProvider>
           </ThemeProvider>
         </AnimatePresence>
-        <BGNoise
-          css={css`
-            animation: ${noise} 0.2s infinite;
-          `}
-        />
       </AnimateSharedLayout>
     </>
   );
