@@ -1,5 +1,7 @@
 export * from './ApproachPage';
+export * from './BatteryXTPage';
 export * from './CareersPage';
+export * from './Card';
 export * from './CaseStudy/CaseStudyBottomNav';
 export * from './CaseStudy/CaseStudyHeaderPane';
 export * from './CaseStudy/CaseStudyHero';
