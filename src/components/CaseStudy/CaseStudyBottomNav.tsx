@@ -3,7 +3,7 @@ import NextImage from 'next/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
-import { atMaxLg, atMaxMd, atMaxSm, colors, spacing } from '~/theme';
+import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
 
 export type CaseStudyBottomNavProps = {
   children: {
