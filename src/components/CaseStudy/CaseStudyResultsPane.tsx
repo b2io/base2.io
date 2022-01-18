@@ -3,6 +3,7 @@ import { FC } from 'react';
 
 import { CardGrid, Heading, ResultCard, Text } from '~/components';
 import {
+  atMinDesktop,
   atMinLg,
   atMinTablet,
   atMinXL,
@@ -20,7 +21,7 @@ export type CaseStudyResultsPaneProps = {
   resultsParagraph: string;
 };
 
-export const CaseStudyResultsResultsPane: FC<CaseStudyResultsPaneProps> = ({
+export const CaseStudyResultsPane: FC<CaseStudyResultsPaneProps> = ({
   resultsParagraph,
   children,
   ...props
@@ -33,18 +34,30 @@ export const CaseStudyResultsResultsPane: FC<CaseStudyResultsPaneProps> = ({
         padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])} ${spacing.sm};
 
         ${atMinTablet} {
-          margin: 0 -${spacing.lg};
+          margin-left: -${spacing.xxl};
+          margin-right: -${spacing.xxl};
           padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])} ${spacing.lg};
         }
 
         ${atMinXL} {
-          margin: 0 -${spacing.xxl};
-          padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])} ${spacing.xxl};
+          padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])}
+            ${spacing.xxl};
+          position: relative;
+          top: -75px;
         }
 
         ${atMinXXL} {
+          margin-left: calc(50% - 50vw);
           padding-left: ${spacing.marginXl};
           padding-right: ${spacing.marginXl};
+          position: relative;
+          top: -75px;
+        }
+
+        ${atMinDesktop} {
+          margin-left: -${spacing.xxl1};
+          position: relative;
+          top: -75px;
         }
       `}
       {...props}

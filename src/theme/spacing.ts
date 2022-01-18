@@ -12,6 +12,7 @@ export const spacing = {
   xxl3: '8.5rem', // 136px
   xxl4: '12.5rem', // 200px
   xxl5: '17.5rem', // 280px
+  xxl6: '27.5rem', // 440px
 
   marginXl: '7.6125rem',
 };
