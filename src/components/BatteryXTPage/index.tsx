@@ -18,11 +18,11 @@ export const BatteryXTPage: FC = () => {
     children: [
       {
         heading: 'Generate inbound leads',
-        text: 'Serves as a lead generator for DNV GL to capture information on potential clients ',
+        text: 'Serves as a lead generator for DNV to capture information on potential clients ',
       },
       {
         heading: 'Boosts marketing efforts ',
-        text: 'Helps the DNV GL marketing team demonstrate their BatteryXT product in digital campaigns and at trade shows worldwide ',
+        text: 'Helps the DNV marketing team demonstrate their Battery XT product in digital campaigns and at trade shows worldwide ',
       },
       {
         heading: 'Simplifies a complex software',
@@ -34,7 +34,7 @@ export const BatteryXTPage: FC = () => {
       },
     ],
     resultsParagraph:
-      'By breaking down a complicated software into a bite-size application, we’ve provided DNV GL with a versatile marketing tool. Since its completion, the demo has helped the company generate leads, convert prospects into clients, and communicate the merit of BatteryXT to stakeholders across the world.',
+      'By breaking down a complicated software into a bite-size application, we’ve provided DNV with a versatile marketing tool. Since its completion, the demo has helped the company generate leads, convert prospects into clients, and communicate the merit of Battery XT to stakeholders across the world.',
   };
 
   const caseStudyBottomNavProps = {
@@ -55,10 +55,10 @@ export const BatteryXTPage: FC = () => {
   };
 
   return (
-    <Layout description="Case study about BatteryXT" title="BatteryXT">
+    <Layout description="Case study about Battery XT" title="Battery XT">
       <CaseStudyHeaderPane
-        alt="BatteryXT"
-        client="BatteryXT"
+        alt="Battery XT"
+        client="Battery XT"
         src={require('./images/batteryxt-hero.jpg')}
       />
       <TechListGrid
@@ -70,21 +70,21 @@ export const BatteryXTPage: FC = () => {
         <TechCard logo="sass" />
       </TechListGrid>
       <CaseStudyIntroContentPane
-        introText="DNV GL, an international risk management group, helps people across the globe
-        realize new possibilities in battery power. Base Two simplified DNV GL’s BatteryXT software
+        introText="DNV, an international risk management group, helps people across the globe
+        realize new possibilities in battery power. Base Two simplified DNV’s Battery XT software
         into an accessible demo site that still captures the product’s core value."
-        askText="With BatteryXT, DNV GL’s clients can visualize battery lifespan and maintenance
+        askText="With Battery XT, DNV’s clients can visualize battery lifespan and maintenance
         needs across multiple applications and conditions. Built using highly technical MATLAB®
-        software, BatteryXT forms an imposing product. Our client wanted to contain it in an interactive
+        software, Battery XT forms an imposing product. Our client wanted to contain it in an interactive
         demo, so that professionals from any background could view it on any device—and quickly understand
         its powerful benefits."
         solutionText="Distilling software that stores extensive data into a small web application is no
-        easy feat. By collaborating with DNV GL’s marketing and engineering teams, Base Two could identify
+        easy feat. By collaborating with DNV’s marketing and engineering teams, Base Two could identify
         the software’s most important functions—while also simplifying complex industry jargon and delivering
         the desired demo version."
       />
       <CaseStudySummaryPane
-        summaryText="The new BatteryXT demo allows users to toggle between battery sizes, states of charge,
+        summaryText="The new Battery XT demo allows users to toggle between battery sizes, states of charge,
         and temperatures within different applications—and see how these factors affect performance. It’s
         compatible with nearly every device type and screen size, making it ideal for use on home computers
         or trade show floors."

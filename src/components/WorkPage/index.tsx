@@ -69,7 +69,7 @@ export const WorkPage: FC = () => {
           href="/work/batteryxt"
           info="Responsive web application"
           src={require('./images/gl-battery.jpg')}
-          title="DNV&#8226;GL Battery XT"
+          title="DNV Battery XT"
         />
       </div>
     </Layout>
