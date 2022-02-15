@@ -58,7 +58,7 @@ export const ScopeBuilderPage: FC = () => {
     <Layout description="Case study about ScopeBuilder" title="ScopeBuilder">
       <CaseStudyHeaderPane
         alt="ScopeBuilder"
-        client="ScopeBuilder"
+        name="ScopeBuilder"
         src={require('./images/scopebuilder-hero.jpg')}
       />
       <TechListGrid

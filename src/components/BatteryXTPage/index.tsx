@@ -58,7 +58,7 @@ export const BatteryXTPage: FC = () => {
     <Layout description="Case study about Battery XT" title="Battery XT">
       <CaseStudyHeaderPane
         alt="Battery XT"
-        client="Battery XT"
+        name="Battery XT"
         src={require('./images/batteryxt-hero.jpg')}
       />
       <TechListGrid

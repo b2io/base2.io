@@ -8,16 +8,12 @@ import { atMaxMd } from '~/theme';
 import { CaseStudyHero } from './CaseStudyHero';
 
 type CaseStudyProps = NextImageProps & {
-  client: string;
+  name: string;
   src: Exclude<NextImageProps['src'], string | StaticImageData>;
   alt: string;
 };
 
-export const CaseStudyHeaderPane: FC<CaseStudyProps> = ({
-  alt,
-  client,
-  src,
-}) => {
+export const CaseStudyHeaderPane: FC<CaseStudyProps> = ({ alt, name, src }) => {
   return (
     <section>
       <Heading
@@ -36,7 +32,7 @@ export const CaseStudyHeaderPane: FC<CaseStudyProps> = ({
           }
         `}
       >
-        {client}
+        {name}
       </Heading>
 
       <CaseStudyHero alt={alt} src={src} />

@@ -59,7 +59,7 @@ export const NetJetsPage: FC = () => {
     <Layout description="Case study about NetJets" title="Netjets">
       <CaseStudyHeaderPane
         alt="NetJets"
-        client="Fly Netjets"
+        name="Fly Netjets"
         src={require('./images/netjets-hero.jpg')}
       />
       <TechListGrid

@@ -63,7 +63,7 @@ export const ColorSnapVisualizerPage: FC = () => {
     >
       <CaseStudyHeaderPane
         alt="ColorSnap Visualizer"
-        client="ColorSnap Visualizer &reg;"
+        name="ColorSnap Visualizer &reg;"
         src={require('./images/colorsnap-hero.jpg')}
       />
       <TechListGrid
