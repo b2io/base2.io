@@ -45,7 +45,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         company: 'DNV',
         imagePath: '/work/net-jets.jpg',
         navPath: '/work/batteryxt',
-        title: 'GL Battery XT',
+        title: 'Battery XT',
       },
       {
         company: 'Net Jets',

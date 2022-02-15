@@ -65,10 +65,10 @@ export const WorkPage: FC = () => {
         />
 
         <CaseStudyPreview
-          alt={'gl battery xt screenshot'}
+          alt={'battery xt screenshot'}
           href="/work/batteryxt"
           info="Responsive web application"
-          src={require('./images/gl-battery.jpg')}
+          src={require('./images/batteryxt.jpg')}
           title="DNV Battery XT"
         />
       </div>
