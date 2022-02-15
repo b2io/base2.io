@@ -46,7 +46,7 @@ export const ScopeBuilderPage: FC = () => {
         title: 'Battery XT',
       },
       {
-        company: 'Net Jets',
+        company: 'NetJets',
         imagePath: '/work/net-jets.jpg',
         navPath: '/work/netjets',
         title: 'Fly NetJets',
