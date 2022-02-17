@@ -25,7 +25,7 @@
     "@react-aria/ssr": "^3.0.2",
     "@react-aria/utils": "^3.8.1",
     "framer-motion": "^4.1.17",
-    "next": "^11.1.2",
+    "next": "^12.1.0",
     "next-seo": "^4.26.0",
     "normalize.css": "^8.0.1",
     "polished": "^4.1.3",
