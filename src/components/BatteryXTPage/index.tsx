@@ -17,7 +17,7 @@ export const BatteryXTPage: FC = () => {
   const CaseStudyResultsResultsProps = {
     children: [
       {
-        heading: 'Generate inbound leads',
+        heading: 'Generates inbound leads',
         text: 'Serves as a lead generator for DNV to capture information on potential clients ',
       },
       {
