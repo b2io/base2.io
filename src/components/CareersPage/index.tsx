@@ -40,7 +40,7 @@ export const CareersPage: FC = () => {
         />
         <Benefit
           benefit="Generous time off"
-          info="Employees are encouraged to take an average of 3 weeks of vacation a year. We also close the office for 12 total holidays and offer unlimited sick days. Let's face it, we all get sick. "
+          info="Employees are encouraged to take an average of 3 weeks of vacation a year. We also close the office for 13 total holidays and offer unlimited sick days. Let's face it, we all get sick. "
         />
         <Benefit
           benefit="Transparency"

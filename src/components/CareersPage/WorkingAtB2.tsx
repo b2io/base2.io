@@ -32,7 +32,7 @@ export const WorkingAtB2: FC = () => {
           Working at Base Two
         </Heading>
         <Heading as="h3" variant="h3">
-          We look for candidates who are both ambitous and genuine. Independent
+          We look for candidates who are both ambitious and genuine. Independent
           thinkers who are more interested in creative approaches than
           out-of-the-box engineering solutions.
         </Heading>

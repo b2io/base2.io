@@ -5,16 +5,8 @@ import { cssClamp } from './util';
 
 export const linkVariants = {
   CTA: {
-    '::after': {
-      backgroundColor: colors.action,
-      content: '""',
-      display: 'block',
-      height: '0.125rem',
-      marginTop: spacing.xxxs,
-      width: '100%',
-    },
     ':hover': {
-      '::after': {
+      '.redLine': {
         backgroundColor: colors.offWhite,
       },
     },
