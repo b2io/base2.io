@@ -34,9 +34,8 @@ export const ContactPage: FC = () => {
         variant="h2"
       >
         Our office is based in Columbus, OH. Our team members are located in
-        Pittsburgh, Philadelphia, Atlanta, New York City, Miami, and Chicago,
-        but thanks to satellites and the internet, we can work with you wherever
-        you are.
+        Pittsburgh, Philadelphia, Atlanta, New York City, and Miami, but thanks
+        to satellites and the internet, we can work with you wherever you are.
       </Text>
       <Contact />
     </Layout>
