@@ -34,7 +34,7 @@
     "react-hook-form": "^7.12.2",
     "react-merge-refs": "^1.1.0",
     "react-use": "^17.2.4",
-    "sharp": "^0.28.3",
+    "sharp": "^0.30.5",
     "styled-system": "^5.1.5"
   },
   "devDependencies": {
