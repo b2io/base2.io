@@ -13,6 +13,8 @@ import {
 } from '~/components';
 import { spacing } from '~/theme';
 
+import { batteryXtNav, flyNetJetsNav } from '../CaseStudy/navProps';
+
 export const ScopeBuilderPage: FC = () => {
   const CaseStudyResultsProps = {
     children: [
@@ -34,23 +36,13 @@ export const ScopeBuilderPage: FC = () => {
       },
     ],
     resultsParagraph:
-      'ScopeBuilder has transformed daily life for many AEP employees, providing them with streamlined data, while unifying disparate teams around focused processes. The result is a powerful solution that’s saved our client immeasurable time and money—and provided valuable new insight into company operations.',
+      'ScopeBuilder has transformed daily life for many AEP employees, providing them with streamlined data, while unifying disparate teams around focused processes. The result is a powerful solution that saved our client immeasurable time and money—and provided valuable new insight into company operations.',
   };
 
   const caseStudyBottomNavProps = {
     children: [
-      {
-        company: 'DNV',
-        imagePath: '/work/net-jets.jpg',
-        navPath: '/work/batteryxt',
-        title: 'Battery XT',
-      },
-      {
-        company: 'NetJets',
-        imagePath: '/work/net-jets.jpg',
-        navPath: '/work/netjets',
-        title: 'Fly NetJets',
-      },
+      batteryXtNav,
+      flyNetJetsNav,
     ],
   };
 
@@ -89,7 +81,7 @@ export const ScopeBuilderPage: FC = () => {
         showcases all relevant projects—along with progress on each. From here, they’re able to complete
         scoping checklists and questionnaires, add attachments, select building materials and equipment,
         and route proposals to their supervisors for approval."
-        src={require('./images/aep-logo.svg')}
+        src={require('./images/scopebuilder-preview.png')}
         alt="screenshot"
       />
       <CaseStudyResultsPane {...CaseStudyResultsProps} />

@@ -14,7 +14,7 @@ import {
   Link,
   Text,
 } from '~/components';
-import { atMinTablet, colors, spacing } from '~/theme';
+import { atMaxSm, atMinTablet, colors, spacing } from '~/theme';
 
 export const CardHeading: FC = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
@@ -77,6 +77,11 @@ export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
           as="span"
           css={css`
             display: block;
+            ${atMaxSm} {
+              h3 {
+                font-size: 1.5rem;
+              }
+            }
           `}
           variant="h2"
         >

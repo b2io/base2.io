@@ -39,7 +39,9 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
         <div
           key={index}
           css={css`
+            background-color: ${colors.workThumbnailBg};
             height: 100%;
+            opacity: 0.75;
             position: relative;
             width: 100%;
 
@@ -104,7 +106,9 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
           </article>
           <NextImage
             alt={'screenshot'}
-            css={css``}
+            css={css`
+              filter: opacity(30%);
+            `}
             height={400}
             layout="responsive"
             src={child.imagePath}

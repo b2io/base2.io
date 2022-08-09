@@ -13,6 +13,8 @@ import {
 } from '~/components';
 import { spacing } from '~/theme';
 
+import {flyNetJetsNav, scopeBuilderNav } from '../CaseStudy/navProps';
+
 export const BatteryXTPage: FC = () => {
   const CaseStudyResultsResultsProps = {
     children: [
@@ -39,18 +41,8 @@ export const BatteryXTPage: FC = () => {
 
   const caseStudyBottomNavProps = {
     children: [
-      {
-        company: 'NetJets',
-        imagePath: '/work/net-jets.jpg',
-        navPath: '/work/netjets',
-        title: 'Fly Netjets',
-      },
-      {
-        company: 'AEP',
-        imagePath: '/work/scopebuilder.jpg',
-        navPath: '/work/scopebuilder',
-        title: 'ScopeBuilder',
-      },
+      flyNetJetsNav,
+      scopeBuilderNav,
     ],
   };
 
