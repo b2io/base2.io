@@ -77,11 +77,6 @@ export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
           as="span"
           css={css`
             display: block;
-            ${atMaxSm} {
-              h3 {
-                font-size: 1.5rem;
-              }
-            }
           `}
           variant="h2"
         >
