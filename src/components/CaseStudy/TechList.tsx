@@ -11,6 +11,7 @@ import { atMinTablet, atMinXL, spacing } from '~/theme';
 
 import {
   AngularIcon,
+  D3Icon,
   JasminealtIcon,
   JasmineIcon,
   KarmaIcon,
@@ -22,6 +23,7 @@ import {
 
 type Logo =
   | 'angular'
+  | 'd3'
   | 'jasmine'
   | 'jasminealt'
   | 'karma'
@@ -37,6 +39,7 @@ export type TechCardProps<E extends ElementType = ElementType> = {
 
 const TechList = {
   angular: AngularIcon,
+  d3: D3Icon,
   jasmine: JasmineIcon,
   jasminealt: JasminealtIcon,
   karma: KarmaIcon,

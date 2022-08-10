@@ -1,6 +1,7 @@
 export * from './AngularIcon';
 export * from './BusinessIcon';
 export * from './CommunityIcon';
+export * from './D3Icon';
 export * from './DashIcon';
 export * from './DeliveryIcon';
 export * from './DeveloperIcon';

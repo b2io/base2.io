@@ -70,7 +70,16 @@ export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
         }
       `}
     >
-      <Heading as="h3" color="coral" variant="h1">
+      <Heading
+        as="h3"
+        color="coral"
+        variant="h1"
+        css={css`
+          ${atMaxSm} {
+            font-size: 3.5rem;
+          }
+        `}
+      >
         {highlight}
         <br />
         <Text
@@ -87,6 +96,9 @@ export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
         as="p"
         css={css`
           margin: 0;
+          ${atMaxSm} {
+            max-width: 21.875rem;
+          }
         `}
       >
         {text}

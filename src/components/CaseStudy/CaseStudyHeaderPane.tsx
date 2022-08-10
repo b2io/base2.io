@@ -3,7 +3,7 @@ import { ImageProps as NextImageProps } from 'next/image';
 import type { FC } from 'react';
 
 import { Heading } from '~/components';
-import { atMaxMd, atMinSm } from '~/theme';
+import { atMaxMd, atMaxSm, atMinSm } from '~/theme';
 
 import { CaseStudyHero } from './CaseStudyHero';
 
@@ -33,6 +33,10 @@ export const CaseStudyHeaderPane: FC<CaseStudyProps> = ({ alt, name, src }) => {
 
           ${atMinSm} {
             line-height: .6;
+          }
+
+          ${atMaxSm} {
+            font-size: 3rem;
           }
         `}
       >

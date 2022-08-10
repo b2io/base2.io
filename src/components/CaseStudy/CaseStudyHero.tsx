@@ -14,6 +14,7 @@ export const CaseStudyHero: FC<CaseStudyHeroProps> = ({ src, alt }) => {
       layout="responsive"
       src={src}
       css={css`
+        filter: opacity(65%);
         div {
           z-index: 2;
         }

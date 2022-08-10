@@ -60,6 +60,7 @@ export const BatteryXTPage: FC = () => {
       >
         <TechCard logo="react" />
         <TechCard logo="sass" />
+        <TechCard logo="d3" />
       </TechListGrid>
       <CaseStudyIntroContentPane
         introText="DNV, an international risk management group, helps people across the globe

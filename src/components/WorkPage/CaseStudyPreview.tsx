@@ -3,7 +3,7 @@ import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import type { FC } from 'react';
 
 import { Link, Text } from '~/components';
-import { atMinSm, atMinTablet, colors, spacing } from '~/theme';
+import { atMaxLg, atMinSm, atMinTablet, colors, spacing } from '~/theme';
 
 type CaseStudyPreviewImageProps = NextImageProps & {
   alt: string;
@@ -55,6 +55,10 @@ export const CaseStudyPreview: FC<CaseStudyPreviewImageProps> = ({
           href={href}
           css={css`
             font-size: 4rem;
+
+            ${atMaxLg} {
+              font-size: 3rem;
+            }
           `}
           variant="large"
         >
