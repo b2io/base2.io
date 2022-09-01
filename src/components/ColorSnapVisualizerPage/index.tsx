@@ -8,6 +8,7 @@ import {
   CaseStudyIntroContentPane,
   CaseStudyResultsPane,
   CaseStudySummaryPane,
+  ColorSnapImagePanel,
   Layout,
   QuotedImage,
   TechCard,
@@ -15,26 +16,14 @@ import {
 } from '~/components';
 import { atMinDesktop, cssClamp, spacing } from '~/theme';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+type ImagePanelProps = {
+  alt: string;
+  src: string;
+};
+
 export const ColorSnapVisualizerPage: FC = () => {
   const CaseStudyResultsProps = {
-    children: [
-      {
-        heading: '4.3 stars on App store',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-      },
-      {
-        heading: '+30% conversion rate',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-      },
-      {
-        heading: '8% ROI over 2 years',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-      },
-      {
-        heading: '143,568+ new downloads',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-      },
-    ],
     resultsParagraph:
       'ColorSnap® Visualizer for Web didn’t just set a new standard for customer engagement in the paint industry—it also modernized an age-old process. Instead of buying paint samples at the store and manually applying them to walls, customers can now trial new paints in seconds.',
   };
@@ -127,6 +116,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         position="Project Manager"
         quote="Best group of developers. Amazing front end and back end skills! Great partners to work with!"
       />
+      <ColorSnapImagePanel alt={''} src={''} />
       <CaseStudyBottomNav {...caseStudyBottomNavProps} />
     </Layout>
   );

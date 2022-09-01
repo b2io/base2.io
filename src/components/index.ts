@@ -21,6 +21,7 @@ export * from './Header';
 export * from './Heading';
 export * from './HomePage';
 export * from './icons';
+export * from './ColorSnapVisualizerPage/ColorSnapImagePanel';
 export * from './Layout';
 export * from './Link';
 export * from './MobileMenu';
