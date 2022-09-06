@@ -11,7 +11,7 @@ export const ContactPage: FC = () => {
   return (
     <Layout description="Like what you see? Let's get started." title="Contact">
       <PageHero
-        alt="lighting fixture mounted on a brick wall"
+        alt="group of people walking toward you"
         imgSources={[
           ['largeDesktop', '/contact/contact-hero-xlarge.jpg'],
           ['tablet', '/contact/contact-hero-medium.jpg'],
@@ -34,8 +34,9 @@ export const ContactPage: FC = () => {
         variant="h2"
       >
         Our office is based in Columbus, OH. Our team members are located in
-        Pittsburgh, Philadelphia, Atlanta, New York City, and Miami, but thanks
-        to satellites and the internet, we can work with you wherever you are.
+        Columbus, Pittsburgh, Philadelphia, Atlanta, New York City, and Orlando,
+        but thanks to satellites and the internet, we can work with you wherever
+        you are.
       </Text>
       <Contact />
     </Layout>
