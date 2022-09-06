@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { FC } from 'react';
 
-import { atMinLg, atMinXL, spacing } from '~/theme';
+import { atMinLg, spacing } from '~/theme';
 
 const ImageContainer = styled.div`
   top: -18rem;

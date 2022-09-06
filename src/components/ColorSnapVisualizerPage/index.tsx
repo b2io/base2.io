@@ -52,7 +52,12 @@ export const ColorSnapVisualizerPage: FC = () => {
     >
       <CaseStudyHeaderPane
         alt="ColorSnap Visualizer"
-        name="ColorSnap Visualizer &reg;"
+        name={
+          <>
+            ColorSnap Visualizer
+            <sup style={{ fontSize: '2.5rem', top: '-.8em' }}>&reg;</sup>
+          </>
+        }
         src={require('./images/colorsnap-hero.jpg')}
       />
       <TechListGrid
@@ -66,9 +71,15 @@ export const ColorSnapVisualizerPage: FC = () => {
         <TechCard logo="karma" />
       </TechListGrid>
       <CaseStudyIntroContentPane
-        introText="Sherwin-Williams wanted customers to easily visualize exciting new paint colors on
-        their walls. We created ColorSnap® Visualizer for Web, an application that enables users to
-        virtually transform their space with any Sherwin-Williams color."
+        introText={
+          <>
+            Sherwin-Williams wanted customers to easily visualize exciting new
+            paint colors on their walls. We created ColorSnap
+            <sup style={{ fontSize: '.5em' }}>®</sup> Visualizer for Web, an
+            application that enables users to virtually transform their space
+            with any Sherwin-Williams color.
+          </>
+        }
         askText="Sherwin-Williams knew that if their customers could effortlessly test a paint color
         in their space, they’d be inspired to pick up a brush. But as a brand new application—one that
         would have to accommodate mobile phones, computers, and the quirky Internet Explorer 10—building

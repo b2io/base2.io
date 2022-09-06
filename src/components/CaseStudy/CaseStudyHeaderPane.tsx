@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { ImageProps as NextImageProps } from 'next/image';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { Heading } from '~/components';
 import { atMaxMd, atMaxSm, atMinSm } from '~/theme';
@@ -8,7 +8,7 @@ import { atMaxMd, atMaxSm, atMinSm } from '~/theme';
 import { CaseStudyHero } from './CaseStudyHero';
 
 type CaseStudyProps = NextImageProps & {
-  name: string;
+  name: string | ReactNode;
   src: Exclude<NextImageProps['src'], string | StaticImageData>;
   alt: string;
 };
@@ -32,7 +32,8 @@ export const CaseStudyHeaderPane: FC<CaseStudyProps> = ({ alt, name, src }) => {
           }
 
           ${atMinSm} {
-            line-height: .6;
+            top: 1.5 rem;
+            line-height: 4.5rem;
           }
 
           ${atMaxSm} {
