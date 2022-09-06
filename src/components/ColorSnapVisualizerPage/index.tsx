@@ -101,6 +101,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         alt="screenshot"
       />
       <CaseStudyResultsPane {...CaseStudyResultsProps} />
+      <ColorSnapImagePanel alt={''} src={''} />
       <QuotedImage
         alt="people looking at computer"
         company="Sherwin Williams"
@@ -116,7 +117,6 @@ export const ColorSnapVisualizerPage: FC = () => {
         position="Project Manager"
         quote="Best group of developers. Amazing front end and back end skills! Great partners to work with!"
       />
-      <ColorSnapImagePanel alt={''} src={''} />
       <CaseStudyBottomNav {...caseStudyBottomNavProps} />
     </Layout>
   );

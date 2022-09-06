@@ -2,17 +2,19 @@ import styled from '@emotion/styled';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { FC } from 'react';
 
-import { atMinXL } from '~/theme';
+import { atMinLg, atMinXL, spacing } from '~/theme';
 
 const ImageContainer = styled.div`
+  top: -18rem;
   height: 100%;
   justify-content: center;
   position: relative;
-  width: 14.375rem;
 
-  ${atMinXL} {
-    height: 100%;
-    width: 20.625rem;
+  ${atMinLg} {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    --column-shift: ${spacing.xxl3};
+    gap: ${spacing.xxl};
   }
 `;
 
