@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { FC } from 'react';
 
-import { atMinLg, atMinXL, atMinXXL, colors, cssClamp, spacing } from '~/theme';
+import { atMinDesktop, atMinLg, atMinXL, atMinXXL } from '~/theme';
 
 const ImageContainer = styled.div`
   display: inline-block;
@@ -55,6 +55,19 @@ const ImagePanelItem: FC<ImagePanelItemProps> = ({ src, alt }) => {
         }
 
         ${atMinXXL} {
+          padding: 3rem 0;
+          width: 85%;
+
+          &:nth-of-type(odd) {
+            right: calc(42% - 50vw) !important;
+          }
+
+          &:nth-of-type(even) {
+            right: calc(55% - 50vw) !important;
+          }
+        }
+
+        ${atMinDesktop} {
           padding: 3rem 0;
           width: 85%;
 
