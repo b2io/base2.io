@@ -16,12 +16,6 @@ import {
 } from '~/components';
 import { atMinDesktop, cssClamp, spacing } from '~/theme';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type ImagePanelProps = {
-  alt: string;
-  src: string;
-};
-
 export const ColorSnapVisualizerPage: FC = () => {
   const CaseStudyResultsProps = {
     resultsParagraph:
