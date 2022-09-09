@@ -7,7 +7,7 @@
 		// Update 'VARIANT' to pick a Node version: 18, 16, 14.
 		// Append -bullseye or -buster to pin to an OS version.
 		// Use -bullseye variants on local arm64/Apple Silicon.
-		"args": { "VARIANT": "16-bullseye" }
+		"args": { "VARIANT": "16" }
 	},
 
 	// Configure tool-specific properties.
@@ -15,7 +15,6 @@
 		// Configure properties specific to VS Code.
 		"vscode": {
 			"settings": {
-        // "terminal.integrated.shell.linux": "/bin/zsh"
 				"terminal.integrated.defaultProfile.linux": "zsh", 
         "terminal.integrated.profiles.linux": {
             "zsh": {
