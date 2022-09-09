@@ -28,8 +28,7 @@
 				"esbenp.prettier-vscode",
 				"stylelint.vscode-stylelint",
 				"eamodio.gitlens",
-				"GitHub.codespaces",
-				"TabNine.tabnine-vscode"
+				"GitHub.codespaces"
 			]
 		}
 	},
