@@ -27,7 +27,7 @@ const Image = styled(DynamicImage)`
   }
 
   img {
-    filter: brightness(0.85);
+    filter: brightness(0.65);
     height: 100%;
   }
 `;
