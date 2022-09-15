@@ -14,7 +14,16 @@ import {
   TechCard,
   TechListGrid,
 } from '~/components';
-import { atMinDesktop, cssClamp, spacing } from '~/theme';
+import {
+  atMinDesktop,
+  atMinSm,
+  atMinTablet,
+  atMinXXL,
+  cssClamp,
+  spacing,
+} from '~/theme';
+
+import { batteryXtNav, flyNetJetsNav } from '../CaseStudy/navProps';
 
 export const ColorSnapVisualizerPage: FC = () => {
   const CaseStudyResultsProps = {
@@ -23,20 +32,7 @@ export const ColorSnapVisualizerPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [
-      {
-        company: 'DNV',
-        imagePath: '/work/net-jets.jpg',
-        navPath: '/work/batteryxt',
-        title: 'Battery XT',
-      },
-      {
-        company: 'NetJets',
-        imagePath: '/work/net-jets.jpg',
-        navPath: '/work/netjets',
-        title: 'Fly NetJets',
-      },
-    ],
+    children: [flyNetJetsNav, batteryXtNav],
   };
 
   return (
@@ -49,7 +45,22 @@ export const ColorSnapVisualizerPage: FC = () => {
         name={
           <>
             ColorSnap Visualizer
-            <sup style={{ fontSize: '2.5rem', top: '-.8em' }}>&reg;</sup>
+            <sup
+              css={css`
+                font-size: 1.5rem;
+                top: -1rem;
+
+                ${atMinTablet} {
+                  font-size: 2rem;
+                  top: -2rem;
+                }
+                ${atMinXXL} {
+                  font-size: 2.5rem;
+                }
+              `}
+            >
+              &reg;
+            </sup>
           </>
         }
         src={require('./images/colorsnap-hero.jpg')}
@@ -69,9 +80,19 @@ export const ColorSnapVisualizerPage: FC = () => {
           <>
             Sherwin-Williams wanted customers to easily visualize exciting new
             paint colors on their walls. We created ColorSnap
-            <sup style={{ fontSize: '.5em' }}>®</sup> Visualizer for Web, an
-            application that enables users to virtually transform their space
-            with any Sherwin-Williams color.
+            <sup
+              css={css`
+                font-size: '2px';
+
+                ${atMinTablet} {
+                  font-size: '.5em';
+                }
+              `}
+            >
+              ®
+            </sup>{' '}
+            Visualizer for Web, an application that enables users to virtually
+            transform their space with any Sherwin-Williams color.
           </>
         }
         askText="Sherwin-Williams knew that if their customers could effortlessly test a paint color
@@ -106,7 +127,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         alt="screenshot"
       />
       <CaseStudyResultsPane {...CaseStudyResultsProps} />
-      <ColorSnapImagePanel alt={''} src={''} />
+      <ColorSnapImagePanel />
       <QuotedImage
         alt="people looking at computer"
         company="Sherwin Williams"

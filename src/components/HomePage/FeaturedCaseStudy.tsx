@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { Heading, Text, useAnimationWhileVisible } from '~/components';
+import { Heading, Link, Text, useAnimationWhileVisible } from '~/components';
 import theme, {
+  atMinDesktop,
   atMinSm,
   atMinTablet,
   atMinXL,
@@ -161,7 +162,7 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
         </Heading>
         <Text
           css={css`
-            margin-bottom: ${spacing.xxl2};
+            margin-bottom: ${spacing.lg};
             max-width: 19rem;
 
             ${atMinSm} {
@@ -174,6 +175,18 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
           tool worthy of their products &ndash; something to get customers
           excited about paint.
         </Text>
+        <Link
+          css={css`
+            padding-bottom: ${spacing.xxl2};
+            ${atMinDesktop} {
+              padding-bottom: ${spacing.xxl};
+            }
+          `}
+          href="/work/colorsnap"
+          variant="CTA"
+        >
+          View More
+        </Link>
       </div>
       <div
         css={css`

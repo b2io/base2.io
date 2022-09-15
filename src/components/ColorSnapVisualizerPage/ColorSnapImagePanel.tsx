@@ -87,8 +87,8 @@ const ImagePanelItem: FC<ImagePanelItemProps> = ({ src, alt }) => {
 };
 
 export type ColorSnapImagePanelProps = {
-  alt: string;
-  src: string;
+  alt?: string;
+  src?: string;
 };
 
 export const ColorSnapImagePanel: FC<ColorSnapImagePanelProps> = (props) => {
