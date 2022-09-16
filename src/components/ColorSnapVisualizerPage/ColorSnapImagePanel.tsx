@@ -17,7 +17,6 @@ const ImageContainer = styled.div`
   flex-direction: column;
   height: 100%;
   margin: -18em 1em 0 1em;
-  border: 4px pink solid;
 
   /* ${atMinTablet} {
     width: ${cssClamp([34.313, 'tablet'], [64.5, 'desktop'])};
@@ -26,6 +25,8 @@ const ImageContainer = styled.div`
   ${atMinLg} {
     margin-top: -18em;
     max-width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -41,19 +42,16 @@ const ImagePanelItem: FC<ImagePanelItemProps> = ({ src, alt }) => {
         padding: 1rem 0;
         display: flex;
         justify-content: center;
-        align-items: center;
 
         ${atMinLg} {
           padding: 3rem 0;
           &:nth-of-type(odd) {
-            border: 2px solid red;
-            margin-left: 25em;
+            align-self: end;
             width: 50%;
           }
 
           &:nth-of-type(even) {
-            align-items: flex-start;
-            margin-right: 25em;
+            align-self: start;
             width: 50%;
           }
         }
@@ -62,12 +60,13 @@ const ImagePanelItem: FC<ImagePanelItemProps> = ({ src, alt }) => {
           padding: 3rem 0;
 
           &:nth-of-type(odd) {
-            align-items: flex-end !important;
-            border: 2px solid red;
+            align-self: end;
+            width: 50%;
           }
 
           &:nth-of-type(even) {
-            align-items: flex-start;
+            align-self: start;
+            width: 50%;
           }
         }
         /* 
