@@ -16,7 +16,6 @@ import {
 } from '~/components';
 import {
   atMinDesktop,
-  atMinSm,
   atMinTablet,
   atMinXXL,
   cssClamp,
