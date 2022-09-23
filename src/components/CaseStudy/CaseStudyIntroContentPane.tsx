@@ -1,11 +1,11 @@
 import { css } from '@emotion/react';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { BasicCard, CardGrid, Heading } from '~/components';
 import { atMinDesktop, atMinTablet, spacing } from '~/theme';
 
 type CaseStudyIntroContentPaneProps = {
-  introText: string;
+  introText: string | ReactNode;
   askText: string;
   solutionText: string;
 };

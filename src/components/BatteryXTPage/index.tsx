@@ -13,7 +13,7 @@ import {
 } from '~/components';
 import { spacing } from '~/theme';
 
-import {flyNetJetsNav, scopeBuilderNav } from '../CaseStudy/navProps';
+import { colorSnapNav, scopeBuilderNav } from '../CaseStudy/navProps';
 
 export const BatteryXTPage: FC = () => {
   const CaseStudyResultsResultsProps = {
@@ -40,10 +40,7 @@ export const BatteryXTPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [
-      flyNetJetsNav,
-      scopeBuilderNav,
-    ],
+    children: [colorSnapNav, scopeBuilderNav],
   };
 
   return (

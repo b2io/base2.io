@@ -8,52 +8,30 @@ import {
   CaseStudyIntroContentPane,
   CaseStudyResultsPane,
   CaseStudySummaryPane,
+  ColorSnapImagePanel,
   Layout,
   QuotedImage,
   TechCard,
   TechListGrid,
 } from '~/components';
-import { atMinDesktop, cssClamp, spacing } from '~/theme';
+import {
+  atMinDesktop,
+  atMinTablet,
+  atMinXXL,
+  cssClamp,
+  spacing,
+} from '~/theme';
+
+import { batteryXtNav, flyNetJetsNav } from '../CaseStudy/navProps';
 
 export const ColorSnapVisualizerPage: FC = () => {
   const CaseStudyResultsProps = {
-    children: [
-      {
-        heading: '4.3 stars on App store',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-      },
-      {
-        heading: '+30% conversion rate',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-      },
-      {
-        heading: '8% ROI over 2 years',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-      },
-      {
-        heading: '143,568+ new downloads',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
-      },
-    ],
     resultsParagraph:
       'ColorSnap® Visualizer for Web didn’t just set a new standard for customer engagement in the paint industry—it also modernized an age-old process. Instead of buying paint samples at the store and manually applying them to walls, customers can now trial new paints in seconds.',
   };
 
   const caseStudyBottomNavProps = {
-    children: [
-      {
-        company: 'DNV',
-        imagePath: '/work/net-jets.jpg',
-        navPath: '/work/batteryxt',
-        title: 'Battery XT',
-      },
-      {
-        company: 'NetJets',
-        imagePath: '/work/net-jets.jpg',
-        navPath: '/work/netjets',
-        title: 'Fly NetJets',
-      },
-    ],
+    children: [flyNetJetsNav, batteryXtNav],
   };
 
   return (
@@ -63,7 +41,27 @@ export const ColorSnapVisualizerPage: FC = () => {
     >
       <CaseStudyHeaderPane
         alt="ColorSnap Visualizer"
-        name="ColorSnap Visualizer &reg;"
+        name={
+          <>
+            ColorSnap Visualizer
+            <sup
+              css={css`
+                font-size: 1.5rem;
+                top: -1rem;
+
+                ${atMinTablet} {
+                  font-size: 2rem;
+                  top: -2rem;
+                }
+                ${atMinXXL} {
+                  font-size: 2.5rem;
+                }
+              `}
+            >
+              &reg;
+            </sup>
+          </>
+        }
         src={require('./images/colorsnap-hero.jpg')}
       />
       <TechListGrid
@@ -77,9 +75,25 @@ export const ColorSnapVisualizerPage: FC = () => {
         <TechCard logo="karma" />
       </TechListGrid>
       <CaseStudyIntroContentPane
-        introText="Sherwin-Williams wanted customers to easily visualize exciting new paint colors on
-        their walls. We created ColorSnap® Visualizer for Web, an application that enables users to
-        virtually transform their space with any Sherwin-Williams color."
+        introText={
+          <>
+            Sherwin-Williams wanted customers to easily visualize exciting new
+            paint colors on their walls. We created ColorSnap
+            <sup
+              css={css`
+                font-size: '2px';
+
+                ${atMinTablet} {
+                  font-size: '.5em';
+                }
+              `}
+            >
+              ®
+            </sup>{' '}
+            Visualizer for Web, an application that enables users to virtually
+            transform their space with any Sherwin-Williams color.
+          </>
+        }
         askText="Sherwin-Williams knew that if their customers could effortlessly test a paint color
         in their space, they’d be inspired to pick up a brush. But as a brand new application—one that
         would have to accommodate mobile phones, computers, and the quirky Internet Explorer 10—building
@@ -112,6 +126,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         alt="screenshot"
       />
       <CaseStudyResultsPane {...CaseStudyResultsProps} />
+      <ColorSnapImagePanel />
       <QuotedImage
         alt="people looking at computer"
         company="Sherwin Williams"

@@ -14,7 +14,7 @@ import {
 } from '~/theme';
 
 export type CaseStudyResultsPaneProps = {
-  children: {
+  children?: {
     heading: string;
     text: string;
   }[];
@@ -40,8 +40,7 @@ export const CaseStudyResultsPane: FC<CaseStudyResultsPaneProps> = ({
         }
 
         ${atMinXL} {
-          padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])}
-            ${spacing.xxl};
+          padding: ${cssClamp([10.5, 'mobile'], [1.5, 'desktop'])}${spacing.xxl};
           position: relative;
           top: -75px;
         }
@@ -93,7 +92,7 @@ export const CaseStudyResultsPane: FC<CaseStudyResultsPaneProps> = ({
           }
         `}
       >
-        {children.map((child, index) => (
+        {children?.map((child, index) => (
           <ResultCard key={index} heading={child.heading} text={child.text} />
         ))}
       </CardGrid>
