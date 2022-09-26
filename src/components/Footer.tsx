@@ -126,6 +126,7 @@ const WhiteLine = styled.div`
     background-color: ${colors.offWhite};
     display: block;
     height: 0.063rem;
+    max-width: calc(100% - 7rem);
   }
 `;
 
@@ -199,6 +200,9 @@ export const Footer: FC = (prop) => {
           <ul>
             <li>
               <NavLink href="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink href="/work">Work</NavLink>
             </li>
             <li>
               <NavLink href="/approach">Approach</NavLink>

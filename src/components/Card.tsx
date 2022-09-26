@@ -14,7 +14,7 @@ import {
   Link,
   Text,
 } from '~/components';
-import { atMinTablet, colors, spacing } from '~/theme';
+import { atMaxSm, atMinTablet, colors, spacing } from '~/theme';
 
 export const CardHeading: FC = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
@@ -70,7 +70,16 @@ export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
         }
       `}
     >
-      <Heading as="h3" color="coral" variant="h1">
+      <Heading
+        as="h3"
+        color="coral"
+        variant="h1"
+        css={css`
+          ${atMaxSm} {
+            font-size: 3.5rem;
+          }
+        `}
+      >
         {highlight}
         <br />
         <Text
@@ -87,6 +96,9 @@ export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
         as="p"
         css={css`
           margin: 0;
+          ${atMaxSm} {
+            max-width: 21.875rem;
+          }
         `}
       >
         {text}
@@ -156,6 +168,29 @@ export const BlogCard: FC<BlogCardProps> = ({
       >
         {linkText}
       </Link>
+    </Card>
+  );
+};
+
+export type BasicCardProps = {
+  heading: string;
+  text: string;
+};
+
+export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
+  return (
+    <Card>
+      <Heading as="h2" variant="h2">
+        {heading}
+      </Heading>
+      <Text
+        as="p"
+        css={css`
+          margin: 0;
+        `}
+      >
+        {text}
+      </Text>
     </Card>
   );
 };

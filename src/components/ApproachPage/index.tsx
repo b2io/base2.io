@@ -54,7 +54,7 @@ export const ApproachPage: FC = () => {
         ]}
         name="Tony Borres"
         position="Director of Operations"
-        quote="We follow agile, an iterative approach to software development that lets us quickly pivot when challenges arise. "
+        quote="We follow agile, an iterative approach to software development that lets us quickly pivot when challenges arise."
       />
     </Layout>
   );
