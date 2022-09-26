@@ -49,6 +49,7 @@ const Summary = styled.h2`
   ${atMinTablet} {
     font-size: 3.125rem;
     max-width: 54.188rem;
+    margin: 0 ${spacing.xxl2};
   }
 
   ${atMinXL} {
