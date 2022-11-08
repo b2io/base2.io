@@ -16,8 +16,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es5",
-    "jsxImportSource": "@emotion/react"
+    "target": "es5"
   },
   "exclude": ["node_modules", ".next", "out"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]

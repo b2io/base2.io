@@ -18,8 +18,8 @@
     "type-check": "tsc --pretty --noEmit"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@formspree/react": "^2.2.3",
     "@next/bundle-analyzer": "^11.1.2",
     "@react-aria/ssr": "^3.0.2",
