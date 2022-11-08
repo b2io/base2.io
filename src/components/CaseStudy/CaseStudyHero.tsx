@@ -1,5 +1,8 @@
 import { css } from '@emotion/react';
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
+import NextImage, {
+  ImageProps as NextImageProps,
+  StaticImageData,
+} from 'next/image';
 import type { FC } from 'react';
 
 type CaseStudyHeroProps = NextImageProps & {
