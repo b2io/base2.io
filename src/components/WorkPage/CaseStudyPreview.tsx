@@ -1,5 +1,8 @@
 import css from '@emotion/css';
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
+import NextImage, {
+  ImageProps as NextImageProps,
+  StaticImageData,
+} from 'next/image';
 import type { FC } from 'react';
 
 import { Link, Text } from '~/components';
