@@ -13,10 +13,10 @@ export const ContactPage: FC = () => {
       <PageHero
         alt="group of people walking toward you"
         imgSources={[
-          ['largeDesktop', '/contact/contact-hero-xlarge.jpg'],
-          ['tablet', '/contact/contact-hero-medium.jpg'],
-          ['xl', '/contact/contact-hero-large.jpg'],
-          ['xs', '/contact/contact-hero-small.jpg'],
+          ['largeDesktop', '/contact/contact-hero-largeDesktop.jpg'],
+          ['tablet', '/contact/contact-hero-tablet.jpg'],
+          ['xl', '/contact/contact-hero-xl.jpg'],
+          ['xs', '/contact/contact-hero-xs.jpg'],
         ]}
         text="Like what you see? Let's get started."
       />
