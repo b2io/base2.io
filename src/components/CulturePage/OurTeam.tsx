@@ -233,7 +233,7 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
       >
         <TeamMemberGridItem
           name="Drew Miller"
-          location="Columbus, OH"
+          location="Seattle, WA"
           src={require('./images/dmiller.jpg')}
         />
         <TeamMemberGridItem
@@ -280,11 +280,6 @@ export const OurTeam: FC<OurTeamProps> = (props) => {
           name="Laura Padilla"
           location="Philadelphia, PA"
           src={require('./images/lpadilla.jpg')}
-        />
-        <TeamMemberGridItem
-          name="Eric Waight"
-          location="Pittsburgh, PA"
-          src={require('./images/ewaight.jpg')}
         />
         <TeamMemberGridItem
           name="Javier Orejarena"
