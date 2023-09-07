@@ -17,7 +17,7 @@
     "prettier/@typescript-eslint"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "@emotion"],
   "settings": {
     "import/resolver": {
       "typescript": {
@@ -66,6 +66,7 @@
       }
     ],
     "react/display-name": 0,
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "react/prop-types": 0,
     "react/react-in-jsx-scope": 0,
     "sort-keys": ["warn", "asc", { "caseSensitive": false, "natural": true }],
