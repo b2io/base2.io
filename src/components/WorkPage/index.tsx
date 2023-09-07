@@ -1,4 +1,4 @@
-import css from '@emotion/css';
+import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import { Heading, Layout } from '~/components';

@@ -3,14 +3,16 @@
     "stylelint-config-recommended",
     "stylelint-config-styled-components"
   ],
-  plugins: ['stylelint-order'],
+  "plugins": [
+    "stylelint-order"
+  ],
   "processors": [
     "stylelint-processor-styled-components"
   ],
-  rules: {
-    'no-descending-specificity': null,
-    'order/properties-alphabetical-order': true,
-    'property-no-vendor-prefix': null,
-    'value-no-vendor-prefix': null,
-  },
+  "rules": {
+    "no-descending-specificity": null,
+    "order/properties-alphabetical-order": true,
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null
+  }
 }

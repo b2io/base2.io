@@ -17,7 +17,7 @@
     "prettier/@typescript-eslint"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "@emotion"],
   "settings": {
     "import/resolver": {
       "typescript": {
