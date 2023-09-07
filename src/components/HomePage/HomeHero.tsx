@@ -1,4 +1,4 @@
-import css from '@emotion/css';
+import { css } from '@emotion/react';
 import { useId } from '@react-aria/utils';
 import { motion, MotionValue, transform, useTransform } from 'framer-motion';
 import { transparentize } from 'polished';
