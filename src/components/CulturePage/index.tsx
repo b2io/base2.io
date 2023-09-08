@@ -3,10 +3,10 @@ import type { FC } from 'react';
 
 import { atMinTablet, spacing } from '~/theme';
 
-import { Layout } from '../Layout';
-import { PageHero } from '../PageHero';
 import { OurCulture } from './OurCulture';
 import { OurTeam } from './OurTeam';
+import { Layout } from '../Layout';
+import { PageHero } from '../PageHero';
 
 export const CulturePage: FC = () => {
   return (

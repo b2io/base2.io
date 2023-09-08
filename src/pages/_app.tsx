@@ -2,11 +2,11 @@ import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
 import { SSRProvider } from '@react-aria/ssr';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
-import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
+import { DefaultSeo } from 'next-seo';
 import type { FC } from 'react';
 import { useEffect } from 'react';
 
@@ -41,6 +41,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
+      {/* eslint-disable-next-line @next/next/inline-script-id */}
       <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
