@@ -2,7 +2,7 @@
 
 The Base Two website.
 
-- [Jira Board](https://b2io.atlassian.net/jira/software/projects/B2IO/boards/7)
+- [Github Project Board](https://github.com/orgs/b2io/projects/15)
 - [Design Files (Zeplin)](https://app.zeplin.io/project/5fff21e06012bf1d470820c3)
 - [Design Files (Google Drive)](https://drive.google.com/drive/folders/1VpkOfCsSGP40DSx85mYPChncMDwlNiTV?usp=sharing)
 - [Case Study Copy](https://drive.google.com/drive/folders/1jptdTwNI3IIGkf4HuCmWTYvk_4WYdNNP?usp=sharing)
