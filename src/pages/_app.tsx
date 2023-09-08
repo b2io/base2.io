@@ -5,7 +5,7 @@ import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Script from 'next/script';
+// import Script from 'next/script';
 import { DefaultSeo } from 'next-seo';
 import type { FC } from 'react';
 import { useEffect } from 'react';
@@ -37,11 +37,10 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
-      {/* eslint-disable-next-line @next/next/inline-script-id */}
       <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -54,7 +53,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
             });
           `,
         }}
-      />
+      /> */}
       <DefaultSeo
         additionalLinkTags={[
           {
