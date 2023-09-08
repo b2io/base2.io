@@ -4,8 +4,8 @@ import type { FC } from 'react';
 import { Layout, Text } from '~/components';
 import { atMinTablet, cssClamp } from '~/theme';
 
-import { PageHero } from '../PageHero';
 import { Contact } from './ContactForm';
+import { PageHero } from '../PageHero';
 
 export const ContactPage: FC = () => {
   return (
