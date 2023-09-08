@@ -94,7 +94,7 @@ npm run storybook
 
 ### Development Workflow
 
-1. Go to the latest sprint in [Jira](https://b2io.atlassian.net/jira/software/projects/B2IO/boards/7) to find a development task from the `TO DO` column.
+1. Go to the Github project board in [Github](https://github.com/orgs/b2io/projects/15/views/1) to find a development task from the `TO DO` column.
    <details>
     <summary>If a new card is needed</summary>   
     If you need to create a new card then click the `Create` button in Jira's header and select the correct card type
@@ -106,15 +106,15 @@ npm run storybook
    </details>
 
 2. Assign yourself to the card
-3. Track time in Harvest via Jira by clicking the `Open Harvest Time Tracking` option next to `Harvest Time Tracking` in the Jira card. This will start a timer in Harvest with the card's name and a link to the card.
+3. Track time in Harvest via Github by clicking the `Open Harvest Time Tracking` option next to `Harvest Time Tracking` in the Github card. This will start a timer in Harvest with the card's name and a link to the card.
 4. Update the card's status to be `In Progress`
-5. Create a new branch off of the `next` branch prefixed with the card id (e.g. `B2-99-short-desc-of-task`). Note that the capitalization of the ID is important. This will cause Jira to recognize the card and begin tracking it within a `Development` section of the card.
-6. When committing add `#comment` within the contents of the commit message if you'd like it to be included in the Jira card as a commit. Example:
+5. Create a new branch off of the `next` branch prefixed with the card id (e.g. `B2-99-short-desc-of-task`). Note that the capitalization of the ID is important. This will cause Github to recognize the card and begin tracking it within a `Development` section of the card.
+6. When committing add `#comment` within the contents of the commit message if you'd like it to be included in the Github card as a commit. Example:
 
    ```
    WIP: add commit message example
 
-   B2-55 #comment
+   702 #comment
    ```
 
 7. When creating a PR
@@ -122,13 +122,13 @@ npm run storybook
    1. Ensure that the PR's destination is the correct base branch (e.g. `next`)
    2. Give it a title prefixed with its card type and a short description (e.g. `task: update readme to include dev workflow`)
    3. Provide a description that explains what was changed, why it was changed, and any other information that may help the reviewer (e.g. screenshots or proof of successful tests)
-   4. Include the Jira card number, a link to the card number, and `#comment` to communicate which card it closes and to link the commit in Jira. E.g.:
+   4. Include the Github card number, a link to the card number, and `#comment` to communicate which card it closes and to link the commit in Github. E.g.:
 
       ```
-      Closes [B2-55](https://b2io.atlassian.net/browse/B2-55) #comment
+      Closes [702](https://github.com/b2io/base2.io/issues/702) #comment
       Update readme to include development workflow instructions. This includes
       - updates to nvm/node installation
-      - Jira usage
+      - Github usage
       - branch creation
       - PR creation
       ```
