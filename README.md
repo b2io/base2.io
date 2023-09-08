@@ -34,7 +34,7 @@ You'll need to set up Git and NPM before you can run this project locally. The s
 
 1. NVM / Node
 
-   It is recommended that you install NVM (Node Version Manager) rather than Node directly because NVM allows you to switch node versions more easily, which is necessary when you hop between different projects. Please use **Node v14.x (currently 14.17.4)** for this project as it is the long-term supported version, and what Vercel will use for the build.
+   It is recommended that you install NVM (Node Version Manager) rather than Node directly because NVM allows you to switch node versions more easily, which is necessary when you hop between different projects. Please use **Node v18.x (currently 18.17.1)** for this project as it is the long-term supported version, and what Vercel will use for the build.
    Node can be downloaded via the link above or via your OS's package manager below.
 
    - Mac users can install and maintain Node through the package manager [Homebrew](https://brew.sh/) or by going to the [Node website](https://nodejs.org/en/download/):
