@@ -32,22 +32,9 @@ You'll need to set up Git and NPM before you can run this project locally. The s
 
    ```
 
-1. NVM / Node
+1. Node / Volta
 
-   It is recommended that you install NVM (Node Version Manager) rather than Node directly because NVM allows you to switch node versions more easily, which is necessary when you hop between different projects. Please use **Node v18.x (currently 18.17.1)** for this project as it is the long-term supported version, and what Vercel will use for the build.
-   Node can be downloaded via the link above or via your OS's package manager below.
-
-   - Mac users can install and maintain Node through the package manager [Homebrew](https://brew.sh/) or by going to the [Node website](https://nodejs.org/en/download/):
-
-     ```
-     brew install node
-     ```
-
-   - Windows users can install NVM via [nvm-windows](https://github.com/coreybutler/nvm-windows). If, instead, you choose to install Node directly an installer can be downloaded from the [Node website](https://nodejs.org/en/download/) or by using the package manager [Chocolatey](https://chocolatey.org/install):
-
-     ```
-     choco install nodejs-lts -y
-     ```
+   It is recommended that you install [Volta](https://volta.sh/) for Node Version management rather than Node directly because Volta is cross-platform and allows you to switch node versions more easily, which is necessary when you hop between different projects. Please use **Node v18.x (currently 18.17.1)** for this project as it is the long-term supported version, and what Vercel will use for the build.
 
 1. `stylelint`
 
@@ -113,8 +100,6 @@ npm run storybook
 
    ```
    WIP: add commit message example
-
-   #702 #comment
    ```
 
 7. When creating a PR
@@ -125,12 +110,9 @@ npm run storybook
    4. Include the Github card number and `#comment` to communicate which card it closes and to link the commit in Github. E.g.:
 
       ```
-      Closes [#702](https://github.com/b2io/base2.io/issues/702) #comment
-      Update readme to include development workflow instructions. This includes
-      - updates to nvm/node installation
-      - Github usage
-      - branch creation
-      - PR creation
+      chore: update readme
+
+      Closes #702
       ```
 
 8. Update the card's status to be `In Review`
