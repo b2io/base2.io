@@ -20,7 +20,7 @@ const config = {
               "manifest-src 'self';",
               "object-src 'none';",
               "prefetch-src 'self';",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' *.googletagmanager.com *.google-analytics.com;",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live/_next-live/feedback/feedback.js *.googletagmanager.com *.google-analytics.com;",
               "style-src 'self' 'unsafe-inline';",
             ].join(' '),
           },
