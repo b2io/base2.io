@@ -28,8 +28,7 @@ interface ServiceDataProps {
   }[];
 }
 
-
-const ServicesPage: React.FC<ServiceDataProps> = () => {
+export const ServicesPage: React.FC<ServiceDataProps> = () => {
   const [activeSection, setActiveSection] = useState<number | null>(null);
 
   const toggleSection = (index: SetStateAction<number | null>) => {
@@ -60,7 +59,7 @@ css={css`cursor: pointer; display: flex; align-items: center;`}
           </div>
           {index < SERVICES.length - 1 && <hr />}
           {activeSection === index && (
-            <div css={{transition: 'max-height 0.3s ease-in-out', maxHeight: activeSection === index ? '1000px' : '0',overflow: 'hidden',
+            <div css={{ maxHeight: activeSection === index ? '1000px' : '0',overflow: 'hidden', transition: 'max-height 0.3s ease-in-out',
   }}>
               {service.packages.map((packageItem, packageIndex) => (
                 <div key={packageIndex}>
@@ -88,7 +87,3 @@ css={css`cursor: pointer; display: flex; align-items: center;`}
   );
 };
 
-
-
-
-export default ServicesPage;
