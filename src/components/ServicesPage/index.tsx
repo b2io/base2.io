@@ -9,6 +9,9 @@ import { SetStateAction, useState } from 'react';
 import { Heading, Layout,  Text, } from '~/components';
 
 
+
+import { EstimationForm } from './EstimationForm';
+import { spacing } from '../../theme/spacing';
 import {SERVICES} from "../ServicesPage/services"
 
 
@@ -35,12 +38,12 @@ const ServicesPage: React.FC<ServiceDataProps> = () => {
 
   return (
     <Layout description={'B2 Services'} title={'B2 Services'}>
-      <Heading as="h1" variant="h1">
+      <Heading as="h1" variant="h1" css={css`margin-bottom: ${spacing.xxl1}`}>
         Base Two Services
       </Heading>
       {SERVICES.map((service, index) => (
-        <div key={index}>
-          <div css={{ alignItems: 'center', display: 'flex' }}>
+        <div key={index} css={{marginTop: `${spacing.sm}`}} >
+          <div css={{ alignItems: 'center', display: 'flex'}}>
             <div
               onClick={() => toggleSection(index)}
               css={css`cursor: pointer; display: flex; align-items: center;`}
@@ -60,7 +63,7 @@ const ServicesPage: React.FC<ServiceDataProps> = () => {
             <div>
               {service.packages.map((packageItem, packageIndex) => (
                 <div key={packageIndex}>
-                  <Heading as="h3" variant="h3" color="coral">
+                  <Heading as="h3" variant="h3" color="coral"  css={{marginTop: `${spacing.md}`}}>
                     {packageItem.packageTitle}
                   </Heading>
                   <Text>{packageItem.description}</Text>
@@ -75,6 +78,11 @@ const ServicesPage: React.FC<ServiceDataProps> = () => {
           )}
         </div>
       ))}
+      <Heading as="h2" css={css`
+          margin-top: ${spacing.xxl1};
+          min-height: ${spacing.xxl1};
+        `} variant="h2" color='coral'>Request a Project Estimate</Heading>
+      <EstimationForm />
     </Layout>
   );
 };
