@@ -30,6 +30,7 @@ export * from './OpenGraphImage';
 export * from './PageHero';
 export * from './QuotedImage';
 export * from './ScopeBuilderPage';
+export * from './ServicesPage';
 export * from './Text';
 export * from './useAnimationWhileVisible';
 export * from './useMouseAnimationWhileVisible';
