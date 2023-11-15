@@ -1,108 +1,117 @@
 export const SERVICES = [
   {
-    "sectionTitle": "Custom Software Solutions",
-    "packages": [
+    packages: [
       {
-        "packageTitle": "Custom Software Solution Package",
-        "description": "This service involves end-to-end custom software development tailored to meet the specific needs of clients. Base Two collaborates closely with clients to understand their business requirements and delivers a bespoke software solution. The emphasis is on aligning the platform with industry standards to ensure scalability and innovation.",
-        "details": [
-          "Comprehensive end-to-end development, from conceptualization to implementation.",
-          "Tailored to meet specific business requirements.",
-          "All tooling and processes aligned with industry standards.",
-          "Platforms designed to scale seamlessly."
-        ]
+        description:
+          'This service involves end-to-end custom software development tailored to meet the specific needs of clients. Base Two collaborates closely with clients to understand their business requirements and delivers a bespoke software solution. The emphasis is on aligning the platform with industry standards to ensure scalability and innovation.',
+        details: [
+          'Comprehensive end-to-end development, from conceptualization to implementation.',
+          'Tailored to meet specific business requirements.',
+          'All tooling and processes aligned with industry standards.',
+          'Platforms designed to scale seamlessly.',
+        ],
+        packageTitle: 'Custom Software Solution Package',
       },
       {
-        "packageTitle": "Software Enhancement Package",
-        "description": "For businesses with existing software solutions, this package focuses on improvements to your current tools. Base Two conducts a thorough analysis of the software, provides recommendations, and executes updates for enhanced user experience and improved technical performance.",
-        "details": [
-          "In-depth analysis to identify areas of improvement.",
-          "Recommendations and execution for enhanced user experience and technical performance."
-        ]
+        description:
+          'For businesses with existing software solutions, this package focuses on improvements to your current tools. Base Two conducts a thorough analysis of the software, provides recommendations, and executes updates for enhanced user experience and improved technical performance.',
+        details: [
+          'In-depth analysis to identify areas of improvement.',
+          'Recommendations and execution for enhanced user experience and technical performance.',
+        ],
+        packageTitle: 'Software Enhancement Package',
       },
       {
-        "packageTitle": "Scalability Consultation",
-        "description": "This service revolves around strategic planning for business growth. Base Two assists clients in identifying technology upgrades and expansion strategies, ensuring that the software infrastructure can scale effectively to meet evolving business needs.",
-        "details": [
-          "Strategic planning for business growth.",
-          "Technology upgrades and expansion strategies.",
-          "Replatforming of current software to modern solutions"
-        ]
-      }
-    ]
+        description:
+          'This service revolves around strategic planning for business growth. Base Two assists clients in identifying technology upgrades and expansion strategies, ensuring that the software infrastructure can scale effectively to meet evolving business needs.',
+        details: [
+          'Strategic planning for business growth.',
+          'Technology upgrades and expansion strategies.',
+          'Replatforming of current software to modern solutions',
+        ],
+        packageTitle: 'Scalability Consultation',
+      },
+    ],
+    sectionTitle: 'Custom Software Solutions',
   },
   {
-    "sectionTitle": "Startup Guidance and Development",
-    "packages": [
+    packages: [
       {
-        "packageTitle": "Startup MVP Package",
-        "description": "The Startup MVP Package from Base Two accelerates the development of a functional prototype for early-stage startups. This service involves rapid collaboration with the startup team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.",
-        "details": [
-          "Rapid development of a functional prototype.",
-          "Collaboration for defining MVP, technology setup, and core feature development.",
-          "Iterative development for quick results."
-        ]
+        description:
+          'The Startup MVP Package from Base Two accelerates the development of a functional prototype for early-stage startups. This service involves rapid collaboration with the startup team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.',
+        details: [
+          'Rapid development of a functional prototype.',
+          'Collaboration for defining MVP, technology setup, and core feature development.',
+          'Iterative development for quick results.',
+        ],
+        packageTitle: 'Startup MVP Package',
       },
       {
-        "packageTitle": "Technical Mentorship, Guidance, and Strategy",
-        "description": "Base Two provides ongoing technical mentorship and guidance to startups, serving as a dedicated technology partner. This service extends beyond the initial development phase, ensuring continuous support for shaping the startup's technology strategy, making informed decisions, and scaling effectively.",
-        "details": [
-          "Ongoing mentorship for shaping technology strategy.",
-          "Dedicated technology partner for informed decisions and scaling.",
-          "Assistance in navigating technical challenges as they arise.",
-          "Collaboration on long-term technology planning and decision-making."
-        ]
+        description:
+          "Base Two provides ongoing technical mentorship and guidance to startups, serving as a dedicated technology partner. This service extends beyond the initial development phase, ensuring continuous support for shaping the startup's technology strategy, making informed decisions, and scaling effectively.",
+        details: [
+          'Ongoing mentorship for shaping technology strategy.',
+          'Dedicated technology partner for informed decisions and scaling.',
+          'Assistance in navigating technical challenges as they arise.',
+          'Collaboration on long-term technology planning and decision-making.',
+        ],
+        packageTitle: 'Technical Mentorship, Guidance, and Strategy',
       },
       {
-        "packageTitle": "Startup Launchpad",
-        "description": "The Startup Launchpad is a comprehensive solution that goes beyond MVP development. Base Two offers technical guidance, ongoing support, and a holistic approach to ensure the overall success of the startup. This package aims to guide the startup through various technical aspects and provides continuous support for long-term success.",
-        "details": [
-          "Comprehensive solution beyond MVP development.",
-          "Ongoing support to navigate challenges and seize opportunities.",
-          "Strategic guidance for sustained growth and success."
-        ]
-      }
-    ]
+        description:
+          'The Startup Launchpad is a comprehensive solution that goes beyond MVP development. Base Two offers technical guidance, ongoing support, and a holistic approach to ensure the overall success of the startup. This package aims to guide the startup through various technical aspects and provides continuous support for long-term success.',
+        details: [
+          'Comprehensive solution beyond MVP development.',
+          'Ongoing support to navigate challenges and seize opportunities.',
+          'Strategic guidance for sustained growth and success.',
+        ],
+        packageTitle: 'Startup Launchpad',
+      },
+    ],
+    sectionTitle: 'Startup Guidance and Development',
   },
   {
-    "sectionTitle": "Reliable Development Partner",
-    "packages": [
+    packages: [
       {
-        "packageTitle": "Team Integration",
-        "description": "For businesses needing additional development resources, Team Integration provides a seamless partnership with frontend and backend expertise. Base Two becomes an integral part of the client's existing project team, tools, and processes, providing additional development capabilities.",
-        "details": [
-          "Integration of additional development resources seamlessly.",
-          "Collaborative work with the client's staff, tools, and processes."
-        ]
+        description:
+          "For businesses needing additional development resources, Team Integration provides a seamless partnership with frontend and backend expertise. Base Two becomes an integral part of the client's existing project team, tools, and processes, providing additional development capabilities.",
+        details: [
+          'Integration of additional development resources seamlessly.',
+          "Collaborative work with the client's staff, tools, and processes.",
+        ],
+        packageTitle: 'Team Integration',
       },
       {
-        "packageTitle": "Retainer Package",
-        "description": "The Retainer Package offers dedicated professionals to meet flexible staffing needs. Clients can choose a lineup of teammates with diverse expertise, providing a tailored solution to support ongoing projects without the complexities of traditional hiring.",
-        "details": [
-          "Dedicated professionals for flexible staffing needs.",
-          "A lineup of teammates with diverse expertise."
-        ]
+        description:
+          'The Retainer Package offers dedicated professionals to meet flexible staffing needs. Clients can choose a lineup of teammates with diverse expertise, providing a tailored solution to support ongoing projects without the complexities of traditional hiring.',
+        details: [
+          'Dedicated professionals for flexible staffing needs.',
+          'A lineup of teammates with diverse expertise.',
+        ],
+        packageTitle: 'Retainer Package',
       },
       {
-        "packageTitle": "Code Quality Assurance Package",
-        "description": "This service involves a comprehensive analysis of the client's codebase. Base Two identifies bugs, addresses technical debt, and provides strategic recommendations to optimize the performance of the application or website.",
-        "details": [
-          "Deep analysis of codebase.",
-          "Bug identification, technical debt addressing, areas for improvement, and strategic optimization recommendations.",
-          "Addressing technical debt for improved code quality."
-        ]
+        description:
+          "This service involves a comprehensive analysis of the client's codebase. Base Two identifies bugs, addresses technical debt, and provides strategic recommendations to optimize the performance of the application or website.",
+        details: [
+          'Deep analysis of codebase.',
+          'Bug identification, technical debt addressing, areas for improvement, and strategic optimization recommendations.',
+          'Addressing technical debt for improved code quality.',
+        ],
+        packageTitle: 'Code Quality Assurance Package',
       },
       {
-        "packageTitle": "Code Remediation Package",
-        "description": "If a project has encountered issues due to code problems, Base Two helps get it back on track. The team conducts a comprehensive evaluation of the codebase, identifies inefficiencies, and prioritizes solutions. Throughout the process, open, honest, and transparent communication is maintained.",
-         "details": [
-          "Comprehensive evaluation of codebase.",
-          "Identification and resolution of inefficiencies, maintaining transparent communication throughout.",
-          "Prioritization of solutions for efficient code remediation.",
-          "Ensuring optimal software functionality and adherence to best practices."
-        ]
-      }
-    ]
-  }
-]
-
+        description:
+          'If a project has encountered issues due to code problems, Base Two helps get it back on track. The team conducts a comprehensive evaluation of the codebase, identifies inefficiencies, and prioritizes solutions. Throughout the process, open, honest, and transparent communication is maintained.',
+        details: [
+          'Comprehensive evaluation of codebase.',
+          'Identification and resolution of inefficiencies, maintaining transparent communication throughout.',
+          'Prioritization of solutions for efficient code remediation.',
+          'Ensuring optimal software functionality and adherence to best practices.',
+        ],
+        packageTitle: 'Code Remediation Package',
+      },
+    ],
+    sectionTitle: 'Reliable Development Partner',
+  },
+];

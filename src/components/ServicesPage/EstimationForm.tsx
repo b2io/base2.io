@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
-import { Heading, } from '~/components';
+import { Heading } from '~/components';
 import theme, { colors, spacing } from '~/theme';
 
 const FORM_ID = 'https://formspree.io/f/myyqajgp';
@@ -63,7 +63,7 @@ const FormSelect = styled.select`
   margin-bottom: ${spacing.xs};
   width: 100%;
 
-    &:select-value {
+  &:select-value {
     color: ${colors.coral};
   }
 
@@ -74,7 +74,7 @@ const FormSelect = styled.select`
 
 const FormOption = styled.option`
   color: white;
-  backgroundColor: ${colors.darkBlue};
+  backgroundcolor: ${colors.darkBlue};
 `;
 
 const Button = styled.button`
@@ -149,7 +149,6 @@ export const EstimationForm: FC = () => {
     </ThankYouMessage>
   ) : (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        
       <InputWrapper>
         <Label htmlFor="name">Name:</Label>
         <FormInput
@@ -178,8 +177,7 @@ export const EstimationForm: FC = () => {
         />
         {errors.email && <Error>{errors.email.message}</Error>}
       </InputWrapper>
-      <InputWrapper
-      >
+      <InputWrapper>
         <Label htmlFor="message">Project Description:</Label>
         <FormInput
           as="textarea"
@@ -192,8 +190,7 @@ export const EstimationForm: FC = () => {
         />
         {errors.description && <Error>{errors.description.message}</Error>}
       </InputWrapper>
-        <InputWrapper
-      >
+      <InputWrapper>
         <Label htmlFor="message">Service Package:</Label>
         <FormSelect
           as="select"
@@ -201,15 +198,29 @@ export const EstimationForm: FC = () => {
           placeholder="Service Type"
           required
           {...register('serviceType', {
-            required: 'Please include the type of service you are interested in',
+            required:
+              'Please include the type of service you are interested in',
           })}
         >
-          <FormOption value="CustomSoftwareSolution">Custom Software Solution</FormOption>
-          <FormOption value="SoftwareEnhancementPackage">Software Enhancement</FormOption>
-          <FormOption value="StartupGuidanceAndDevelopment">Startup Guidance and Development</FormOption>
-          <FormOption value="unsure" css={css`color: coral`}>Not sure yet</FormOption>
+          <FormOption value="CustomSoftwareSolution">
+            Custom Software Solution
+          </FormOption>
+          <FormOption value="SoftwareEnhancementPackage">
+            Software Enhancement
+          </FormOption>
+          <FormOption value="StartupGuidanceAndDevelopment">
+            Startup Guidance and Development
+          </FormOption>
+          <FormOption
+            value="unsure"
+            css={css`
+              color: coral;
+            `}
+          >
+            Not sure yet
+          </FormOption>
           <FormOption value="other">Something Else</FormOption>
-          </FormSelect>
+        </FormSelect>
         {errors.serviceType && <Error>{errors.serviceType.message}</Error>}
       </InputWrapper>
       <Button type="submit" disabled={isSubmitting}>
@@ -218,4 +229,3 @@ export const EstimationForm: FC = () => {
     </form>
   );
 };
-
