@@ -21,6 +21,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@formspree/react": "^2.2.3",
+    "@mui/icons-material": "^5.14.18",
     "@next/bundle-analyzer": "^11.1.2",
     "@react-aria/ssr": "^3.0.2",
     "@react-aria/utils": "^3.8.1",
