@@ -43,10 +43,10 @@ const ServicesPage: React.FC<ServiceDataProps> = () => {
       </Heading>
       {SERVICES.map((service, index) => (
         <div key={index} css={{marginTop: `${spacing.sm}`}} >
-          <div css={{ alignItems: 'center', display: 'flex'}}>
+          <div css={{ alignItems: 'center', display: 'flex',}}>
             <div
               onClick={() => toggleSection(index)}
-              css={css`cursor: pointer; display: flex; align-items: center;`}
+css={css`cursor: pointer; display: flex; align-items: center;`}
             >
               <Heading as="h2" variant="h2">
                 {service.sectionTitle}
@@ -60,7 +60,8 @@ const ServicesPage: React.FC<ServiceDataProps> = () => {
           </div>
           {index < SERVICES.length - 1 && <hr />}
           {activeSection === index && (
-            <div>
+            <div css={{transition: 'max-height 0.3s ease-in-out', maxHeight: activeSection === index ? '1000px' : '0',overflow: 'hidden',
+  }}>
               {service.packages.map((packageItem, packageIndex) => (
                 <div key={packageIndex}>
                   <Heading as="h3" variant="h3" color="coral"  css={{marginTop: `${spacing.md}`}}>
@@ -79,7 +80,7 @@ const ServicesPage: React.FC<ServiceDataProps> = () => {
         </div>
       ))}
       <Heading as="h2" css={css`
-          margin-top: ${spacing.xxl1};
+          margin-top: ${spacing.xxl3};
           min-height: ${spacing.xxl1};
         `} variant="h2" color='coral'>Request a Project Estimate</Heading>
       <EstimationForm />
