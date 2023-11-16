@@ -54,28 +54,25 @@ const FormInput = styled.input`
   }
 `;
 
-const FormSelect = styled.select`
-  background: none;
-  border: 1px solid ${colors.offWhite};
-  color: ${colors.offWhite};
-  font-size: 1rem;
-  height: 2rem;
+const RadioWrapper = styled.div`
   margin-bottom: ${spacing.xs};
-  width: 100%;
-
-  &:select-value {
-    color: ${colors.coral};
-  }
-
-  &:focus {
-    border: 1px solid ${colors.coral};
-  }
+  display: flex;
 `;
 
-const FormOption = styled.option`
-  color: white;
-  backgroundcolor: ${colors.darkBlue};
+const RadioContainer = styled.div`
+  margin-bottom: ${spacing.xs};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
+
+const RadioLabel = styled.label`
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+`;
+
+const RadioInput = styled(FormInput)``;
 
 const Button = styled.button`
   background: transparent;
@@ -178,51 +175,66 @@ export const EstimationForm: FC = () => {
         {errors.email && <Error>{errors.email.message}</Error>}
       </InputWrapper>
       <InputWrapper>
-        <Label htmlFor="message">Project Description:</Label>
+        <Label htmlFor="description">Project Description</Label>
         <FormInput
-          as="textarea"
+          autoComplete="off"
           id="description"
           placeholder="Project Description*"
           required
+          type="description"
           {...register('description', {
-            required: 'Please include a project description.',
+            required: 'Please enter a brief description of your project.',
           })}
         />
         {errors.description && <Error>{errors.description.message}</Error>}
       </InputWrapper>
       <InputWrapper>
-        <Label htmlFor="message">Service Package:</Label>
-        <FormSelect
-          as="select"
-          id="serviceType"
-          placeholder="Service Type"
-          required
-          {...register('serviceType', {
-            required:
-              'Please include the type of service you are interested in',
-          })}
-        >
-          <FormOption value="CustomSoftwareSolution">
-            Custom Software Solution
-          </FormOption>
-          <FormOption value="SoftwareEnhancementPackage">
-            Software Enhancement
-          </FormOption>
-          <FormOption value="StartupGuidanceAndDevelopment">
-            Startup Guidance and Development
-          </FormOption>
-          <FormOption
-            value="unsure"
-            css={css`
-              color: coral;
-            `}
-          >
-            Not sure yet
-          </FormOption>
-          <FormOption value="other">Something Else</FormOption>
-        </FormSelect>
+        <Label>Service Package:</Label>
+        <RadioWrapper>
+          <RadioContainer>
+            <RadioLabel>Custom Software Solution</RadioLabel>
+            <RadioInput
+              type="radio"
+              value="CustomSoftwareSolution"
+              {...register('serviceType')}
+            />
+          </RadioContainer>
+          <RadioContainer>
+            <RadioLabel>Software Enhancement</RadioLabel>
+            <RadioInput
+              type="radio"
+              value="SoftwareEnhancementPackage"
+              {...register('serviceType')}
+            />
+          </RadioContainer>
+          <RadioContainer>
+            <RadioLabel>Startup Guidance and Development</RadioLabel>
+            <RadioInput
+              type="radio"
+              value="StartupGuidanceAndDevelopment"
+              {...register('serviceType')}
+            />
+          </RadioContainer>
+          <RadioContainer>
+            <RadioLabel>Not sure yet</RadioLabel>
+            <RadioInput
+              type="radio"
+              value="unsure"
+              {...register('serviceType')}
+            />
+          </RadioContainer>
+          <RadioContainer>
+            <RadioLabel>Something Else</RadioLabel>
+            <RadioInput
+              type="radio"
+              value="other"
+              {...register('serviceType')}
+            />
+          </RadioContainer>
+        </RadioWrapper>
         {errors.serviceType && <Error>{errors.serviceType.message}</Error>}
       </InputWrapper>
+
       <Button type="submit" disabled={isSubmitting}>
         Request Estimation
       </Button>
