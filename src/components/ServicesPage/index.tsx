@@ -1,9 +1,6 @@
 import { css } from '@emotion/react';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { SetStateAction, useState } from 'react';
 
-import { Heading, Layout, Text } from '~/components';
+import { Heading, Layout, PageHero, Text } from '~/components';
 
 import { EstimationForm } from './EstimationForm';
 import { spacing } from '../../theme/spacing';
@@ -23,77 +20,52 @@ interface ServiceDataProps {
 }
 
 export const ServicesPage: React.FC<ServiceDataProps> = () => {
-  const [activeSection, setActiveSection] = useState<number | null>(null);
-
-  const toggleSection = (index: SetStateAction<number | null>) => {
-    setActiveSection(activeSection === index ? null : index);
-  };
-
   return (
     <Layout description={'B2 Services'} title={'B2 Services'}>
-      <Heading
-        as="h1"
-        variant="h1"
+      <PageHero
         css={css`
-          margin-bottom: ${spacing.xxl1};
+          filter: grayscale(100%);
         `}
-      >
-        Base Two Services
-      </Heading>
+        alt="team members of Base Two"
+        imgSources={[
+          ['largeDesktop', '/services/services-hero-lg.jpg'],
+          ['tablet', '/services/services-hero-md.jpg'],
+          ['xl', '/services/services-hero-xl.jpg'],
+          ['xs', '/services/services-hero-sm.jpg'],
+        ]}
+        text="Our Services"
+      />
       {SERVICES.map((service, index) => (
-        <div key={index} css={{ marginTop: `${spacing.sm}` }}>
+        <div key={index} css={{ marginTop: `${spacing.xxl3}` }}>
           <div css={{ alignItems: 'center', display: 'flex' }}>
-            <div
-              onClick={() => toggleSection(index)}
-              css={css`
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-              `}
-            >
+            <div>
               <Heading as="h2" variant="h2">
                 {service.sectionTitle}
               </Heading>
-              {activeSection === index ? (
-                <ExpandLessIcon
-                  style={{ cursor: 'pointer', marginLeft: '16px' }}
-                />
-              ) : (
-                <ExpandMoreIcon
-                  style={{ cursor: 'pointer', marginLeft: '16px' }}
-                />
-              )}
             </div>
           </div>
           {index < SERVICES.length - 1 && <hr />}
-          {activeSection === index && (
-            <div
-              css={{
-                maxHeight: activeSection === index ? '1000px' : '0',
-                overflow: 'hidden',
-                transition: 'max-height 0.3s ease-in-out',
-              }}
-            >
-              {service.packages.map((packageItem, packageIndex) => (
-                <div key={packageIndex}>
-                  <Heading
-                    as="h3"
-                    variant="h3"
-                    color="coral"
-                    css={{ marginTop: `${spacing.md}` }}
-                  >
-                    {packageItem.packageTitle}
-                  </Heading>
-                  <Text>{packageItem.description}</Text>
-                  {packageItem.details.map((detail, detailIndex) => (
-                    <ul key={detailIndex}>
-                      <li>{detail}</li>
-                    </ul>
-                  ))}
-                </div>
-              ))}
-            </div>
-          )}
+
+          <div>
+            {service.packages.map((packageItem, packageIndex) => (
+              <div key={packageIndex}>
+                <Heading
+                  as="h3"
+                  variant="h3"
+                  color="coral"
+                  css={{ marginTop: `${spacing.md}` }}
+                >
+                  {packageItem.packageTitle}
+                </Heading>
+                <Text>{packageItem.description}</Text>
+                {packageItem.details.map((detail, detailIndex) => (
+                  <ul key={detailIndex}>
+                    <li>{detail}</li>
+                  </ul>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       ))}
       <Heading
