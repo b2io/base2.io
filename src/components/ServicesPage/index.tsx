@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import React from 'react';
 
 import { Heading, Layout, PageHero, Text } from '~/components';
 
@@ -37,33 +38,33 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
       />
       {SERVICES.map((service, index) => (
         <div key={index} css={{ marginTop: `${spacing.xxl3}` }}>
-          <div css={{ alignItems: 'center', display: 'flex' }}>
-            <div>
-              <Heading as="h2" variant="h2">
-                {service.sectionTitle}
-              </Heading>
-            </div>
-          </div>
           <div>
+            <Heading as="h2" variant="h2">
+              {service.sectionTitle}
+            </Heading>
             <Text variant="h3">{service.sectionDescription}</Text>
           </div>
           <hr />
           {service.packages.map((packageItem, packageIndex) => (
-            <div key={packageIndex}>
-              <Heading
-                as="h3"
-                variant="h3"
-                color="coral"
-                css={{ marginTop: `${spacing.md}` }}
-              >
-                {packageItem.packageTitle}
-              </Heading>
-              <Text>{packageItem.description}</Text>
-              {packageItem.details.map((detail, detailIndex) => (
-                <ul key={detailIndex}>
-                  <li>{detail}</li>
-                </ul>
-              ))}
+            <div key={packageIndex} css={{ display: 'flex', flexWrap: 'wrap' }}>
+              <div css={{ flex: '1 1 25%', minWidth: '25%' }}>
+                <Heading
+                  as="h3"
+                  variant="h3"
+                  color="coral"
+                  css={{ marginTop: `${spacing.md}` }}
+                >
+                  {packageItem.packageTitle}
+                </Heading>
+              </div>
+              <div css={{ flex: '1 1 75%', minWidth: '75%' }}>
+                <Text>{packageItem.description}</Text>
+                {packageItem.details.map((detail, detailIndex) => (
+                  <ul key={detailIndex}>
+                    <li>{detail}</li>
+                  </ul>
+                ))}
+              </div>
             </div>
           ))}
         </div>

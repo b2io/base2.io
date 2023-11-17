@@ -71,7 +71,7 @@ export const SERVICES = [
       },
     ],
     sectionDescription:
-      "Launching a startup requires more than just a Launching a startup? You need more than a great idea – you need guidance and ongoing support. Base Two's got you covered with tailored services. From quickly building your MVP to continuous mentorship and our Startup Launchpad, we're here for your startup journey.  idea – it demands strategic guidance and continuous development support. At Base Two, we offer a suite of services specifically designed for startups. From rapidly developing a Minimum Viable Product (MVP) to providing ongoing technical mentorship and a comprehensive Startup Launchpad, we're here to support your startup's journey. Let us be your dedicated technology partner, offering guidance, support, and strategic insights for sustained growth, staff training, and more.",
+      "Launching a startup requires more than just a great idea – it demands strategic guidance and continuous development support. Base Two's got you covered with tailored services. From quickly building your MVP to continuous mentorship, we're here for your startup journey.",
     sectionTitle: 'Startup Guidance and Development',
   },
   {
