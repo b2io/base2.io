@@ -22,7 +22,7 @@ interface ServiceDataProps {
   }[];
 }
 const MainWrapper = styled.div`
-  margin-bottom: ${spacing.xxl3};
+  margin-bottom: ${spacing.xxl1};
   margin-top: ${spacing.lg};
 `;
 
