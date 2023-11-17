@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 import { Heading, Layout, PageHero, Text } from '~/components';
-import { atMaxLg, atMaxMd } from '~/theme/breakpoints';
+import { atMaxLg } from '~/theme/breakpoints';
 
 import { EstimationForm } from './EstimationForm';
 import { spacing } from '../../theme/spacing';
