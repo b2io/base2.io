@@ -44,34 +44,35 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
               </Heading>
             </div>
           </div>
-          {index < SERVICES.length - 1 && <hr />}
-
           <div>
-            {service.packages.map((packageItem, packageIndex) => (
-              <div key={packageIndex}>
-                <Heading
-                  as="h3"
-                  variant="h3"
-                  color="coral"
-                  css={{ marginTop: `${spacing.md}` }}
-                >
-                  {packageItem.packageTitle}
-                </Heading>
-                <Text>{packageItem.description}</Text>
-                {packageItem.details.map((detail, detailIndex) => (
-                  <ul key={detailIndex}>
-                    <li>{detail}</li>
-                  </ul>
-                ))}
-              </div>
-            ))}
+            <Text variant="h3">{service.sectionDescription}</Text>
           </div>
+          <hr />
+          {service.packages.map((packageItem, packageIndex) => (
+            <div key={packageIndex}>
+              <Heading
+                as="h3"
+                variant="h3"
+                color="coral"
+                css={{ marginTop: `${spacing.md}` }}
+              >
+                {packageItem.packageTitle}
+              </Heading>
+              <Text>{packageItem.description}</Text>
+              {packageItem.details.map((detail, detailIndex) => (
+                <ul key={detailIndex}>
+                  <li>{detail}</li>
+                </ul>
+              ))}
+            </div>
+          ))}
         </div>
       ))}
+
       <Heading
         as="h2"
         css={css`
-          margin-top: ${spacing.xxl3};
+          margin-top: ${spacing.xxl4};
           min-height: ${spacing.xxl1};
         `}
         variant="h2"

@@ -54,26 +54,6 @@ const FormInput = styled.input`
   }
 `;
 
-const RadioWrapper = styled.div`
-  margin-bottom: ${spacing.xs};
-  display: flex;
-`;
-
-const RadioContainer = styled.div`
-  margin-bottom: ${spacing.xs};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const RadioLabel = styled.label`
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-wrap: nowrap;
-`;
-
-const RadioInput = styled(FormInput)``;
-
 const Button = styled.button`
   background: transparent;
   border: 1px solid ${colors.coral};
@@ -188,53 +168,6 @@ export const EstimationForm: FC = () => {
         />
         {errors.description && <Error>{errors.description.message}</Error>}
       </InputWrapper>
-      <InputWrapper>
-        <Label>Service Package:</Label>
-        <RadioWrapper>
-          <RadioContainer>
-            <RadioLabel>Custom Software Solution</RadioLabel>
-            <RadioInput
-              type="radio"
-              value="CustomSoftwareSolution"
-              {...register('serviceType')}
-            />
-          </RadioContainer>
-          <RadioContainer>
-            <RadioLabel>Software Enhancement</RadioLabel>
-            <RadioInput
-              type="radio"
-              value="SoftwareEnhancementPackage"
-              {...register('serviceType')}
-            />
-          </RadioContainer>
-          <RadioContainer>
-            <RadioLabel>Startup Guidance and Development</RadioLabel>
-            <RadioInput
-              type="radio"
-              value="StartupGuidanceAndDevelopment"
-              {...register('serviceType')}
-            />
-          </RadioContainer>
-          <RadioContainer>
-            <RadioLabel>Not sure yet</RadioLabel>
-            <RadioInput
-              type="radio"
-              value="unsure"
-              {...register('serviceType')}
-            />
-          </RadioContainer>
-          <RadioContainer>
-            <RadioLabel>Something Else</RadioLabel>
-            <RadioInput
-              type="radio"
-              value="other"
-              {...register('serviceType')}
-            />
-          </RadioContainer>
-        </RadioWrapper>
-        {errors.serviceType && <Error>{errors.serviceType.message}</Error>}
-      </InputWrapper>
-
       <Button type="submit" disabled={isSubmitting}>
         Request Estimation
       </Button>

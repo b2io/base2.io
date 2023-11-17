@@ -32,6 +32,8 @@ export const SERVICES = [
         packageTitle: 'Scalability Consultation',
       },
     ],
+    sectionDescription:
+      "Most problems don't have a one-size-fits-all solution, and for those problems - there's custom software! We'll work with you and your team to better understand your business's needs and the limitations of your existing solutions, so that a more efficient and flexible solution can be created.",
     sectionTitle: 'Custom Software Solutions',
   },
   {
@@ -68,6 +70,8 @@ export const SERVICES = [
         packageTitle: 'Startup Launchpad',
       },
     ],
+    sectionDescription:
+      "Launching a startup requires more than just a Launching a startup? You need more than a great idea – you need guidance and ongoing support. Base Two's got you covered with tailored services. From quickly building your MVP to continuous mentorship and our Startup Launchpad, we're here for your startup journey.  idea – it demands strategic guidance and continuous development support. At Base Two, we offer a suite of services specifically designed for startups. From rapidly developing a Minimum Viable Product (MVP) to providing ongoing technical mentorship and a comprehensive Startup Launchpad, we're here to support your startup's journey. Let us be your dedicated technology partner, offering guidance, support, and strategic insights for sustained growth, staff training, and more.",
     sectionTitle: 'Startup Guidance and Development',
   },
   {
@@ -112,6 +116,8 @@ export const SERVICES = [
         packageTitle: 'Code Remediation Package',
       },
     ],
+    sectionDescription:
+      "If your tech parnerships have failed in the past, you are not alone. Its difficult to find a partner who is reliable, communicative, and fulfills commitments.  At Base Two, we're not your typical outsourcing service. We seamlessly integrate into your project team, offering extra expertise in frontend and backend development.",
     sectionTitle: 'Reliable Development Partner',
   },
 ];
