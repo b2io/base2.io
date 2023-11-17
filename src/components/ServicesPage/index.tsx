@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 import { Heading, Layout, PageHero, Text } from '~/components';
-import { atMaxLg } from '~/theme/breakpoints';
+import { atMaxLg, atMaxMd } from '~/theme/breakpoints';
 
 import { EstimationForm } from './EstimationForm';
 import { spacing } from '../../theme/spacing';
@@ -40,6 +40,10 @@ const PackageHeading = styled.div`
   flex: 1 1 25%;
   min-width: 25%;
   padding-right: ${spacing.md};
+
+  ${atMaxLg} {
+    padding-bottom: ${spacing.md};
+  }
 `;
 
 const PackageDescription = styled.div`
