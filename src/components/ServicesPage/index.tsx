@@ -1,7 +1,9 @@
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import React from 'react';
 
 import { Heading, Layout, PageHero, Text } from '~/components';
+import { atMaxLg } from '~/theme/breakpoints';
 
 import { EstimationForm } from './EstimationForm';
 import { spacing } from '../../theme/spacing';
@@ -19,6 +21,31 @@ interface ServiceDataProps {
     }[];
   }[];
 }
+const MainWrapper = styled.div`
+  margin-bottom: ${spacing.xxl3};
+  margin-top: ${spacing.lg};
+`;
+
+const DetailsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding: ${spacing.md};
+
+  ${atMaxLg} {
+    flex-direction: column;
+  }
+`;
+
+const PackageHeading = styled.div`
+  flex: 1 1 25%;
+  min-width: 25%;
+  padding-right: ${spacing.md};
+`;
+
+const PackageDescription = styled.div`
+  flex: 1 1 75%;
+  min-width: 75%;
+`;
 
 export const ServicesPage: React.FC<ServiceDataProps> = () => {
   return (
@@ -37,37 +64,45 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
         text="Our Services"
       />
       {SERVICES.map((service, index) => (
-        <div key={index} css={{ marginTop: `${spacing.xxl3}` }}>
-          <div>
-            <Heading as="h2" variant="h2">
-              {service.sectionTitle}
-            </Heading>
-            <Text variant="h3">{service.sectionDescription}</Text>
-          </div>
+        <MainWrapper key={index}>
+          <Heading as="h2" variant="h2">
+            {service.sectionTitle}
+          </Heading>
+          <Text
+            variant="h3"
+            css={css`
+              padding: ${spacing.md};
+              opacity: 70%;
+            `}
+          >
+            {service.sectionDescription}
+          </Text>
           <hr />
           {service.packages.map((packageItem, packageIndex) => (
-            <div key={packageIndex} css={{ display: 'flex', flexWrap: 'wrap' }}>
-              <div css={{ flex: '1 1 25%', minWidth: '25%' }}>
+            <DetailsWrapper key={packageIndex}>
+              <PackageHeading>
                 <Heading
                   as="h3"
                   variant="h3"
                   color="coral"
-                  css={{ marginTop: `${spacing.md}` }}
+                  css={css`
+                    margintop: ${spacing.md};
+                  `}
                 >
                   {packageItem.packageTitle}
                 </Heading>
-              </div>
-              <div css={{ flex: '1 1 75%', minWidth: '75%' }}>
-                <Text>{packageItem.description}</Text>
+              </PackageHeading>
+              <PackageDescription>
+                <Text as="body">{packageItem.description}</Text>
                 {packageItem.details.map((detail, detailIndex) => (
                   <ul key={detailIndex}>
                     <li>{detail}</li>
                   </ul>
                 ))}
-              </div>
-            </div>
+              </PackageDescription>
+            </DetailsWrapper>
           ))}
-        </div>
+        </MainWrapper>
       ))}
 
       <Heading

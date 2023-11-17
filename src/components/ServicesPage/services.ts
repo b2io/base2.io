@@ -10,16 +10,16 @@ export const SERVICES = [
           'All tooling and processes aligned with industry standards.',
           'Platforms designed to scale seamlessly.',
         ],
-        packageTitle: 'Custom Software Solution Package',
+        packageTitle: 'Custom Software Solution',
       },
       {
         description:
-          'For businesses with existing software solutions, this package focuses on improvements to your current tools. Base Two conducts a thorough analysis of the software, provides recommendations, and executes updates for enhanced user experience and improved technical performance.',
+          'For businesses with existing software solutions, this service focuses on improvements to your current tools. Base Two conducts a thorough analysis of the software, provides recommendations, and executes updates for enhanced user experience and improved technical performance.',
         details: [
           'In-depth analysis to identify areas of improvement.',
           'Recommendations and execution for enhanced user experience and technical performance.',
         ],
-        packageTitle: 'Software Enhancement Package',
+        packageTitle: 'Software Enhancement',
       },
       {
         description:
@@ -40,13 +40,13 @@ export const SERVICES = [
     packages: [
       {
         description:
-          'The Startup MVP Package from Base Two accelerates the development of a functional prototype for early-stage startups. This service involves rapid collaboration with the startup team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.',
+          'The Startup MVP solution from Base Two accelerates the development of a functional prototype for early-stage startups. This service involves rapid collaboration with the startup team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.',
         details: [
           'Rapid development of a functional prototype.',
           'Collaboration for defining MVP, technology setup, and core feature development.',
           'Iterative development for quick results.',
         ],
-        packageTitle: 'Startup MVP Package',
+        packageTitle: 'Startup MVP',
       },
       {
         description:
@@ -87,12 +87,12 @@ export const SERVICES = [
       },
       {
         description:
-          'The Retainer Package offers dedicated professionals to meet flexible staffing needs. Clients can choose a lineup of teammates with diverse expertise, providing a tailored solution to support ongoing projects without the complexities of traditional hiring.',
+          'The Retainer service offers dedicated professionals to meet flexible staffing needs. Clients can choose a lineup of teammates with diverse expertise, providing a tailored solution to support ongoing projects without the complexities of traditional hiring.',
         details: [
           'Dedicated professionals for flexible staffing needs.',
           'A lineup of teammates with diverse expertise.',
         ],
-        packageTitle: 'Retainer Package',
+        packageTitle: 'Retainer',
       },
       {
         description:
@@ -102,7 +102,7 @@ export const SERVICES = [
           'Bug identification, technical debt addressing, areas for improvement, and strategic optimization recommendations.',
           'Addressing technical debt for improved code quality.',
         ],
-        packageTitle: 'Code Quality Assurance Package',
+        packageTitle: 'Code Quality Assurance',
       },
       {
         description:
@@ -113,7 +113,7 @@ export const SERVICES = [
           'Prioritization of solutions for efficient code remediation.',
           'Ensuring optimal software functionality and adherence to best practices.',
         ],
-        packageTitle: 'Code Remediation Package',
+        packageTitle: 'Code Remediation',
       },
     ],
     sectionDescription:
