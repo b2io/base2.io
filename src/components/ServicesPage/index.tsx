@@ -1,13 +1,13 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import React from 'react';
+import Link from 'next/link';
 
 import { Heading, Layout, PageHero, Text } from '~/components';
-import { atMaxLg } from '~/theme/breakpoints';
+import { atMaxLg, atMinTablet } from '~/theme/breakpoints';
 
 import { EstimationForm } from './EstimationForm';
-import { spacing } from '../../theme/spacing';
-import { SERVICES } from '../ServicesPage/services';
+import { SERVICE_PHILOSOPHY, SERVICES } from './services';
+import { colors, spacing } from '../../theme';
 
 interface ServiceDataProps {
   services: {
@@ -21,6 +21,34 @@ interface ServiceDataProps {
     }[];
   }[];
 }
+
+const IntroWrapper = styled.div`
+  ${atMaxLg} {
+    flex-direction: column;
+  }
+  flex-direction: row;
+  display: flex;
+  gap: 2rem;
+`;
+
+const TableOfContents = styled.div`
+  flex: 1;
+
+  li {
+    color: ${colors.coral};
+    font-size: 2rem;
+  }
+
+  ul {
+    margin-top: 0;
+  }
+`;
+
+const NavLink = styled(Link)`
+  color: ${colors.coral};
+  font-size: 2rem;
+`;
+
 const MainWrapper = styled.div`
   margin-bottom: ${spacing.xxl1};
   margin-top: ${spacing.lg};
@@ -36,7 +64,7 @@ const DetailsWrapper = styled.div`
   }
 `;
 
-const PackageHeading = styled.div`
+const ServiceHeading = styled.div`
   flex: 1 1 25%;
   min-width: 25%;
   padding-right: ${spacing.md};
@@ -46,7 +74,7 @@ const PackageHeading = styled.div`
   }
 `;
 
-const PackageDescription = styled.div`
+const ServiceDescription = styled.div`
   flex: 1 1 75%;
   min-width: 75%;
 `;
@@ -67,11 +95,46 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
         ]}
         text="Our Services"
       />
-      {SERVICES.map((service, index) => (
-        <MainWrapper key={index}>
+      <IntroWrapper
+        css={css`
+          margin-top: ${spacing.xxl2};
+
+          ${atMinTablet} {
+            margin-top: ${spacing.xxl3};
+          }
+        `}
+      >
+        <Heading
+          css={css`
+            ${atMinTablet} {
+              flex: 2;
+            }
+          `}
+          as="h4"
+          variant="h3"
+        >
+          {SERVICE_PHILOSOPHY.content}
+        </Heading>
+        <TableOfContents>
+          <nav>
+            <li>
+              <NavLink href="/">Section 1</NavLink>
+            </li>
+            <li>
+              <NavLink href="/">Section 2</NavLink>
+            </li>
+            <li>
+              <NavLink href="/">Section 3</NavLink>
+            </li>
+          </nav>
+        </TableOfContents>
+      </IntroWrapper>
+      {SERVICES.map((section, sectionIndex) => (
+        <MainWrapper key={sectionIndex}>
           <Heading as="h2" variant="h2">
-            {service.sectionTitle}
+            {section.sectionTitle}
           </Heading>
+
           <Text
             variant="h3"
             css={css`
@@ -79,31 +142,31 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
               opacity: 70%;
             `}
           >
-            {service.sectionDescription}
+            {section.sectionDescription}
           </Text>
           <hr />
-          {service.packages.map((packageItem, packageIndex) => (
-            <DetailsWrapper key={packageIndex}>
-              <PackageHeading>
+          {section.services.map((service, serviceIndex) => (
+            <DetailsWrapper key={serviceIndex}>
+              <ServiceHeading>
                 <Heading
                   as="h3"
                   variant="h3"
                   color="coral"
                   css={css`
-                    margintop: ${spacing.md};
+                    margin-top: ${spacing.md};
                   `}
                 >
-                  {packageItem.packageTitle}
+                  {service.serviceName}
                 </Heading>
-              </PackageHeading>
-              <PackageDescription>
-                <Text as="body">{packageItem.description}</Text>
-                {packageItem.details.map((detail, detailIndex) => (
+              </ServiceHeading>
+              <ServiceDescription>
+                <Text as="body">{service.description}</Text>
+                {service.details.map((detail, detailIndex) => (
                   <ul key={detailIndex}>
                     <li>{detail}</li>
                   </ul>
                 ))}
-              </PackageDescription>
+              </ServiceDescription>
             </DetailsWrapper>
           ))}
         </MainWrapper>

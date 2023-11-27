@@ -1,123 +1,140 @@
+export const SERVICE_PHILOSOPHY = {
+  title: 'Service Philosophy',
+  content: `
+Partnerships are the core of how we work. Our goal is to build long term relationships based on mutual trust. The first priority we have is to be good stewards of the systems we're entrusted with. We want to work together to identify the correct solutions to your problems and build them in the way that fits your needs, both short and long term.
+
+We are first and foremost experts at working with you to understand your problems and solve their unique concerns.
+`,
+};
+
 export const SERVICES = [
   {
-    packages: [
+    sectionTitle: 'Discovery Consultation',
+    services: [
       {
-        description:
-          'This service involves end-to-end custom software development tailored to meet the specific needs of clients. Base Two collaborates closely with clients to understand their business requirements and delivers a bespoke software solution. The emphasis is on aligning the platform with industry standards to ensure scalability and innovation.',
+        serviceName: 'Discovery Consultation',
+        description: `
+          One of our defining talents, beyond just engineering, is being able to sit down with a Client and quickly learn their business. We're often approached with loose understandings coupled with strong expectations. Our goal is to provide a unique perspective based on our experience across many distinct industries.
+        `,
+        details: [
+          'Strategic planning for business growth.',
+          'Technology upgrades and expansion strategies.',
+          'Replatforming of current software to modern solutions.',
+          'Deep analysis of codebase.',
+          'Bug identification, technical debt addressing, areas for improvement, and strategic optimization.',
+        ],
+      },
+    ],
+  },
+  {
+    sectionTitle: 'Architecture and Engineering Consultation',
+    services: [
+      {
+        serviceName: 'Architecture and Engineering Consultation',
+        description: `
+          Are your processes and systems robust enough to handle your needs now? What about the future? Base Two assists clients in evaluating their current systems, identifying weaknesses and assessing strengths. We follow up with a report detailing technology upgrades, expansion strategies, and recommended architectural changes ensuring that your systems are robust and can scale effectively to meet evolving business needs.
+        `,
+        details: [
+          'Strategic planning for business growth.',
+          'Technology upgrades and expansion strategies.',
+          'Replatforming of current software to modern solutions.',
+        ],
+      },
+    ],
+  },
+  {
+    sectionTitle: 'Tailored Software Solutions',
+    services: [
+      {
+        serviceName: 'Tailored Software Solutions',
+        description: `
+          No workflow is truly identical. By immersing ourselves in your existing processes and deeply understanding your business, we deliver bespoke software solutions. The emphasis is on aligning the platform with industry standards, making architectural choices to ensure scalability while managing complexity, and helping you to drive innovation in your business.
+        `,
         details: [
           'Comprehensive end-to-end development, from conceptualization to implementation.',
           'Tailored to meet specific business requirements.',
           'All tooling and processes aligned with industry standards.',
-          'Platforms designed to scale seamlessly.',
+          'Platforms designed to scale seamlessly and be provider agnostic.',
+          'Cloud native, on-prem, or hybrid solutions to fit your needs.',
         ],
-        packageTitle: 'Custom Software Solution',
-      },
-      {
-        description:
-          'For businesses with existing software solutions, this service focuses on improvements to your current tools. Base Two conducts a thorough analysis of the software, provides recommendations, and executes updates for enhanced user experience and improved technical performance.',
-        details: [
-          'In-depth analysis to identify areas of improvement.',
-          'Recommendations and execution for enhanced user experience and technical performance.',
-        ],
-        packageTitle: 'Software Enhancement',
-      },
-      {
-        description:
-          'This service revolves around strategic planning for business growth. Base Two assists clients in identifying technology upgrades and expansion strategies, ensuring that the software infrastructure can scale effectively to meet evolving business needs.',
-        details: [
-          'Strategic planning for business growth.',
-          'Technology upgrades and expansion strategies.',
-          'Replatforming of current software to modern solutions',
-        ],
-        packageTitle: 'Scalability Consultation',
       },
     ],
-    sectionDescription:
-      "Most problems don't have a one-size-fits-all solution, and for those problems - there's custom software! We'll work with you and your team to better understand your business's needs and the limitations of your existing solutions, so that a more efficient and flexible solution can be created.",
-    sectionTitle: 'Custom Software Solutions',
   },
   {
-    packages: [
+    sectionTitle: 'Enhancement and Support',
+    services: [
       {
-        description:
-          'The Startup MVP solution from Base Two accelerates the development of a functional prototype for early-stage startups. This service involves rapid collaboration with the startup team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.',
+        serviceName: 'Enhancement and Support',
+        description: `
+          For businesses with existing software solutions, this service focuses on improvements to your current tools. Base Two conducts a thorough analysis of the software, provides recommendations, and executes updates for enhanced user experience and improved technical performance.
+        `,
+        details: [
+          'In-depth analysis to identify areas of improvement and priorities.',
+          'Recommendations and execution for enhanced user experience and technical performance.',
+        ],
+      },
+    ],
+  },
+  {
+    sectionTitle: 'Targeted MVP',
+    services: [
+      {
+        serviceName: 'Targeted MVP',
+        description: `
+          The idea of a Targeted MVP solution is to accelerate the development of a functional prototype for early-stage startups or established companies looking to experiment. This service involves rapid collaboration with the client team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.
+        `,
         details: [
           'Rapid development of a functional prototype.',
           'Collaboration for defining MVP, technology setup, and core feature development.',
           'Iterative development for quick results.',
+          'Professional handoff with dedicated support.',
         ],
-        packageTitle: 'Startup MVP',
-      },
-      {
-        description:
-          "Base Two provides ongoing technical mentorship and guidance to startups, serving as a dedicated technology partner. This service extends beyond the initial development phase, ensuring continuous support for shaping the startup's technology strategy, making informed decisions, and scaling effectively.",
-        details: [
-          'Ongoing mentorship for shaping technology strategy.',
-          'Dedicated technology partner for informed decisions and scaling.',
-          'Assistance in navigating technical challenges as they arise.',
-          'Collaboration on long-term technology planning and decision-making.',
-        ],
-        packageTitle: 'Technical Mentorship, Guidance, and Strategy',
-      },
-      {
-        description:
-          'The Startup Launchpad is a comprehensive solution that goes beyond MVP development. Base Two offers technical guidance, ongoing support, and a holistic approach to ensure the overall success of the startup. This package aims to guide the startup through various technical aspects and provides continuous support for long-term success.',
-        details: [
-          'Comprehensive solution beyond MVP development.',
-          'Ongoing support to navigate challenges and seize opportunities.',
-          'Strategic guidance for sustained growth and success.',
-        ],
-        packageTitle: 'Startup Launchpad',
       },
     ],
-    sectionDescription:
-      "Launching a startup requires more than just a great idea – it demands strategic guidance and continuous development support. Base Two's got you covered with tailored services. From quickly building your MVP to continuous mentorship, we're here for your startup journey.",
-    sectionTitle: 'Startup Guidance and Development',
   },
   {
-    packages: [
+    sectionTitle: 'Mentorship, Guidance, and Strategy',
+    services: [
       {
-        description:
-          "For businesses needing additional development resources, Team Integration provides a seamless partnership with frontend and backend expertise. Base Two becomes an integral part of the client's existing project team, tools, and processes, providing additional development capabilities.",
+        serviceName: 'Mentorship, Guidance, and Strategy',
+        description: `
+          Base Two provides ongoing mentorship and guidance to our clients, serving as a dedicated technology partner. This service extends beyond development; it's about ensuring continuous support in shaping your technology strategy, making informed decisions, and having effective and healthy engineering teams.
+        `,
+        details: [
+          'Ongoing mentorship for shaping technology strategy and decision-making.',
+          'Assistance in navigating technical challenges as they arise.',
+          'Team Leadership and guidance.',
+          'Fractional CTO responsibilities.',
+        ],
+      },
+    ],
+  },
+  {
+    sectionTitle: 'Committed Partner',
+    sectionDescription: `
+      If your tech partnerships have failed in the past, you are not alone. It's difficult to find a consistent group who are reliable, communicative, and fulfill commitments. At Base Two, we deeply invest in the tasks we're given and take ownership of the systems we work on and results we achieve. It's important that we are a team working together to solve problems and build solutions we're proud of. Let us be part of your internal engineering team.
+    `,
+    services: [
+      {
+        serviceName: 'Team Integration',
+        description: `
+          For businesses needing additional development resources, Team Integration provides a seamless partnership with frontend and backend expertise. Base Two becomes an integral part of the client's existing project team, tools, and processes, providing additional development capabilities.
+        `,
         details: [
           'Integration of additional development resources seamlessly.',
           "Collaborative work with the client's staff, tools, and processes.",
         ],
-        packageTitle: 'Team Integration',
       },
       {
-        description:
-          'The Retainer service offers dedicated professionals to meet flexible staffing needs. Clients can choose a lineup of teammates with diverse expertise, providing a tailored solution to support ongoing projects without the complexities of traditional hiring.',
+        serviceName: 'Retainer',
+        description: `
+          The Retainer service offers dedicated professionals to meet flexible staffing needs. Clients can choose a lineup of teammates with diverse expertise, providing a tailored solution to support ongoing projects without the complexities of traditional hiring.
+        `,
         details: [
           'Dedicated professionals for flexible staffing needs.',
           'A lineup of teammates with diverse expertise.',
         ],
-        packageTitle: 'Retainer',
-      },
-      {
-        description:
-          "This service involves a comprehensive analysis of the client's codebase. Base Two identifies bugs, addresses technical debt, and provides strategic recommendations to optimize the performance of the application or website.",
-        details: [
-          'Deep analysis of codebase.',
-          'Bug identification, technical debt addressing, areas for improvement, and strategic optimization recommendations.',
-          'Addressing technical debt for improved code quality.',
-        ],
-        packageTitle: 'Code Quality Assurance',
-      },
-      {
-        description:
-          'If a project has encountered issues due to code problems, Base Two helps get it back on track. The team conducts a comprehensive evaluation of the codebase, identifies inefficiencies, and prioritizes solutions. Throughout the process, open, honest, and transparent communication is maintained.',
-        details: [
-          'Comprehensive evaluation of codebase.',
-          'Identification and resolution of inefficiencies, maintaining transparent communication throughout.',
-          'Prioritization of solutions for efficient code remediation.',
-          'Ensuring optimal software functionality and adherence to best practices.',
-        ],
-        packageTitle: 'Code Remediation',
       },
     ],
-    sectionDescription:
-      "If your tech parnerships have failed in the past, you are not alone. Its difficult to find a partner who is reliable, communicative, and fulfills commitments.  At Base Two, we're not your typical outsourcing service. We seamlessly integrate into your project team, offering extra expertise in frontend and backend development.",
-    sectionTitle: 'Reliable Development Partner',
   },
 ];
