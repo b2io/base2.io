@@ -149,7 +149,7 @@ export const OurServices: FC = (props) => {
             heading={service.sectionTitle || service.sectionDescription || ''}
             text={service.services[0].description || ''}
             css={css`
-              scroll-margin-top: 5rem;
+              scroll-margin-top: 7rem;
             `}
           >
             <ul
