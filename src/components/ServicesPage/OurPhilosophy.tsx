@@ -3,51 +3,79 @@ import styled from '@emotion/styled';
 import type { FC } from 'react';
 
 import { CardGrid, Heading, IconCard, Text } from '~/components';
-import { atMinSm, atMinXL, colors, spacing } from '~/theme';
+import { atMinLg, atMinXL, colors, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, SERVICES } from './services';
-import { Link } from '../../components/Link';
+import { atMaxLg } from '../../theme/breakpoints';
 
-const StyledListItem = styled.li`
-  ${atMinSm} {
-    margin-top: ${spacing.xxxs};
-    padding: 0 ${spacing.md};
-    position: relative;
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 
-    ::before {
-      border-bottom: solid 1px ${colors.coral};
-      content: '';
-      left: 0;
-      position: absolute;
-      top: 0.925rem;
-      width: 1.125rem;
-    }
+  ${atMinLg} {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: ${spacing.lg};
   }
 `;
 
-const TableOfContents = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+const StyledListItem = styled.li`
+  margin-top: ${spacing.xxxs};
+  padding: 0 ${spacing.md};
+  position: relative;
 
-  ${atMinSm} {
-    grid-template-columns: 1fr;
+  ::before {
+    border-bottom: solid 1px ${colors.coral};
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 0.925rem;
+    width: 1.125rem;
+  }
+`;
+
+const TableOfContents = styled.nav`
+  margin-top: ${spacing.md};
+  display: grid;
+  grid-template-columns: 1fr;
+
+  ${atMinLg} {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: ${spacing.sm};
+    justify-content: center;
   }
 
   li {
-    color: ${colors.coral};
+    color: ${colors.offWhite};
     display: flex;
     flex-direction: row;
     line-height: 1.5;
   }
+`;
 
-  ul {
-    margin-top: 0;
+const StyledNavItem = styled.li`
+  margin-top: ${spacing.xxxs};
+  position: relative;
+
+  a {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 4px; /* Adjust as needed */
   }
 `;
 
-const NavLink = styled(Link)`
+const NavLink = styled.a`
   color: ${colors.coral};
-  font-size: 2rem;
+  font-size: 1rem;
+
+  &:hover {
+    color: ${colors.coral};
+  }
+
+  &.smooth-scroll {
+    scroll-behavior: smooth;
+    scroll-margin-top: 4rem;
+  }
 `;
 
 export const OurServices: FC = (props) => {
@@ -61,30 +89,61 @@ export const OurServices: FC = (props) => {
       `}
       {...props}
     >
-      <Heading as="h2" variant="h2">
-        Our Partnership Philosophy
-      </Heading>
-      <Text
-        as="p"
-        css={css`
-          margin-top: 1.5rem;
-          max-width: 52rem;
-        `}
-        variant="h3"
-      >
-        {SERVICE_PHILOSOPHY.content}
-      </Text>
-      <TableOfContents>
-        <nav>
-          {SERVICES.map((section, sectionIndex) => (
-            <li key={sectionIndex}>
-              <NavLink href={`#section-${sectionIndex + 1}`}>
-                {section.sectionTitle}
-              </NavLink>
-            </li>
-          ))}
-        </nav>
-      </TableOfContents>
+      <ContentWrapper>
+        <div>
+          <Heading
+            as="h2"
+            variant="h2"
+            css={css`
+              margin-top: ${spacing.xxl2};
+            `}
+          >
+            Our Partnership Philosophy
+          </Heading>
+          <Text
+            as="p"
+            css={css`
+              margin-top: 1.5rem;
+              max-width: 52rem;
+            `}
+            variant="h3"
+          >
+            {SERVICE_PHILOSOPHY.content}
+          </Text>
+        </div>
+        <div
+          css={css`
+            padding: 0 ${spacing.md};
+            margin-top: ${spacing.xxl2};
+            ${atMaxLg} {
+              padding: 0;
+              margin-top: ${spacing.sm};
+            }
+          `}
+        >
+          <Heading
+            as="h2"
+            variant="h2"
+            css={css`
+              white-space: nowrap;
+            `}
+          >
+            Our Services
+          </Heading>
+          <TableOfContents>
+            {SERVICES.map((section, sectionIndex) => (
+              <StyledNavItem key={sectionIndex}>
+                <NavLink
+                  className="smooth-scroll"
+                  href={`#section-${sectionIndex + 1}`}
+                >
+                  {section.sectionTitle}
+                </NavLink>
+              </StyledNavItem>
+            ))}
+          </TableOfContents>
+        </div>
+      </ContentWrapper>
       <CardGrid
         css={css`
           margin-top: 5rem;
@@ -92,6 +151,7 @@ export const OurServices: FC = (props) => {
       >
         {SERVICES.map((service, index) => (
           <IconCard
+            id={`section-${index + 1}`}
             key={index}
             heading={service.sectionTitle || service.sectionDescription || ''}
             text={service.services[0].description || ''}

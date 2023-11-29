@@ -30,15 +30,18 @@ export const CardActions: FC = ({ children, ...props }) => {
 
 export type CardProps = {
   as?: ElementType;
+  id?: string;
 };
 
 export const Card: FC<CardProps> = ({
   as: Component = 'div',
   children,
+  id,
   ...props
 }) => {
   return (
     <Component
+      id={id}
       css={css`
         display: flex;
         flex-direction: column;
@@ -108,20 +111,22 @@ export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
 };
 
 export type IconCardProps = {
+  children?: React.ReactNode;
   heading: string;
   icon?: DynamicIconProps['type'];
+  id?: string;
   text: string;
-  children?: React.ReactNode;
 };
 
 export const IconCard: FC<IconCardProps> = ({
+  children,
   heading,
   icon,
+  id,
   text,
-  children,
 }) => {
   return (
-    <Card>
+    <Card id={id}>
       {icon && <DynamicIcon type={icon} />}
       <Heading as="h3" color="coral" variant="h3">
         {heading}

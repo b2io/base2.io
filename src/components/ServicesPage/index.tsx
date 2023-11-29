@@ -36,7 +36,7 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
         text="Partnerships are the core of how we work."
       />
 
-      <OurServices>test</OurServices>
+      <OurServices />
       <Heading
         as="h2"
         css={css`
