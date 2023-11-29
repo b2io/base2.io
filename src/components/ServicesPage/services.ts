@@ -1,6 +1,6 @@
 export const SERVICE_PHILOSOPHY = {
   content: `
-Partnerships are the core of how we work, and our primary goal is to build long term relationships based on mutual trust. Our priority is to be good stewards of the systems we're entrusted with. We want to work with you in order to identify the correct solutions to your problems and build them in the way that fits your needs, both short and long term.
+Our primary goal is to build long term relationships based on mutual trust. We strive to be the best stewards of the systems we're entrusted with. We want to work with you in order to identify the correct solutions to your problems and build them in the way that fits your needs, both short and long term.
 \n\n
 
 We are first and foremost experts at working with you to understand your problems and solve their unique concerns.

@@ -1,12 +1,12 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Link from 'next/link';
 
 import { Heading, Layout, PageHero, Text } from '~/components';
 import { atMaxLg, atMinTablet } from '~/theme/breakpoints';
 
 import { EstimationForm } from './EstimationForm';
 import { SERVICE_PHILOSOPHY, SERVICES } from './services';
+import { Link } from '../../components/Link';
 import { colors, spacing } from '../../theme';
 
 interface ServiceDataProps {
@@ -36,7 +36,9 @@ const TableOfContents = styled.div`
 
   li {
     color: ${colors.coral};
-    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    line-height: 1.5;
   }
 
   ul {
@@ -54,26 +56,6 @@ const MainWrapper = styled.div`
   margin-top: ${spacing.lg};
 `;
 
-const DetailsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  padding: ${spacing.md};
-
-  ${atMaxLg} {
-    flex-direction: column;
-  }
-`;
-
-const ServiceHeading = styled.div`
-  flex: 1 1 25%;
-  min-width: 25%;
-  padding-right: ${spacing.md};
-
-  ${atMaxLg} {
-    padding-bottom: ${spacing.md};
-  }
-`;
-
 const ServiceDescription = styled.div`
   flex: 1 1 75%;
   min-width: 75%;
@@ -81,7 +63,7 @@ const ServiceDescription = styled.div`
 
 export const ServicesPage: React.FC<ServiceDataProps> = () => {
   return (
-    <Layout description={'B2 Services'} title={'B2 Services'}>
+    <Layout title="Services" description="Services">
       <PageHero
         css={css`
           filter: grayscale(100%);
@@ -93,7 +75,7 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
           ['xl', '/services/services-hero-xl.jpg'],
           ['xs', '/services/services-hero-sm.jpg'],
         ]}
-        text="Our Services"
+        text="Partnerships are the core of how we work."
       />
       <IntroWrapper
         css={css`
@@ -117,15 +99,13 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
         </Heading>
         <TableOfContents>
           <nav>
-            <li>
-              <NavLink href="/">Section 1</NavLink>
-            </li>
-            <li>
-              <NavLink href="/">Section 2</NavLink>
-            </li>
-            <li>
-              <NavLink href="/">Section 3</NavLink>
-            </li>
+            {SERVICES.map((section, sectionIndex) => (
+              <li key={sectionIndex}>
+                <NavLink href={`#section-${sectionIndex + 1}`}>
+                  {section.sectionTitle}
+                </NavLink>
+              </li>
+            ))}
           </nav>
         </TableOfContents>
       </IntroWrapper>
@@ -146,28 +126,14 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
           </Text>
           <hr />
           {section.services.map((service, serviceIndex) => (
-            <DetailsWrapper key={serviceIndex}>
-              <ServiceHeading>
-                <Heading
-                  as="h3"
-                  variant="h3"
-                  color="coral"
-                  css={css`
-                    margin-top: ${spacing.md};
-                  `}
-                >
-                  {service.serviceName}
-                </Heading>
-              </ServiceHeading>
-              <ServiceDescription>
-                <Text as="body">{service.description}</Text>
-                {service.details.map((detail, detailIndex) => (
-                  <ul key={detailIndex}>
-                    <li>{detail}</li>
-                  </ul>
-                ))}
-              </ServiceDescription>
-            </DetailsWrapper>
+            <ServiceDescription key={serviceIndex}>
+              <Text as="body">{service.description}</Text>
+              {service.details.map((detail, detailIndex) => (
+                <ul key={detailIndex}>
+                  <li>{detail}</li>
+                </ul>
+              ))}
+            </ServiceDescription>
           ))}
         </MainWrapper>
       ))}

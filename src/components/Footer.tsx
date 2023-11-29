@@ -203,13 +203,13 @@ export const Footer: FC = (prop) => {
               <NavLink href="/">Home</NavLink>
             </li>
             <li>
-              <NavLink href="/services">Services</NavLink>
-            </li>
-            <li>
               <NavLink href="/work">Work</NavLink>
             </li>
             <li>
               <NavLink href="/approach">Approach</NavLink>
+            </li>
+            <li>
+              <NavLink href="/services">Services</NavLink>
             </li>
             <li>
               <NavLink href="/culture">Culture</NavLink>
