@@ -1,13 +1,10 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 
 import { Heading, Layout, PageHero } from '~/components';
 
 import { EstimationForm } from './EstimationForm';
-import { OurPhilosophy } from './OurPhilosophy';
-import { SERVICES } from './services';
-import { Link } from '../../components/Link';
-import { colors, spacing } from '../../theme';
+import { OurServices } from './OurPhilosophy';
+import { spacing } from '../../theme';
 
 interface ServiceDataProps {
   services: {
@@ -21,26 +18,6 @@ interface ServiceDataProps {
     }[];
   }[];
 }
-
-const TableOfContents = styled.div`
-  flex: 1;
-
-  li {
-    color: ${colors.coral};
-    display: flex;
-    flex-direction: row;
-    line-height: 1.5;
-  }
-
-  ul {
-    margin-top: 0;
-  }
-`;
-
-const NavLink = styled(Link)`
-  color: ${colors.coral};
-  font-size: 2rem;
-`;
 
 export const ServicesPage: React.FC<ServiceDataProps> = () => {
   return (
@@ -58,18 +35,8 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
         ]}
         text="Partnerships are the core of how we work."
       />
-      <TableOfContents>
-        <nav>
-          {SERVICES.map((section, sectionIndex) => (
-            <li key={sectionIndex}>
-              <NavLink href={`#section-${sectionIndex + 1}`}>
-                {section.sectionTitle}
-              </NavLink>
-            </li>
-          ))}
-        </nav>
-      </TableOfContents>
-      <OurPhilosophy>test</OurPhilosophy>
+
+      <OurServices>test</OurServices>
       <Heading
         as="h2"
         css={css`
