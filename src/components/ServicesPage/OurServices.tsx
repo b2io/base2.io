@@ -38,6 +38,7 @@ const TableOfContents = styled.nav`
   margin-top: ${spacing.md};
   display: grid;
   grid-template-columns: 1fr;
+  gap: ${spacing.xxs};
 
   ${atMinLg} {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -60,7 +61,7 @@ const StyledNavItem = styled.li`
   a {
     color: white;
     text-decoration: underline;
-    text-underline-offset: 4px; /* Adjust as needed */
+    text-underline-offset: 4px;
   }
 `;
 
@@ -70,11 +71,6 @@ const NavLink = styled.a`
 
   &:hover {
     color: ${colors.coral};
-  }
-
-  &.smooth-scroll {
-    scroll-behavior: smooth;
-    scroll-margin-top: 4rem;
   }
 `;
 
@@ -133,10 +129,7 @@ export const OurServices: FC = (props) => {
           <TableOfContents>
             {SERVICES.map((section, sectionIndex) => (
               <StyledNavItem key={sectionIndex}>
-                <NavLink
-                  className="smooth-scroll"
-                  href={`#section-${sectionIndex + 1}`}
-                >
+                <NavLink href={`#section-${sectionIndex + 1}`}>
                   {section.sectionTitle}
                 </NavLink>
               </StyledNavItem>
@@ -155,6 +148,9 @@ export const OurServices: FC = (props) => {
             key={index}
             heading={service.sectionTitle || service.sectionDescription || ''}
             text={service.services[0].description || ''}
+            css={css`
+              scroll-margin-top: 5rem;
+            `}
           >
             <ul
               css={css`

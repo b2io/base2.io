@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { Heading, Layout, PageHero } from '~/components';
 
 import { EstimationForm } from './EstimationForm';
-import { OurServices } from './OurPhilosophy';
+import { OurServices } from './OurServices';
 import { spacing } from '../../theme';
 
 interface ServiceDataProps {

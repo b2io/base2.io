@@ -124,9 +124,10 @@ export const IconCard: FC<IconCardProps> = ({
   icon,
   id,
   text,
+  ...props
 }) => {
   return (
-    <Card id={id}>
+    <Card id={id} {...props}>
       {icon && <DynamicIcon type={icon} />}
       <Heading as="h3" color="coral" variant="h3">
         {heading}
