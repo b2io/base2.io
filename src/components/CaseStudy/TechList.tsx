@@ -12,10 +12,12 @@ import { atMinTablet, atMinXL, spacing } from '~/theme';
 import {
   AngularIcon,
   D3Icon,
+  GoIcon,
   JasminealtIcon,
   JasmineIcon,
   KarmaIcon,
   NetIcon,
+  NextjsIcon,
   ReactIcon,
   ReduxIcon,
   SassIcon,
@@ -28,6 +30,8 @@ type Logo =
   | 'jasminealt'
   | 'karma'
   | 'net'
+  | 'go'
+  | 'nextjs'
   | 'react'
   | 'redux'
   | 'sass';
@@ -44,6 +48,8 @@ const TechList = {
   jasminealt: JasminealtIcon,
   karma: KarmaIcon,
   net: NetIcon,
+  go: GoIcon,
+  nextjs: NextjsIcon,
   react: ReactIcon,
   redux: ReduxIcon,
   sass: SassIcon,

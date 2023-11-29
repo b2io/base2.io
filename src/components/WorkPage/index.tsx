@@ -71,6 +71,14 @@ export const WorkPage: FC = () => {
           src={require('./images/batteryxt.jpg')}
           title="DNV Battery XT"
         />
+
+        <CaseStudyPreview
+          alt={'advon commerce screenshot'}
+          href="/work/advoncommerce"
+          info="Management & billing web CMS"
+          src={require('./images/advon.jpg')}
+          title="Advon Commerce"
+        />
       </div>
     </Layout>
   );

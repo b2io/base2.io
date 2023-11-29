@@ -1,4 +1,5 @@
 export * from './ApproachPage';
+export * from './AdvonCommercePage';
 export * from './BatteryXTPage';
 export * from './CareersPage';
 export * from './Card';

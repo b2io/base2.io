@@ -15,12 +15,13 @@ export * from './JasminealtIcon';
 export * from './JasmineIcon';
 export * from './KarmaIcon';
 export * from './LogoIcon';
+export * from './GoIcon';
 export * from './MenuIcon';
 export * from './NetIcon';
+export * from './NextjsIcon';
 export * from './ReactIcon';
 export * from './ReduxIcon';
 export * from './SassIcon';
 export * from './SupportIcon';
 export * from './SustainabilityIcon';
 export * from './TransparencyIcon';
-
