@@ -109,14 +109,20 @@ export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
 
 export type IconCardProps = {
   heading: string;
-  icon: DynamicIconProps['type'];
+  icon?: DynamicIconProps['type'];
   text: string;
+  children?: React.ReactNode;
 };
 
-export const IconCard: FC<IconCardProps> = ({ heading, icon, text }) => {
+export const IconCard: FC<IconCardProps> = ({
+  heading,
+  icon,
+  text,
+  children,
+}) => {
   return (
     <Card>
-      <DynamicIcon type={icon} />
+      {icon && <DynamicIcon type={icon} />}
       <Heading as="h3" color="coral" variant="h3">
         {heading}
       </Heading>
@@ -128,6 +134,7 @@ export const IconCard: FC<IconCardProps> = ({ heading, icon, text }) => {
       >
         {text}
       </Text>
+      {children}
     </Card>
   );
 };
