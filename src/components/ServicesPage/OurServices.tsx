@@ -94,7 +94,7 @@ export const OurServices: FC = (props) => {
               margin-top: ${spacing.xxl2};
             `}
           >
-            Our Partnership Philosophy
+            Partnership Philosophy
           </Heading>
           <Text
             as="p"
@@ -111,6 +111,8 @@ export const OurServices: FC = (props) => {
           css={css`
             padding: 0 ${spacing.md};
             margin-top: ${spacing.xxl2};
+            background-color: ${colors.midBlue};
+            padding: 0 2rem 2rem 2rem;
             ${atMaxLg} {
               padding: 0;
               margin-top: ${spacing.sm};
@@ -124,7 +126,7 @@ export const OurServices: FC = (props) => {
               white-space: nowrap;
             `}
           >
-            Our Services
+            Services
           </Heading>
           <TableOfContents>
             {SERVICES.map((section, sectionIndex) => (
@@ -150,6 +152,8 @@ export const OurServices: FC = (props) => {
             text={service.services[0].description || ''}
             css={css`
               scroll-margin-top: 7rem;
+              scroll-behavior: smooth;
+              transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
             `}
           >
             <ul
