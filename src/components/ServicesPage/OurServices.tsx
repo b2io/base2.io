@@ -11,11 +11,13 @@ import { atMaxLg } from '../../theme/breakpoints';
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: ${spacing.md};
 
   ${atMinLg} {
     flex-direction: row;
+    gap: ${spacing.xxl1};
     justify-content: space-between;
-    margin-bottom: ${spacing.lg};
+    margin-bottom: ${spacing.xxl};
   }
 `;
 
@@ -35,14 +37,13 @@ const StyledListItem = styled.li`
 `;
 
 const TableOfContents = styled.nav`
-  margin-top: ${spacing.md};
+  margin-top: ${spacing.sm};
   display: grid;
   grid-template-columns: 1fr;
   gap: ${spacing.xxs};
 
   ${atMinLg} {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: ${spacing.sm};
     justify-content: center;
   }
 
@@ -59,15 +60,14 @@ const StyledNavItem = styled.li`
   position: relative;
 
   a {
-    color: white;
+    color: ${colors.offWhite};
     text-decoration: underline;
     text-underline-offset: 4px;
   }
 `;
 
 const NavLink = styled.a`
-  color: ${colors.coral};
-  font-size: 1rem;
+  font-size: 1.25rem;
 
   &:hover {
     color: ${colors.coral};
@@ -99,7 +99,7 @@ export const OurServices: FC = (props) => {
           <Text
             as="p"
             css={css`
-              margin-top: 1.5rem;
+              margin-top: ${spacing.sm};
               max-width: 52rem;
             `}
             variant="h3"
@@ -109,12 +109,8 @@ export const OurServices: FC = (props) => {
         </div>
         <div
           css={css`
-            padding: 0 ${spacing.md};
             margin-top: ${spacing.xxl2};
-            background-color: ${colors.midBlue};
-            padding: 0 2rem 2rem 2rem;
             ${atMaxLg} {
-              padding: 0;
               margin-top: ${spacing.sm};
             }
           `}

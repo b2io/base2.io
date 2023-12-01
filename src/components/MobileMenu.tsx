@@ -80,6 +80,9 @@ export const MobileMenu: FC = ({ ...props }) => {
               <Link href="/approach">Approach</Link>
             </li>
             <li>
+              <Link href="/services">Services</Link>
+            </li>
+            <li>
               <Link href="/culture">Culture</Link>
             </li>
             <li>
