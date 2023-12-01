@@ -11,11 +11,15 @@ import { atMinTablet, atMinXL, spacing } from '~/theme';
 
 import {
   AngularIcon,
+  CSSIcon,
   D3Icon,
+  HTML5Icon,
   JasminealtIcon,
   JasmineIcon,
+  JavascriptIcon,
   KarmaIcon,
   NetIcon,
+  PythonIcon,
   ReactIcon,
   ReduxIcon,
   SassIcon,
@@ -23,11 +27,15 @@ import {
 
 type Logo =
   | 'angular'
+  | 'css'
   | 'd3'
+  | 'html5'
   | 'jasmine'
   | 'jasminealt'
+  | 'javascript'
   | 'karma'
   | 'net'
+  | 'python'
   | 'react'
   | 'redux'
   | 'sass';
@@ -39,11 +47,15 @@ export type TechCardProps<E extends ElementType = ElementType> = {
 
 const TechList = {
   angular: AngularIcon,
+  css: CSSIcon,
   d3: D3Icon,
+  html5: HTML5Icon,
   jasmine: JasmineIcon,
   jasminealt: JasminealtIcon,
+  javascript: JavascriptIcon,
   karma: KarmaIcon,
   net: NetIcon,
+  python: PythonIcon,
   react: ReactIcon,
   redux: ReduxIcon,
   sass: SassIcon,
