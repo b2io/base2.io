@@ -137,7 +137,7 @@ export const OurServices: FC = (props) => {
       </ContentWrapper>
       <CardGrid
         css={css`
-          margin-top: 5rem;
+          margin-top: ${spacing.xxl1};
         `}
       >
         {SERVICES.map((service, index) => (
@@ -146,11 +146,6 @@ export const OurServices: FC = (props) => {
             key={index}
             heading={service.sectionTitle || service.sectionDescription || ''}
             text={service.services[0].description || ''}
-            css={css`
-              scroll-margin-top: 7rem;
-              scroll-behavior: smooth;
-              transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-            `}
           >
             <ul
               css={css`
