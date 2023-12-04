@@ -157,6 +157,27 @@ export const textVariants = {
     margin: 0,
     padding: 0,
   },
+  serviceHeader: {
+    color: colors.text,
+    fontSize: '1.4rem',
+    fontVariationSettings: '"wght" 400',
+    letterSpacing: 'normal',
+    lineHeight: 1.1,
+    margin: 0,
+    padding: 0,
+  },
+  serviceTitle: {
+    [atMinTablet]: {
+      lineHeight: 1.33,
+    },
+    color: colors.text,
+    fontSize: '1.925rem',
+    fontVariationSettings: '"wght" 750',
+    letterSpacing: '0.075rem',
+    lineHeight: 1.27,
+    margin: 0,
+    padding: 0,
+  },
   teamHero: {
     [atMinLg]: {
       lineHeight: 0.58,

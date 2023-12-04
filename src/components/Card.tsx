@@ -208,6 +208,40 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
   );
 };
 
+export type ServiceCardProps = {
+  children?: React.ReactNode;
+  heading?: string;
+  id?: string;
+  text: string;
+};
+
+export const ServiceCard: FC<ServiceCardProps> = ({
+  children,
+  heading,
+  id,
+  text,
+  ...props
+}) => {
+  return (
+    <Card id={id} {...props}>
+      {heading && (
+        <Heading as="h4" color="coral" variant="serviceHeader">
+          {heading}
+        </Heading>
+      )}
+      <Text
+        as="p"
+        css={css`
+          margin: 0;
+        `}
+      >
+        {text}
+      </Text>
+      {children}
+    </Card>
+  );
+};
+
 export const CardGrid: FC = ({ children, ...props }) => {
   return (
     <ul
