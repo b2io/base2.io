@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
 
-import { CardGrid, Heading, IconCard, ServiceCard, Text } from '~/components';
+import { CardGrid, Heading, ServiceCard, Text } from '~/components';
 import { atMinLg, atMinXL, colors, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, SERVICES } from './services';
@@ -127,7 +127,7 @@ export const OurServices: FC = (props) => {
           <TableOfContents>
             {SERVICES.map((section, sectionIndex) => (
               <StyledNavItem key={sectionIndex}>
-                <NavLink href={`#section-${sectionIndex + 1}`}>
+                <NavLink href={`#service-${sectionIndex + 1}`}>
                   {section.sectionTitle}
                 </NavLink>
               </StyledNavItem>
@@ -142,21 +142,19 @@ export const OurServices: FC = (props) => {
       >
         <>
           {SERVICES.map((service, index) => (
-            // TODO: better key approach
-            <section key={index}>
-              <Heading as="h3" color="offWhite" variant="serviceTitle">
+            <section key={`service-${index + 1}`} id={`service-${index + 1}`}>
+              <Heading as="h3" variant="serviceTitle">
                 {service.sectionTitle}
               </Heading>
               {service.services.map((item, index) => (
                 <ServiceCard
                   css={css`
-                    // TODO: adjust the styling: top and bottom?
                     margin-top: ${spacing.xs};
-                    ${atMinLg} {
-                      margin-top: ${spacing.xs};
+                    &:not(:last-of-type) {
+                      margin-bottom: ${spacing.md};
                     }
                   `}
-                  id={`section-${index + 1}`}
+                  id={`serviceCard-${index + 1}`}
                   key={index}
                   heading={
                     item.serviceName === service.sectionTitle
@@ -171,8 +169,8 @@ export const OurServices: FC = (props) => {
                       line-height: 1.5rem;
                     `}
                   >
-                    {item.details.map((detail, detailIndex) => (
-                      <StyledListItem key={detailIndex}>
+                    {item.details.map((detail, index) => (
+                      <StyledListItem key={`detail=${index + 1}`}>
                         {detail}
                       </StyledListItem>
                     ))}
@@ -181,25 +179,6 @@ export const OurServices: FC = (props) => {
               ))}
             </section>
           ))}
-          {/* {SERVICES.map((service, index) => (
-            <IconCard
-              id={`section-${index + 1}`}
-              key={index}
-              heading={service.sectionTitle || service.sectionDescription || ''}
-              text={service.services[0].description || ''}
-            >
-              <ul
-                css={css`
-                  list-style: none;
-                  line-height: 1.5rem;
-                `}
-              >
-                {service.services[0].details.map((detail, detailIndex) => (
-                  <StyledListItem key={detailIndex}>{detail}</StyledListItem>
-                ))}
-              </ul>
-            </IconCard>
-          ))} */}
         </>
       </CardGrid>
     </section>
