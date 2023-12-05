@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
+import { Link } from 'react-scroll';
 
 import { CardGrid, Heading, ServiceCard, Text } from '~/components';
 import { atMinLg, atMinXL, colors, spacing } from '~/theme';
@@ -65,14 +66,6 @@ const StyledNavItem = styled.li`
   }
 `;
 
-const NavLink = styled.a`
-  font-size: 1.25rem;
-
-  &:hover {
-    color: ${colors.coral};
-  }
-`;
-
 export const OurServices: FC = (props) => {
   return (
     <section
@@ -126,9 +119,23 @@ export const OurServices: FC = (props) => {
           <TableOfContents>
             {SERVICES.map((section, sectionIndex) => (
               <StyledNavItem key={sectionIndex}>
-                <NavLink href={`#service-${sectionIndex + 1}`}>
+                <Link
+                  css={css`
+                    cursor: pointer;
+                    font-size: 1.25rem;
+
+                    &:hover {
+                      color: ${colors.coral};
+                    }
+                  `}
+                  to={`#service-${sectionIndex + 1}`}
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={1500}
+                >
                   {section.sectionTitle}
-                </NavLink>
+                </Link>
               </StyledNavItem>
             ))}
           </TableOfContents>
@@ -141,7 +148,7 @@ export const OurServices: FC = (props) => {
       >
         <>
           {SERVICES.map((service, index) => (
-            <section key={`service-${index + 1}`} id={`service-${index + 1}`}>
+            <section key={`service-${index + 1}`} id={`#service-${index + 1}`}>
               <Heading as="h3" variant="serviceTitle">
                 {service.sectionTitle}
               </Heading>
