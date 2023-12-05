@@ -6,7 +6,6 @@ import { CardGrid, Heading, ServiceCard, Text } from '~/components';
 import { atMinLg, atMinXL, colors, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, SERVICES } from './services';
-import { atMaxLg } from '../../theme/breakpoints';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -109,9 +108,9 @@ export const OurServices: FC = (props) => {
         </div>
         <div
           css={css`
-            margin-top: ${spacing.xxl2};
-            ${atMaxLg} {
-              margin-top: ${spacing.sm};
+            margin-top: ${spacing.sm};
+            ${atMinLg} {
+              margin-top: ${spacing.xxl2};
             }
           `}
         >
