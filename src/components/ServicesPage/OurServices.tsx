@@ -166,7 +166,7 @@ export const OurServices: FC = (props) => {
                   <ul
                     css={css`
                       list-style: none;
-                      line-height: 1.5rem;
+                      line-height: 1.75rem;
                     `}
                   >
                     {item.details.map((detail, index) => (

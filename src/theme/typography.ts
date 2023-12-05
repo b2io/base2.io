@@ -159,7 +159,7 @@ export const textVariants = {
   },
   serviceHeader: {
     color: colors.text,
-    fontSize: '1.4rem',
+    fontSize: cssClamp([1.3, 'mobile'], [1.4, 'tablet']),
     fontVariationSettings: '"wght" 400',
     letterSpacing: 'normal',
     lineHeight: 1.1,
@@ -171,7 +171,7 @@ export const textVariants = {
       lineHeight: 1.33,
     },
     color: colors.coral,
-    fontSize: '1.9rem',
+    fontSize: cssClamp([1.75, 'mobile'], [2, 'tablet']),
     fontVariationSettings: '"wght" 300',
     letterSpacing: 'normal',
     lineHeight: 1.27,
