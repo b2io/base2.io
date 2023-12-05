@@ -10,6 +10,8 @@ import { Container } from './Container';
 import { LogoWithName } from './icons';
 import { Link } from './Link';
 import { MobileMenu } from './MobileMenu';
+import { XmasMarquee } from './XmasMarquee';
+import { isFeatureEnabled } from '../flags';
 
 const Root = styled.header`
   background-image: linear-gradient(
@@ -111,11 +113,25 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   );
 };
 
-export const Header: FC = ({ ...props }) => {
+interface HeaderProps {
+  showXmasMarquee: boolean;
+}
+
+export const Header: FC<HeaderProps> = ({ showXmasMarquee, ...props }) => {
   return (
     <Root>
       <Content {...props}>
         <LogoLink />
+        {showXmasMarquee ? (
+          <XmasMarquee
+            css={css`
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 5000;
+            `}
+          />
+        ) : null}
         <MobileMenu
           css={css`
             ${atMinSm} {
@@ -134,4 +150,12 @@ export const Header: FC = ({ ...props }) => {
       </Content>
     </Root>
   );
+};
+
+export const getServerSideProps = async (context) => {
+  return {
+    props: {
+      showXmasMarquee: isFeatureEnabled('_XMAS_MARQUEE_'),
+    },
+  };
 };
