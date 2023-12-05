@@ -12,6 +12,7 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${spacing.md};
+  white-space: pre-wrap;
 
   ${atMinLg} {
     flex-direction: row;
