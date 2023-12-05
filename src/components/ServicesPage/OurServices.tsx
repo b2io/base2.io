@@ -130,9 +130,9 @@ export const OurServices: FC = (props) => {
                   `}
                   to={`#service-${sectionIndex + 1}`}
                   spy={true}
-                  smooth={true}
+                  smooth="easeInOutQuart"
                   offset={-100}
-                  duration={1500}
+                  duration={2000}
                 >
                   {section.sectionTitle}
                 </Link>
