@@ -1,9 +1,7 @@
 export const SERVICE_PHILOSOPHY = {
-  content: `
-Our primary goal is to build long term relationships based on mutual trust. We strive to be the best stewards of the systems we're entrusted with. We want to work with you in order to identify the correct solutions to your problems and build them in the way that fits your needs, both short and long term.
-\n\n
+  content: `Our primary goal is to build long term relationships based on mutual trust. We strive to be the best stewards of the systems we're entrusted with. Identifying the correct solutions to your problems and building them in the way that fits your needs, both short and long term.
 
-We are first and foremost experts at working with you to understand your problems and solve their unique concerns.
+First and foremost we are experts at working with you.
 `,
   title: 'Service Philosophy',
 };
@@ -14,7 +12,7 @@ export const SERVICES = [
     services: [
       {
         description: `
-        One of our defining talents, beyond just engineering, is being able to sit down with a Client and quickly learn their business. We're often approached with loose understandings coupled with strong expectations. Our goal is to provide a unique perspective based on our experience across many distinct industries.
+        One of our defining talents, beyond just engineering, is being able to sit down with a Client and quickly learn their business and systems. We're often approached with loose understandings coupled with strong expectations. Our goal is to provide a unique perspective based on our experience across many distinct industries.
         `,
         details: [
           'Strategic planning for business growth.',
@@ -70,7 +68,10 @@ export const SERVICES = [
         `,
         details: [
           'In-depth analysis to identify areas of improvement and priorities.',
-          'Recommendations and execution for enhanced user experience and technical performance.',
+          'Prioritize and execute based on business value.',
+          'User Experience',
+          'Accessibility',
+          'Performance',
         ],
         serviceName: 'Enhancement and Support',
       },
