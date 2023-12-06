@@ -1,23 +1,60 @@
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import { Heading, Link, Text } from '~/components';
 import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
+import { CaseStudyBottomNavChild, allStudies } from './navProps';
+import { useLocalStorage } from 'react-use';
 
 export type CaseStudyBottomNavProps = {
-  children: {
-    company: string;
-    imagePath: string;
-    navPath: string;
-    title: string;
-  }[];
+  children: CaseStudyBottomNavChild[];
+  parentIdentifier: CaseStudyBottomNavChild;
 };
 
 export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
-  children,
+  // children,
+  parentIdentifier,
   ...props
 }) => {
+  const [children, setChildren] = useState<CaseStudyBottomNavChild[]>([
+    allStudies[0],
+    allStudies[1],
+  ]);
+
+  const [seenStudies, setSeenStudies] =
+    useLocalStorage<CaseStudyBottomNavChild[]>('seenStudies');
+  console.log(seenStudies);
+
+  // if seen studies not exist, set current study as seen
+  // if (!seenStudies || seenStudies.length < 1) {
+  // seenStudies.push(parentIdentifier);
+  // window.localStorage.setItem('seenStudies', JSON.stringify(seenStudies));
+  // }
+
+  // JSON.parse(window.localStorage.getItem('seenStudies') ?? '');
+  // console.log(seenStudies);
+  if (seenStudies?.find((study) => study.id === parentIdentifier.id)) {
+    console.log('parent found', seenStudies);
+  } else {
+    setSeenStudies([parentIdentifier]);
+  }
+  // console.log(seenStudies);
+
+  // filter studies not seen yet
+  // const unseenStudies = seenStudies?.filter((seenStudy) => {
+  //   return !allStudies.find((study) => seenStudy === study);
+  // });
+  // console.log(unseenStudies);
+
+  // if (unseenStudies?.length === 1) {
+  //   setChildren([unseenStudies[0], allStudies[0]]);
+  // } else if (unseenStudies?.length === 0) {
+  //   setChildren([allStudies[0], allStudies[1]]);
+  // } else {
+  //   setChildren([unseenStudies[0], unseenStudies[1]]);
+  // }
+
   return (
     <section
       css={css`

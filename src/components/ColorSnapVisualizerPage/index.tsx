@@ -22,7 +22,11 @@ import {
   spacing,
 } from '~/theme';
 
-import { batteryXtNav, flyNetJetsNav } from '../CaseStudy/navProps';
+import {
+  batteryXtNav,
+  colorSnapNav,
+  flyNetJetsNav,
+} from '../CaseStudy/navProps';
 
 export const ColorSnapVisualizerPage: FC = () => {
   const CaseStudyResultsProps = {
@@ -32,6 +36,7 @@ export const ColorSnapVisualizerPage: FC = () => {
 
   const caseStudyBottomNavProps = {
     children: [flyNetJetsNav, batteryXtNav],
+    parentIdentifier: colorSnapNav,
   };
 
   return (

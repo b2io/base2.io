@@ -13,7 +13,11 @@ import {
 } from '~/components';
 import { spacing } from '~/theme';
 
-import { colorSnapNav, scopeBuilderNav } from '../CaseStudy/navProps';
+import {
+  batteryXtNav,
+  colorSnapNav,
+  scopeBuilderNav,
+} from '../CaseStudy/navProps';
 
 export const BatteryXTPage: FC = () => {
   const CaseStudyResultsResultsProps = {
@@ -41,6 +45,7 @@ export const BatteryXTPage: FC = () => {
 
   const caseStudyBottomNavProps = {
     children: [colorSnapNav, scopeBuilderNav],
+    parentIdentifier: batteryXtNav,
   };
 
   return (
