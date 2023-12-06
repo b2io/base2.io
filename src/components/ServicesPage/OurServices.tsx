@@ -108,13 +108,7 @@ export const OurServices: FC = (props) => {
             }
           `}
         >
-          <Heading
-            as="h2"
-            variant="h2"
-            css={css`
-              white-space: nowrap;
-            `}
-          >
+          <Heading as="h2" variant="h2">
             Services
           </Heading>
           <TableOfContents>
@@ -124,7 +118,6 @@ export const OurServices: FC = (props) => {
                   css={css`
                     cursor: pointer;
                     font-size: 1.25rem;
-
                     &:hover {
                       color: ${colors.coral};
                     }
@@ -173,7 +166,7 @@ export const OurServices: FC = (props) => {
                   <ul
                     css={css`
                       list-style: none;
-                      line-height: 1.75rem;
+                      line-height: 1.75;
                     `}
                   >
                     {item.details.map((detail, index) => (
