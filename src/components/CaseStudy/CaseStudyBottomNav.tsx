@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { Heading, Link, Text } from '~/components';
 import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
@@ -8,52 +8,59 @@ import { CaseStudyBottomNavChild, allStudies } from './navProps';
 import { useLocalStorage } from 'react-use';
 
 export type CaseStudyBottomNavProps = {
-  children: CaseStudyBottomNavChild[];
+  children: CaseStudyBottomNavChild[]; // TODO: remove
   parentIdentifier: CaseStudyBottomNavChild;
 };
 
 export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
-  // children,
   parentIdentifier,
   ...props
 }) => {
-  const [children, setChildren] = useState<CaseStudyBottomNavChild[]>([
-    allStudies[0],
-    allStudies[1],
-  ]);
+  //TODO: make code legible for new readers.
+  const parentFilteredStudies = allStudies.filter(
+    (s) => s.id !== parentIdentifier.id,
+  );
 
+  const [children, setChildren] = useState<CaseStudyBottomNavChild[]>([
+    parentFilteredStudies[0],
+    parentFilteredStudies[1],
+  ]);
   const [seenStudies, setSeenStudies] =
     useLocalStorage<CaseStudyBottomNavChild[]>('seenStudies');
-  console.log(seenStudies);
+  console.log('seen studies', seenStudies);
 
-  // if seen studies not exist, set current study as seen
-  // if (!seenStudies || seenStudies.length < 1) {
-  // seenStudies.push(parentIdentifier);
-  // window.localStorage.setItem('seenStudies', JSON.stringify(seenStudies));
-  // }
+  useEffect(() => {
+    if (seenStudies?.find((study) => study.id === parentIdentifier.id)) {
+      // TODO: remove
+    } else {
+      setSeenStudies((prev) =>
+        prev ? [...prev, parentIdentifier] : [parentIdentifier],
+      );
+    }
 
-  // JSON.parse(window.localStorage.getItem('seenStudies') ?? '');
-  // console.log(seenStudies);
-  if (seenStudies?.find((study) => study.id === parentIdentifier.id)) {
-    console.log('parent found', seenStudies);
-  } else {
-    setSeenStudies([parentIdentifier]);
-  }
-  // console.log(seenStudies);
+    // get studies not seen yet
+    const unseenStudies = parentFilteredStudies?.filter((study) => {
+      return !seenStudies?.find((seenStudy) => seenStudy.id === study.id);
+    });
 
-  // filter studies not seen yet
-  // const unseenStudies = seenStudies?.filter((seenStudy) => {
-  //   return !allStudies.find((study) => seenStudy === study);
-  // });
-  // console.log(unseenStudies);
-
-  // if (unseenStudies?.length === 1) {
-  //   setChildren([unseenStudies[0], allStudies[0]]);
-  // } else if (unseenStudies?.length === 0) {
-  //   setChildren([allStudies[0], allStudies[1]]);
-  // } else {
-  //   setChildren([unseenStudies[0], unseenStudies[1]]);
-  // }
+    if (unseenStudies.length) {
+      // seen some, show remaining
+      setChildren([
+        unseenStudies[0],
+        unseenStudies[1] ?? parentFilteredStudies[1],
+      ]);
+    } else {
+      // seen all, show random 2
+      const randomIndex = Math.floor(
+        Math.random() * parentFilteredStudies.length,
+      );
+      const randomIndex2 = randomIndex === 0 ? 1 : randomIndex - 1;
+      setChildren([
+        parentFilteredStudies[randomIndex],
+        parentFilteredStudies[randomIndex2],
+      ]);
+    }
+  }, []);
 
   return (
     <section
