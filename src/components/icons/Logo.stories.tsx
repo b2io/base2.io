@@ -1,5 +1,4 @@
 import type { Meta, Story } from '@storybook/react';
-import React from 'react';
 
 import { LogoIcon, LogoWithName } from './LogoIcon';
 import type { SvgProps } from './types';

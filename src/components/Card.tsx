@@ -1,11 +1,5 @@
 import { css } from '@emotion/react';
-import React, {
-  Children,
-  cloneElement,
-  ElementType,
-  FC,
-  ReactElement,
-} from 'react';
+import { Children, cloneElement, ElementType, FC, ReactElement } from 'react';
 
 import {
   DynamicIcon,

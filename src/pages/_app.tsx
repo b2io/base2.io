@@ -1,6 +1,5 @@
 import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
-import { SSRProvider } from '@react-aria/ssr';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -88,11 +87,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
           href="/RoobertGX.woff2"
           rel="preload"
         />
-        <link
-          as="font"
-          crossOrigin="anonymous"
-          href="/RoobertItalicGX.woff2"
-        />
+        <link as="font" crossOrigin="anonymous" href="/RoobertItalicGX.woff2" />
         <link rel="manifest" href="/site.webmanifest"></link>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -134,9 +129,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
                 }
               `}
             />
-            <SSRProvider>
-              <Component {...pageProps} key={pageKey} />
-            </SSRProvider>
+            <Component {...pageProps} key={pageKey} />
           </ThemeProvider>
         </AnimatePresence>
       </AnimateSharedLayout>

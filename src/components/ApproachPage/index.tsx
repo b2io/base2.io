@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { Layout, PageHero, QuotedImage } from '~/components';
 import { atMinTablet, cssClamp, spacing } from '~/theme';
