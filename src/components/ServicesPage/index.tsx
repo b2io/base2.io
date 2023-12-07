@@ -6,20 +6,7 @@ import { EstimationForm } from './EstimationForm';
 import { OurServices } from './OurServices';
 import { spacing } from '../../theme';
 
-interface ServiceDataProps {
-  services: {
-    index: number;
-    sectionTitle: string;
-    packages: {
-      index: number;
-      description: string;
-      packageTitle: string;
-      details: string[];
-    }[];
-  }[];
-}
-
-export const ServicesPage: React.FC<ServiceDataProps> = () => {
+export const ServicesPage: React.FC = () => {
   return (
     <Layout title="Services" description="Services">
       <PageHero
