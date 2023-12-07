@@ -152,7 +152,7 @@ export const Header: FC<HeaderProps> = ({ showXmasMarquee, ...props }) => {
   );
 };
 
-export const getServerSideProps = async (context: any) => {
+export const getServerSideProps = async () => {
   return {
     props: {
       showXmasMarquee: isFeatureEnabled('_XMAS_MARQUEE_'),
