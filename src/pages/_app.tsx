@@ -93,6 +93,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <AnimateSharedLayout>
+        {/* @ts-expect-error TODO: upgrade framer motion version - this is a known issue */}
         <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
           <ThemeProvider theme={theme}>
             <Global
