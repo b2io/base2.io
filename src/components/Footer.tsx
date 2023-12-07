@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import React, { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 
 import { atMinLg, atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
@@ -176,7 +176,8 @@ export const Footer: FC = (prop) => {
         css={css`
           ${isScrolledToFooter &&
           css`
-            animation: lineLeftToRight 1s 1 forwards cubic-bezier(0.45,0.05,0.55,0.95) ;
+            animation: lineLeftToRight 1s 1 forwards
+              cubic-bezier(0.45, 0.05, 0.55, 0.95);
           `};
 
           @keyframes lineLeftToRight {

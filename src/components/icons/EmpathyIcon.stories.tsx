@@ -1,5 +1,4 @@
 import type { Meta, Story } from '@storybook/react';
-import React from 'react';
 
 import { EmpathyIcon } from './EmpathyIcon';
 import type { SvgProps } from './types';
