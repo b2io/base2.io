@@ -44,7 +44,6 @@ export const ScopeBuilderPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [batteryXtNav, flyNetJetsNav],
     parentIdentifier: scopeBuilderNav,
   };
 

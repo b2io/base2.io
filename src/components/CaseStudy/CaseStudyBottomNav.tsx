@@ -8,7 +8,6 @@ import { CaseStudyBottomNavChild, allStudies } from './navProps';
 import { useLocalStorage } from 'react-use';
 
 export type CaseStudyBottomNavProps = {
-  children: CaseStudyBottomNavChild[]; // TODO: remove
   parentIdentifier: CaseStudyBottomNavChild;
 };
 
@@ -16,9 +15,9 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
   parentIdentifier,
   ...props
 }) => {
-  //TODO: make code legible for new readers.
+  //get all non-currently selected studies
   const parentFilteredStudies = allStudies.filter(
-    (s) => s.id !== parentIdentifier.id,
+    (study) => study.id !== parentIdentifier.id,
   );
 
   const [children, setChildren] = useState<CaseStudyBottomNavChild[]>([
@@ -27,12 +26,10 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
   ]);
   const [seenStudies, setSeenStudies] =
     useLocalStorage<CaseStudyBottomNavChild[]>('seenStudies');
-  console.log('seen studies', seenStudies);
 
   useEffect(() => {
-    if (seenStudies?.find((study) => study.id === parentIdentifier.id)) {
-      // TODO: remove
-    } else {
+    // add current study to local storage list of seen studies
+    if (!seenStudies?.find((study) => study.id === parentIdentifier.id)) {
       setSeenStudies((prev) =>
         prev ? [...prev, parentIdentifier] : [parentIdentifier],
       );
@@ -44,17 +41,21 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
     });
 
     if (unseenStudies.length) {
-      // seen some, show remaining
+      ///some unseen, show remaining,
       setChildren([
         unseenStudies[0],
-        unseenStudies[1] ?? parentFilteredStudies[1],
+        unseenStudies[1] ??
+          parentFilteredStudies.find(
+            //.find() to avoid duplicates
+            (study) => study.id !== unseenStudies[0].id,
+          ),
       ]);
     } else {
       // seen all, show random 2
       const randomIndex = Math.floor(
         Math.random() * parentFilteredStudies.length,
       );
-      const randomIndex2 = randomIndex === 0 ? 1 : randomIndex - 1;
+      const randomIndex2 = randomIndex === 0 ? 1 : randomIndex - 1; // avoids duplicate
       setChildren([
         parentFilteredStudies[randomIndex],
         parentFilteredStudies[randomIndex2],

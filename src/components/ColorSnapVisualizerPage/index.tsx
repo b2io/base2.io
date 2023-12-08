@@ -35,7 +35,6 @@ export const ColorSnapVisualizerPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [flyNetJetsNav, batteryXtNav],
     parentIdentifier: colorSnapNav,
   };
 

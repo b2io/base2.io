@@ -45,7 +45,6 @@ export const NetJetsPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [scopeBuilderNav, colorSnapNav],
     parentIdentifier: flyNetJetsNav,
   };
 

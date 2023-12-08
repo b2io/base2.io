@@ -44,7 +44,6 @@ export const BatteryXTPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [colorSnapNav, scopeBuilderNav],
     parentIdentifier: batteryXtNav,
   };
 
