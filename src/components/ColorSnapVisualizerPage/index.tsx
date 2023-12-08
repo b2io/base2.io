@@ -11,8 +11,6 @@ import {
   ColorSnapImagePanel,
   Layout,
   QuotedImage,
-  TechCard,
-  TechListGrid,
 } from '~/components';
 import {
   atMinDesktop,

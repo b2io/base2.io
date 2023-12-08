@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import {
@@ -8,10 +7,7 @@ import {
   CaseStudyResultsPane,
   CaseStudySummaryPane,
   Layout,
-  TechCard,
-  TechListGrid,
 } from '~/components';
-import { spacing } from '~/theme';
 
 import { batteryXtNav, flyNetJetsNav } from '../CaseStudy/navProps';
 

@@ -9,8 +9,6 @@ import {
   CaseStudyResultsPane,
   CaseStudySummaryPane,
   Layout,
-  TechCard,
-  TechListGrid,
 } from '~/components';
 import { atMinDesktop, spacing } from '~/theme';
 
