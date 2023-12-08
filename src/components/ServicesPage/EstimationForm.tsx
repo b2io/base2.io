@@ -159,6 +159,7 @@ export const EstimationForm: FC = () => {
         <Label htmlFor="description">Project Description</Label>
         <FormInput
           css={css`
+            height: 10rem;
             resize: vertical;
           `}
           as="textarea"
