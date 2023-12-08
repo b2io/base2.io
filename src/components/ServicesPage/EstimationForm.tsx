@@ -24,6 +24,7 @@ const InputWrapper = styled.div`
 const Label = styled.label({
   ...theme.textVariants.h3,
   display: 'block',
+  marginBottom: spacing.xxs,
 });
 
 const FormInput = styled.input`
@@ -32,37 +33,9 @@ const FormInput = styled.input`
   border-bottom: 1px solid ${colors.offWhite};
   color: ${colors.offWhite};
   font-size: 1rem;
-  height: 2rem;
+  height: 4rem;
   line-height: 1;
   margin-bottom: ${spacing.xs};
-  outline: none;
-  transition: border-bottom 0.3s ease;
-  width: 100%;
-
-  &:focus {
-    border-bottom: 1px solid ${colors.coral};
-  }
-
-  &::placeholder {
-    font-size: 1rem;
-  }
-
-  &:-webkit-autofill {
-    box-shadow: 0 0 0px 1000px ${colors.darkBlue} inset;
-    -webkit-text-fill-color: ${colors.offWhite};
-    transition: background-color 5000s ease-in-out 0s;
-  }
-`;
-
-const FormTextarea = styled.textarea`
-  background: none;
-  border: none;
-  border-bottom: 1px solid ${colors.offWhite};
-  color: ${colors.offWhite};
-  font-size: 1rem;
-  height: 10rem;
-  line-height: 1;
-  margin: ${spacing.xxxs} 0 ${spacing.xs} 0;
   outline: none;
   transition: border-bottom 0.3s ease;
   width: 100%;
@@ -184,11 +157,12 @@ export const EstimationForm: FC = () => {
       </InputWrapper>
       <InputWrapper>
         <Label htmlFor="description">Project Description</Label>
-        <FormTextarea
-          autoComplete="off"
+        <FormInput
+          as="textarea"
           id="description"
           placeholder="Project Description*"
           required
+          type="description"
           {...register('description', {
             required: 'Please enter a brief description of your project.',
           })}
