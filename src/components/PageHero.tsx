@@ -50,13 +50,13 @@ export const PageHero: FC<PageHeroProps> = ({
   ...props
 }) => {
   return (
-    <div
+    <section
       css={css`
         position: relative;
         width: 100%;
       `}
     >
-      <section
+      <div
         css={css`
           margin-left: calc(50% - 50vw);
           position: absolute;
@@ -74,9 +74,9 @@ export const PageHero: FC<PageHeroProps> = ({
         {...props}
       >
         <Image alt={alt} src={src} layout="responsive" {...imageProps} />
-      </section>
+      </div>
 
       <HeaderText as="h2">{text}</HeaderText>
-    </div>
+    </section>
   );
 };
