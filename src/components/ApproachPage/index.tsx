@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import Image from 'next/image';
 import React, { FC } from 'react';
 
 import { Layout, PageHero, QuotedImage } from '~/components';
@@ -56,6 +57,25 @@ export const ApproachPage: FC = () => {
         position="Director of Operations"
         quote="We follow agile, an iterative approach to software development that lets us quickly pivot when challenges arise."
       />
+
+      {/* <div
+        id="bannerContainer"
+        css={css`
+          position: relative;
+          display: block;
+          text-align: center;
+          overflow: hidden;
+        `}
+      >
+        <Image
+          css={css``}
+          alt={'hello world'}
+          src={`/approach/approach-quote_medium.jpg`}
+          layout="intrinsic"
+          height={1600}
+          width={1218}
+        />
+      </div> */}
     </Layout>
   );
 };

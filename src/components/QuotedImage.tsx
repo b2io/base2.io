@@ -96,7 +96,14 @@ export const QuotedImage: FC<QuotedImageProps> = ({
       `}
       {...props}
     >
-      <Image alt={alt} imgSources={imgSources} />
+      <div
+        css={css`
+          position: relative;
+          display: block;
+        `}
+      >
+        <Image alt={alt} imgSources={imgSources} />
+      </div>
       <TextContainer>
         <div>
           <Text variant="quotationsSymbol">&#8220;</Text>

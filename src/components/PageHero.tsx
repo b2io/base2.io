@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
@@ -17,20 +18,20 @@ const calculatedImageHeight = cssClamp(
   [35, 'tablet'],
 );
 
-const Image = styled(DynamicImage)`
-  height: ${calculatedImageHeight};
-  margin-left: calc(50% - 50vw);
-  position: absolute;
+// const Image = styled(DynamicImage)`
+//   height: ${calculatedImageHeight};
+//   margin-left: calc(50% - 50vw);
+//   position: absolute;
 
-  ${atMinLargeDesktop} {
-    margin-left: ${cssClamp([-20, 'largeDesktop'], [-15, 'xlDesktop'])};
-  }
+//   ${atMinLargeDesktop} {
+//     margin-left: ${cssClamp([-20, 'largeDesktop'], [-15, 'xlDesktop'])};
+//   }
 
-  img {
-    filter: brightness(0.65);
-    height: 100%;
-  }
-`;
+//   img {
+//     filter: brightness(0.65);
+//     height: 100%;
+//   }
+// `;
 
 const HeaderText = styled(Heading)`
   padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [21.5, 'tablet'])};
@@ -59,7 +60,7 @@ export const PageHero: FC<PageHeroProps> = ({
   return (
     <section
       css={css`
-        position: relative;
+        margin-left: calc(50% - 50vw);
 
         ${atMinXL} {
           min-height: ${calculatedImageHeight};
@@ -67,7 +68,15 @@ export const PageHero: FC<PageHeroProps> = ({
       `}
       {...props}
     >
-      <Image alt={alt} imgSources={imgSources} />
+      <Image
+        alt={alt}
+        src={`/approach/approach-hero-large.jpg`}
+        layout="responsive"
+        height={614}
+        width={1260}
+      />
+
+      {/* <Image alt={alt} imgSources={imgSources} /> */}
       <HeaderText as="h1">{text}</HeaderText>
     </section>
   );
