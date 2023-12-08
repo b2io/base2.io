@@ -90,7 +90,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             position: relative;
             width: 100%;
 
-            &:nth-child(2) article {
+            &:nth-of-type(2) article {
               right: -${spacing.md};
               text-align: right;
 
