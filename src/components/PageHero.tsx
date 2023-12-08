@@ -16,7 +16,7 @@ type PageHeroProps = {
   alt: string;
   text: string;
   src: string;
-  imageProps: ImageProps;
+  imageProps: Partial<ImageProps>;
 };
 
 const calculatedImageHeight = cssClamp(
