@@ -40,10 +40,7 @@ export const ScopeBuilderPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [
-      batteryXtNav,
-      flyNetJetsNav,
-    ],
+    children: [batteryXtNav, flyNetJetsNav],
   };
 
   return (
@@ -53,14 +50,6 @@ export const ScopeBuilderPage: FC = () => {
         name="ScopeBuilder"
         src={require('./images/scopebuilder-hero.jpg')}
       />
-      <TechListGrid
-        css={css`
-          margin-top: ${spacing.sm};
-        `}
-      >
-        <TechCard logo="react" />
-        <TechCard logo="net" />
-      </TechListGrid>
       <CaseStudyIntroContentPane
         introText="American Electric Power (AEP) needed an easy, standardized way to capture
         and report on the variable costs and details of capital-intensive power station and
