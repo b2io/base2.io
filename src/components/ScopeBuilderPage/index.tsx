@@ -13,11 +13,7 @@ import {
 } from '~/components';
 import { spacing } from '~/theme';
 
-import {
-  batteryXtNav,
-  flyNetJetsNav,
-  scopeBuilderNav,
-} from '../CaseStudy/navProps';
+import { scopeBuilderNav } from '../CaseStudy/navProps';
 
 export const ScopeBuilderPage: FC = () => {
   const CaseStudyResultsProps = {

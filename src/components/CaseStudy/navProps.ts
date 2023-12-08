@@ -7,35 +7,35 @@ export interface CaseStudyBottomNavChild {
 }
 
 export const scopeBuilderNav: CaseStudyBottomNavChild = {
+  id: 0,
   company: 'AEP',
   imagePath: '/work/scopebuilder.png',
   navPath: '/work/scopebuilder',
   title: 'ScopeBuilder',
-  id: 0,
 };
 
 export const batteryXtNav: CaseStudyBottomNavChild = {
+  id: 1,
   company: 'DNV',
   imagePath: '/work/batteryxt.png',
   navPath: '/work/batteryxt',
   title: 'Battery XT',
-  id: 1,
 };
 
 export const flyNetJetsNav: CaseStudyBottomNavChild = {
+  id: 2,
   company: 'NetJets',
   imagePath: '/work/netjets.png',
   navPath: '/work/netjets',
   title: 'Fly NetJets',
-  id: 2,
 };
 
 export const colorSnapNav: CaseStudyBottomNavChild = {
+  id: 3,
   company: 'Sherwin-Williams',
   imagePath: '/work/colorsnap.png',
   navPath: '/work/colorsnap',
   title: 'ColorSnap Visualizer',
-  id: 3,
 };
 
 export const allStudies = [
