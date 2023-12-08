@@ -1,15 +1,22 @@
-import Image from 'next/image';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import type { FC } from 'react';
 
-import { atMinLargeDesktop, atMinLg, atMinXL, cssClamp } from '~/theme';
+import { atMinLg, atMinXL, cssClamp } from '~/theme';
 
-import { DynamicImage, DynamicImageProps } from './DynamicImage';
 import { Heading } from './Heading';
 
-type PageHeroProps = DynamicImageProps & {
+interface ImageProps {
+  width: number;
+  height: number;
+}
+
+type PageHeroProps = {
+  alt: string;
   text: string;
+  src: string;
+  imageProps: ImageProps;
 };
 
 const calculatedImageHeight = cssClamp(
@@ -18,23 +25,8 @@ const calculatedImageHeight = cssClamp(
   [35, 'tablet'],
 );
 
-// const Image = styled(DynamicImage)`
-//   height: ${calculatedImageHeight};
-//   margin-left: calc(50% - 50vw);
-//   position: absolute;
-
-//   ${atMinLargeDesktop} {
-//     margin-left: ${cssClamp([-20, 'largeDesktop'], [-15, 'xlDesktop'])};
-//   }
-
-//   img {
-//     filter: brightness(0.65);
-//     height: 100%;
-//   }
-// `;
-
 const HeaderText = styled(Heading)`
-  padding-top: ${cssClamp([11, 'smMobile'], [16, 'mobile'], [21.5, 'tablet'])};
+  padding-top: ${cssClamp([5, 'smMobile'], [10, 'mobile'], [15.5, 'tablet'])};
   position: relative;
 
   ${atMinLg} {
@@ -47,37 +39,44 @@ const HeaderText = styled(Heading)`
       [33.75, 'desktop'],
       [38.25, 'largeDesktop'],
     )};
-    padding-top: 4.25rem;
   }
 `;
 
 export const PageHero: FC<PageHeroProps> = ({
   alt,
-  imgSources,
+  src,
+  imageProps,
   text,
   ...props
 }) => {
   return (
-    <section
+    <div
       css={css`
-        margin-left: calc(50% - 50vw);
-
-        ${atMinXL} {
-          min-height: ${calculatedImageHeight};
-        }
+        position: relative;
+        width: 100%;
       `}
-      {...props}
     >
-      <Image
-        alt={alt}
-        src={`/approach/approach-hero-large.jpg`}
-        layout="responsive"
-        height={614}
-        width={1260}
-      />
+      <section
+        css={css`
+          margin-left: calc(50% - 50vw);
+          position: absolute;
+          width: 100%;
 
-      {/* <Image alt={alt} imgSources={imgSources} /> */}
-      <HeaderText as="h1">{text}</HeaderText>
-    </section>
+          ${atMinXL} {
+            min-height: ${calculatedImageHeight};
+          }
+
+          img {
+            filter: brightness(0.65);
+            height: 100%;
+          }
+        `}
+        {...props}
+      >
+        <Image alt={alt} src={src} layout="responsive" {...imageProps} />
+      </section>
+
+      <HeaderText as="h2">{text}</HeaderText>
+    </div>
   );
 };

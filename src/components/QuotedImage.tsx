@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import {
@@ -25,27 +26,27 @@ type QuotedImageProps = DynamicImageProps & {
 
 const calculatedImageHeight = cssClamp([15, 'mobile'], [50, 'tablet']);
 
-const Image = styled(DynamicImage)`
-  height: 12rem;
-  position: absolute;
-  right: calc(50% - 50vw);
+// const Image = styled(DynamicImage)`
+//   height: 12rem;
+//   position: absolute;
+//   right: calc(50% - 50vw);
 
-  ${atMaxMd} {
-    max-height: 66vw;
-  }
+//   ${atMaxMd} {
+//     max-height: 66vw;
+//   }
 
-  ${atMinMobile} {
-    height: ${calculatedImageHeight};
-  }
+//   ${atMinMobile} {
+//     height: ${calculatedImageHeight};
+//   }
 
-  ${atMinXL} {
-    right: -${spacing.xxl3};
-  }
+//   ${atMinXL} {
+//     right: -${spacing.xxl3};
+//   }
 
-  img {
-    height: 100%;
-  }
-`;
+//   img {
+//     height: 100%;
+//   }
+// `;
 
 const TextContainer = styled.div`
   padding-top: 6.75rem;
@@ -102,7 +103,13 @@ export const QuotedImage: FC<QuotedImageProps> = ({
           display: block;
         `}
       >
-        <Image alt={alt} imgSources={imgSources} />
+        <Image
+          alt={alt}
+          src={imgSources[0][1]}
+          layout="responsive"
+          height={527}
+          width={600}
+        />
       </div>
       <TextContainer>
         <div>

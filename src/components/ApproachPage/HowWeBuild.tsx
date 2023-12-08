@@ -1,10 +1,9 @@
-import Image from 'next/image';
 import { css } from '@emotion/react';
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import {
   CardGrid,
-  DynamicImage,
   GradientCircle,
   Heading,
   IconCard,
@@ -33,11 +32,6 @@ export const HowWeBuild: FC = (props) => {
       `}
       {...props}
     >
-      {/* <div
-        css={css`
-          position: relative;
-        `}
-      > */}
       <div
         css={css`
           position: relative;
@@ -95,36 +89,7 @@ export const HowWeBuild: FC = (props) => {
           `}
         />
       </div>
-      {/* <DynamicImage
-        alt="person staring at code on a computer screen"
-        css={css`
-          img {
-            margin-bottom: 3.813rem;
-            margin-left: calc(50% - 50vw);
-            margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
-            position: relative;
-            width: ${cssClamp(
-              [16.688, 'mobile'],
-              [38.063, 'tablet'],
-              [64.5, 'desktop'],
-            )};
 
-            z-index: 1;
-
-            ${atMinLargeDesktop} {
-              margin-left: -14rem;
-            }
-          }
-        `}
-        imgSources={[
-          ['largeDesktop', '/approach/howwebuild-large.jpg'],
-          ['tablet', '/approach/howwebuild-medium.jpg'],
-          ['xl', '/approach/howwebuild-large.jpg'],
-          ['xs', '/approach/howwebuild-small.jpg'],
-        ]}
-      /> */}
-
-      {/* </div> */}
       <Heading
         as="h2"
         variant="h2"
