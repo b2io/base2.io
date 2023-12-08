@@ -158,6 +158,9 @@ export const EstimationForm: FC = () => {
       <InputWrapper>
         <Label htmlFor="description">Project Description</Label>
         <FormInput
+          css={css`
+            resize: vertical;
+          `}
           as="textarea"
           id="description"
           placeholder="Project Description*"
