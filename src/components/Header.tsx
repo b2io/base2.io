@@ -118,7 +118,10 @@ export const Header: FC = ({ ...props }) => {
     <Root>
       <Content {...props}>
         <LogoLink />
-        {checkClientSideFlag('SHOW_XMAS_MARQUEE') ? <XmasMarquee /> : null}
+        <div>
+          {checkClientSideFlag('SHOW_XMAS_MARQUEE') ? <XmasMarquee /> : null}
+        </div>
+        {/* <XmasMarquee /> */}
         <MobileMenu
           css={css`
             ${atMinSm} {

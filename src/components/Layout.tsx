@@ -60,7 +60,7 @@ export const Layout: FC<LayoutProps> = ({
         }}
         title={pageTitle}
       />
-      <Header showXmasMarquee={true} />
+      <Header />
       <motion.main
         animate="enter"
         css={css`
