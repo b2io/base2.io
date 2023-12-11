@@ -4,6 +4,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import type { FC } from 'react';
 
+import { checkClientSideFlag } from '~/flags';
 import { atMinSm, atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
 import { Container } from './Container';
@@ -11,7 +12,6 @@ import { LogoWithName } from './icons';
 import { Link } from './Link';
 import { MobileMenu } from './MobileMenu';
 import { XmasMarquee } from './XmasMarquee';
-import { isFeatureEnabled } from '../flags';
 
 const Root = styled.header`
   background-image: linear-gradient(
@@ -113,25 +113,12 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
   );
 };
 
-interface HeaderProps {
-  showXmasMarquee: boolean;
-}
-
-export const Header: FC<HeaderProps> = ({ showXmasMarquee, ...props }) => {
+export const Header: FC = ({ ...props }) => {
   return (
     <Root>
       <Content {...props}>
         <LogoLink />
-        {showXmasMarquee ? (
-          <XmasMarquee
-            css={css`
-              position: absolute;
-              top: 0;
-              left: 0;
-              z-index: 5000;
-            `}
-          />
-        ) : null}
+        {checkClientSideFlag('SHOW_XMAS_MARQUEE') ? <XmasMarquee /> : null}
         <MobileMenu
           css={css`
             ${atMinSm} {
@@ -150,12 +137,4 @@ export const Header: FC<HeaderProps> = ({ showXmasMarquee, ...props }) => {
       </Content>
     </Root>
   );
-};
-
-export const getServerSideProps = async () => {
-  return {
-    props: {
-      showXmasMarquee: isFeatureEnabled('_XMAS_MARQUEE_'),
-    },
-  };
 };
