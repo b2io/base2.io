@@ -8,7 +8,6 @@ export * from './CaseStudy/CaseStudyHero';
 export * from './CaseStudy/CaseStudyIntroContentPane';
 export * from './CaseStudy/CaseStudyResultsPane';
 export * from './CaseStudy/CaseStudySummaryPane';
-export * from './CaseStudy/TechList';
 export * from './ColorSnapVisualizerPage';
 export * from './Container';
 export * from './ContactPage';

@@ -19,7 +19,6 @@ const config = {
               "img-src 'self' data:;",
               "manifest-src 'self';",
               "object-src 'none';",
-              "prefetch-src 'self';",
               "script-src 'self';",
               "style-src 'self' 'unsafe-inline';",
             ].join(' '),

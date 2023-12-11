@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import {
   CardGrid,
-  DynamicImage,
   GradientCircle,
   Heading,
   IconCard,
@@ -24,6 +24,7 @@ export const HowWeBuild: FC = (props) => {
   return (
     <section
       css={css`
+        position: relative;
         ${atMinXL} {
           margin-left: ${spacing.marginXl};
           margin-right: ${spacing.marginXl};
@@ -34,35 +35,43 @@ export const HowWeBuild: FC = (props) => {
       <div
         css={css`
           position: relative;
+          margin-bottom: 3.813rem;
+          width: ${cssClamp(
+            [16.688, 'mobile'],
+            [38.063, 'tablet'],
+            [64.5, 'desktop'],
+          )};
+          z-index: 1;
+          ${atMinLargeDesktop} {
+            margin-left: -14rem;
+          }
         `}
       >
-        <DynamicImage
-          alt="person staring at code on a computer screen"
+        <div
           css={css`
-            img {
-              margin-bottom: 3.813rem;
-              margin-left: calc(50% - 50vw);
-              margin-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
-              position: relative;
-              width: ${cssClamp(
-                [16.688, 'mobile'],
-                [38.063, 'tablet'],
-                [64.5, 'desktop'],
-              )};
-              z-index: 1;
-
-              ${atMinLargeDesktop} {
-                margin-left: -14rem;
-              }
+            position: relative;
+            margin-bottom: 3.813rem;
+            margin-left: calc(50% - 50vw);
+            padding-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
+            width: ${cssClamp(
+              [16.688, 'mobile'],
+              [38.063, 'tablet'],
+              [64.5, 'desktop'],
+            )};
+            z-index: 1;
+            ${atMinLargeDesktop} {
+              margin-left: -14rem;
             }
           `}
-          imgSources={[
-            ['largeDesktop', '/approach/howwebuild-large.jpg'],
-            ['tablet', '/approach/howwebuild-medium.jpg'],
-            ['xl', '/approach/howwebuild-large.jpg'],
-            ['xs', '/approach/howwebuild-small.jpg'],
-          ]}
-        />
+        >
+          <Image
+            alt="person staring at code on a computer screen"
+            src={`/approach/howwebuild-large.jpg`}
+            layout="responsive"
+            height={496}
+            width={1020}
+          />
+        </div>
         <GradientCircle
           css={css`
             height: ${circleDimensionsCalc};
@@ -78,6 +87,7 @@ export const HowWeBuild: FC = (props) => {
           `}
         />
       </div>
+
       <Heading
         as="h2"
         variant="h2"
@@ -111,6 +121,8 @@ export const HowWeBuild: FC = (props) => {
       <CardGrid
         css={css`
           margin-bottom: 5rem;
+          position: relative;
+          z-index: 1;
         `}
       >
         <IconCard

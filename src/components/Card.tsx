@@ -1,9 +1,10 @@
 import { css } from '@emotion/react';
-import React, {
+import {
   Children,
   cloneElement,
   ElementType,
   FC,
+  PropsWithChildren,
   ReactElement,
 } from 'react';
 
@@ -16,15 +17,15 @@ import {
 } from '~/components';
 import { atMaxSm, atMinTablet, colors, spacing } from '~/theme';
 
-export const CardHeading: FC = ({ children, ...props }) => {
+export const CardHeading: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
-export const CardContent: FC = ({ children, ...props }) => {
+export const CardContent: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
-export const CardActions: FC = ({ children, ...props }) => {
+export const CardActions: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
@@ -33,7 +34,7 @@ export type CardProps = {
   id?: string;
 };
 
-export const Card: FC<CardProps> = ({
+export const Card: FC<PropsWithChildren<CardProps>> = ({
   as: Component = 'div',
   children,
   id,
@@ -208,6 +209,7 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
   );
 };
 
+<<<<<<< HEAD
 export type ServiceCardProps = {
   children?: React.ReactNode;
   heading?: string;
@@ -243,6 +245,9 @@ export const ServiceCard: FC<ServiceCardProps> = ({
 };
 
 export const CardGrid: FC = ({ children, ...props }) => {
+=======
+export const CardGrid: FC<PropsWithChildren> = ({ children, ...props }) => {
+>>>>>>> main
   return (
     <ul
       css={css`

@@ -11,8 +11,6 @@ import {
   ColorSnapImagePanel,
   Layout,
   QuotedImage,
-  TechCard,
-  TechListGrid,
 } from '~/components';
 import {
   atMinDesktop,
@@ -64,16 +62,6 @@ export const ColorSnapVisualizerPage: FC = () => {
         }
         src={require('./images/colorsnap-hero.jpg')}
       />
-      <TechListGrid
-        css={css`
-          margin-top: ${spacing.sm};
-        `}
-      >
-        <TechCard logo="angular" />
-        <TechCard logo="sass" />
-        <TechCard logo="jasmine" />
-        <TechCard logo="karma" />
-      </TechListGrid>
       <CaseStudyIntroContentPane
         introText={
           <>
@@ -133,11 +121,8 @@ export const ColorSnapVisualizerPage: FC = () => {
         css={css`
           margin-top: ${cssClamp([12.5, 'mobile'], [17.313, 'desktop'])};
         `}
-        imgSources={[
-          ['tablet', '/work/colorsnap-quote_medium.jpg'],
-          ['xl', '/work/colorsnap-quote_large.jpg'],
-          ['xs', '/work/colorsnap-quote_small.jpg'],
-        ]}
+        src={'/work/colorsnap-quote_large.jpg'}
+        imageProps={{ height: 2400, width: 2793 }}
         name="James Weaver"
         position="Project Manager"
         quote="Best group of developers. Amazing front end and back end skills! Great partners to work with!"

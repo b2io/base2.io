@@ -1,5 +1,4 @@
 import type { Meta, Story } from '@storybook/react';
-import React from 'react';
 
 import { CommunityIcon } from './CommunityIcon';
 import type { SvgProps } from './types';
