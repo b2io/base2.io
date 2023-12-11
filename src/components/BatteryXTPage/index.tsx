@@ -13,11 +13,7 @@ import {
 } from '~/components';
 import { spacing } from '~/theme';
 
-import {
-  batteryXtNav,
-  colorSnapNav,
-  scopeBuilderNav,
-} from '../CaseStudy/navProps';
+import { batteryXtNav } from '../CaseStudy/navProps';
 
 export const BatteryXTPage: FC = () => {
   const CaseStudyResultsResultsProps = {

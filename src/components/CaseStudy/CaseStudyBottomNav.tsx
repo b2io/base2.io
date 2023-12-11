@@ -1,11 +1,12 @@
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
 import { FC, useEffect, useState } from 'react';
+import { useLocalStorage } from 'react-use';
 
 import { Heading, Link, Text } from '~/components';
 import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
-import { CaseStudyBottomNavChild, allStudies } from './navProps';
-import { useLocalStorage } from 'react-use';
+
+import { allStudies, CaseStudyBottomNavChild } from './navProps';
 
 export type CaseStudyBottomNavProps = {
   parentIdentifier: CaseStudyBottomNavChild;
