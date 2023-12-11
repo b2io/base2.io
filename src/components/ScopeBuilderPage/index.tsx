@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import {
@@ -8,10 +7,7 @@ import {
   CaseStudyResultsPane,
   CaseStudySummaryPane,
   Layout,
-  TechCard,
-  TechListGrid,
 } from '~/components';
-import { spacing } from '~/theme';
 
 import { scopeBuilderNav } from '../CaseStudy/navProps';
 
@@ -50,14 +46,6 @@ export const ScopeBuilderPage: FC = () => {
         name="ScopeBuilder"
         src={require('./images/scopebuilder-hero.jpg')}
       />
-      <TechListGrid
-        css={css`
-          margin-top: ${spacing.sm};
-        `}
-      >
-        <TechCard logo="react" />
-        <TechCard logo="net" />
-      </TechListGrid>
       <CaseStudyIntroContentPane
         introText="American Electric Power (AEP) needed an easy, standardized way to capture
         and report on the variable costs and details of capital-intensive power station and

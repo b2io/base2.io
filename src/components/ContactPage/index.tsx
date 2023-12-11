@@ -12,12 +12,8 @@ export const ContactPage: FC = () => {
     <Layout description="Like what you see? Let's get started." title="Contact">
       <PageHero
         alt="group of people walking toward you"
-        imgSources={[
-          ['largeDesktop', '/contact/contact-hero-largeDesktop.jpg'],
-          ['tablet', '/contact/contact-hero-tablet.jpg'],
-          ['xl', '/contact/contact-hero-xl.jpg'],
-          ['xs', '/contact/contact-hero-xs.jpg'],
-        ]}
+        src={'/contact/contact-hero-xl.jpg'}
+        imageProps={{ height: 614, width: 1260 }}
         text="Like what you see? Let's get started."
       />
       <Text

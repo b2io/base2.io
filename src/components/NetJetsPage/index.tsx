@@ -9,8 +9,6 @@ import {
   CaseStudyResultsPane,
   CaseStudySummaryPane,
   Layout,
-  TechCard,
-  TechListGrid,
 } from '~/components';
 import { atMinDesktop, spacing } from '~/theme';
 
@@ -51,15 +49,6 @@ export const NetJetsPage: FC = () => {
         name="Fly Netjets"
         src={require('./images/netjets-hero.jpg')}
       />
-      <TechListGrid
-        css={css`
-          margin-top: ${spacing.sm};
-        `}
-      >
-        <TechCard logo="react" />
-        <TechCard logo="redux" />
-        <TechCard logo="jasmine" />
-      </TechListGrid>
       <CaseStudyIntroContentPane
         introText="With its wide range of highly personalized, upscale flight services,
         NetJets offers luxury clients the moon. One indulgence was missing,
