@@ -1,23 +1,69 @@
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { useLocalStorage } from 'react-use';
 
 import { Heading, Link, Text } from '~/components';
 import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
 
+import { allStudies, CaseStudyBottomNavChild } from './navProps';
+
 export type CaseStudyBottomNavProps = {
-  children: {
-    company: string;
-    imagePath: string;
-    navPath: string;
-    title: string;
-  }[];
+  parentIdentifier: CaseStudyBottomNavChild;
 };
 
 export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
-  children,
+  parentIdentifier,
   ...props
 }) => {
+  //get all non-currently selected studies
+  const parentFilteredStudies = allStudies.filter(
+    (study) => study.id !== parentIdentifier.id,
+  );
+
+  const [children, setChildren] = useState<CaseStudyBottomNavChild[]>([
+    parentFilteredStudies[0],
+    parentFilteredStudies[1],
+  ]);
+  const [seenStudies, setSeenStudies] =
+    useLocalStorage<CaseStudyBottomNavChild[]>('seenStudies');
+
+  useEffect(() => {
+    // add current study to local storage list of seen studies
+    if (!seenStudies?.find((study) => study.id === parentIdentifier.id)) {
+      setSeenStudies((prev) =>
+        prev ? [...prev, parentIdentifier] : [parentIdentifier],
+      );
+    }
+
+    // get studies not seen yet
+    const unseenStudies = parentFilteredStudies?.filter((study) => {
+      return !seenStudies?.find((seenStudy) => seenStudy.id === study.id);
+    });
+
+    if (unseenStudies.length) {
+      ///some unseen, show remaining,
+      setChildren([
+        unseenStudies[0],
+        unseenStudies[1] ??
+          parentFilteredStudies.find(
+            //.find() to avoid duplicates
+            (study) => study.id !== unseenStudies[0].id,
+          ),
+      ]);
+    } else {
+      // seen all, show random 2
+      const randomIndex = Math.floor(
+        Math.random() * parentFilteredStudies.length,
+      );
+      const randomIndex2 = randomIndex === 0 ? 1 : randomIndex - 1; // avoids duplicate
+      setChildren([
+        parentFilteredStudies[randomIndex],
+        parentFilteredStudies[randomIndex2],
+      ]);
+    }
+  }, []);
+
   return (
     <section
       css={css`
@@ -45,7 +91,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             position: relative;
             width: 100%;
 
-            &:nth-child(2) article {
+            &:nth-of-type(2) article {
               right: -${spacing.md};
               text-align: right;
 

@@ -13,7 +13,7 @@ import {
 } from '~/components';
 import { spacing } from '~/theme';
 
-import { batteryXtNav, flyNetJetsNav } from '../CaseStudy/navProps';
+import { scopeBuilderNav } from '../CaseStudy/navProps';
 
 export const ScopeBuilderPage: FC = () => {
   const CaseStudyResultsProps = {
@@ -40,10 +40,7 @@ export const ScopeBuilderPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [
-      batteryXtNav,
-      flyNetJetsNav,
-    ],
+    parentIdentifier: scopeBuilderNav,
   };
 
   return (
