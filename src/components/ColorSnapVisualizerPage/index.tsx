@@ -11,8 +11,6 @@ import {
   ColorSnapImagePanel,
   Layout,
   QuotedImage,
-  TechCard,
-  TechListGrid,
 } from '~/components';
 import {
   atMinDesktop,
@@ -64,16 +62,6 @@ export const ColorSnapVisualizerPage: FC = () => {
         }
         src={require('./images/colorsnap-hero.jpg')}
       />
-      <TechListGrid
-        css={css`
-          margin-top: ${spacing.sm};
-        `}
-      >
-        <TechCard logo="angular" />
-        <TechCard logo="sass" />
-        <TechCard logo="jasmine" />
-        <TechCard logo="karma" />
-      </TechListGrid>
       <CaseStudyIntroContentPane
         introText={
           <>
