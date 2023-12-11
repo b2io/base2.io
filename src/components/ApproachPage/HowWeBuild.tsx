@@ -36,7 +36,6 @@ export const HowWeBuild: FC = (props) => {
         css={css`
           position: relative;
           margin-bottom: 3.813rem;
-
           width: ${cssClamp(
             [16.688, 'mobile'],
             [38.063, 'tablet'],
@@ -54,7 +53,6 @@ export const HowWeBuild: FC = (props) => {
             margin-bottom: 3.813rem;
             margin-left: calc(50% - 50vw);
             padding-top: ${cssClamp([5.125, 'mobile'], [17.313, 'tablet'])};
-
             width: ${cssClamp(
               [16.688, 'mobile'],
               [38.063, 'tablet'],
