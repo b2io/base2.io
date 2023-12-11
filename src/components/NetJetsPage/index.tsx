@@ -14,7 +14,7 @@ import {
 } from '~/components';
 import { atMinDesktop, spacing } from '~/theme';
 
-import { flyNetJetsNav } from '../CaseStudy/navProps';
+import { colorSnapNav, scopeBuilderNav } from '../CaseStudy/navProps';
 
 export const NetJetsPage: FC = () => {
   const CaseStudyResultsProps = {
@@ -41,7 +41,7 @@ export const NetJetsPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    parentIdentifier: flyNetJetsNav,
+    children: [scopeBuilderNav, colorSnapNav],
   };
 
   return (
