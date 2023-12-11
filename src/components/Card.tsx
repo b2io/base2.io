@@ -209,7 +209,6 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
   );
 };
 
-<<<<<<< HEAD
 export type ServiceCardProps = {
   children?: React.ReactNode;
   heading?: string;
@@ -244,10 +243,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
   );
 };
 
-export const CardGrid: FC = ({ children, ...props }) => {
-=======
 export const CardGrid: FC<PropsWithChildren> = ({ children, ...props }) => {
->>>>>>> main
   return (
     <ul
       css={css`
