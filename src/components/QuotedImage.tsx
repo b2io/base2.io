@@ -1,51 +1,29 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import Image from 'next/image';
+import type { ImageProps } from 'next/image';
 import type { FC } from 'react';
 
 import {
-  atMaxMd,
   atMinDesktop,
   atMinMobile,
   atMinTablet,
   atMinXL,
-  cssClamp,
   spacing,
 } from '~/theme';
 
-import { DynamicImage, DynamicImageProps } from './DynamicImage';
 import { Heading } from './Heading';
 import { Text } from './Text';
 
-type QuotedImageProps = DynamicImageProps & {
+interface QuotedImageProps {
   company: string;
   name: string;
   position: string;
   quote: string;
-};
-
-const calculatedImageHeight = cssClamp([15, 'mobile'], [50, 'tablet']);
-
-const Image = styled(DynamicImage)`
-  height: 12rem;
-  position: absolute;
-  right: calc(50% - 50vw);
-
-  ${atMaxMd} {
-    max-height: 66vw;
-  }
-
-  ${atMinMobile} {
-    height: ${calculatedImageHeight};
-  }
-
-  ${atMinXL} {
-    right: -${spacing.xxl3};
-  }
-
-  img {
-    height: 100%;
-  }
-`;
+  src: string;
+  alt: string;
+  imageProps: Partial<ImageProps>;
+}
 
 const TextContainer = styled.div`
   padding-top: 6.75rem;
@@ -83,10 +61,11 @@ const AttributionTextItalic = styled(AttributionText)`
 export const QuotedImage: FC<QuotedImageProps> = ({
   alt,
   company,
-  imgSources,
+  src,
   name,
   position,
   quote,
+  imageProps,
   ...props
 }) => {
   return (
@@ -96,7 +75,15 @@ export const QuotedImage: FC<QuotedImageProps> = ({
       `}
       {...props}
     >
-      <Image alt={alt} imgSources={imgSources} />
+      <div
+        css={css`
+          position: absolute;
+          width: 50%;
+          right: 0;
+        `}
+      >
+        <Image alt={alt} layout="responsive" {...imageProps} src={src} />
+      </div>
       <TextContainer>
         <div>
           <Text variant="quotationsSymbol">&#8220;</Text>

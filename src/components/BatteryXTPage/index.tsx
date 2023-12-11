@@ -1,4 +1,3 @@
-import { css } from '@emotion/react';
 import type { FC } from 'react';
 
 import {
@@ -8,10 +7,7 @@ import {
   CaseStudyResultsPane,
   CaseStudySummaryPane,
   Layout,
-  TechCard,
-  TechListGrid,
 } from '~/components';
-import { spacing } from '~/theme';
 
 import { colorSnapNav, scopeBuilderNav } from '../CaseStudy/navProps';
 
@@ -50,15 +46,6 @@ export const BatteryXTPage: FC = () => {
         name="Battery XT"
         src={require('./images/batteryxt-hero.jpg')}
       />
-      <TechListGrid
-        css={css`
-          margin-top: ${spacing.sm};
-        `}
-      >
-        <TechCard logo="react" />
-        <TechCard logo="sass" />
-        <TechCard logo="d3" />
-      </TechListGrid>
       <CaseStudyIntroContentPane
         introText="DNV, an international risk management group, helps people across the globe
         realize new possibilities in battery power. Base Two simplified DNV’s Battery XT software

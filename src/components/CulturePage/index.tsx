@@ -16,12 +16,8 @@ export const CulturePage: FC = () => {
     >
       <PageHero
         alt="members of team standing in front of a comically large shoe"
-        imgSources={[
-          ['largeDesktop', '/culture/culture-hero-xlarge.jpg'],
-          ['tablet', '/culture/culture-hero-medium.jpg'],
-          ['xl', '/culture/culture-hero-large.jpg'],
-          ['xs', '/culture/culture-hero-small.jpg'],
-        ]}
+        src={`/culture/culture-hero-xlarge.jpg`}
+        imageProps={{ height: 546, width: 1280 }}
         text="We are engineers and artisans, collaborat&shy;ing to make custom software people love."
       />
       <OurCulture
