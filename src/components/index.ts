@@ -14,7 +14,6 @@ export * from './ContactPage';
 export * from './CulturePage';
 export * from './Custom404Page';
 export * from './Custom500Page';
-export * from './DynamicImage';
 export * from './GradientCircle';
 export * from './Header';
 export * from './Heading';
