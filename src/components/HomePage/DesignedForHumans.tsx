@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import NextImage from "next/legacy/image";
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
@@ -29,6 +29,11 @@ export const DesignedForHumans: FC = (props) => {
           position: absolute;
           top: ${imageTopCalc};
           width: ${cssClamp([26.042, 'mobile'], [34.313, 'tablet'])};
+
+          img {
+            height: auto;
+            width: 100%;
+          }
 
           ${atMinTablet} {
             left: max(-10rem, calc(50% - 50vw));
