@@ -82,7 +82,7 @@ export const QuotedImage: FC<QuotedImageProps> = ({
           right: 0;
 
           img {
-            height: 100%;
+            height: auto;
             width: 100%;
           }
         `}

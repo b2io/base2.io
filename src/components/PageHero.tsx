@@ -68,7 +68,7 @@ export const PageHero: FC<PageHeroProps> = ({
 
           img {
             filter: brightness(0.65);
-            height: 100%;
+            height: auto;
             width: 100%;
           }
         `}

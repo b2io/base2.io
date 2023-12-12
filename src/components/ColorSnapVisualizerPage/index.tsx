@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import NextImage from 'next/legacy/image';
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import {
@@ -96,6 +96,11 @@ export const ColorSnapVisualizerPage: FC = () => {
         css={css`
           margin: 0 calc(50% - 50vw);
 
+          img {
+            height: auto;
+            width: 100%;
+          }
+
           ${atMinDesktop} {
             margin: 0 -${spacing.xxl1};
           }
@@ -103,7 +108,6 @@ export const ColorSnapVisualizerPage: FC = () => {
       >
         <NextImage
           alt="Jet"
-          layout="responsive"
           src={require('./images/colorsnap-full-width.jpg')}
         />
       </section>
