@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import { atMinLg, atMinXL, cssClamp } from '~/theme';
@@ -69,11 +69,12 @@ export const PageHero: FC<PageHeroProps> = ({
           img {
             filter: brightness(0.65);
             height: 100%;
+            width: 100%;
           }
         `}
         {...props}
       >
-        <Image alt={alt} src={src} layout="responsive" {...imageProps} />
+        <Image alt={alt} src={src} {...imageProps} />
       </div>
 
       <HeaderText as="h2">{text}</HeaderText>
