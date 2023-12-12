@@ -6,20 +6,7 @@ import { EstimationForm } from './EstimationForm';
 import { OurServices } from './OurServices';
 import { spacing } from '../../theme';
 
-interface ServiceDataProps {
-  services: {
-    index: number;
-    sectionTitle: string;
-    packages: {
-      index: number;
-      description: string;
-      packageTitle: string;
-      details: string[];
-    }[];
-  }[];
-}
-
-export const ServicesPage: React.FC<ServiceDataProps> = () => {
+export const ServicesPage: React.FC = () => {
   return (
     <Layout title="Services" description="Services">
       <PageHero
@@ -27,12 +14,8 @@ export const ServicesPage: React.FC<ServiceDataProps> = () => {
           filter: grayscale(100%);
         `}
         alt="team members of Base Two"
-        imgSources={[
-          ['largeDesktop', '/services/services-hero-lg.jpg'],
-          ['tablet', '/services/services-hero-md.jpg'],
-          ['xl', '/services/services-hero-xl.jpg'],
-          ['xs', '/services/services-hero-sm.jpg'],
-        ]}
+        imageProps={{ height: 546, width: 1280 }}
+        src={'/services/services-hero-xl.jpg'}
         text="Partnerships are the core of how we work."
       />
 

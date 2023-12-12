@@ -116,9 +116,7 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
   );
 };
 
-export type OurTeamProps = unknown;
-
-export const OurTeam: FC<OurTeamProps> = (props) => {
+export const OurTeam: FC = (props) => {
   return (
     <section {...props}>
       <div

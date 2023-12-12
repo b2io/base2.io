@@ -24,6 +24,7 @@ const InputWrapper = styled.div`
 const Label = styled.label({
   ...theme.textVariants.h3,
   display: 'block',
+  marginBottom: spacing.xxs,
 });
 
 const FormInput = styled.input`
@@ -32,7 +33,7 @@ const FormInput = styled.input`
   border-bottom: 1px solid ${colors.offWhite};
   color: ${colors.offWhite};
   font-size: 1rem;
-  height: 2rem;
+  height: 4rem;
   line-height: 1;
   margin-bottom: ${spacing.xs};
   outline: none;
@@ -157,7 +158,11 @@ export const EstimationForm: FC = () => {
       <InputWrapper>
         <Label htmlFor="description">Project Description</Label>
         <FormInput
-          autoComplete="off"
+          css={css`
+            height: 10rem;
+            resize: vertical;
+          `}
+          as="textarea"
           id="description"
           placeholder="Project Description*"
           required
