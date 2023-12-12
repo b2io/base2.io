@@ -10,10 +10,12 @@ export const SERVICES = [
     sectionTitle: 'Discovery Consultation',
     services: [
       {
-        description: `One of our defining talents, beyond just engineering, is being able to sit down with a Client and quickly learn their business and systems. We're often approached with loose understandings coupled with strong expectations. Our goal is to provide a unique perspective based on our experience across many distinct industries.`,
+        description: `One of our defining talents, extending beyond engineering, is our capacity to quickly understand our clients' businesses and systems. We excel in transforming initial broad concepts and high expectations into clear, attainable outcomes. Our aim is to leverage our extensive experience across various industries to offer unique insights and practical solutions.`,
         details: [
-          'Hold in-depth discussions with key stakeholders.',
-          'Develop useful',
+          'Conduct in-depth discussions with key stakeholders to fully understand business objectives and challenges.',
+          'Transform loose concepts into concrete, actionable work items.',
+          'Collaborative approach to uncover hidden needs and expectations.',
+          'Unique insights drawn from extensive experience across various industries.',
         ],
         serviceName: 'Discovery Consultation',
       },
