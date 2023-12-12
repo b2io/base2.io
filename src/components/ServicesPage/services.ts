@@ -16,6 +16,7 @@ export const SERVICES = [
           'Transform loose concepts into concrete, actionable work items.',
           'Collaborative approach to uncover hidden needs and expectations.',
           'Unique insights drawn from extensive experience across various industries.',
+          'We focus on your processes, and how to create systems to facilitate them.',
         ],
         serviceName: 'Discovery Consultation',
       },
@@ -25,11 +26,11 @@ export const SERVICES = [
     sectionTitle: 'Architecture and Engineering Consultation',
     services: [
       {
-        description: `Are your processes and systems robust enough to handle your needs now? What about the future? Base Two assists clients in evaluating their current systems, identifying weaknesses and assessing strengths. We follow up with a report detailing technology upgrades, expansion strategies, and recommended architectural changes ensuring that your systems are robust and can scale effectively to meet evolving business needs.`,
+        description: `Is your current infrastructure capable of meeting your immediate and future needs? At Base Two, we help clients evaluate their existing systems by pinpointing vulnerabilities and recognizing strengths. We follow up with a a detailed report outlining necessary technology enhancements, expansion tactics, and proposed architectural modifications to ensure your infrastructure is not only robust but also scalable to adapt to your business's evolving demands.`,
         details: [
-          'Strategic planning for business growth.',
-          'Technology upgrades and expansion strategies.',
-          'Replatforming of current software to modern solutions.',
+          'Strategic planning for sustainable business growth.',
+          'Targeted technology upgrades and development of expansion strategies.',
+          'Transition existing software to advanced, modern platforms.',
         ],
         serviceName: 'Architecture and Engineering Consultation',
       },
@@ -41,11 +42,11 @@ export const SERVICES = [
       {
         description: `No workflow is truly identical. By immersing ourselves in your existing processes and deeply understanding your business, we deliver bespoke software solutions. The emphasis is on aligning the platform with industry standards, making architectural choices to ensure scalability while managing complexity, and helping you to drive innovation in your business.`,
         details: [
-          'Comprehensive end-to-end development, from conceptualization to implementation.',
-          'Tailored to meet specific business requirements.',
-          'All tooling and processes aligned with industry standards.',
-          'Platforms designed to scale seamlessly and be provider agnostic.',
-          'Cloud native, on-prem, or hybrid solutions to fit your needs.',
+          'Comprehensive development cycle, from initial concept to final implementation.',
+          'Tailored to address your unique business needs.',
+          'Rigorous application of industry standards and best practices at every level of the project.',
+          'Systems designed for seamless scalability while remaining provider agnostic to ensure managed cost.',
+          'Versatile solutions including cloud-native, on-premise, or hybrid models to suit your needs.',
         ],
         serviceName: 'Tailored Software Solutions',
       },
@@ -55,13 +56,12 @@ export const SERVICES = [
     sectionTitle: 'Enhancement and Support',
     services: [
       {
-        description: `For businesses with existing software solutions, this service focuses on improvements to your current tools. Base Two conducts a thorough analysis of the software, provides recommendations, and executes updates for enhanced user experience and improved technical performance.`,
+        description: `For businesses with established software solutions, this service zeroes in on elevating your existing tools. Base Two conducts a thorough analysis focused on extending the lifecycle and maximizing the efficiency of your current software.`,
         details: [
-          'In-depth analysis to identify areas of improvement and priorities.',
           'Prioritize and execute based on business value.',
-          'User Experience',
-          'Accessibility',
-          'Performance',
+          'Refined user interfaces and interactions to elevate user engagement and satisfaction.',
+          'Enhancing accessibility to ensure that the software is usable and inclusive for everyone.',
+          'Fine-tuning performance for increased speed, reliability, and resource efficiency.',
         ],
         serviceName: 'Enhancement and Support',
       },
@@ -71,12 +71,12 @@ export const SERVICES = [
     sectionTitle: 'Targeted MVP',
     services: [
       {
-        description: `The idea of a Targeted MVP solution is to accelerate the development of a functional prototype for early-stage startups or established companies looking to experiment. This service involves rapid collaboration with the client team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.`,
+        description: `The idea of a Targeted MVP solution is to expedite the creation of a functional prototype, catering to the needs of early-stage startups or established companies looking to experiment. Our approach involves rapid collaboration with the client team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.`,
         details: [
-          'Rapid development of a functional prototype.',
-          'Collaboration for defining MVP, technology setup, and core feature development.',
-          'Iterative development for quick results.',
-          'Professional handoff with dedicated support.',
+          'Rapid development of a functional prototype to bring ideas to life swiftly.',
+          'Collaboration for MVP definition, technology setup, and core feature development.',
+          'Iterative development practices to deliver quick and impactful results.',
+          'Professional handoff of deliverables, complete with dedicated support for a smooth transition and continued growth.',
         ],
         serviceName: 'Targeted MVP',
       },
@@ -86,12 +86,12 @@ export const SERVICES = [
     sectionTitle: 'Mentorship, Guidance, and Strategy',
     services: [
       {
-        description: `Base Two provides ongoing mentorship and guidance to our clients, serving as a dedicated technology partner. This service extends beyond development; it's about ensuring continuous support in shaping your technology strategy, making informed decisions, and having effective and healthy engineering teams.`,
+        description: `At Base Two, we recognize the importance of going beyond traditional development roles. Our service is deeply rooted in providing ongoing mentorship and guidance, acting as a committed technology partner for our clients. We focus not only on development but also on offering a supportive framework for shaping your technology strategy, facilitating informed decision-making, and nurturing effective, skilled engineering teams. With a team experienced in both advanced engineering and empathetic leadership, we aim to positively influence and enhance your team's overall performance.`,
         details: [
-          'Ongoing mentorship for shaping technology strategy and decision-making.',
-          'Assistance in navigating technical challenges as they arise.',
-          'Team Leadership and guidance.',
-          'Fractional CTO responsibilities.',
+          'Continuous mentorship to strategically guide and improve decision-making processes.',
+          'Expert assistance in navigating technical challenges, offering timely and practical solutions.',
+          'Leadership support for engineering teams, aiding in task execution, fostering skill development, and code reviews.',
+          'Acting as your on-demand technology strategist, we provide the expertise and insights typically expected from a Chief Technology Officer (CTO).',
         ],
         serviceName: 'Mentorship, Guidance, and Strategy',
       },
@@ -103,18 +103,20 @@ export const SERVICES = [
 
     services: [
       {
-        description: `For businesses needing additional development resources, Team Integration provides a seamless partnership with frontend and backend expertise. Base Two becomes an integral part of the client's existing project team, tools, and processes, providing additional development capabilities.`,
+        description: `At Base Two, we understand the dynamic needs of businesses requiring extra muscle. Our Team Integration service is designed to provide a seamless partnership where we blend our frontend and backend expertise with your existing project teams, tools, and processes. Base Two enhances your development capabilities, ensuring that our contribution feels like a natural extension of your own team.`,
         details: [
-          'Integration of additional development resources seamlessly.',
-          "Collaborative work with the client's staff, tools, and processes.",
+          "Seamless integration of additional development resources to augment your team's capabilities.",
+          'Collaborative engagement with your staff, utilizing your established tools and processes for a unified approach.',
         ],
         serviceName: 'Team Integration',
       },
       {
-        description: `The Retainer service offers dedicated professionals to meet flexible staffing needs. Clients can choose a lineup of teammates with diverse expertise, providing a tailored solution to support ongoing projects without the complexities of traditional hiring.`,
+        description: `Base Two’s Retainer service provides a sustainable solution for your software development needs. We understand that building, mentoring, and retaining a talented engineering team is a complex and time-consuming task, often challenging for many businesses. Our service offers the expertise of dedicated professionals who become an extension of your team, ensuring continuity and stability in your software development efforts. With our deep understanding of nurturing engineering talent, we offer more than just staffing solutions; we become your external software development group.`,
         details: [
-          'Dedicated professionals for flexible staffing needs.',
-          'A lineup of teammates with diverse expertise.',
+          'Offering dedicated professionals to meet your flexible and evolving staffing needs in software development.',
+          'Providing a team of skilled engineers, each with their own areas of expertise.',
+          'Specializing in the growth and development of engineering talent, ensuring a high-quality, consistent output for your projects.',
+          'Acting as your external software group, we handle the complexities of hiring and team management, allowing you to focus on core business activities',
         ],
         serviceName: 'Retainer',
       },
