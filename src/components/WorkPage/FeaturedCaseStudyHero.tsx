@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextImage from "next/legacy/image";
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
@@ -43,14 +43,16 @@ const TextContainer = styled.div`
 
 const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
-    <div {...props}>
-      <NextImage
-        alt={alt}
-        height={706}
-        layout="responsive"
-        src={src}
-        width={400}
-      />
+    <div
+      {...props}
+      css={css`
+        img {
+          height: auto;
+          width: 100%;
+        }
+      `}
+    >
+      <NextImage alt={alt} src={src} />
     </div>
   );
 };
