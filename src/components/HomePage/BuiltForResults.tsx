@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import NextImage from 'next/image';
+import NextImage from "next/legacy/image";
 import type { FC } from 'react';
 
 import { Heading, Text } from '~/components';

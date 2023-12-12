@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { useId } from '@react-aria/utils';
 import { motion } from 'framer-motion';
-import NextImage from 'next/image';
+import NextImage from "next/legacy/image";
 import type { FC } from 'react';
 
 import { Heading, Link, Text, useAnimationWhileVisible } from '~/components';

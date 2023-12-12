@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import type { FC } from 'react';
 
 import { atMinLg, atMinXL, cssClamp } from '~/theme';

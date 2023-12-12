@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import NextImage, {
   ImageProps as NextImageProps,
   StaticImageData,
-} from 'next/image';
+} from "next/legacy/image";
 import type { FC } from 'react';
 
 import { Link, Text } from '~/components';
