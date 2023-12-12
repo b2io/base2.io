@@ -8,6 +8,7 @@ export type DynamicImageProps = {
   imgSources: BpMapPair<string>[];
 };
 
+// unused!
 export const DynamicImage: FC<DynamicImageProps> = ({
   alt,
   imgSources,

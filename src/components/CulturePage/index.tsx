@@ -5,8 +5,8 @@ import { atMinTablet, spacing } from '~/theme';
 
 import { OurCulture } from './OurCulture';
 import { OurTeam } from './OurTeam';
-import { Layout } from '../Layout';
-import { PageHero } from '../PageHero';
+import { PageHero } from '../Common/PageHero';
+import { Layout } from '../Layouts/Layout';
 
 export const CulturePage: FC = () => {
   return (

@@ -6,10 +6,10 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { atMinSm, atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
-import { Container } from './Container';
-import { LogoWithName } from './icons';
-import { Link } from './Link';
 import { MobileMenu } from './MobileMenu';
+import { Container } from '../Common/Container';
+import { Link } from '../Common/Link';
+import { LogoWithName } from '../icons';
 
 const Root = styled.header`
   background-image: linear-gradient(

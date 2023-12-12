@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Layout } from '~/components';
 
-import { PageHero } from '../PageHero';
+import { PageHero } from '../Common/PageHero';
 
 export const CareersPage: FC = () => {
   return (
