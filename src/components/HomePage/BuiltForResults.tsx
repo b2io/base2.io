@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import NextImage from "next/legacy/image";
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Text } from '~/components';
@@ -35,6 +35,11 @@ export const BuiltForResults: FC = (props) => {
           position: absolute;
           top: ${imageTopCalc};
           width: ${cssClamp([26.042, 'mobile'], [34.313, 'tablet'])};
+
+          img {
+            height: auto;
+            width: 100%;
+          }
 
           ${atMinTablet} {
             height: ${largeImageHeightCalc};
