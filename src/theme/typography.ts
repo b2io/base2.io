@@ -157,15 +157,6 @@ export const textVariants = {
     margin: 0,
     padding: 0,
   },
-  serviceHeader: {
-    color: colors.text,
-    fontSize: cssClamp([1.3, 'mobile'], [1.4, 'tablet']),
-    fontVariationSettings: '"wght" 400',
-    letterSpacing: 'normal',
-    lineHeight: 1.1,
-    margin: 0,
-    padding: 0,
-  },
   serviceTitle: {
     [atMinTablet]: {
       lineHeight: 1.33,

@@ -99,6 +99,7 @@ export const SERVICES = [
   },
   {
     sectionDescription: `If your tech partnerships have failed in the past, you are not alone. It's difficult to find a consistent group who are reliable, communicative, and fulfill commitments. At Base Two, we deeply invest in the tasks we're given and take ownership of the systems we work on and results we achieve. It's important that we are a team working together to solve problems and build solutions we're proud of. Let us be part of your internal engineering team.`,
+    sectionHeader: 'Commited Partner',
     sectionTitle: 'Committed Partner',
     services: [
       {

@@ -226,7 +226,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
   return (
     <Card id={id} {...props}>
       {heading && (
-        <Heading as="h4" variant="serviceHeader">
+        <Heading as="h4" variant="serviceTitle">
           {heading}
         </Heading>
       )}

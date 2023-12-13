@@ -81,7 +81,7 @@ export const OurServices: FC = (props) => {
       <ContentWrapper>
         <div>
           <Heading
-            as="h2"
+            as="h3"
             variant="h2"
             css={css`
               margin-top: ${spacing.xxl2};
@@ -108,10 +108,10 @@ export const OurServices: FC = (props) => {
             }
           `}
         >
-          <Heading as="h2" variant="h2">
+          <Heading as="h3" variant="h2">
             Services
           </Heading>
-          <TableOfContents>
+          <TableOfContents role="navigation" aria-label="Services navigation">
             {SERVICES.map((section, sectionIndex) => (
               <StyledNavItem key={sectionIndex}>
                 <Link
@@ -143,9 +143,11 @@ export const OurServices: FC = (props) => {
         <>
           {SERVICES.map((service, index) => (
             <section key={`service-${index + 1}`} id={`#service-${index + 1}`}>
-              <Heading as="h3" variant="serviceTitle">
-                {service.sectionTitle}
-              </Heading>
+              {service.sectionHeader && (
+                <Heading as="h3" variant="h2">
+                  {service.sectionHeader}
+                </Heading>
+              )}
               {service.services.map((item, index) => (
                 <ServiceCard
                   css={css`
@@ -156,12 +158,8 @@ export const OurServices: FC = (props) => {
                   `}
                   id={`serviceCard-${index + 1}`}
                   key={index}
-                  heading={
-                    item.serviceName === service.sectionTitle
-                      ? ''
-                      : item.serviceName
-                  }
-                  text={item.description || ''}
+                  heading={item.serviceName}
+                  text={item.description}
                 >
                   <ul
                     css={css`
