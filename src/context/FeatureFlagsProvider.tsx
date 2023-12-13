@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { FeatureToggleContext } from '~/context/featureToggleContext';
+import { FeatureFlagsContext } from './featureFlagsContext';
 
 type FeatureToggleProps = {
   children: React.ReactNode;
@@ -12,9 +12,9 @@ const FeatureToggle: FC<FeatureToggleProps> = ({
   enabledFeatures,
 }) => {
   return (
-    <FeatureToggleContext.Provider value={{ enabledFeatures }}>
+    <FeatureFlagsContext.Provider value={{ enabledFeatures }}>
       {children}
-    </FeatureToggleContext.Provider>
+    </FeatureFlagsContext.Provider>
   );
 };
 
