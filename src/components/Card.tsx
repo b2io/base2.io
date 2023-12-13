@@ -210,9 +210,9 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
 };
 
 export type ServiceCardProps = {
-  children?: React.ReactNode;
-  heading?: string;
-  id?: string;
+  children: React.ReactNode;
+  heading: string;
+  id: string;
   text: string;
 };
 
@@ -225,11 +225,9 @@ export const ServiceCard: FC<ServiceCardProps> = ({
 }) => {
   return (
     <Card id={id} {...props}>
-      {heading && (
-        <Heading as="h4" variant="serviceTitle">
-          {heading}
-        </Heading>
-      )}
+      <Heading as="h4" variant="serviceTitle">
+        {heading}
+      </Heading>
       <Text
         as="p"
         css={css`
