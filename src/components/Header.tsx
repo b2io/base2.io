@@ -4,7 +4,6 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import type { FC } from 'react';
 
-import { checkClientSideFlag } from '~/flags';
 import { atMinSm, atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
 import { Container } from './Container';
@@ -12,6 +11,7 @@ import { LogoWithName } from './icons';
 import { Link } from './Link';
 import { MobileMenu } from './MobileMenu';
 import { XmasMarquee } from './XmasMarquee';
+import useFeatureToggle from '../hooks/useFeatureToggle';
 
 const Root = styled.header`
   background-image: linear-gradient(
@@ -114,14 +114,13 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
 };
 
 export const Header: FC = ({ ...props }) => {
+  const [isEnabled] = useFeatureToggle();
+
   return (
     <Root>
       <Content {...props}>
         <LogoLink />
-        <div>
-          {checkClientSideFlag('SHOW_XMAS_MARQUEE') ? <XmasMarquee /> : null}
-        </div>
-        {/* <XmasMarquee /> */}
+        {isEnabled('XMAS_MARQUEE') && <XmasMarquee />}
         <MobileMenu
           css={css`
             ${atMinSm} {
