@@ -11,7 +11,7 @@ import { LogoWithName } from './icons';
 import { Link } from './Link';
 import { MobileMenu } from './MobileMenu';
 import { XmasMarquee } from './XmasMarquee';
-import useFeatureToggle from '../hooks/useFeatureToggle';
+import { useFeatureFlag } from '../context/FeatureFlagsProvider';
 
 const Root = styled.header`
   background-image: linear-gradient(
@@ -114,13 +114,13 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
 };
 
 export const Header: FC = ({ ...props }) => {
-  const [isEnabled] = useFeatureToggle();
+  const isXmasMarqueeEnabled = useFeatureFlag('xmas-marquee');
 
   return (
     <Root>
       <Content {...props}>
         <LogoLink />
-        {isEnabled('XMAS_MARQUEE') && <XmasMarquee />}
+        {isXmasMarqueeEnabled && <XmasMarquee />}
         <MobileMenu
           css={css`
             ${atMinSm} {

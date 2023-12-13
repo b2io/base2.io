@@ -13,7 +13,7 @@ import type { FC } from 'react';
 import theme, { colors } from '~/theme';
 
 // import * as gtag from '../../lib/gtag';
-import FeatureToggle from '../context/FeatureToggleProvider';
+import FeatureFlagsProvider from '../context/FeatureFlagsProvider';
 
 const handleExitComplete = () => {
   if (typeof window !== 'undefined') {
@@ -131,9 +131,9 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
                 }
               `}
             />
-            <FeatureToggle enabledFeatures={['XMAS_MARQUEE']}>
+            <FeatureFlagsProvider>
               <Component {...pageProps} key={pageKey} />
-            </FeatureToggle>
+            </FeatureFlagsProvider>
           </ThemeProvider>
         </AnimatePresence>
       </AnimateSharedLayout>

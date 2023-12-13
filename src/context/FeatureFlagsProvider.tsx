@@ -1,21 +1,42 @@
-import { FC } from 'react';
+import {
+  createContext,
+  type FC,
+  type PropsWithChildren,
+  useContext,
+  useMemo,
+} from 'react';
 
-import { FeatureFlagsContext } from './featureFlagsContext';
+const FeatureFlagsContext = createContext({
+  featureFlags: [] as string[],
+});
 
-type FeatureToggleProps = {
-  children: React.ReactNode;
-  enabledFeatures: string[];
-};
+type FeatureFlagsProviderProps = PropsWithChildren<Record<string, unknown>>;
 
-const FeatureToggle: FC<FeatureToggleProps> = ({
-  children,
-  enabledFeatures,
-}) => {
+const FeatureFlagsProvider: FC<FeatureFlagsProviderProps> = ({ children }) => {
+  const value = useMemo(
+    () => ({
+      featureFlags: process.env.NEXT_PUBLIC_FEATURE_FLAGS?.split(',') ?? [],
+    }),
+    [],
+  );
+
   return (
-    <FeatureFlagsContext.Provider value={{ enabledFeatures }}>
+    <FeatureFlagsContext.Provider value={value}>
       {children}
     </FeatureFlagsContext.Provider>
   );
 };
 
-export default FeatureToggle;
+export function useFeatureFlags(ids: string[]): boolean[] {
+  const { featureFlags } = useContext(FeatureFlagsContext);
+
+  return ids.map((id) => featureFlags.includes(id));
+}
+
+export function useFeatureFlag(id: string): boolean {
+  const { featureFlags } = useContext(FeatureFlagsContext);
+
+  return featureFlags.includes(id);
+}
+
+export default FeatureFlagsProvider;
