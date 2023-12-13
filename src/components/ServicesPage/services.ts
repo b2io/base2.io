@@ -100,7 +100,6 @@ export const SERVICES = [
   {
     sectionDescription: `If your tech partnerships have failed in the past, you are not alone. It's difficult to find a consistent group who are reliable, communicative, and fulfill commitments. At Base Two, we deeply invest in the tasks we're given and take ownership of the systems we work on and results we achieve. It's important that we are a team working together to solve problems and build solutions we're proud of. Let us be part of your internal engineering team.`,
     sectionTitle: 'Committed Partner',
-
     services: [
       {
         description: `At Base Two, we understand the dynamic needs of businesses requiring extra muscle. Our Team Integration service is designed to provide a seamless partnership where we blend our frontend and backend expertise with your existing project teams, tools, and processes. Base Two enhances your development capabilities, ensuring that our contribution feels like a natural extension of your own team.`,
