@@ -13,7 +13,7 @@ import type { FC } from 'react';
 import theme, { colors } from '~/theme';
 
 // import * as gtag from '../../lib/gtag';
-import FeatureToggle from '../components/FeatureToggleProvider';
+import FeatureToggle from '../context/FeatureToggleProvider';
 
 const handleExitComplete = () => {
   if (typeof window !== 'undefined') {
