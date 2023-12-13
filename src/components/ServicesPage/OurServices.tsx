@@ -111,7 +111,7 @@ export const OurServices: FC = (props) => {
           <Heading as="h3" variant="h2">
             Services
           </Heading>
-          <TableOfContents role="navigation" aria-label="Services navigation">
+          <TableOfContents>
             {SERVICES.map((section, sectionIndex) => (
               <StyledNavItem key={sectionIndex}>
                 <Link
