@@ -68,6 +68,14 @@ const StyledNavItem = styled.li`
 `;
 
 export const OurServices: FC = (props) => {
+  const singleService = SERVICES.filter(
+    ({ services }) => services.length === 1,
+  );
+
+  const multipleServices = SERVICES.filter(
+    ({ services }) => services.length > 1,
+  );
+
   return (
     <section
       css={css`
@@ -112,8 +120,8 @@ export const OurServices: FC = (props) => {
             Services
           </Heading>
           <TableOfContents>
-            {SERVICES.map((section, sectionIndex) => (
-              <StyledNavItem key={sectionIndex}>
+            {SERVICES.map((item, index) => (
+              <StyledNavItem key={index}>
                 <Link
                   css={css`
                     cursor: pointer;
@@ -122,13 +130,13 @@ export const OurServices: FC = (props) => {
                       color: ${colors.coral};
                     }
                   `}
-                  to={`#service-${sectionIndex + 1}`}
+                  to={`${item.sectionTitle}`}
                   spy={true}
                   smooth="easeInOutQuart"
                   offset={-100}
                   duration={2000}
                 >
-                  {section.sectionTitle}
+                  {item.sectionTitle}
                 </Link>
               </StyledNavItem>
             ))}
@@ -137,48 +145,104 @@ export const OurServices: FC = (props) => {
       </ContentWrapper>
       <CardGrid
         css={css`
+          margin-bottom: ${spacing.md};
           margin-top: ${spacing.xxl1};
         `}
       >
-        <>
-          {SERVICES.map((service, index) => (
-            <section key={`service-${index + 1}`} id={`#service-${index + 1}`}>
-              {service.sectionHeader && (
-                <Heading as="h3" variant="h2">
-                  {service.sectionHeader}
-                </Heading>
-              )}
-              {service.services.map((item, index) => (
-                <ServiceCard
+        {singleService.map((service, index) => (
+          <section key={`service-${index + 1}`} id={`${service.sectionTitle}`}>
+            {service.services.map((item, index) => (
+              <ServiceCard
+                css={css`
+                  margin-top: ${spacing.xs};
+                  &:not(:last-of-type) {
+                    margin-bottom: ${spacing.md};
+                  }
+                `}
+                id={`serviceCard-${index + 1}`}
+                key={index}
+                heading={item.serviceName}
+                text={item.description}
+              >
+                <ul
                   css={css`
-                    margin-top: ${spacing.xs};
-                    &:not(:last-of-type) {
-                      margin-bottom: ${spacing.md};
-                    }
+                    list-style: none;
+                    line-height: 1.75;
                   `}
-                  id={`serviceCard-${index + 1}`}
-                  key={index}
-                  heading={item.serviceName}
-                  text={item.description}
                 >
-                  <ul
-                    css={css`
-                      list-style: none;
-                      line-height: 1.75;
-                    `}
-                  >
-                    {item.details.map((detail, index) => (
-                      <StyledListItem key={`detail=${index + 1}`}>
-                        {detail}
-                      </StyledListItem>
-                    ))}
-                  </ul>
-                </ServiceCard>
-              ))}
-            </section>
-          ))}
-        </>
+                  {item.details.map((detail, index) => (
+                    <StyledListItem key={`detail=${index + 1}`}>
+                      {detail}
+                    </StyledListItem>
+                  ))}
+                </ul>
+              </ServiceCard>
+            ))}
+          </section>
+        ))}
       </CardGrid>
+      {multipleServices.map((service, index) => (
+        <section
+          key={`service-${index + 1}`}
+          id={`${service.sectionTitle}`}
+          css={css`
+            margin-top: ${spacing.xxl2};
+          `}
+        >
+          {service.sectionHeader && (
+            <Heading
+              as="h3"
+              variant="h2"
+              css={css`
+                margin-bottom: ${spacing.xs};
+              `}
+            >
+              {service.sectionHeader}
+            </Heading>
+          )}
+          {service.sectionDescription && (
+            <Heading
+              as="h4"
+              variant="h3"
+              css={css`
+                margin-bottom: ${spacing.lg};
+              `}
+            >
+              {service.sectionDescription}
+            </Heading>
+          )}
+          <CardGrid
+            css={css`
+              max-width: unset;
+            `}
+          >
+            {service.services.map((item, index) => (
+              <ServiceCard
+                css={css`
+                  margin-top: ${spacing.xs};
+                `}
+                id={`serviceCard-${index + 1}`}
+                key={index}
+                heading={item.serviceName}
+                text={item.description}
+              >
+                <ul
+                  css={css`
+                    list-style: none;
+                    line-height: 1.75;
+                  `}
+                >
+                  {item.details.map((detail, index) => (
+                    <StyledListItem key={`detail=${index + 1}`}>
+                      {detail}
+                    </StyledListItem>
+                  ))}
+                </ul>
+              </ServiceCard>
+            ))}
+          </CardGrid>
+        </section>
+      ))}
     </section>
   );
 };

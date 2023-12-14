@@ -68,21 +68,6 @@ export const SERVICES = [
     ],
   },
   {
-    sectionTitle: 'Targeted MVP',
-    services: [
-      {
-        description: `The idea of a Targeted MVP solution is to expedite the creation of a functional prototype, catering to the needs of early-stage startups or established companies looking to experiment. Our approach involves rapid collaboration with the client team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.`,
-        details: [
-          'Rapid development of a functional prototype to bring ideas to life swiftly.',
-          'Collaboration for MVP definition, technology setup, and core feature development.',
-          'Iterative development practices to deliver quick and impactful results.',
-          'Professional handoff of deliverables, complete with dedicated support for a smooth transition and continued growth.',
-        ],
-        serviceName: 'Targeted MVP',
-      },
-    ],
-  },
-  {
     sectionTitle: 'Mentorship, Guidance, and Strategy',
     services: [
       {
@@ -98,18 +83,25 @@ export const SERVICES = [
     ],
   },
   {
+    sectionTitle: 'Targeted MVP',
+    services: [
+      {
+        description: `The idea of a Targeted MVP solution is to expedite the creation of a functional prototype, catering to the needs of early-stage startups or established companies looking to experiment. Our approach involves rapid collaboration with the client team, defining the Minimum Viable Product (MVP), setting up the necessary technology infrastructure, and developing core features. The focus is on quickly building a demonstration-ready version of the product.`,
+        details: [
+          'Rapid development of a functional prototype to bring ideas to life swiftly.',
+          'Collaboration for MVP definition, technology setup, and core feature development.',
+          'Iterative development practices to deliver quick and impactful results.',
+          'Professional handoff of deliverables, complete with dedicated support for a smooth transition and continued growth.',
+        ],
+        serviceName: 'Targeted MVP',
+      },
+    ],
+  },
+  {
     sectionDescription: `If your tech partnerships have failed in the past, you are not alone. It's difficult to find a consistent group who are reliable, communicative, and fulfill commitments. At Base Two, we deeply invest in the tasks we're given and take ownership of the systems we work on and results we achieve. It's important that we are a team working together to solve problems and build solutions we're proud of. Let us be part of your internal engineering team.`,
     sectionHeader: 'Commited Partner',
     sectionTitle: 'Committed Partner',
     services: [
-      {
-        description: `At Base Two, we understand the dynamic needs of businesses requiring extra muscle. Our Team Integration service is designed to provide a seamless partnership where we blend our frontend and backend expertise with your existing project teams, tools, and processes. Base Two enhances your development capabilities, ensuring that our contribution feels like a natural extension of your own team.`,
-        details: [
-          "Seamless integration of additional development resources to augment your team's capabilities.",
-          'Collaborative engagement with your staff, utilizing your established tools and processes for a unified approach.',
-        ],
-        serviceName: 'Team Integration',
-      },
       {
         description: `Base Two’s Retainer service provides a sustainable solution for your software development needs. We understand that building, mentoring, and retaining a talented engineering team is a complex and time-consuming task, often challenging for many businesses. Our service offers the expertise of dedicated professionals who become an extension of your team, ensuring continuity and stability in your software development efforts. With our deep understanding of nurturing engineering talent, we offer more than just staffing solutions; we become your external software development group.`,
         details: [
@@ -119,6 +111,14 @@ export const SERVICES = [
           'Acting as your external software group, we handle the complexities of hiring and team management, allowing you to focus on core business activities',
         ],
         serviceName: 'Retainer',
+      },
+      {
+        description: `At Base Two, we understand the dynamic needs of businesses requiring extra muscle. Our Team Integration service is designed to provide a seamless partnership where we blend our frontend and backend expertise with your existing project teams, tools, and processes. Base Two enhances your development capabilities, ensuring that our contribution feels like a natural extension of your own team.`,
+        details: [
+          "Seamless integration of additional development resources to augment your team's capabilities.",
+          'Collaborative engagement with your staff, utilizing your established tools and processes for a unified approach.',
+        ],
+        serviceName: 'Team Integration',
       },
     ],
   },
