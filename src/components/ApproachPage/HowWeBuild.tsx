@@ -60,11 +60,6 @@ export const HowWeBuild: FC = (props) => {
             )};
             z-index: 1;
 
-            img {
-              height: auto;
-              width: 100%;
-            }
-
             ${atMinLargeDesktop} {
               margin-left: -14rem;
             }
@@ -72,6 +67,10 @@ export const HowWeBuild: FC = (props) => {
         >
           <NextImage
             alt="person staring at code on a computer screen"
+            css={css`
+              height: auto;
+              width: 100%;
+            `}
             src={require('./images/howwebuild-large.jpg')}
           />
         </div>

@@ -43,16 +43,15 @@ const TextContainer = styled.div`
 
 const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
   return (
-    <div
-      {...props}
-      css={css`
-        img {
+    <div {...props}>
+      <NextImage
+        alt={alt}
+        css={css`
           height: auto;
           width: 100%;
-        }
-      `}
-    >
-      <NextImage alt={alt} src={src} />
+        `}
+        src={src}
+      />
     </div>
   );
 };

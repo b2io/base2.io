@@ -96,18 +96,17 @@ export const ColorSnapVisualizerPage: FC = () => {
         css={css`
           margin: 0 calc(50% - 50vw);
 
-          img {
-            height: auto;
-            width: 100%;
-          }
-
           ${atMinDesktop} {
             margin: 0 -${spacing.xxl1};
           }
         `}
       >
         <NextImage
-          alt="Jet"
+          alt="Apartment living room with large windows"
+          css={css`
+            height: auto;
+            width: 100%;
+          `}
           src={require('./images/colorsnap-full-width.jpg')}
         />
       </section>

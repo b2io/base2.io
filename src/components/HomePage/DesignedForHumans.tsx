@@ -30,11 +30,6 @@ export const DesignedForHumans: FC = (props) => {
           top: ${imageTopCalc};
           width: ${cssClamp([26.042, 'mobile'], [34.313, 'tablet'])};
 
-          img {
-            height: auto;
-            width: 100%;
-          }
-
           ${atMinTablet} {
             left: max(-10rem, calc(50% - 50vw));
             width: ${cssClamp([34.313, 'tablet'], [64.5, 'desktop'])};
@@ -44,6 +39,10 @@ export const DesignedForHumans: FC = (props) => {
       >
         <NextImage
           alt="top view of desks with people working on their computers"
+          css={css`
+            height: auto;
+            width: 100%;
+          `}
           placeholder="blur"
           src={require('./designed-for-humans.jpg')}
         />

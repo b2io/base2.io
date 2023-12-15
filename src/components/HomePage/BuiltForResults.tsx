@@ -36,11 +36,6 @@ export const BuiltForResults: FC = (props) => {
           top: ${imageTopCalc};
           width: ${cssClamp([26.042, 'mobile'], [34.313, 'tablet'])};
 
-          img {
-            height: auto;
-            width: 100%;
-          }
-
           ${atMinTablet} {
             height: ${largeImageHeightCalc};
             left: unset;
@@ -51,6 +46,10 @@ export const BuiltForResults: FC = (props) => {
       >
         <NextImage
           alt="person looking at computer"
+          css={css`
+            height: auto;
+            width: 100%;
+          `}
           placeholder="blur"
           src={require('./built-for-results.jpg')}
         />

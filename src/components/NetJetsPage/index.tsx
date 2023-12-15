@@ -69,17 +69,19 @@ export const NetJetsPage: FC = () => {
         css={css`
           margin: 0 calc(50% - 50vw);
 
-          img {
-            height: auto;
-            width: 100%;
-          }
-
           ${atMinDesktop} {
             margin: 0 -${spacing.xxl1};
           }
         `}
       >
-        <NextImage alt="Jet" src={require('./images/netjets-full-width.jpg')} />
+        <NextImage
+          alt="Jet"
+          css={css`
+            height: auto;
+            width: 100%;
+          `}
+          src={require('./images/netjets-full-width.jpg')}
+        />
       </section>
       <CaseStudySummaryPane
         summaryText="Fly NetJets lets clients manage their accounts, book upcoming trips, and 

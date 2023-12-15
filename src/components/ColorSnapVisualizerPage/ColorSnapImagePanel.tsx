@@ -34,12 +34,6 @@ const ImagePanelItem: FC<ImagePanelItemProps> = ({ src, alt }) => {
         padding: 1rem 0;
         display: flex;
         justify-content: center;
-        z-index: 1;
-
-        img {
-          height: auto;
-          width: 100%;
-        }
 
         ${atMinXL} {
           padding: 3rem 0;
@@ -56,7 +50,15 @@ const ImagePanelItem: FC<ImagePanelItemProps> = ({ src, alt }) => {
         }
       `}
     >
-      <NextImage src={src} alt={alt} />
+      <NextImage
+        alt={alt}
+        css={css`
+          height: auto;
+          width: 100%;
+          z-index: 1;
+        `}
+        src={src}
+      />
     </div>
   );
 };
