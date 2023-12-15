@@ -141,7 +141,7 @@ export const OurServices: FC = (props) => {
           margin-top: ${spacing.xxl1};
         `}
       >
-        {SERVICES.filter(({ services }) => services.length === 1).map(
+        {SERVICES.filter((item) => !item.sectionHeader).map(
           (service, index) => (
             <section
               key={`service-${index + 1}`}
@@ -178,70 +178,68 @@ export const OurServices: FC = (props) => {
           ),
         )}
       </CardGrid>
-      {SERVICES.filter(({ services }) => services.length > 1).map(
-        (service, index) => (
-          <section
-            key={`service-${index + 1}`}
-            id={`${service.sectionTitle}`}
-            css={css`
-              margin-top: ${spacing.xxl2};
-            `}
-          >
-            {service.sectionHeader && (
-              <Heading
-                as="h3"
-                variant="h2"
-                css={css`
-                  margin-bottom: ${spacing.xs};
-                `}
-              >
-                {service.sectionHeader}
-              </Heading>
-            )}
-            {service.sectionDescription && (
-              <Heading
-                as="h4"
-                variant="h3"
-                css={css`
-                  margin-bottom: ${spacing.lg};
-                `}
-              >
-                {service.sectionDescription}
-              </Heading>
-            )}
-            <CardGrid
+      {SERVICES.filter((item) => item.sectionHeader).map((service, index) => (
+        <section
+          key={`service-${index + 1}`}
+          id={`${service.sectionTitle}`}
+          css={css`
+            margin-top: ${spacing.xxl2};
+          `}
+        >
+          {service.sectionHeader && (
+            <Heading
+              as="h3"
+              variant="h2"
               css={css`
-                max-width: unset;
+                margin-bottom: ${spacing.xs};
               `}
             >
-              {service.services.map((item, index) => (
-                <ServiceCard
+              {service.sectionHeader}
+            </Heading>
+          )}
+          {service.sectionDescription && (
+            <Heading
+              as="h4"
+              variant="h3"
+              css={css`
+                margin-bottom: ${spacing.lg};
+              `}
+            >
+              {service.sectionDescription}
+            </Heading>
+          )}
+          <CardGrid
+            css={css`
+              max-width: unset;
+            `}
+          >
+            {service.services.map((item, index) => (
+              <ServiceCard
+                css={css`
+                  margin-top: ${spacing.xs};
+                `}
+                id={`serviceCard-${index + 1}`}
+                key={index}
+                heading={item.serviceName}
+                text={item.description}
+              >
+                <ul
                   css={css`
-                    margin-top: ${spacing.xs};
+                    list-style: none;
+                    line-height: 1.75;
                   `}
-                  id={`serviceCard-${index + 1}`}
-                  key={index}
-                  heading={item.serviceName}
-                  text={item.description}
                 >
-                  <ul
-                    css={css`
-                      list-style: none;
-                      line-height: 1.75;
-                    `}
-                  >
-                    {item.details.map((detail, index) => (
-                      <StyledListItem key={`detail=${index + 1}`}>
-                        {detail}
-                      </StyledListItem>
-                    ))}
-                  </ul>
-                </ServiceCard>
-              ))}
-            </CardGrid>
-          </section>
-        ),
-      )}
+                  {item.details.map((detail, index) => (
+                    <StyledListItem key={`detail=${index + 1}`}>
+                      {detail}
+                    </StyledListItem>
+                  ))}
+                </ul>
+              </ServiceCard>
+            ))}
+          </CardGrid>
+        </section>
+      ))}
     </section>
   );
 };
