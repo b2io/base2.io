@@ -186,17 +186,15 @@ export const OurServices: FC = (props) => {
             margin-top: ${spacing.xxl2};
           `}
         >
-          {service.sectionHeader && (
-            <Heading
-              as="h3"
-              variant="h2"
-              css={css`
-                margin-bottom: ${spacing.xs};
-              `}
-            >
-              {service.sectionHeader}
-            </Heading>
-          )}
+          <Heading
+            as="h3"
+            variant="h2"
+            css={css`
+              margin-bottom: ${spacing.xs};
+            `}
+          >
+            {service.sectionHeader}
+          </Heading>
           {service.sectionDescription && (
             <Heading
               as="h4"
