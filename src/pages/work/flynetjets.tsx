@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 
-import { FlyNetjets } from '~/components/FlyNetjets';
+import { FlyNetjets } from '~/components/FlyNetjetsPage';
 
 const CaseStudyNetJetsNextPage: NextPage = () => {
   return <FlyNetjets />;

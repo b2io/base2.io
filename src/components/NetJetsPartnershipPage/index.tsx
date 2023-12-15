@@ -6,7 +6,6 @@ import {
   CaseStudyBottomNav,
   CaseStudyHeaderPane,
   CaseStudyIntroContentPane,
-  CaseStudyResultsPane,
   CaseStudySummaryPane,
   Layout,
 } from '~/components';
@@ -14,39 +13,19 @@ import { atMinDesktop, spacing } from '~/theme';
 
 import { colorSnapNav, scopeBuilderNav } from '../CaseStudy/navProps';
 
-export const NetJetsClientStoryPage: FC = () => {
-  const CaseStudyResultsProps = {
-    children: [
-      {
-        heading: 'Increased app relevance',
-        text: 'Recent increase in Fly NetJets downloads',
-      },
-      {
-        heading: '4.1 star rating',
-        text: 'Rated 4.1 stars on the Apple App Store by users',
-      },
-      {
-        heading: 'Expedited booking process',
-        text: 'Reducing bottlenecks at the NetJets call center',
-      },
-      {
-        heading: 'Valuable partnership',
-        text: 'Fly NetJets laid the groundwork for ongoing collaboration with the company, including an expansion of app features',
-      },
-    ],
-    resultsParagraph:
-      'Since its launch in 2019, the app has allowed countless NetJets clients to fly with first-class comforts and book their trip in ultimate luxury, delivering on the company’s promise of high-end services and peace of mind.',
-  };
-
+export const NetJetsPartnershipPage: FC = () => {
   const caseStudyBottomNavProps = {
     children: [scopeBuilderNav, colorSnapNav],
   };
 
   return (
-    <Layout description="Case study about NetJets" title="Netjets">
+    <Layout
+      description="Case study about our Partnership with NetJets"
+      title="Netjets"
+    >
       <CaseStudyHeaderPane
         alt="NetJets"
-        name="Fly Netjets"
+        name="NetJets Partnership"
         src={require('./images/netjets-hero.jpg')}
       />
       <CaseStudyIntroContentPane
@@ -88,7 +67,7 @@ export const NetJetsClientStoryPage: FC = () => {
         src={require('./images/netjets-screenshot.jpg')}
         alt="screenshot"
       />
-      <CaseStudyResultsPane {...CaseStudyResultsProps} />
+      {/* <CaseStudyResultsPane {...CaseStudyResultsProps} /> */}
       <CaseStudyBottomNav {...caseStudyBottomNavProps} />
     </Layout>
   );
