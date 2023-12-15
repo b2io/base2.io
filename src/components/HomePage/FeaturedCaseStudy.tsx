@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { useId } from '@react-aria/utils';
 import { motion } from 'framer-motion';
-import NextImage from "next/legacy/image";
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Link, Text, useAnimationWhileVisible } from '~/components';
@@ -206,6 +206,12 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
             gap: ${spacing.xs};
             grid-template-columns: repeat(2, 1fr);
             margin-bottom: 11rem;
+
+            img {
+              height: auto;
+              width: 100%;
+              z-index: 1;
+            }
 
             ${atMinTablet} {
               --column-shift: ${spacing.xxl3};
