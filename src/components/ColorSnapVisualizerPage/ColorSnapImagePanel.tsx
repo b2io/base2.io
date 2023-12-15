@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import NextImage, {
   ImageProps as NextImageProps,
   StaticImageData,
-} from "next/legacy/image";
+} from 'next/image';
 import { FC } from 'react';
 
 import { atMinLg, atMinXL } from '~/theme';
@@ -34,6 +34,12 @@ const ImagePanelItem: FC<ImagePanelItemProps> = ({ src, alt }) => {
         padding: 1rem 0;
         display: flex;
         justify-content: center;
+        z-index: 1;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
 
         ${atMinXL} {
           padding: 3rem 0;
