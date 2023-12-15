@@ -1,5 +1,6 @@
 import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
+import { SSRProvider } from '@react-aria/ssr';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -12,6 +13,7 @@ import type { FC } from 'react';
 import theme, { colors } from '~/theme';
 
 // import * as gtag from '../../lib/gtag';
+import FeatureFlagsProvider from '../context/FeatureFlagsProvider';
 
 const handleExitComplete = () => {
   if (typeof window !== 'undefined') {
@@ -34,7 +36,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
   // }, [router.events]);
 
   return (
-    <>
+    <SSRProvider>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       {/* <Script
         strategy="afterInteractive"
@@ -129,11 +131,13 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
                 }
               `}
             />
-            <Component {...pageProps} key={pageKey} />
+            <FeatureFlagsProvider>
+              <Component {...pageProps} key={pageKey} />
+            </FeatureFlagsProvider>
           </ThemeProvider>
         </AnimatePresence>
       </AnimateSharedLayout>
-    </>
+    </SSRProvider>
   );
 };
 
