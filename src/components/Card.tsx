@@ -1,12 +1,6 @@
 import { css } from '@emotion/react';
-import {
-  Children,
-  cloneElement,
-  ElementType,
-  FC,
-  PropsWithChildren,
-  ReactElement,
-} from 'react';
+import styled from '@emotion/styled';
+import { Children, ElementType, FC, PropsWithChildren } from 'react';
 
 import {
   DynamicIcon,
@@ -209,15 +203,30 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
   );
 };
 
+const StyledListItem = styled.li`
+  margin-top: ${spacing.xxxs};
+  padding: 0 ${spacing.md};
+  position: relative;
+
+  ::before {
+    border-bottom: solid 1px ${colors.coral};
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 0.925rem;
+    width: 1.125rem;
+  }
+`;
+
 export type ServiceCardProps = {
-  children: React.ReactNode;
+  details: Array<string>;
   heading: string;
   id: string;
   text: string;
 };
 
 export const ServiceCard: FC<ServiceCardProps> = ({
-  children,
+  details,
   heading,
   id,
   text,
@@ -236,7 +245,16 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       >
         {text}
       </Text>
-      {children}
+      <ul
+        css={css`
+          list-style: none;
+          line-height: 1.75;
+        `}
+      >
+        {details.map((detail, index) => (
+          <StyledListItem key={`detail=${index + 1}`}>{detail}</StyledListItem>
+        ))}
+      </ul>
     </Card>
   );
 };
@@ -260,9 +278,9 @@ export const CardGrid: FC<PropsWithChildren> = ({ children, ...props }) => {
       `}
       {...props}
     >
-      {Children.map(children, (child) =>
-        cloneElement(child as ReactElement<any>, { as: 'li' }),
-      )}
+      {Children.map(children, (child) => (
+        <li>{child}</li>
+      ))}
     </ul>
   );
 };

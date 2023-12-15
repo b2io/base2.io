@@ -5,7 +5,18 @@ First and foremost we are experts at working with you.`,
   title: 'Service Philosophy',
 };
 
-export const SERVICES = [
+interface ServicesDetail {
+  description: string;
+  details: Array<string>;
+  serviceName: string;
+}
+export interface Services {
+  sectionTitle: string;
+  services: Array<ServicesDetail>;
+  sectionDescription?: string;
+}
+
+export const SERVICES: Array<Services> = [
   {
     sectionTitle: 'Discovery Consultation',
     services: [
@@ -68,6 +79,30 @@ export const SERVICES = [
     ],
   },
   {
+    sectionDescription: `If your tech partnerships have failed in the past, you are not alone. It's difficult to find a consistent group who are reliable, communicative, and fulfill commitments. At Base Two, we deeply invest in the tasks we're given and take ownership of the systems we work on and results we achieve. It's important that we are a team working together to solve problems and build solutions we're proud of. Let us be part of your internal engineering team.`,
+    sectionTitle: 'Committed Partner',
+    services: [
+      {
+        description: `Base Two’s Retainer service provides a sustainable solution for your software development needs. We understand that building, mentoring, and retaining a talented engineering team is a complex and time-consuming task, often challenging for many businesses. Our service offers the expertise of dedicated professionals who become an extension of your team, ensuring continuity and stability in your software development efforts. With our deep understanding of nurturing engineering talent, we offer more than just staffing solutions; we become your external software development group.`,
+        details: [
+          'Offering dedicated professionals to meet your flexible and evolving staffing needs in software development.',
+          'Providing a team of skilled engineers, each with their own areas of expertise.',
+          'Specializing in the growth and development of engineering talent, ensuring a high-quality, consistent output for your projects.',
+          'Acting as your external software group, we handle the complexities of hiring and team management, allowing you to focus on core business activities',
+        ],
+        serviceName: 'Retainer',
+      },
+      {
+        description: `At Base Two, we understand the dynamic needs of businesses requiring extra muscle. Our Team Integration service is designed to provide a seamless partnership where we blend our frontend and backend expertise with your existing project teams, tools, and processes. Base Two enhances your development capabilities, ensuring that our contribution feels like a natural extension of your own team.`,
+        details: [
+          "Seamless integration of additional development resources to augment your team's capabilities.",
+          'Collaborative engagement with your staff, utilizing your established tools and processes for a unified approach.',
+        ],
+        serviceName: 'Team Integration',
+      },
+    ],
+  },
+  {
     sectionTitle: 'Mentorship, Guidance, and Strategy',
     services: [
       {
@@ -94,31 +129,6 @@ export const SERVICES = [
           'Professional handoff of deliverables, complete with dedicated support for a smooth transition and continued growth.',
         ],
         serviceName: 'Targeted MVP',
-      },
-    ],
-  },
-  {
-    sectionDescription: `If your tech partnerships have failed in the past, you are not alone. It's difficult to find a consistent group who are reliable, communicative, and fulfill commitments. At Base Two, we deeply invest in the tasks we're given and take ownership of the systems we work on and results we achieve. It's important that we are a team working together to solve problems and build solutions we're proud of. Let us be part of your internal engineering team.`,
-    sectionHeader: 'Commited Partner',
-    sectionTitle: 'Committed Partner',
-    services: [
-      {
-        description: `Base Two’s Retainer service provides a sustainable solution for your software development needs. We understand that building, mentoring, and retaining a talented engineering team is a complex and time-consuming task, often challenging for many businesses. Our service offers the expertise of dedicated professionals who become an extension of your team, ensuring continuity and stability in your software development efforts. With our deep understanding of nurturing engineering talent, we offer more than just staffing solutions; we become your external software development group.`,
-        details: [
-          'Offering dedicated professionals to meet your flexible and evolving staffing needs in software development.',
-          'Providing a team of skilled engineers, each with their own areas of expertise.',
-          'Specializing in the growth and development of engineering talent, ensuring a high-quality, consistent output for your projects.',
-          'Acting as your external software group, we handle the complexities of hiring and team management, allowing you to focus on core business activities',
-        ],
-        serviceName: 'Retainer',
-      },
-      {
-        description: `At Base Two, we understand the dynamic needs of businesses requiring extra muscle. Our Team Integration service is designed to provide a seamless partnership where we blend our frontend and backend expertise with your existing project teams, tools, and processes. Base Two enhances your development capabilities, ensuring that our contribution feels like a natural extension of your own team.`,
-        details: [
-          "Seamless integration of additional development resources to augment your team's capabilities.",
-          'Collaborative engagement with your staff, utilizing your established tools and processes for a unified approach.',
-        ],
-        serviceName: 'Team Integration',
       },
     ],
   },

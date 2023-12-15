@@ -6,7 +6,7 @@ import { Link } from 'react-scroll';
 import { CardGrid, Heading, ServiceCard, Text } from '~/components';
 import { atMinLg, atMinXL, colors, spacing } from '~/theme';
 
-import { SERVICE_PHILOSOPHY, SERVICES } from './services';
+import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -19,21 +19,6 @@ const ContentWrapper = styled.div`
     gap: ${spacing.xxl1};
     justify-content: space-between;
     margin-bottom: ${spacing.xxl};
-  }
-`;
-
-const StyledListItem = styled.li`
-  margin-top: ${spacing.xxxs};
-  padding: 0 ${spacing.md};
-  position: relative;
-
-  ::before {
-    border-bottom: solid 1px ${colors.coral};
-    content: '';
-    left: 0;
-    position: absolute;
-    top: 0.925rem;
-    width: 1.125rem;
   }
 `;
 
@@ -68,6 +53,21 @@ const StyledNavItem = styled.li`
 `;
 
 export const OurServices: FC = (props) => {
+  const serviceList: Array<Services> = SERVICES.reduce<Array<any[]>>(
+    (acc, cur) => {
+      cur.services.length === 1 ? acc[0].push(cur) : acc[1].push(cur);
+      return acc;
+    },
+    [[], []],
+  ).flat();
+
+  const serviceNames = serviceList.reduce<Array<string>>((acc, cur) => {
+    cur.services.map(({ serviceName }) => {
+      acc.push(serviceName);
+    });
+    return acc;
+  }, []);
+
   return (
     <section
       css={css`
@@ -112,7 +112,7 @@ export const OurServices: FC = (props) => {
             Services
           </Heading>
           <TableOfContents>
-            {SERVICES.map((item, index) => (
+            {serviceNames.map((name, index) => (
               <StyledNavItem key={index}>
                 <Link
                   css={css`
@@ -122,13 +122,13 @@ export const OurServices: FC = (props) => {
                       color: ${colors.coral};
                     }
                   `}
-                  to={`${item.sectionTitle}`}
+                  to={name}
                   spy={true}
                   smooth="easeInOutQuart"
                   offset={-100}
                   duration={2000}
                 >
-                  {item.sectionTitle}
+                  {name}
                 </Link>
               </StyledNavItem>
             ))}
@@ -141,8 +141,56 @@ export const OurServices: FC = (props) => {
           margin-top: ${spacing.xxl1};
         `}
       >
-        {SERVICES.filter((item) => !item.sectionHeader).map(
-          (service, index) => (
+        {serviceList.map((service, index) => {
+          return service.services.length > 1 ? (
+            <section
+              key={`service-${index + 1}`}
+              id={`${service.sectionTitle}`}
+              css={css`
+                grid-column-start: 1;
+                grid-column-end: 3;
+              `}
+            >
+              <Heading
+                as="h3"
+                variant="h2"
+                css={css`
+                  margin-bottom: ${spacing.xs};
+                `}
+              >
+                {service.sectionTitle}
+              </Heading>
+              {service.sectionDescription && (
+                <Heading
+                  as="h4"
+                  variant="h3"
+                  css={css`
+                    margin-bottom: ${spacing.lg};
+                  `}
+                >
+                  {service.sectionDescription}
+                </Heading>
+              )}
+              <CardGrid
+                css={css`
+                  max-width: unset;
+                `}
+              >
+                {service.services.map((item, index) => (
+                  <ServiceCard
+                    css={css`
+                      margin-top: ${spacing.xs};
+                    `}
+                    id={item.serviceName}
+                    key={index}
+                    heading={item.serviceName}
+                    text={item.description}
+                    details={item.details}
+                  />
+                ))}
+              </CardGrid>
+            </section>
+          ) : (
             <section
               key={`service-${index + 1}`}
               id={`${service.sectionTitle}`}
@@ -159,85 +207,13 @@ export const OurServices: FC = (props) => {
                   key={index}
                   heading={item.serviceName}
                   text={item.description}
-                >
-                  <ul
-                    css={css`
-                      list-style: none;
-                      line-height: 1.75;
-                    `}
-                  >
-                    {item.details.map((detail, index) => (
-                      <StyledListItem key={`detail=${index + 1}`}>
-                        {detail}
-                      </StyledListItem>
-                    ))}
-                  </ul>
-                </ServiceCard>
+                  details={item.details}
+                />
               ))}
             </section>
-          ),
-        )}
+          );
+        })}
       </CardGrid>
-      {SERVICES.filter((item) => item.sectionHeader).map((service, index) => (
-        <section
-          key={`service-${index + 1}`}
-          id={`${service.sectionTitle}`}
-          css={css`
-            margin-top: ${spacing.xxl2};
-          `}
-        >
-          <Heading
-            as="h3"
-            variant="h2"
-            css={css`
-              margin-bottom: ${spacing.xs};
-            `}
-          >
-            {service.sectionHeader}
-          </Heading>
-          {service.sectionDescription && (
-            <Heading
-              as="h4"
-              variant="h3"
-              css={css`
-                margin-bottom: ${spacing.lg};
-              `}
-            >
-              {service.sectionDescription}
-            </Heading>
-          )}
-          <CardGrid
-            css={css`
-              max-width: unset;
-            `}
-          >
-            {service.services.map((item, index) => (
-              <ServiceCard
-                css={css`
-                  margin-top: ${spacing.xs};
-                `}
-                id={`serviceCard-${index + 1}`}
-                key={index}
-                heading={item.serviceName}
-                text={item.description}
-              >
-                <ul
-                  css={css`
-                    list-style: none;
-                    line-height: 1.75;
-                  `}
-                >
-                  {item.details.map((detail, index) => (
-                    <StyledListItem key={`detail=${index + 1}`}>
-                      {detail}
-                    </StyledListItem>
-                  ))}
-                </ul>
-              </ServiceCard>
-            ))}
-          </CardGrid>
-        </section>
-      ))}
     </section>
   );
 };
