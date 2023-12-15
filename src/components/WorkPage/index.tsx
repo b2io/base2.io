@@ -50,7 +50,7 @@ export const WorkPage: FC = () => {
       >
         <CaseStudyPreview
           alt={'netjets app screenshot'}
-          href="/work/netjets"
+          href="/work/flynetjets"
           info="Native application compiles to IOS & Android"
           src={require('./images/netjets.jpg')}
           title="Fly Netjets"
