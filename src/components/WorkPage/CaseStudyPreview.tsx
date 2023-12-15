@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import NextImage, {
   ImageProps as NextImageProps,
   StaticImageData,
-} from "next/legacy/image";
+} from 'next/image';
 import type { FC } from 'react';
 
 import { Link, Text } from '~/components';
@@ -24,8 +24,15 @@ export const CaseStudyPreview: FC<CaseStudyPreviewImageProps> = ({
   title,
 }) => {
   return (
-    <div>
-      <NextImage alt={alt} layout="responsive" src={src} />
+    <div
+      css={css`
+        img {
+          height: auto;
+          width: 100%;
+        }
+      `}
+    >
+      <NextImage alt={alt} src={src} />
       <div
         css={css`
           margin-top: -${spacing.md};
