@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import NextImage from "next/legacy/image";
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import {
@@ -69,16 +69,17 @@ export const NetJetsPage: FC = () => {
         css={css`
           margin: 0 calc(50% - 50vw);
 
+          img {
+            height: auto;
+            width: 100%;
+          }
+
           ${atMinDesktop} {
             margin: 0 -${spacing.xxl1};
           }
         `}
       >
-        <NextImage
-          alt="Jet"
-          layout="responsive"
-          src={require('./images/netjets-full-width.jpg')}
-        />
+        <NextImage alt="Jet" src={require('./images/netjets-full-width.jpg')} />
       </section>
       <CaseStudySummaryPane
         summaryText="Fly NetJets lets clients manage their accounts, book upcoming trips, and 
