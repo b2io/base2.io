@@ -6,8 +6,8 @@ import { atMinDesktop, atMinTablet, spacing } from '~/theme';
 
 type CaseStudyIntroContentPaneProps = {
   introText: string | ReactNode;
-  askText: string;
-  solutionText: string;
+  askText?: string;
+  solutionText?: string;
 };
 
 export const CaseStudyIntroContentPane: FC<CaseStudyIntroContentPaneProps> = ({
@@ -46,8 +46,10 @@ export const CaseStudyIntroContentPane: FC<CaseStudyIntroContentPaneProps> = ({
           max-width: 100%;
         `}
       >
-        <BasicCard heading="The ask" text={askText} />
-        <BasicCard heading="The solution" text={solutionText} />
+        {askText && <BasicCard heading="The ask" text={askText} />}
+        {solutionText && (
+          <BasicCard heading="The solution" text={solutionText} />
+        )}
       </CardGrid>
     </section>
   );
