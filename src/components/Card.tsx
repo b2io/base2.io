@@ -1,6 +1,13 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { Children, ElementType, FC, PropsWithChildren } from 'react';
+import {
+  Children,
+  cloneElement,
+  ElementType,
+  FC,
+  PropsWithChildren,
+  ReactElement,
+} from 'react';
 
 import {
   DynamicIcon,
@@ -278,9 +285,9 @@ export const CardGrid: FC<PropsWithChildren> = ({ children, ...props }) => {
       `}
       {...props}
     >
-      {Children.map(children, (child) => (
-        <li>{child}</li>
-      ))}
+      {Children.map(children, (child) =>
+        cloneElement(child as ReactElement<any>, { as: 'li' }),
+      )}
     </ul>
   );
 };
