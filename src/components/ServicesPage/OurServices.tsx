@@ -61,19 +61,21 @@ const ServicesWrapper = styled.section`
   padding: 1rem;
 `;
 
-const ServiceContainer = styled.div`
+const Service = styled.div`
   border: 1px solid red;
   border-radius: 10px;
   display: flex;
   flex: 1 1 auto;
+  /* width: 100%; */
 
   // TODO: use theme var
   @media (min-width: 768px) {
-    max-width: calc(50% - 1rem);
+    /* max-width: calc(50% - 1rem); */
   }
 `;
 
 export const OurServices: FC = (props) => {
+  // TODO: why
   const serviceList: Array<Services> = SERVICES.reduce<Array<any[]>>(
     (acc, cur) => {
       cur.services.length === 1 ? acc[0].push(cur) : acc[1].push(cur);
@@ -82,6 +84,7 @@ export const OurServices: FC = (props) => {
     [[], []],
   ).flat();
 
+  // TODO: why
   const serviceNames = serviceList.reduce<Array<string>>((acc, cur) => {
     cur.services.map(({ serviceName }) => {
       acc.push(serviceName);
@@ -157,77 +160,18 @@ export const OurServices: FC = (props) => {
         </div>
       </ContentWrapper>
       <ServicesWrapper>
-        <ServiceContainer>
-          <div className="two">
-            <h4>
-              this is a long title: Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Quas repellendus repudiandae maiores blanditiis
-              quam temporibus cum. Numquam, nulla. Aspernatur numquam dolore id
-              earum, officia debitis.
-            </h4>
-            <div className="three">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
-              consequuntur vitae dolorem. Adipisci inventore dignissimos
-              voluptatibus officia?
-            </div>
-          </div>
-        </ServiceContainer>
-        <ServiceContainer>
-          <div className="two">
-            <h4>title</h4>
-            <div className="three">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
-              consequuntur vitae dolorem. Adipisci inventore dignissimos
-              voluptatibus officia?
-            </div>
-          </div>
-        </ServiceContainer>
-        <ServiceContainer>
-          <div className="two">
-            <h4>title</h4>
-            <div className="three">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
-              consequuntur vitae dolorem. Adipisci inventore dignissimos
-              voluptatibus officia?
-            </div>
-          </div>
-        </ServiceContainer>
-        <ServiceContainer>
-          <div className="two">
-            <h4>title</h4>
-            <div className="three">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
-              consequuntur vitae dolorem. Adipisci inventore dignissimos
-              voluptatibus officia?
-            </div>
-          </div>
-        </ServiceContainer>
-        <ServiceContainer>
-          <div className="two">
-            <h4>title</h4>
-            <div className="three">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
-              consequuntur vitae dolorem. Adipisci inventore dignissimos
-              voluptatibus officia?
-            </div>
-          </div>
-        </ServiceContainer>
-        <ServiceContainer>
-          <div className="two">
-            <h4>title</h4>
-            <div className="three">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
-              consequuntur vitae dolorem. Adipisci inventore dignissimos
-              voluptatibus officia?
-            </div>
-          </div>
-        </ServiceContainer>
+        {SERVICES.map((item, index) => (
+          <Service
+            key={index}
+            css={css`
+              width: ${item.services.length > 1
+                ? 'calc(100% - 1rem)'
+                : 'calc(50% - 1rem)'};
+            `}
+          >
+            {item.sectionTitle}
+          </Service>
+        ))}
       </ServicesWrapper>
       <CardGrid
         css={css`
