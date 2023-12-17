@@ -5,7 +5,7 @@ import { Link } from 'react-scroll';
 import { useWindowSize } from 'react-use';
 
 import { CardGrid, Heading, ServiceCard, Text } from '~/components';
-import { atMinLg, atMinXL, colors, spacing } from '~/theme';
+import { atMinLg, atMinXL, bp, colors, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
 
@@ -56,7 +56,6 @@ const StyledNavItem = styled.li`
 const ServicesWrapper = styled.section`
   display: flex;
   border: 1px solid yellow;
-  border-radius: 10px;
   flex-wrap: wrap;
   gap: 2rem;
   padding: 1rem;
@@ -64,21 +63,14 @@ const ServicesWrapper = styled.section`
 
 const Service = styled.div`
   border: 1px solid red;
-  border-radius: 10px;
   display: flex;
   flex: 1 1 auto;
-  /* width: 100%; */
-
-  // TODO: use theme var
-  @media (min-width: 768px) {
-    /* max-width: calc(50% - 1rem); */
-  }
+  flex-wrap: wrap;
 `;
 
 export const OurServices: FC = (props) => {
   const { width } = useWindowSize();
-
-  console.log(width);
+  const isMobile = width < Number(bp.tablet);
 
   const serviceList: Array<Services> = SERVICES.reduce<Array<any[]>>(
     (acc, cur) => {
@@ -163,16 +155,54 @@ export const OurServices: FC = (props) => {
         </div>
       </ContentWrapper>
       <ServicesWrapper>
-        {serviceList.map((item, index) => (
+        {serviceList.map((service, index) => (
           <Service
-            key={index}
+            key={`service-${index + 1}`}
             css={css`
-              width: ${item.services.length > 1
+              width: ${service.services.length > 1
+                ? 'calc(100% - 1rem)'
+                : isMobile
                 ? 'calc(100% - 1rem)'
                 : 'calc(50% - 1rem)'};
             `}
           >
-            {item.sectionTitle}
+            {service.services.length > 1 && (
+              <span>
+                <Heading
+                  as="h3"
+                  variant="h2"
+                  css={css`
+                    margin-bottom: ${spacing.xs};
+                  `}
+                >
+                  {service.sectionTitle}
+                </Heading>
+                {service.sectionDescription && (
+                  <Heading
+                    as="h4"
+                    variant="h3"
+                    css={css`
+                      margin-bottom: ${spacing.lg};
+                    `}
+                  >
+                    {service.sectionDescription}
+                  </Heading>
+                )}
+              </span>
+            )}
+
+            {service.services.map((serviceItem, index) => (
+              <ServiceCard
+                css={css`
+                  margin-top: ${spacing.xs};
+                `}
+                id={serviceItem.serviceName}
+                key={index}
+                heading={serviceItem.serviceName}
+                text={serviceItem.description}
+                details={serviceItem.details}
+              />
+            ))}
           </Service>
         ))}
       </ServicesWrapper>
