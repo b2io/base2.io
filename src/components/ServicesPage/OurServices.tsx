@@ -9,6 +9,8 @@ import { atMinLg, atMinXL, bp, colors, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
 
+const gapSize = spacing.xxl;
+
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -54,18 +56,20 @@ const StyledNavItem = styled.li`
 `;
 
 const ServicesWrapper = styled.section`
+  outline: 1px solid yellow;
   display: flex;
-  border: 1px solid yellow;
   flex-wrap: wrap;
-  gap: 2rem;
-  padding: 1rem;
+  gap: ${gapSize};
+  margin-top: ${spacing.xxl2};
+  /* padding: 1rem; */
 `;
 
 const Service = styled.div`
-  border: 1px solid red;
+  outline: 1px solid red;
   display: flex;
   flex: 1 1 auto;
   flex-wrap: wrap;
+  gap: ${spacing.xs};
 `;
 
 export const OurServices: FC = (props) => {
@@ -155,53 +159,58 @@ export const OurServices: FC = (props) => {
         </div>
       </ContentWrapper>
       <ServicesWrapper>
-        {serviceList.map((service, index) => (
-          <Service
-            key={`service-${index + 1}`}
-            css={css`
-              width: ${service.services.length > 1
-                ? 'calc(100% - 1rem)'
-                : isMobile
-                ? 'calc(100% - 1rem)'
-                : 'calc(50% - 1rem)'};
-            `}
-          >
-            {service.services.length > 1 && (
-              <span>
-                <Heading
-                  as="h3"
-                  variant="h2"
-                  css={css`
-                    margin-bottom: ${spacing.xs};
-                  `}
-                >
-                  {service.sectionTitle}
-                </Heading>
-                {service.sectionDescription && (
+        {serviceList.map((service, index) => {
+          const multipleServices = service.services.length > 1;
+
+          return (
+            <Service
+              key={`service-${index + 1}`}
+              css={css`
+                width: ${multipleServices
+                  ? `calc(100% - ${gapSize})`
+                  : isMobile
+                  ? `calc(100% - ${gapSize})`
+                  : `calc(50% - ${gapSize})`};
+              `}
+            >
+              {multipleServices && (
+                <span>
                   <Heading
-                    as="h4"
-                    variant="h3"
+                    as="h3"
+                    variant="h2"
                     css={css`
-                      margin-bottom: ${spacing.lg};
+                      margin-bottom: ${spacing.xs};
                     `}
                   >
-                    {service.sectionDescription}
+                    {service.sectionTitle}
                   </Heading>
-                )}
-              </span>
-            )}
+                  {service.sectionDescription && (
+                    <Heading
+                      as="h4"
+                      variant="h3"
+                      css={css`
+                        margin-bottom: ${spacing.lg};
+                      `}
+                    >
+                      {service.sectionDescription}
+                    </Heading>
+                  )}
+                </span>
+              )}
 
-            {service.services.map((serviceItem, index) => (
-              <ServiceCard
-                id={serviceItem.serviceName}
-                key={index}
-                heading={serviceItem.serviceName}
-                text={serviceItem.description}
-                details={serviceItem.details}
-              />
-            ))}
-          </Service>
-        ))}
+              {service.services.map((serviceItem, index) => (
+                <ServiceCard
+                  css={css``}
+                  id={serviceItem.serviceName}
+                  key={index}
+                  heading={serviceItem.serviceName}
+                  text={serviceItem.description}
+                  details={serviceItem.details}
+                />
+              ))}
+            </Service>
+          );
+        })}
       </ServicesWrapper>
       <CardGrid
         css={css`
