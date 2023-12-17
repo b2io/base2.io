@@ -53,7 +53,7 @@ const StyledNavItem = styled.li`
   }
 `;
 
-const ServicesWrapper = styled.section`
+const ServicesContainer = styled.section`
   outline: 1px solid yellow;
   display: flex;
   flex-wrap: wrap;
@@ -155,7 +155,7 @@ export const OurServices: FC = (props) => {
           </TableOfContents>
         </div>
       </ContentWrapper>
-      <ServicesWrapper>
+      <ServicesContainer>
         {serviceList.map((service, index) => {
           const multipleServices = service.services.length > 1;
 
@@ -207,7 +207,7 @@ export const OurServices: FC = (props) => {
             </Service>
           );
         })}
-      </ServicesWrapper>
+      </ServicesContainer>
       <CardGrid
         css={css`
           margin-bottom: ${spacing.md};
