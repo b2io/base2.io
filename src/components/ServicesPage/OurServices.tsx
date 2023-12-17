@@ -52,6 +52,27 @@ const StyledNavItem = styled.li`
   }
 `;
 
+const ServicesWrapper = styled.section`
+  display: flex;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem;
+`;
+
+const ServiceContainer = styled.div`
+  border: 1px solid red;
+  border-radius: 10px;
+  display: flex;
+  flex: 1 1 auto;
+
+  // TODO: use theme var
+  @media (min-width: 768px) {
+    max-width: calc(50% - 1rem);
+  }
+`;
+
 export const OurServices: FC = (props) => {
   const serviceList: Array<Services> = SERVICES.reduce<Array<any[]>>(
     (acc, cur) => {
@@ -135,6 +156,79 @@ export const OurServices: FC = (props) => {
           </TableOfContents>
         </div>
       </ContentWrapper>
+      <ServicesWrapper>
+        <ServiceContainer>
+          <div className="two">
+            <h4>
+              this is a long title: Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Quas repellendus repudiandae maiores blanditiis
+              quam temporibus cum. Numquam, nulla. Aspernatur numquam dolore id
+              earum, officia debitis.
+            </h4>
+            <div className="three">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
+              consequuntur vitae dolorem. Adipisci inventore dignissimos
+              voluptatibus officia?
+            </div>
+          </div>
+        </ServiceContainer>
+        <ServiceContainer>
+          <div className="two">
+            <h4>title</h4>
+            <div className="three">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
+              consequuntur vitae dolorem. Adipisci inventore dignissimos
+              voluptatibus officia?
+            </div>
+          </div>
+        </ServiceContainer>
+        <ServiceContainer>
+          <div className="two">
+            <h4>title</h4>
+            <div className="three">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
+              consequuntur vitae dolorem. Adipisci inventore dignissimos
+              voluptatibus officia?
+            </div>
+          </div>
+        </ServiceContainer>
+        <ServiceContainer>
+          <div className="two">
+            <h4>title</h4>
+            <div className="three">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
+              consequuntur vitae dolorem. Adipisci inventore dignissimos
+              voluptatibus officia?
+            </div>
+          </div>
+        </ServiceContainer>
+        <ServiceContainer>
+          <div className="two">
+            <h4>title</h4>
+            <div className="three">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
+              consequuntur vitae dolorem. Adipisci inventore dignissimos
+              voluptatibus officia?
+            </div>
+          </div>
+        </ServiceContainer>
+        <ServiceContainer>
+          <div className="two">
+            <h4>title</h4>
+            <div className="three">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              quidem, recusandae a perspiciatis laudantium ipsa nesciunt modi
+              consequuntur vitae dolorem. Adipisci inventore dignissimos
+              voluptatibus officia?
+            </div>
+          </div>
+        </ServiceContainer>
+      </ServicesWrapper>
       <CardGrid
         css={css`
           margin-bottom: ${spacing.md};
