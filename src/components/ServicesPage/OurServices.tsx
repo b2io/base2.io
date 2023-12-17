@@ -61,7 +61,6 @@ const ServicesWrapper = styled.section`
   flex-wrap: wrap;
   gap: ${gapSize};
   margin-top: ${spacing.xxl2};
-  /* padding: 1rem; */
 `;
 
 const Service = styled.div`
