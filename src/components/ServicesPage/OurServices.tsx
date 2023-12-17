@@ -75,7 +75,6 @@ const Service = styled.div`
 `;
 
 export const OurServices: FC = (props) => {
-  // TODO: why
   const serviceList: Array<Services> = SERVICES.reduce<Array<any[]>>(
     (acc, cur) => {
       cur.services.length === 1 ? acc[0].push(cur) : acc[1].push(cur);
@@ -84,7 +83,6 @@ export const OurServices: FC = (props) => {
     [[], []],
   ).flat();
 
-  // TODO: why
   const serviceNames = serviceList.reduce<Array<string>>((acc, cur) => {
     cur.services.map(({ serviceName }) => {
       acc.push(serviceName);
@@ -160,7 +158,7 @@ export const OurServices: FC = (props) => {
         </div>
       </ContentWrapper>
       <ServicesWrapper>
-        {SERVICES.map((item, index) => (
+        {serviceList.map((item, index) => (
           <Service
             key={index}
             css={css`
