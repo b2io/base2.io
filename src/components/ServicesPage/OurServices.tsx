@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { Link } from 'react-scroll';
 import { useWindowSize } from 'react-use';
 
-import { CardGrid, Heading, ServiceCard, Text } from '~/components';
+import { Heading, ServiceCard, Text } from '~/components';
 import { atMinLg, atMinXL, bp, colors, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
@@ -54,7 +54,6 @@ const StyledNavItem = styled.li`
 `;
 
 const ServicesContainer = styled.section`
-  outline: 1px solid yellow;
   display: flex;
   flex-wrap: wrap;
   gap: ${spacing.xxl};
@@ -62,7 +61,6 @@ const ServicesContainer = styled.section`
 `;
 
 const Service = styled.div`
-  outline: 1px solid red;
   display: flex;
   flex: 1 1 auto;
   flex-wrap: wrap;
@@ -194,99 +192,33 @@ export const OurServices: FC = (props) => {
                   )}
                 </div>
               )}
-              {service.services.map((serviceItem, index) => (
-                <ServiceCard
-                  css={css``}
-                  id={serviceItem.serviceName}
-                  key={index}
-                  heading={serviceItem.serviceName}
-                  text={serviceItem.description}
-                  details={serviceItem.details}
-                />
-              ))}
+              <div
+                css={css`
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: ${spacing.xxl};
+                `}
+              >
+                {service.services.map((serviceItem, index) => (
+                  <ServiceCard
+                    css={css`
+                      flex: 1 1 auto;
+                      width: ${!isMobile && multipleServices
+                        ? `calc(50% - ${spacing.xxl})`
+                        : 'inherit'};
+                    `}
+                    id={serviceItem.serviceName}
+                    key={index}
+                    heading={serviceItem.serviceName}
+                    text={serviceItem.description}
+                    details={serviceItem.details}
+                  />
+                ))}
+              </div>
             </Service>
           );
         })}
       </ServicesContainer>
-      <CardGrid
-        css={css`
-          margin-bottom: ${spacing.md};
-          margin-top: ${spacing.xxl1};
-        `}
-      >
-        {serviceList.map((service, index) => {
-          return service.services.length > 1 ? (
-            <section
-              key={`service-${index + 1}`}
-              id={`${service.sectionTitle}`}
-              css={css`
-                grid-column-start: 1;
-                grid-column-end: 3;
-              `}
-            >
-              <Heading
-                as="h3"
-                variant="h2"
-                css={css`
-                  margin-bottom: ${spacing.xs};
-                `}
-              >
-                {service.sectionTitle}
-              </Heading>
-              {service.sectionDescription && (
-                <Heading
-                  as="h4"
-                  variant="h3"
-                  css={css`
-                    margin-bottom: ${spacing.lg};
-                  `}
-                >
-                  {service.sectionDescription}
-                </Heading>
-              )}
-              <CardGrid
-                css={css`
-                  max-width: unset;
-                `}
-              >
-                {service.services.map((item, index) => (
-                  <ServiceCard
-                    css={css`
-                      margin-top: ${spacing.xs};
-                    `}
-                    id={item.serviceName}
-                    key={index}
-                    heading={item.serviceName}
-                    text={item.description}
-                    details={item.details}
-                  />
-                ))}
-              </CardGrid>
-            </section>
-          ) : (
-            <section
-              key={`service-${index + 1}`}
-              id={`${service.sectionTitle}`}
-            >
-              {service.services.map((item, index) => (
-                <ServiceCard
-                  css={css`
-                    margin-top: ${spacing.xs};
-                    &:not(:last-of-type) {
-                      margin-bottom: ${spacing.md};
-                    }
-                  `}
-                  id={`serviceCard-${index + 1}`}
-                  key={index}
-                  heading={item.serviceName}
-                  text={item.description}
-                  details={item.details}
-                />
-              ))}
-            </section>
-          );
-        })}
-      </CardGrid>
     </section>
   );
 };
