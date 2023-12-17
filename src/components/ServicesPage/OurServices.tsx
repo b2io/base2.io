@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
 import { Link } from 'react-scroll';
+import { useWindowSize } from 'react-use';
 
 import { CardGrid, Heading, ServiceCard, Text } from '~/components';
 import { atMinLg, atMinXL, colors, spacing } from '~/theme';
@@ -75,6 +76,10 @@ const Service = styled.div`
 `;
 
 export const OurServices: FC = (props) => {
+  const { width } = useWindowSize();
+
+  console.log(width);
+
   const serviceList: Array<Services> = SERVICES.reduce<Array<any[]>>(
     (acc, cur) => {
       cur.services.length === 1 ? acc[0].push(cur) : acc[1].push(cur);
