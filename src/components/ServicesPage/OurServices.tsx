@@ -9,8 +9,6 @@ import { atMinLg, atMinXL, bp, colors, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
 
-const gapSize = spacing.xxl;
-
 const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -59,7 +57,7 @@ const ServicesWrapper = styled.section`
   outline: 1px solid yellow;
   display: flex;
   flex-wrap: wrap;
-  gap: ${gapSize};
+  gap: ${spacing.xxl};
   margin-top: ${spacing.xxl2};
 `;
 
@@ -166,14 +164,14 @@ export const OurServices: FC = (props) => {
               key={`service-${index + 1}`}
               css={css`
                 width: ${multipleServices
-                  ? `calc(100% - ${gapSize})`
+                  ? `calc(100% - ${spacing.xxl})`
                   : isMobile
-                  ? `calc(100% - ${gapSize})`
-                  : `calc(50% - ${gapSize})`};
+                  ? `calc(100% - ${spacing.xxl})`
+                  : `calc(50% - ${spacing.xxl})`};
               `}
             >
               {multipleServices && (
-                <span>
+                <div>
                   <Heading
                     as="h3"
                     variant="h2"
@@ -194,9 +192,8 @@ export const OurServices: FC = (props) => {
                       {service.sectionDescription}
                     </Heading>
                   )}
-                </span>
+                </div>
               )}
-
               {service.services.map((serviceItem, index) => (
                 <ServiceCard
                   css={css``}
