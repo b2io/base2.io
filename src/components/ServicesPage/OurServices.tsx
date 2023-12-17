@@ -193,9 +193,6 @@ export const OurServices: FC = (props) => {
 
             {service.services.map((serviceItem, index) => (
               <ServiceCard
-                css={css`
-                  margin-top: ${spacing.xs};
-                `}
                 id={serviceItem.serviceName}
                 key={index}
                 heading={serviceItem.serviceName}
