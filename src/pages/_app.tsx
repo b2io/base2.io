@@ -104,7 +104,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
           variants={{
             pageAnimate: { opacity: 1, y: 0 },
             pageExit: { opacity: 0, y: 100 },
-            pageInitial: { opacity: 0, y: -100 },
+            pageInitial: { opacity: 0, y: 0 },
           }}
         >
           <ThemeProvider theme={theme}>
