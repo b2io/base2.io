@@ -175,7 +175,7 @@ export const OurServices: FC = (props) => {
               `}
             >
               {multipleServices && (
-                <div>
+                <>
                   <Heading
                     as="h3"
                     variant="h2"
@@ -196,7 +196,7 @@ export const OurServices: FC = (props) => {
                       {service.sectionDescription}
                     </Heading>
                   )}
-                </div>
+                </>
               )}
               <ServiceCardContainer>
                 {service.services.map((serviceItem, index) => (
