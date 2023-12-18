@@ -53,7 +53,7 @@ const StyledNavItem = styled.li`
   }
 `;
 
-const ServicesContainer = styled.section`
+const ServiceListContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
   gap: ${spacing.xxl};
@@ -65,6 +65,12 @@ const Service = styled.div`
   flex: 1 1 auto;
   flex-wrap: wrap;
   gap: ${spacing.xs};
+`;
+
+const ServiceCardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${spacing.xxl};
 `;
 
 export const OurServices: FC = (props) => {
@@ -153,7 +159,7 @@ export const OurServices: FC = (props) => {
           </TableOfContents>
         </div>
       </ContentWrapper>
-      <ServicesContainer>
+      <ServiceListContainer>
         {serviceList.map((service, index) => {
           const multipleServices = service.services.length > 1;
 
@@ -192,13 +198,7 @@ export const OurServices: FC = (props) => {
                   )}
                 </div>
               )}
-              <div
-                css={css`
-                  display: flex;
-                  flex-wrap: wrap;
-                  gap: ${spacing.xxl};
-                `}
-              >
+              <ServiceCardContainer>
                 {service.services.map((serviceItem, index) => (
                   <ServiceCard
                     css={css`
@@ -214,11 +214,11 @@ export const OurServices: FC = (props) => {
                     details={serviceItem.details}
                   />
                 ))}
-              </div>
+              </ServiceCardContainer>
             </Service>
           );
         })}
-      </ServicesContainer>
+      </ServiceListContainer>
     </section>
   );
 };
