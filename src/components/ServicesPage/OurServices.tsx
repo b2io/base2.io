@@ -206,9 +206,9 @@ export const OurServices: FC = (props) => {
                   <ServiceCard
                     css={css`
                       flex: 1 1 auto;
-                      width: ${!isMobile && multipleServices
-                        ? `calc(50% - ${spacing.xxl})`
-                        : 'inherit'};
+                      width: ${!isMobile &&
+                      multipleServices &&
+                      `calc(50% - ${spacing.xxl})`};
                     `}
                     id={serviceItem.serviceName}
                     key={index}
