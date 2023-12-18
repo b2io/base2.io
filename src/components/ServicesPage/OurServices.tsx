@@ -172,6 +172,9 @@ export const OurServices: FC = (props) => {
                   : isMobile
                   ? `calc(100% - ${spacing.xxl})`
                   : `calc(50% - ${spacing.xxl})`};
+                max-width: ${!multipleServices &&
+                !isMobile &&
+                'calc(50% - 1.75rem)'};
               `}
             >
               {multipleServices && (
