@@ -1,7 +1,7 @@
 import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
 import { SSRProvider } from '@react-aria/ssr';
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -94,8 +94,19 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <AnimateSharedLayout>
-        <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
+
+      <AnimatePresence onExitComplete={handleExitComplete}>
+        <motion.div
+          key={pageKey}
+          initial="pageInitial"
+          animate="pageAnimate"
+          exit="pageExit"
+          variants={{
+            pageAnimate: { opacity: 1, y: 0 },
+            pageExit: { opacity: 0, y: 100 },
+            pageInitial: { opacity: 0, y: -100 },
+          }}
+        >
           <ThemeProvider theme={theme}>
             <Global
               styles={css`
@@ -135,8 +146,8 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
               <Component {...pageProps} key={pageKey} />
             </FeatureFlagsProvider>
           </ThemeProvider>
-        </AnimatePresence>
-      </AnimateSharedLayout>
+        </motion.div>
+      </AnimatePresence>
     </SSRProvider>
   );
 };
