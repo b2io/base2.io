@@ -77,6 +77,7 @@ export const OurServices: FC = (props) => {
   const { width } = useWindowSize();
   const isMobile = width < Number(bp.tablet);
 
+  // NOTE: transforms service data to reorder service with multiple services last
   const serviceList: Array<Services> = SERVICES.reduce<Array<any[]>>(
     (acc, cur) => {
       cur.services.length === 1 ? acc[0].push(cur) : acc[1].push(cur);
