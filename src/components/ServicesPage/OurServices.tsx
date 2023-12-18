@@ -168,11 +168,6 @@ export const OurServices: FC = (props) => {
             <Service
               key={`service-${index + 1}`}
               css={css`
-                width: ${multipleServices
-                  ? `calc(100% - ${spacing.xxl})`
-                  : isMobile
-                  ? `calc(100% - ${spacing.xxl})`
-                  : `calc(50% - ${spacing.xxl})`};
                 max-width: ${!multipleServices &&
                 !isMobile &&
                 'calc(50% - 1.75rem)'};
@@ -210,6 +205,9 @@ export const OurServices: FC = (props) => {
                       width: ${!isMobile &&
                       multipleServices &&
                       `calc(50% - ${spacing.xxl})`};
+                      max-width: ${multipleServices &&
+                      !isMobile &&
+                      'calc(50% - 1.75rem)'};
                     `}
                     id={serviceItem.serviceName}
                     key={index}
