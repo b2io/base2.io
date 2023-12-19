@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { atMinSm, atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
@@ -103,7 +103,7 @@ const LogoLink: FC = () => {
   );
 };
 
-const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
+const NavItem: FC<PropsWithChildren<NavItemProps>> = ({ href, ...props }) => {
   const { asPath } = useRouter();
 
   return (
