@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import NextImage from 'next/image';
+import NextImage from 'next/legacy/image';
 import { FC } from 'react';
 
 import { Heading, Link, Text } from '~/components';
@@ -45,7 +45,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             position: relative;
             width: 100%;
 
-            &:nth-child(2) article {
+            &:nth-of-type(2) article {
               right: -${spacing.md};
               text-align: right;
 

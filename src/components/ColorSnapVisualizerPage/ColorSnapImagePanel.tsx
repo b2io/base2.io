@@ -50,7 +50,15 @@ const ImagePanelItem: FC<ImagePanelItemProps> = ({ src, alt }) => {
         }
       `}
     >
-      <NextImage src={src} alt={alt} />
+      <NextImage
+        alt={alt}
+        css={css`
+          height: auto;
+          width: 100%;
+          z-index: 1;
+        `}
+        src={src}
+      />
     </div>
   );
 };
