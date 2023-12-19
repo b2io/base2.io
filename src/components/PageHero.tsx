@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextImage from 'next/image';
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import { atMinLg, atMinXL, cssClamp } from '~/theme';
@@ -68,7 +68,7 @@ export const PageHero: FC<PageHeroProps> = ({
         `}
         {...props}
       >
-        <NextImage
+        <Image
           alt={alt}
           src={src}
           css={css`
