@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextImage, { ImageProps as NextImageProps } from 'next/image';
+import NextImage, { ImageProps as NextImageProps } from "next/legacy/image";
 import type { FC } from 'react';
 
 import {
