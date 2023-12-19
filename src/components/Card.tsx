@@ -1,8 +1,5 @@
 import { css } from '@emotion/react';
-<<<<<<< HEAD
 import styled from '@emotion/styled';
-=======
->>>>>>> main
 import {
   Children,
   cloneElement,
@@ -213,7 +210,6 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
   );
 };
 
-<<<<<<< HEAD
 const StyledListItem = styled.li`
   margin-top: ${spacing.xxxs};
   padding: 0 ${spacing.md};
@@ -270,8 +266,6 @@ export const ServiceCard: FC<ServiceCardProps> = ({
   );
 };
 
-=======
->>>>>>> main
 export const CardGrid: FC<PropsWithChildren> = ({ children, ...props }) => {
   return (
     <ul
