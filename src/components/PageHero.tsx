@@ -76,6 +76,7 @@ export const PageHero: FC<PageHeroProps> = ({
             height: auto;
             width: 100%;
           `}
+          priority
           {...imageProps}
         />
       </div>
