@@ -1,7 +1,7 @@
 export const SERVICE_PHILOSOPHY = {
   content: `Our primary goal is to build long term relationships based on mutual trust. We strive to be the best stewards of the systems we're entrusted with. Identifying the correct solutions to your problems and building them in the way that fits your needs, both short and long term.
 
-First and foremost we are experts at working with you.`,
+First and foremost, we are experts at working with you.`,
   title: 'Service Philosophy',
 };
 
