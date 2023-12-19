@@ -1,6 +1,6 @@
 import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -93,49 +93,63 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <AnimateSharedLayout>
-        <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
-          <ThemeProvider theme={theme}>
-            <Global
-              styles={css`
-                @font-face {
-                  font-display: swap;
-                  font-family: 'Roobert';
-                  font-style: normal;
-                  font-weight: 100 900;
-                  src: url(/RoobertGX.woff2) format('woff2-variations');
-                }
 
-                @font-face {
-                  font-display: swap;
-                  font-family: 'Roobert';
-                  font-style: italic;
-                  font-weight: 100 900;
-                  src: url(/RoobertItalicGX.woff2) format('woff2-variations');
-                }
+      <LayoutGroup>
+        <AnimatePresence onExitComplete={handleExitComplete}>
+          <motion.div
+            key={pageKey}
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
+            layoutId="page"
+            transition={{ duration: 0.3 }}
+          >
+            <ThemeProvider theme={theme}>
+              <Global
+                styles={css`
+                  @font-face {
+                    font-display: swap;
+                    font-family: 'Roobert';
+                    font-style: normal;
+                    font-weight: 100 900;
+                    src: url(/RoobertGX.woff2) format('woff2-variations');
+                  }
 
-                :root {
-                  color-scheme: dark;
-                }
+                  @font-face {
+                    font-display: swap;
+                    font-family: 'Roobert';
+                    font-style: italic;
+                    font-weight: 100 900;
+                    src: url(/RoobertItalicGX.woff2) format('woff2-variations');
+                  }
 
-                * {
-                  box-sizing: border-box;
-                  font-family: Roobert, sans-serif;
-                  font-feature-settings: 'ss02', 'ss05';
-                }
+                  :root {
+                    color-scheme: dark;
+                  }
 
-                body,
-                html {
-                  background-color: ${colors.background};
-                }
-              `}
-            />
-            <FeatureFlagsProvider>
-              <Component {...pageProps} key={pageKey} />
-            </FeatureFlagsProvider>
-          </ThemeProvider>
+                  * {
+                    box-sizing: border-box;
+                    font-family: Roobert, sans-serif;
+                    font-feature-settings: 'ss02', 'ss05';
+                  }
+
+                  body,
+                  html {
+                    background-color: ${colors.background};
+                  }
+                `}
+              />
+              <FeatureFlagsProvider>
+                <Component {...pageProps} key={pageKey} />
+              </FeatureFlagsProvider>
+            </ThemeProvider>
+          </motion.div>
         </AnimatePresence>
+<<<<<<< HEAD
       </AnimateSharedLayout>
+=======
+      </LayoutGroup>
+>>>>>>> main
     </>
   );
 };
