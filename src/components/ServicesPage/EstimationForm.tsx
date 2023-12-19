@@ -132,7 +132,7 @@ export const EstimationForm: FC = () => {
         <FormInput
           autoComplete="off"
           id="name"
-          placeholder="Name*"
+          placeholder="Your Name*"
           required
           type="name"
           {...register('name', {
@@ -146,7 +146,7 @@ export const EstimationForm: FC = () => {
         <FormInput
           autoComplete="off"
           id="email"
-          placeholder="Email*"
+          placeholder="Your Email*"
           required
           type="email"
           {...register('email', {
@@ -156,7 +156,7 @@ export const EstimationForm: FC = () => {
         {errors.email && <Error>{errors.email.message}</Error>}
       </InputWrapper>
       <InputWrapper>
-        <Label htmlFor="description">Project Description</Label>
+        <Label htmlFor="description">Project Description:</Label>
         <FormInput
           css={css`
             height: 10rem;
@@ -164,7 +164,7 @@ export const EstimationForm: FC = () => {
           `}
           as="textarea"
           id="description"
-          placeholder="Project Description*"
+          placeholder="Your Project Description*"
           required
           type="description"
           {...register('description', {
