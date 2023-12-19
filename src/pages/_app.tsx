@@ -145,11 +145,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
             </ThemeProvider>
           </motion.div>
         </AnimatePresence>
-<<<<<<< HEAD
-      </AnimateSharedLayout>
-=======
       </LayoutGroup>
->>>>>>> main
     </>
   );
 };
