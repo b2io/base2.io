@@ -2,10 +2,9 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
 import { Link } from 'react-scroll';
-import { useWindowSize } from 'react-use';
 
 import { Heading, ServiceCard, Text } from '~/components';
-import { atMinLg, atMinXL, bp, colors, spacing } from '~/theme';
+import { atMinLg, atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
 
@@ -53,7 +52,7 @@ const StyledNavItem = styled.li`
   }
 `;
 
-const ServiceListContainer = styled.section`
+const ServicesContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
   gap: ${spacing.xxl};
@@ -74,9 +73,6 @@ const ServiceCardContainer = styled.div`
 `;
 
 export const OurServices: FC = (props) => {
-  const { width } = useWindowSize();
-  const isMobile = width < Number(bp.tablet);
-
   // NOTE: transforms service data to reorder service with multiple services last
   const serviceList: Array<Services> = SERVICES.reduce<Array<any[]>>(
     (acc, cur) => {
@@ -160,7 +156,7 @@ export const OurServices: FC = (props) => {
           </TableOfContents>
         </div>
       </ContentWrapper>
-      <ServiceListContainer>
+      <ServicesContainer>
         {serviceList.map((service, index) => {
           const multipleServices = service.services.length > 1;
 
@@ -168,9 +164,9 @@ export const OurServices: FC = (props) => {
             <Service
               key={`service-${index + 1}`}
               css={css`
-                max-width: ${!multipleServices &&
-                !isMobile &&
-                'calc(50% - 1.75rem)'};
+                ${atMinTablet} {
+                  max-width: ${!multipleServices && 'calc(50% - 1.75rem)'};
+                }
               `}
             >
               {multipleServices && (
@@ -202,15 +198,15 @@ export const OurServices: FC = (props) => {
                   <ServiceCard
                     css={css`
                       flex: 1 1 auto;
-                      width: ${!isMobile &&
-                      multipleServices &&
-                      `calc(50% - ${spacing.xxl})`};
-                      max-width: ${multipleServices &&
-                      !isMobile &&
-                      'calc(50% - 1.75rem)'};
+
+                      ${atMinTablet} {
+                        width: ${multipleServices &&
+                        `calc(50% - ${spacing.xxl})`};
+                        max-width: ${multipleServices && 'calc(50% - 1.75rem)'};
+                      }
                     `}
                     id={serviceItem.serviceName}
-                    key={index}
+                    key={`serviceItem-${index + 1}`}
                     heading={serviceItem.serviceName}
                     text={serviceItem.description}
                     details={serviceItem.details}
@@ -220,7 +216,7 @@ export const OurServices: FC = (props) => {
             </Service>
           );
         })}
-      </ServiceListContainer>
+      </ServicesContainer>
     </section>
   );
 };
