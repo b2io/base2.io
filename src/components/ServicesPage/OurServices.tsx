@@ -24,27 +24,20 @@ const ContentWrapper = styled.div`
 
 const TableOfContents = styled.nav`
   margin-top: ${spacing.sm};
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: ${spacing.xxs};
-
-  ${atMinLg} {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-content: center;
-  }
 
   li {
     color: ${colors.offWhite};
-    display: flex;
-    flex-direction: row;
-    line-height: 1.5;
+    margin-bottom: ${spacing.xs};
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 `;
 
 const StyledNavItem = styled.li`
-  margin-top: ${spacing.xxxs};
-  position: relative;
-
   a {
     color: ${colors.offWhite};
     text-decoration: underline;
@@ -133,26 +126,28 @@ export const OurServices: FC = (props) => {
             Services
           </Heading>
           <TableOfContents>
-            {serviceNames.map((name, index) => (
-              <StyledNavItem key={index}>
-                <Link
-                  css={css`
-                    cursor: pointer;
-                    font-size: 1.25rem;
-                    &:hover {
-                      color: ${colors.coral};
-                    }
-                  `}
-                  to={name}
-                  spy={true}
-                  smooth="easeInOutQuart"
-                  offset={-100}
-                  duration={2000}
-                >
-                  {name}
-                </Link>
-              </StyledNavItem>
-            ))}
+            <ul>
+              {serviceNames.map((name, index) => (
+                <StyledNavItem key={index}>
+                  <Link
+                    css={css`
+                      cursor: pointer;
+                      font-size: 1.25rem;
+                      &:hover {
+                        color: ${colors.coral};
+                      }
+                    `}
+                    to={name}
+                    spy={true}
+                    smooth="easeInOutQuart"
+                    offset={-100}
+                    duration={2000}
+                  >
+                    {name}
+                  </Link>
+                </StyledNavItem>
+              ))}
+            </ul>
           </TableOfContents>
         </div>
       </ContentWrapper>
