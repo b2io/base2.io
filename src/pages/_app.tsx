@@ -7,7 +7,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 // import Script from 'next/script';
 import { DefaultSeo } from 'next-seo';
-import { type FC } from 'react';
+import type { FC } from 'react';
 // import { useEffect } from 'react';
 
 import theme, { colors } from '~/theme';
