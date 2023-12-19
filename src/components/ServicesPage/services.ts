@@ -37,7 +37,7 @@ export const SERVICES: Array<Services> = [
     sectionTitle: 'Architecture and Engineering Consultation',
     services: [
       {
-        description: `Is your current infrastructure capable of meeting your immediate and future needs? At Base Two, we help clients evaluate their existing systems by pinpointing vulnerabilities and recognizing strengths. We follow up with a a detailed report outlining necessary technology enhancements, expansion tactics, and proposed architectural modifications to ensure your infrastructure is not only robust but also scalable to adapt to your business's evolving demands.`,
+        description: `Is your current infrastructure capable of meeting your immediate and future needs? At Base Two, we help clients evaluate their existing systems by pinpointing vulnerabilities and recognizing strengths. We follow up with a detailed report outlining necessary technology enhancements, expansion tactics, and proposed architectural modifications to ensure your infrastructure is not only robust but also scalable to adapt to your business's evolving demands.`,
         details: [
           'Strategic planning for sustainable business growth.',
           'Targeted technology upgrades and development of expansion strategies.',
