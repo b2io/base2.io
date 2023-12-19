@@ -27,6 +27,7 @@ const TableOfContents = styled.nav`
 
   li {
     color: ${colors.offWhite};
+    line-height: 1.25;
     margin-bottom: ${spacing.xs};
   }
 
