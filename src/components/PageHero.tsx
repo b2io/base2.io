@@ -73,7 +73,13 @@ export const PageHero: FC<PageHeroProps> = ({
         `}
         {...props}
       >
-        <Image alt={alt} src={src} layout="responsive" {...imageProps} />
+        <Image
+          alt={alt}
+          src={src}
+          layout="responsive"
+          priority
+          {...imageProps}
+        />
       </div>
 
       <HeaderText as="h2">{text}</HeaderText>
