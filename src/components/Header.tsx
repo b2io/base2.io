@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { atMinSm, atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
@@ -10,6 +10,8 @@ import { Container } from './Container';
 import { LogoWithName } from './icons';
 import { Link } from './Link';
 import { MobileMenu } from './MobileMenu';
+import { XmasMarquee } from './XmasMarquee';
+import { useFeatureFlag } from '../context/FeatureFlagsProvider';
 
 const Root = styled.header`
   background-image: linear-gradient(
@@ -101,7 +103,7 @@ const LogoLink: FC = () => {
   );
 };
 
-const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
+const NavItem: FC<PropsWithChildren<NavItemProps>> = ({ href, ...props }) => {
   const { asPath } = useRouter();
 
   return (
@@ -112,10 +114,13 @@ const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
 };
 
 export const Header: FC = ({ ...props }) => {
+  const isXmasMarqueeEnabled = useFeatureFlag('xmas-marquee');
+
   return (
     <Root>
       <Content {...props}>
         <LogoLink />
+        {isXmasMarqueeEnabled && <XmasMarquee />}
         <MobileMenu
           css={css`
             ${atMinSm} {

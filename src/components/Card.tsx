@@ -1,5 +1,12 @@
 import { css } from '@emotion/react';
-import { Children, cloneElement, ElementType, FC, ReactElement } from 'react';
+import {
+  Children,
+  cloneElement,
+  ElementType,
+  FC,
+  PropsWithChildren,
+  ReactElement,
+} from 'react';
 
 import {
   DynamicIcon,
@@ -10,15 +17,15 @@ import {
 } from '~/components';
 import { atMaxSm, atMinTablet, colors, spacing } from '~/theme';
 
-export const CardHeading: FC = ({ children, ...props }) => {
+export const CardHeading: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
-export const CardContent: FC = ({ children, ...props }) => {
+export const CardContent: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
-export const CardActions: FC = ({ children, ...props }) => {
+export const CardActions: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
@@ -26,7 +33,7 @@ export type CardProps = {
   as?: ElementType;
 };
 
-export const Card: FC<CardProps> = ({
+export const Card: FC<PropsWithChildren<CardProps>> = ({
   as: Component = 'div',
   children,
   ...props
@@ -189,7 +196,7 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
   );
 };
 
-export const CardGrid: FC = ({ children, ...props }) => {
+export const CardGrid: FC<PropsWithChildren> = ({ children, ...props }) => {
   return (
     <ul
       css={css`
