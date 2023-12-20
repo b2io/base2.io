@@ -82,7 +82,15 @@ export const QuotedImage: FC<QuotedImageProps> = ({
           right: 0;
         `}
       >
-        <Image alt={alt} layout="responsive" {...imageProps} src={src} />
+        <Image
+          alt={alt}
+          css={css`
+            height: auto;
+            width: 100%;
+          `}
+          src={src}
+          {...imageProps}
+        />
       </div>
       <TextContainer>
         <div>

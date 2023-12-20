@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import Image from 'next/image';
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import {
@@ -59,17 +59,19 @@ export const HowWeBuild: FC = (props) => {
               [64.5, 'desktop'],
             )};
             z-index: 1;
+
             ${atMinLargeDesktop} {
               margin-left: -14rem;
             }
           `}
         >
-          <Image
+          <NextImage
             alt="person staring at code on a computer screen"
-            src={`/approach/howwebuild-large.jpg`}
-            layout="responsive"
-            height={496}
-            width={1020}
+            css={css`
+              height: auto;
+              width: 100%;
+            `}
+            src={require('./images/howwebuild-large.jpg')}
           />
         </div>
         <GradientCircle

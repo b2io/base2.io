@@ -76,7 +76,10 @@ export const NetJetsPage: FC = () => {
       >
         <NextImage
           alt="Jet"
-          layout="responsive"
+          css={css`
+            height: auto;
+            width: 100%;
+          `}
           src={require('./images/netjets-full-width.jpg')}
         />
       </section>

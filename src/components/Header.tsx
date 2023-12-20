@@ -95,7 +95,7 @@ interface NavItemProps {
 
 const LogoLink: FC = () => {
   return (
-    <NextLink href="/">
+    <NextLink href="/" legacyBehavior>
       <a aria-label="go to home">
         <LogoImage />
       </a>
