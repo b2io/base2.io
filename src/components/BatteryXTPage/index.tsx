@@ -36,7 +36,7 @@ export const BatteryXTPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    parentIdentifier: batteryXtNav,
+    currentStudy: batteryXtNav,
   };
 
   return (

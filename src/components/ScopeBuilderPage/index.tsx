@@ -36,7 +36,7 @@ export const ScopeBuilderPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    parentIdentifier: scopeBuilderNav,
+    currentStudy: scopeBuilderNav.name,
   };
 
   return (
