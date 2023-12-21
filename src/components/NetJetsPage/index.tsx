@@ -39,7 +39,7 @@ export const NetJetsPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    parentIdentifier: flyNetJetsNav,
+    currentCaseStudy: flyNetJetsNav,
   };
 
   return (

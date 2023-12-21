@@ -9,35 +9,35 @@ import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
 import { allStudies, CaseStudyBottomNavChild } from './navProps';
 
 export type CaseStudyBottomNavProps = {
-  parentIdentifier: CaseStudyBottomNavChild;
+  currentCaseStudy: CaseStudyBottomNavChild;
 };
 
 export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
-  parentIdentifier,
+  currentCaseStudy,
   ...props
 }) => {
   //get all non-currently selected studies
-  const parentFilteredStudies = allStudies.filter(
-    (study) => study.id !== parentIdentifier.id,
+  const currentFilteredStudies = allStudies.filter(
+    (study) => study.id !== currentCaseStudy.id,
   );
 
   const [children, setChildren] = useState<CaseStudyBottomNavChild[]>([
-    parentFilteredStudies[0],
-    parentFilteredStudies[1],
+    currentFilteredStudies[0],
+    currentFilteredStudies[1],
   ]);
   const [seenStudies, setSeenStudies] =
     useLocalStorage<CaseStudyBottomNavChild[]>('seenStudies');
 
   useEffect(() => {
     // add current study to local storage list of seen studies
-    if (!seenStudies?.find((study) => study.id === parentIdentifier.id)) {
+    if (!seenStudies?.find((study) => study.id === currentCaseStudy.id)) {
       setSeenStudies((prev) =>
-        prev ? [...prev, parentIdentifier] : [parentIdentifier],
+        prev ? [...prev, currentCaseStudy] : [currentCaseStudy],
       );
     }
 
     // get studies not seen yet
-    const unseenStudies = parentFilteredStudies?.filter((study) => {
+    const unseenStudies = currentFilteredStudies?.filter((study) => {
       return !seenStudies?.find((seenStudy) => seenStudy.id === study.id);
     });
 
@@ -46,7 +46,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
       setChildren([
         unseenStudies[0],
         unseenStudies[1] ??
-          parentFilteredStudies.find(
+          currentFilteredStudies.find(
             //.find() to avoid duplicates
             (study) => study.id !== unseenStudies[0].id,
           ),
@@ -54,12 +54,12 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
     } else {
       // seen all, show random 2
       const randomIndex = Math.floor(
-        Math.random() * parentFilteredStudies.length,
+        Math.random() * currentFilteredStudies.length,
       );
       const randomIndex2 = randomIndex === 0 ? 1 : randomIndex - 1; // avoids duplicate
       setChildren([
-        parentFilteredStudies[randomIndex],
-        parentFilteredStudies[randomIndex2],
+        currentFilteredStudies[randomIndex],
+        currentFilteredStudies[randomIndex2],
       ]);
     }
   }, []);

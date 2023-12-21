@@ -29,7 +29,7 @@ export const ColorSnapVisualizerPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    parentIdentifier: colorSnapNav,
+    currentCaseStudy: colorSnapNav,
   };
 
   return (
