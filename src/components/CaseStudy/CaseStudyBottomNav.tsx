@@ -6,63 +6,68 @@ import { useLocalStorage } from 'react-use';
 import { Heading, Link, Text } from '~/components';
 import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
 
-import { allStudies, CaseStudyBottomNavChild } from './navProps';
+import { CASE_STUDIES, CaseStudyPageConfig } from './navProps';
+
+const getUnseenStudies = (
+  studies: CaseStudyPageConfig[],
+  seenStudies: CaseStudyPageConfig[],
+): CaseStudyPageConfig[] => {
+  return studies.filter(
+    (study) => !seenStudies.some((seen) => seen.id === study.id),
+  );
+};
+
+const pickTwoStudies = (
+  studies: CaseStudyPageConfig[],
+  excludeId?: number,
+): CaseStudyPageConfig[] => {
+  const filteredStudies = studies.filter((study) => study.id !== excludeId);
+  return [studies[0], filteredStudies[0] || studies[1]];
+};
+
+const getRandomStudies = (
+  studies: CaseStudyPageConfig[],
+): CaseStudyPageConfig[] => {
+  const randomIndex = Math.floor(Math.random() * studies.length);
+  const nextIndex = (randomIndex + 1) % studies.length;
+  return [studies[randomIndex], studies[nextIndex]];
+};
 
 export type CaseStudyBottomNavProps = {
-  currentCaseStudy: CaseStudyBottomNavChild;
+  currentCaseStudy: CaseStudyPageConfig;
 };
 
 export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
   currentCaseStudy,
   ...props
 }) => {
-  //get all non-currently selected studies
-  const currentFilteredStudies = allStudies.filter(
+  const otherStudies = CASE_STUDIES.filter(
     (study) => study.id !== currentCaseStudy.id,
   );
 
-  const [children, setChildren] = useState<CaseStudyBottomNavChild[]>([
-    currentFilteredStudies[0],
-    currentFilteredStudies[1],
-  ]);
-  const [seenStudies, setSeenStudies] =
-    useLocalStorage<CaseStudyBottomNavChild[]>('seenStudies');
+  const [children, setChildren] = useState<CaseStudyPageConfig[]>(() =>
+    pickTwoStudies(otherStudies),
+  );
+
+  const [seenStudies = [], setSeenStudies] = useLocalStorage<
+    CaseStudyPageConfig[]
+  >('seenStudies', []);
 
   useEffect(() => {
-    // add current study to local storage list of seen studies
-    if (!seenStudies?.find((study) => study.id === currentCaseStudy.id)) {
-      setSeenStudies((prev) =>
-        prev ? [...prev, currentCaseStudy] : [currentCaseStudy],
-      );
+    if (!seenStudies.some((study) => study.id === currentCaseStudy.id)) {
+      const newSeenStudies = [...seenStudies, currentCaseStudy];
+      setSeenStudies(newSeenStudies);
+      localStorage.setItem('seenStudies', JSON.stringify(newSeenStudies));
     }
 
-    // get studies not seen yet
-    const unseenStudies = currentFilteredStudies?.filter((study) => {
-      return !seenStudies?.find((seenStudy) => seenStudy.id === study.id);
-    });
-
-    if (unseenStudies.length) {
-      ///some unseen, show remaining,
-      setChildren([
-        unseenStudies[0],
-        unseenStudies[1] ??
-          currentFilteredStudies.find(
-            //.find() to avoid duplicates
-            (study) => study.id !== unseenStudies[0].id,
-          ),
-      ]);
-    } else {
-      // seen all, show random 2
-      const randomIndex = Math.floor(
-        Math.random() * currentFilteredStudies.length,
-      );
-      const randomIndex2 = randomIndex === 0 ? 1 : randomIndex - 1; // avoids duplicate
-      setChildren([
-        currentFilteredStudies[randomIndex],
-        currentFilteredStudies[randomIndex2],
-      ]);
-    }
-  }, []);
+    const unseenStudies = getUnseenStudies(otherStudies, seenStudies);
+    setChildren(
+      unseenStudies.length > 0
+        ? pickTwoStudies(unseenStudies, unseenStudies[0].id)
+        : getRandomStudies(otherStudies),
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentCaseStudy, seenStudies]);
 
   return (
     <section

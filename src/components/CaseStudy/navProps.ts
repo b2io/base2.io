@@ -1,4 +1,4 @@
-export interface CaseStudyBottomNavChild {
+export interface CaseStudyPageConfig {
   company: string;
   imagePath: string;
   navPath: string;
@@ -6,7 +6,7 @@ export interface CaseStudyBottomNavChild {
   id: number;
 }
 
-export const scopeBuilderNav: CaseStudyBottomNavChild = {
+export const scopeBuilderNav: CaseStudyPageConfig = {
   company: 'AEP',
   id: 0,
   imagePath: '/work/scopebuilder.png',
@@ -14,7 +14,7 @@ export const scopeBuilderNav: CaseStudyBottomNavChild = {
   title: 'ScopeBuilder',
 };
 
-export const batteryXtNav: CaseStudyBottomNavChild = {
+export const batteryXtNav: CaseStudyPageConfig = {
   company: 'DNV',
   id: 1,
   imagePath: '/work/batteryxt.png',
@@ -22,7 +22,7 @@ export const batteryXtNav: CaseStudyBottomNavChild = {
   title: 'Battery XT',
 };
 
-export const flyNetJetsNav: CaseStudyBottomNavChild = {
+export const flyNetJetsNav: CaseStudyPageConfig = {
   company: 'NetJets',
   id: 2,
   imagePath: '/work/netjets.png',
@@ -30,7 +30,7 @@ export const flyNetJetsNav: CaseStudyBottomNavChild = {
   title: 'Fly NetJets',
 };
 
-export const colorSnapNav: CaseStudyBottomNavChild = {
+export const colorSnapNav: CaseStudyPageConfig = {
   company: 'Sherwin-Williams',
   id: 3,
   imagePath: '/work/colorsnap.png',
@@ -38,7 +38,7 @@ export const colorSnapNav: CaseStudyBottomNavChild = {
   title: 'ColorSnap Visualizer',
 };
 
-export const allStudies = [
+export const CASE_STUDIES: CaseStudyPageConfig[] = [
   scopeBuilderNav,
   batteryXtNav,
   flyNetJetsNav,
