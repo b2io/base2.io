@@ -132,6 +132,7 @@ export const Header: FC = ({ ...props }) => {
           <ul>
             <NavItem href="/work">Work</NavItem>
             <NavItem href="/approach">Approach</NavItem>
+            <NavItem href="/services">Services</NavItem>
             <NavItem href="/culture">Culture</NavItem>
             <NavItem href="/contact">Contact</NavItem>
           </ul>
