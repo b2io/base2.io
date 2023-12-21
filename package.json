@@ -47,7 +47,7 @@
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/react": "^6.5.12",
-    "@testing-library/react": "^11.2.7",
+    "@testing-library/react": "^14.1.2",
     "@types/jest": "^26.0.23",
     "@types/micro": "^7.3.5",
     "@types/micro-cors": "^0.1.0",
