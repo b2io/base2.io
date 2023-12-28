@@ -46,10 +46,11 @@ const ResponsiveImage: FC<ImageProps> = ({ alt, src, ...props }) => {
     <div {...props}>
       <NextImage
         alt={alt}
-        height={706}
-        layout="responsive"
+        css={css`
+          height: auto;
+          width: 100%;
+        `}
         src={src}
-        width={400}
       />
     </div>
   );

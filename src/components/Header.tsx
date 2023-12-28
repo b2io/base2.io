@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { atMinSm, atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
@@ -95,7 +95,7 @@ interface NavItemProps {
 
 const LogoLink: FC = () => {
   return (
-    <NextLink href="/">
+    <NextLink href="/" legacyBehavior>
       <a aria-label="go to home">
         <LogoImage />
       </a>
@@ -103,7 +103,7 @@ const LogoLink: FC = () => {
   );
 };
 
-const NavItem: FC<NavItemProps> = ({ href, ...props }) => {
+const NavItem: FC<PropsWithChildren<NavItemProps>> = ({ href, ...props }) => {
   const { asPath } = useRouter();
 
   return (
@@ -132,6 +132,7 @@ export const Header: FC = ({ ...props }) => {
           <ul>
             <NavItem href="/work">Work</NavItem>
             <NavItem href="/approach">Approach</NavItem>
+            <NavItem href="/services">Services</NavItem>
             <NavItem href="/culture">Culture</NavItem>
             <NavItem href="/contact">Contact</NavItem>
           </ul>

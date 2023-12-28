@@ -12,7 +12,7 @@ import {
 } from '~/components';
 import { atMinDesktop, spacing } from '~/theme';
 
-import { colorSnapNav, scopeBuilderNav } from '../CaseStudy/navProps';
+import { flyNetJetsNav } from '../CaseStudy/navProps';
 
 export const FlyNetjets: FC = () => {
   const CaseStudyResultsProps = {
@@ -39,7 +39,7 @@ export const FlyNetjets: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [scopeBuilderNav, colorSnapNav],
+    currentCaseStudy: flyNetJetsNav,
   };
 
   return (
@@ -76,7 +76,10 @@ export const FlyNetjets: FC = () => {
       >
         <NextImage
           alt="Jet"
-          layout="responsive"
+          css={css`
+            height: auto;
+            width: 100%;
+          `}
           src={require('./images/netjets-full-width.jpg')}
         />
       </section>

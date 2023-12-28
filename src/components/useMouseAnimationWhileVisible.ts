@@ -30,8 +30,8 @@ export const useMouseAnimationWhileVisible = <T extends HTMLElement>(
       point.set([x.get(), y.get()]);
     };
 
-    const unsubscribeX = x.onChange(handleChange);
-    const unsubscribeY = y.onChange(handleChange);
+    const unsubscribeX = x.on('change', handleChange);
+    const unsubscribeY = y.on('change', handleChange);
 
     return () => {
       unsubscribeX();

@@ -207,6 +207,12 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
             grid-template-columns: repeat(2, 1fr);
             margin-bottom: 11rem;
 
+            img {
+              height: auto;
+              width: 100%;
+              z-index: 1;
+            }
+
             ${atMinTablet} {
               --column-shift: ${spacing.xxl3};
 

@@ -1,5 +1,13 @@
 import { css } from '@emotion/react';
-import { Children, cloneElement, ElementType, FC, ReactElement } from 'react';
+import styled from '@emotion/styled';
+import {
+  Children,
+  cloneElement,
+  ElementType,
+  FC,
+  PropsWithChildren,
+  ReactElement,
+} from 'react';
 
 import {
   DynamicIcon,
@@ -10,29 +18,32 @@ import {
 } from '~/components';
 import { atMaxSm, atMinTablet, colors, spacing } from '~/theme';
 
-export const CardHeading: FC = ({ children, ...props }) => {
+export const CardHeading: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
-export const CardContent: FC = ({ children, ...props }) => {
+export const CardContent: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
-export const CardActions: FC = ({ children, ...props }) => {
+export const CardActions: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
 };
 
 export type CardProps = {
   as?: ElementType;
+  id?: string;
 };
 
-export const Card: FC<CardProps> = ({
+export const Card: FC<PropsWithChildren<CardProps>> = ({
   as: Component = 'div',
   children,
+  id,
   ...props
 }) => {
   return (
     <Component
+      id={id}
       css={css`
         display: flex;
         flex-direction: column;
@@ -102,14 +113,23 @@ export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
 };
 
 export type IconCardProps = {
+  children?: React.ReactNode;
   heading: string;
   icon: DynamicIconProps['type'];
+  id?: string;
   text: string;
 };
 
-export const IconCard: FC<IconCardProps> = ({ heading, icon, text }) => {
+export const IconCard: FC<IconCardProps> = ({
+  children,
+  heading,
+  icon,
+  id,
+  text,
+  ...props
+}) => {
   return (
-    <Card>
+    <Card id={id} {...props}>
       <DynamicIcon type={icon} />
       <Heading as="h3" color="coral" variant="h3">
         {heading}
@@ -122,6 +142,7 @@ export const IconCard: FC<IconCardProps> = ({ heading, icon, text }) => {
       >
         {text}
       </Text>
+      {children}
     </Card>
   );
 };
@@ -189,7 +210,63 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
   );
 };
 
-export const CardGrid: FC = ({ children, ...props }) => {
+const StyledListItem = styled.li`
+  margin-top: ${spacing.xxxs};
+  padding: 0 ${spacing.md};
+  position: relative;
+
+  ::before {
+    border-bottom: solid 1px ${colors.coral};
+    content: '';
+    left: 0;
+    position: absolute;
+    top: 0.925rem;
+    width: 1.125rem;
+  }
+`;
+
+export type ServiceCardProps = {
+  details: Array<string>;
+  heading: string;
+  id: string;
+  text: string;
+};
+
+export const ServiceCard: FC<ServiceCardProps> = ({
+  details,
+  heading,
+  id,
+  text,
+  ...props
+}) => {
+  return (
+    <Card id={id} {...props}>
+      <Heading as="h4" variant="serviceTitle">
+        {heading}
+      </Heading>
+      <Text
+        as="p"
+        css={css`
+          margin: 0;
+        `}
+      >
+        {text}
+      </Text>
+      <ul
+        css={css`
+          list-style: none;
+          line-height: 1.75;
+        `}
+      >
+        {details.map((detail, index) => (
+          <StyledListItem key={`detail=${index + 1}`}>{detail}</StyledListItem>
+        ))}
+      </ul>
+    </Card>
+  );
+};
+
+export const CardGrid: FC<PropsWithChildren> = ({ children, ...props }) => {
   return (
     <ul
       css={css`

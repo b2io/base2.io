@@ -25,7 +25,14 @@ export const CaseStudyPreview: FC<CaseStudyPreviewImageProps> = ({
 }) => {
   return (
     <div>
-      <NextImage alt={alt} layout="responsive" src={src} />
+      <NextImage
+        alt={alt}
+        css={css`
+          height: auto;
+          width: 100%;
+        `}
+        src={src}
+      />
       <div
         css={css`
           margin-top: -${spacing.md};

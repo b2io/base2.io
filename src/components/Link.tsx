@@ -89,7 +89,7 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
       {renderRedLine}
     </Anchor>
   ) : (
-    <NextLink href={href} passHref>
+    <NextLink href={href} legacyBehavior passHref>
       <Anchor {...props} ref={linkRef}>
         {props.children}
         {renderRedLine}

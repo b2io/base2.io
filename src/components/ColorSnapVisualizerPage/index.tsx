@@ -20,7 +20,7 @@ import {
   spacing,
 } from '~/theme';
 
-import { batteryXtNav, flyNetJetsNav } from '../CaseStudy/navProps';
+import { colorSnapNav } from '../CaseStudy/navProps';
 
 export const ColorSnapVisualizerPage: FC = () => {
   const CaseStudyResultsProps = {
@@ -29,7 +29,7 @@ export const ColorSnapVisualizerPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [flyNetJetsNav, batteryXtNav],
+    currentCaseStudy: colorSnapNav,
   };
 
   return (
@@ -102,8 +102,11 @@ export const ColorSnapVisualizerPage: FC = () => {
         `}
       >
         <NextImage
-          alt="Jet"
-          layout="responsive"
+          alt="Apartment living room with large windows"
+          css={css`
+            height: auto;
+            width: 100%;
+          `}
           src={require('./images/colorsnap-full-width.jpg')}
         />
       </section>

@@ -1,13 +1,10 @@
 import { useAnimation } from 'framer-motion';
-import type {
-  AnimationControls,
-  ControlsAnimationDefinition,
-} from 'framer-motion/types/animation/types';
+import type { AnimationControls, AnimationDefinition } from 'framer-motion';
 import { MutableRefObject, useEffect, useRef } from 'react';
 import { useIntersection } from 'react-use';
 
 export const useAnimationWhileVisible = (
-  animation: ControlsAnimationDefinition,
+  animation: AnimationDefinition,
   options: IntersectionObserverInit,
 ): [MutableRefObject<null>, AnimationControls] => {
   const ref = useRef(null);

@@ -65,15 +65,20 @@ export const PageHero: FC<PageHeroProps> = ({
           ${atMinXL} {
             min-height: ${calculatedImageHeight};
           }
-
-          img {
-            filter: brightness(0.65);
-            height: 100%;
-          }
         `}
         {...props}
       >
-        <Image alt={alt} src={src} layout="responsive" {...imageProps} />
+        <Image
+          alt={alt}
+          src={src}
+          css={css`
+            filter: brightness(0.65);
+            height: auto;
+            width: 100%;
+          `}
+          priority
+          {...imageProps}
+        />
       </div>
 
       <HeaderText as="h2">{text}</HeaderText>

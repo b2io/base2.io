@@ -1,7 +1,6 @@
 import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
-import { SSRProvider } from '@react-aria/ssr';
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -36,7 +35,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
   // }, [router.events]);
 
   return (
-    <SSRProvider>
+    <>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       {/* <Script
         strategy="afterInteractive"
@@ -94,8 +93,9 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <AnimateSharedLayout>
-        <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
+
+      <LayoutGroup>
+        <AnimatePresence onExitComplete={handleExitComplete}>
           <ThemeProvider theme={theme}>
             <Global
               styles={css`
@@ -136,8 +136,8 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
             </FeatureFlagsProvider>
           </ThemeProvider>
         </AnimatePresence>
-      </AnimateSharedLayout>
-    </SSRProvider>
+      </LayoutGroup>
+    </>
   );
 };
 

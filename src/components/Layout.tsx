@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import { cssClamp } from '~/theme';
 
@@ -24,7 +24,7 @@ const mainVariants = {
   initial: { opacity: 0, scale: 0.9 },
 };
 
-export const Layout: FC<LayoutProps> = ({
+export const Layout: FC<PropsWithChildren<LayoutProps>> = ({
   children,
   description,
   noindex,
