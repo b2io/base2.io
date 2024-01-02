@@ -1,23 +1,74 @@
 import { css } from '@emotion/react';
 import NextImage from 'next/legacy/image';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { useLocalStorage } from 'react-use';
 
 import { Heading, Link, Text } from '~/components';
 import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
 
+import { CASE_STUDIES, CaseStudyPageConfig } from './navProps';
+
+const getUnseenStudies = (
+  studies: CaseStudyPageConfig[],
+  seenStudies: CaseStudyPageConfig[],
+): CaseStudyPageConfig[] => {
+  return studies.filter(
+    (study) => !seenStudies.some((seen) => seen.id === study.id),
+  );
+};
+
+const pickTwoStudies = (
+  studies: CaseStudyPageConfig[],
+  excludeId?: number,
+): CaseStudyPageConfig[] => {
+  const filteredStudies = studies.filter((study) => study.id !== excludeId);
+  return [studies[0], filteredStudies[0] || studies[1]];
+};
+
+const getRandomStudies = (
+  studies: CaseStudyPageConfig[],
+): CaseStudyPageConfig[] => {
+  const randomIndex = Math.floor(Math.random() * studies.length);
+  const nextIndex = (randomIndex + 1) % studies.length;
+  return [studies[randomIndex], studies[nextIndex]];
+};
+
 export type CaseStudyBottomNavProps = {
-  children: {
-    company: string;
-    imagePath: string;
-    navPath: string;
-    title: string;
-  }[];
+  currentCaseStudy: CaseStudyPageConfig;
 };
 
 export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
-  children,
+  currentCaseStudy,
   ...props
 }) => {
+  const otherStudies = CASE_STUDIES.filter(
+    (study) => study.id !== currentCaseStudy.id,
+  );
+
+  const [children, setChildren] = useState<CaseStudyPageConfig[]>(() =>
+    pickTwoStudies(otherStudies),
+  );
+
+  const [seenStudies = [], setSeenStudies] = useLocalStorage<
+    CaseStudyPageConfig[]
+  >('seenStudies', []);
+
+  useEffect(() => {
+    if (!seenStudies.some((study) => study.id === currentCaseStudy.id)) {
+      const newSeenStudies = [...seenStudies, currentCaseStudy];
+      setSeenStudies(newSeenStudies);
+      localStorage.setItem('seenStudies', JSON.stringify(newSeenStudies));
+    }
+
+    const unseenStudies = getUnseenStudies(otherStudies, seenStudies);
+    setChildren(
+      unseenStudies.length > 0
+        ? pickTwoStudies(unseenStudies, unseenStudies[0].id)
+        : getRandomStudies(otherStudies),
+    );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentCaseStudy, seenStudies]);
+
   return (
     <section
       css={css`

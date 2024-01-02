@@ -20,7 +20,7 @@ import {
   spacing,
 } from '~/theme';
 
-import { batteryXtNav, flyNetJetsNav } from '../CaseStudy/navProps';
+import { colorSnapNav } from '../CaseStudy/navProps';
 
 export const ColorSnapVisualizerPage: FC = () => {
   const CaseStudyResultsProps = {
@@ -29,7 +29,7 @@ export const ColorSnapVisualizerPage: FC = () => {
   };
 
   const caseStudyBottomNavProps = {
-    children: [flyNetJetsNav, batteryXtNav],
+    currentCaseStudy: colorSnapNav,
   };
 
   return (
