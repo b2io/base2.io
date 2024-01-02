@@ -7,11 +7,11 @@ import type { FC, PropsWithChildren } from 'react';
 import { atMinSm, atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
 import { MobileMenu } from './MobileMenu';
+import { useFeatureFlag } from '../../context/FeatureFlagsProvider';
 import { Container } from '../Common/Container';
 import { Link } from '../Common/Link';
 import { LogoWithName } from '../icons';
-import { XmasMarquee } from './XmasMarquee';
-import { useFeatureFlag } from '../context/FeatureFlagsProvider';
+import { XmasMarquee } from '../XmasMarquee';
 
 const Root = styled.header`
   background-image: linear-gradient(
