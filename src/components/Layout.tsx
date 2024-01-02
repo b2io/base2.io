@@ -11,6 +11,7 @@ import { Footer } from './Footer';
 import { Header } from './Header';
 
 export type LayoutProps = {
+  basePageAnimation?: boolean;
   description: string;
   noindex?: boolean;
   title: string;
@@ -25,6 +26,7 @@ const mainVariants = {
 };
 
 export const Layout: FC<PropsWithChildren<LayoutProps>> = ({
+  basePageAnimation = true,
   children,
   description,
   noindex,
@@ -61,23 +63,27 @@ export const Layout: FC<PropsWithChildren<LayoutProps>> = ({
         title={pageTitle}
       />
       <Header />
-      <motion.main
-        animate="enter"
-        css={css`
-          margin-top: ${cssClamp(
-            [2.5, 'xs'],
-            [6.88, 'mobile'],
-            [10.563, 'tablet'],
-            [10.75, 'desktop'],
-          )};
-        `}
-        exit="exit"
-        initial="initial"
-        variants={mainVariants}
-        {...props}
-      >
+      {basePageAnimation ? (
+        <motion.main
+          animate="enter"
+          css={css`
+            margin-top: ${cssClamp(
+              [2.5, 'xs'],
+              [6.88, 'mobile'],
+              [10.563, 'tablet'],
+              [10.75, 'desktop'],
+            )};
+          `}
+          exit="exit"
+          initial="initial"
+          variants={mainVariants}
+          {...props}
+        >
+          <Container>{children}</Container>
+        </motion.main>
+      ) : (
         <Container>{children}</Container>
-      </motion.main>
+      )}
       <Footer
         css={css`
           margin-top: 8.536rem;
