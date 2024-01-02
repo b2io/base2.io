@@ -156,7 +156,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             </Link>
           </article>
           <NextImage
-            alt={'screenshot'}
+            alt={child.company}
             css={css`
               filter: opacity(30%);
             `}
