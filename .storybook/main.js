@@ -8,7 +8,9 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
   ],
+
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+
   webpackFinal: async (config) => {
     return {
       ...config,
@@ -22,4 +24,13 @@ module.exports = {
       },
     };
   },
+
+  framework: {
+    name: '@storybook/nextjs',
+    options: {}
+  },
+
+  docs: {
+    autodocs: true
+  }
 };

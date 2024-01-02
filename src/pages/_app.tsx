@@ -1,6 +1,6 @@
 import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
@@ -12,6 +12,7 @@ import type { FC } from 'react';
 import theme, { colors } from '~/theme';
 
 // import * as gtag from '../../lib/gtag';
+import FeatureFlagsProvider from '../context/FeatureFlagsProvider';
 
 const handleExitComplete = () => {
   if (typeof window !== 'undefined') {
@@ -92,8 +93,9 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <AnimateSharedLayout>
-        <AnimatePresence exitBeforeEnter onExitComplete={handleExitComplete}>
+
+      <LayoutGroup>
+        <AnimatePresence onExitComplete={handleExitComplete}>
           <ThemeProvider theme={theme}>
             <Global
               styles={css`
@@ -129,10 +131,12 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
                 }
               `}
             />
-            <Component {...pageProps} key={pageKey} />
+            <FeatureFlagsProvider>
+              <Component {...pageProps} key={pageKey} />
+            </FeatureFlagsProvider>
           </ThemeProvider>
         </AnimatePresence>
-      </AnimateSharedLayout>
+      </LayoutGroup>
     </>
   );
 };

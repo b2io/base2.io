@@ -10,6 +10,8 @@ import { MobileMenu } from './MobileMenu';
 import { Container } from '../Common/Container';
 import { Link } from '../Common/Link';
 import { LogoWithName } from '../icons';
+import { XmasMarquee } from './XmasMarquee';
+import { useFeatureFlag } from '../context/FeatureFlagsProvider';
 
 const Root = styled.header`
   background-image: linear-gradient(
@@ -93,7 +95,7 @@ interface NavItemProps {
 
 const LogoLink: FC = () => {
   return (
-    <NextLink href="/">
+    <NextLink href="/" legacyBehavior>
       <a aria-label="go to home">
         <LogoImage />
       </a>
@@ -112,10 +114,13 @@ const NavItem: FC<PropsWithChildren<NavItemProps>> = ({ href, ...props }) => {
 };
 
 export const Header: FC = ({ ...props }) => {
+  const isXmasMarqueeEnabled = useFeatureFlag('xmas-marquee');
+
   return (
     <Root>
       <Content {...props}>
         <LogoLink />
+        {isXmasMarqueeEnabled && <XmasMarquee />}
         <MobileMenu
           css={css`
             ${atMinSm} {
@@ -127,6 +132,7 @@ export const Header: FC = ({ ...props }) => {
           <ul>
             <NavItem href="/work">Work</NavItem>
             <NavItem href="/approach">Approach</NavItem>
+            <NavItem href="/services">Services</NavItem>
             <NavItem href="/culture">Culture</NavItem>
             <NavItem href="/contact">Contact</NavItem>
           </ul>
