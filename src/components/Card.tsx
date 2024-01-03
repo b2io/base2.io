@@ -16,7 +16,7 @@ import {
   Link,
   Text,
 } from '~/components';
-import { atMaxSm, atMinTablet, colors, spacing } from '~/theme';
+import { atMaxSm, atMinTablet, colors, spacing, ul } from '~/theme';
 
 export const CardHeading: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
@@ -210,21 +210,6 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
   );
 };
 
-const StyledListItem = styled.li`
-  margin-top: ${spacing.xxxs};
-  padding: 0 ${spacing.md};
-  position: relative;
-
-  ::before {
-    border-bottom: solid 1px ${colors.coral};
-    content: '';
-    left: 0;
-    position: absolute;
-    top: 0.925rem;
-    width: 1.125rem;
-  }
-`;
-
 export type ServiceCardProps = {
   details: Array<string>;
   heading: string;
@@ -254,12 +239,11 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       </Text>
       <ul
         css={css`
-          list-style: none;
-          line-height: 1.75;
+          ${ul}
         `}
       >
         {details.map((detail, index) => (
-          <StyledListItem key={`detail=${index + 1}`}>{detail}</StyledListItem>
+          <li key={`detail=${index + 1}`}>{detail}</li>
         ))}
       </ul>
     </Card>
