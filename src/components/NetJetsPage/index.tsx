@@ -89,7 +89,7 @@ export const NetJetsPage: FC = () => {
         to make this all possible, from a shared data layer supporting mobile and web interfaces to 
         constantly changing updates on aircraft availability."
         src={require('./images/netjets-screenshot.jpg')}
-        alt="screenshot"
+        alt="netjets phone app"
       />
       <CaseStudyResultsPane {...CaseStudyResultsProps} />
       <CaseStudyBottomNav {...caseStudyBottomNavProps} />
