@@ -31,10 +31,10 @@ export const CulturePage: FC = () => {
       />
       <OurTeam
         css={css`
-          margin-top: ${spacing.xxl2};
+          margin-top: ${spacing.xxl3};
 
           ${atMinTablet} {
-            margin-top: ${spacing.xxl3};
+            margin-top: ${spacing.xxl4};
           }
         `}
       />
