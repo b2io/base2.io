@@ -12,13 +12,13 @@ export const ul = {
       borderBottom: `solid 1px ${colors.coral}`,
       content: '""',
       left: 0,
-      position: 'absolute',
+      // position: 'absolute', // <-- position breaks build for some reason
       top: '0.925rem',
       width: '1.125rem',
     },
     marginTop: `${spacing.xxxs}`,
     padding: `0 ${spacing.md}`,
-    position: 'relative',
+    // position: 'relative', // <-- position breaks build for some reason
   },
   lineHeight: 1.75,
   listStyle: 'none',

@@ -239,6 +239,12 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       <ul
         css={css`
           ${ul}
+          li {
+            position: relative; // <-- work-around for position breaks build for some reason
+            ::before {
+              position: absolute; // <-- work-around for position breaks build for some reason
+            }
+          }
         `}
       >
         {details.map((detail, index) => (
