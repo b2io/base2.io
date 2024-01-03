@@ -26,20 +26,19 @@ export const NetJetsPartnershipPage: FC = () => {
           }
         `}
       >
+        <Text
+          css={css`
+            font-size: 6rem;
+          `}
+        >
+          Hero will be here
+        </Text>
         <TextAnimateStagger
-          elemType="h3"
+          variant="h3"
           index={0}
           text="NetJets is a distinguished leader in the aviation industry, so when they reached out to Base Two for a consultation on their existing framework we were excited for the opportunity. Little did we know that this initial interaction would pave the way for a durational and significant collaboration spanning over a decade."
+          once
         />
-        {/* <motion.div>
-          <Text as="h3" variant="h3">
-            NetJets is a distinguished leader in the aviation industry, so when
-            they reached out to Base Two for a consultation on their existing
-            framework we were excited for the opportunity. Little did we know
-            that this initial interaction would pave the way for a durational
-            and significant collaboration spanning over a decade.
-          </Text>
-        </motion.div> */}
 
         <motion.div>
           <Text
