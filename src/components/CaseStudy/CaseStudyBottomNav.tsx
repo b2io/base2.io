@@ -18,11 +18,17 @@ const getUnseenStudies = (
 };
 
 const pickTwoStudies = (
-  studies: CaseStudyPageConfig[],
-  excludeId?: number,
+  unseenStudies: CaseStudyPageConfig[],
+  otherStudies: CaseStudyPageConfig[],
 ): CaseStudyPageConfig[] => {
-  const filteredStudies = studies.filter((study) => study.id !== excludeId);
-  return [studies[0], filteredStudies[0] || studies[1]];
+  const filteredStudies = otherStudies.filter(
+    (study) => study.id !== unseenStudies[0].id,
+  );
+
+  return [
+    unseenStudies[0],
+    unseenStudies[1] || getRandomStudies(filteredStudies)[0],
+  ];
 };
 
 const getRandomStudies = (
@@ -46,7 +52,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
   );
 
   const [children, setChildren] = useState<CaseStudyPageConfig[]>(() =>
-    pickTwoStudies(otherStudies),
+    pickTwoStudies(otherStudies, otherStudies),
   );
 
   const [seenStudies = [], setSeenStudies] = useLocalStorage<
@@ -63,11 +69,11 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
     const unseenStudies = getUnseenStudies(otherStudies, seenStudies);
     setChildren(
       unseenStudies.length > 0
-        ? pickTwoStudies(unseenStudies, unseenStudies[0].id)
+        ? pickTwoStudies(unseenStudies, otherStudies)
         : getRandomStudies(otherStudies),
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentCaseStudy, seenStudies]);
+  }, []);
 
   return (
     <section
