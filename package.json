@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "build-storybook": "storybook build",
     "ci:lint:css": "stylelint ./src/**/*.tsx",
     "ci:lint:js": "eslint . --ext ts --ext tsx --ext js --ext jsx",
     "ci:build:ts": "tsc --pretty --noEmit",
@@ -14,7 +13,6 @@
     "lint:css": "stylelint ./src/**/*.tsx",
     "lint:js": "eslint . --ext ts --ext tsx --ext js --ext jsx",
     "start": "next start -p 3001",
-    "storybook": "storybook dev -p 6006",
     "type-check": "tsc --pretty --noEmit"
   },
   "dependencies": {
@@ -24,7 +22,6 @@
     "@next/bundle-analyzer": "^14.0.4",
     "@react-aria/ssr": "^3.0.2",
     "@react-aria/utils": "^3.8.1",
-    "@storybook/cli": "^7.6.6",
     "framer-motion": "^10.16.16",
     "next": "^14.0.4",
     "next-seo": "^6.4.0",
@@ -43,12 +40,6 @@
   "devDependencies": {
     "@babel/core": "^7.12.13",
     "@emotion/babel-plugin": "^11.10.5",
-    "@storybook/addon-a11y": "^7.6.6",
-    "@storybook/addon-actions": "^7.6.6",
-    "@storybook/addon-essentials": "^7.6.6",
-    "@storybook/addon-links": "^7.6.6",
-    "@storybook/nextjs": "^7.6.6",
-    "@storybook/react": "^7.6.6",
     "@testing-library/react": "^14.1.2",
     "@types/jest": "^29.5.11",
     "@types/micro": "^10.0.0",
@@ -72,7 +63,6 @@
     "jest": "^29.7.0",
     "jest-watch-typeahead": "^2.2.2",
     "prettier": "^2.3.1",
-    "storybook": "^7.6.6",
     "stylelint": "^13.12.0",
     "stylelint-config-recommended": "^4.0.0",
     "stylelint-config-styled-components": "^0.1.1",

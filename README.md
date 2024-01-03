@@ -71,14 +71,6 @@ npm run build
 npm start
 ```
 
-**Storybook**
-
-Starts storybook on port 6006. Storybook is a demonstration home for the library of components and a good starting point for creating more.
-
-```
-npm run storybook
-```
-
 ### Development Workflow
 
 1. Go to the Github project board in [Github](https://github.com/orgs/b2io/projects/15/views/1) to find a development task from the `Todo` column.
