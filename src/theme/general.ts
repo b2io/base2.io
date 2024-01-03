@@ -7,12 +7,7 @@ export const general = {
 };
 
 export const ul = {
-  listStyle: 'none',
-  lineHeight: 1.75,
   li: {
-    marginTop: `${spacing.xxxs}`,
-    padding: `0 ${spacing.md}`,
-    position: 'relative',
     '::before': {
       borderBottom: `solid 1px ${colors.coral}`,
       content: '""',
@@ -21,5 +16,10 @@ export const ul = {
       top: '0.925rem',
       width: '1.125rem',
     },
+    marginTop: `${spacing.xxxs}`,
+    padding: `0 ${spacing.md}`,
+    position: 'relative',
   },
+  lineHeight: 1.75,
+  listStyle: 'none',
 };
