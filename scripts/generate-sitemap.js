@@ -1,9 +1,10 @@
 const fs = require('fs');
-const globby = require('globby');
 const path = require('path');
 const prettier = require('prettier');
 
 (async () => {
+  const { globby } = await import('globby');
+  
   const pages = await globby([
     'src/pages/**/*{.js,.jsx,.ts,.tsx}',
     '!src/pages/_*{.js,.jsx,.ts,.tsx}',
