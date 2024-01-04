@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
+import NextImage from 'next/legacy/image';
 import { FC, useEffect, useState } from 'react';
 import { useLocalStorage } from 'react-use';
-import NextImage from 'next/image';
 
 import { Heading, Link, Text } from '~/components';
 import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
