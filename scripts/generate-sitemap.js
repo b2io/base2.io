@@ -39,6 +39,6 @@ const prettier = require('prettier');
 
   fs.writeFileSync(
     'public/sitemap.xml',
-    prettier.format(sitemap, { ...prettierConfig, parser: 'html' }),
+    await prettier.format(sitemap, { ...prettierConfig, parser: 'html' }),
   );
 })();
