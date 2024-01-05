@@ -4,14 +4,14 @@ import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-// import Script from 'next/script';
+import Script from 'next/script';
 import { DefaultSeo } from 'next-seo';
 import type { FC } from 'react';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import theme, { colors } from '~/theme';
 
-// import * as gtag from '../../lib/gtag';
+import * as gtag from '../../lib/gtag';
 import FeatureFlagsProvider from '../context/FeatureFlagsProvider';
 
 const handleExitComplete = () => {
@@ -24,24 +24,25 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
   const pageKey = [router.locale, router.asPath].filter(Boolean).join(';');
 
-  // useEffect(() => {
-  //   const handleRouteChange = (url: any) => {
-  //     gtag.pageview(url);
-  //   };
-  //   router.events.on('routeChangeComplete', handleRouteChange);
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange);
-  //   };
-  // }, [router.events]);
+  useEffect(() => {
+    const handleRouteChange = (url: any) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
-      {/* <Script
+      <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
       <Script
+        id="gtag-script-id"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -53,7 +54,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
             });
           `,
         }}
-      /> */}
+      />
       <DefaultSeo
         additionalLinkTags={[
           {
