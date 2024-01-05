@@ -103,7 +103,15 @@ export const FeaturedCaseStudyHero: FC = () => {
           `}
           variant="h1"
         >
-          ColorSnap<sup>&reg;</sup>
+          ColorSnap
+          <sup
+            css={css`
+              font-size: 50%;
+              top: -1em;
+            `}
+          >
+            &reg;
+          </sup>
           <br />
           Visualizer
         </Heading>
