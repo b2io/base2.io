@@ -14,12 +14,12 @@ function getRandomElement<T>(arr: T[]): T | undefined {
     : undefined;
 }
 
-function pickTwoRandom<T>(
+function pickTwoRandom<T extends { id: any }>(
   array: T[],
   seen: T[],
 ): [T | undefined, T | undefined] {
-  const seenSet = new Set(seen);
-  let unseen = array.filter((item) => !seenSet.has(item));
+  const seenSet = new Set(seen.map((item) => item.id));
+  let unseen = array.filter((item) => !seenSet.has(item.id));
 
   const firstPick = getRandomElement(unseen.length > 0 ? unseen : array);
   let secondPick: T | undefined;
