@@ -13,9 +13,10 @@ import {
   DynamicIconProps,
   Heading,
   Link,
+  List,
   Text,
 } from '~/components';
-import { atMaxSm, atMinTablet, colors, spacing, ul } from '~/theme';
+import { atMaxSm, atMinTablet, colors, spacing } from '~/theme';
 
 export const CardHeading: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
@@ -236,21 +237,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       >
         {text}
       </Text>
-      <ul
-        css={css`
-          ${ul}
-          li {
-            position: relative; // <-- work-around for position breaks build for some reason
-            ::before {
-              position: absolute; // <-- work-around for position breaks build for some reason
-            }
-          }
-        `}
-      >
-        {details.map((detail, index) => (
-          <li key={`detail=${index + 1}`}>{detail}</li>
-        ))}
-      </ul>
+      <List listItems={details} />
     </Card>
   );
 };
