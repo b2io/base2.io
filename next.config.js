@@ -19,7 +19,7 @@ const config = {
               "img-src 'self' data:;",
               "manifest-src 'self';",
               "object-src 'none';",
-              "script-src 'self' 'nonce-3837b8g37b' https://*.googletagmanager.com;",
+              "script-src 'self' 'nonce-3837b8g37b' https://vercel.live https://*.googletagmanager.com;",
               "style-src 'self' 'unsafe-inline';",
             ].join(' '),
           },
