@@ -42,6 +42,8 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
       <Script
+        // integrity="sha256-RxDuGn3xoenOi9Kwmta7/F4WirIzae3u5DzDzs8S8io=" // needs to be manually updated, both here and next config csp rule, if script changes.
+        nonce="3837b8g37b" // recommended to be server generated value per request
         id="gtag-script-id"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{

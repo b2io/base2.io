@@ -11,7 +11,7 @@ const config = {
             key: 'Content-Security-Policy',
             value: [
               "base-uri 'self';",
-              "connect-src 'self' https://formspree.io;",
+              "connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com;",
               "default-src 'none';",
               "form-action 'self';",
               "font-src 'self';",
@@ -19,7 +19,7 @@ const config = {
               "img-src 'self' data:;",
               "manifest-src 'self';",
               "object-src 'none';",
-              "script-src 'self';",
+              "script-src 'self' 'nonce-3837b8g37b' https://*.googletagmanager.com;",
               "style-src 'self' 'unsafe-inline';",
             ].join(' '),
           },
