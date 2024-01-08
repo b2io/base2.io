@@ -193,7 +193,7 @@ export const Footer: FC = (prop) => {
       <FooterWrapper>
         <div>
           <FooterLogo />
-          <Slogan variant="h3" as="h3">
+          <Slogan variant="h3" as="p">
             Where code <br /> meets craft.
           </Slogan>
         </div>

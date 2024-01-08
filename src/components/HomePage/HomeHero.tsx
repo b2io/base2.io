@@ -166,7 +166,7 @@ export const HomeHero: FC = (props) => {
         />
         moves people.
       </Heading>
-      <Text as="h3" variant="h3">
+      <Text as="p" variant="h3">
         At Base Two, it all starts with a human touch.
       </Text>
       <svg
