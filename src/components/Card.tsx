@@ -1,5 +1,4 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 import {
   Children,
   cloneElement,
@@ -14,6 +13,7 @@ import {
   DynamicIconProps,
   Heading,
   Link,
+  List,
   Text,
 } from '~/components';
 import { atMaxSm, atMinTablet, colors, spacing } from '~/theme';
@@ -210,21 +210,6 @@ export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
   );
 };
 
-const StyledListItem = styled.li`
-  margin-top: ${spacing.xxxs};
-  padding: 0 ${spacing.md};
-  position: relative;
-
-  ::before {
-    border-bottom: solid 1px ${colors.coral};
-    content: '';
-    left: 0;
-    position: absolute;
-    top: 0.925rem;
-    width: 1.125rem;
-  }
-`;
-
 export type ServiceCardProps = {
   details: Array<string>;
   heading: string;
@@ -252,16 +237,7 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       >
         {text}
       </Text>
-      <ul
-        css={css`
-          line-height: 1.75;
-          list-style: none;
-        `}
-      >
-        {details.map((detail, index) => (
-          <StyledListItem key={`detail=${index + 1}`}>{detail}</StyledListItem>
-        ))}
-      </ul>
+      <List listItems={details} />
     </Card>
   );
 };
