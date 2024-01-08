@@ -7,6 +7,11 @@
     "order/properties-alphabetical-order": true,
     "property-no-vendor-prefix": null,
     "value-no-vendor-prefix": null,
-    "rule-empty-line-before": ["always", {"except": "inside-block"}, {"ignore": "inside-block"}]
+    "rule-empty-line-before": [
+      "always",
+      { "except": "inside-block" },
+      { "ignore": "inside-block" }
+    ],
+    "keyframes-name-pattern": "[A-Z]([A-Z0-9]*[a-z][a-z0-9]*[A-Z]|[a-z0-9]*[A-Z][A-Z0-9]*[a-z])[A-Za-z0-9]"
   }
 }

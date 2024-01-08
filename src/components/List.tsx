@@ -11,8 +11,8 @@ export const List: FC<ListProps> = ({ listItems }) => {
   return (
     <ul
       css={css`
-        list-style: none;
         line-height: 1.75;
+        list-style: none;
       `}
     >
       {listItems.map((item, index) => (
@@ -21,6 +21,7 @@ export const List: FC<ListProps> = ({ listItems }) => {
             margin-top: ${spacing.xxxs};
             padding: 0 ${spacing.md};
             position: relative;
+
             ::before {
               border-bottom: solid 1px ${colors.coral};
               content: '';
