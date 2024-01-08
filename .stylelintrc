@@ -6,6 +6,7 @@
     "no-descending-specificity": null,
     "order/properties-alphabetical-order": true,
     "property-no-vendor-prefix": null,
-    "value-no-vendor-prefix": null
+    "value-no-vendor-prefix": null,
+    "rule-empty-line-before": ["always", {"except": "inside-block"}, {"ignore": "inside-block"}]
   }
 }
