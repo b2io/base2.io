@@ -254,8 +254,8 @@ export const ServiceCard: FC<ServiceCardProps> = ({
       </Text>
       <ul
         css={css`
-          list-style: none;
           line-height: 1.75;
+          list-style: none;
         `}
       >
         {details.map((detail, index) => (
