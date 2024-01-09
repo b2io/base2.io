@@ -78,8 +78,8 @@ export const QuotedImage: FC<QuotedImageProps> = ({
       <div
         css={css`
           position: absolute;
-          width: 50%;
           right: 0;
+          width: 50%;
         `}
       >
         <Image

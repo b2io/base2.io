@@ -18,8 +18,8 @@ const MarqueeContainer = styled.div`
 `;
 
 const MarqueeText = styled.div`
-  display: inline-block;
   animation: ${marqueeAnimation} 10s linear infinite;
+  display: inline-block;
 `;
 
 export const XmasMarquee: FC = () => {

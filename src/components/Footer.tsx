@@ -16,8 +16,7 @@ const FooterWrapper = styled.div`
 
   ${atMinTablet} {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     justify-content: space-between;
     margin-left: 0;
     padding-bottom: 5rem;
@@ -38,7 +37,7 @@ const Slogan = styled(Text)`
 const Nav = styled.nav`
   ul {
     list-style: none;
-    margin: 4rem 0 0 0;
+    margin: 4rem 0 0;
     padding-left: 0;
 
     ${atMinTablet} {
@@ -49,14 +48,11 @@ const Nav = styled.nav`
     ${atMinLg} {
       width: 60%;
     }
-
     li {
       margin-bottom: 2rem;
-
       &:last-child {
         margin-bottom: 0;
       }
-
       ${atMinTablet} {
         margin-bottom: 2rem;
       }
@@ -80,8 +76,7 @@ const ContactBlock = styled.article`
 
   ${atMinLg} {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
   }
 `;
 
