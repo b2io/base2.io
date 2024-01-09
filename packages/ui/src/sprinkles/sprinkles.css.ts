@@ -1,0 +1,142 @@
+import { createSprinkles, defineProperties } from "@vanilla-extract/sprinkles";
+
+import { vars } from "../theme";
+import { backgroundColor, foregroundColor } from "../theme/helpers/color";
+import { layers } from "../theme/layers.css";
+import { mapValues } from "../util";
+
+const FLEX_ITEM_VALUES = [
+  "baseline",
+  "center",
+  "end",
+  "flex-end",
+  "flex-start",
+  "normal",
+  "self-end",
+  "self-start",
+  "start",
+  "stretch",
+] as const;
+
+const FLEX_CONTENT_VALUES = [
+  "baseline",
+  "center",
+  "end",
+  "flex-end",
+  "flex-start",
+  "normal",
+  "space-around",
+  "space-between",
+  "space-evenly",
+  "start",
+  "stretch",
+] as const;
+
+const responsiveProperties = defineProperties({
+  "@layer": layers.utilities,
+  conditions: {
+    /* eslint-disable sort-keys */
+    default: {},
+    disabled: { selector: "&:disabled" },
+    focus: { selector: "&:focus" },
+    hover: { selector: "&:hover" },
+    sm: { "@media": "(min-width: 640px)" },
+    md: { "@media": "(min-width: 768px)" },
+    lg: { "@media": "(min-width: 1024px)" },
+    xl: { "@media": "(min-width: 1280px)" },
+    "2xl": { "@media": "(min-width: 1536px)" },
+    /* eslint-enable sort-keys */
+  },
+  defaultCondition: "default",
+  properties: {
+    alignContent: FLEX_CONTENT_VALUES,
+    alignItems: FLEX_ITEM_VALUES,
+    backgroundColor: mapValues(vars.color, backgroundColor),
+    borderBlockEndWidth: vars.border,
+    borderBlockStartWidth: vars.border,
+    borderBlockWidth: vars.border,
+    borderBottomLeftRadius: vars.radii,
+    borderBottomRightRadius: vars.radii,
+    borderBottomWidth: vars.border,
+    borderEndEndRadius: vars.radii,
+    borderEndStartRadius: vars.radii,
+    borderInlineEndWidth: vars.border,
+    borderInlineStartWidth: vars.border,
+    borderInlineWidth: vars.border,
+    borderLeftWidth: vars.border,
+    borderRadius: vars.radii,
+    borderRightWidth: vars.border,
+    borderStartEndRadius: vars.radii,
+    borderStartStartRadius: vars.radii,
+    borderTopLeftRadius: vars.radii,
+    borderTopRightRadius: vars.radii,
+    borderTopWidth: vars.border,
+    borderWidth: vars.border,
+    boxShadow: vars.shadow,
+    color: mapValues(vars.color, foregroundColor),
+    columnGap: vars.space,
+    display: [
+      "block",
+      "flex",
+      "grid",
+      "inline",
+      "inline-block",
+      "inline-flex",
+      "inline-grid",
+    ],
+    flexDirection: ["column", "column-reverse", "row", "row-reverse"],
+    fontSize: vars.text.size,
+    fontWeight: vars.text.weight,
+    gap: vars.space,
+    height: vars.space,
+    justifyContent: FLEX_CONTENT_VALUES,
+    justifyItems: FLEX_ITEM_VALUES,
+    letterSpacing: vars.text.tracking,
+    lineHeight: vars.text.leading,
+    marginBottom: vars.space,
+    marginLeft: vars.space,
+    marginRight: vars.space,
+    marginTop: vars.space,
+    paddingBottom: vars.space,
+    paddingLeft: vars.space,
+    paddingRight: vars.space,
+    paddingTop: vars.space,
+    placeContent: FLEX_CONTENT_VALUES,
+    placeItems: FLEX_ITEM_VALUES,
+    rowGap: vars.space,
+    width: vars.space,
+  },
+  shorthands: {
+    bg: ["backgroundColor"],
+    h: ["height"],
+    leading: ["lineHeight"],
+    m: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
+    margin: ["marginTop", "marginBottom", "marginLeft", "marginRight"],
+    marginX: ["marginLeft", "marginRight"],
+    marginY: ["marginTop", "marginBottom"],
+    mb: ["marginBottom"],
+    ml: ["marginLeft"],
+    mr: ["marginRight"],
+    mt: ["marginTop"],
+    mx: ["marginLeft", "marginRight"],
+    my: ["marginTop", "marginBottom"],
+    p: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
+    padding: ["paddingTop", "paddingBottom", "paddingLeft", "paddingRight"],
+    paddingX: ["paddingLeft", "paddingRight"],
+    paddingY: ["paddingTop", "paddingBottom"],
+    pb: ["paddingBottom"],
+    pl: ["paddingLeft"],
+    pr: ["paddingRight"],
+    pt: ["paddingTop"],
+    px: ["paddingLeft", "paddingRight"],
+    py: ["paddingTop", "paddingBottom"],
+    tracking: ["letterSpacing"],
+    w: ["width"],
+  },
+});
+
+const sprinkles = createSprinkles(responsiveProperties);
+
+type Sprinkles = Parameters<typeof sprinkles>[0];
+
+export { sprinkles, type Sprinkles };
