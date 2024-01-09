@@ -82,12 +82,7 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         }}
       />
       <Head>
-        <link
-          as="font"
-          crossOrigin="anonymous"
-          href="/RoobertGX.woff2"
-          // rel="preload"
-        />
+        <link as="font" crossOrigin="anonymous" href="/RoobertGX.woff2" />
         <link as="font" crossOrigin="anonymous" href="/RoobertItalicGX.woff2" />
         <link rel="manifest" href="/site.webmanifest"></link>
         <meta charSet="utf-8" />
