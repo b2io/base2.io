@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextImage, { ImageProps as NextImageProps } from 'next/legacy/image';
+import NextImage from 'next/legacy/image';
 import type { FC } from 'react';
 
 import {
@@ -61,7 +61,7 @@ const Summary = styled.h2`
   }
 `;
 
-type CaseStudySummaryPaneProps = NextImageProps & {
+type CaseStudySummaryPaneProps = {
   summaryText: string;
   alt: string;
   src: string;

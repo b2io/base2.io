@@ -94,7 +94,9 @@ export const QuotedImage: FC<QuotedImageProps> = ({
       </div>
       <TextContainer>
         <div>
-          <Text variant="quotationsSymbol">&#8220;</Text>
+          <Text variant="quotationsSymbol" as="h2">
+            &#8220;
+          </Text>
         </div>
         <div>
           <Heading

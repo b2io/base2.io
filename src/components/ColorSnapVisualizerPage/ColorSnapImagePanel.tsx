@@ -72,15 +72,15 @@ export const ColorSnapImagePanel: FC<ColorSnapImagePanelProps> = () => {
   return (
     <ImageContainer>
       <ImagePanelItem
-        alt="image"
+        alt="digitally painted living room"
         src={require('./images/colorsnap-samples/cs2_sample.png')}
       />
       <ImagePanelItem
-        alt="image"
+        alt="generated color scheme for house exterior"
         src={require('./images/colorsnap-samples/cs3_sample.png')}
       />
       <ImagePanelItem
-        alt="image"
+        alt="color details page"
         src={require('./images/colorsnap-samples/cs6_sample.png')}
       />
     </ImageContainer>

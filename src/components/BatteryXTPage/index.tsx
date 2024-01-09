@@ -66,7 +66,7 @@ export const BatteryXTPage: FC = () => {
         compatible with nearly every device type and screen size, making it ideal for use on home computers
         or trade show floors."
         src={require('./images/batteryxt-summary.jpg')}
-        alt="screenshot"
+        alt="user demo dashboard"
       />
       <CaseStudyResultsPane {...CaseStudyResultsResultsProps} />
       <CaseStudyBottomNav {...caseStudyBottomNavProps} />
