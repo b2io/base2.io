@@ -66,9 +66,13 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
           `}
         >
           <NextImage
+            css={css`
+              color: transparent;
+              width: 100%;
+              height: auto;
+            `}
             alt={name}
             height={600}
-            layout="responsive"
             src={src}
             width={465}
           />
@@ -139,9 +143,13 @@ export const OurTeam: FC = (props) => {
           alt="people working in an office"
           css={css`
             right: calc(50% - 50vw);
+            object-fit: cover;
+            color: transparent;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            inset: 0px;
           `}
-          layout="fill"
-          objectFit="cover"
           placeholder="blur"
           src={require('./images/culture-ourteam.jpg')}
         />

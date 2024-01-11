@@ -96,7 +96,19 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
     >
       <ColorBlock>
         <ImageContainer>
-          <NextImage alt={alt} src={src} layout="fill" objectFit="contain" />
+          <NextImage
+            alt={alt}
+            src={src}
+            css={css`
+              object-fit: contain;
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              inset: 0px;
+              color: transparent;
+              object-fit: contain;
+            `}
+          />
         </ImageContainer>
       </ColorBlock>
       <Summary as="h2">{summaryText}</Summary>
