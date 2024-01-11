@@ -67,7 +67,7 @@ export const ScopeBuilderPage: FC = () => {
         scoping checklists and questionnaires, add attachments, select building materials and equipment,
         and route proposals to their supervisors for approval."
         src={require('./images/scopebuilder-preview.png')}
-        alt="screenshot"
+        alt="AEP dashboard"
       />
       <CaseStudyResultsPane {...CaseStudyResultsProps} />
       <CaseStudyBottomNav {...caseStudyBottomNavProps} />

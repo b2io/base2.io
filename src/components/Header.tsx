@@ -16,8 +16,8 @@ import { useFeatureFlag } from '../context/FeatureFlagsProvider';
 const Root = styled.header`
   background-image: linear-gradient(
     to bottom,
-    rgba(4, 0, 28, 0.84) 35%,
-    rgba(6, 2, 27, 0)
+    rgba(4 0 28 0.84) 35%,
+    rgba(6 2 27 0)
   );
   height: 6.188rem;
   left: 0;
@@ -61,7 +61,6 @@ const Nav = styled.nav`
     &:last-child {
       margin-right: 0;
     }
-
     &::after {
       background-color: transparent;
       content: '';
@@ -69,7 +68,6 @@ const Nav = styled.nav`
       height: 0.125rem;
       margin-top: 0.125rem;
     }
-
     &.active::after {
       background-color: ${colors.action};
     }

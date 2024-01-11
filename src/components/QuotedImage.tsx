@@ -78,8 +78,8 @@ export const QuotedImage: FC<QuotedImageProps> = ({
       <div
         css={css`
           position: absolute;
-          width: 50%;
           right: 0;
+          width: 50%;
         `}
       >
         <Image
@@ -94,7 +94,9 @@ export const QuotedImage: FC<QuotedImageProps> = ({
       </div>
       <TextContainer>
         <div>
-          <Text variant="quotationsSymbol">&#8220;</Text>
+          <Text variant="quotationsSymbol" as="h2">
+            &#8220;
+          </Text>
         </div>
         <div>
           <Heading
