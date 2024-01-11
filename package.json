@@ -41,6 +41,7 @@
     "@babel/core": "^7.12.13",
     "@emotion/babel-plugin": "^11.10.5",
     "@testing-library/react": "^14.1.2",
+    "@types/gtag.js": "^0.0.18",
     "@types/jest": "^29.5.11",
     "@types/micro-cors": "^0.1.0",
     "@types/node": "^20.10.5",
