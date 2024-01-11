@@ -1,8 +1,5 @@
 import { css } from '@emotion/react';
-import NextImage, {
-  ImageProps as NextImageProps,
-  StaticImageData,
-} from "next/legacy/image";
+import NextImage from 'next/legacy/image';
 import type { FC } from 'react';
 
 import { Heading, Text } from '~/components';
@@ -18,7 +15,7 @@ import {
 type TeamMemberGridItemProps = {
   location: string;
   name: string;
-  src: Exclude<NextImageProps['src'], string | StaticImageData>;
+  src: string;
 };
 
 const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
@@ -70,7 +67,6 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
         >
           <NextImage
             alt={name}
-            placeholder="blur"
             height={600}
             layout="responsive"
             src={src}

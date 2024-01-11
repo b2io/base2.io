@@ -23,4 +23,3 @@ export * from './SassIcon';
 export * from './SupportIcon';
 export * from './SustainabilityIcon';
 export * from './TransparencyIcon';
-
