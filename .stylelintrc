@@ -1,18 +1,17 @@
 {
-  "extends": [
-    "stylelint-config-recommended",
-    "stylelint-config-styled-components"
-  ],
-  "plugins": [
-    "stylelint-order"
-  ],
-  "processors": [
-    "stylelint-processor-styled-components"
-  ],
+  "extends": "stylelint-config-standard",
+  "plugins": ["stylelint-order"],
+  "customSyntax": "postcss-styled-syntax",
   "rules": {
     "no-descending-specificity": null,
     "order/properties-alphabetical-order": true,
     "property-no-vendor-prefix": null,
-    "value-no-vendor-prefix": null
+    "value-no-vendor-prefix": null,
+    "rule-empty-line-before": [
+      "always",
+      { "except": "inside-block" },
+      { "ignore": "inside-block" }
+    ],
+    "keyframes-name-pattern": "[A-Z]([A-Z0-9]*[a-z][a-z0-9]*[A-Z]|[a-z0-9]*[A-Z][A-Z0-9]*[a-z])[A-Za-z0-9]"
   }
 }

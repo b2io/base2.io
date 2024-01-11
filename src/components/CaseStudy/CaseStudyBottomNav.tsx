@@ -8,30 +8,33 @@ import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
 
 import { CASE_STUDIES, CaseStudyPageConfig } from './navProps';
 
-const getUnseenStudies = (
-  studies: CaseStudyPageConfig[],
-  seenStudies: CaseStudyPageConfig[],
-): CaseStudyPageConfig[] => {
-  return studies.filter(
-    (study) => !seenStudies.some((seen) => seen.id === study.id),
-  );
-};
+function getRandomElement<T>(arr: T[]): T | undefined {
+  return arr.length > 0
+    ? arr[Math.floor(Math.random() * arr.length)]
+    : undefined;
+}
 
-const pickTwoStudies = (
-  studies: CaseStudyPageConfig[],
-  excludeId?: number,
-): CaseStudyPageConfig[] => {
-  const filteredStudies = studies.filter((study) => study.id !== excludeId);
-  return [studies[0], filteredStudies[0] || studies[1]];
-};
+function pickTwoRandom<T extends { id: any }>(
+  array: T[],
+  seen: T[],
+): [T | undefined, T | undefined] {
+  const seenSet = new Set(seen.map((item) => item.id));
+  let unseen = array.filter((item) => !seenSet.has(item.id));
 
-const getRandomStudies = (
-  studies: CaseStudyPageConfig[],
-): CaseStudyPageConfig[] => {
-  const randomIndex = Math.floor(Math.random() * studies.length);
-  const nextIndex = (randomIndex + 1) % studies.length;
-  return [studies[randomIndex], studies[nextIndex]];
-};
+  const firstPick = getRandomElement(unseen.length > 0 ? unseen : array);
+  let secondPick: T | undefined;
+
+  if (firstPick && unseen.length > 1) {
+    unseen = unseen.filter((item) => item !== firstPick);
+    secondPick = getRandomElement(unseen);
+  } else {
+    do {
+      secondPick = getRandomElement(array);
+    } while (secondPick === firstPick && array.length > 1);
+  }
+
+  return [firstPick, secondPick];
+}
 
 export type CaseStudyBottomNavProps = {
   currentCaseStudy: CaseStudyPageConfig;
@@ -45,13 +48,11 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
     (study) => study.id !== currentCaseStudy.id,
   );
 
-  const [children, setChildren] = useState<CaseStudyPageConfig[]>(() =>
-    pickTwoStudies(otherStudies),
-  );
-
   const [seenStudies = [], setSeenStudies] = useLocalStorage<
     CaseStudyPageConfig[]
   >('seenStudies', []);
+
+  const [children, setChildren] = useState<CaseStudyPageConfig[]>([]);
 
   useEffect(() => {
     if (!seenStudies.some((study) => study.id === currentCaseStudy.id)) {
@@ -60,14 +61,11 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
       localStorage.setItem('seenStudies', JSON.stringify(newSeenStudies));
     }
 
-    const unseenStudies = getUnseenStudies(otherStudies, seenStudies);
     setChildren(
-      unseenStudies.length > 0
-        ? pickTwoStudies(unseenStudies, unseenStudies[0].id)
-        : getRandomStudies(otherStudies),
+      pickTwoRandom(otherStudies, seenStudies) as CaseStudyPageConfig[],
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentCaseStudy, seenStudies]);
+  }, []);
 
   return (
     <section
@@ -156,7 +154,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             </Link>
           </article>
           <NextImage
-            alt={'screenshot'}
+            alt={child.company}
             css={css`
               filter: opacity(30%);
             `}
