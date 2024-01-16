@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import NextImage from 'next/legacy/image';
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import { Heading, Text } from '~/components';
@@ -66,9 +66,12 @@ const TeamMemberGridItem: FC<TeamMemberGridItemProps> = ({
           `}
         >
           <NextImage
+            css={css`
+              width: 100%;
+              height: auto;
+            `}
             alt={name}
             height={600}
-            layout="responsive"
             src={src}
             width={465}
           />
@@ -138,10 +141,10 @@ export const OurTeam: FC = (props) => {
         <NextImage
           alt="people working in an office"
           css={css`
-            right: calc(50% - 50vw);
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
           `}
-          layout="fill"
-          objectFit="cover"
           placeholder="blur"
           src={require('./images/culture-ourteam.jpg')}
         />
