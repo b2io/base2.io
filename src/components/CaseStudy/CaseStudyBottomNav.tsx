@@ -157,7 +157,6 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             alt={child.company}
             css={css`
               filter: opacity(30%);
-              color: transparent;
               width: 100%;
               height: auto;
             `}
