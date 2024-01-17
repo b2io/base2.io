@@ -248,37 +248,6 @@ export const Contact: FC = () => {
             info@base2.io
           </Link>
         </ContactInfo>
-        <ContactInfo>
-          <Heading
-            color="coral"
-            css={css`
-              margin-bottom: ${cssClamp([0.5, 'mobile'], [1, 'tablet'])};
-            `}
-            variant="h3"
-          >
-            Address
-          </Heading>
-          <Link
-            css={css`
-              font-size: 1.875rem;
-              font-variation-settings: 'wght' 300;
-            `}
-            href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
-            target="_blank"
-            rel="noopener"
-          >
-            <address
-              css={css`
-                font-style: normal;
-                line-height: 1.5;
-              `}
-            >
-              21 E 5th Ave, Suite 102
-              <br />
-              Columbus, OH 43021
-            </address>
-          </Link>
-        </ContactInfo>
       </ContactAside>
       <Form />
     </ContactWrapper>

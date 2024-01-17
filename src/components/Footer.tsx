@@ -221,17 +221,6 @@ export const Footer: FC = (prop) => {
           <ContactLink href="tel:6143981158" rel="noopener">
             (614) 398-1158
           </ContactLink>
-          <ContactLink
-            href="https://goo.gl/maps/cesdJy5pkmTqJ7jn7"
-            target="_blank"
-            rel="noopener"
-          >
-            <address>
-              21 E 5th Ave Suite 102
-              <br />
-              Columbus, OH 43201
-            </address>
-          </ContactLink>
         </ContactBlock>
       </FooterWrapper>
     </Container>
