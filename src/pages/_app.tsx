@@ -2,6 +2,7 @@ import 'normalize.css';
 import { css, Global, ThemeProvider } from '@emotion/react';
 import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { AppProps } from 'next/app';
+import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { DefaultSeo } from 'next-seo';
@@ -17,6 +18,8 @@ const handleExitComplete = () => {
     window.scrollTo({ top: 0 });
   }
 };
+
+const inter = Inter({ subsets: ['latin'] });
 
 const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
@@ -53,8 +56,6 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
         }}
       />
       <Head>
-        <link as="font" crossOrigin="anonymous" href="/RoobertGX.woff2" />
-        <link as="font" crossOrigin="anonymous" href="/RoobertItalicGX.woff2" />
         <link rel="manifest" href="/site.webmanifest"></link>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -65,30 +66,13 @@ const CustomApp: FC<AppProps> = ({ Component, pageProps }) => {
           <ThemeProvider theme={theme}>
             <Global
               styles={css`
-                @font-face {
-                  font-display: swap;
-                  font-family: 'Roobert';
-                  font-style: normal;
-                  font-weight: 100 900;
-                  src: url(/RoobertGX.woff2) format('woff2-variations');
-                }
-
-                @font-face {
-                  font-display: swap;
-                  font-family: 'Roobert';
-                  font-style: italic;
-                  font-weight: 100 900;
-                  src: url(/RoobertItalicGX.woff2) format('woff2-variations');
-                }
-
                 :root {
                   color-scheme: dark;
                 }
 
                 * {
                   box-sizing: border-box;
-                  font-family: Roobert, sans-serif;
-                  font-feature-settings: 'ss02', 'ss05';
+                  font-family: ${inter.style.fontFamily};
                 }
 
                 body,
