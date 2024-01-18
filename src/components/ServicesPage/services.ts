@@ -108,7 +108,7 @@ export const SERVICES: Array<Services> = [
     sectionTitle: 'Mentorship, Guidance, and Strategy',
     services: [
       {
-        description: `At Base Two, we recognize the importance of going beyond traditional development roles. Our peoople provide ongoing mentorship and guidance, acting as a committed technology partner for our clients. We focus not just on on development but also on creating a supportive framework for shaping your technology strategy, facilitating informed decision-making, and nurturing effective, skilled engineering teams. With a team experienced in both advanced engineering and empathetic leadership, we aim to positively influence and enhance your team's overall performance.`,
+        description: `At Base Two, we recognize the importance of going beyond traditional development roles. Our people provide ongoing mentorship and guidance, acting as a committed technology partner for our clients. We focus not just on development but also on creating a supportive framework for shaping your technology strategy, facilitating informed decision-making, and nurturing effective, skilled engineering teams. With a team experienced in both advanced engineering and empathetic leadership, we aim to positively influence and enhance your team's overall performance.`,
         details: [
           'Continuous mentorship to strategically guide and improve decision-making processes.',
           'Expert assistance in navigating technical challenges, offering timely and practical solutions.',
