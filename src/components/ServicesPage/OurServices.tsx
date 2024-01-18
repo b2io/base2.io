@@ -182,6 +182,7 @@ export const OurServices: FC = (props) => {
                       variant="h3"
                       css={css`
                         margin-bottom: ${spacing.lg};
+                        white-space: pre-line;
                       `}
                     >
                       {service.sectionDescription}

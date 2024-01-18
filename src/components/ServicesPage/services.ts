@@ -79,7 +79,9 @@ export const SERVICES: Array<Services> = [
     ],
   },
   {
-    sectionDescription: `If your tech partnerships have failed in the past, you are not alone. It's difficult to find a consistent group who are reliable, communicative, and fulfill commitments. At Base Two, we deeply invest in the tasks we're given and take ownership of the systems we work on and results we achieve. It's important that we are a team working together to solve problems and build solutions we're proud of. Let us be part of your internal engineering team.`,
+    sectionDescription: `If your tech partnerships have failed in the past, you are not alone. It's difficult to find a consistent group who are reliable, communicative, and fulfill commitments. At Base Two, we deeply invest in the tasks we're given and take ownership of the systems we work on and results we achieve. It's important that we are a team working together to solve problems and build solutions we're proud of.
+    
+    Let us be part of your engineering team.`,
     sectionTitle: 'Committed Partner',
     services: [
       {
@@ -106,7 +108,7 @@ export const SERVICES: Array<Services> = [
     sectionTitle: 'Mentorship, Guidance, and Strategy',
     services: [
       {
-        description: `At Base Two, we recognize the importance of going beyond traditional development roles. Our service is deeply rooted in providing ongoing mentorship and guidance, acting as a committed technology partner for our clients. We focus not only on development but also on offering a supportive framework for shaping your technology strategy, facilitating informed decision-making, and nurturing effective, skilled engineering teams. With a team experienced in both advanced engineering and empathetic leadership, we aim to positively influence and enhance your team's overall performance.`,
+        description: `At Base Two, we recognize the importance of going beyond traditional development roles. Our peoople provide ongoing mentorship and guidance, acting as a committed technology partner for our clients. We focus not just on on development but also on creating a supportive framework for shaping your technology strategy, facilitating informed decision-making, and nurturing effective, skilled engineering teams. With a team experienced in both advanced engineering and empathetic leadership, we aim to positively influence and enhance your team's overall performance.`,
         details: [
           'Continuous mentorship to strategically guide and improve decision-making processes.',
           'Expert assistance in navigating technical challenges, offering timely and practical solutions.',
