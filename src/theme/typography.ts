@@ -31,7 +31,7 @@ export const linkVariants = {
     },
     color: colors.text,
     cursor: 'pointer',
-    fontSize: '1.063rem',
+    fontSize: '1rem',
     fontVariationSettings: '"wght" 500',
     lineHeight: 1.75,
     textDecoration: 'none',
