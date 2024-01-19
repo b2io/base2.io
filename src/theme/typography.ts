@@ -131,6 +131,18 @@ export const textVariants = {
     margin: 0,
     padding: 0,
   },
+  pageHero: {
+    [atMinTablet]: {
+      lineHeight: 1.04,
+    },
+    color: colors.text,
+    fontSize: cssClamp([2.75, 'smMobile'], [3.25, 'mobile'], [6, 'tablet']),
+    fontVariationSettings: '"wght" 900',
+    letterSpacing: cssClamp([-0.03125, 'mobile'], [0, 'tablet']),
+    lineHeight: 1,
+    margin: 0,
+    padding: 0,
+  },
   quotationsSymbol: {
     [atMinXL]: {
       fontSize: '37.5rem',
