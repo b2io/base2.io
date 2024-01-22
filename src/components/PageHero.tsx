@@ -81,7 +81,9 @@ export const PageHero: FC<PageHeroProps> = ({
         />
       </div>
 
-      <HeaderText as="h2">{text}</HeaderText>
+      <HeaderText as="h2" variant="pageHero">
+        {text}
+      </HeaderText>
     </section>
   );
 };

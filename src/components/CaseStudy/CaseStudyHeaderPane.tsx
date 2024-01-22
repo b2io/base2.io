@@ -3,7 +3,7 @@ import { ImageProps as NextImageProps, StaticImageData } from 'next/image';
 import type { FC, ReactNode } from 'react';
 
 import { Heading } from '~/components';
-import { atMaxMd, atMaxSm, atMinSm } from '~/theme';
+import { spacing } from '~/theme';
 
 import { CaseStudyHero } from './CaseStudyHero';
 
@@ -18,27 +18,11 @@ export const CaseStudyHeaderPane: FC<CaseStudyProps> = ({ alt, name, src }) => {
     <section>
       <Heading
         as="h1"
-        variant="h2"
+        variant="pageHero"
         css={css`
-          font-size: 5rem;
-          margin-bottom: -1rem;
-          margin-left: 5rem;
+          margin-bottom: -${spacing.sm};
           position: relative;
           z-index: 2;
-
-          ${atMaxMd} {
-            font-size: 4rem;
-            margin-left: 0;
-          }
-
-          ${atMinSm} {
-            top: 1.5 rem;
-            line-height: 4.5rem;
-          }
-
-          ${atMaxSm} {
-            font-size: 3rem;
-          }
         `}
       >
         {name}
