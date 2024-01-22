@@ -3,6 +3,7 @@ import { ImageProps as NextImageProps, StaticImageData } from 'next/image';
 import type { FC, ReactNode } from 'react';
 
 import { Heading } from '~/components';
+import { spacing } from '~/theme';
 
 import { CaseStudyHero } from './CaseStudyHero';
 
@@ -19,7 +20,7 @@ export const CaseStudyHeaderPane: FC<CaseStudyProps> = ({ alt, name, src }) => {
         as="h1"
         variant="pageHero"
         css={css`
-          margin-bottom: -1.5rem;
+          margin-bottom: -${spacing.sm};
           position: relative;
           z-index: 2;
         `}
