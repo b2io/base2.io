@@ -26,19 +26,20 @@ const calculatedImageHeight = cssClamp(
 );
 
 const HeaderText = styled(Heading)`
-  padding-top: ${cssClamp([5, 'smMobile'], [10, 'mobile'], [15.5, 'tablet'])};
+  padding-top: 30%;
   position: relative;
 
-  ${atMinLg} {
+  /* ${atMinLg} {
     max-width: 53rem;
-  }
+  } */
 
   ${atMinXL} {
-    left: ${cssClamp(
+    /* left: ${cssClamp(
       [16.75, 'xl'],
       [33.75, 'desktop'],
       [38.25, 'largeDesktop'],
-    )};
+    )}; */
+    margin: 0 7.6125rem;
   }
 `;
 
@@ -63,6 +64,7 @@ export const PageHero: FC<PageHeroProps> = ({
           width: 100%;
 
           ${atMinXL} {
+            margin-left: unset;
             min-height: ${calculatedImageHeight};
           }
         `}
