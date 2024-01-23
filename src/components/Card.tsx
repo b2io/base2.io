@@ -192,9 +192,9 @@ export type BasicCardProps = {
   text: string;
 };
 
-export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
+export const BasicCard: FC<BasicCardProps> = ({ heading, text, ...props }) => {
   return (
-    <Card>
+    <Card {...props}>
       <Heading as="h2" variant="h2">
         {heading}
       </Heading>
