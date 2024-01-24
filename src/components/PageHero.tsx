@@ -29,9 +29,9 @@ const HeaderText = styled(Heading)`
   padding-top: 30%;
   position: relative;
 
-  /* ${atMinLg} {
-    max-width: 53rem;
-  } */
+  ${atMinLg} {
+    max-width: 54rem;
+  }
 
   ${atMinXL} {
     /* left: ${cssClamp(
@@ -59,7 +59,7 @@ export const PageHero: FC<PageHeroProps> = ({
     >
       <div
         css={css`
-          margin-left: calc(50% - 50vw);
+          /* margin-left: calc(50% - 50vw); */
           position: absolute;
           width: 100%;
 
