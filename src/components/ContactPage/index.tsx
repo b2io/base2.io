@@ -5,7 +5,7 @@ import { Layout, Text } from '~/components';
 import { atMinTablet, cssClamp } from '~/theme';
 
 import { Contact } from './ContactForm';
-import { PageHero } from '../PageHero';
+import { PageHero } from '../Common/PageHero';
 
 export const ContactPage: FC = () => {
   return (

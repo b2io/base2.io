@@ -1,10 +1,11 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { LogoIcon } from './icons';
+import { LogoIcon } from '../icons';
 
 export type OpenGraphImageProps = Record<string, never>;
 
+// unused!
 export const OpenGraphImage: FC<OpenGraphImageProps> = () => {
   return (
     <div

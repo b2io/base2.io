@@ -4,8 +4,8 @@ import { useLockBodyScroll, useToggle } from 'react-use';
 
 import { colors, spacing } from '~/theme';
 
-import { MenuIcon } from './icons';
-import { Link } from './Link';
+import { Link } from '../Common/Link';
+import { MenuIcon } from '../icons';
 
 const Menu = styled.div`
   background-color: ${colors.workThumbnailBg};
