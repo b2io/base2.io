@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import NextImage from 'next/legacy/image';
+import NextImage from 'next/image';
 import type { FC } from 'react';
 
 import {
@@ -96,7 +96,15 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
     >
       <ColorBlock>
         <ImageContainer>
-          <NextImage alt={alt} src={src} layout="fill" objectFit="contain" />
+          <NextImage
+            alt={alt}
+            src={src}
+            css={css`
+              object-fit: contain;
+              height: 100%;
+              width: 100%;
+            `}
+          />
         </ImageContainer>
       </ColorBlock>
       <Summary as="h2">{summaryText}</Summary>

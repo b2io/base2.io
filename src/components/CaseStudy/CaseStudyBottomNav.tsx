@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import NextImage from 'next/legacy/image';
+import NextImage from 'next/image';
 import { FC, useEffect, useState } from 'react';
 import { useLocalStorage } from 'react-use';
 
@@ -157,9 +157,10 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             alt={child.company}
             css={css`
               filter: opacity(30%);
+              width: 100%;
+              height: auto;
             `}
             height={400}
-            layout="responsive"
             src={child.imagePath}
             width={466}
           />

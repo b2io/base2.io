@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import type { FC, PropsWithChildren } from 'react';
 
-import { atMinSm, atMinTablet, atMinXXL, colors, spacing } from '~/theme';
+import { atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
 import { MobileMenu } from './MobileMenu';
 import { useFeatureFlag } from '../../context/FeatureFlagsProvider';
@@ -47,7 +47,7 @@ const Content = styled(Container)`
 const Nav = styled.nav`
   display: none;
 
-  ${atMinSm} {
+  ${atMinTablet} {
     display: block;
   }
 
@@ -121,7 +121,7 @@ export const Header: FC = ({ ...props }) => {
         {isXmasMarqueeEnabled && <XmasMarquee />}
         <MobileMenu
           css={css`
-            ${atMinSm} {
+            ${atMinTablet} {
               display: none;
             }
           `}
