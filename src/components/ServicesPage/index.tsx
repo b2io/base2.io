@@ -20,7 +20,6 @@ export const ServicesPage: React.FC = () => {
       />
 
       <OurServices />
-
       <Heading
         as="h2"
         css={css`
