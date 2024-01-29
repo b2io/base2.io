@@ -6,6 +6,7 @@ import { Link } from 'react-scroll';
 import { Heading, ServiceCard, Text } from '~/components';
 import { atMinLg, atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
+import { Referrals } from './Referrals';
 import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
 
 const ContentWrapper = styled.div`
@@ -213,6 +214,7 @@ export const OurServices: FC = (props) => {
             </Service>
           );
         })}
+        <Referrals />
       </ServicesContainer>
     </section>
   );
