@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
+import { Heading } from '~/components';
 import {
   atMinDesktop,
   atMinTablet,
@@ -35,29 +36,6 @@ const ImageContainer = styled.div`
   ${atMinXL} {
     height: 100%;
     width: 20.625rem;
-  }
-`;
-
-const Summary = styled.h2`
-  font-size: 1.875rem;
-  line-height: 1.2;
-  margin: 0 1.5rem;
-  position: relative;
-  top: -3.7rem;
-  word-break: keep-all;
-
-  ${atMinTablet} {
-    font-size: 3.125rem;
-    max-width: 54.188rem;
-    margin: 0 ${spacing.xxl2};
-  }
-
-  ${atMinXL} {
-    left: 35.438rem;
-    margin: 0;
-
-    position: absolute;
-    top: 4rem;
   }
 `;
 
@@ -107,7 +85,29 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
           />
         </ImageContainer>
       </ColorBlock>
-      <Summary as="h2">{summaryText}</Summary>
+      <div
+        css={css`
+          margin: 0 ${spacing.sm};
+          position: relative;
+          top: -${spacing.xxl};
+
+          ${atMinTablet} {
+            max-width: 42rem;
+            margin: 0 auto;
+          }
+
+          ${atMinXL} {
+            left: 36rem;
+            margin: 0 ${spacing.xs};
+            position: absolute;
+            top: ${spacing.md};
+          }
+        `}
+      >
+        <Heading as="h2" variant="h2">
+          {summaryText}
+        </Heading>
+      </div>
     </section>
   );
 };
