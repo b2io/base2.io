@@ -17,7 +17,7 @@ export const Referrals: FC = () => {
         Referrals
       </Heading>
       <Heading as="h4" variant="h3">
-        Base Two is a small team of thoughtful developers with no dedicated
+        Base Two is a small group of thoughtful developers with no dedicated
         sales team. We generate work through word of mouth and satisfied
         clients. Know of someone who could use help with a project? We do offer
         referral fees in certain situations. Drop us a line and we&#39;ll be
