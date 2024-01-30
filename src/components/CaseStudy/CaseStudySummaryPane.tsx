@@ -42,19 +42,19 @@ const ImageContainer = styled.div`
 
 const SummaryHeader = styled(Heading)`
   margin: 0 ${spacing.sm};
+  max-width: 40rem;
   position: relative;
   top: -${spacing.xxl};
 
   ${atMinTablet} {
-    max-width: 50rem;
     margin: 0 auto;
   }
 
   ${atMinXL} {
-    left: 34rem;
+    left: 36rem;
     margin: 0 ${spacing.xs};
     position: absolute;
-    top: ${spacing.sm};
+    top: ${spacing.xxl};
   }
 `;
 
@@ -104,7 +104,7 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
           />
         </ImageContainer>
       </ColorBlock>
-      <SummaryHeader as="h2" variant="h2">
+      <SummaryHeader as="h2" variant="h3">
         {summaryText}
       </SummaryHeader>
     </section>
