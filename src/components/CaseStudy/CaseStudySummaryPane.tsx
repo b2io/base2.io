@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { Heading } from '~/components';
 import {
   atMinDesktop,
   atMinTablet,
@@ -12,6 +11,8 @@ import {
   colors,
   spacing,
 } from '~/theme';
+
+import { Heading } from '../Common/Heading';
 
 const ColorBlock = styled.div`
   align-items: center;
@@ -36,6 +37,24 @@ const ImageContainer = styled.div`
   ${atMinXL} {
     height: 100%;
     width: 20.625rem;
+  }
+`;
+
+const SummaryHeader = styled(Heading)`
+  margin: 0 ${spacing.sm};
+  position: relative;
+  top: -${spacing.xxl};
+
+  ${atMinTablet} {
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  ${atMinXL} {
+    left: 34rem;
+    margin: 0 ${spacing.xs};
+    position: absolute;
+    top: ${spacing.sm};
   }
 `;
 
@@ -85,29 +104,9 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
           />
         </ImageContainer>
       </ColorBlock>
-      <div
-        css={css`
-          margin: 0 ${spacing.sm};
-          position: relative;
-          top: -${spacing.xxl};
-
-          ${atMinTablet} {
-            max-width: 42rem;
-            margin: 0 auto;
-          }
-
-          ${atMinXL} {
-            left: 36rem;
-            margin: 0 ${spacing.xs};
-            position: absolute;
-            top: ${spacing.md};
-          }
-        `}
-      >
-        <Heading as="h2" variant="h2">
-          {summaryText}
-        </Heading>
-      </div>
+      <SummaryHeader as="h2" variant="h2">
+        {summaryText}
+      </SummaryHeader>
     </section>
   );
 };
