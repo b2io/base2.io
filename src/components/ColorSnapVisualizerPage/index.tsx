@@ -47,16 +47,9 @@ export const ColorSnapVisualizerPage: FC = () => {
           <>
             Sherwin-Williams wanted customers to easily visualize exciting new
             paint colors on their walls. We created ColorSnap
-            <sup
-              css={css`
-                font-size: 50%;
-                top: -0.75em;
-              `}
-            >
-              ®
-            </sup>{' '}
-            Visualizer for Web, an application that enables users to virtually
-            transform their space with any Sherwin-Williams color.
+            <TrademarkSymbol /> Visualizer for Web, an application that enables
+            users to virtually transform their space with any Sherwin-Williams
+            color.
           </>
         }
         askText="Sherwin-Williams knew that if their customers could effortlessly test a paint color
