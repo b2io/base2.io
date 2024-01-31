@@ -85,7 +85,7 @@ export const NetJetsPage: FC = () => {
       </section>
       <CaseStudySummaryPane
         summaryText="Fly NetJets lets clients manage their accounts, book upcoming trips, and 
-        fully control their in-flight experience. Behind the scenes, a number of systems communicate 
+        fully control their in&#8209;flight experience. Behind the scenes, a number of systems communicate 
         to make this all possible, from a shared data layer supporting mobile and web interfaces to 
         constantly changing updates on aircraft availability."
         src={require('./images/netjets-screenshot.jpg')}

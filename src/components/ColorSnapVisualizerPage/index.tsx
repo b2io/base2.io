@@ -111,7 +111,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         />
       </section>
       <CaseStudySummaryPane
-        summaryText="The app lets customers effortlessly browse Sherwin-Williams’ digital paint collection, curate color schemes,
+        summaryText="The app lets customers effortlessly browse Sherwin&#8209;Williams’ digital paint collection, curate color schemes,
         generate paint suggestions from their favorite images, and digitally paint their physical spaces."
         src={require('./images/colorsnap-screenshot.jpg')}
         alt="phone app"
