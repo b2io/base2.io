@@ -11,14 +11,9 @@ import {
   ColorSnapImagePanel,
   Layout,
   QuotedImage,
+  TrademarkSymbol,
 } from '~/components';
-import {
-  atMinDesktop,
-  atMinTablet,
-  atMinXXL,
-  cssClamp,
-  spacing,
-} from '~/theme';
+import { atMinDesktop, cssClamp, spacing } from '~/theme';
 
 import { colorSnapNav } from '../CaseStudy/navProps';
 
@@ -42,22 +37,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         name={
           <>
             ColorSnap Visualizer
-            <sup
-              css={css`
-                font-size: 1.5rem;
-                top: -1rem;
-
-                ${atMinTablet} {
-                  font-size: 2rem;
-                  top: -2rem;
-                }
-                ${atMinXXL} {
-                  font-size: 2.5rem;
-                }
-              `}
-            >
-              &reg;
-            </sup>
+            <TrademarkSymbol />
           </>
         }
         src={require('./images/colorsnap-hero.jpg')}
@@ -69,11 +49,8 @@ export const ColorSnapVisualizerPage: FC = () => {
             paint colors on their walls. We created ColorSnap
             <sup
               css={css`
-                font-size: '2px';
-
-                ${atMinTablet} {
-                  font-size: '.5em';
-                }
+                font-size: 50%;
+                top: -0.75em;
               `}
             >
               ®
