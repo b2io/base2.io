@@ -182,22 +182,16 @@ export const textVariants = {
     padding: 0,
   },
   teamHero: {
-    [atMinLg]: {
-      lineHeight: 0.58,
-    },
-    [atMinTablet]: {
-      lineHeight: 0.74,
-    },
     color: colors.coral,
     fontSize: cssClamp(
       [3.5, 'smMobile'],
       [4.25, 'mobile'],
-      [10, 'tablet'],
+      [9, 'tablet'],
       [15, 'lg'],
     ),
     fontVariationSettings: '"wght" 900',
     letterSpacing: 'normal',
-    lineHeight: 0.53,
+    lineHeight: 1,
     margin: 0,
     padding: 0,
   },
