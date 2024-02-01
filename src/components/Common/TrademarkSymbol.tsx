@@ -4,7 +4,7 @@ export const TrademarkSymbol = () => (
   <sup
     css={css`
       font-size: 50%;
-      top: -0.75em;
+      vertical-align: middle;
     `}
   >
     &reg;
