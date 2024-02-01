@@ -6,7 +6,7 @@ import NextImage, {
 import type { FC } from 'react';
 
 import { Link, Text } from '~/components';
-import { atMaxLg, atMinSm, atMinTablet, colors, spacing } from '~/theme';
+import { atMinSm, colors, spacing } from '~/theme';
 
 type CaseStudyPreviewImageProps = NextImageProps & {
   alt: string;
@@ -35,7 +35,7 @@ export const CaseStudyPreview: FC<CaseStudyPreviewImageProps> = ({
       />
       <div
         css={css`
-          margin-top: -${spacing.md};
+          margin-top: -${spacing.sm};
           padding-left: ${spacing.sm};
           position: relative;
 
@@ -54,24 +54,10 @@ export const CaseStudyPreview: FC<CaseStudyPreviewImageProps> = ({
                 width: 1.125rem;
               }
             }
-
-            ${atMinTablet} {
-              margin-top: -2.45rem;
-            }
           }
         `}
       >
-        <Link
-          href={href}
-          css={css`
-            font-size: 4rem;
-
-            ${atMaxLg} {
-              font-size: 3rem;
-            }
-          `}
-          variant="large"
-        >
+        <Link href={href} variant="large">
           {title}
         </Link>
         <Text variant="body">{info}</Text>

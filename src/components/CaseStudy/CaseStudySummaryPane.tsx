@@ -12,6 +12,8 @@ import {
   spacing,
 } from '~/theme';
 
+import { Heading } from '../Common/Heading';
+
 const ColorBlock = styled.div`
   align-items: center;
   background: ${colors.coral};
@@ -38,26 +40,27 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Summary = styled.h2`
-  font-size: 1.875rem;
-  line-height: 1.2;
-  margin: 0 1.5rem;
+const SummaryHeader = styled(Heading)`
+  margin: 0 ${spacing.sm};
+  max-width: 46rem;
   position: relative;
-  top: -3.7rem;
-  word-break: keep-all;
+  top: -${spacing.xxl};
 
   ${atMinTablet} {
-    font-size: 3.125rem;
-    max-width: 54.188rem;
-    margin: 0 ${spacing.xxl2};
+    margin: 0 auto;
   }
 
   ${atMinXL} {
-    left: 35.438rem;
-    margin: 0;
-
+    left: 34rem;
+    margin: 0 ${spacing.xs};
+    max-width: 52rem;
     position: absolute;
-    top: 4rem;
+    top: ${spacing.sm};
+  }
+
+  ${atMinXXL} {
+    margin: 0 ${spacing.md};
+    top: ${spacing.xxl};
   }
 `;
 
@@ -107,7 +110,9 @@ export const CaseStudySummaryPane: FC<CaseStudySummaryPaneProps> = ({
           />
         </ImageContainer>
       </ColorBlock>
-      <Summary as="h2">{summaryText}</Summary>
+      <SummaryHeader as="h2" variant="h2">
+        {summaryText}
+      </SummaryHeader>
     </section>
   );
 };

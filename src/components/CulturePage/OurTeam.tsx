@@ -154,21 +154,15 @@ export const OurTeam: FC = (props) => {
             --size: ${cssClamp(
               [3.5, 'smMobile'],
               [4.25, 'mobile'],
-              [10, 'tablet'],
+              [9, 'tablet'],
               [15, 'lg'],
             )};
-
             bottom: calc(var(--size) / 3 * -1);
-            color: ${colors.coral};
-            font-size: var(--size);
-            font-variation-settings: 'wght' 900;
-            letter-spacing: normal;
-            margin: 0;
-            padding: 0;
             position: absolute;
             right: 0;
             z-index: 4;
           `}
+          variant="teamHero"
         >
           Our team
         </Heading>

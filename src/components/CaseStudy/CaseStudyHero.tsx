@@ -20,6 +20,7 @@ export const CaseStudyHero: FC<CaseStudyHeroProps> = ({ src, alt }) => {
         height: auto;
         width: 100%;
       `}
+      priority
     />
   );
 };
