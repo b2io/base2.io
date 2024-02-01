@@ -157,7 +157,6 @@ export const OurTeam: FC = (props) => {
               [9, 'tablet'],
               [15, 'lg'],
             )};
-
             bottom: calc(var(--size) / 3 * -1);
             position: absolute;
             right: 0;
