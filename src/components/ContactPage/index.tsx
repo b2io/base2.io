@@ -18,6 +18,8 @@ export const ContactPage: FC = () => {
       />
       <section
         css={css`
+          margin-top: ${cssClamp([6.5, 'mobile'], [8.5, 'tablet'])};
+
           ${atMinXL} {
             margin-left: ${spacing.marginXl};
             margin-right: ${spacing.marginXl};
@@ -28,12 +30,10 @@ export const ContactPage: FC = () => {
           as="article"
           css={css`
             margin-bottom: ${cssClamp([6.5, 'mobile'], [8.5, 'tablet'])};
-            margin-top: ${spacing.xxl2};
             position: relative;
 
             ${atMinTablet} {
               max-width: 52rem;
-              margin-top: ${spacing.xxl3};
             }
           `}
           variant="h2"
