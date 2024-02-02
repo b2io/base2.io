@@ -13,7 +13,7 @@ export const ContactPage: FC = () => {
       <PageHero
         alt="people standing in field looking at camera"
         src={'/contact/contact-hero-xl.jpg'}
-        imageProps={{ height: 614, width: 1260 }}
+        imageProps={{ height: 546, width: 1280 }}
         text="Like what you see? Let's get started."
       />
       <Text
