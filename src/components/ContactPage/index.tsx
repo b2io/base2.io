@@ -39,8 +39,8 @@ export const ContactPage: FC = () => {
           variant="h2"
         >
           Our team members are located in Columbus, Pittsburgh, Seattle,
-          Philadelphia, Atlanta, New York City, and Orlando, but thanks to
-          satellites and the internet, we can work with you wherever you are.
+          Philadelphia, Atlanta, and NYC, but thanks to satellites and the
+          internet, we can work with you wherever you are.
         </Text>
         <Contact />
       </section>
