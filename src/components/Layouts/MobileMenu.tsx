@@ -37,7 +37,7 @@ const IconButton = styled.button`
 const Nav = styled.nav`
   ul {
     list-style: none;
-    padding: 10.25rem 0 0 2.5rem;
+    padding: 10.25rem 0 ${spacing.xxxs} ${spacing.lg};
   }
 
   li {
@@ -46,7 +46,9 @@ const Nav = styled.nav`
 `;
 
 const ContactLink = styled(Link)`
+  display: block;
   margin: ${spacing.sm} ${spacing.lg} 0;
+  width: fit-content;
 `;
 
 export const MobileMenu: FC = ({ ...props }) => {
