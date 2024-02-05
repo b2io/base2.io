@@ -58,7 +58,6 @@ export const PageHero: FC<PageHeroProps> = ({
           width: 100%;
 
           ${atMinXL} {
-            margin-left: unset;
             min-height: ${calculatedImageHeight};
           }
         `}
