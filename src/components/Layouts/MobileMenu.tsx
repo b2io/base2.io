@@ -41,13 +41,12 @@ const Nav = styled.nav`
   }
 
   li {
-    margin-bottom: ${spacing.sm};
+    margin-bottom: ${spacing.xs};
   }
 `;
 
 const ContactLink = styled(Link)`
-  display: table;
-  margin: 3rem ${spacing.lg} 0;
+  margin: ${spacing.sm} ${spacing.lg} 0;
 `;
 
 export const MobileMenu: FC = ({ ...props }) => {
