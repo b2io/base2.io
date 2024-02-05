@@ -25,35 +25,28 @@ const ContactWrapper = styled.section`
 `;
 
 const InputWrapper = styled.div`
-  margin-bottom: ${spacing.xxl2};
-  min-height: 12.375rem;
+  min-height: 10rem;
 `;
 
 const Label = styled.label({
-  ...theme.textVariants.h2,
+  ...theme.textVariants.h3,
   display: 'block',
-  marginBottom: spacing.lg,
+  marginBottom: spacing.xxs,
 });
 
 const FormInput = styled.input`
-  background: none;
   border: none;
   border-bottom: 1px solid ${colors.offWhite};
   color: ${colors.offWhite};
-  font-size: 1.875rem;
   height: 4rem;
-  line-height: 1.3;
-  margin-bottom: ${spacing.xs};
+  margin-bottom: ${spacing.xxxs};
   outline: none;
+  padding: ${spacing.xs};
   transition: border-bottom 0.3s ease;
   width: 100%;
 
   &:focus {
     border-bottom: 1px solid ${colors.coral};
-  }
-
-  &::placeholder {
-    font-size: 1rem;
   }
 
   &:-webkit-autofill {
@@ -64,7 +57,7 @@ const FormInput = styled.input`
 `;
 
 const ContactAside = styled.aside`
-  margin-bottom: 6.5rem;
+  margin-bottom: ${spacing.md};
 
   ${atMinTablet} {
     margin-bottom: 0;
@@ -148,7 +141,7 @@ export const Form: FC = () => {
   ) : (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <InputWrapper>
-        <Label htmlFor="name">Hello, my name is:</Label>
+        <Label htmlFor="name">Name</Label>
         <FormInput
           autoComplete="off"
           id="name"
@@ -162,7 +155,7 @@ export const Form: FC = () => {
         {errors.fullName && <Error>{errors.fullName.message}</Error>}
       </InputWrapper>
       <InputWrapper>
-        <Label htmlFor="email">My email is:</Label>
+        <Label htmlFor="email">Email</Label>
         <FormInput
           autoComplete="off"
           id="email"
@@ -178,11 +171,15 @@ export const Form: FC = () => {
       <InputWrapper
         css={css`
           margin-bottom: ${spacing.lg};
-          min-height: 12.625rem;
+          min-height: 15rem;
         `}
       >
-        <Label htmlFor="message">I&apos;d like to talk about:</Label>
+        <Label htmlFor="message">Message</Label>
         <FormInput
+          css={css`
+            height: 10rem;
+            resize: vertical;
+          `}
           as="textarea"
           id="message"
           placeholder="Message*"
@@ -208,20 +205,17 @@ export const Contact: FC = () => {
           <Heading
             color="coral"
             css={css`
-              margin-bottom: ${cssClamp([0.5, 'mobile'], [1, 'tablet'])};
+              margin-bottom: ${spacing.xxs};
             `}
             variant="h3"
           >
             Phone
           </Heading>
           <Link
-            css={css`
-              font-size: 1.875rem;
-              font-variation-settings: 'wght' 300;
-            `}
             href="tel:6143981158"
             target="_blank"
             rel="noopener"
+            variant="CTA"
           >
             614.398.1158
           </Link>
@@ -230,20 +224,17 @@ export const Contact: FC = () => {
           <Heading
             color="coral"
             css={css`
-              margin-bottom: ${cssClamp([0.5, 'mobile'], [1, 'tablet'])};
+              margin-bottom: ${spacing.xxs};
             `}
             variant="h3"
           >
             Email
           </Heading>
           <Link
-            css={css`
-              font-size: 1.875rem;
-              font-variation-settings: 'wght' 300;
-            `}
             href="mailto:info@base2.io"
             target="_blank"
             rel="noopener"
+            variant="CTA"
           >
             info@base2.io
           </Link>
