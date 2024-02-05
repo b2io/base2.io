@@ -34,11 +34,6 @@ const HeaderText = styled(Heading)`
   }
 
   ${atMinXL} {
-    /* left: ${cssClamp(
-      [16.75, 'xl'],
-      [33.75, 'desktop'],
-      [38.25, 'largeDesktop'],
-    )}; */
     margin: 0 7.6125rem;
   }
 `;
@@ -59,7 +54,6 @@ export const PageHero: FC<PageHeroProps> = ({
     >
       <div
         css={css`
-          /* margin-left: calc(50% - 50vw); */
           position: absolute;
           width: 100%;
 
