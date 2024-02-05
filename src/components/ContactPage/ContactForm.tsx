@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Heading, Link } from '~/components';
-import theme, { atMinTablet, colors, cssClamp, spacing } from '~/theme';
+import { atMinTablet, colors, spacing } from '~/theme';
 
 const FORM_ID = 'https://formspree.io/f/mbjqznky';
 
@@ -29,9 +29,8 @@ const InputWrapper = styled.div`
 `;
 
 const Label = styled.label({
-  ...theme.textVariants.h3,
   display: 'block',
-  marginBottom: spacing.xxs,
+  marginBottom: spacing.xs,
 });
 
 const FormInput = styled.input`
@@ -39,7 +38,7 @@ const FormInput = styled.input`
   border-bottom: 1px solid ${colors.offWhite};
   color: ${colors.offWhite};
   height: 4rem;
-  margin-bottom: ${spacing.xxxs};
+  margin-bottom: ${spacing.xxs};
   outline: none;
   padding: ${spacing.xs};
   transition: border-bottom 0.3s ease;
@@ -65,7 +64,7 @@ const ContactAside = styled.aside`
 `;
 
 const ContactInfo = styled.article`
-  margin-bottom: ${cssClamp([3, 'mobile'], [5, 'tablet'])};
+  margin-bottom: ${spacing.xxl};
 `;
 
 const Button = styled.button`
