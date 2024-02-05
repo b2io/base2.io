@@ -114,3 +114,11 @@ npm start
 12. `Confirm squash and merge`
 13. Delete the branch
 14. Update the card's status to be `Done`
+
+## Project Status
+
+Last updated January 2024
+
+Our latest goal is to make some of our components more consistent, reusibility and style wise.
+
+We have mapped out the site and it's components, that can be viewed [here](https://www.figma.com/file/Er2HBE8QKV0MQQcNAaM3gY/Base2.io-Component-Audit-2024?type=whiteboard&node-id=0%3A1&t=3dDLVUbV09PQOQex-1). The next step is to translate these reused components into tasks, and develop consistency across the site page by page.
