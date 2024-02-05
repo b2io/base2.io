@@ -16,7 +16,7 @@ import {
   List,
   Text,
 } from '~/components';
-import { atMaxSm, atMinTablet, colors, spacing } from '~/theme';
+import { atMinTablet, colors, spacing } from '~/theme';
 
 export const CardHeading: FC<PropsWithChildren> = ({ children, ...props }) => {
   return <div {...props}>{children}</div>;
@@ -61,53 +61,34 @@ export type ResultCardProps = {
   text: string;
 };
 
-export const ResultCard: FC<ResultCardProps> = ({ heading, text }) => {
+export const ResultCard: FC<ResultCardProps> = ({
+  heading,
+  text,
+  ...props
+}) => {
   const [highlight, ...remainder] = heading.split(' ');
   return (
     <Card
       css={css`
+        gap: 0;
         &::before {
           background: ${colors.lightBlue};
           content: ' ';
           display: block;
           height: 0.25rem;
+          margin-bottom: ${spacing.sm};
           width: 2.5rem;
         }
       `}
+      {...props}
     >
-      <Heading
-        as="h3"
-        color="coral"
-        variant="h1"
-        css={css`
-          ${atMaxSm} {
-            font-size: 3.5rem;
-          }
-        `}
-      >
+      <Heading as="h3" color="coral" variant="h2">
         {highlight}
-        <br />
-        <Text
-          as="span"
-          css={css`
-            display: block;
-          `}
-          variant="h2"
-        >
-          {remainder.join(' ')}
-        </Text>
       </Heading>
-      <Text
-        as="p"
-        css={css`
-          margin: 0;
-          ${atMaxSm} {
-            max-width: 21.875rem;
-          }
-        `}
-      >
-        {text}
-      </Text>
+      <Heading as="h4" variant="h3">
+        {remainder.join(' ')}
+      </Heading>
+      <Text>{text}</Text>
     </Card>
   );
 };
@@ -192,9 +173,9 @@ export type BasicCardProps = {
   text: string;
 };
 
-export const BasicCard: FC<BasicCardProps> = ({ heading, text }) => {
+export const BasicCard: FC<BasicCardProps> = ({ heading, text, ...props }) => {
   return (
-    <Card>
+    <Card {...props}>
       <Heading as="h2" variant="h2">
         {heading}
       </Heading>

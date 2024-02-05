@@ -4,10 +4,10 @@ import { FC, useEffect, useRef, useState } from 'react';
 
 import { atMinLg, atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
-import { Container } from './Container';
-import { LogoIcon } from './icons';
-import { Link } from './Link';
-import { Text } from './Text';
+import { Container } from '../Common/Container';
+import { Link } from '../Common/Link';
+import { Text } from '../Common/Text';
+import { LogoIcon } from '../icons';
 
 const FooterWrapper = styled.div`
   margin-left: 1.688rem;
@@ -104,8 +104,6 @@ const LetsChatLink = styled(Link)`
 
   ${atMinTablet} {
     display: block;
-    font-size: 1.375rem;
-    font-weight: 900;
     position: absolute;
     right: 2.5rem;
     top: -1.89rem;

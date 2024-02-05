@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
 import { FC, useEffect, useState } from 'react';
-import { useLocalStorage } from 'react-use';
+import { useLocalStorage, useMedia } from 'react-use';
 
 import { Heading, Link, Text } from '~/components';
-import { atMaxMd, atMaxSm, colors, spacing } from '~/theme';
+import { atMaxMd, bp, colors, spacing } from '~/theme';
 
 import { CASE_STUDIES, CaseStudyPageConfig } from './navProps';
 
@@ -44,6 +44,8 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
   currentCaseStudy,
   ...props
 }) => {
+  const isXL = useMedia(`(min-width: ${bp.xl}px)`);
+
   const otherStudies = CASE_STUDIES.filter(
     (study) => study.id !== currentCaseStudy.id,
   );
@@ -112,16 +114,6 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
               top: 50%;
               transform: translateY(-50%);
               z-index: 3;
-
-              ${atMaxMd} {
-                left: 50%;
-                top: 85%;
-                transform: translateX(-50%);
-              }
-
-              ${atMaxSm} {
-                top: 75%;
-              }
             `}
           >
             <Text
@@ -134,7 +126,8 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             </Text>
             <Heading
               as="h2"
-              variant="h2"
+              // NOTE: this should be removed once global typography can be addressed
+              variant={isXL ? 'h2' : 'h3'}
               css={css`
                 color: ${colors.coral};
                 margin-bottom: ${spacing.xxxs};
@@ -156,7 +149,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
           <NextImage
             alt={child.company}
             css={css`
-              filter: opacity(30%);
+              filter: opacity(5%);
               width: 100%;
               height: auto;
             `}

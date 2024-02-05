@@ -6,12 +6,12 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { atMinTablet, atMinXXL, colors, spacing } from '~/theme';
 
-import { Container } from './Container';
-import { LogoWithName } from './icons';
-import { Link } from './Link';
 import { MobileMenu } from './MobileMenu';
-import { XmasMarquee } from './XmasMarquee';
-import { useFeatureFlag } from '../context/FeatureFlagsProvider';
+import { useFeatureFlag } from '../../context/FeatureFlagsProvider';
+import { Container } from '../Common/Container';
+import { Link } from '../Common/Link';
+import { LogoWithName } from '../icons';
+import { XmasMarquee } from '../XmasMarquee';
 
 const Root = styled.header`
   background-image: linear-gradient(

@@ -3,8 +3,8 @@ import type { FC } from 'react';
 
 import { atMinXL, spacing } from '~/theme';
 
-import { Heading } from '../Heading';
-import { Text } from '../Text';
+import { Heading } from '../Common/Heading';
+import { Text } from '../Common/Text';
 
 export const OurBlog: FC = (props) => {
   return (

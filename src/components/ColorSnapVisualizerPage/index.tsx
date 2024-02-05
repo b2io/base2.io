@@ -11,14 +11,9 @@ import {
   ColorSnapImagePanel,
   Layout,
   QuotedImage,
+  TrademarkSymbol,
 } from '~/components';
-import {
-  atMinDesktop,
-  atMinTablet,
-  atMinXXL,
-  cssClamp,
-  spacing,
-} from '~/theme';
+import { atMinDesktop, cssClamp, spacing } from '~/theme';
 
 import { colorSnapNav } from '../CaseStudy/navProps';
 
@@ -42,22 +37,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         name={
           <>
             ColorSnap Visualizer
-            <sup
-              css={css`
-                font-size: 1.5rem;
-                top: -1rem;
-
-                ${atMinTablet} {
-                  font-size: 2rem;
-                  top: -2rem;
-                }
-                ${atMinXXL} {
-                  font-size: 2.5rem;
-                }
-              `}
-            >
-              &reg;
-            </sup>
+            <TrademarkSymbol />
           </>
         }
         src={require('./images/colorsnap-hero.jpg')}
@@ -67,19 +47,9 @@ export const ColorSnapVisualizerPage: FC = () => {
           <>
             Sherwin-Williams wanted customers to easily visualize exciting new
             paint colors on their walls. We created ColorSnap
-            <sup
-              css={css`
-                font-size: '2px';
-
-                ${atMinTablet} {
-                  font-size: '.5em';
-                }
-              `}
-            >
-              ®
-            </sup>{' '}
-            Visualizer for Web, an application that enables users to virtually
-            transform their space with any Sherwin-Williams color.
+            <TrademarkSymbol /> Visualizer for Web, an application that enables
+            users to virtually transform their space with any Sherwin-Williams
+            color.
           </>
         }
         askText="Sherwin-Williams knew that if their customers could effortlessly test a paint color
@@ -111,7 +81,7 @@ export const ColorSnapVisualizerPage: FC = () => {
         />
       </section>
       <CaseStudySummaryPane
-        summaryText="The app lets customers effortlessly browse Sherwin-Williams’ digital paint collection, curate color schemes,
+        summaryText="The app lets customers effortlessly browse Sherwin&#8209;Williams’ digital paint collection, curate color schemes,
         generate paint suggestions from their favorite images, and digitally paint their physical spaces."
         src={require('./images/colorsnap-screenshot.jpg')}
         alt="phone app"

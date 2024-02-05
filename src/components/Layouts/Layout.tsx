@@ -6,9 +6,9 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { cssClamp } from '~/theme';
 
-import { Container } from './Container';
 import { Footer } from './Footer';
 import { Header } from './Header';
+import { Container } from '../Common/Container';
 
 export type LayoutProps = {
   description: string;
