@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { Heading, Link, Text } from '~/components';
+import { Heading, Link, Text, TrademarkSymbol } from '~/components';
 import { atMinTablet, atMinXXL, cssClamp, general, spacing } from '~/theme';
 import type { ImageProps } from '~/types';
 
@@ -104,14 +104,7 @@ export const FeaturedCaseStudyHero: FC = () => {
           variant="h1"
         >
           ColorSnap
-          <sup
-            css={css`
-              font-size: 50%;
-              top: -1em;
-            `}
-          >
-            &reg;
-          </sup>
+          <TrademarkSymbol />
           <br />
           Visualizer
         </Heading>

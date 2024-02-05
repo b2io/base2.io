@@ -4,7 +4,14 @@ import type { FC } from 'react';
 import { Link } from 'react-scroll';
 
 import { Heading, ServiceCard, Text } from '~/components';
-import { atMinLg, atMinTablet, atMinXL, colors, spacing } from '~/theme';
+import {
+  atMinLg,
+  atMinTablet,
+  atMinXL,
+  colors,
+  cssClamp,
+  spacing,
+} from '~/theme';
 
 import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
 
@@ -133,7 +140,10 @@ export const OurServices: FC = (props) => {
                   <Link
                     css={css`
                       cursor: pointer;
-                      font-size: 1.25rem;
+                      font-size: ${cssClamp(
+                        [1.125, 'mobile'],
+                        [1.375, 'tablet'],
+                      )};
                       &:hover {
                         color: ${colors.coral};
                       }
@@ -182,6 +192,7 @@ export const OurServices: FC = (props) => {
                       variant="h3"
                       css={css`
                         margin-bottom: ${spacing.lg};
+                        white-space: pre-line;
                       `}
                     >
                       {service.sectionDescription}

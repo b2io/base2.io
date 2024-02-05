@@ -4,7 +4,13 @@ import { motion } from 'framer-motion';
 import NextImage from 'next/image';
 import type { FC } from 'react';
 
-import { Heading, Link, Text, useAnimationWhileVisible } from '~/components';
+import {
+  Heading,
+  Link,
+  Text,
+  TrademarkSymbol,
+  useAnimationWhileVisible,
+} from '~/components';
 import theme, {
   atMinDesktop,
   atMinSm,
@@ -156,7 +162,8 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
           `}
           variant="h2"
         >
-          ColorSnap<sup>&reg;</sup>
+          ColorSnap
+          <TrademarkSymbol />
           <br />
           Visualizer
         </Heading>

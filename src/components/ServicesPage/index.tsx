@@ -10,9 +10,6 @@ export const ServicesPage: React.FC = () => {
   return (
     <Layout title="Services" description="Services">
       <PageHero
-        css={css`
-          filter: grayscale(100%);
-        `}
         alt="team members of Base Two"
         imageProps={{ height: 546, width: 1280 }}
         src={'/services/services-hero-xl.jpg'}
