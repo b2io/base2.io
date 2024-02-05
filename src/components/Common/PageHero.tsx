@@ -72,7 +72,7 @@ export const PageHero: FC<PageHeroProps> = ({
           alt={alt}
           src={src}
           css={css`
-            filter: brightness(0.65);
+            filter: brightness(0.65) grayscale(1);
             height: auto;
             width: 100%;
           `}
