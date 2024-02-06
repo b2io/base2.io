@@ -29,7 +29,7 @@ export const ContactPage: FC = () => {
         <Text
           as="article"
           css={css`
-            margin-bottom: ${cssClamp([6.5, 'mobile'], [8.5, 'tablet'])};
+            margin-bottom: ${cssClamp([6.5, 'mobile'], [10, 'tablet'])};
             position: relative;
 
             ${atMinTablet} {
