@@ -31,7 +31,7 @@ const InputWrapper = styled.div`
 const Label = styled.label({
   ...theme.textVariants.h3,
   display: 'block',
-  marginBottom: spacing.xxxs,
+  marginBottom: spacing.xxs,
 });
 
 const FormInput = styled.input`
