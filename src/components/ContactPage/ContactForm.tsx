@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 import { Heading, Link } from '~/components';
-import { atMinTablet, colors, spacing } from '~/theme';
+import theme, { atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
 const FORM_ID = 'https://formspree.io/f/mbjqznky';
 
@@ -20,7 +20,7 @@ const ContactWrapper = styled.section`
   grid-template-columns: 1fr;
 
   ${atMinTablet} {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.125fr 2fr;
   }
 `;
 
@@ -29,13 +29,15 @@ const InputWrapper = styled.div`
 `;
 
 const Label = styled.label({
+  ...theme.textVariants.h3,
   display: 'block',
-  marginBottom: spacing.xs,
+  marginBottom: spacing.xxxs,
 });
 
 const FormInput = styled.input`
   border: none;
   border-bottom: 1px solid ${colors.offWhite};
+  border-radius: 4px 4px 0 0;
   color: ${colors.offWhite};
   height: 4rem;
   margin-bottom: ${spacing.xxs};
@@ -139,34 +141,44 @@ export const Form: FC = () => {
     </ThankYouMessage>
   ) : (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-      <InputWrapper>
-        <Label htmlFor="name">Name</Label>
-        <FormInput
-          autoComplete="off"
-          id="name"
-          placeholder="Name*"
-          required
-          type="name"
-          {...register('fullName', {
-            required: 'Please enter your name.',
-          })}
-        />
-        {errors.fullName && <Error>{errors.fullName.message}</Error>}
-      </InputWrapper>
-      <InputWrapper>
-        <Label htmlFor="email">Email</Label>
-        <FormInput
-          autoComplete="off"
-          id="email"
-          placeholder="Email*"
-          required
-          type="email"
-          {...register('email', {
-            required: 'Please enter your email address.',
-          })}
-        />
-        {errors.email && <Error>{errors.email.message}</Error>}
-      </InputWrapper>
+      <div
+        css={css`
+          ${atMinXL} {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: ${spacing.sm};
+          }
+        `}
+      >
+        <InputWrapper>
+          <Label htmlFor="name">Name</Label>
+          <FormInput
+            autoComplete="off"
+            id="name"
+            placeholder="Name*"
+            required
+            type="name"
+            {...register('fullName', {
+              required: 'Please enter your name.',
+            })}
+          />
+          {errors.fullName && <Error>{errors.fullName.message}</Error>}
+        </InputWrapper>
+        <InputWrapper>
+          <Label htmlFor="email">Email</Label>
+          <FormInput
+            autoComplete="off"
+            id="email"
+            placeholder="Email*"
+            required
+            type="email"
+            {...register('email', {
+              required: 'Please enter your email address.',
+            })}
+          />
+          {errors.email && <Error>{errors.email.message}</Error>}
+        </InputWrapper>
+      </div>
       <InputWrapper
         css={css`
           margin-bottom: ${spacing.lg};
@@ -204,7 +216,7 @@ export const Contact: FC = () => {
           <Heading
             color="coral"
             css={css`
-              margin-bottom: ${spacing.xxs};
+              margin-bottom: ${spacing.xs};
             `}
             variant="h3"
           >
@@ -223,7 +235,7 @@ export const Contact: FC = () => {
           <Heading
             color="coral"
             css={css`
-              margin-bottom: ${spacing.xxs};
+              margin-bottom: ${spacing.xs};
             `}
             variant="h3"
           >
