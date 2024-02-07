@@ -130,7 +130,7 @@ export const EstimationForm: FC = () => {
             min-height: 15rem;
           `}
         >
-          <Label htmlFor="description">How would you like to partner?</Label>
+          <Label htmlFor="description">Description</Label>
           <FormInput
             css={css`
               height: 10rem;
