@@ -16,8 +16,8 @@ import { XmasMarquee } from '../XmasMarquee';
 const Root = styled.header`
   background-image: linear-gradient(
     to bottom,
-    rgba(4 0 28 0.84) 35%,
-    rgba(6 2 27 0)
+    rgba(4, 0, 28, 0.84) 35%,
+    rgba(6, 2, 27, 0)
   );
   height: 6.188rem;
   left: 0;
