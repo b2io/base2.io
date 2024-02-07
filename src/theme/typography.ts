@@ -161,19 +161,6 @@ export const textVariants = {
     margin: '0 0 0 -.5rem',
     padding: 0,
   },
-  quotationText: {
-    [atMinTablet]: {
-      fontVariationSettings: '"wght" 900',
-      lineHeight: 1.125,
-    },
-    color: colors.text,
-    fontSize: cssClamp([2.5, 'mobile'], [6.25, 'tablet']),
-    fontVariationSettings: '"wght" 750',
-    letterSpacing: 'normal',
-    lineHeight: 1.1,
-    margin: 0,
-    padding: 0,
-  },
   serviceTitle: {
     [atMinTablet]: {
       lineHeight: 1.33,

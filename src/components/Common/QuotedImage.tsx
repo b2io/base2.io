@@ -34,14 +34,14 @@ const TextContainer = styled.div`
   }
 
   ${atMinTablet} {
-    max-width: 75vw;
+    max-width: 40rem;
     padding-top: 4.5rem;
   }
 
   ${atMinXL} {
     display: flex;
     margin-left: -3.5rem;
-    max-width: 85rem;
+    max-width: 60rem;
     padding-top: 6rem;
   }
 
@@ -101,7 +101,7 @@ export const QuotedImage: FC<QuotedImageProps> = ({
         <div>
           <Heading
             as="h2"
-            variant="quotationText"
+            variant="h2"
             css={css`
               margin-bottom: ${spacing.md};
 
