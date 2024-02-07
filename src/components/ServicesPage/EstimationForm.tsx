@@ -130,7 +130,7 @@ export const EstimationForm: FC = () => {
             min-height: 15rem;
           `}
         >
-          <Label htmlFor="description">Project Description</Label>
+          <Label htmlFor="description">How would you like to partner?</Label>
           <FormInput
             css={css`
               height: 10rem;
@@ -138,11 +138,11 @@ export const EstimationForm: FC = () => {
             `}
             as="textarea"
             id="description"
-            placeholder="Project Description*"
+            placeholder="Partnership Description*"
             required
             type="description"
             {...register('description', {
-              required: 'Please enter a brief description of your project.',
+              required: 'Describe your business need.',
             })}
           />
           {errors.description && <Error>{errors.description.message}</Error>}
