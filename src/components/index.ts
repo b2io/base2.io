@@ -31,6 +31,7 @@ export * from './Common/QuotedImage';
 export * from './ScopeBuilderPage';
 export * from './ServicesPage';
 export * from './Common/Text';
+export * from './Common/TrademarkSymbol';
 export * from './Hooks/useAnimationWhileVisible';
 export * from './Hooks/useMouseAnimationWhileVisible';
 export * from './WorkPage';

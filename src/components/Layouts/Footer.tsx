@@ -104,8 +104,6 @@ const LetsChatLink = styled(Link)`
 
   ${atMinTablet} {
     display: block;
-    font-size: 1.375rem;
-    font-weight: 900;
     position: absolute;
     right: 2.5rem;
     top: -1.89rem;

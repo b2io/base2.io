@@ -6,7 +6,11 @@ import { spacing } from '~/theme/spacing';
 
 export const Referrals: FC = () => {
   return (
-    <section>
+    <section
+      css={css`
+        margin-bottom: ${spacing.xxl3};
+      `}
+    >
       <Heading
         as="h3"
         variant="h2"

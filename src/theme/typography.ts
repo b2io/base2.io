@@ -136,7 +136,12 @@ export const textVariants = {
       lineHeight: 1.04,
     },
     color: colors.text,
-    fontSize: cssClamp([2.75, 'smMobile'], [3.25, 'mobile'], [6, 'tablet']),
+    fontSize: cssClamp(
+      [2.75, 'smMobile'],
+      [3.25, 'mobile'],
+      [4.75, 'tablet'],
+      [6, 'lg'],
+    ),
     fontVariationSettings: '"wght" 900',
     letterSpacing: cssClamp([-0.03125, 'mobile'], [0, 'tablet']),
     lineHeight: 1,
@@ -182,22 +187,16 @@ export const textVariants = {
     padding: 0,
   },
   teamHero: {
-    [atMinLg]: {
-      lineHeight: 0.58,
-    },
-    [atMinTablet]: {
-      lineHeight: 0.74,
-    },
     color: colors.coral,
     fontSize: cssClamp(
       [3.5, 'smMobile'],
       [4.25, 'mobile'],
-      [10, 'tablet'],
+      [9, 'tablet'],
       [15, 'lg'],
     ),
     fontVariationSettings: '"wght" 900',
     letterSpacing: 'normal',
-    lineHeight: 0.53,
+    lineHeight: 1,
     margin: 0,
     padding: 0,
   },

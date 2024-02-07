@@ -37,23 +37,18 @@ const IconButton = styled.button`
 const Nav = styled.nav`
   ul {
     list-style: none;
-    padding: 10.25rem 0 0 2.5rem;
+    padding: 10.25rem 0 ${spacing.xxxs} ${spacing.lg};
   }
 
   li {
     margin-bottom: ${spacing.xs};
   }
-
-  a {
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 1.1;
-  }
 `;
 
 const ContactLink = styled(Link)`
-  display: table;
-  margin: 3rem ${spacing.lg} 0;
+  display: block;
+  margin: ${spacing.sm} ${spacing.lg} 0;
+  width: fit-content;
 `;
 
 export const MobileMenu: FC = ({ ...props }) => {
@@ -74,19 +69,29 @@ export const MobileMenu: FC = ({ ...props }) => {
         <Nav>
           <ul>
             <li>
-              <Link href="/work">Work</Link>
+              <Link variant="large" href="/work">
+                Work
+              </Link>
             </li>
             <li>
-              <Link href="/approach">Approach</Link>
+              <Link variant="large" href="/approach">
+                Approach
+              </Link>
             </li>
             <li>
-              <Link href="/services">Services</Link>
+              <Link variant="large" href="/services">
+                Services
+              </Link>
             </li>
             <li>
-              <Link href="/culture">Culture</Link>
+              <Link variant="large" href="/culture">
+                Culture
+              </Link>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <Link variant="large" href="/contact">
+                Contact
+              </Link>
             </li>
           </ul>
         </Nav>
