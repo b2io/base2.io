@@ -29,7 +29,7 @@ const ContactWrapper = styled.section`
   grid-template-columns: 1fr;
 
   ${atMinTablet} {
-    grid-template-columns: 1.125fr 2fr;
+    grid-template-columns: 35% 65%;
   }
 `;
 
