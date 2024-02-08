@@ -1,10 +1,10 @@
 import { css } from '@emotion/react';
 import NextImage from 'next/image';
 import { FC, useEffect, useState } from 'react';
-import { useLocalStorage } from 'react-use';
+import { useLocalStorage, useMedia } from 'react-use';
 
 import { Heading, Link, Text } from '~/components';
-import { atMaxMd, colors, spacing } from '~/theme';
+import { atMaxMd, bp, colors, spacing } from '~/theme';
 
 import { CASE_STUDIES, CaseStudyPageConfig } from './navProps';
 
@@ -44,6 +44,8 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
   currentCaseStudy,
   ...props
 }) => {
+  const isXL = useMedia(`(min-width: ${bp.xl}px)`);
+
   const otherStudies = CASE_STUDIES.filter(
     (study) => study.id !== currentCaseStudy.id,
   );
@@ -124,7 +126,8 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
             </Text>
             <Heading
               as="h2"
-              variant="h3"
+              // NOTE: this should be removed once global typography can be addressed
+              variant={isXL ? 'h2' : 'h3'}
               css={css`
                 color: ${colors.coral};
                 margin-bottom: ${spacing.xxxs};
