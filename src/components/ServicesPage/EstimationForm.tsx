@@ -11,7 +11,7 @@ import {
   Label,
   ThankYouMessage,
 } from '~/components';
-import { atMinLg, atMinXL, spacing } from '~/theme';
+import { atMinLg, spacing } from '~/theme';
 
 const FORM_ID = 'https://formspree.io/f/myyqajgp';
 
@@ -70,10 +70,6 @@ export const EstimationForm: FC = () => {
     <section
       css={css`
         margin-top: ${spacing.xxl4};
-        ${atMinXL} {
-          margin-left: ${spacing.marginXl};
-          margin-right: ${spacing.marginXl};
-        }
       `}
     >
       <Heading
