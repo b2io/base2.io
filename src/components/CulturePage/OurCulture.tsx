@@ -1,20 +1,17 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { CardGrid, Heading, IconCard, Text } from '~/components';
-import { atMinXL, spacing } from '~/theme';
+import {
+  CardGrid,
+  Heading,
+  IconCard,
+  SectionContainer,
+  Text,
+} from '~/components';
 
 export const OurCulture: FC = (props) => {
   return (
-    <section
-      css={css`
-        ${atMinXL} {
-          margin-left: ${spacing.marginXl};
-          margin-right: ${spacing.marginXl};
-        }
-      `}
-      {...props}
-    >
+    <SectionContainer {...props}>
       <Heading as="h2" variant="h2">
         Our Culture &amp; Beliefs
       </Heading>
@@ -68,6 +65,6 @@ export const OurCulture: FC = (props) => {
           latest technology, teaching others is a core part of what we do."
         ></IconCard>
       </CardGrid>
-    </section>
+    </SectionContainer>
   );
 };
