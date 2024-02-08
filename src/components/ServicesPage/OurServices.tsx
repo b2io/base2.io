@@ -3,15 +3,8 @@ import styled from '@emotion/styled';
 import type { FC } from 'react';
 import { Link } from 'react-scroll';
 
-import { Heading, ServiceCard, Text } from '~/components';
-import {
-  atMinLg,
-  atMinTablet,
-  atMinXL,
-  colors,
-  cssClamp,
-  spacing,
-} from '~/theme';
+import { Heading, SectionContainer, ServiceCard, Text } from '~/components';
+import { atMinLg, atMinTablet, colors, cssClamp, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
 
@@ -73,7 +66,7 @@ const ServiceCardContainer = styled.div`
   gap: ${spacing.xxl};
 `;
 
-export const OurServices: FC = (props) => {
+export const OurServices: FC = () => {
   // NOTE: transforms service data to reorder service with multiple services last
   const serviceList: Array<Services> = SERVICES.reduce<Array<any[]>>(
     (acc, cur) => {
@@ -91,15 +84,7 @@ export const OurServices: FC = (props) => {
   }, []);
 
   return (
-    <section
-      css={css`
-        ${atMinXL} {
-          margin-left: ${spacing.marginXl};
-          margin-right: ${spacing.marginXl};
-        }
-      `}
-      {...props}
-    >
+    <SectionContainer>
       <ContentWrapper>
         <div>
           <Heading
@@ -224,6 +209,6 @@ export const OurServices: FC = (props) => {
           );
         })}
       </ServicesContainer>
-    </section>
+    </SectionContainer>
   );
 };
