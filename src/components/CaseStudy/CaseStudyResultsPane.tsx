@@ -74,7 +74,7 @@ export const CaseStudyResultsPane: FC<CaseStudyResultsPaneProps> = ({
         as="p"
         css={css`
           margin-bottom: ${spacing.xxl1};
-          max-width: 51.875rem;
+          max-width: 34rem;
         `}
       >
         {resultsParagraph}
