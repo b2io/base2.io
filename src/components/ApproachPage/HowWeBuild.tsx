@@ -8,12 +8,12 @@ import {
   Heading,
   IconCard,
   Link,
+  SectionContainer,
 } from '~/components';
 import {
   atMinDesktop,
   atMinLargeDesktop,
   atMinTablet,
-  atMinXL,
   cssClamp,
   spacing,
 } from '~/theme';
@@ -22,16 +22,7 @@ const circleDimensionsCalc = cssClamp([25.625, 'mobile'], [69.5, 'tablet']);
 
 export const HowWeBuild: FC = (props) => {
   return (
-    <section
-      css={css`
-        position: relative;
-        ${atMinXL} {
-          margin-left: ${spacing.marginXl};
-          margin-right: ${spacing.marginXl};
-        }
-      `}
-      {...props}
-    >
+    <SectionContainer {...props}>
       <div
         css={css`
           position: relative;
@@ -161,6 +152,6 @@ export const HowWeBuild: FC = (props) => {
       <Link href="/contact" variant="CTA">
         Let&apos;s make a plan together
       </Link>
-    </section>
+    </SectionContainer>
   );
 };
