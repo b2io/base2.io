@@ -44,7 +44,7 @@ export const CaseStudyBottomNav: FC<CaseStudyBottomNavProps> = ({
   currentCaseStudy,
   ...props
 }) => {
-  const isXL = useMedia(`(min-width: ${bp.xl}px)`);
+  const isXL = useMedia(`(min-width: ${bp.xl}px)`, false);
 
   const otherStudies = CASE_STUDIES.filter(
     (study) => study.id !== currentCaseStudy.id,
