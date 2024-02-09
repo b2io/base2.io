@@ -9,6 +9,7 @@ import {
   Heading,
   InputWrapper,
   Label,
+  SectionContainer,
   ThankYouMessage,
 } from '~/components';
 import { atMinLg, spacing } from '~/theme';
@@ -67,7 +68,7 @@ export const EstimationForm: FC = () => {
       </Button>
     </ThankYouMessage>
   ) : (
-    <section
+    <SectionContainer
       css={css`
         margin-top: ${spacing.xxl4};
       `}
@@ -147,6 +148,6 @@ export const EstimationForm: FC = () => {
           Request Estimate
         </Button>
       </form>
-    </section>
+    </SectionContainer>
   );
 };

@@ -1,9 +1,11 @@
-import { Layout, PageHero, SectionContainer } from '~/components';
+import type { FC } from 'react';
+
+import { Layout, PageHero } from '~/components';
 
 import { EstimationForm } from './EstimationForm';
 import { OurServices } from './OurServices';
 
-export const ServicesPage: React.FC = () => {
+export const ServicesPage: FC = () => {
   return (
     <Layout title="Services" description="Services">
       <PageHero
@@ -12,10 +14,8 @@ export const ServicesPage: React.FC = () => {
         src={'/services/services-hero-xl.jpg'}
         text="Partnerships are the core of how we work."
       />
-      <SectionContainer>
-        <OurServices />
-        <EstimationForm />
-      </SectionContainer>
+      <OurServices />
+      <EstimationForm />
     </Layout>
   );
 };

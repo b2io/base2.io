@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import type { FC } from 'react';
 import { Link } from 'react-scroll';
 
-import { Heading, ServiceCard, Text } from '~/components';
+import { Heading, SectionContainer, ServiceCard, Text } from '~/components';
 import { atMinLg, atMinTablet, colors, cssClamp, spacing } from '~/theme';
 
 import { SERVICE_PHILOSOPHY, Services, SERVICES } from './services';
@@ -84,7 +84,7 @@ export const OurServices: FC = () => {
   }, []);
 
   return (
-    <>
+    <SectionContainer>
       <ContentWrapper>
         <div>
           <Heading
@@ -209,6 +209,6 @@ export const OurServices: FC = () => {
           );
         })}
       </ServicesContainer>
-    </>
+    </SectionContainer>
   );
 };
