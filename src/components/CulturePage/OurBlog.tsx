@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { Heading, SectionContainer, Text } from '../Common';
+import { Heading, SectionContainer, Text } from '~/components';
 
 export const OurBlog: FC = (props) => {
   return (

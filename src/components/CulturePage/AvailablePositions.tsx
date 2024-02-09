@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { Heading, Link, SectionContainer, Text } from '../Common';
+import { Heading, Link, SectionContainer, Text } from '~/components';
 
 export const AvailablePositions: FC = (props) => {
   return (
