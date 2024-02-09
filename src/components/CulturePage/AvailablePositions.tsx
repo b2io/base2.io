@@ -1,25 +1,16 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { atMinXL, spacing } from '~/theme';
-
-import { Heading } from '../Common/Heading';
-import { Link } from '../Common/Link';
-import { Text } from '../Common/Text';
+import { Heading, Link, SectionContainer, Text } from '~/components';
 
 export const AvailablePositions: FC = (props) => {
   return (
-    <section
+    <SectionContainer
       css={css`
         display: grid;
         gap: 1.5rem;
         justify-items: start;
         max-width: 52rem;
-
-        ${atMinXL} {
-          margin-left: ${spacing.marginXl};
-          margin-right: ${spacing.marginXl};
-        }
       `}
       {...props}
     >
@@ -41,6 +32,6 @@ export const AvailablePositions: FC = (props) => {
       >
         Contact us
       </Link>
-    </section>
+    </SectionContainer>
   );
 };

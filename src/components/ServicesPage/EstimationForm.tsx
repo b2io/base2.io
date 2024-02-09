@@ -9,9 +9,10 @@ import {
   Heading,
   InputWrapper,
   Label,
+  SectionContainer,
   ThankYouMessage,
 } from '~/components';
-import { atMinLg, atMinXL, spacing } from '~/theme';
+import { atMinLg, spacing } from '~/theme';
 
 const FORM_ID = 'https://formspree.io/f/myyqajgp';
 
@@ -67,13 +68,9 @@ export const EstimationForm: FC = () => {
       </Button>
     </ThankYouMessage>
   ) : (
-    <section
+    <SectionContainer
       css={css`
         margin-top: ${spacing.xxl4};
-        ${atMinXL} {
-          margin-left: ${spacing.marginXl};
-          margin-right: ${spacing.marginXl};
-        }
       `}
     >
       <Heading
@@ -151,6 +148,6 @@ export const EstimationForm: FC = () => {
           Request Estimate
         </Button>
       </form>
-    </section>
+    </SectionContainer>
   );
 };

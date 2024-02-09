@@ -7,5 +7,6 @@ export * from './Link';
 export * from './List';
 export * from './PageHero';
 export * from './QuotedImage';
+export * from './SectionContainer';
 export * from './Text';
 export * from './TrademarkSymbol';

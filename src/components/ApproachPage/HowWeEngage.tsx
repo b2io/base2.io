@@ -1,20 +1,18 @@
 import { css } from '@emotion/react';
 import type { FC } from 'react';
 
-import { CardGrid, Heading, IconCard, Link } from '~/components';
-import { atMinTablet, atMinXL, spacing } from '~/theme';
+import {
+  CardGrid,
+  Heading,
+  IconCard,
+  Link,
+  SectionContainer,
+} from '~/components';
+import { atMinTablet, spacing } from '~/theme';
 
 export const HowWeEngage: FC = (props) => {
   return (
-    <section
-      css={css`
-        ${atMinXL} {
-          margin-left: ${spacing.marginXl};
-          margin-right: ${spacing.marginXl};
-        }
-      `}
-      {...props}
-    >
+    <SectionContainer {...props}>
       <Heading
         as="h2"
         variant="h2"
@@ -67,6 +65,6 @@ export const HowWeEngage: FC = (props) => {
       <Link href="/contact" variant="CTA">
         Let&apos;s make a plan together
       </Link>
-    </section>
+    </SectionContainer>
   );
 };
