@@ -5,6 +5,7 @@ import { Layout, Text } from '~/components';
 import { atMinTablet, atMinXL, cssClamp, spacing } from '~/theme';
 
 import { Contact } from './ContactForm';
+import { Referrals } from './Referrals';
 import { PageHero } from '../Common/PageHero';
 
 export const ContactPage: FC = () => {
@@ -42,6 +43,7 @@ export const ContactPage: FC = () => {
           Philadelphia, Atlanta, and NYC, but thanks to satellites and the
           internet, we can work with you wherever you are.
         </Text>
+        <Referrals />
         <Contact />
       </section>
     </Layout>
