@@ -6,6 +6,7 @@ import {
   AnchorHTMLAttributes,
   DetailedHTMLProps,
   FC,
+  ReactNode,
   useEffect,
   useRef,
   useState,
@@ -22,14 +23,9 @@ export type LinkProps = {
   HTMLAnchorElement
 >;
 
-interface CTAButtonProps {
-  isScrolledToLink: boolean;
-  animateIn: boolean;
-}
-
 const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
 
-const CTAButtonVariants = {
+const CTAButtonAnimationVariables = {
   enter: { opacity: 1, scale: 1, transition },
   exit: { opacity: 0, scale: 0.5, transition },
   initial: { opacity: 0, scale: 0.9 },
@@ -47,7 +43,7 @@ const RedLine = styled.div`
   width: 100%;
 `;
 
-const CTAButton = styled(motion.div)<CTAButtonProps>`
+const CTAButton = styled(motion.div)`
   padding: ${spacing.sm} ${spacing.md};
   display: inline-block;
   background: ${colors.coral};
@@ -56,7 +52,6 @@ const CTAButton = styled(motion.div)<CTAButtonProps>`
 
 export const Link: FC<LinkProps> = ({ href, ...props }) => {
   const isInternal = href.startsWith('/');
-
   const isCTAButton = props.variant === 'CTA';
   const isRedLine = props.variant === 'redline';
   const [isScrolledToLink, setIsScrolledToLink] = useState(false);
@@ -112,42 +107,25 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
     </>
   );
 
+  const renderCTAButton = (content: ReactNode) => (
+    <CTAButton
+      animate={isScrolledToLink ? 'enter' : 'exit'}
+      initial="initial"
+      variants={CTAButtonAnimationVariables}
+      whileHover={{ backgroundColor: colors.coral, scale: 1.08 }}
+    >
+      {content}
+    </CTAButton>
+  );
+
   return isInternal ? (
     <Anchor href={href} {...props} ref={linkRef}>
-      {isCTAButton ? (
-        <CTAButton
-          animate={isScrolledToLink ? 'enter' : 'exit'}
-          animateIn={isScrolledToLink}
-          exit="exit"
-          initial="initial"
-          isScrolledToLink={isScrolledToLink}
-          variants={CTAButtonVariants}
-          whileHover={{ scale: 1.08, backgroundColor: colors.coral }}
-        >
-          {linkContent}
-        </CTAButton>
-      ) : (
-        linkContent
-      )}
+      {isCTAButton ? renderCTAButton(linkContent) : linkContent}
     </Anchor>
   ) : (
     <NextLink href={href} legacyBehavior passHref>
       <Anchor {...props} ref={linkRef}>
-        {isCTAButton ? (
-          <CTAButton
-            animate={isScrolledToLink ? 'enter' : 'exit'}
-            animateIn={false}
-            exit="exit"
-            initial="initial"
-            isScrolledToLink={false}
-            variants={CTAButtonVariants}
-            whileHover={{ scale: 1.08, backgroundColor: colors.coral }}
-          >
-            {linkContent}
-          </CTAButton>
-        ) : (
-          linkContent
-        )}
+        {isCTAButton ? renderCTAButton(linkContent) : linkContent}
       </Anchor>
     </NextLink>
   );
