@@ -6,16 +6,12 @@ import { cssClamp } from './util';
 
 export const linkVariants = {
   CTA: {
-    '&:hover': {
-      color: colors.darkBlue,
-    },
-    borderRadius: '150px',
     color: colors.text,
     cursor: 'pointer',
     display: 'inline-block',
-    fontSize: '1rem',
-    fontVariationSettings: '"wght" 500',
-    lineHeight: 1.75,
+    fontSize: cssClamp([1.125, 'mobile'], [1.375, 'tablet']),
+    fontVariationSettings: '"wght" 600',
+    lineHeight: 1.56,
     padding: `${spacing.xs} ${spacing.sm}`,
     textDecoration: 'none',
   },

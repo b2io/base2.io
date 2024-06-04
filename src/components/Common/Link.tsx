@@ -22,14 +22,14 @@ export type LinkProps = {
   HTMLAnchorElement
 >;
 
-interface ButtonProps {
+interface CTAButtonProps {
   isScrolledToLink: boolean;
   animateIn: boolean;
 }
 
-const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
+const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
 
-const buttonVariants = {
+const CTAButtonVariants = {
   enter: { opacity: 1, scale: 1, transition },
   exit: { opacity: 0, scale: 0.5, transition },
   initial: { opacity: 0, scale: 0.9 },
@@ -47,17 +47,17 @@ const RedLine = styled.div`
   width: 100%;
 `;
 
-const Button = styled(motion.div)<ButtonProps>`
-  color: ${colors.offWhite};
+const CTAButton = styled(motion.div)<CTAButtonProps>`
   padding: ${spacing.sm} ${spacing.md};
   display: inline-block;
   background: ${colors.coral};
   box-sizing: border-box;
 `;
+
 export const Link: FC<LinkProps> = ({ href, ...props }) => {
   const isInternal = href.startsWith('/');
 
-  const isCTA = props.variant === 'CTA';
+  const isCTAButton = props.variant === 'CTA';
   const isRedLine = props.variant === 'redline';
   const [isScrolledToLink, setIsScrolledToLink] = useState(false);
   const linkRef = useRef(null);
@@ -114,18 +114,18 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
 
   return isInternal ? (
     <Anchor href={href} {...props} ref={linkRef}>
-      {isCTA ? (
-        <Button
+      {isCTAButton ? (
+        <CTAButton
           animate={isScrolledToLink ? 'enter' : 'exit'}
           animateIn={isScrolledToLink}
           exit="exit"
           initial="initial"
           isScrolledToLink={isScrolledToLink}
-          variants={buttonVariants}
+          variants={CTAButtonVariants}
           whileHover={{ scale: 1.08, backgroundColor: colors.coral }}
         >
           {linkContent}
-        </Button>
+        </CTAButton>
       ) : (
         linkContent
       )}
@@ -133,18 +133,18 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
   ) : (
     <NextLink href={href} legacyBehavior passHref>
       <Anchor {...props} ref={linkRef}>
-        {isCTA ? (
-          <Button
+        {isCTAButton ? (
+          <CTAButton
             animate={isScrolledToLink ? 'enter' : 'exit'}
             animateIn={false}
             exit="exit"
             initial="initial"
             isScrolledToLink={false}
-            variants={buttonVariants}
+            variants={CTAButtonVariants}
             whileHover={{ scale: 1.08, backgroundColor: colors.coral }}
           >
             {linkContent}
-          </Button>
+          </CTAButton>
         ) : (
           linkContent
         )}
