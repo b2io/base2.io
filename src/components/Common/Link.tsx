@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import {
   AnchorHTMLAttributes,
@@ -23,7 +24,16 @@ export type LinkProps = {
 
 interface ButtonProps {
   isScrolledToLink: boolean;
+  animateIn: boolean;
 }
+
+const transition = { duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] };
+
+const buttonVariants = {
+  enter: { opacity: 1, scale: 1, transition },
+  exit: { opacity: 0, scale: 0.5, transition },
+  initial: { opacity: 0, scale: 0.9 },
+};
 
 const Anchor = styled.a<{ variant?: ThemeLinkVariants }>(
   variant({ scale: 'linkVariants' }),
@@ -36,13 +46,14 @@ const RedLine = styled.div`
   margin-top: ${spacing.xxxs};
   width: 100%;
 `;
-const Button = styled.div<ButtonProps>`
+
+const Button = styled(motion.div)<ButtonProps>`
+  color: ${colors.offWhite};
   padding: ${spacing.sm} ${spacing.md};
   display: inline-block;
-  background: linear-gradient(45deg, ${colors.coral}, #e3e3e3);
+  background: ${colors.coral};
   box-sizing: border-box;
 `;
-
 export const Link: FC<LinkProps> = ({ href, ...props }) => {
   const isInternal = href.startsWith('/');
 
@@ -104,7 +115,17 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
   return isInternal ? (
     <Anchor href={href} {...props} ref={linkRef}>
       {isCTA ? (
-        <Button isScrolledToLink={isScrolledToLink}>{linkContent}</Button>
+        <Button
+          animate={isScrolledToLink ? 'enter' : 'exit'}
+          animateIn={isScrolledToLink}
+          exit="exit"
+          initial="initial"
+          isScrolledToLink={isScrolledToLink}
+          variants={buttonVariants}
+          whileHover={{ scale: 1.08, backgroundColor: colors.coral }}
+        >
+          {linkContent}
+        </Button>
       ) : (
         linkContent
       )}
@@ -113,7 +134,17 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
     <NextLink href={href} legacyBehavior passHref>
       <Anchor {...props} ref={linkRef}>
         {isCTA ? (
-          <Button isScrolledToLink={isScrolledToLink}>{linkContent}</Button>
+          <Button
+            animate={isScrolledToLink ? 'enter' : 'exit'}
+            animateIn={false}
+            exit="exit"
+            initial="initial"
+            isScrolledToLink={false}
+            variants={buttonVariants}
+            whileHover={{ scale: 1.08, backgroundColor: colors.coral }}
+          >
+            {linkContent}
+          </Button>
         ) : (
           linkContent
         )}
