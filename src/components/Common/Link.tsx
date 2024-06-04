@@ -16,6 +16,7 @@ import { variant } from 'styled-system';
 import { colors, spacing, ThemeLinkVariants } from '~/theme';
 
 export type LinkProps = {
+  animationDelayTarget?: string;
   href: string;
   variant?: ThemeLinkVariants;
 } & DetailedHTMLProps<
@@ -50,7 +51,11 @@ const CTAButton = styled(motion.div)`
   box-sizing: border-box;
 `;
 
-export const Link: FC<LinkProps> = ({ href, ...props }) => {
+export const Link: FC<LinkProps> = ({
+  href,
+  animationDelayTarget,
+  ...props
+}) => {
   const isInternal = href.startsWith('/');
   const isCTAButton = props.variant === 'CTA';
   const isRedLine = props.variant === 'redline';
@@ -107,17 +112,23 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
     </>
   );
 
-  const renderCTAButton = (content: ReactNode) => (
-    <CTAButton
-      animate={isScrolledToLink ? 'enter' : 'exit'}
-      initial="initial"
-      variants={CTAButtonAnimationVariables}
-      whileHover={{ backgroundColor: colors.coral, scale: 1.08 }}
-    >
-      {content}
-    </CTAButton>
-  );
-
+  const renderCTAButton = (content: ReactNode) => {
+    const animationDelay =
+      animationDelayTarget === 'requestQuoteButton' ? '1s' : '0.2s';
+    return (
+      <CTAButton
+        animate={isScrolledToLink ? 'enter' : 'exit'}
+        initial="initial"
+        variants={CTAButtonAnimationVariables}
+        whileHover={{ backgroundColor: colors.coral, scale: 1.08 }}
+        css={css`
+          animation-delay: ${animationDelay};
+        `}
+      >
+        {content}
+      </CTAButton>
+    );
+  };
   return isInternal ? (
     <Anchor href={href} {...props} ref={linkRef}>
       {isCTAButton ? renderCTAButton(linkContent) : linkContent}

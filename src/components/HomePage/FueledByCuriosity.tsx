@@ -91,7 +91,7 @@ export const FueledByCuriosity: FC = (props) => {
           href="/culture"
           variant="CTA"
         >
-          See our culture
+          Discover Our Team
         </Link>
       </div>
     </section>

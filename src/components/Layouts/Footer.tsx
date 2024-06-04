@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 import { FC, useEffect, useRef, useState } from 'react';
 
 import { atMinLg, atMinTablet, atMinXL, colors, spacing } from '~/theme';
@@ -32,37 +33,6 @@ const FooterLogo = styled(LogoIcon)`
 const Slogan = styled(Text)`
   letter-spacing: 0.06rem;
   margin: 0.625rem 0 0;
-`;
-
-const Nav = styled.nav`
-  ul {
-    list-style: none;
-    margin: 4rem 0 0;
-    padding-left: 0;
-
-    ${atMinTablet} {
-      column-gap: 3rem;
-      margin-top: 0;
-    }
-
-    ${atMinLg} {
-      width: 60%;
-    }
-    li {
-      margin-bottom: 2rem;
-      &:last-child {
-        margin-bottom: 0;
-      }
-      ${atMinTablet} {
-        margin-bottom: 2rem;
-      }
-    }
-  }
-`;
-
-const NavLink = styled(Link)`
-  display: block;
-  line-height: 1;
 `;
 
 const ContactBlock = styled.article`
@@ -124,6 +94,7 @@ const WhiteLine = styled.div`
 `;
 
 export const Footer: FC = (prop) => {
+  const router = useRouter();
   const [isScrolledToFooter, setIsScrolledToFooter] = useState(false);
   const footerRef = useRef(null);
 
@@ -148,6 +119,12 @@ export const Footer: FC = (prop) => {
     window.addEventListener('scroll', scrollListener);
     return () => window.removeEventListener('scroll', scrollListener);
   });
+
+  const showRequestQuoteCTA =
+    router.pathname === '/work' ||
+    router.pathname === '/approach' ||
+    router.pathname === '/culture' ||
+    router.pathname === '/';
 
   return (
     <Container
@@ -190,28 +167,18 @@ export const Footer: FC = (prop) => {
             Where code <br /> meets craft.
           </Slogan>
         </div>
-        <Nav>
-          <ul>
-            <li>
-              <NavLink href="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink href="/work">Work</NavLink>
-            </li>
-            <li>
-              <NavLink href="/approach">Approach</NavLink>
-            </li>
-            <li>
-              <NavLink href="/services">Services</NavLink>
-            </li>
-            <li>
-              <NavLink href="/culture">Culture</NavLink>
-            </li>
-            <li>
-              <NavLink href="/contact">Contact</NavLink>
-            </li>
-          </ul>
-        </Nav>
+        {showRequestQuoteCTA && (
+          <Link
+            animationDelayTarget="requestQuoteButton"
+            href="/services#request-project-estimate"
+            variant="CTA"
+            css={css`
+              align-self: 'center';
+            `}
+          >
+            Request a Quote
+          </Link>
+        )}
         <ContactBlock>
           <ContactLink href="mailto:info@base2.io" rel="noopener">
             info@base2.io
