@@ -175,7 +175,7 @@ export const Contact: FC = () => {
             href="tel:6143981158"
             target="_blank"
             rel="noopener"
-            variant="CTA"
+            variant="default"
           >
             614.398.1158
           </Link>
@@ -194,7 +194,7 @@ export const Contact: FC = () => {
             href="mailto:info@base2.io"
             target="_blank"
             rel="noopener"
-            variant="CTA"
+            variant="default"
           >
             info@base2.io
           </Link>

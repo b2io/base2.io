@@ -62,8 +62,8 @@ export const HowWeEngage: FC = (props) => {
           something stellar."
         />
       </CardGrid>
-      <Link href="/contact" variant="CTA">
-        Let&apos;s make a plan together
+      <Link href="/services" variant="CTA">
+        See Our Solutions
       </Link>
     </SectionContainer>
   );

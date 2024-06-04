@@ -28,7 +28,6 @@ export const linkVariants = {
       fontSize: '1.375rem',
       lineHeight: 'normal',
     },
-    borderRadius: general.borderRadius,
     color: colors.text,
     cursor: 'pointer',
     display: 'inline-block',

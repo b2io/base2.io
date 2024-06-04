@@ -148,7 +148,7 @@ export const DesignedForHumans: FC = (props) => {
               href="/approach"
               variant="CTA"
             >
-              See our approach
+              How We Collaborate
             </Link>
           </div>
         </div>
