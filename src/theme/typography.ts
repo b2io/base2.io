@@ -1,10 +1,25 @@
 import { atMinLg, atMinTablet, atMinXL } from './breakpoints';
 import { colors } from './colors';
+import { general } from './general';
 import { spacing } from './spacing';
 import { cssClamp } from './util';
 
 export const linkVariants = {
   CTA: {
+    '&:hover': {
+      color: colors.darkBlue,
+    },
+    borderRadius: '150px',
+    color: colors.text,
+    cursor: 'pointer',
+    display: 'inline-block',
+    fontSize: '1rem',
+    fontVariationSettings: '"wght" 500',
+    lineHeight: 1.75,
+    padding: `${spacing.xs} ${spacing.sm}`,
+    textDecoration: 'none',
+  },
+  redline: {
     ':hover': {
       '.redLine': {
         backgroundColor: colors.offWhite,
@@ -17,6 +32,7 @@ export const linkVariants = {
       fontSize: '1.375rem',
       lineHeight: 'normal',
     },
+    borderRadius: general.borderRadius,
     color: colors.text,
     cursor: 'pointer',
     display: 'inline-block',

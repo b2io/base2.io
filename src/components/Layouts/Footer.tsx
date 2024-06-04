@@ -162,7 +162,7 @@ export const Footer: FC = (prop) => {
       {...prop}
       ref={footerRef}
     >
-      <LetsChatLink href="/contact" variant="CTA">
+      <LetsChatLink href="/contact" variant="redline">
         Lets talk
       </LetsChatLink>
       <WhiteLine

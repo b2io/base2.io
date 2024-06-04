@@ -21,6 +21,10 @@ export type LinkProps = {
   HTMLAnchorElement
 >;
 
+interface ButtonProps {
+  isScrolledToLink: boolean;
+}
+
 const Anchor = styled.a<{ variant?: ThemeLinkVariants }>(
   variant({ scale: 'linkVariants' }),
 );
@@ -32,11 +36,18 @@ const RedLine = styled.div`
   margin-top: ${spacing.xxxs};
   width: 100%;
 `;
+const Button = styled.div<ButtonProps>`
+  padding: ${spacing.sm} ${spacing.md};
+  display: inline-block;
+  background: linear-gradient(45deg, ${colors.coral}, #e3e3e3);
+  box-sizing: border-box;
+`;
 
 export const Link: FC<LinkProps> = ({ href, ...props }) => {
   const isInternal = href.startsWith('/');
 
-  const isCTA = props.variant === 'CTA' ? true : false;
+  const isCTA = props.variant === 'CTA';
+  const isRedLine = props.variant === 'redline';
   const [isScrolledToLink, setIsScrolledToLink] = useState(false);
   const linkRef = useRef(null);
 
@@ -62,7 +73,7 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
     return () => window.removeEventListener('scroll', scrollListener);
   });
 
-  const renderRedLine = isCTA ? (
+  const renderRedLine = isRedLine ? (
     <RedLine
       className="redLine"
       css={css`
@@ -83,16 +94,29 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
     />
   ) : null;
 
-  return isInternal ? (
-    <Anchor href={href} {...props} ref={linkRef}>
+  const linkContent = (
+    <>
       {props.children}
       {renderRedLine}
+    </>
+  );
+
+  return isInternal ? (
+    <Anchor href={href} {...props} ref={linkRef}>
+      {isCTA ? (
+        <Button isScrolledToLink={isScrolledToLink}>{linkContent}</Button>
+      ) : (
+        linkContent
+      )}
     </Anchor>
   ) : (
     <NextLink href={href} legacyBehavior passHref>
       <Anchor {...props} ref={linkRef}>
-        {props.children}
-        {renderRedLine}
+        {isCTA ? (
+          <Button isScrolledToLink={isScrolledToLink}>{linkContent}</Button>
+        ) : (
+          linkContent
+        )}
       </Anchor>
     </NextLink>
   );
