@@ -1,6 +1,5 @@
 import { atMinLg, atMinTablet, atMinXL } from './breakpoints';
 import { colors } from './colors';
-import { general } from './general';
 import { spacing } from './spacing';
 import { cssClamp } from './util';
 
@@ -13,27 +12,6 @@ export const linkVariants = {
     fontVariationSettings: '"wght" 600',
     lineHeight: 1.56,
     padding: `${spacing.xs} ${spacing.sm}`,
-    textDecoration: 'none',
-  },
-  redline: {
-    ':hover': {
-      '.redLine': {
-        backgroundColor: colors.offWhite,
-      },
-    },
-    [atMinTablet]: {
-      '::after': {
-        marginTop: spacing.xxs,
-      },
-      fontSize: '1.375rem',
-      lineHeight: 'normal',
-    },
-    color: colors.text,
-    cursor: 'pointer',
-    display: 'inline-block',
-    fontSize: cssClamp([1.125, 'mobile'], [1.375, 'tablet']),
-    fontVariationSettings: '"wght" 600',
-    lineHeight: 1.56,
     textDecoration: 'none',
   },
   default: {
@@ -56,6 +34,27 @@ export const linkVariants = {
     fontSize: '2.5rem',
     fontVariationSettings: '"wght" 750',
     lineHeight: 1.1,
+    textDecoration: 'none',
+  },
+  redline: {
+    ':hover': {
+      '.redLine': {
+        backgroundColor: colors.offWhite,
+      },
+    },
+    [atMinTablet]: {
+      '::after': {
+        marginTop: spacing.xxs,
+      },
+      fontSize: '1.375rem',
+      lineHeight: 'normal',
+    },
+    color: colors.text,
+    cursor: 'pointer',
+    display: 'inline-block',
+    fontSize: cssClamp([1.125, 'mobile'], [1.375, 'tablet']),
+    fontVariationSettings: '"wght" 600',
+    lineHeight: 1.56,
     textDecoration: 'none',
   },
 };
