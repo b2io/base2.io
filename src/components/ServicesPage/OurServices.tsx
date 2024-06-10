@@ -53,13 +53,6 @@ const ServicesContainer = styled.section`
   margin-top: ${spacing.xxl2};
 `;
 
-// const Service = styled.div`
-//   display: flex;
-//   flex: 1 1 auto;
-//   flex-wrap: wrap;
-//   gap: ${spacing.xs};
-// `;
-
 const ServiceCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
