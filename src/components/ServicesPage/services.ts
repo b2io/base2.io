@@ -27,7 +27,7 @@ export const SERVICES: Array<Services> = [
           'Transform loose concepts into concrete, actionable work items.',
           'Collaborative approach to uncover hidden needs and expectations, providing tailored solutions for business systems optimization.',
           'Draw from our extensive industry experience to offer unique insights and actionable advice',
-          'Focus on optimizing your processes and creating systems to support them, backed by thorough systems analysis and consultation.',
+          'Focused process improvement consultations where we will work with you to optimize your workflow and create realistic systems to support them, backed by thorough analysis and human-centered discovery.',
         ],
         serviceName: 'Discovery Consultation',
       },
