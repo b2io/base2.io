@@ -11,6 +11,7 @@ export * from './EmbeddedIcon';
 export * from './EmpathyIcon';
 export * from './ExecutionIcon';
 export * from './FullyManagedIcon';
+export * from './GithubIcon';
 export * from './JasminealtIcon';
 export * from './JasmineIcon';
 export * from './KarmaIcon';

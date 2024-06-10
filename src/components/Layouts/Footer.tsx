@@ -7,7 +7,7 @@ import { atMinLg, atMinTablet, atMinXL, colors, spacing } from '~/theme';
 import { Container } from '../Common/Container';
 import { Link } from '../Common/Link';
 import { Text } from '../Common/Text';
-import { LogoIcon } from '../icons';
+import { GithubIcon, LogoIcon } from '../icons';
 
 const FooterWrapper = styled.div`
   margin-left: 1.688rem;
@@ -218,6 +218,9 @@ export const Footer: FC = (prop) => {
           </ContactLink>
           <ContactLink href="tel:6143981158" rel="noopener">
             (614) 398-1158
+          </ContactLink>
+          <ContactLink href="https://github.com/b2io" rel="noopener">
+            <GithubIcon height="2rem" />
           </ContactLink>
         </ContactBlock>
       </FooterWrapper>
