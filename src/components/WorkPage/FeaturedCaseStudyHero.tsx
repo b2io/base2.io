@@ -127,6 +127,7 @@ export const FeaturedCaseStudyHero: FC = () => {
             }
           `}
           href="/work/colorsnap"
+          showArrow
           variant="CTA"
         >
           View more

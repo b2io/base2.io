@@ -131,7 +131,7 @@ export const DesignedForHumans: FC = (props) => {
             css={css`
               max-width: 29.125rem;
               ${atMinDesktop} {
-                margin-left: 9rem;
+                margin-left: 6rem;
                 margin-top: ${theme.spacing.xxs};
               }
             `}
@@ -146,9 +146,10 @@ export const DesignedForHumans: FC = (props) => {
                 margin-top: ${theme.spacing.lg};
               `}
               href="/approach"
+              showArrow
               variant="CTA"
             >
-              See our approach
+              How We Collaborate
             </Link>
           </div>
         </div>

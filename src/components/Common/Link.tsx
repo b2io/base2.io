@@ -1,10 +1,12 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import NextLink from 'next/link';
 import {
   AnchorHTMLAttributes,
   DetailedHTMLProps,
   FC,
+  ReactNode,
   useEffect,
   useRef,
   useState,
@@ -13,13 +15,25 @@ import { variant } from 'styled-system';
 
 import { colors, spacing, ThemeLinkVariants } from '~/theme';
 
+import { ArrowRightIcon } from '../icons/ArrowRightIcon';
+
 export type LinkProps = {
+  animationDelayTarget?: string;
   href: string;
+  showArrow?: boolean;
   variant?: ThemeLinkVariants;
 } & DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
 >;
+
+const transition = { duration: 1, ease: [0.25, 0.1, 0.25, 1] };
+
+const CTAButtonAnimationVariables = {
+  enter: { opacity: 1, scale: 1, transition },
+  exit: { opacity: 0, scale: 0.5, transition },
+  initial: { opacity: 0, scale: 0.9 },
+};
 
 const Anchor = styled.a<{ variant?: ThemeLinkVariants }>(
   variant({ scale: 'linkVariants' }),
@@ -33,10 +47,28 @@ const RedLine = styled.div`
   width: 100%;
 `;
 
-export const Link: FC<LinkProps> = ({ href, ...props }) => {
-  const isInternal = href.startsWith('/');
+const CTAButton = styled(motion.div)`
+  padding: ${spacing.xs} ${spacing.sm};
+  display: inline-block;
+  background: ${colors.coral};
+  box-sizing: border-box;
+`;
 
-  const isCTA = props.variant === 'CTA' ? true : false;
+const LinkContent = styled.span`
+  display: flex;
+  align-items: center;
+  gap: ${spacing.xxs};
+`;
+
+export const Link: FC<LinkProps> = ({
+  href,
+  animationDelayTarget,
+  showArrow = false,
+  ...props
+}) => {
+  const isInternal = href.startsWith('/');
+  const isCTAButton = props.variant === 'CTA';
+  const isRedLine = props.variant === 'redline';
   const [isScrolledToLink, setIsScrolledToLink] = useState(false);
   const linkRef = useRef(null);
 
@@ -62,7 +94,7 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
     return () => window.removeEventListener('scroll', scrollListener);
   });
 
-  const renderRedLine = isCTA ? (
+  const renderRedLine = isRedLine ? (
     <RedLine
       className="redLine"
       css={css`
@@ -83,16 +115,43 @@ export const Link: FC<LinkProps> = ({ href, ...props }) => {
     />
   ) : null;
 
+  const linkContent = (
+    <>
+      <LinkContent>
+        {props.children}
+        {showArrow && <ArrowRightIcon />}
+      </LinkContent>
+      {renderRedLine}
+    </>
+  );
+
+  const renderCTAButton = (content: ReactNode) => {
+    const animationDelay =
+      animationDelayTarget === 'requestQuoteButton' ? '1s' : '0.2s';
+    return (
+      <>
+        <CTAButton
+          animate={isScrolledToLink ? 'enter' : 'exit'}
+          initial="initial"
+          variants={CTAButtonAnimationVariables}
+          whileHover={{ backgroundColor: colors.coral, scale: 1.08 }}
+          css={css`
+            animation-delay: ${animationDelay};
+          `}
+        >
+          {content}
+        </CTAButton>
+      </>
+    );
+  };
   return isInternal ? (
     <Anchor href={href} {...props} ref={linkRef}>
-      {props.children}
-      {renderRedLine}
+      {isCTAButton ? renderCTAButton(linkContent) : linkContent}
     </Anchor>
   ) : (
     <NextLink href={href} legacyBehavior passHref>
       <Anchor {...props} ref={linkRef}>
-        {props.children}
-        {renderRedLine}
+        {isCTAButton ? renderCTAButton(linkContent) : linkContent}
       </Anchor>
     </NextLink>
   );

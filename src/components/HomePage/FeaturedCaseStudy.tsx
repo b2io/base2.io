@@ -190,9 +190,10 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
             }
           `}
           href="/work/colorsnap"
+          showArrow
           variant="CTA"
         >
-          View More
+          How We Did It
         </Link>
       </div>
       <div

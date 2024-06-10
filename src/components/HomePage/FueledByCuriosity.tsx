@@ -89,9 +89,10 @@ export const FueledByCuriosity: FC = (props) => {
             margin-top: ${spacing.lg};
           `}
           href="/culture"
+          showArrow
           variant="CTA"
         >
-          See our culture
+          Discover Our Team
         </Link>
       </div>
     </section>
