@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import type { FC } from 'react';
-import { Link } from 'react-scroll';
+import { Element, Link } from 'react-scroll';
 
 import { Heading, SectionContainer, ServiceCard, Text } from '~/components';
 import { atMinLg, atMinTablet, colors, cssClamp, spacing } from '~/theme';
@@ -51,13 +51,6 @@ const ServicesContainer = styled.section`
   flex-wrap: wrap;
   gap: ${spacing.xxl};
   margin-top: ${spacing.xxl2};
-`;
-
-const Service = styled.div`
-  display: flex;
-  flex: 1 1 auto;
-  flex-wrap: wrap;
-  gap: ${spacing.xs};
 `;
 
 const ServiceCardContainer = styled.div`
@@ -152,13 +145,18 @@ export const OurServices: FC = () => {
           const multipleServices = service.services.length > 1;
 
           return (
-            <Service
-              key={`service-${index + 1}`}
+            <Element
               css={css`
+                display: flex;
+                flex: 1 1 auto;
+                flex-wrap: wrap;
+                gap: ${spacing.xs};
                 ${atMinTablet} {
                   max-width: ${!multipleServices && 'calc(50% - 1.75rem)'};
                 }
               `}
+              key={`service-${index + 1}`}
+              name={service.sectionTitle}
             >
               {multipleServices && (
                 <>
@@ -205,7 +203,7 @@ export const OurServices: FC = () => {
                   />
                 ))}
               </ServiceCardContainer>
-            </Service>
+            </Element>
           );
         })}
       </ServicesContainer>
