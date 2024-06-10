@@ -190,6 +190,7 @@ export const FeaturedCaseStudy: FC<FeaturedCaseStudyProps> = (props) => {
             }
           `}
           href="/work/colorsnap"
+          showArrow
           variant="CTA"
         >
           How We Did It

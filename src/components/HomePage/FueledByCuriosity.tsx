@@ -89,6 +89,7 @@ export const FueledByCuriosity: FC = (props) => {
             margin-top: ${spacing.lg};
           `}
           href="/culture"
+          showArrow
           variant="CTA"
         >
           Discover Our Team

@@ -146,6 +146,7 @@ export const DesignedForHumans: FC = (props) => {
                 margin-top: ${theme.spacing.lg};
               `}
               href="/approach"
+              showArrow
               variant="CTA"
             >
               How We Collaborate

@@ -149,7 +149,7 @@ export const HowWeBuild: FC = (props) => {
           heading="Support"
         ></IconCard>
       </CardGrid>
-      <Link href="/contact" variant="CTA">
+      <Link href="/contact" showArrow variant="CTA">
         Let&apos;s make a plan together
       </Link>
     </SectionContainer>

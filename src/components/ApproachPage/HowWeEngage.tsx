@@ -62,7 +62,7 @@ export const HowWeEngage: FC = (props) => {
           something stellar."
         />
       </CardGrid>
-      <Link href="/services" variant="CTA">
+      <Link href="/services" showArrow variant="CTA">
         See Our Solutions
       </Link>
     </SectionContainer>

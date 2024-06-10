@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useRef, useState } from 'react';
 
-import { atMinLg, atMinTablet, atMinXL, colors, spacing } from '~/theme';
+import { atMinTablet, atMinXL, colors, spacing } from '~/theme';
 
 import { Container } from '../Common/Container';
 import { Link } from '../Common/Link';
@@ -35,6 +35,10 @@ const Slogan = styled(Text)`
   margin: 0.625rem 0 0;
 `;
 
+const FooterLink = styled(Link)`
+  padding: 0;
+`;
+
 const ContactBlock = styled.article`
   margin-top: ${spacing.xxl};
   padding-bottom: ${spacing.lg};
@@ -42,18 +46,16 @@ const ContactBlock = styled.article`
   ${atMinTablet} {
     margin-top: 0;
     padding-bottom: 0;
-  }
-
-  ${atMinLg} {
     display: flex;
     flex-flow: column wrap;
+    align-items: flex-end;
   }
 `;
 
 const ContactLink = styled(Link)`
   display: block;
   font-style: normal;
-  margin-bottom: ${spacing.md};
+  margin-bottom: ${spacing.xs};
 
   &:last-child {
     margin-bottom: 0;
@@ -167,18 +169,6 @@ export const Footer: FC = (prop) => {
             Where code <br /> meets craft.
           </Slogan>
         </div>
-        {showRequestQuoteCTA && (
-          <Link
-            animationDelayTarget="requestQuoteButton"
-            href="/services#request-project-estimate"
-            variant="CTA"
-            css={css`
-              align-self: 'center';
-            `}
-          >
-            Request a Quote
-          </Link>
-        )}
         <ContactBlock>
           <ContactLink href="mailto:info@base2.io" rel="noopener">
             info@base2.io
@@ -186,6 +176,15 @@ export const Footer: FC = (prop) => {
           <ContactLink href="tel:6143981158" rel="noopener">
             (614) 398-1158
           </ContactLink>
+          {showRequestQuoteCTA && (
+            <FooterLink
+              animationDelayTarget="requestQuoteButton"
+              href="/services#request-project-estimate"
+              variant="CTA"
+            >
+              Request a Quote
+            </FooterLink>
+          )}
         </ContactBlock>
       </FooterWrapper>
     </Container>

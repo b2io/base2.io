@@ -146,6 +146,7 @@ export const BuiltForResults: FC = (props) => {
             margin-top: ${theme.spacing.lg};
           `}
           href="/services"
+          showArrow
           variant="CTA"
         >
           View our Services

@@ -15,9 +15,12 @@ import { variant } from 'styled-system';
 
 import { colors, spacing, ThemeLinkVariants } from '~/theme';
 
+import { ArrowRightIcon } from '../icons/ArrowRightIcon';
+
 export type LinkProps = {
   animationDelayTarget?: string;
   href: string;
+  showArrow?: boolean;
   variant?: ThemeLinkVariants;
 } & DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -45,15 +48,22 @@ const RedLine = styled.div`
 `;
 
 const CTAButton = styled(motion.div)`
-  padding: ${spacing.sm} ${spacing.md};
+  padding: ${spacing.xs} ${spacing.sm};
   display: inline-block;
   background: ${colors.coral};
   box-sizing: border-box;
 `;
 
+const LinkContent = styled.span`
+  display: flex;
+  align-items: center;
+  gap: ${spacing.xxs};
+`;
+
 export const Link: FC<LinkProps> = ({
   href,
   animationDelayTarget,
+  showArrow = false,
   ...props
 }) => {
   const isInternal = href.startsWith('/');
@@ -107,7 +117,10 @@ export const Link: FC<LinkProps> = ({
 
   const linkContent = (
     <>
-      {props.children}
+      <LinkContent>
+        {props.children}
+        {showArrow && <ArrowRightIcon />}
+      </LinkContent>
       {renderRedLine}
     </>
   );
@@ -116,17 +129,19 @@ export const Link: FC<LinkProps> = ({
     const animationDelay =
       animationDelayTarget === 'requestQuoteButton' ? '1s' : '0.2s';
     return (
-      <CTAButton
-        animate={isScrolledToLink ? 'enter' : 'exit'}
-        initial="initial"
-        variants={CTAButtonAnimationVariables}
-        whileHover={{ backgroundColor: colors.coral, scale: 1.08 }}
-        css={css`
-          animation-delay: ${animationDelay};
-        `}
-      >
-        {content}
-      </CTAButton>
+      <>
+        <CTAButton
+          animate={isScrolledToLink ? 'enter' : 'exit'}
+          initial="initial"
+          variants={CTAButtonAnimationVariables}
+          whileHover={{ backgroundColor: colors.coral, scale: 1.08 }}
+          css={css`
+            animation-delay: ${animationDelay};
+          `}
+        >
+          {content}
+        </CTAButton>
+      </>
     );
   };
   return isInternal ? (

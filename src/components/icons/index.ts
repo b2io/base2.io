@@ -1,4 +1,5 @@
 export * from './AngularIcon';
+export * from './ArrowRightIcon';
 export * from './BusinessIcon';
 export * from './CommunityIcon';
 export * from './D3Icon';
