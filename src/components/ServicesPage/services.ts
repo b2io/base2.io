@@ -21,7 +21,7 @@ export const SERVICES: Array<Services> = [
     sectionTitle: 'Discovery Consultation',
     services: [
       {
-        description: `One of our defining talents, extending beyond engineering, is our capacity to quickly understand our clients' businesses and systems through comprehensive business discovery consultation. We excel in transforming initial broad concepts and high expectations into clear, attainable outcomes. Our goal is to leverage our extensive experience across various industries to offer unique insights and practical solutions through industry insights consultation.`,
+        description: `One of our defining talents, extending beyond engineering, is our capacity to quickly understand our clients' businesses and systems through comprehensive business discovery consultation. We excel in transforming initial broad concepts and high expectations into clear, attainable outcomes. We leverage our extensive experience across various industries to offer unique insights and practical solutions through industry insights consultation.`,
         details: [
           'Conduct in-depth discussions with key stakeholders to fully understand business objectives and challenges, ensuring alignment and agreement.',
           'Transform loose concepts into concrete, actionable work items with our process improvement consultation.',
