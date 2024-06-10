@@ -21,13 +21,13 @@ export const SERVICES: Array<Services> = [
     sectionTitle: 'Discovery Consultation',
     services: [
       {
-        description: `One of our defining talents, extending beyond engineering, is our capacity to quickly understand our clients' businesses and systems. We excel in transforming initial broad concepts and high expectations into clear, attainable outcomes. Our aim is to leverage our extensive experience across various industries to offer unique insights and practical solutions.`,
+        description: `One of our defining talents, extending beyond engineering, is our capacity to quickly understand our clients' businesses and systems through comprehensive business discovery consultation. We excel in transforming initial broad concepts and high expectations into clear, attainable outcomes. We leverage our extensive experience across various industries to offer unique insights and practical solutions through industry insights consultation.`,
         details: [
-          'Conduct in-depth discussions with key stakeholders to fully understand business objectives and challenges.',
+          'Conduct in-depth discussions with key stakeholders to fully understand business objectives and challenges, ensuring alignment and agreement.',
           'Transform loose concepts into concrete, actionable work items.',
-          'Collaborative approach to uncover hidden needs and expectations.',
-          'Unique insights drawn from extensive experience across various industries.',
-          'We focus on your processes, and how to create systems to facilitate them.',
+          'Collaborative approach to uncover hidden needs and expectations, providing tailored solutions for business systems optimization.',
+          'Draw from our extensive industry experience to offer unique insights and actionable advice',
+          'Focused process improvement consultations where we will work with you to optimize your workflow and create realistic systems to support them, backed by thorough analysis and human-centered discovery.',
         ],
         serviceName: 'Discovery Consultation',
       },
